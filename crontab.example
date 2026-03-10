@@ -1,0 +1,8 @@
+# OpenClaw 备份定时任务配置
+# 使用 crontab -e 添加以下任务
+
+# 每天凌晨 3 点执行备份
+0 3 * * * /home/zhiping/.openclaw/workspace/scripts/openclaw-backup.sh >> /home/zhiping/.openclaw-backup-cron.log 2>&1
+
+# 每周日凌晨 4 点执行完整备份（可选，强制备份）
+# 0 4 * * 0 /home/zhiping/.openclaw/workspace/scripts/openclaw-backup.sh force >> /home/zhiping/.openclaw-backup-cron.log 2>&1
