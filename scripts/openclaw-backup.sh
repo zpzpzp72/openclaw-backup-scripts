@@ -155,14 +155,14 @@ if [ "$NEED_BACKUP" = true ]; then
         exit 1
     fi
 
-    # 等待一下确保进程完全退出
-    sleep 3
+    # 等待10秒钟确保进程完全退出
+    sleep 10
     
     # 执行备份
     log "执行 tar 备份..."
     ARCHIVE="$BACKUP_DIR/openclaw-$NOW.tgz"
 	log "tar -czf $ARCHIVE -C $HOME .openclaw 2>> $LOG_FILE"
-    #tar -czf "$ARCHIVE" -C "$HOME" .openclaw 2>>"$LOG_FILE"
+    tar -czf "$ARCHIVE" -C "$HOME" .openclaw 2>>"$LOG_FILE"
     BACKUP_STATUS=$?
 
     if ! restart_gateway; then
