@@ -1,6 +1,10 @@
 #!/bin/bash
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/zhiping/.local/share/pnpm:/home/zhiping/.openclaw/workspace/scripts
 
+# 防止并发运行（crontab 双触发保底）
+exec 200>/var/lock/openclaw-backup.lock
+flock -n 200 || { echo "[$(date '+%Y-%m-%d %H:%M:%S')] 备份已在运行，退出" >> "$HOME/.openclaw-backup.log"; exit 0; }
+
 # OpenClaw 自动备份脚本（带旧文件清理）
 # 每天凌晨执行，检查目录修改后备份并发送邮件
 #
@@ -155,14 +159,14 @@ if [ "$NEED_BACKUP" = true ]; then
         exit 1
     fi
 
-    # 等待一下确保进程完全退出
-    sleep 3
+    # 等待10秒钟确保进程完全退出
+    sleep 10
     
     # 执行备份
     log "执行 tar 备份..."
     ARCHIVE="$BACKUP_DIR/openclaw-$NOW.tgz"
 	log "tar -czf $ARCHIVE -C $HOME .openclaw 2>> $LOG_FILE"
-    #tar -czf "$ARCHIVE" -C "$HOME" .openclaw 2>>"$LOG_FILE"
+    tar -czf "$ARCHIVE" -C "$HOME" .openclaw 2>>"$LOG_FILE"
     BACKUP_STATUS=$?
 
     if ! restart_gateway; then
