@@ -1,6 +1,10 @@
 #!/bin/bash
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/zhiping/.local/share/pnpm:/home/zhiping/.openclaw/workspace/scripts
 
+# 防止并发运行（crontab 双触发保底）
+exec 200>/var/lock/openclaw-backup.lock
+flock -n 200 || { echo "[$(date '+%Y-%m-%d %H:%M:%S')] 备份已在运行，退出" >> "$HOME/.openclaw-backup.log"; exit 0; }
+
 # OpenClaw 自动备份脚本（带旧文件清理）
 # 每天凌晨执行，检查目录修改后备份并发送邮件
 #
