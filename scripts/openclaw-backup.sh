@@ -1,6 +1,9 @@
 #!/bin/bash
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/zhiping/.local/share/pnpm:/home/zhiping/.openclaw/workspace/scripts
 
+# ★ 热备份开关：0=不停服热备份（默认），1=停服备份
+STOP_GATEWAY=${STOP_GATEWAY:-0}
+
 # 防止并发运行（crontab 双触发保底）
 exec 200>/var/lock/openclaw-backup.lock
 flock -n 200 || { echo "[$(date '+%Y-%m-%d %H:%M:%S')] 备份已在运行，退出" >> "$HOME/.openclaw-backup.log"; exit 0; }
@@ -150,18 +153,21 @@ if [ "$NEED_BACKUP" = true ]; then
 
     log "备份开始邮件已发送"
 
-    if ! stop_gateway; then
-        log "停止 gateway 失败"
-        send_mail "OpenClaw 备份失败 - $NOW" "停止 gateway 失败！
+    if [ "$STOP_GATEWAY" = "1" ]; then
+        if ! stop_gateway; then
+            log "停止 gateway 失败"
+            send_mail "OpenClaw 备份失败 - $NOW" "停止 gateway 失败！
 时间: $TIMESTAMP
 日志: $LOG_FILE"
-        restart_gateway
-        exit 1
+            restart_gateway
+            exit 1
+        fi
+        # 等待10秒钟确保进程完全退出
+        sleep 10
+    else
+        log "[HOT] STOP_GATEWAY=0，跳过停服，执行热备份"
     fi
 
-    # 等待10秒钟确保进程完全退出
-    sleep 10
-    
     # 执行备份
     log "执行 tar 备份..."
     ARCHIVE="$BACKUP_DIR/openclaw-$NOW.tgz"
@@ -169,17 +175,19 @@ if [ "$NEED_BACKUP" = true ]; then
     tar -czf "$ARCHIVE" -C "$HOME" .openclaw 2>>"$LOG_FILE"
     BACKUP_STATUS=$?
 
-    if ! restart_gateway; then
-        FILE_SIZE=$(du -h "$ARCHIVE" 2>/dev/null | cut -f1)
-        log "备份成功但 gateway 重启失败: $ARCHIVE ($FILE_SIZE)"
-        send_mail "OpenClaw 备份部分成功 - $NOW" \
-                  "备份成功但 gateway 重启失败：
+    if [ "$STOP_GATEWAY" = "1" ]; then
+        if ! restart_gateway; then
+            FILE_SIZE=$(du -h "$ARCHIVE" 2>/dev/null | cut -f1)
+            log "备份成功但 gateway 重启失败: $ARCHIVE ($FILE_SIZE)"
+            send_mail "OpenClaw 备份部分成功 - $NOW" \
+                      "备份成功但 gateway 重启失败：
 文件: $ARCHIVE
 大小: $FILE_SIZE
 时间: $TIMESTAMP
 
 ⚠️ 请手动检查 gateway 状态: openclaw status"
-        exit 1
+            exit 1
+        fi
     fi
 
     if [ $BACKUP_STATUS -eq 0 ]; then
