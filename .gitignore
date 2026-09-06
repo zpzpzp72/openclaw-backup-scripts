@@ -1,0 +1,48 @@
+# Dependencies
+node_modules/
+venv/
+.env
+
+# Build outputs
+dist/
+build/
+*.pyc
+__pycache__/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temp files
+tmp/
+temp/
+*.tmp
+
+# OpenClaw internals (optional — comment out if you want to commit config)
+# .openclaw/
+# agents/
+# sessions/
+
+# Secrets (never commit)
+*.pem
+*.key
+secrets/
+credentials/
+
+# Large media
+*.mp4
+*.mov
+*.avi
+*.zip
+*.tar.gz
+*.tgz
