@@ -299,3 +299,52 @@ importer 注入在 from pathlib import Path 之前, py_compile 全绿但运行�
 - (v) 复测前先看 `openclaw models status --json` 的 `auth.providers[].effective` 与 `modelRouteIssues`
 
 **Related:** WeChat 通道慢专项(通道代理 `172.18.160.1:25017` 正常,wx.qq.com 经代理 200/0.28s);Gateway RSS 4.9GB vs `--max-old-space-size=4096`
+---
+
+## 2026-10-24 02:00 — WiFi 诊断: bash 的 ${} 撞 JS 模板串插值(本 session 第 2 次) + 残留 exec 会话 <!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
+
+**A. bash 的 ${VAR} / ${VAR:-default} 撞 JS 模板串插值**
+把 shell 塞进 JS 模板字面量(String.raw 反引号)时, bash 的 ${...} 会被 JS 当成插值表达式:
+- `${WSL_INTEROP:-未设置}` → SyntaxError(JS 解析 `:-` 失败)
+- `${i}` → ReferenceError: i is not defined
+
+**Why:** 本 session 踩 2 次, 每次浪费一整个回合。
+**What to do differently:** 写进 JS 模板串的 shell 里**一律避免 ${**。
+- 要 bash 默认值 → 用 `printenv VAR 2>/dev/null || echo "(未设置)"`
+- 最佳 → 把 shell 写成独立 .sh 文件, 用 write 工具落盘后再 bash 跑, 完全绕开 JS 解析
+- 判定口诀: 看到 shell 里的 ${ 就先想 JS 插值
+
+**B. 诊断脚本留下残留 exec 会话**
+rerank_check.sh 内嵌 Windows PowerShell 调用, 命令超时后 exec 转后台, 进程仍在跑(session clear-rook, pid 277075),
+下一轮 runtime context 里仍挂着, 造成噪音。
+**What to do differently:** 诊断脚本用 `command: "... > file 2>&1"` 落盘 + 短命令读文件, 避免长命令占着 exec 会话;
+跑完主动 poll 确认退出, 必要时 kill。
+
+**C. runtime 层偶发错误(非脚本问题)**
+`service child cleanup identity lost: Direct shared-state reader requires current integrity admission`
+属于工具层错误, 重试即恢复。**不要误判成自己脚本的 bug 而去改代码。**
+
+---
+
+## 2026-10-24 02:00 — Code Mode 三类工具调用误用(单次会话内连续触发 6 次) <!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
+
+**What happened:** 一次排障会话内连续触发 6 次工具调用错误,每次都浪费 1-2 个回合。根因是**没分清 code-mode 下三种不同的调用形态**。
+
+**症状与根因对照:**
+
+| 症状 | 根因 | 正确写法 |
+|---|---|---|
+| `ReferenceError: tools is not defined` | 以为有 `tools.*` 命名空间 | 启用的异步工具是**顶层 global**:`await exec({...})`、`await process({...})` |
+| `TypeError: pc is not a function` / `Cannot read properties of undefined (reading 'describe')` | 以为 catalog 结果有 `.handle` | **catalog 返回值本身就可调用**:`const [t] = await catalog.search(q); await t({...})` |
+| `SyntaxError: Expecting Unicode escape sequence \uXXXX` | 在模板字符串里塞了未转义的反引号(`\`progress\``)与中文引号 | **不要在 code 里拼 markdown**;先让 shell heredoc 写文件,再 `exec` 读出来当纯字符串传 |
+| `No session found for cm_xxx` | 把 exec 返回的 **`runId`**(`cm_...`)当成 process 的 **`sessionId`** | `exec` 返回 `status:"waiting"` → 用 **`wait(runId)`**;返回 `status:"running"` + `sessionId` → 用 **`process({action:"poll", sessionId})`**。**两者永远不能混用** |
+| 探针丢失后重复跑 | 后台 session 结束后再 poll 就没了 | 长任务用 `exec` 的 `awaitResults:true` 或前台跑;丢了就**先查状态再决定是否重试**,不要盲目重跑 |
+
+**What to do differently:**
+- (i) **code-mode 三形态速查**:`exec{code,title}`(顶层) / `await exec({command})`(shell) / `await process({sessionId})`(仅限 exec 已返回的 sessionId)
+- (ii) **catalog 工具直接调用**,不要碰 `.handle`
+- (iii) **不要在 code 字符串里内联 markdown/反引号**——先落盘再读
+- (iv) **`runId` ≠ `sessionId`**,这是本次最容易混淆的一点
+- (v) 探针失败先 `process list` 看还有没有活着的 session,再决定重试
+
+**Related:** 2026-10-21 三条同类条目(tools global undefined / exec 形态误判 / 命令行参数错)——**同一类认知错误已第 4 次复发**,应固化为 skill 而非每次重学
