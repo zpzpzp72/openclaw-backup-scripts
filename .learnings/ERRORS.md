@@ -348,3 +348,16 @@ rerank_check.sh 内嵌 Windows PowerShell 调用, 命令超时后 exec 转后台
 - (v) 探针失败先 `process list` 看还有没有活着的 session,再决定重试
 
 **Related:** 2026-10-21 三条同类条目(tools global undefined / exec 形态误判 / 命令行参数错)——**同一类认知错误已第 4 次复发**,应固化为 skill 而非每次重学
+
+## 2026-10-24 用未展开的 env 占位符探测客户端 → 误判整个 provider 死亡
+
+**现象**：`openclaw.json` 中 `models.providers.litellm.apiKey = "${LITELLM_MASTER_KEY}"`。用该字面值 curl → `400 {"code":"no_db_connection"}`。据此判定「LiteLLM@NAS DB 挂了」，并把它从所有 fallback 链里剔除；同时把「不存在的 ollama」当唯一兜底。
+
+**真相**：Gateway 运行时会把 `${VAR}` 解析成 env 值（`models status` 显示 effective=env `sk-litel...rh6-2007`），运行时一直是好的。是我的外部探测脚本把占位符原样发出去了。
+
+**教训**：
+1. 探测 provider 前先看 `openclaw models status --json` 的 `auth.providers[].effective`，**不要**直接读 `openclaw.json` 里的 apiKey 去 curl。
+2. 若 config 里 apiKey 形如 `${...}`，一律视为占位符，用 `os.environ` 取值复测。
+3. provider 被判死前至少要有两路证据（外部 curl + 网关自身日志/调用成功记录）。
+
+**代价**：一整夜 fallback 链指向不存在的 ollama，双保险全空。
