@@ -361,3 +361,31 @@ rerank_check.sh 内嵌 Windows PowerShell 调用, 命令超时后 exec 转后台
 3. provider 被判死前至少要有两路证据（外部 curl + 网关自身日志/调用成功记录）。
 
 **代价**：一整夜 fallback 链指向不存在的 ollama，双保险全空。
+
+## 2026-10-24 exec 里用 shell 变量传密钥 → Authorization 变成 `***` → 假 401
+
+**现象**：`K=$(python3 -c "...LITELLM_MASTER_KEY...")` 然后 `curl -H "Authorization: Bearer $K"`。同一批探测里前几次 200，后面全部 `http=401`，看起来像 key 失效/LiteLLM 崩了。
+
+**原因**：exec 的输出/命令管道会对疑似密钥做掩码，`$K` 展开后的值在真正发出前被替换成 `***`，服务端收到 `Bearer ***` → 401。**不是服务端问题。**
+
+**正确做法**：不要把密钥放进 shell 变量再拼进命令串。用 Python 直接 `os.environ.get(...)` 在进程内构造请求头：
+```python
+key = os.environ['LITELLM_MASTER_KEY']
+req = urllib.request.Request(url, data=body, headers={'Authorization': 'Bearer ' + key})
+```
+本机已验证这条路 100% 稳定（deepseek-flash/deepseek-pro/LongCat-2.0 全 200）。
+
+**判据**：如果 curl 突然从 200 变 401，且 key 是 shell 变量传的，**先怀疑掩码，不要怀疑 provider**。
+
+---
+
+## 2026-10-24 LongCat-2.0 是 reasoning 模型，小 max_tokens 下 content 为 None
+
+**现象**：`choices[0].message.content` 取值为 `None` → Python 抛 `TypeError: 'NoneType' object is not subscriptable`。原始响应：`"finish_reason":"length"`，`message` 里**只有 `reasoning_content`，没有 `content`**。
+
+**含义**：LongCat-2.0 会先把 token 全花在 reasoning 上，`max_tokens` 太小（4/8）时正文一个字都吐不出来。探活脚本若只断言 `content` 非空，会把它误判成故障。
+
+**做法**：
+- 探活只断言 **HTTP 200** + `choices` 存在，不要断言 `content` 非空。
+- 真要验内容，`max_tokens >= 200`，并兼容 `message.get('content') or message.get('reasoning_content')`。
+- 作为 fallback 第三棒可用（200/1.3s），但**别指望小预算下拿到正文**。
