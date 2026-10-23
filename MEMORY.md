@@ -22,19 +22,22 @@ _Curated insights from sessions past. Updated periodically from daily notes._
   - 告警: Feishu webhook (凭据读 `\\wsl$\Ubuntu\home\zhiping\.openclaw\openclaw.json`)
   - 日志: `C:\Scripts\logs\openclaw-healthcheck.log`
   - **已知小 bug**: 第 199–202 行 `wsl.exe stat` 输出经 PowerShell 编码转换产生乱码（"stat 备份文件失败: 鲖Bl剉蚫..."），会误报"⚠️ 无备份文件"——脚本仍判定"所有检查通过"。**修复建议**: 调用前设 `[Console]::OutputEncoding = [System.Text.Encoding]::UTF8`，或改用 `wsl.exe -e bash -c "stat --printf='%Y\n'"` 只取 epoch 不取文件名。
+- **NightOps 调度**: 2026-10-24 起 9 个 NightOps job 错峰至 **00:30-03:00 CST**（避开 MiniMax Token Plan burst 耗尽窗口 02:00-05:00）
 - **cron** (用户 crontab 2026-08-28): 11 行定时任务
   - 备份: `0 3 * * *` (`scripts/openclaw-backup.sh`)
   - Finance A股: `0 9 * * 1-5` (`agents/finance/a_stock_daily.py`)
   - AMAT 报告: `30 21 * * 1-5` + `0 4 * * 2-6` + `30 22 * * 1-5` + `0 5 * * 2-6`（4 次/天）
   - 新闻摘要: `0 8 * * *` (`scripts/run_news_digest.sh`)
   - NightOps / claw-sync / heartbeat: `@reboot` + `30 3 * * *` + `0 * * * *`
-- **模型 fallback 链** (`openclaw.json` `agents.entries`, 2026-10-24 实测校正) <!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
-  - `agents.defaults.model`: primary `minimax/MiniMax-M3`; fallbacks `longcat/LongCat-2.0` → `ollama/qwen3.6:27b`
-  - `agents.entries.main`: 无 primary(继承 defaults); fallbacks **`litellm/MiniMax-M2.7`** → `longcat/LongCat-2.0` → `ollama/qwen3.6:27b`
-  - `agents.entries.{orchestrator,scout,coder,life,finance}`: primary `minimax/MiniMax-M2.7`, fallbacks `litellm/MiniMax-M3` → `longcat/LongCat-2.0` → `ollama/qwen3.6:27b`
-  - `agents.entries.health`: primary `longcat/LongCat-2.0`; `work`: primary `minimax/MiniMax-M3`, fallbacks `litellm/deepseek-flash` → …
-  - **provider 实际列表**: minimax / litellm / ollama / longcat / siliconflow / openrouter（6 个，不止之前记的 3 个）
+- **模型 fallback 链** (`openclaw.json` `agents.entries`, 2026-10-24 05:10 Main 全局收敛) <!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
+  - **统一链条（8 agent + defaults 全部相同）**: `ollama/qwen3:4b-instruct` → `ollama/qwen3.6:27b` → `minimax/MiniMax-M2.7`
+  - `agents.defaults.model`: primary `minimax/MiniMax-M3`; `agents.entries.{orchestrator,scout,coder,life,finance,health}`: primary `minimax/MiniMax-M2.7`; `work`: primary `minimax/MiniMax-M3`; `main`: 继承 defaults
+  - `agents.entries.health` 的 primary 已从 `longcat/LongCat-2.0`(401 无 key) 改为 `minimax/MiniMax-M2.7`
+  - **provider 实际列表**: minimax / litellm / ollama / longcat / siliconflow / openrouter（6 个）
+  - **⚠️ 当前死链 provider（禁止放入 fallback）**: `litellm@NAS` = 400 no_db_connection / `longcat` = 401 无 key / `siliconflow` = 30014 key 失效 / `openrouter` = 402 余额 0
+  - **唯一可用兜底是本地 ollama**（172.18.160.1:11434）: `qwen3:4b-instruct` 实测 3.0s 出正确内容；`qwen3.6:27b` 只吐 reasoning
   - **认证来源在 sqlite auth profiles**（`state/openclaw.sqlite` `config_machine_state` + `~/.openclaw/agents/*/agent/openclaw-agent.sqlite`），不在 env；`openclaw models status --json` 可查 effective
+  - **教训**: 多 Agent 并行改同一份全局配置必须有单一裁决者，否则后写的覆盖先写的（Scout 提 litellm → Orchestrator 移除 litellm → 7/8 agent 首位是死链）
 
 ## 持续性风险
 

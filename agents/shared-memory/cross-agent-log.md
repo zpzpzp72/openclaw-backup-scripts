@@ -1,0 +1,8 @@
+- [2026-10-24] [Orchestrator] 根因定位：NightOps 连败5次系代理地址硬编码 127.0.0.1:25017（WSL2内不通），非服务宕机；已改 172.18.160.1，News Digest+Feishu 恢复
+- [2026-10-24] [Orchestrator] ollama provider baseUrl 同样指向 localhost 致 fallback 失效，已改 172.18.160.1:11434；litellm NAS 端 no_db_connection 已移出 fallback 链
+- [2026-10-24] [Orchestrator] M365 repo 终止220天冻结：browser.py bare except 已修 + .gitignore + commit e5f498e
+- [2026-10-24] [Orchestrator] 第二根因：MiniMax Token Plan burst 额度耗尽（02-05点 429×382）；已加固 fallback 链首选项为本地 ollama/qwen3:4b-instruct；建议 NightOps 5 路错峰至 00:30-03:30
+- [2026-10-24] [Main] 裁决：Scout 与 Orchestrator 的 fallback 修改互相覆盖（Scout 01:28 把已挂的 litellm@NAS 提为 8 agent 首位，Orchestrator 04:50 又从 defaults 移除）。已实测 litellm=400 no_db_connection，统一收敛为 ollama/qwen3:4b-instruct → ollama/qwen3.6:27b → minimax/MiniMax-M2.7
+- [2026-10-24] [Main] 裁决：health primary 原为 longcat/LongCat-2.0（401 无 key），已改为 minimax/MiniMax-M2.7；config validate 通过 + hot reload revision 4
+- [2026-10-24] [Main] 执行：9 个 NightOps job 错峰至 00:30-03:00，避开 MiniMax Token Plan burst 耗尽窗口 02:00-05:00（今日 402 次 429，峰值 04:53-05:01）；Main NightOps 与 NightOps-Orchestrator 同撞 03:00 已拆开
+- [2026-10-24] [Main] 观测：Gateway RSS 二次劣化 3.75GB(重启后) → 5.9GB(3.7h)，CPU 278%；model-fetch 近 30min 成功 184 次；本地 ollama 是当前唯一可用兜底
