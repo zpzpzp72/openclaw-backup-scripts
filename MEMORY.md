@@ -30,14 +30,73 @@ _Curated insights from sessions past. Updated periodically from daily notes._
   - 新闻摘要: `0 8 * * *` (`scripts/run_news_digest.sh`)
   - NightOps / claw-sync / heartbeat: `@reboot` + `30 3 * * *` + `0 * * * *`
 - **模型 fallback 链** (`openclaw.json` `agents.entries`, 2026-10-24 05:10 Main 全局收敛) <!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
-  - **统一链条（8 agent + defaults 全部相同）**: `ollama/qwen3:4b-instruct` → `ollama/qwen3.6:27b` → `minimax/MiniMax-M2.7`
-  - `agents.defaults.model`: primary `minimax/MiniMax-M3`; `agents.entries.{orchestrator,scout,coder,life,finance,health}`: primary `minimax/MiniMax-M2.7`; `work`: primary `minimax/MiniMax-M3`; `main`: 继承 defaults
+  - **统一链条（2026-10-24 实测，8 agent + defaults 全部相同）**: `minimax/MiniMax-M3.1-Flash` → `minimax/MiniMax-M2.7` → `litellm/GLM-5.3-Flash` → `litellm/deepseek-flash` → `litellm/LongCat-2.0` → `ollama/qwen3:4b-instruct`（末位兜底）
+  - `agents.defaults.model`: primary `minimax/MiniMax-M2.7`; `agents.entries.orchestrator`: primary `minimax/MiniMax-M2.7`; **`{scout,coder,life,finance,health,work}`(6 个) primary = `minimax/MiniMax-M3.1-Flash`**; `main`: 继承 defaults
   - `agents.entries.health` 的 primary 已从 `longcat/LongCat-2.0`(401 无 key) 改为 `minimax/MiniMax-M2.7`
   - **provider 实际列表**: minimax / litellm / ollama / longcat / siliconflow / openrouter（6 个）
-  - **⚠️ 当前死链 provider（禁止放入 fallback）**: `litellm@NAS` = 400 no_db_connection / `longcat` = 401 无 key / `siliconflow` = 30014 key 失效 / `openrouter` = 402 余额 0
+  - **provider 状态（2026-10-24 22:00 用 sqlite 真实 key 逐个实测）**: 🟢 minimax(CN) 200/1.23s · litellm@NAS **全通**(M2.7 200/1.12s, deepseek-flash 200/0.60s, LongCat-2.0 200/1.32s, GLM-5.3-Flash 200/5.71s) · siliconflow **200/1.96s**（旧记「30014 key 失效」已证伪）· longcat **200/2.11s**（旧记「401 无 key」已证伪）· ollama 200（qwen3:4b-instruct 0.64s / qwen3.6:27b 30s）· 🔴 **openrouter 402 Insufficient credits（余额 0，唯一真死链）**
   - **唯一可用兜底是本地 ollama**（172.18.160.1:11434）: `qwen3:4b-instruct` 实测 3.0s 出正确内容；`qwen3.6:27b` 只吐 reasoning
   - **认证来源在 sqlite auth profiles**（`state/openclaw.sqlite` `config_machine_state` + `~/.openclaw/agents/*/agent/openclaw-agent.sqlite`），不在 env；`openclaw models status --json` 可查 effective
   - **教训**: 多 Agent 并行改同一份全局配置必须有单一裁决者，否则后写的覆盖先写的（Scout 提 litellm → Orchestrator 移除 litellm → 7/8 agent 首位是死链）
+
+
+## MiniMax Token Plan 配额机制（2026-10-24 22:00 官方文档 + 受控实测） <!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
+
+**⚠️ 核心结论：429 的根因是 Token Plan 5 小时窗口耗尽，不是认证问题。** 认证（API Key）全程有效；配额打满时 MiniMax 返回
+`HTTP 429 rate_limit_error` / 「已达到 Token Plan 用量上限 (2056)」，**所有 minimax 模型同时失败**（M2.7 与 M3.1-Flash 报错逐字相同）。
+OpenClaw 侧表现为 `models list` 里该模型 `Auth=no` + `authProfiles.state` 里 `cooldownReason=rate_limit` / `failureCounts.rate_limit` 递增——这是**冷却标记，不是缺 key**。
+
+**判定口诀**：minimax 报 429 且 `openclaw models list` 显示 `Auth=no` → 先查 Token Plan 窗口（`mmx quota`），**不要去查 key**。
+实测反例：同一天上午 `Auth=no` + 12 次 rate_limit 失败，20:00 窗口重置后 21:55 复测 `Auth=yes`、三模型全 200（0.87–0.94s），**冷却已于 13:26 到期，无需人工干预**。
+
+**配额是单一池，不按模型分桶。** 官方 FAQ 原文：
+> Model usage covered by Token Plan shares **one included Token Plan quota** … usage deducts from the included Token Plan quota **according to the corresponding endpoint pricing**.
+
+即：用量条上的「M token」是**按端点价归一化的额度单位**，不是真实 token 数。同一份配额喂不同模型，能换到的真实 token 量差好几倍。
+
+**两个滚动窗口**（2026-10-24 官方 usage-rules）：5 小时滚动（文本/图像/音频等非视频模型）+ 7 天周窗口（所有模型，含视频）。两窗口独立重置，5 小时重置**不**重置周用量；未用完不结转。
+
+### Plus 档 5 小时窗口的真实容量（受控实测反推）
+
+官方只公布百分比、不公布 token 绝对值。2026-10-24 22:00 用「已知 input token 数 → 观察窗口余量百分比变化」反推（CN 标准价）：
+
+| 模型 | 输入 元/百万 | 输出 元/百万 | 缓存读取 元/百万 | 5h 窗口满额可跑 input |
+|---|---:|---:|---:|---:|
+| **MiniMax-M3.1-Flash** | 1.00 | 4.00 | 0.10 | **≈ 6.1 M tokens** |
+| MiniMax-M3 (≤512k 输入) | 2.10 | 8.40 | 0.42 | ≈ 2.9 M tokens |
+| MiniMax-M3 (>512k 输入) | 4.20 | 16.80 | 0.84 | ≈ 1.5 M tokens |
+| MiniMax-M2.7 | 现行定价页已不单列（旧模型） | | | — |
+
+- 实测斜率：676,006 input tokens → 窗口余量 59%→48%（11%）→ **每 1% ≈ 61,455 input tokens**
+- 换算：6.1M ÷ 2.1 = 2.9M（对 M3 ≤512k）；6.1M ÷ 4.2 = 1.5M（对 M3 >512k）
+- ⚠️ 该数为**单请求 input 口径**，输出与 thinking token 按 4x 价另行扣减；M3.1-Flash thinking 恒开且不可关（官方 OpenClaw 指南），实际可用量低于表值
+- 优先服务（`service_tier=priority`）= 标准价 ×1.5，同样窗口内可跑量再降 1/3
+
+**省钱排序**（对 Plus 档）：① 缓存命中只要 input 价的 1/10（0.10 vs 1.00）→ 长会话固定前缀务必命中；② 上下文控制在 512k 以内（超了 M3 直接变 4.2 元/M）；③ M3.1-Flash 比 M3 便宜 2.1–4.2 倍；④ 简单任务降 thinking 深度（M3 可调，M3.1-Flash 不可）。
+
+### 查用量/余量的三个手段
+
+1. `mmx quota`（最省事，CN key 会自动识别区域）
+2. `curl https://api.minimaxi.com/v1/token_plan/remains -H "Authorization: Bearer <key>"` — **CN key 必须打 `api.minimaxi.com`**，打 `www.minimax.io` 会返 `2049 invalid api key`
+3. 控制台 <https://platform.minimax.io/console/usage>
+
+返回字段：`current_interval_remaining_percent`（5h 窗口）、`current_weekly_remaining_percent`（周）、`remains_time`（窗口剩余毫秒）。**`current_interval_total_count` / `usage_count` 恒为 0**，只能看百分比。
+
+### 2026-10-24 22:00 实测窗口状态
+
+| 窗口 | 区间 | 剩余 | 百分比 |
+|---|---|---|---|
+| 5 小时（general） | 10-24 20:00 → 10-25 00:00 | ~2h | 用到 48%（被我为测量消耗） |
+| 周（general） | 10-19 00:00 → 10-26 00:00 | ~26h | 🟢 100% |
+| 周（video） | 同上 | ~26h | 🟢 100% |
+
+### 排期含义
+
+- MEMORY 原有「NightOps 错峰至 00:30-03:00 避开 MiniMax burst 耗尽窗口 02:00-05:00」**成立且有据**：5h 窗口从首次使用起算，若 20:00 起重度用，**00:00 窗口重置**；02:00-05:00 段是窗口刚重置后的高可用期，但也可能撞上 00:00-05:00 之间的下一次重置点。**实操建议：把重活放在窗口刚重置之后**（用 `mmx quota` 确认余量 > 50% 再开工）。
+- 官方 15:00-17:30 工作日高峰有**动态限流**（Plus 约支持 3-4 个 agent 并发），与配额耗尽是两回事，别混判。
+
+**附：本地 cost 字段与官方 CN 价不一致**（`openclaw.json` `models.providers.minimax.models[].cost`，只影响 OpenClaw 自身成本统计，不影响服务端真实扣费）：
+M3.1-Flash 1/4/0.1 ✅ 与 CN 价一致；M3 记 0.5/2 ❌ 官方 2.1/8.4（≤512k）；M2.7 记 0.3/1.2 ❌ 旧 Global 价。
 
 ## 持续性风险
 
@@ -53,6 +112,7 @@ _Curated insights from sessions past. Updated periodically from daily notes._
 | P0 | **PROXY DOWN 127.0.0.1:25017** — `curl http://127.0.0.1:25017/` Failed to connect, 无 proxyon 进程，2026-08-27 发现；导致 `git fetch origin` 失败（memory-lancedb-pro 同步受阻）。**注意：`172.18.160.1:25017` 是通的**（根路径 404 属正常，实测能代理 wx.qq.com 200/0.28s），微信通道用的是后者，不受影响 | 2026-08-27 | 🔴 Main 未处理（仅影响 git fetch） | <!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
 | P2 | Coder 最近 code_report 停留在 **2026-07-30**（29 天没更新）；orchestrator 标"08-27 cron 恢复"但实际产物未刷新 | 2026-08-28 | 🟡 待核查 |
 | P1 | **Gateway RSS 4.9 GB vs `--max-old-space-size=4096`** — 2026-10-24 实测 pid 262802: VmRSS 5.0–5.24 GB / **VmHWM 峰值 5,392,148 kB** / RSS≈RSS_anon 4.9 GB / VmSwap 0；其中 **V8 [heap] 仅 496 MB，另有 4.2 GB 在 9,388 个 anon rw- 映射里（非 V8 堆）** → 外部 Buffer/native 内存膨胀，非 JS 堆泄漏。**实测为高位震荡、非单调增长**（01:48→02:03 的 6 次采样）：5,007,848 / 5,263,152 / 5,108,396 / 5,112,652 / 5,199,200 / 5,214,300 kB，**VmHWM 峰值 5,392,148 kB**，即在 5.1–5.4 GB 区间波动并伴随回落。进程 01:24 启动、**38 分钟即达 5.1 GB**。同期**线程数从 58 翻倍到 116**、匿名映射 9,388 个 → 指向**并发请求带来的外部内存累积 + 线程扩张**，而非 JS 堆泄漏。CPU 100–148%，GC 抖动 → 通道消息延迟 | 2026-10-24 | 🟡 待定位那 4.2 GB 的具体占用方（候选：sqlite blob 读取 / transcript archive 解压 / capture_blobs） | <!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
+| P1 | **MiniMax 429 根因 = Token Plan 5h 窗口耗尽**（非认证问题）— 配额单池按端点价扣减；M3.1-Flash 5h 满额 ≈6.1M input tokens / M3(≤512k) ≈2.9M / M3(>512k) ≈1.5M；耗尽时所有 minimax 模型同时返 429(2056)「已达到 Token Plan 用量上限」，OpenClaw 侧表现为 `Auth=no` + rate_limit 冷却（**是冷却不是缺 key**）；5h 窗口重置后自动恢复，无需改 key。查余量用 `mmx quota` 或 `api.minimaxi.com/v1/token_plan/remains`（CN key 别打 www.minimax.io） | 2026-10-24 | 🟡 配额管理问题，非故障；已被 8 个 agent 的 M3.1-Flash primary 放大（6/8 agent） | <!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
 | P2 | **APNetwork + WinDivert 稳定性** — 已确认 NDIS dump 仅观察到 1 次（2026-08-18 14:26），"每月数十次崩溃"无证据；WinDivert64.sys 时间戳 2022-09-20（很久没更新）；主要风险是三方共存而非高频崩溃 | 2026-08-26 | 🟢 切 NAT 后未复发，保留"未来 NDIS 更新时可能再触发"的观察 |
 | (已合并) | ~~Coder Codex/Arcee/Kimi 三模型全败~~ — 2026-08-08 报告已过期 20 天，未重测；如需查证需单独跑 Coder probe | 2026-08-08 | ⏸️ 暂搁置 |
 
@@ -71,9 +131,10 @@ _Curated insights from sessions past. Updated periodically from daily notes._
 
 ## NightOps 窗口
 
-- **时间**: Mon-Fri 21:30-23:30 CST
+- **时间**: Mon-Fri 00:30-03:00 CST（2026-10-24 起，原 21:30-23:30）
 - **规则**: 检查在此窗口内；不在则静默 `HEARTBEAT_OK`
 - **检查项**: 邮件、天气（若外出）、日历（2h内）
+- **优化提议规则（2026-10-24 ZP 要求）**: NightOps 讨论中发现更优的优化方式（网络/系统/配置类）→ 先列方案要点提醒 ZP 确认，不擅自实施
 
 ## 关键发现
 
@@ -101,6 +162,16 @@ _Curated insights from sessions past. Updated periodically from daily notes._
   ```
   WSL 内 DNS: `10.255.255.254` (Hyper-V DNS proxy)
 
+## 网络自检结论 & 经验（2026-10-24）
+
+- **隧道健康信号**: APNetwork 适配器 Up + google generate_204 返 204 + 出口 IP 非空（当前 207.174.28.79）+ `@198.18.0.1` fake-ip 应答；DNS 污染标记 = 解析出 31.13.x 段 <!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
+- **提权约束**: ap_network 由 Start_APNetwork 任务提权启动，WSL interop 杀不掉（拒绝访问）→ 一切 kill/修复走 ResetAPNetwork 任务（RunLevel=Highest，15min 周期）内嵌钩子 <!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
+- **自愈脚本组**（C:\Scripts\）：CheckAPNetwork.ps1（监控+快速路径+钩子）/ NetRepair.ps1（-OnlyIfBroken 幂等自愈，健康即跳过，已实渨验证）/ NetHarden.ps1（BlockInbound 默认关） <!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
+- **教训**: 加固时 Restart-NetAdapter 会摔断隧道（10:33/10:36 两次重启 → 断网）→ NetHarden 必带 -SkipNicRestart，重启 NIC 后须跑 NetRepair 重建隧道；BlockInbound-* 当时并非断隧道元凶但已全部删除并默认不创建（fw-clean 钩子，标记 net-clean.done） <!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
+- **分流现状**: APNetwork 本就分流（isFullRoute=false；腾讯系/微博/中国区 IP 直连，其余走隧道；规则服务端下发，客户端无 dns/doh 键）。实测：facebook→fake-ip 198.18.0.177→200；baidu→真实 IP 183.2.172.177 直连；国内出口 118.112.96.162 / 国际 207.174.28.79 <!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
+- **DoH 结论**: WSL 不启用 — 阿里 DoH JSON 35-41ms vs UDP 16ms vs 当前系统解析 6-8ms；加密 DNS 会绕过 fake-ip 反而破坏分流；手动核对工具 `curl "https://223.5.5.5/resolve?name=x&type=A"` <!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
+- **WSL DNS**: /etc/systemd/resolved.conf.d/99-wsl-dns.conf（DNS=119.29.29.29，Fallback 10.255.255.254），实测 6-8ms（原 35-40ms）；备份后缀 .bak-20261024-103134 <!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
+
 ## 飞书集成
 
 - **频道配置** (`openclaw.json` `channels.feishu`, 2026-08-28 验证 keys): `appId`, `appSecret`, `enabled`, `connectionMode`, `dmPolicy`, `groupPolicy`, `requireMention`, `groupAllowFrom`
@@ -113,7 +184,7 @@ _Curated insights from sessions past. Updated periodically from daily notes._
 
 ---
 
-_Last updated: 2026-08-28 13:50 CST (审计修正: 13 处过期/未查证条目)_
+_Last updated: 2026-10-24 22:00 CST (新增：MiniMax Token Plan 配额机制专章；纠正「死链 provider」与 fallback 链旧结论)_
 
 ## 审计日志 (Audit Trail)
 
