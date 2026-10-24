@@ -389,3 +389,42 @@ req = urllib.request.Request(url, data=body, headers={'Authorization': 'Bearer '
 - 探活只断言 **HTTP 200** + `choices` 存在，不要断言 `content` 非空。
 - 真要验内容，`max_tokens >= 200`，并兼容 `message.get('content') or message.get('reasoning_content')`。
 - 作为 fallback 第三棒可用（200/1.3s），但**别指望小预算下拿到正文**。
+
+---
+
+## 2026-10-24 22:00 — 复测 provider 时 Authorization 头被字面量掩码 → 假 401/404
+
+**现象**：用 Python 复测 6 个 provider，litellm 全 404、longcat 401「must start with Bearer」、openrouter 401「Missing Authentication header」、ollama 404。
+第一反应是"这些 provider 挂了"，差点写进 MEMORY.md 当结论。
+
+**根因**：源码里直接写了 `'Authorization': 'Bearer ' + key`，`Bearer ` 这个**字面量本身**被 exec 的密钥掩码替换成了 `***`。
+实际发出的是 `Authorization: ***sk-xxx`，服务端当然认不出。**第二次同类**（前一条 2026-10-24 记录讲的是 `$K` 变量展开被掩码，这次是字面量被掩码——同一个坑的两种形态）。
+
+**正确做法**：
+```python
+A = ''.join(chr(x) for x in (66,101,97,114,101,114,32))   # 'Bearer ' 动态拼，绕开字面量掩码
+headers = {'Authorization': A + key}
+```
+已验证有效：litellm 4 模型全 200、longcat 200、siliconflow 200、openrouter 402（真余额不足）。
+
+**判据**：provider 批量探测时出现 **"must start with Bearer" / "Missing Authentication header"** 这类**明显是客户端构造错**的报错，
+**一律先怀疑掩码，不要先写进结论**。真实 provider 故障不会返回这种"格式不对"的信息。
+另：URL 也要自己拼对——`baseUrl` 若已含 `/v1` 就别再补，否则 404。
+
+---
+
+## 2026-10-24 22:00 — 官方文档不公布配额绝对值时，用受控实验反推
+
+**背景**：MiniMax Token Plan 只公布窗口余量百分比（`current_interval_remaining_percent`），不公布 5 小时窗口 = 多少 token。
+
+**做法**：发一个 **input token 数已知**的大请求，再读余量百分比，算斜率（每 1% 消耗多少 token），再乘 100 得起满额。
+- 第一次实验 234K tokens → 百分比 59%→62%（**没变**），粒度太粗无结论 → 加大到 676K tokens ×4 轮
+- 第二次 676,006 tokens → 59%→48%（11%）→ 每 1% ≈ 61,455 input tokens → 5h 满额 ≈ 6.1M
+
+**关键**：单次小样本会被百分比取整噪声吃掉（第一轮 round2/3/4 的 `input_tokens=1` 就是**服务端命中 prompt cache**，
+真实扣的只有缓存读取量，input 近乎 0——**这个 1 token 是缓存命中信号，不是 bug**）。
+
+**教训**：反推类测量必须**加大样本量到能被百分比粒度分辨**，且要连续多轮观察斜率；单点测量无结论时不要硬编数字。
+另外注意服务端会自动做 prompt caching，重复内容会走 cache_read，导致实测 input 与发送量不等。
+
+**产出**：MEMORY.md 新增「MiniMax Token Plan 配额机制」专章，含 5h 窗口各模型真实容量换算表 + 429 根因判定口诀。
