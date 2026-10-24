@@ -38,6 +38,7 @@ _Curated insights from sessions past. Updated periodically from daily notes._
   - **唯一可用兜底是本地 ollama**（172.18.160.1:11434）: `qwen3:4b-instruct` 实测 3.0s 出正确内容；`qwen3.6:27b` 只吐 reasoning
   - **认证来源在 sqlite auth profiles**（`state/openclaw.sqlite` `config_machine_state` + `~/.openclaw/agents/*/agent/openclaw-agent.sqlite`），不在 env；`openclaw models status --json` 可查 effective
   - **教训**: 多 Agent 并行改同一份全局配置必须有单一裁决者，否则后写的覆盖先写的（Scout 提 litellm → Orchestrator 移除 litellm → 7/8 agent 首位是死链）
+  - **⚠️ M3 系列必须 `thinking=adaptive`**（2026-10-24 22:10 修复并热载）: `MiniMax-M3` / `MiniMax-M3.1-Flash` 服务端**强制** `thinking.type=adaptive`，发 `disabled` 直接 400 (2013)「requires adaptive thinking」。全局 `agents.defaults.thinkingDefault="off"` 会触发它 → 必须在 `agents.defaults.models` 给这两个模型单设 `params.thinking="adaptive"`（per-model 优先级高于全局，resolution order #5 > #6，见 docs/tools/thinking.md）。M2.7 / litellm / ollama 不受影响。备份 `openclaw.json.bak.thinkingfix-20261024-221008` <!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
 
 
 ## MiniMax Token Plan 配额机制（2026-10-24 22:00 官方文档 + 受控实测） <!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
@@ -112,6 +113,7 @@ M3.1-Flash 1/4/0.1 ✅ 与 CN 价一致；M3 记 0.5/2 ❌ 官方 2.1/8.4（≤5
 | P0 | **PROXY DOWN 127.0.0.1:25017** — `curl http://127.0.0.1:25017/` Failed to connect, 无 proxyon 进程，2026-08-27 发现；导致 `git fetch origin` 失败（memory-lancedb-pro 同步受阻）。**注意：`172.18.160.1:25017` 是通的**（根路径 404 属正常，实测能代理 wx.qq.com 200/0.28s），微信通道用的是后者，不受影响 | 2026-08-27 | 🔴 Main 未处理（仅影响 git fetch） | <!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
 | P2 | Coder 最近 code_report 停留在 **2026-07-30**（29 天没更新）；orchestrator 标"08-27 cron 恢复"但实际产物未刷新 | 2026-08-28 | 🟡 待核查 |
 | P1 | **Gateway RSS 4.9 GB vs `--max-old-space-size=4096`** — 2026-10-24 实测 pid 262802: VmRSS 5.0–5.24 GB / **VmHWM 峰值 5,392,148 kB** / RSS≈RSS_anon 4.9 GB / VmSwap 0；其中 **V8 [heap] 仅 496 MB，另有 4.2 GB 在 9,388 个 anon rw- 映射里（非 V8 堆）** → 外部 Buffer/native 内存膨胀，非 JS 堆泄漏。**实测为高位震荡、非单调增长**（01:48→02:03 的 6 次采样）：5,007,848 / 5,263,152 / 5,108,396 / 5,112,652 / 5,199,200 / 5,214,300 kB，**VmHWM 峰值 5,392,148 kB**，即在 5.1–5.4 GB 区间波动并伴随回落。进程 01:24 启动、**38 分钟即达 5.1 GB**。同期**线程数从 58 翻倍到 116**、匿名映射 9,388 个 → 指向**并发请求带来的外部内存累积 + 线程扩张**，而非 JS 堆泄漏。CPU 100–148%，GC 抖动 → 通道消息延迟 | 2026-10-24 | 🟡 待定位那 4.2 GB 的具体占用方（候选：sqlite blob 读取 / transcript archive 解压 / capture_blobs） | <!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
+| P0 | **MiniMax M3 系列 thinking 载荷不兼容** — `MiniMax-M3` / `MiniMax-M3.1-Flash` 服务端强制 `thinking.type=adaptive`；全局 `agents.defaults.thinkingDefault="off"` 让 OpenClaw 原样发 `disabled` → 400 (2013)，表现为「飞书通道报错」实为模型层。放大器：会话级 `modelOverride` 会禁用配置里的 fallback 链（`configured fallbacks disabled by user model override`）→ 无兜底 | 2026-10-24 21:54 | ✅ 已修复 (22:10): per-model `params.thinking=adaptive` + 网关热载（revision 8），修复后 `requires adaptive` 计数=0 <!-- project: github.com/zpzpzp72/openclaw-backup-scripts --> |
 | P1 | **MiniMax 429 根因 = Token Plan 5h 窗口耗尽**（非认证问题）— 配额单池按端点价扣减；M3.1-Flash 5h 满额 ≈6.1M input tokens / M3(≤512k) ≈2.9M / M3(>512k) ≈1.5M；耗尽时所有 minimax 模型同时返 429(2056)「已达到 Token Plan 用量上限」，OpenClaw 侧表现为 `Auth=no` + rate_limit 冷却（**是冷却不是缺 key**）；5h 窗口重置后自动恢复，无需改 key。查余量用 `mmx quota` 或 `api.minimaxi.com/v1/token_plan/remains`（CN key 别打 www.minimax.io） | 2026-10-24 | 🟡 配额管理问题，非故障；已被 8 个 agent 的 M3.1-Flash primary 放大（6/8 agent） | <!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
 | P2 | **APNetwork + WinDivert 稳定性** — 已确认 NDIS dump 仅观察到 1 次（2026-08-18 14:26），"每月数十次崩溃"无证据；WinDivert64.sys 时间戳 2022-09-20（很久没更新）；主要风险是三方共存而非高频崩溃 | 2026-08-26 | 🟢 切 NAT 后未复发，保留"未来 NDIS 更新时可能再触发"的观察 |
 | (已合并) | ~~Coder Codex/Arcee/Kimi 三模型全败~~ — 2026-08-08 报告已过期 20 天，未重测；如需查证需单独跑 Coder probe | 2026-08-08 | ⏸️ 暂搁置 |
@@ -184,7 +186,7 @@ M3.1-Flash 1/4/0.1 ✅ 与 CN 价一致；M3 记 0.5/2 ❌ 官方 2.1/8.4（≤5
 
 ---
 
-_Last updated: 2026-10-24 22:00 CST (新增：MiniMax Token Plan 配额机制专章；纠正「死链 provider」与 fallback 链旧结论)_
+_Last updated: 2026-10-24 22:20 CST (新增：MiniMax M3 系列 thinking=adaptive 载荷修复 + P0 风险条目；纠正「飞书故障=通道问题」的误判)_
 
 ## 审计日志 (Audit Trail)
 
