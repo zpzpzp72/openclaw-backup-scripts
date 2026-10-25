@@ -63,3 +63,22 @@ npm config get prefix       # 变了没(最容易被忽略)
 npm root -g                 # 里面还有没有原来的全局包
 openclaw --version          # 工具本身还正常吗
 ```
+
+## 2026-10-26 网关 RSS 10.29GB 定位:是「大量小段堆积」,不是单块大 buffer
+
+**实测**(pid 319857,uptime 1d14h):
+```
+总映射 16098 · 匿名段 15967 · 文件段 131
+anon Private_Dirty 9.88GB / file 0.15GB
+段大小分桶: <64KB:105 · 64KB-1MB:15067 · >1MB:533
+最大单段仅 73MB
+```
+
+**判读**:15067 个 64KB-1MB 的匿名脏页段,单段都不大但总量近 10GB —— 典型**碎片化/逐段增长**特征,不是「一个 4GB 大 buffer」。
+
+**关键修正**:之前(MEMORY 10-24)写的「9388 个 anon rw- 映射」是**映射数**,不是字节数;当时据此推断「外部 Buffer/native 内存膨胀」缺证据。本次补上了 Private_Dirty 拆分与段大小分桶,才算定位到「段数与总字节同时增长」。
+
+**测量要点**(下次直接照做):
+- `awk '/^[0-9a-f]+-[0-9a-f]+ /{a=(NF<6)} /^Private_Dirty:/{if(a)an+=$2;else fi+=$2}' /proc/<pid>/smaps` → 匿名 vs 文件
+- 段大小分桶:按 maps 的 start-end 算每段大小再分桶,**别用 smaps 的 `Size:` 累加**(那是单段大小,累加无意义)
+- **别在 Code Mode 里直接 cat 整个 smaps** → 输出会撑爆工具缓冲(本次踩到,145KB 被截断),要先聚合再输出
