@@ -1,0 +1,53 @@
+{
+  "lastChecks": {
+    "email": null,
+    "calendar": null,
+    "weather": null,
+    "nightlyOrchestrator": 1762818000,
+    "nightlyMain": 1761320400
+  },
+  "nightlyMain": {
+    "run": "2026-10-25-03:00-Main-NightOps",
+    "completedAt": "2026-10-25T03:30:00+08:00",
+    "status": "✅ 完成",
+    "subAgents": {
+      "orchestrator": "✅ 2026-10-25 02:40 Tomorrow_Action_Plan.md + 梦境产物",
+      "scout": "🟡 最新为 10-24 05:45 报告，今日无新场（周日）",
+      "coder": "✅ 2026-10-25 02:20 review + 5/5 产物，M365 0 P0",
+      "life": "🟡 最新为 10-24 05:06 报告（B站 13 天复盘）",
+      "finance": "🔴 停摆 (last 04-07)",
+      "health": "🔴 未激活 (memory 空)",
+      "work": "🔴 停摆 (last W43)"
+    },
+    "escaltion_review": "13 项汇总：7 项放行 / 6 项发回用户（凭证、额度、拍板类）",
+    "syschecks": {
+      "backup": "✅ openclaw-20261025-0300.tgz",
+      "hourly_heartbeat": "✅ 连续至 Sun 03:00:01",
+      "connectivity": "✅ feishu/baidu/google 正常，B站 api 10-24 10:36 瞬时失败、11:10 恢复",
+      "feishu_outbound": "✅ 直连 200，通道健康",
+      "agent_exec_probe": "✅ Coder 探活回复正常",
+      "watchdog": "🟡 双 WARN（RSS 7.36→7.6GB，~+300MB/h）",
+      "minimax_cooldown": "🟠 ~15h（预计 18:00 左右恢复）"
+    },
+    "open_decisions_for_ZP": [
+      "M365 push 凭证（U-1 / P0-2）",
+      "重启 Gateway 固化新 fallback 链并统一文档",
+      "BILIBILI_COOKIES / OPENROUTER_API_KEY 补 env",
+      "B站推送 SecretRef 授权",
+      "云端 fallback 恢复路径 (OpenRouter 充值 / SiliconFlow 换 key / NAS LiteLLM 修 DB)",
+      "Health/Finance agent 去留"
+    ],
+    "delivery_routes": {
+      "feishu": "✅ OK"
+    }
+  },
+  "external_network": "GitHub ✅, arXiv ✅ (退避), web_search ❌ 5天",
+  "version_drift": "binary=2026.10.5; npm_latest=2026.10.5; PATH node=v24.15.0; Gateway node=v26.10.0",
+  "next_window": {
+    "scout": "2026-10-20 21:30 CST",
+    "life": "2026-10-20 21:50 CST",
+    "coder": "2026-10-20 22:20 CST",
+    "orchestrator": "2026-10-20 23:00 CST",
+    "main_nightops": "2026-10-21 05:00 CST"
+  }
+}
