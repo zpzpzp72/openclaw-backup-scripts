@@ -45,3 +45,21 @@
 **结论**：第 1 条要成立,当前 CLI 跑的 node 必须**本身不在版本管理器路径下**。本轮先做 `~/.local/bin/node` → `/usr/local/lib/nodejs/...` 的归一(顺带消掉版本回退告警),**之后** upgrade 才安全。
 
 **通用规律**：任何「修了安装产物/配置」的场合,先确认「下一次自动重写这个产物的流程会写出同样的东西」,否则修复是脆弱的。
+
+## 2026-10-25 换 node 软链会顺带改掉 npm prefix
+
+**现象**：把 `~/.local/bin/node` 软链到 `/usr/local/lib/nodejs/node-v26.10.0/bin/node` 后,`npm config get prefix` 从 nvm 路径变成了 `/usr/local/lib/nodejs/node-v26.10.0`。
+
+**原因**：npm 的 prefix 默认由**当前 node 可执行文件所在目录**推导,不是由 npm 自身位置推导。所以 `node` 一换,`npm i -g` 的落点就换。
+
+**后果**：全局包会被装到新前缀,而 service 的 `ExecStart` 仍指向旧前缀 → 升级后跑的是旧代码,新旧两份并存,极易误判「升级没生效」。
+
+**修法**:`~/.npmrc` 写 `prefix=<原全局包所在前缀>`,把「用哪个 node」和「往哪装全局包」解耦。
+
+**检查清单(换 node 后必查)**:
+```
+node -v                     # 版本对不对
+npm config get prefix       # 变了没(最容易被忽略)
+npm root -g                 # 里面还有没有原来的全局包
+openclaw --version          # 工具本身还正常吗
+```
