@@ -34,3 +34,14 @@
 
 - DIRECTIVE.md / HEARTBEAT.md 里的 fallback 链描述可以是旧文案；**权威来源是 `openclaw models status` 实测输出 + 当前配置文件**，其次才是最近一次有据可查的裁决记录。
 - 收集子代理报告时，涉及链路/配置的描述必须实测核验，不能照抄子代理的转述。
+
+## 2026-10-25 「升级前先归一运行时」——否则 update 会把修复打回原形
+
+**现象**：修复了 Gateway service unit 的 3 条 config issue(改 ExecStart 指向非版本管理器 node + 最小 PATH)。若此时直接 `openclaw update`,installer 重装 service 时会**按自己的规则重写 unit**,可能打回 nvm 路径 → 3 条 issue 复现。
+
+**源码依据**：`dist/runtime-paths-*.mjs` 的 `resolvePreferredNodePath()` 选 runtime 的优先级是
+1. 当前 execPath **且非版本管理器路径** → 2. 系统 node(且 supported) → 3. 当前 execPath(即使是版本管理器路径)
+
+**结论**：第 1 条要成立,当前 CLI 跑的 node 必须**本身不在版本管理器路径下**。本轮先做 `~/.local/bin/node` → `/usr/local/lib/nodejs/...` 的归一(顺带消掉版本回退告警),**之后** upgrade 才安全。
+
+**通用规律**：任何「修了安装产物/配置」的场合,先确认「下一次自动重写这个产物的流程会写出同样的东西」,否则修复是脆弱的。
