@@ -20,10 +20,13 @@ flock -n 200 || { echo "[$(date '+%Y-%m-%d %H:%M:%S')] 备份已在运行，退�
 BACKUP_DIR="/mnt/h/AI/openclaw.zone/WSL"
 SOURCE_DIR="$HOME/.openclaw"
 LOG_FILE="$HOME/.openclaw-backup.log"
+HEARTBEAT_FILE="$HOME/.openclaw-backup.heartbeat"   # ★ ERR-20260826-001: 独立心跳，供 Windows 侧健康检查读取
 RETAIN_DAYS=30   # ⭐ 保留天数，可以改为 14/30
+FORCE_TAR_HOURS=25   # ★ ERR-20260826-001: 超过 25 小时无备份强制心跳（即使源目录无变化）
 # 获取当前时间
 NOW=$(date "+%Y%m%d-%H%M")
 TIMESTAMP=$(date "+%Y-%m-%d %H:%M:%S")
+NOW_EPOCH=$(date +%s)
 
 # 查找最新备份文件
 LATEST_BACKUP=$(ls -t "$BACKUP_DIR"/openclaw-*.tgz 2>/dev/null | head -1)
@@ -46,8 +49,47 @@ else
     fi
 fi
 
+# ★ ERR-20260826-001: 强制 tar 兜底逻辑
+# 即使源目录无修改，如果距上次备份超过 FORCE_TAR_HOURS 小时，
+# 也强制跑一次 tar（保证 LATEST_BACKUP 时间戳被更新，外部健康检查能感知）
+if [ -z "$LATEST_BACKUP" ]; then
+    HOURS_SINCE_LAST=999
+else
+    LAST_BACKUP_EPOCH=$(stat -c %Y "$LATEST_BACKUP" 2>/dev/null || echo 0)
+    if [ "$LAST_BACKUP_EPOCH" -gt 0 ]; then
+        HOURS_SINCE_LAST=$(( (NOW_EPOCH - LAST_BACKUP_EPOCH) / 3600 ))
+    else
+        HOURS_SINCE_LAST=999
+    fi
+fi
+if [ "$NEED_BACKUP" = false ] && [ "$HOURS_SINCE_LAST" -ge "$FORCE_TAR_HOURS" ]; then
+    log "★ 强制 tar 触发: 距上次备份 ${HOURS_SINCE_LAST}h (>= ${FORCE_TAR_HOURS}h)，源目录无变化但仍执行"
+    NEED_BACKUP=true
+    FORCE_TAR_REASON="stale_${HOURS_SINCE_LAST}h"
+else
+    FORCE_TAR_REASON=""
+fi
+
 log() {
     echo "[$TIMESTAMP] $1" >> "$LOG_FILE"
+}
+
+# ★ ERR-20260826-001: 写心跳文件（cron 每次执行都更新）
+# Windows 侧独立健康检查（PowerShell + 任务计划程序）会读取此文件判断 WSL/cron 是否还活着
+write_heartbeat() {
+    local status="$1"   # ok | skipped | error
+    local detail="$2"
+    cat > "$HEARTBEAT_FILE" <<EOF
+last_run=$TIMESTAMP
+last_run_epoch=$NOW_EPOCH
+last_backup=$LATEST_BACKUP
+last_backup_epoch=$LAST_BACKUP_EPOCH
+hours_since_last_backup=$HOURS_SINCE_LAST
+need_backup=$NEED_BACKUP
+force_tar_reason=$FORCE_TAR_REASON
+status=$status
+detail=$detail
+EOF
 }
 
 # 邮件通知
@@ -144,6 +186,7 @@ restart_gateway() {
 ##############################################
 
 log "上次备份文件: $LATEST_BACKUP"
+write_heartbeat "starting" "开始本次备份流程"   # ★ ERR-20260826-001: 心跳最早记录点
 
 if [ "$NEED_BACKUP" = true ]; then
     log "开始备份，源目录自 $LAST_MOD_TIME 后有修改"
@@ -171,9 +214,29 @@ if [ "$NEED_BACKUP" = true ]; then
     # 执行备份
     log "执行 tar 备份..."
     ARCHIVE="$BACKUP_DIR/openclaw-$NOW.tgz"
-	log "tar -czf $ARCHIVE -C $HOME .openclaw 2>> $LOG_FILE"
-    tar -czf "$ARCHIVE" -C "$HOME" .openclaw 2>>"$LOG_FILE"
+	log "tar --exclude 热目录 -czf $ARCHIVE -C $HOME .openclaw 2>> $LOG_FILE"
+    # ★ 修复 (2026-07-13): 排除热目录避免 "file changed as we read it"
+    # - sessions: gateway 持续写入的对话历史
+    # - daily:     日报快照,可从 git 重生成
+    # - lancedb:   向量库重启自重建
+    # - node_modules / .git: 体积大且可重装
+    # ★ 修复 (2026-07-13): --warning=no-file-changed 让 tar 在文件变化时只警告不报错
+    # 排除的热目录本身已不会变化,但 .openclaw 根目录的 mtime 仍会变
+    # ★ 修复 (2026-07-13): 用 PIPESTATUS/直接捕获,避免 $? 被中间命令污染
+    set +e
+    tar --warning=no-file-changed \
+        --exclude='.openclaw/agents/main/sessions' \
+        --exclude='.openclaw/memory/daily' \
+        --exclude='.openclaw/memory/lancedb-pro' \
+        --exclude='.openclaw/memory/lancedb-pro/.memory-write.lock*' \
+        --exclude='.openclaw/plugins/*/node_modules' \
+        --exclude='.openclaw/plugins/*/.git' \
+        --exclude='.openclaw/agents/*/sessions' \
+        --exclude='.openclaw/memory-core' \
+        -czf "$ARCHIVE" -C "$HOME" .openclaw 2>>"$LOG_FILE"
     BACKUP_STATUS=$?
+    set -e
+    log "tar 退出码: $BACKUP_STATUS"
 
     if [ "$STOP_GATEWAY" = "1" ]; then
         if ! restart_gateway; then
@@ -190,27 +253,62 @@ if [ "$NEED_BACKUP" = true ]; then
         fi
     fi
 
-    if [ $BACKUP_STATUS -eq 0 ]; then
+    # tar 退出码: 0=成功, 1=部分文件有变化(热备份可接受), 2+=严重错误
+    if [ $BACKUP_STATUS -le 1 ]; then
         FILE_SIZE=$(du -h "$ARCHIVE" | cut -f1)
         log "备份成功: $ARCHIVE ($FILE_SIZE)"
-
-        send_mail "OpenClaw 备份完成 - $NOW" \
-                  "源目录自 $LAST_MOD_TIME后有修改，备份成功：
-
-文件: $ARCHIVE
-大小: $FILE_SIZE
-时间: $TIMESTAMP"
-        log "备份完成邮件已发送"
+        # ★ 修复 (2026-10-27): 心跳 last_backup 滞后一档 —— LATEST_BACKUP 是备份前解析的旧值
+        LATEST_BACKUP="$ARCHIVE"
+        LAST_BACKUP_EPOCH=$(stat -c %Y "$ARCHIVE" 2>/dev/null || echo 0)
+        HOURS_SINCE_LAST=0
+        write_heartbeat "ok" "备份成功: $ARCHIVE ($FILE_SIZE)"   # ★ ERR-20260826-001
 
         ############ 清理旧备份（新增）############
+        # ★ 修复 (2026-10-27): 移到邮件之前 —— 邮件失败曾中断整个脚本(set -e),
+        #   导致旧备份自 2026-07-31 起再未清理,堆积 40 份、NAS 98%
         cleanup_old
+
+        # ★ 修复 (2026-10-27): 邮件失败不得中断脚本(set -e),否则清理与最终心跳都不执行
+        send_mail "OpenClaw 备份完成 - $NOW" \
+                  "源目录自 $LAST_MOD_TIME后有修改，备份成功：\n\n文件: $ARCHIVE\n大小: $FILE_SIZE\n时间: $TIMESTAMP" \
+                  || log "⚠️ 备份完成邮件发送失败(已忽略,不影响清理与心跳)"
+        log "备份完成邮件已发送"
 
     else
         log "备份失败"
+        write_heartbeat "error" "tar 退出码: $BACKUP_STATUS"   # ★ ERR-20260826-001
         send_mail "OpenClaw 备份失败 - $NOW" "tar 出错，请检查日志：$LOG_FILE"
     fi
 
 else
     log "无需备份，源目录自 $LAST_MOD_TIME 后无修改"
+    write_heartbeat "skipped" "源目录无修改，跳过备份"   # ★ ERR-20260826-001: 即使跳过也写心跳，证明 cron 还活着
     # 不发送通知
+fi
+
+# 推送状态到飞书 (best-effort，不影响备份流程)
+# 脚本：~/.openclaw/workspace/cron-scripts/send-backup-log-feishu.py
+#       从 ~/.openclaw-backup.log 读今日记录，自动构造摘要推送
+unset HTTP_PROXY HTTPS_PROXY http_proxy https_proxy NO_PROXY 2>/dev/null
+if [ -f "$HOME/.openclaw/workspace/cron-scripts/send-backup-log-feishu.py" ]; then
+    python3 "$HOME/.openclaw/workspace/cron-scripts/send-backup-log-feishu.py" >> "$LOG_FILE" 2>&1 || \
+        log "⚠️ 飞书推送失败 (备份本身已成功/正常)"
+fi
+
+# ★ A1 fix (2026-10-19): emit heartbeat status to stdout so cron's >> backup-cron.log captures it.
+# Before this, the cron-redirected file stayed empty because the script wrote only
+# to LOG_FILE / HEARTBEAT_FILE internally, never to stdout — NightOps/Scout's
+# "X days silent" check on backup-cron.log then read stale content and produced
+# false P0 ("backup failing 9 nights") even when .tgz files were being produced daily.
+# Fix: read the structured heartbeat (which is the source of truth) and echo one
+# status line so the cron's >> /home/zhiping/.openclaw/logs/backup-cron.log 2>&1
+# actually gets fresh content every night.
+if [ -f "$HEARTBEAT_FILE" ]; then
+    HB_STATUS=$(grep -oP '^status=\K\S+' "$HEARTBEAT_FILE" 2>/dev/null | head -1)
+    HB_LAST=$(grep -oP '^last_run=\K\S+' "$HEARTBEAT_FILE" 2>/dev/null | head -1)
+    HB_BACKUP=$(grep -oP '^last_backup=\K\S+' "$HEARTBEAT_FILE" 2>/dev/null | head -1)
+    HB_EPOCH=$(grep -oP '^last_run_epoch=\K\S+' "$HEARTBEAT_FILE" 2>/dev/null | head -1)
+    echo "[$TIMESTAMP] backup status=$HB_STATUS last_run=$HB_LAST last_backup=$HB_BACKUP last_run_epoch=$HB_EPOCH"
+else
+    echo "[$TIMESTAMP] backup status=unknown heartbeat_file_missing=$HEARTBEAT_FILE"
 fi
