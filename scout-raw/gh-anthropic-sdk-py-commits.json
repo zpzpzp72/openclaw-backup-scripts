@@ -1,0 +1,827 @@
+[
+  {
+    "sha": "bcd55fe1d3f0f1240765f8cef04295b67337f55a",
+    "node_id": "C_kwDOIy2NGNoAKGJjZDU1ZmUxZDNmMGYxMjQwNzY1ZjhjZWYwNDI5NWI2NzMzN2Y1NWE",
+    "commit": {
+      "author": {
+        "name": "anthropic-sdks-writer[bot]",
+        "email": "305999303+anthropic-sdks-writer[bot]@users.noreply.github.com",
+        "date": "2026-10-15T19:43:35Z"
+      },
+      "committer": {
+        "name": "anthropic-sdks-writer[bot]",
+        "email": "305999303+anthropic-sdks-writer[bot]@users.noreply.github.com",
+        "date": "2026-10-15T19:43:35Z"
+      },
+      "message": "release: 1.15.0",
+      "tree": {
+        "sha": "cd32f71f12f39599c2892f36c22947058c777151",
+        "url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/git/trees/cd32f71f12f39599c2892f36c22947058c777151"
+      },
+      "url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/git/commits/bcd55fe1d3f0f1240765f8cef04295b67337f55a",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/commits/bcd55fe1d3f0f1240765f8cef04295b67337f55a",
+    "html_url": "https://github.com/anthropics/anthropic-sdk-python/commit/bcd55fe1d3f0f1240765f8cef04295b67337f55a",
+    "comments_url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/commits/bcd55fe1d3f0f1240765f8cef04295b67337f55a/comments",
+    "author": {
+      "login": "anthropic-sdks-writer[bot]",
+      "id": 305999303,
+      "node_id": "BOT_kgDOEj0txw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/76263028?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D",
+      "html_url": "https://github.com/apps/anthropic-sdks-writer",
+      "followers_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/followers",
+      "following_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/following{/other_user}",
+      "gists_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/subscriptions",
+      "organizations_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/orgs",
+      "repos_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/repos",
+      "events_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/received_events",
+      "type": "Bot",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "anthropic-sdks-writer[bot]",
+      "id": 305999303,
+      "node_id": "BOT_kgDOEj0txw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/76263028?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D",
+      "html_url": "https://github.com/apps/anthropic-sdks-writer",
+      "followers_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/followers",
+      "following_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/following{/other_user}",
+      "gists_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/subscriptions",
+      "organizations_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/orgs",
+      "repos_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/repos",
+      "events_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/received_events",
+      "type": "Bot",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "69743442287cc974aa9ff94d982f2c313f88edd2",
+        "url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/commits/69743442287cc974aa9ff94d982f2c313f88edd2",
+        "html_url": "https://github.com/anthropics/anthropic-sdk-python/commit/69743442287cc974aa9ff94d982f2c313f88edd2"
+      }
+    ]
+  },
+  {
+    "sha": "69743442287cc974aa9ff94d982f2c313f88edd2",
+    "node_id": "C_kwDOIy2NGNoAKDY5NzQzNDQyMjg3Y2M5NzRhYTlmZjk0ZDk4MmYyYzMxM2Y4OGVkZDI",
+    "commit": {
+      "author": {
+        "name": "sophie-ant",
+        "email": "sdownward@anthropic.com",
+        "date": "2026-10-15T19:36:20Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2026-10-15T19:36:20Z"
+      },
+      "message": "Merge pull request #1021 from anthropics/synced/published\n\nrelease: 1.15.0",
+      "tree": {
+        "sha": "5c6789c6193d6adf6a215bb48e06fb3058dd6cbb",
+        "url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/git/trees/5c6789c6193d6adf6a215bb48e06fb3058dd6cbb"
+      },
+      "url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/git/commits/69743442287cc974aa9ff94d982f2c313f88edd2",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJq0Ss0CRC1aQ7uu5UhlAAAVOcQAEzNtcVvePpoIgkttBDBrNtz\nn3XAaSsnQqG0e+xcbDOpJnuhoddnA/n5bWRm5Xf8m1B2ecXw1jvMHyE/QWSRYkUj\nvNXeVUqipn99GnWfLCnZ/1V00MrjQZWZzcJNXM0r0oxbomGljWngXrMnkfKbKzVV\n/MVtTiEFYZxB6/6XomaHMRyFD3nW6vjHEQdkGwEAg/TaRZ+3FALbRplv8yIOwVsL\nGwJwHitS/JTlr9e5fDCaNwqB5fYhdF1A+gdXIZ503QAHMDuCDqLjYP+XY9sT/nUC\nlNyeoBw0xvrIFQijD6GAnUVHFWoPfN1tMlsqRdvHBsbQ5CpexodWTRTzlUyQUTEY\nJMI3vd5YQ+AnlGdg0Fxenohmk9RJHCLvGcFzWF46gwGbYco8TWQDqHZJvaFSh0Tc\npMfn18QfdUx+Jq28XM9LP7Dh+ly90qPN+SnsIgfNSG2ceBdFxbzUuW2CEmI84Cvz\nNFXQnr7Oix+lBXqRbxb8MBjda4r8mNqgCgc09lIk6NFhg9QiopR8EcGqxe+Y3FFi\nKYzLtBqXRXHCl8ost0uV8DD+ISXKBk2BGKS9I3FVpbeZZuiG32+a8U8ovgD3e5s0\ncJ01t2DCnHaWlSXoT1nJmcsEk7xjF4lS1hD8MfVBgMIHAggfN3FcJnyWrYP0kLVW\nP5h6/h6yt2IaXUqx10Wj\n=tkAj\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 5c6789c6193d6adf6a215bb48e06fb3058dd6cbb\nparent 2a53eaa6966b04560b6a72c28d3ace4389a9ac58\nparent 80404f64daa02dac4f75bf658c490dcae86f3910\nauthor sophie-ant <sdownward@anthropic.com> 1792092980 -0400\ncommitter GitHub <noreply@github.com> 1792092980 -0400\n\nMerge pull request #1021 from anthropics/synced/published\n\nrelease: 1.15.0",
+        "verified_at": "2026-10-15T19:45:00Z"
+      }
+    },
+    "url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/commits/69743442287cc974aa9ff94d982f2c313f88edd2",
+    "html_url": "https://github.com/anthropics/anthropic-sdk-python/commit/69743442287cc974aa9ff94d982f2c313f88edd2",
+    "comments_url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/commits/69743442287cc974aa9ff94d982f2c313f88edd2/comments",
+    "author": {
+      "login": "sophie-ant",
+      "id": 294643146,
+      "node_id": "U_kgDOEY_lyg",
+      "avatar_url": "https://avatars.githubusercontent.com/u/294643146?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/sophie-ant",
+      "html_url": "https://github.com/sophie-ant",
+      "followers_url": "https://api.github.com/users/sophie-ant/followers",
+      "following_url": "https://api.github.com/users/sophie-ant/following{/other_user}",
+      "gists_url": "https://api.github.com/users/sophie-ant/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/sophie-ant/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/sophie-ant/subscriptions",
+      "organizations_url": "https://api.github.com/users/sophie-ant/orgs",
+      "repos_url": "https://api.github.com/users/sophie-ant/repos",
+      "events_url": "https://api.github.com/users/sophie-ant/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/sophie-ant/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "2a53eaa6966b04560b6a72c28d3ace4389a9ac58",
+        "url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/commits/2a53eaa6966b04560b6a72c28d3ace4389a9ac58",
+        "html_url": "https://github.com/anthropics/anthropic-sdk-python/commit/2a53eaa6966b04560b6a72c28d3ace4389a9ac58"
+      },
+      {
+        "sha": "80404f64daa02dac4f75bf658c490dcae86f3910",
+        "url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/commits/80404f64daa02dac4f75bf658c490dcae86f3910",
+        "html_url": "https://github.com/anthropics/anthropic-sdk-python/commit/80404f64daa02dac4f75bf658c490dcae86f3910"
+      }
+    ]
+  },
+  {
+    "sha": "80404f64daa02dac4f75bf658c490dcae86f3910",
+    "node_id": "C_kwDOIy2NGNoAKDgwNDA0ZjY0ZGFhMDJkYWM0Zjc1YmY2NThjNDkwZGNhZTg2ZjM5MTA",
+    "commit": {
+      "author": {
+        "name": "anthropic-sdks-writer[bot]",
+        "email": "305999303+anthropic-sdks-writer[bot]@users.noreply.github.com",
+        "date": "2026-10-15T18:58:59Z"
+      },
+      "committer": {
+        "name": "anthropic-sdks-writer[bot]",
+        "email": "305999303+anthropic-sdks-writer[bot]@users.noreply.github.com",
+        "date": "2026-10-15T18:58:59Z"
+      },
+      "message": "chore(tests): cover OpenTelemetry options and method default timeouts\n\nStainless-Generated-From: b5cabb3967c44adf32fd8692f30e109792e92c2c",
+      "tree": {
+        "sha": "5c6789c6193d6adf6a215bb48e06fb3058dd6cbb",
+        "url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/git/trees/5c6789c6193d6adf6a215bb48e06fb3058dd6cbb"
+      },
+      "url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/git/commits/80404f64daa02dac4f75bf658c490dcae86f3910",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/commits/80404f64daa02dac4f75bf658c490dcae86f3910",
+    "html_url": "https://github.com/anthropics/anthropic-sdk-python/commit/80404f64daa02dac4f75bf658c490dcae86f3910",
+    "comments_url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/commits/80404f64daa02dac4f75bf658c490dcae86f3910/comments",
+    "author": {
+      "login": "anthropic-sdks-writer[bot]",
+      "id": 305999303,
+      "node_id": "BOT_kgDOEj0txw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/76263028?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D",
+      "html_url": "https://github.com/apps/anthropic-sdks-writer",
+      "followers_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/followers",
+      "following_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/following{/other_user}",
+      "gists_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/subscriptions",
+      "organizations_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/orgs",
+      "repos_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/repos",
+      "events_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/received_events",
+      "type": "Bot",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "anthropic-sdks-writer[bot]",
+      "id": 305999303,
+      "node_id": "BOT_kgDOEj0txw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/76263028?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D",
+      "html_url": "https://github.com/apps/anthropic-sdks-writer",
+      "followers_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/followers",
+      "following_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/following{/other_user}",
+      "gists_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/subscriptions",
+      "organizations_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/orgs",
+      "repos_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/repos",
+      "events_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/received_events",
+      "type": "Bot",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "ef9133691b1eb0c0dc82c91398300e1a7b602674",
+        "url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/commits/ef9133691b1eb0c0dc82c91398300e1a7b602674",
+        "html_url": "https://github.com/anthropics/anthropic-sdk-python/commit/ef9133691b1eb0c0dc82c91398300e1a7b602674"
+      }
+    ]
+  },
+  {
+    "sha": "ef9133691b1eb0c0dc82c91398300e1a7b602674",
+    "node_id": "C_kwDOIy2NGNoAKGVmOTEzMzY5MWIxZWIwYzBkYzgyYzkxMzk4MzAwZTFhN2I2MDI2NzQ",
+    "commit": {
+      "author": {
+        "name": "claude[bot]",
+        "email": "209825114+claude[bot]@users.noreply.github.com",
+        "date": "2026-10-15T18:45:15Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2026-10-15T18:45:15Z"
+      },
+      "message": "feat(helpers): retry a rate-limited fast fallback at standard speed (#1024)\n\nCo-authored-by: Claude <noreply@anthropic.com>",
+      "tree": {
+        "sha": "c51659ccda6099f5e9e82be1cb6309830b13d317",
+        "url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/git/trees/c51659ccda6099f5e9e82be1cb6309830b13d317"
+      },
+      "url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/git/commits/ef9133691b1eb0c0dc82c91398300e1a7b602674",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJq0R87CRC1aQ7uu5UhlAAAlIIQAHTs3Qs8NlT5mpHE9TuH0WOQ\nXU3kp57z7EXb63/T1nRgwFGdnzetvLOmaV9A1UM6F4yVlZK7XPnhdPzKSycAJmCr\n8AU1xFXA9Lh6JTGvjkxW/7SXqyZtNA/givp+ytRwN6XCh6G8FpDAF88q7ORvDXIn\nW9qjBh9b/MB5xg3nbphXs3cfOfBFTUxhY7MCb17NYimh5eJ0WF98KilEtmHsj8V1\npPAXTqVT+42I6PWLT8o9F1df9GqXc/FSHLXpwwaw87bKmloPOVedE3WPO9oeKaRB\nMJPLL4SWMD4jFPWe+wPbgPnDAXBMvGkheqQ1vdmUri4+i+jkjbUZkk/TWcvXQ2uX\nLmxLjqtz5Q46s2pG6/NFTcDUNZXEZgQrnEc7sMW2Wrd7rUoUYiATcWOFX/rQMpFi\nzCfF/F9MSXL+MgHsBR7GjuSxWTCCsy48a0B1hSxn/JR/jLYpan/jE8u5fViK50Dz\n83JMGKlREKYo780EuRyJvzUD6Ee6/AwpxKWox4hUuKQovF7nqYrnrcTsrBvzx9NQ\nQ+plNdO/fwA/kSqFbTeq1+JXEk/2bAJ/Y03/aFqYzngXEHXxx4+bYGtY6zlkCuAF\nFjDDwDaqv9imQlSqZWxU3TPklWF1UQLtlMJRE7khw3PySl7GNeYt2clMvR/diY2Y\nu15RH+fLCqeKXurKzGQ+\n=MLiW\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree c51659ccda6099f5e9e82be1cb6309830b13d317\nparent 9ace6c5c771031812b91b4f2e539aa1e72448769\nauthor claude[bot] <209825114+claude[bot]@users.noreply.github.com> 1792089915 -0400\ncommitter GitHub <noreply@github.com> 1792089915 -0400\n\nfeat(helpers): retry a rate-limited fast fallback at standard speed (#1024)\n\nCo-authored-by: Claude <noreply@anthropic.com>",
+        "verified_at": "2026-10-15T19:45:00Z"
+      }
+    },
+    "url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/commits/ef9133691b1eb0c0dc82c91398300e1a7b602674",
+    "html_url": "https://github.com/anthropics/anthropic-sdk-python/commit/ef9133691b1eb0c0dc82c91398300e1a7b602674",
+    "comments_url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/commits/ef9133691b1eb0c0dc82c91398300e1a7b602674/comments",
+    "author": {
+      "login": "claude[bot]",
+      "id": 209825114,
+      "node_id": "BOT_kgDODIGtWg",
+      "avatar_url": "https://avatars.githubusercontent.com/in/1236702?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/claude%5Bbot%5D",
+      "html_url": "https://github.com/apps/claude",
+      "followers_url": "https://api.github.com/users/claude%5Bbot%5D/followers",
+      "following_url": "https://api.github.com/users/claude%5Bbot%5D/following{/other_user}",
+      "gists_url": "https://api.github.com/users/claude%5Bbot%5D/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/claude%5Bbot%5D/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/claude%5Bbot%5D/subscriptions",
+      "organizations_url": "https://api.github.com/users/claude%5Bbot%5D/orgs",
+      "repos_url": "https://api.github.com/users/claude%5Bbot%5D/repos",
+      "events_url": "https://api.github.com/users/claude%5Bbot%5D/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/claude%5Bbot%5D/received_events",
+      "type": "Bot",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "9ace6c5c771031812b91b4f2e539aa1e72448769",
+        "url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/commits/9ace6c5c771031812b91b4f2e539aa1e72448769",
+        "html_url": "https://github.com/anthropics/anthropic-sdk-python/commit/9ace6c5c771031812b91b4f2e539aa1e72448769"
+      }
+    ]
+  },
+  {
+    "sha": "9ace6c5c771031812b91b4f2e539aa1e72448769",
+    "node_id": "C_kwDOIy2NGNoAKDlhY2U2YzVjNzcxMDMxODEyYjkxYjRmMmU1MzlhYTFlNzI0NDg3Njk",
+    "commit": {
+      "author": {
+        "name": "anthropic-sdks-writer[bot]",
+        "email": "305999303+anthropic-sdks-writer[bot]@users.noreply.github.com",
+        "date": "2026-10-15T16:11:14Z"
+      },
+      "committer": {
+        "name": "anthropic-sdks-writer[bot]",
+        "email": "305999303+anthropic-sdks-writer[bot]@users.noreply.github.com",
+        "date": "2026-10-15T16:11:14Z"
+      },
+      "message": "feat(api): add between_tools to thinking types in model capabilities\n\nStainless-Generated-From: 8b3db9cd1bba9a34d6ef551bd25bb476db0155e6",
+      "tree": {
+        "sha": "699d0b0917d55f4ca7ef31c5c2bca4a29c8c35e0",
+        "url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/git/trees/699d0b0917d55f4ca7ef31c5c2bca4a29c8c35e0"
+      },
+      "url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/git/commits/9ace6c5c771031812b91b4f2e539aa1e72448769",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/commits/9ace6c5c771031812b91b4f2e539aa1e72448769",
+    "html_url": "https://github.com/anthropics/anthropic-sdk-python/commit/9ace6c5c771031812b91b4f2e539aa1e72448769",
+    "comments_url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/commits/9ace6c5c771031812b91b4f2e539aa1e72448769/comments",
+    "author": {
+      "login": "anthropic-sdks-writer[bot]",
+      "id": 305999303,
+      "node_id": "BOT_kgDOEj0txw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/76263028?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D",
+      "html_url": "https://github.com/apps/anthropic-sdks-writer",
+      "followers_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/followers",
+      "following_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/following{/other_user}",
+      "gists_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/subscriptions",
+      "organizations_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/orgs",
+      "repos_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/repos",
+      "events_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/received_events",
+      "type": "Bot",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "anthropic-sdks-writer[bot]",
+      "id": 305999303,
+      "node_id": "BOT_kgDOEj0txw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/76263028?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D",
+      "html_url": "https://github.com/apps/anthropic-sdks-writer",
+      "followers_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/followers",
+      "following_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/following{/other_user}",
+      "gists_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/subscriptions",
+      "organizations_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/orgs",
+      "repos_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/repos",
+      "events_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/received_events",
+      "type": "Bot",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "d44d21886402b894a3698defeaa89ea1455a845d",
+        "url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/commits/d44d21886402b894a3698defeaa89ea1455a845d",
+        "html_url": "https://github.com/anthropics/anthropic-sdk-python/commit/d44d21886402b894a3698defeaa89ea1455a845d"
+      }
+    ]
+  },
+  {
+    "sha": "d44d21886402b894a3698defeaa89ea1455a845d",
+    "node_id": "C_kwDOIy2NGNoAKGQ0NGQyMTg4NjQwMmI4OTRhMzY5OGRlZmVhYTg5ZWExNDU1YTg0NWQ",
+    "commit": {
+      "author": {
+        "name": "anthropic-sdks-writer[bot]",
+        "email": "305999303+anthropic-sdks-writer[bot]@users.noreply.github.com",
+        "date": "2026-10-15T15:43:57Z"
+      },
+      "committer": {
+        "name": "anthropic-sdks-writer[bot]",
+        "email": "305999303+anthropic-sdks-writer[bot]@users.noreply.github.com",
+        "date": "2026-10-15T15:43:57Z"
+      },
+      "message": "chore(docs): describe headers on Managed Agents and telemetry endpoints\n\nStainless-Generated-From: 980f68830b85ac621dab840bcb57eab64deba8fb",
+      "tree": {
+        "sha": "ec7a15d6940e60096ac98164d5ddbbbc0670dbbc",
+        "url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/git/trees/ec7a15d6940e60096ac98164d5ddbbbc0670dbbc"
+      },
+      "url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/git/commits/d44d21886402b894a3698defeaa89ea1455a845d",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/commits/d44d21886402b894a3698defeaa89ea1455a845d",
+    "html_url": "https://github.com/anthropics/anthropic-sdk-python/commit/d44d21886402b894a3698defeaa89ea1455a845d",
+    "comments_url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/commits/d44d21886402b894a3698defeaa89ea1455a845d/comments",
+    "author": {
+      "login": "anthropic-sdks-writer[bot]",
+      "id": 305999303,
+      "node_id": "BOT_kgDOEj0txw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/76263028?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D",
+      "html_url": "https://github.com/apps/anthropic-sdks-writer",
+      "followers_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/followers",
+      "following_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/following{/other_user}",
+      "gists_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/subscriptions",
+      "organizations_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/orgs",
+      "repos_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/repos",
+      "events_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/received_events",
+      "type": "Bot",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "anthropic-sdks-writer[bot]",
+      "id": 305999303,
+      "node_id": "BOT_kgDOEj0txw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/76263028?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D",
+      "html_url": "https://github.com/apps/anthropic-sdks-writer",
+      "followers_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/followers",
+      "following_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/following{/other_user}",
+      "gists_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/subscriptions",
+      "organizations_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/orgs",
+      "repos_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/repos",
+      "events_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/received_events",
+      "type": "Bot",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "ef59b87af236955e0dc47e0a95eb74b092944089",
+        "url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/commits/ef59b87af236955e0dc47e0a95eb74b092944089",
+        "html_url": "https://github.com/anthropics/anthropic-sdk-python/commit/ef59b87af236955e0dc47e0a95eb74b092944089"
+      }
+    ]
+  },
+  {
+    "sha": "ef59b87af236955e0dc47e0a95eb74b092944089",
+    "node_id": "C_kwDOIy2NGNoAKGVmNTliODdhZjIzNjk1NWUwZGM0N2UwYTk1ZWI3NGIwOTI5NDQwODk",
+    "commit": {
+      "author": {
+        "name": "anthropic-sdks-writer[bot]",
+        "email": "305999303+anthropic-sdks-writer[bot]@users.noreply.github.com",
+        "date": "2026-10-15T15:25:27Z"
+      },
+      "committer": {
+        "name": "anthropic-sdks-writer[bot]",
+        "email": "305999303+anthropic-sdks-writer[bot]@users.noreply.github.com",
+        "date": "2026-10-15T15:25:27Z"
+      },
+      "message": "docs(api): note that some models need a beta header to use speed\n\nStainless-Generated-From: 4475ee3b29a7b9efc1c3a22d3753e168f61c7301",
+      "tree": {
+        "sha": "8b76e114aab2ba2a7aa321d629101a69963301af",
+        "url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/git/trees/8b76e114aab2ba2a7aa321d629101a69963301af"
+      },
+      "url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/git/commits/ef59b87af236955e0dc47e0a95eb74b092944089",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/commits/ef59b87af236955e0dc47e0a95eb74b092944089",
+    "html_url": "https://github.com/anthropics/anthropic-sdk-python/commit/ef59b87af236955e0dc47e0a95eb74b092944089",
+    "comments_url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/commits/ef59b87af236955e0dc47e0a95eb74b092944089/comments",
+    "author": {
+      "login": "anthropic-sdks-writer[bot]",
+      "id": 305999303,
+      "node_id": "BOT_kgDOEj0txw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/76263028?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D",
+      "html_url": "https://github.com/apps/anthropic-sdks-writer",
+      "followers_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/followers",
+      "following_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/following{/other_user}",
+      "gists_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/subscriptions",
+      "organizations_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/orgs",
+      "repos_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/repos",
+      "events_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/received_events",
+      "type": "Bot",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "anthropic-sdks-writer[bot]",
+      "id": 305999303,
+      "node_id": "BOT_kgDOEj0txw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/76263028?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D",
+      "html_url": "https://github.com/apps/anthropic-sdks-writer",
+      "followers_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/followers",
+      "following_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/following{/other_user}",
+      "gists_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/subscriptions",
+      "organizations_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/orgs",
+      "repos_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/repos",
+      "events_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/received_events",
+      "type": "Bot",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "c10fe778731adce8f584ef888b4bba3a04913d62",
+        "url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/commits/c10fe778731adce8f584ef888b4bba3a04913d62",
+        "html_url": "https://github.com/anthropics/anthropic-sdk-python/commit/c10fe778731adce8f584ef888b4bba3a04913d62"
+      }
+    ]
+  },
+  {
+    "sha": "c10fe778731adce8f584ef888b4bba3a04913d62",
+    "node_id": "C_kwDOIy2NGNoAKGMxMGZlNzc4NzMxYWRjZThmNTg0ZWY4ODhiNGJiYTNhMDQ5MTNkNjI",
+    "commit": {
+      "author": {
+        "name": "claude[bot]",
+        "email": "209825114+claude[bot]@users.noreply.github.com",
+        "date": "2026-10-15T09:42:23Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2026-10-15T09:42:23Z"
+      },
+      "message": "docs(changelog): shorten the OpenTelemetry tracing note (#1023)\n\nCo-Authored-By: Claude Code <noreply@anthropic.com>",
+      "tree": {
+        "sha": "0d1a8dd687d3fe4344bdd4c3fa0e365fc26205c3",
+        "url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/git/trees/0d1a8dd687d3fe4344bdd4c3fa0e365fc26205c3"
+      },
+      "url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/git/commits/c10fe778731adce8f584ef888b4bba3a04913d62",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJq0J//CRC1aQ7uu5UhlAAAj10QAGBCJ76DDBlG40C0UkJ2JcoZ\nbNKHHr6jQClflzwnh2p6FKXqnKOD0WW+YmdqBop6wZMYr5leH5Mb+y8XCKZtTFU6\nriV9xEEvSIhflL+c2pJBYcneC3UT3iTMxdojcstwa9lX2yz/G2QN6LRBltfDY/rX\ncwf+myKJe8LUS5Q8X8UPAMd8m/6L5aXSHa6+zsf603yf1EE0bvaJWjKF2534akh5\nr/NMmsNwi0fSdmLojC6nAf9UQ5FW5Pdsw/hg51hmgDkxRt1CCc2g95x1CSu4zbyg\nxBdWQmXS7t2v0XxCGyZum/UpTkATQBVpMhdv663MI4CQXlAcLzhqMyVmRSl1IyXn\nuy19X0Hbe0ZnTSFuhSKcKPhTqAnV3cqfOhI2NGbqwzN1i3GlHsAMh4/xwQHPTB2M\nQjpWMTtvFBJSl/UzlxYCx1+NS3ZURNLJyPcq+GlTKHzK+emu7ZuCOaKvw8Flg7F8\nJjEWafE8Z1unLuYgbeHpVSMVigPmB04/e8efrG1hg4fGEK/D3pC/ReayTq0h1a/A\no2ebq3zgkihBlgLwGRjiFxvcfwY1uBM4qOzchR15c3n9zLkTMtHb2ewOECDBZF0K\nahKwwyIl+JEaoP353cRZHQ1KiqY0+9gnlU/lNb6Y4QLFNS8hi8o1ngiyuNsH+kcu\nv4WlZGo+pIq1Y3BoLtUX\n=UzID\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 0d1a8dd687d3fe4344bdd4c3fa0e365fc26205c3\nparent 5b187415d6426bae8a76a76e46934418d85e3e71\nauthor claude[bot] <209825114+claude[bot]@users.noreply.github.com> 1792057343 +0000\ncommitter GitHub <noreply@github.com> 1792057343 +0000\n\ndocs(changelog): shorten the OpenTelemetry tracing note (#1023)\n\nCo-Authored-By: Claude Code <noreply@anthropic.com>",
+        "verified_at": "2026-10-15T19:45:00Z"
+      }
+    },
+    "url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/commits/c10fe778731adce8f584ef888b4bba3a04913d62",
+    "html_url": "https://github.com/anthropics/anthropic-sdk-python/commit/c10fe778731adce8f584ef888b4bba3a04913d62",
+    "comments_url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/commits/c10fe778731adce8f584ef888b4bba3a04913d62/comments",
+    "author": {
+      "login": "claude[bot]",
+      "id": 209825114,
+      "node_id": "BOT_kgDODIGtWg",
+      "avatar_url": "https://avatars.githubusercontent.com/in/1236702?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/claude%5Bbot%5D",
+      "html_url": "https://github.com/apps/claude",
+      "followers_url": "https://api.github.com/users/claude%5Bbot%5D/followers",
+      "following_url": "https://api.github.com/users/claude%5Bbot%5D/following{/other_user}",
+      "gists_url": "https://api.github.com/users/claude%5Bbot%5D/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/claude%5Bbot%5D/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/claude%5Bbot%5D/subscriptions",
+      "organizations_url": "https://api.github.com/users/claude%5Bbot%5D/orgs",
+      "repos_url": "https://api.github.com/users/claude%5Bbot%5D/repos",
+      "events_url": "https://api.github.com/users/claude%5Bbot%5D/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/claude%5Bbot%5D/received_events",
+      "type": "Bot",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "5b187415d6426bae8a76a76e46934418d85e3e71",
+        "url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/commits/5b187415d6426bae8a76a76e46934418d85e3e71",
+        "html_url": "https://github.com/anthropics/anthropic-sdk-python/commit/5b187415d6426bae8a76a76e46934418d85e3e71"
+      }
+    ]
+  },
+  {
+    "sha": "5b187415d6426bae8a76a76e46934418d85e3e71",
+    "node_id": "C_kwDOIy2NGNoAKDViMTg3NDE1ZDY0MjZiYWU4YTc2YTc2ZTQ2OTM0NDE4ZDg1ZTNlNzE",
+    "commit": {
+      "author": {
+        "name": "anthropic-sdks-writer[bot]",
+        "email": "305999303+anthropic-sdks-writer[bot]@users.noreply.github.com",
+        "date": "2026-10-15T00:28:42Z"
+      },
+      "committer": {
+        "name": "anthropic-sdks-writer[bot]",
+        "email": "305999303+anthropic-sdks-writer[bot]@users.noreply.github.com",
+        "date": "2026-10-15T00:28:42Z"
+      },
+      "message": "chore(internal): simplify the script that formats code blocks in docs\n\nStainless-Generated-From: 3f407cf9e183ffc3d587acca45ad8179343ff3bd",
+      "tree": {
+        "sha": "808a2aef59aeaf56a6267eff5eca99ab701d1bb3",
+        "url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/git/trees/808a2aef59aeaf56a6267eff5eca99ab701d1bb3"
+      },
+      "url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/git/commits/5b187415d6426bae8a76a76e46934418d85e3e71",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/commits/5b187415d6426bae8a76a76e46934418d85e3e71",
+    "html_url": "https://github.com/anthropics/anthropic-sdk-python/commit/5b187415d6426bae8a76a76e46934418d85e3e71",
+    "comments_url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/commits/5b187415d6426bae8a76a76e46934418d85e3e71/comments",
+    "author": {
+      "login": "anthropic-sdks-writer[bot]",
+      "id": 305999303,
+      "node_id": "BOT_kgDOEj0txw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/76263028?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D",
+      "html_url": "https://github.com/apps/anthropic-sdks-writer",
+      "followers_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/followers",
+      "following_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/following{/other_user}",
+      "gists_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/subscriptions",
+      "organizations_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/orgs",
+      "repos_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/repos",
+      "events_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/received_events",
+      "type": "Bot",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "anthropic-sdks-writer[bot]",
+      "id": 305999303,
+      "node_id": "BOT_kgDOEj0txw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/76263028?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D",
+      "html_url": "https://github.com/apps/anthropic-sdks-writer",
+      "followers_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/followers",
+      "following_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/following{/other_user}",
+      "gists_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/subscriptions",
+      "organizations_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/orgs",
+      "repos_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/repos",
+      "events_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/received_events",
+      "type": "Bot",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "f0e30dcc1740e121bcd08dff3341bfbd0e4f9fb0",
+        "url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/commits/f0e30dcc1740e121bcd08dff3341bfbd0e4f9fb0",
+        "html_url": "https://github.com/anthropics/anthropic-sdk-python/commit/f0e30dcc1740e121bcd08dff3341bfbd0e4f9fb0"
+      }
+    ]
+  },
+  {
+    "sha": "f0e30dcc1740e121bcd08dff3341bfbd0e4f9fb0",
+    "node_id": "C_kwDOIy2NGNoAKGYwZTMwZGNjMTc0MGUxMjFiY2QwOGRmZjMzNDFiZmJkMGU0ZjlmYjA",
+    "commit": {
+      "author": {
+        "name": "anthropic-sdks-writer[bot]",
+        "email": "305999303+anthropic-sdks-writer[bot]@users.noreply.github.com",
+        "date": "2026-10-14T23:20:29Z"
+      },
+      "committer": {
+        "name": "anthropic-sdks-writer[bot]",
+        "email": "305999303+anthropic-sdks-writer[bot]@users.noreply.github.com",
+        "date": "2026-10-14T23:20:29Z"
+      },
+      "message": "feat(api): add the speed parameter and usage.speed to Messages\n\nStainless-Generated-From: 0e07279a501477ee11950edea14241f2eac96ae6",
+      "tree": {
+        "sha": "62c35cabb09a61e9407ff4aab8290fb14b02c4fa",
+        "url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/git/trees/62c35cabb09a61e9407ff4aab8290fb14b02c4fa"
+      },
+      "url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/git/commits/f0e30dcc1740e121bcd08dff3341bfbd0e4f9fb0",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/commits/f0e30dcc1740e121bcd08dff3341bfbd0e4f9fb0",
+    "html_url": "https://github.com/anthropics/anthropic-sdk-python/commit/f0e30dcc1740e121bcd08dff3341bfbd0e4f9fb0",
+    "comments_url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/commits/f0e30dcc1740e121bcd08dff3341bfbd0e4f9fb0/comments",
+    "author": {
+      "login": "anthropic-sdks-writer[bot]",
+      "id": 305999303,
+      "node_id": "BOT_kgDOEj0txw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/76263028?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D",
+      "html_url": "https://github.com/apps/anthropic-sdks-writer",
+      "followers_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/followers",
+      "following_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/following{/other_user}",
+      "gists_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/subscriptions",
+      "organizations_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/orgs",
+      "repos_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/repos",
+      "events_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/received_events",
+      "type": "Bot",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "anthropic-sdks-writer[bot]",
+      "id": 305999303,
+      "node_id": "BOT_kgDOEj0txw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/76263028?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D",
+      "html_url": "https://github.com/apps/anthropic-sdks-writer",
+      "followers_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/followers",
+      "following_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/following{/other_user}",
+      "gists_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/subscriptions",
+      "organizations_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/orgs",
+      "repos_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/repos",
+      "events_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/anthropic-sdks-writer%5Bbot%5D/received_events",
+      "type": "Bot",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "21e78d985e7bb128bac0f240072f97f109343422",
+        "url": "https://api.github.com/repos/anthropics/anthropic-sdk-python/commits/21e78d985e7bb128bac0f240072f97f109343422",
+        "html_url": "https://github.com/anthropics/anthropic-sdk-python/commit/21e78d985e7bb128bac0f240072f97f109343422"
+      }
+    ]
+  }
+]

@@ -1,0 +1,417 @@
+[
+  {
+    "sha": "a162e0184e71b60290808a43961a6cbc8060123c",
+    "node_id": "C_kwDOKHhOfNoAKGExNjJlMDE4NGU3MWI2MDI5MDgwOGE0Mzk2MWE2Y2JjODA2MDEyM2M",
+    "commit": {
+      "author": {
+        "name": "CJ Avilla",
+        "email": "cj@anthropic.com",
+        "date": "2026-10-17T00:28:08Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2026-10-17T00:28:08Z"
+      },
+      "message": "feat(managed_agents): add agent security review cookbook (#926)",
+      "tree": {
+        "sha": "8947ba6869979f12741da9ede238ab645725b1a9",
+        "url": "https://api.github.com/repos/anthropics/claude-cookbooks/git/trees/8947ba6869979f12741da9ede238ab645725b1a9"
+      },
+      "url": "https://api.github.com/repos/anthropics/claude-cookbooks/git/commits/a162e0184e71b60290808a43961a6cbc8060123c",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJq0sEYCRC1aQ7uu5UhlAAAHOkQAEmZL8BW4Lbj94GBmx3Cd+t2\nTRRZuW4P5zX/fhEg/VXmoRCttf3BYwRkrrGYmqjrCI4iqSHupvag8rNHdIxgK/TL\n7I2u2mtF02TfnzdwJFNbbaFSs1WQ9Ub5Rt9Fesudny3FU6RvdqqjOvKMgh1EyTmQ\nvLVsneD5doRM055sCH3l6Ya+cxlOjyavSQIv/3V6cKZCevi1O7IDiqtZSiVmmxWz\nUCfYPdq2QlTTEXrSMw7LJn0CIYDvx/Twc34ys2Ws9GwEYXUgn/aGoBe05vxD57Yi\njfgCE7Ja9skxricVCL3BkDOr0OJo221LFPyKEJ2riCeAj+GS+IPAeJq/jeEsfG05\nZGJ3r5N6L3msEPHm+frzmnmIxS9KkdeWGNzDxIZIh1JaQN4NSWMRqpCqhsvmRGv4\nUys7uxOsMDB48aIKdDyHAymuQgrl+Ubp4H6ripLJagylWjFtvkrVwSAp3zWTxW3u\nlmcRcZGDLbpkL0EyB6hNXAp61EibT3uYmjjKjWXmk2FdO7ggFqggb+9UWEDR1Fcb\n/JTXU32RW4TJ2vvEmh8FxRdV7RcCkUSfZrLm2CISg2x+O8kmq0DQEkFuKGisgTGP\nWrDSH5NgbVQLC0zuB2rQT+uxj0O8mo1z20Hj0rJ+ulFj4b7Mu88V5R+RcK9WzK6L\nDhKgQY+14z9hjgFg09+G\n=53qa\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 8947ba6869979f12741da9ede238ab645725b1a9\nparent b2b0aa1ff7d8980b005b225d3802969c87bedad5\nauthor CJ Avilla <cj@anthropic.com> 1792196888 -0400\ncommitter GitHub <noreply@github.com> 1792196888 -0400\n\nfeat(managed_agents): add agent security review cookbook (#926)",
+        "verified_at": "2026-10-17T00:28:09Z"
+      }
+    },
+    "url": "https://api.github.com/repos/anthropics/claude-cookbooks/commits/a162e0184e71b60290808a43961a6cbc8060123c",
+    "html_url": "https://github.com/anthropics/claude-cookbooks/commit/a162e0184e71b60290808a43961a6cbc8060123c",
+    "comments_url": "https://api.github.com/repos/anthropics/claude-cookbooks/commits/a162e0184e71b60290808a43961a6cbc8060123c/comments",
+    "author": {
+      "login": "cj-ant",
+      "id": 286490957,
+      "node_id": "U_kgDOEROBTQ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/286490957?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/cj-ant",
+      "html_url": "https://github.com/cj-ant",
+      "followers_url": "https://api.github.com/users/cj-ant/followers",
+      "following_url": "https://api.github.com/users/cj-ant/following{/other_user}",
+      "gists_url": "https://api.github.com/users/cj-ant/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/cj-ant/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/cj-ant/subscriptions",
+      "organizations_url": "https://api.github.com/users/cj-ant/orgs",
+      "repos_url": "https://api.github.com/users/cj-ant/repos",
+      "events_url": "https://api.github.com/users/cj-ant/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/cj-ant/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "b2b0aa1ff7d8980b005b225d3802969c87bedad5",
+        "url": "https://api.github.com/repos/anthropics/claude-cookbooks/commits/b2b0aa1ff7d8980b005b225d3802969c87bedad5",
+        "html_url": "https://github.com/anthropics/claude-cookbooks/commit/b2b0aa1ff7d8980b005b225d3802969c87bedad5"
+      }
+    ]
+  },
+  {
+    "sha": "b2b0aa1ff7d8980b005b225d3802969c87bedad5",
+    "node_id": "C_kwDOKHhOfNoAKGIyYjBhYTFmZjdkODk4MGIwMDViMjI1ZDM4MDI5NjljODdiZWRhZDU",
+    "commit": {
+      "author": {
+        "name": "CJ Avilla",
+        "email": "cj@anthropic.com",
+        "date": "2026-10-14T17:15:24Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2026-10-14T17:15:24Z"
+      },
+      "message": "feat(observability): add OpenTelemetry tracing cookbook (#922)\n\nNew notebook showing how the Python SDK and the Claude API emit\nOpenTelemetry spans and how the traceparent header joins them into one\ntrace. Covers a Messages API request attribute by attribute, nesting and\ncontent mode, streaming, the tool runner, a Managed Agents session with a\ncustom tool round trip, OTLP export, and adding a Console destination for\nthe API's spans.\n\n:house: Remote-Dev: homespace",
+      "tree": {
+        "sha": "733a2cd04e24b5185ffb0bc99b56cc09bb27f6de",
+        "url": "https://api.github.com/repos/anthropics/claude-cookbooks/git/trees/733a2cd04e24b5185ffb0bc99b56cc09bb27f6de"
+      },
+      "url": "https://api.github.com/repos/anthropics/claude-cookbooks/git/commits/b2b0aa1ff7d8980b005b225d3802969c87bedad5",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqz7isCRC1aQ7uu5UhlAAAxGUQAHzMq3d8ACwNpFaJxJsUEbco\n4YklgjGE9WGdG1F8Vehj4uNI1KGAMpqnB1H0q9T/D+gsk5OIZHnwUO2HE+XX5hrL\npkRZAQ4P8OylW9relR0TGRq7Oh5lY2Qj4BMBF9SidInEZ/JcDsPnWzy7JB1fBbMS\n65/1veb8pOuBF2m0aBzZ6ygR8aeifhYiVKI9mXf2T3sGUZaCaH7KT72q6/jWwmtd\n/v+pNMouUqGyfcRHpoW7DR2GxEx0jgLG3nhVaeA9+z3UtuOovloLE2LSx/LtXo3E\ntxYQLHwBgn1lNrad3B+T/SRnCD0jPPPIdGOREyvUjOES20yaxZqcenUhQ/JX6avQ\n71i6xg+0HWcVPOGclhEJ/nfe8kizR1JwKwND/rs9p7LAb+isEiRcL0rdrTRl4Cp+\nI2nmJyMFTdcJmjsUBxsm3rMEG+ZZUWcBpVhq00GSIijUlWf0dO2It6VglHEDmNeE\nHEYn9m/6Mz+4XUP019xMEhR7xh7FB7evBTVX/hMQKNifCV6FUpHwLZhoLhL7GBNW\nBPb8WjmCzNdCxnpvRzfskKb6IY3clINdTeoaZaJgAHRm0BV4J5KXVzS4OSIyRpwk\nIOn3iXJ7RKx9T6lbb4+/P44P9lXPF7QvB86JR7BnMswZgzMypKo7c6/ZwN0j+YP/\nrpMFtyhe7O3VH3r7F6ll\n=Elkx\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 733a2cd04e24b5185ffb0bc99b56cc09bb27f6de\nparent 39cd5a7a3a29a73e7391e17b7644c51f34a6aaa1\nauthor CJ Avilla <cj@anthropic.com> 1791998124 -0400\ncommitter GitHub <noreply@github.com> 1791998124 -0400\n\nfeat(observability): add OpenTelemetry tracing cookbook (#922)\n\nNew notebook showing how the Python SDK and the Claude API emit\nOpenTelemetry spans and how the traceparent header joins them into one\ntrace. Covers a Messages API request attribute by attribute, nesting and\ncontent mode, streaming, the tool runner, a Managed Agents session with a\ncustom tool round trip, OTLP export, and adding a Console destination for\nthe API's spans.\n\n:house: Remote-Dev: homespace",
+        "verified_at": "2026-10-14T17:15:25Z"
+      }
+    },
+    "url": "https://api.github.com/repos/anthropics/claude-cookbooks/commits/b2b0aa1ff7d8980b005b225d3802969c87bedad5",
+    "html_url": "https://github.com/anthropics/claude-cookbooks/commit/b2b0aa1ff7d8980b005b225d3802969c87bedad5",
+    "comments_url": "https://api.github.com/repos/anthropics/claude-cookbooks/commits/b2b0aa1ff7d8980b005b225d3802969c87bedad5/comments",
+    "author": {
+      "login": "cj-ant",
+      "id": 286490957,
+      "node_id": "U_kgDOEROBTQ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/286490957?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/cj-ant",
+      "html_url": "https://github.com/cj-ant",
+      "followers_url": "https://api.github.com/users/cj-ant/followers",
+      "following_url": "https://api.github.com/users/cj-ant/following{/other_user}",
+      "gists_url": "https://api.github.com/users/cj-ant/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/cj-ant/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/cj-ant/subscriptions",
+      "organizations_url": "https://api.github.com/users/cj-ant/orgs",
+      "repos_url": "https://api.github.com/users/cj-ant/repos",
+      "events_url": "https://api.github.com/users/cj-ant/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/cj-ant/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "39cd5a7a3a29a73e7391e17b7644c51f34a6aaa1",
+        "url": "https://api.github.com/repos/anthropics/claude-cookbooks/commits/39cd5a7a3a29a73e7391e17b7644c51f34a6aaa1",
+        "html_url": "https://github.com/anthropics/claude-cookbooks/commit/39cd5a7a3a29a73e7391e17b7644c51f34a6aaa1"
+      }
+    ]
+  },
+  {
+    "sha": "39cd5a7a3a29a73e7391e17b7644c51f34a6aaa1",
+    "node_id": "C_kwDOKHhOfNoAKDM5Y2Q1YTdhM2EyOWE3M2U3MzkxZTE3Yjc2NDRjNTFmMzRhNmFhYTE",
+    "commit": {
+      "author": {
+        "name": "Nik Blanchet",
+        "email": "nikblanchet@anthropic.com",
+        "date": "2026-10-14T02:56:52Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2026-10-14T02:56:52Z"
+      },
+      "message": "feat(managed_agents): move plan-big-execute-small to multiagent_20261001 (#915)\n\nThe recipe now sets the multiagent_20261001 type. The small-model worker\nis listed under subagents.predefined_agents, and subagents.inline_agents\nand workflows are set to disabled, so every delegated task goes to the\nlisted worker.\n\nAlso in this change:\n- \"coordinator\" becomes \"orchestrator\" in the title, the prose, names in\n  code, print labels, the diagram's label, registry.yaml and the README\n  row. The file name is unchanged, and so is the metadata tag.\n- The prose and the two system prompts name the tools the orchestrator\n  delegates with (create_agent, send_to_agent, list_agents) and the tool\n  a worker reports with (send_to_parent).\n  The orchestrator's prompt no longer names wait_for_agents, and the\n  worker's no longer names submit_result.\n- Section 1 now says only that the orchestrator can't see its workers'\n  system prompts. It used to say it could see nothing about them.\n- Prerequisites point to the docs for the multiagent block.\n- The SDK floor is anthropic>=1.13.0.\n- COOKBOOK_COORDINATOR_MODEL, the earlier name of\n  COOKBOOK_ORCHESTRATOR_MODEL, is still read when the new name is unset.\n- A stale comment about Sonnet 5's introductory price is removed.\n- Links to the docs point at the multiagent orchestration page.\n- The prose says the figures it quotes come from the authors' runs made\n  before this move.",
+      "tree": {
+        "sha": "92aac1cc2ea76cea5f4ea98caccdd77d66445cd6",
+        "url": "https://api.github.com/repos/anthropics/claude-cookbooks/git/trees/92aac1cc2ea76cea5f4ea98caccdd77d66445cd6"
+      },
+      "url": "https://api.github.com/repos/anthropics/claude-cookbooks/git/commits/39cd5a7a3a29a73e7391e17b7644c51f34a6aaa1",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqzu90CRC1aQ7uu5UhlAAALhAQAE96DxreTp2eicb3yFrVQmc/\n5LAQymXm48wrywUVuA3p4wCSvQfoafQY9rdzzQKyilpr24GKwnUAzGBmQzihE2eq\nQ1/fAFakrbyTsBP68COWJnoMXyBrF8sraSlaycH1JZrzJMc5NgsJrXkYB6LX90oa\nha7jM3WHjmUmwrvoCPZO2gLJck9j0QHoIQZ2+7ZH8JOGd8X7Vk6Xt6BTExvRBhC7\nMII/ZBWD/E6M4S9s+Sm58OtTGlovXySISkNeHzKzKKlmgfxxZ3W4biStcYMk02oY\n87UL/nUYQERMOVoum7bLwo1jNhmQSrAR+KGor6spdPuNPJdVg2493Ifgkpfj1p/V\nUOv4upYRTRF1MNg6xE84pHLJbvh1cYZt/XHPyQuQnE71HGP7Ll0j8wQaF95IifhT\ncVv1Awt2FCzn6HYIjg4MVR9vLn8qe2gbm4GNr1PW7Tshbmf+NExdZtH7DMOlMnI/\nNSG10GHZR/viMRav/aIltpXhyY9Ziwt+u7/IzmdnPxtXVD0OexI9Y5W0NE2g53b6\n6hW1Fhhlui+LN/6V9kowlar5bBJQoYYu7KDuGl9WOIhEruR/q3/AOyf3bqy01yj7\nnXWIBNW+MBH2dyWLFNS73p4wQHVuoqIhJq9XoVc2XeTplcVaCuJYrm5g2iPsAhmF\n89px3OzagMZGrRLrZKYK\n=qZE0\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 92aac1cc2ea76cea5f4ea98caccdd77d66445cd6\nparent 9c1e493ddd2b82df399d2a61b9c806c539e18be6\nauthor Nik Blanchet <nikblanchet@anthropic.com> 1791946612 -0400\ncommitter GitHub <noreply@github.com> 1791946612 -0400\n\nfeat(managed_agents): move plan-big-execute-small to multiagent_20261001 (#915)\n\nThe recipe now sets the multiagent_20261001 type. The small-model worker\nis listed under subagents.predefined_agents, and subagents.inline_agents\nand workflows are set to disabled, so every delegated task goes to the\nlisted worker.\n\nAlso in this change:\n- \"coordinator\" becomes \"orchestrator\" in the title, the prose, names in\n  code, print labels, the diagram's label, registry.yaml and the README\n  row. The file name is unchanged, and so is the metadata tag.\n- The prose and the two system prompts name the tools the orchestrator\n  delegates with (create_agent, send_to_agent, list_agents) and the tool\n  a worker reports with (send_to_parent).\n  The orchestrator's prompt no longer names wait_for_agents, and the\n  worker's no longer names submit_result.\n- Section 1 now says only that the orchestrator can't see its workers'\n  system prompts. It used to say it could see nothing about them.\n- Prerequisites point to the docs for the multiagent block.\n- The SDK floor is anthropic>=1.13.0.\n- COOKBOOK_COORDINATOR_MODEL, the earlier name of\n  COOKBOOK_ORCHESTRATOR_MODEL, is still read when the new name is unset.\n- A stale comment about Sonnet 5's introductory price is removed.\n- Links to the docs point at the multiagent orchestration page.\n- The prose says the figures it quotes come from the authors' runs made\n  before this move.",
+        "verified_at": "2026-10-14T02:56:52Z"
+      }
+    },
+    "url": "https://api.github.com/repos/anthropics/claude-cookbooks/commits/39cd5a7a3a29a73e7391e17b7644c51f34a6aaa1",
+    "html_url": "https://github.com/anthropics/claude-cookbooks/commit/39cd5a7a3a29a73e7391e17b7644c51f34a6aaa1",
+    "comments_url": "https://api.github.com/repos/anthropics/claude-cookbooks/commits/39cd5a7a3a29a73e7391e17b7644c51f34a6aaa1/comments",
+    "author": {
+      "login": "nikblanchet",
+      "id": 2364821,
+      "node_id": "MDQ6VXNlcjIzNjQ4MjE=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2364821?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nikblanchet",
+      "html_url": "https://github.com/nikblanchet",
+      "followers_url": "https://api.github.com/users/nikblanchet/followers",
+      "following_url": "https://api.github.com/users/nikblanchet/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nikblanchet/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nikblanchet/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nikblanchet/subscriptions",
+      "organizations_url": "https://api.github.com/users/nikblanchet/orgs",
+      "repos_url": "https://api.github.com/users/nikblanchet/repos",
+      "events_url": "https://api.github.com/users/nikblanchet/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nikblanchet/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "9c1e493ddd2b82df399d2a61b9c806c539e18be6",
+        "url": "https://api.github.com/repos/anthropics/claude-cookbooks/commits/9c1e493ddd2b82df399d2a61b9c806c539e18be6",
+        "html_url": "https://github.com/anthropics/claude-cookbooks/commit/9c1e493ddd2b82df399d2a61b9c806c539e18be6"
+      }
+    ]
+  },
+  {
+    "sha": "9c1e493ddd2b82df399d2a61b9c806c539e18be6",
+    "node_id": "C_kwDOKHhOfNoAKDljMWU0OTNkZGQyYjgyZGYzOTlkMmE2MWI5YzgwNmM1MzllMThiZTY",
+    "commit": {
+      "author": {
+        "name": "CJ Avilla",
+        "email": "cj@anthropic.com",
+        "date": "2026-10-10T09:24:54Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2026-10-10T09:24:54Z"
+      },
+      "message": "docs(managed_agents): move the self-hosted sandbox variants to claude-quickstarts (#888)",
+      "tree": {
+        "sha": "7a8eb12cec18ed8dce3bf0cc3cad6712757b08c2",
+        "url": "https://api.github.com/repos/anthropics/claude-cookbooks/git/trees/7a8eb12cec18ed8dce3bf0cc3cad6712757b08c2"
+      },
+      "url": "https://api.github.com/repos/anthropics/claude-cookbooks/git/commits/9c1e493ddd2b82df399d2a61b9c806c539e18be6",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqygRmCRC1aQ7uu5UhlAAA4j4QACvN3jO37vACcnWpFNn+u3TT\nWxztAGTrIFgxYWOKHn355+WkQZOyb53gUbOHGULELN9Ee8qM7w6XHuPs1KddgvAk\nDedCmYB/gkkea574+gg1Nk3+FW++bSFjNg+b0qijnRaIOIHvNUsBi42u7fKqVqdi\nMmuS8e6mXI7/USm6BSKJzvZ6lBsWZQZIhn68JdkqF81TzvZoyzHEq4Sq7u58Je5J\nTVMVgTaVHNVyQP2DjR9d39qnIFoyU4v5Z+poytgUkD2agPS0rTFn3PJ6RvLM9a8A\nfvsdAVsUcXWKgLN4uhZbiJMTKIsqE4U8X8OKaoGU2PvtrxjdWNVMoS8oKq7QUSvK\nr8nqknPf+ApAwld7Kl3IAoGxIguiLARuFMt6JkTSCH88amMYXyATtnwo+6eVNXmZ\nF/CWE7Ty8T5rWUnJi9d2PyuLBJ1aG/8QbMdgGA1ATWSEFw8S1H92LEMJU8Oai6HZ\npmRkpCCXz0U8TRSQwnmB1Jqq2M66TJtDWViSuLpZ/RPlSniiXcZNHX2ZHDSTq6rN\nFp5tOScO8NaZNYMC/0bSu3CkfmUPyLtCBU+0b23gCdoZckOxPkzwVn8LGdi00yzd\nncPboE+fRMTLw43ioeBjsotbzzHmltasK6lFcW3Lc3SB1Sr2Pjh/kulFklIhrVWS\nM5NEULypFQe6oBtZrNtN\n=I4Jx\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 7a8eb12cec18ed8dce3bf0cc3cad6712757b08c2\nparent d7265d6ae994ccd8429db0594b000073b2f9ad43\nauthor CJ Avilla <cj@anthropic.com> 1791624294 -0400\ncommitter GitHub <noreply@github.com> 1791624294 -0400\n\ndocs(managed_agents): move the self-hosted sandbox variants to claude-quickstarts (#888)",
+        "verified_at": "2026-10-10T09:24:55Z"
+      }
+    },
+    "url": "https://api.github.com/repos/anthropics/claude-cookbooks/commits/9c1e493ddd2b82df399d2a61b9c806c539e18be6",
+    "html_url": "https://github.com/anthropics/claude-cookbooks/commit/9c1e493ddd2b82df399d2a61b9c806c539e18be6",
+    "comments_url": "https://api.github.com/repos/anthropics/claude-cookbooks/commits/9c1e493ddd2b82df399d2a61b9c806c539e18be6/comments",
+    "author": {
+      "login": "cj-ant",
+      "id": 286490957,
+      "node_id": "U_kgDOEROBTQ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/286490957?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/cj-ant",
+      "html_url": "https://github.com/cj-ant",
+      "followers_url": "https://api.github.com/users/cj-ant/followers",
+      "following_url": "https://api.github.com/users/cj-ant/following{/other_user}",
+      "gists_url": "https://api.github.com/users/cj-ant/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/cj-ant/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/cj-ant/subscriptions",
+      "organizations_url": "https://api.github.com/users/cj-ant/orgs",
+      "repos_url": "https://api.github.com/users/cj-ant/repos",
+      "events_url": "https://api.github.com/users/cj-ant/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/cj-ant/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "d7265d6ae994ccd8429db0594b000073b2f9ad43",
+        "url": "https://api.github.com/repos/anthropics/claude-cookbooks/commits/d7265d6ae994ccd8429db0594b000073b2f9ad43",
+        "html_url": "https://github.com/anthropics/claude-cookbooks/commit/d7265d6ae994ccd8429db0594b000073b2f9ad43"
+      }
+    ]
+  },
+  {
+    "sha": "d7265d6ae994ccd8429db0594b000073b2f9ad43",
+    "node_id": "C_kwDOKHhOfNoAKGQ3MjY1ZDZhZTk5NGNjZDg0MjlkYjA1OTRiMDAwMDczYjJmOWFkNDM",
+    "commit": {
+      "author": {
+        "name": "benlehrburger-ant",
+        "email": "benlehrburger@anthropic.com",
+        "date": "2026-09-28T16:56:35Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2026-09-28T16:56:35Z"
+      },
+      "message": "Merge pull request #898 from anthropics/benlehrburger/cost-optimization-model-agnostic-caveats\n\ndocs(cost_optimization): add model-agnostic caveats for preserved thinking, cache reads and effort",
+      "tree": {
+        "sha": "bd054c327e10574c5e0907a47c415eae41aece73",
+        "url": "https://api.github.com/repos/anthropics/claude-cookbooks/git/trees/bd054c327e10574c5e0907a47c415eae41aece73"
+      },
+      "url": "https://api.github.com/repos/anthropics/claude-cookbooks/git/commits/d7265d6ae994ccd8429db0594b000073b2f9ad43",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqupxDCRC1aQ7uu5UhlAAAkFoQAJ7/t+QjUV4YIuwZPZw7aYqd\nc/+uDcfYOELqj1FMyCpuUARWTa7Zvh20QjsOzLJDfyVijundVIOr/Q1hH8UHTpH0\n/oIzy4hkaTeG8IsKprkGgXhjSQ0Y2RWRth+r/hwEhrYWT5huj9mU6FnGYdC6oYX0\n6MbYLXNcj4+v/WT2PBXnDp72Ehe2zk21WdAEh588XPCWz4KPFJBA9bUR46y3NjNV\nmpnGtQ8tpRbBancsq4/EgD/WNs1gpGsocmVbur4i7I7eBwMHKa9LRrS9hyXk7NBM\nfejwbLUPI+rnOuVBWJSGS/T9XNPKV5JBJK0wCmDoI7Hx9T1iY//6bOgK/NlQVDBu\nFN4SUS1JnAZDPQHrmeIwLeXe4YjWJmKmqHrA3GJGoGFZbe5JQesiplS5C/J//vLz\nizc0yaeHI9PHgOsojzNx3i562QZ03HRVVW6H3i47EwKY2RSgF1Aty/Zsp/tiPkNj\nll/gUhGcWGWa7dmV7PZgEc965qXBgCZnaBGBws4wpULYg61jxdGk1+a5eCj0nwx3\nsGC7GuJxxTydAr0OPftdy+9+FbIkj4jHJrrKjAV/BiN+FUhlOcyRlHHZ/rQIL2D7\nKxD7pZo5ZUk/XdUqRb44HZhzNHcAdO1AWUvyjzLYCxIhOgFLLq49z3UOfsjiiqb8\nj5CnwUOYG407gogPEvPw\n=mNWZ\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree bd054c327e10574c5e0907a47c415eae41aece73\nparent 813fbeec03cdedfda7808529438d1c7af71f26eb\nparent bf24d45f2b5facc35f60452ac1ad5c0b054ea680\nauthor benlehrburger-ant <benlehrburger@anthropic.com> 1790614595 -0700\ncommitter GitHub <noreply@github.com> 1790614595 -0700\n\nMerge pull request #898 from anthropics/benlehrburger/cost-optimization-model-agnostic-caveats\n\ndocs(cost_optimization): add model-agnostic caveats for preserved thinking, cache reads and effort",
+        "verified_at": "2026-09-28T16:56:35Z"
+      }
+    },
+    "url": "https://api.github.com/repos/anthropics/claude-cookbooks/commits/d7265d6ae994ccd8429db0594b000073b2f9ad43",
+    "html_url": "https://github.com/anthropics/claude-cookbooks/commit/d7265d6ae994ccd8429db0594b000073b2f9ad43",
+    "comments_url": "https://api.github.com/repos/anthropics/claude-cookbooks/commits/d7265d6ae994ccd8429db0594b000073b2f9ad43/comments",
+    "author": {
+      "login": "benlehrburger-ant",
+      "id": 243656538,
+      "node_id": "U_kgDODoXnWg",
+      "avatar_url": "https://avatars.githubusercontent.com/u/243656538?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benlehrburger-ant",
+      "html_url": "https://github.com/benlehrburger-ant",
+      "followers_url": "https://api.github.com/users/benlehrburger-ant/followers",
+      "following_url": "https://api.github.com/users/benlehrburger-ant/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benlehrburger-ant/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benlehrburger-ant/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benlehrburger-ant/subscriptions",
+      "organizations_url": "https://api.github.com/users/benlehrburger-ant/orgs",
+      "repos_url": "https://api.github.com/users/benlehrburger-ant/repos",
+      "events_url": "https://api.github.com/users/benlehrburger-ant/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benlehrburger-ant/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "813fbeec03cdedfda7808529438d1c7af71f26eb",
+        "url": "https://api.github.com/repos/anthropics/claude-cookbooks/commits/813fbeec03cdedfda7808529438d1c7af71f26eb",
+        "html_url": "https://github.com/anthropics/claude-cookbooks/commit/813fbeec03cdedfda7808529438d1c7af71f26eb"
+      },
+      {
+        "sha": "bf24d45f2b5facc35f60452ac1ad5c0b054ea680",
+        "url": "https://api.github.com/repos/anthropics/claude-cookbooks/commits/bf24d45f2b5facc35f60452ac1ad5c0b054ea680",
+        "html_url": "https://github.com/anthropics/claude-cookbooks/commit/bf24d45f2b5facc35f60452ac1ad5c0b054ea680"
+      }
+    ]
+  }
+]

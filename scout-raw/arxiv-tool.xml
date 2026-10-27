@@ -1,0 +1,2049 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/eSApcVZ0VPT0MrMBLvumQ/j61sQ</id>
+  <title>arXiv Query: search_query=all:"tool use" AND cat:cs.CL&amp;id_list=&amp;start=0&amp;max_results=25</title>
+  <updated>2026-10-26T16:36:32Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=all:%22tool+use%22+AND+cat:cs.CL&amp;start=0&amp;max_results=25&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>25</opensearch:itemsPerPage>
+  <opensearch:totalResults>888</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2610.32483v1</id>
+    <title>When Agents Fail: Model or Harness--Who's to Blame?</title>
+    <updated>2026-10-23T10:57:54Z</updated>
+    <link href="https://arxiv.org/abs/2610.32483v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.32483v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>LLM agents combine models with execution harnesses, so agentic benchmark performance reflects their joint behavior. We argue that harnesses should therefore be evaluated through their interactions with underlying models. We develop a framework combining five complementary measures: (i) Valid Completion Rate (VCR), how reliably agents finish normally and deliver evaluable results, irrespective of task correctness; (ii) Model-Harness Fit, how well a harness supports task achievement through valid completion for a given model; (iii) Cross-Model Fit, a harness's overall suitability across evaluated models; (iv) Interaction Residuals, pairing-specific execution strengths and weaknesses hidden by component-level summaries; and (v) Token Load, the token demands of agent execution, including failed attempts. We evaluate four general-purpose harnesses (OpenCode, Codex CLI, Pi CLI, and DeepAgents) with four core models, plus two fixed native model-harness systems, on six benchmarks covering context management, tool use, long-context planning, multimodal interaction, and artifact handoff. Including native references and stress conditions, 111 evaluation settings yield 52,168 trajectories. Harness rankings vary across models and benchmarks; task performance and valid completion can favor different pairings, and similar task scores can accompany distinct execution profiles. OpenCode ranks first in cross-model performance, while DeepSeek V4 Flash Preview maintains consistently high Mean VCR across harnesses on the shared four-benchmark panel. These findings support evaluating model-harness interactions, training transferable harness-use capabilities in models, and harness designs adapted to the model and task.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-23T10:57:54Z</published>
+    <arxiv:comment>Preprint under review</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Shao Zhang</name>
+    </author>
+    <author>
+      <name>Hangfan Zhang</name>
+    </author>
+    <author>
+      <name>Yuanyuan Shi</name>
+    </author>
+    <author>
+      <name>Hao Li</name>
+    </author>
+    <author>
+      <name>Min-Le Su</name>
+    </author>
+    <author>
+      <name>Kangcong Li</name>
+    </author>
+    <author>
+      <name>Jingping Wang</name>
+    </author>
+    <author>
+      <name>Chunjiang Mu</name>
+    </author>
+    <author>
+      <name>Chen Zhang</name>
+    </author>
+    <author>
+      <name>Yang Chen</name>
+    </author>
+    <author>
+      <name>Bo Zhang</name>
+    </author>
+    <author>
+      <name>Shuyue Hu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.32004v1</id>
+    <title>CRM-Agent-Bench: Benchmarking Tool-Using Agents in Stateful Enterprise Environments</title>
+    <updated>2026-10-23T00:05:21Z</updated>
+    <link href="https://arxiv.org/abs/2610.32004v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.32004v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Deploying language agents in real applications demands more than the right answer: an agent must execute a multi-step business process correctly, follow domain-specific rules, and interact with a user across a dialogue, where the gap between saying and doing is the gap between a satisfied customer and a real loss. We argue that a deployable-agent benchmark should jointly assess four facets: the outcome an agent reaches, the trajectory it takes, its operational viability, and its policy compliance. Customer relationship management (CRM), where mutable records meet operational rules and consequential effects, exercises all four. We introduce CRM-Agent-Bench, an execution-grounded benchmark of 555 stateful, multi-turn tasks across nine business domains and 36 capability tags. Each task supplies a task-specific executable contract drawn from checks over actions, arguments, order, response, target state, and protected state; success is the strict conjunction of the checks declared for that task. We evaluate the complete agent system through these contracts and report scored coverage, latency, and cost. Across sixteen systems evaluated on the audited final release, strict success spans 64.32% to 83.60%; the closely grouped leading systems nonetheless diverge sharply in cost and per-domain reliability. CRM-Agent-Bench offers an auditable framework for measuring contract-grounded business-transaction integrity and adherence to task-declared benchmark policies, with a portable structure designed for extension as models improve. Github repository: https://github.com/salesforce-misc/crm-agent-bench</summary>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-23T00:05:21Z</published>
+    <arxiv:comment>52 pages</arxiv:comment>
+    <arxiv:primary_category term="cs.HC"/>
+    <author>
+      <name>Monojit Banerjee</name>
+    </author>
+    <author>
+      <name>Zhujun Lan</name>
+    </author>
+    <author>
+      <name>Defu Cao</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.31945v1</id>
+    <title>Kolibri: A Sovereign European Model on the Pareto Frontier</title>
+    <updated>2026-10-22T21:45:10Z</updated>
+    <link href="https://arxiv.org/abs/2610.31945v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.31945v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This report introduces Kolibri, an English-German mixture-of-experts transformer with 78.1B total parameters and 3.46B active parameters per token, released as open weights under the Apache 2.0 licence. We built Kolibri for sovereign and specialised deployment, with a particular focus on German and on regulated domains such as public administration, industry, and aerospace. To support these settings, we control the full model-development process, including data, architecture, training infrastructure, post-training, and evaluation.
+  We train Kolibri on 24T tokens across pre-training, mid-training, and long-context extension, with German accounting for more than 20% of the data mix by bytes. To reach this share, we complement German datasets with more than 2T German tokens that we curate from the web with our own pipeline and generate synthetically. Post-training combines supervised fine-tuning on curated German and English data with reinforcement learning on more than 1.2M internally curated tasks, which cover reasoning, tool use, instruction following, code, and retrieval. The model activates 4.4% of its parameters per token, and among the open models evaluated in this report, it lies on the Pareto frontier of quality and serving cost in English and German.
+  Kolibri builds on Kolibri Origin, an earlier iteration that validated our full pipeline at scale. Both models come from our Model Factory, which connects data, experimentation, training, evaluation, and deployment through version-controlled workflows.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-22T21:45:10Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Aleph Alpha</name>
+    </author>
+    <author>
+      <name> :</name>
+    </author>
+    <author>
+      <name>Moritz Althaus</name>
+    </author>
+    <author>
+      <name>Artur Baranowski</name>
+    </author>
+    <author>
+      <name>Michael Barlow</name>
+    </author>
+    <author>
+      <name>Fabien C. Y. Benureau</name>
+    </author>
+    <author>
+      <name>Felix Berkenkamp</name>
+    </author>
+    <author>
+      <name>Amrita Bhattacherjee</name>
+    </author>
+    <author>
+      <name>Lukas Blübaum</name>
+    </author>
+    <author>
+      <name>Duncan Blythe</name>
+    </author>
+    <author>
+      <name>Augustijn de Boer</name>
+    </author>
+    <author>
+      <name>Bastian Boll</name>
+    </author>
+    <author>
+      <name>Thomas F. Burns</name>
+    </author>
+    <author>
+      <name>Björn Deiseroth</name>
+    </author>
+    <author>
+      <name>Niko Dürr</name>
+    </author>
+    <author>
+      <name>Béni Balázs Egressy</name>
+    </author>
+    <author>
+      <name>Niklas Finken</name>
+    </author>
+    <author>
+      <name>Niklas Freymuth</name>
+    </author>
+    <author>
+      <name>Fabian Gebhart</name>
+    </author>
+    <author>
+      <name>Max Hammer</name>
+    </author>
+    <author>
+      <name>Bastian Harren</name>
+    </author>
+    <author>
+      <name>Andreas Hartel</name>
+    </author>
+    <author>
+      <name>Johann Higl</name>
+    </author>
+    <author>
+      <name>Steffen Hirschmann</name>
+    </author>
+    <author>
+      <name>Pablo Iyu Guerrero</name>
+    </author>
+    <author>
+      <name>Yasser Jadidi</name>
+    </author>
+    <author>
+      <name>Andreas Jagusch</name>
+    </author>
+    <author>
+      <name>Mitja Kleider</name>
+    </author>
+    <author>
+      <name>Markus Klein</name>
+    </author>
+    <author>
+      <name>Jonas Knupp</name>
+    </author>
+    <author>
+      <name>Murali Kondragunta</name>
+    </author>
+    <author>
+      <name>Garwin Lechner</name>
+    </author>
+    <author>
+      <name>Dominik Lê-Kellner</name>
+    </author>
+    <author>
+      <name>Jurek Leonhardt</name>
+    </author>
+    <author>
+      <name>Jiaze Li</name>
+    </author>
+    <author>
+      <name>Sohir Maskey</name>
+    </author>
+    <author>
+      <name>Omar Mehio</name>
+    </author>
+    <author>
+      <name>Pit Neitemeier</name>
+    </author>
+    <author>
+      <name>Letitia Parcalabescu</name>
+    </author>
+    <author>
+      <name>Alejandro Petry Pacheco</name>
+    </author>
+    <author>
+      <name>Pranav Ragupathy</name>
+    </author>
+    <author>
+      <name>Martin Reinhardt</name>
+    </author>
+    <author>
+      <name>Peter Rodenkirch Nfissi</name>
+    </author>
+    <author>
+      <name>Dylan Rodriquez</name>
+    </author>
+    <author>
+      <name>Leonard Salewski</name>
+    </author>
+    <author>
+      <name>Raziye Sari</name>
+    </author>
+    <author>
+      <name>Jordan Sassoon</name>
+    </author>
+    <author>
+      <name>Ivo Schaper</name>
+    </author>
+    <author>
+      <name>Ilhan Scheer</name>
+    </author>
+    <author>
+      <name>Frank Schneider</name>
+    </author>
+    <author>
+      <name>Philipp Scholl</name>
+    </author>
+    <author>
+      <name>Lukas Schott</name>
+    </author>
+    <author>
+      <name>Eric Schreiber</name>
+    </author>
+    <author>
+      <name>Pablo Schumacher</name>
+    </author>
+    <author>
+      <name>Alessio Serra</name>
+    </author>
+    <author>
+      <name>Philipp Siedler</name>
+    </author>
+    <author>
+      <name>Prabhu Teja Sivaprasad</name>
+    </author>
+    <author>
+      <name>Mohamed Soliman</name>
+    </author>
+    <author>
+      <name>Till Speicher</name>
+    </author>
+    <author>
+      <name>Volker Stampa</name>
+    </author>
+    <author>
+      <name>Simon Thel</name>
+    </author>
+    <author>
+      <name>Serge Thilges</name>
+    </author>
+    <author>
+      <name>Irina Vidal Migallón</name>
+    </author>
+    <author>
+      <name>Denis Waßmann</name>
+    </author>
+    <author>
+      <name>Samuel Weinbach</name>
+    </author>
+    <author>
+      <name>Sascha Wirges</name>
+    </author>
+    <author>
+      <name>Michael Wüthrich</name>
+    </author>
+    <author>
+      <name>Alexei Zacharov</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.31636v1</id>
+    <title>Can an Agent Debug a Web Corpus? Agentic Auditing of Slovak FineWeb2</title>
+    <updated>2026-10-22T17:52:22Z</updated>
+    <link href="https://arxiv.org/abs/2610.31636v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.31636v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Multilingual pipelines such as FineWeb2 apply one recipe across a thousand languages, leaving the failure modes of individual languages unanticipated. We use an LLM once, as a corpus debugger rather than a classifier: a tool-using agent explores the corpus through a read-only, budgeted API and compiles each finding into an executable test, which a native speaker then validates. On the 26.5M-document Slovak portion of FineWeb2, three runs costing \$2.21-\$2.84 each found seven findings over four phenomena. The largest is a machine-generated content farm of 1,408,437 documents (5.32%) that passed the pipeline's filters, 86.6% of it passing even stricter thresholds. Blinded labels support 6 of the 7 findings (defect rates .53-1.00 against .08 in a random control) and do not support one. The compiled suite scans the full corpus in 0.7 s of wall-clock time without a GPU, against \$12k-\$90k per LLM classification pass. The best static sampling baseline validates more selectors than any agent run, at under half the cost. The agent contributes exact prevalence, a precision estimate checked against sampled documents, an account of why the pipeline missed each slice, and a reusable test. We release the framework, Slovak test suite, validation data and agent trajectories.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-22T17:52:22Z</published>
+    <arxiv:comment>Accepted to WaC Workshop at EMNLP 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Marek Šuppa</name>
+    </author>
+    <author>
+      <name>Ivan Vykopal</name>
+    </author>
+    <author>
+      <name>Jaroslav Kopčan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.30933v1</id>
+    <title>ReflectPO: Reflection-Guided Policy Optimization for Long-Horizon LLM Agents</title>
+    <updated>2026-10-22T08:54:24Z</updated>
+    <link href="https://arxiv.org/abs/2610.30933v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.30933v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>With external tools, large language models (LLMs) can tackle complex tasks through sustained environmental interaction. LLM-based agents are therefore increasingly used to tackle complex long-horizon tasks in real-world environments. However, these tasks involve sequential, interdependent decisions and changes in environmental states. Early execution errors affect subsequent interaction histories and environmental states, and their effects accumulate along the decision chain. To address this challenge, we propose Reflection-Guided Policy Optimization (ReflectPO), a reinforcement learning framework for autonomous error recovery in long-horizon tasks. ReflectPO comprises two core components. The first is Reflection-Guided Sampling. We use branch differences and repeated visits in interaction trajectories to construct hints for error recovery. The second is Tree-Structured Credit Assignment. We organize sampled trajectories into trees and assign action-level credit using parent--child reward differences and recovery gains. Experiments over two long-horizon tool-use benchmarks show that ReflectPO outperforms multiple existing baselines in most domains. It also achieves the best overall performance on average. Further analyses show that ReflectPO effectively improves agents' ability to recognize their own deviations, recover from erroneous states, and continue making progress toward task completion.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-22T08:54:24Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Rumei Li</name>
+    </author>
+    <author>
+      <name>Xunliang Cai</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.29005v1</id>
+    <title>VeriEvolve: Evaluator-First Evolution for Tool-Using Agents</title>
+    <updated>2026-10-21T00:13:29Z</updated>
+    <link href="https://arxiv.org/abs/2610.29005v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.29005v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>A central obstacle to self-improving agents is the absence of a reliable fitness signal for realistic stateful tasks. We introduce \textsc{VeriEvolve}, an evaluator-first evolution framework that constructs this missing evaluation layer before optimizing the agent. From task instruction, VeriEvolve synthesizes instruction-grounded challenge states and an executable evaluator that checks them. During each round of workflow evolution, the evaluator is frozen and serves as the fitness signal. Between rounds, VeriEvolve revises the evaluator by converting the end states of strong and weak runs into a pair of counterfactual test cases.
+  Across all 30 MCPMark Filesystem tasks, VeriEvolve constructs 30 evaluators with 141 challenge states, achieving 141/141 agreement on the generated suites and 113/122 agreement on held-out states produced by executor agents. Evaluator-guided evolution increases externally verified success from 6/30 to 18/30 for GLM-5.2 and from 27/30 to 30/30 for Claude; refinement removes all three false positives that the weak executor exposes. Cross-environment studies on PostgreSQL, Playwright, Notion, and GitHub further expose complementary limits from observability, state representation, and search/execution capacity. These results show that executable evaluators can be synthesized and used to guide search when task success is observable and an external verifier is available for calibration.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-21T00:13:29Z</published>
+    <arxiv:comment>24 pages, 3 figures. Accepted to the REALM Workshop at EMNLP 2026 (non-archival)</arxiv:comment>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Yueshen Li</name>
+    </author>
+    <author>
+      <name>Kamer Ali Yuksel</name>
+    </author>
+    <author>
+      <name>Gokhan Tur</name>
+    </author>
+    <author>
+      <name>Dilek Hakkani-Tür</name>
+    </author>
+    <author>
+      <name>João Pedro Maia</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.28785v1</id>
+    <title>Measure First, Then Allocate: Calibrated Rollout Budgets for MCP Agents in Reinforcement Learning</title>
+    <updated>2026-10-20T18:15:52Z</updated>
+    <link href="https://arxiv.org/abs/2610.28785v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.28785v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Training tool-using language models requires costly interaction, yet identical rewards within a rollout group provide no group-relative learning signal. We use reward disagreement to guide harness evaluation and the allocation of rollouts for policy training in Model Context Protocol (MCP) environments. We first introduce Discord, which tests harness edits using exact paired inference and decision-preserving early stopping: only disagreeing paired outcomes favor one harness over another. This insight motivates prospective allocation in BRACE (Bank-calibrated Rollout Allocation under Correlated Episodes). BRACE combines historical task evidence, uncertainty in task success rates, and a correlated reward model to forecast mixed-reward groups before allocating generation budget. Controlled harness experiments favor Discord, while live MCP experiments expose a retention-cost trade-off. At three Qwen3-VL model scales, BRACE exceeds the strongest plotted baseline peaks with fewer new training rollouts; historical-bank collection is counted separately. It also leads the compared methods on BFCL and NESTFUL without further training. Ablations probe the bank, estimator, and allocation score; prospective evaluation checks forecast calibration. These results support forecasting reward contrast before generation.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-20T18:15:52Z</published>
+    <arxiv:comment>21 pages, 7 figures, 6 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Hieu Tran</name>
+    </author>
+    <author>
+      <name>Zonghai Yao</name>
+    </author>
+    <author>
+      <name>Sunjae Kwon</name>
+    </author>
+    <author>
+      <name>Hong Yu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.28380v1</id>
+    <title>Object-Oriented Harness: Evolving Agent Harnesses through Object-Oriented Design</title>
+    <updated>2026-10-20T15:32:52Z</updated>
+    <link href="https://arxiv.org/abs/2610.28380v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.28380v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Agent harnesses are executable code that specifies the prompts, tools, and control flow around a language model. A single global harness can struggle with heterogeneous tasks that require different execution strategies. In this work, we introduce Object-Oriented Harness (OO-Harness), a harness optimization framework that evolves a hierarchy of executable harness classes using object-oriented design. During training, an evolution agent uses execution records to create a family of specialized harnesses, each implemented as a subclass of the base or an existing specialized harness via inheritance. At test time, a harness router uses routing lessons accumulated during training to select a specific harness for each task. Across three long-horizon benchmarks spanning business workflows, workspace tasks, and tool use, OO-Harness achieves the best performance among the compared methods, with an absolute improvement of up to 15% over the base. Extensive ablation studies examine the contributions of its core components.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-20T15:32:52Z</published>
+    <arxiv:comment>20 pages, 10 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Gaotang Li</name>
+    </author>
+    <author>
+      <name>Bhavana Dalvi Mishra</name>
+    </author>
+    <author>
+      <name>Yifei Ming</name>
+    </author>
+    <author>
+      <name>Yanfei Chen</name>
+    </author>
+    <author>
+      <name>Zhongying CuiZhu</name>
+    </author>
+    <author>
+      <name>Lesly Miculicich</name>
+    </author>
+    <author>
+      <name>Long T. Le</name>
+    </author>
+    <author>
+      <name>Rui Meng</name>
+    </author>
+    <author>
+      <name>Chun-Liang Li</name>
+    </author>
+    <author>
+      <name>Hanghang Tong</name>
+    </author>
+    <author>
+      <name>Chen-Yu Lee</name>
+    </author>
+    <author>
+      <name>Tomas Pfister</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.27295v1</id>
+    <title>RealControlBench: A Benchmark for Interpretability-Informed Fine-Grained Control of LLMs and Agents</title>
+    <updated>2026-10-19T21:10:03Z</updated>
+    <link href="https://arxiv.org/abs/2610.27295v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.27295v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Existing steering benchmarks are built around simplified, isolated generation tasks and evaluate a single behavioral attribute under controlled settings that do not reflect the diversity and complexity of practical deployment. As a result, performance on these benchmarks provides only a limited picture of how steering methods perform in the real world. We therefore introduce RealControlBench, a comprehensive benchmark for evaluating fine-grained steering of LLMs and LLM agents across diverse behavioral targets and interaction settings. RealControlBench extends steering evaluation beyond isolated generations to complex, execution-grounded, multi-turn agent interactions, covering five complementary dimensions: instruction-following control, agentic tool-use decision control, reasoning-performance steering, reasoning-length control, and trajectory-conditioned safety awareness. Rather than measuring steering success alone, the benchmark jointly evaluates target controllability and capability preservation, including instruction following, reasoning performance, and downstream agent utility and safety. It further examines whether steering effects remain specific and robust across prompt variations, domains, and model architectures. Our evaluation shows that existing steering methods remain unreliable across realistic control objectives: they often fail to consistently induce the intended behavior and can substantially degrade the model's underlying task performance. These results suggest that strong steering effects in controlled settings do not necessarily translate into reliable control in more realistic evaluations. By providing a unified, model-agnostic steering evaluation framework, RealControlBench aims to support the development of steering methods that are not only effective but also precise, robust, and useful in realistic AI deployments.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-19T21:10:03Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Xinying Cai</name>
+    </author>
+    <author>
+      <name>Bin Hu</name>
+    </author>
+    <author>
+      <name>Mingyu Jin</name>
+    </author>
+    <author>
+      <name>Qiming Zhang</name>
+    </author>
+    <author>
+      <name>Yang Ouyang</name>
+    </author>
+    <author>
+      <name>Bangwei Guo</name>
+    </author>
+    <author>
+      <name>Minghao Guo</name>
+    </author>
+    <author>
+      <name>Yutong Yin</name>
+    </author>
+    <author>
+      <name>Lang Gao</name>
+    </author>
+    <author>
+      <name>Feijiang Han</name>
+    </author>
+    <author>
+      <name>Sheldon Yu</name>
+    </author>
+    <author>
+      <name>Kaiqu Liang</name>
+    </author>
+    <author>
+      <name>Qingcheng Zeng</name>
+    </author>
+    <author>
+      <name>Jingcheng Niu</name>
+    </author>
+    <author>
+      <name>Fan Yang</name>
+    </author>
+    <author>
+      <name>Wei Cheng</name>
+    </author>
+    <author>
+      <name>Zhen Xiang</name>
+    </author>
+    <author>
+      <name>Julian McAuley</name>
+    </author>
+    <author>
+      <name>Zhaoran Wang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.27233v1</id>
+    <title>MMedAgent-Plus: Scaling Multimodal Medical Agents across Modalities, Tasks and Workflows</title>
+    <updated>2026-10-19T20:00:50Z</updated>
+    <link href="https://arxiv.org/abs/2610.27233v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.27233v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Medical workflows often require multiple interdependent analyses, but existing specialist and generalist AI models are not designed to coordinate them. We introduce MMedAgent-Plus, a multimodal medical tool-use agent that combines a vision-language planner with 18 leading specialist models spanning 12 tasks and 8 modalities. Through a unified tool interface, the planner selects specialists, executes them in sequence, and synthesizes responses grounded in their outputs. The planner is instruction-tuned on 208,928 samples from 32 public medical benchmarks, covering single- and multi-tool interactions across single and multiple rounds. We separately evaluate tool orchestration, response synthesis, and end-to-end execution on held-out samples. MMedAgent-Plus achieves tool-call accuracies of 91.0%, 98.1%, and 80.7% in single-tool multi-round, multi-tool multi-round, and multi-tool single-round settings, respectively. Given correct tool outputs, MMedAgent-Plus achieves scores of 14.4-14.8 out of 15 for faithfulness, completeness, and conciseness across 600 evaluation samples. In end-to-end execution without pre-supplied tool outputs, MMedAgent-Plus correctly invokes the required specialist in 90.6% of 350 evaluation cases spanning seven tasks. Its final-answer accuracy reaches 0.98, matching the dedicated leading specialist and exceeding the strongest baseline (0.28).</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-19T20:00:50Z</published>
+    <arxiv:comment>66 pages, 28 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Ruoxin Wang</name>
+    </author>
+    <author>
+      <name>Yuanting Pan</name>
+    </author>
+    <author>
+      <name>Binxu Li</name>
+    </author>
+    <author>
+      <name>Ruiyang Ji</name>
+    </author>
+    <author>
+      <name>Yaqian Chen</name>
+    </author>
+    <author>
+      <name>Jiayuan Ding</name>
+    </author>
+    <author>
+      <name>Qifan Wang</name>
+    </author>
+    <author>
+      <name>Lifu Huang</name>
+    </author>
+    <author>
+      <name>Mingjie Li</name>
+    </author>
+    <author>
+      <name>Yu Zhang</name>
+    </author>
+    <author>
+      <name>Ehsan Adeli</name>
+    </author>
+    <author>
+      <name>Kilian Pohl</name>
+    </author>
+    <author>
+      <name>Zhe Xu</name>
+    </author>
+    <author>
+      <name>Zihao Lin</name>
+    </author>
+    <author>
+      <name>Haoyu Dong</name>
+    </author>
+    <author>
+      <name>Yixin Wang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.26860v1</id>
+    <title>OpenVLHarness: Real World Visual Agentic Tool-Use with Multimodal Memory</title>
+    <updated>2026-10-19T17:59:58Z</updated>
+    <link href="https://arxiv.org/abs/2610.26860v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.26860v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Multimodal large language models (MLLMs) have made rapid progress on visual reasoning, yet many tasks require evidence that is difficult to obtain through internal reasoning alone: our controlled study on 22 benchmarks shows that simply increasing the inference budget of the base model yields only modest gains. Such tasks demand grounded perception, external knowledge, and numerical measurements obtained through heterogeneous tools, whose outputs must be made interpretable to the model and retained across reasoning steps. We introduce OpenVLHarness, a multimodal reasoning harness organized around a capability layer and persistent multimodal memory. The capability layer combines task-level tool interfaces with evidence rendering, providing consistent access to heterogeneous backends and converting their outputs into model-readable observations. Persistent multimodal memory retains the corresponding images, structured data, and web references as addressable artifacts throughout each query. A coding interface executes generated programs over stored data, enabling computations that combine results from multiple tools. Together, these mechanisms support an iterative process of acquiring, inspecting, and composing multimodal evidence. Evaluated on 22 benchmarks with eight open and proprietary backbones, OpenVLHarness improves average scores by 9.7-12.6 points over matched no-tool baselines, including +11.2 with Qwen3-VL-8B, +9.7 with Kimi K3, and +9.9 with GPT-6 Astra. With GPT-6 Luna at medium reasoning effort, OpenVLHarness outperforms the base model, Codex, and Visual Sketchpad at maximum effort by 7.7-8.5 points while incurring at most 37% of their model-token cost.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MM" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-19T17:59:58Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Yu Zhou</name>
+    </author>
+    <author>
+      <name>Cheng-Fu Yang</name>
+    </author>
+    <author>
+      <name>Rui Sun</name>
+    </author>
+    <author>
+      <name>Di Wu</name>
+    </author>
+    <author>
+      <name>Sibo Peng</name>
+    </author>
+    <author>
+      <name>Mingyang Zhang</name>
+    </author>
+    <author>
+      <name>Zhen Yang</name>
+    </author>
+    <author>
+      <name>Ruiyi Zhang</name>
+    </author>
+    <author>
+      <name>Nanyun Peng</name>
+    </author>
+    <author>
+      <name>Zhe Gan</name>
+    </author>
+    <author>
+      <name>Kai-Wei Chang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.26828v1</id>
+    <title>Agent World Model in the Wild: Computer-Use Agent Environment Synthesis</title>
+    <updated>2026-10-19T17:55:35Z</updated>
+    <link href="https://arxiv.org/abs/2610.26828v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.26828v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Agent learning is shifting from learning from human data toward learning through interaction with the world. However, scaling such learning directly in real-world computer systems is challenging and can introduce substantial security risks. We therefore propose Agent World Model in the Wild (WildAWM), a scalable pipeline for synthesizing controllable environments and tasks for training general computer-use agents (CUAs). Whereas existing approaches typically specialize in a single agent interaction interface, we construct executable environments that jointly support graphical user interfaces, model context protocol services, and command-line interfaces, allowing agents to flexibly combine visual interaction, tool use, and code execution. WildAWM is entirely powered by open-source models, demonstrating that high-quality computer-use environments can be generated without proprietary frontier models. Beyond environments, we address three recurring challenges in task synthesis: ensuring solvability, maintaining sufficient difficulty, and producing reliable verifiers, by introducing execution-based quality gates that combine heterogeneous agent rollouts, cross-judge consistency checks, and counterfactual probes of judgment robustness. The resulting pipeline synthesizes 341 long-horizon environment-task pairs that can require over 100 agent steps to solve and remain challenging even for frontier models, with GPT-6-Astra solving only 60% of them. We train two Qwen models of different sizes exclusively in these synthetic worlds. Both models achieve substantial gains across 8 out-of-distribution benchmarks spanning web, claw, and computer-use agents, demonstrating that learning in WildAWM's synthesized worlds generalizes broadly to unseen computer-use tasks. The code is publicly available at https://github.com/MSR-Orchard/WildAWM.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-19T17:55:35Z</published>
+    <arxiv:comment>35 pages</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Zhaoyang Wang</name>
+    </author>
+    <author>
+      <name>Qianhui Wu</name>
+    </author>
+    <author>
+      <name>Haorui Wang</name>
+    </author>
+    <author>
+      <name>Simon Yu</name>
+    </author>
+    <author>
+      <name>Baolin Peng</name>
+    </author>
+    <author>
+      <name>Canwen Xu</name>
+    </author>
+    <author>
+      <name>Hao Cheng</name>
+    </author>
+    <author>
+      <name>Wenlin Yao</name>
+    </author>
+    <author>
+      <name>Boyi Liu</name>
+    </author>
+    <author>
+      <name>Yite Wang</name>
+    </author>
+    <author>
+      <name>Jianfeng Gao</name>
+    </author>
+    <author>
+      <name>Huaxiu Yao</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.26826v1</id>
+    <title>RefCraft: Benchmarking Visual-Reference-Conditioned Agentic Generation through Web Development</title>
+    <updated>2026-10-19T17:55:06Z</updated>
+    <link href="https://arxiv.org/abs/2610.26826v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.26826v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Beyond basic tool use and coding skills, effectively incorporating visual references into agentic generation is equally essential for applying AI agents to real-world productivity tasks. We study this crucial capability through webpage development, a practical and readily evaluable setting in which existing benchmarks remain largely idealized: they typically focus on reconstructing visual targets or generating webpages from textual instructions alone, overlooking the more common workflow of developing from visual examples. Specifically, we introduce RefCraft, a benchmark comprising 300 realistic multimodal webpage-development tasks that combine natural-language instructions with screenshots from one to five reference webpages. Agents must selectively interpret and utilize these references while rendering, visually inspecting, and iteratively refining their outputs. We evaluate the resulting open-ended artifacts using independently verifiable keypoints and complementary programmatic and VLM judges. Across nine frontier (M)LLMs, the strongest system achieves an overall score of only 52.12 out of 100, revealing that visual-reference-conditioned agentic generation remains a substantial challenge for current models in practical webpage-development settings.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-19T17:55:06Z</published>
+    <arxiv:comment>Project page: https://wangyuchi369.github.io/refcraft/</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Yuchi Wang</name>
+    </author>
+    <author>
+      <name>Rongyao Fang</name>
+    </author>
+    <author>
+      <name>Weihao Yu</name>
+    </author>
+    <author>
+      <name>Xilin Wei</name>
+    </author>
+    <author>
+      <name>Tiancheng Gu</name>
+    </author>
+    <author>
+      <name>Dingkang Yang</name>
+    </author>
+    <author>
+      <name>Hang Zhang</name>
+    </author>
+    <author>
+      <name>Dayiheng Liu</name>
+    </author>
+    <author>
+      <name>Hongsheng Li</name>
+    </author>
+    <author>
+      <name>Shuai Bai</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.26342v2</id>
+    <title>VibeTraining-Bench: Data-Trainer-Harness Co-Design for Iterative System Improvement</title>
+    <updated>2026-10-20T13:03:07Z</updated>
+    <link href="https://arxiv.org/abs/2610.26342v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.26342v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recursive self-improvement (RSI) requires agents to diagnose system bottlenecks and coordinate improvements across training and inference. We refer to the agents' capability to jointly optimize training data, the trainer, and the inference harness as cross-component co-design. We introduce VibeTraining-Bench, a benchmark for evaluating this capability across tasks spanning terminal operation, software engineering, multi-turn tool use, and mathematical reasoning. Within each task, research agents start from an identical initial agent system under a fixed resource budget. Guided by validation feedback, they iteratively refine data, trainers, and inference harnesses, then select and submit a final agent system for evaluation on the test set. To prevent reward hacking, we enforce three safeguards: test data isolation, separate research and grading containers, and network restrictions for research agents. Our evaluation results show that frontier research agents substantially improve target agent systems. For example, on SWE-bench Verified, GPT-6-Astra raises the target agent system's performance from 32.9% to 53.7%, comparable to the human-developed instruct model's 55.4%. However, there is still room to improve their ability to co-design and iteratively refine data, trainer, and harness to achieve cumulative performance gains. We hope that VibeTraining-Bench will serve as a unified platform for advancing RSI, deepening our understanding of cross-component optimization for agent systems. Code and data are available at https://github.com/D2I-ai/VibeTraining-Bench.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-19T13:10:54Z</published>
+    <arxiv:comment>(Technical report (27 pages, 21 figures)</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Ruotian Peng</name>
+    </author>
+    <author>
+      <name>Yuanyi Ren</name>
+    </author>
+    <author>
+      <name>Shuaiqi Liu</name>
+    </author>
+    <author>
+      <name>Xin Guo</name>
+    </author>
+    <author>
+      <name>Fang Zhu</name>
+    </author>
+    <author>
+      <name>Yangyi Huang</name>
+    </author>
+    <author>
+      <name>Yue Wu</name>
+    </author>
+    <author>
+      <name>Zheng Wang</name>
+    </author>
+    <author>
+      <name>Yandong Wen</name>
+    </author>
+    <author>
+      <name>Zhihang Fu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.26233v1</id>
+    <title>Heartbeat Thinking: Speculative Reasoning and Tool Execution While Listening in Realtime Voice Agents</title>
+    <updated>2026-10-19T11:59:57Z</updated>
+    <link href="https://arxiv.org/abs/2610.26233v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.26233v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tool-using voice agents often leave users waiting after speech ends, even when actionable information arrives earlier in the request. Speculative approaches begin work during speech, but chunk-bounded or interrupt-on-update generation can truncate a tool call before its arguments are complete. This couples computation time to speech updates, limiting useful work completed in advance. We introduce Heartbeat Thinking, which handles updated input through new Thinker invocations while allowing ongoing invocations and dispatched tools to finish. Periodic invocations read the latest partial transcript and a shared record of completed reasoning and tool results. These results help resolve missing arguments and initiate dependent calls, allowing preparation to progress across speech updates. Across SpeechFCEval, FDBench v3, and AudioCRAG, Heartbeat improves aggregate speculative tool coverage or retrieval reuse over a SHANKS-style windowed baseline, with benchmark-dependent effects on final task quality. On FDBench v3, it increases tool coverage by 16 percentage points and reduces mean final-response latency by 36.4\%. The results show that heartbeat thinking paradigm preserving ongoing computation during speech can turn listening time into reusable preparation for faster and more capable voice-agent responses.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-19T11:59:57Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Zhenyu Zhang</name>
+    </author>
+    <author>
+      <name>Kewei Fu</name>
+    </author>
+    <author>
+      <name>Yongqi Tong</name>
+    </author>
+    <author>
+      <name>Chenzhi Zheng</name>
+    </author>
+    <author>
+      <name>Wei Wu</name>
+    </author>
+    <author>
+      <name>Jiang-Ming Yang</name>
+    </author>
+    <author>
+      <name>Jianshe Li</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.25123v2</id>
+    <title>Memories That Outlive Their Reasons: Dependency-Tethered Memory for Tool-Using LLM Agents</title>
+    <updated>2026-10-22T04:32:22Z</updated>
+    <link href="https://arxiv.org/abs/2610.25123v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.25123v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Agents now act on the Web, publishing packages, models and datasets through registry APIs, and remembering past verifications spares them the work. But a verdict rests on premises. When a signing key is revoked, everything built on it stops passing, yet the advisory names only the key, and the old verdicts of its dependents may never share a retrieval window with it. This non-locality of invalidation turns memory into a liability: in long simulated chats, an agent reading a memory of atomic facts publishes 62% of the objects whose failure lies upstream, each backed by a record that was true when written. Yet derivation is local even when invalidation is not. Tether records, at write time, the exact versions each verdict derives from, and at read time withdraws any verdict whose support has failed anywhere in the store; the agent reads the same fields as before. On Fallout, a generator of versioned worlds with hypothesis-blind simulated histories shared by every memory, Tether publishes 0.3% of upstream-failing objects across three domains when relations are stated with their verdicts, with 37% fewer verification calls than checking everything. A-Mem and Graphiti re-verify most candidates (0.83--0.86 checks per candidate), which limits their savings, yet publish 9% of upstream-failing objects; Mem0 relies on memory more and publishes 42%. Flushing every verdict on any failure is as safe as Tether but costs 32% more checks. The gain over fact memory holds with three open-weight backbones, a whole-store window and real Go advisories. These gains depend on capturing dependencies: when relations arrive in sessions apart from their verdicts, Tether's downstream unsafe publication rate rises to 9.4--22.1%. It also degrades with weaker writers that miss dependencies or invalidation events.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-18T09:01:52Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Yiqi Wang</name>
+    </author>
+    <author>
+      <name>Jinqian Ju</name>
+    </author>
+    <author>
+      <name>Jiaqi Zhang</name>
+    </author>
+    <author>
+      <name>Zhangkai Wu</name>
+    </author>
+    <author>
+      <name>Yiqun Duan</name>
+    </author>
+    <author>
+      <name>Zequn Sun</name>
+    </author>
+    <author>
+      <name>Taotao Cai</name>
+    </author>
+    <author>
+      <name>Mingkai Zheng</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.24718v1</id>
+    <title>Neuro-Inspired Inhibitory Message Passing for Accurate and Token-Efficient Multi-Agent Reasoning</title>
+    <updated>2026-10-17T14:30:37Z</updated>
+    <link href="https://arxiv.org/abs/2610.24718v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.24718v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Multi-agent systems promise to solve problems by bringing together information beyond the reach of any individual agent. Retrieval and tool use can distribute this information across agents, making communication essential to collaboration. A central challenge is keeping crucial evidence visible in each agent's context as messages accumulate. Repeated information can crowd out rare, decisive evidence. Models of cortical circuits suggest a principle for addressing this imbalance: inhibition can selectively suppress shared inputs while preserving sensitivity to weaker signals. We adapt this principle into inhibitory message passing, a training-free communication router that cancels redundant evidence separately for each evidence sentence and receiver. Each round, it forwards evidence sentences restated in agents' messages, delivering each at most once to receivers whose own evidence lacks it and excluding the senders' reasoning and answers. Against standard message passing, accuracy in peer groups rose by 39-77 percentage points across three benchmarks, and tokens per run fell by 10-46%. Gains held across seven open models spanning four to thirty-two billion parameters and two commercial models, in groups up to sixty-four agents, and across multi-agent architectures including peer-to-peer, orchestrator-worker, and multilevel hierarchical organizations. These findings support a scalable design pattern for more accurate and token-efficient multi-agent reasoning.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-17T14:30:37Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Nima H. Siboni</name>
+    </author>
+    <author>
+      <name>Magdalena Springer</name>
+    </author>
+    <author>
+      <name>Vahid Rostami</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.24628v3</id>
+    <title>Muse Glimmer 30B: An On-Device Agentic Model</title>
+    <updated>2026-10-23T17:03:21Z</updated>
+    <link href="https://arxiv.org/abs/2610.24628v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.24628v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We introduce Muse Glimmer, an open-source 30B parameter causal language model with perception encoder, purpose-built for autonomous agentic tasks on consumer hardware. Muse Glimmer integrates multi-step reasoning, reliable tool use and failure recovery into a single model that runs locally on consumer devices without requiring cloud infrastructure. The model accepts text and image inputs and produces text outputs, was trained on data from over a hundred languages, and is quantized to approximately 4-bit precision for efficient single-GPU inference. Muse Glimmer achieves state-of-the-art performance for its size class on agentic benchmarks, setting a new standard compared to the models of its size: Gemma4-31B and Qwen3.6-27B on tool use, multi-step planning, and agentic task completion. We release the model under the Apache 2.0 license to foster open-source development of capable, safe, local AI agents.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-17T11:05:21Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Arash Ebrahim Abtahizadeh</name>
+    </author>
+    <author>
+      <name>Muna Aghamelu</name>
+    </author>
+    <author>
+      <name>Adil Ahmed</name>
+    </author>
+    <author>
+      <name>Juan C. Angeles Acuna</name>
+    </author>
+    <author>
+      <name>Alexis Audran-Reiss</name>
+    </author>
+    <author>
+      <name>Asaf Avrahamy</name>
+    </author>
+    <author>
+      <name>Yoram Bachrach</name>
+    </author>
+    <author>
+      <name>Can Balioglu</name>
+    </author>
+    <author>
+      <name>Amar Budhiraja</name>
+    </author>
+    <author>
+      <name>Onur Çelebi</name>
+    </author>
+    <author>
+      <name>Gaurav Chaurasia</name>
+    </author>
+    <author>
+      <name>Joy Chen</name>
+    </author>
+    <author>
+      <name>Lynn Cherif</name>
+    </author>
+    <author>
+      <name>Lucia Cipolina-Kun</name>
+    </author>
+    <author>
+      <name>Gal Cohen</name>
+    </author>
+    <author>
+      <name>Timothée Darcet</name>
+    </author>
+    <author>
+      <name>Beto de Paola</name>
+    </author>
+    <author>
+      <name>Digant Desai</name>
+    </author>
+    <author>
+      <name>Sam Devlin</name>
+    </author>
+    <author>
+      <name>Derek Dunfield</name>
+    </author>
+    <author>
+      <name>Ivan Evtimov</name>
+    </author>
+    <author>
+      <name>Maryam Fazel-Zarandi</name>
+    </author>
+    <author>
+      <name>Rob Fergus</name>
+    </author>
+    <author>
+      <name>Jean-Christophe Gagnon-Audet</name>
+    </author>
+    <author>
+      <name>Grant Gardner</name>
+    </author>
+    <author>
+      <name>Bhavul Gauri</name>
+    </author>
+    <author>
+      <name>Paris Giampouras</name>
+    </author>
+    <author>
+      <name>Sujan Kumar Gonugondla</name>
+    </author>
+    <author>
+      <name>Antoine Grosnit</name>
+    </author>
+    <author>
+      <name>Young Han</name>
+    </author>
+    <author>
+      <name>Michael Hassid</name>
+    </author>
+    <author>
+      <name>Monuril Islam</name>
+    </author>
+    <author>
+      <name>Masoud Jalili Sabet</name>
+    </author>
+    <author>
+      <name>Songhao Jia</name>
+    </author>
+    <author>
+      <name>Narine Kokhlikyan</name>
+    </author>
+    <author>
+      <name>Svetlana Kurtsman</name>
+    </author>
+    <author>
+      <name>Sandra Lefdal</name>
+    </author>
+    <author>
+      <name>Chee Hau Leow</name>
+    </author>
+    <author>
+      <name>Noam Levi</name>
+    </author>
+    <author>
+      <name>Mike Lewis</name>
+    </author>
+    <author>
+      <name>Sanae Lotfi</name>
+    </author>
+    <author>
+      <name>Xiyang Luo</name>
+    </author>
+    <author>
+      <name>Despoina Magka</name>
+    </author>
+    <author>
+      <name>Saeed Mahloujifar</name>
+    </author>
+    <author>
+      <name>Neal Mangaokar</name>
+    </author>
+    <author>
+      <name>Ishita Mediratta</name>
+    </author>
+    <author>
+      <name>Alexander H. Miller</name>
+    </author>
+    <author>
+      <name>Hela Momand</name>
+    </author>
+    <author>
+      <name>Saba Nazir</name>
+    </author>
+    <author>
+      <name>Kelvin Niu</name>
+    </author>
+    <author>
+      <name>Mattia Opper</name>
+    </author>
+    <author>
+      <name>Parth Pathak</name>
+    </author>
+    <author>
+      <name>Alberto Pepe</name>
+    </author>
+    <author>
+      <name>Danielle Pintz</name>
+    </author>
+    <author>
+      <name>Mikhail Plekhanov</name>
+    </author>
+    <author>
+      <name>Sidhartha Reddy Potu</name>
+    </author>
+    <author>
+      <name>Anton Protopopov</name>
+    </author>
+    <author>
+      <name>Shengyi Qian</name>
+    </author>
+    <author>
+      <name>Shashank Rajput</name>
+    </author>
+    <author>
+      <name>Joseph Rocca</name>
+    </author>
+    <author>
+      <name>Scott Roy</name>
+    </author>
+    <author>
+      <name>Luca Sbordone</name>
+    </author>
+    <author>
+      <name>Amin Shakeri</name>
+    </author>
+    <author>
+      <name>Tatiana Shavrina</name>
+    </author>
+    <author>
+      <name>Michael Shvartsman</name>
+    </author>
+    <author>
+      <name>Ruan Silva</name>
+    </author>
+    <author>
+      <name>Anya Sims</name>
+    </author>
+    <author>
+      <name>Eric Michael Smith</name>
+    </author>
+    <author>
+      <name>Hugo Touvron</name>
+    </author>
+    <author>
+      <name>Mabel Ubong</name>
+    </author>
+    <author>
+      <name>Isabel Urrego</name>
+    </author>
+    <author>
+      <name>Yanzheng Xiang</name>
+    </author>
+    <author>
+      <name>Zhiyuan Yao</name>
+    </author>
+    <author>
+      <name>Alex Yarmula</name>
+    </author>
+    <author>
+      <name>He Ye</name>
+    </author>
+    <author>
+      <name>Jade Yu</name>
+    </author>
+    <author>
+      <name>Luke Zettlemoyer</name>
+    </author>
+    <author>
+      <name>Arman Zharmagambetov</name>
+    </author>
+    <author>
+      <name>Perpetua Fathima Ahlijah</name>
+    </author>
+    <author>
+      <name>Tremo Ahmed</name>
+    </author>
+    <author>
+      <name>Enrique Alfonseca</name>
+    </author>
+    <author>
+      <name>Pedram Bashiri</name>
+    </author>
+    <author>
+      <name>Nikolay Bashlykov</name>
+    </author>
+    <author>
+      <name>Amine Benhalloum</name>
+    </author>
+    <author>
+      <name>Aaron Berman</name>
+    </author>
+    <author>
+      <name>Rohith Bhatia</name>
+    </author>
+    <author>
+      <name>Siddharth Bhattacharya</name>
+    </author>
+    <author>
+      <name>Prashant Bhende</name>
+    </author>
+    <author>
+      <name>Chloe Bi</name>
+    </author>
+    <author>
+      <name>Shuchao Bi</name>
+    </author>
+    <author>
+      <name>Clement Anthonioz Blanc</name>
+    </author>
+    <author>
+      <name>Allen Bolourchi</name>
+    </author>
+    <author>
+      <name>Iva Simon-Bubalo</name>
+    </author>
+    <author>
+      <name>Pere-Lluís Huguet Cabot</name>
+    </author>
+    <author>
+      <name>Andrea Caciolai</name>
+    </author>
+    <author>
+      <name>Erica Cai</name>
+    </author>
+    <author>
+      <name>Xiang Tony Cao</name>
+    </author>
+    <author>
+      <name>Yue Cao</name>
+    </author>
+    <author>
+      <name>Andrew Caples</name>
+    </author>
+    <author>
+      <name>Jinzhao Chang</name>
+    </author>
+    <author>
+      <name>Lele Chen</name>
+    </author>
+    <author>
+      <name>Moya Chen</name>
+    </author>
+    <author>
+      <name>Weijie Chen</name>
+    </author>
+    <author>
+      <name>Wenhu Chen</name>
+    </author>
+    <author>
+      <name>Xiaobai Chen</name>
+    </author>
+    <author>
+      <name>Yinyin Chen</name>
+    </author>
+    <author>
+      <name>Zhengxing Chen</name>
+    </author>
+    <author>
+      <name>Wei Cheng</name>
+    </author>
+    <author>
+      <name>Pavel Chikulaev</name>
+    </author>
+    <author>
+      <name>Edward Chou</name>
+    </author>
+    <author>
+      <name>Sy Choudhury</name>
+    </author>
+    <author>
+      <name>Brian Clerkin</name>
+    </author>
+    <author>
+      <name>Marta R. Costa-jussà</name>
+    </author>
+    <author>
+      <name>Hanjun Dai</name>
+    </author>
+    <author>
+      <name>Curtis Davis</name>
+    </author>
+    <author>
+      <name>Myra Deng</name>
+    </author>
+    <author>
+      <name>Tiffany Siqi Deng</name>
+    </author>
+    <author>
+      <name>Dujian Ding</name>
+    </author>
+    <author>
+      <name>Hantian Ding</name>
+    </author>
+    <author>
+      <name>Shuangrui Ding</name>
+    </author>
+    <author>
+      <name>Jesse Dodge</name>
+    </author>
+    <author>
+      <name>Carl Domond</name>
+    </author>
+    <author>
+      <name>Shweta Doshi</name>
+    </author>
+    <author>
+      <name>Shirin Eghtesadi</name>
+    </author>
+    <author>
+      <name>Faith Eischen</name>
+    </author>
+    <author>
+      <name>Athyu Eleti</name>
+    </author>
+    <author>
+      <name>Jordi Armengol-Estape</name>
+    </author>
+    <author>
+      <name>Alex Fabbri</name>
+    </author>
+    <author>
+      <name>Han Fang</name>
+    </author>
+    <author>
+      <name>Paula Farani</name>
+    </author>
+    <author>
+      <name>Aiman Farooq</name>
+    </author>
+    <author>
+      <name>Darius Feher</name>
+    </author>
+    <author>
+      <name>Christoph Feichtenhofer</name>
+    </author>
+    <author>
+      <name>Amanda Felix</name>
+    </author>
+    <author>
+      <name>Romain Froger</name>
+    </author>
+    <author>
+      <name>Carl Chengyan Fu</name>
+    </author>
+    <author>
+      <name>Sean Gahagan</name>
+    </author>
+    <author>
+      <name>Yifan Gao</name>
+    </author>
+    <author>
+      <name>Itai Gat</name>
+    </author>
+    <author>
+      <name>Jannes Gladrow</name>
+    </author>
+    <author>
+      <name>Akashdeep Goel</name>
+    </author>
+    <author>
+      <name>Ahuva Goldstand</name>
+    </author>
+    <author>
+      <name>Bo He</name>
+    </author>
+    <author>
+      <name>David Heineman</name>
+    </author>
+    <author>
+      <name>Dylan Herman</name>
+    </author>
+    <author>
+      <name>Irene Hjelt</name>
+    </author>
+    <author>
+      <name>Joonas Hjelt</name>
+    </author>
+    <author>
+      <name>Alexander Holz</name>
+    </author>
+    <author>
+      <name>Rui Hou</name>
+    </author>
+    <author>
+      <name>Annie Hu</name>
+    </author>
+    <author>
+      <name>Yuan-Ting Hu</name>
+    </author>
+    <author>
+      <name>Bernie Huang</name>
+    </author>
+    <author>
+      <name>Jing Huang</name>
+    </author>
+    <author>
+      <name>Kun Huang</name>
+    </author>
+    <author>
+      <name>Ashley Hunter</name>
+    </author>
+    <author>
+      <name>Srinivasan Iyer</name>
+    </author>
+    <author>
+      <name>Somya Jain</name>
+    </author>
+    <author>
+      <name>Bei Jia</name>
+    </author>
+    <author>
+      <name>Michael Jiang</name>
+    </author>
+    <author>
+      <name>Song Jiang</name>
+    </author>
+    <author>
+      <name>Wenwen Jiang</name>
+    </author>
+    <author>
+      <name>Lin Jin</name>
+    </author>
+    <author>
+      <name>Jacob Kahn</name>
+    </author>
+    <author>
+      <name>Melanie Kambadur</name>
+    </author>
+    <author>
+      <name>Yingxin Kang</name>
+    </author>
+    <author>
+      <name>Justine Kao</name>
+    </author>
+    <author>
+      <name>Stephane Kasriel</name>
+    </author>
+    <author>
+      <name>Hossein Kavianihamedani</name>
+    </author>
+    <author>
+      <name>Madian Khabsa</name>
+    </author>
+    <author>
+      <name>Ameya Khandekar</name>
+    </author>
+    <author>
+      <name>Yash Khare</name>
+    </author>
+    <author>
+      <name>Gefen Kohavi</name>
+    </author>
+    <author>
+      <name>Kavya Kopparapu</name>
+    </author>
+    <author>
+      <name>Praveen Krishnan</name>
+    </author>
+    <author>
+      <name>Venu Kuchibhotla</name>
+    </author>
+    <author>
+      <name>Ananya Kumar</name>
+    </author>
+    <author>
+      <name>Leona Lan</name>
+    </author>
+    <author>
+      <name>Jack Lanchantin</name>
+    </author>
+    <author>
+      <name>Hunter Lang</name>
+    </author>
+    <author>
+      <name>Nikolay Pavlovich Laptev</name>
+    </author>
+    <author>
+      <name>Yuanzhi Li</name>
+    </author>
+    <author>
+      <name>Yunlu Li</name>
+    </author>
+    <author>
+      <name>Asad Liaqat</name>
+    </author>
+    <author>
+      <name>Johnson Lin</name>
+    </author>
+    <author>
+      <name>Runwei Lin</name>
+    </author>
+    <author>
+      <name>Zhichao Lin</name>
+    </author>
+    <author>
+      <name>Shaun Lindsay</name>
+    </author>
+    <author>
+      <name>Yaron Lipman</name>
+    </author>
+    <author>
+      <name>Frederick Liu</name>
+    </author>
+    <author>
+      <name>Mengchen Liu</name>
+    </author>
+    <author>
+      <name>Qiang Liu</name>
+    </author>
+    <author>
+      <name>Yinghai Lu</name>
+    </author>
+    <author>
+      <name>Yujie Lu</name>
+    </author>
+    <author>
+      <name>Christopher Luc</name>
+    </author>
+    <author>
+      <name>Faye Ma</name>
+    </author>
+    <author>
+      <name>Pingchuan Ma</name>
+    </author>
+    <author>
+      <name>Tengyu Ma</name>
+    </author>
+    <author>
+      <name>Wufei Ma</name>
+    </author>
+    <author>
+      <name>Xiaodong Ma</name>
+    </author>
+    <author>
+      <name>Damir Maksyutov</name>
+    </author>
+    <author>
+      <name>Josh Malone</name>
+    </author>
+    <author>
+      <name>Udeep Manchanda</name>
+    </author>
+    <author>
+      <name>Thomas Mann</name>
+    </author>
+    <author>
+      <name>Kalyani Marathe</name>
+    </author>
+    <author>
+      <name>Akhil Mathur</name>
+    </author>
+    <author>
+      <name>Roberto-Rafael Maura-Rivero</name>
+    </author>
+    <author>
+      <name>Ruslan Mavlyutov</name>
+    </author>
+    <author>
+      <name>Thomas Mesnard</name>
+    </author>
+    <author>
+      <name>Gregoire Mialon</name>
+    </author>
+    <author>
+      <name>Julian Michael</name>
+    </author>
+    <author>
+      <name>Sagar Miglani</name>
+    </author>
+    <author>
+      <name>Todor Mihaylov</name>
+    </author>
+    <author>
+      <name>Naureen Mitha</name>
+    </author>
+    <author>
+      <name>Archi Mitra</name>
+    </author>
+    <author>
+      <name>Leo Mok</name>
+    </author>
+    <author>
+      <name>Naila Murray</name>
+    </author>
+    <author>
+      <name>Muthukumaravel Muthuraman</name>
+    </author>
+    <author>
+      <name>Mergen Nachin</name>
+    </author>
+    <author>
+      <name>Nese Demir Nalci</name>
+    </author>
+    <author>
+      <name>Saaketh Narayan</name>
+    </author>
+    <author>
+      <name>Alyssa Newcomb</name>
+    </author>
+    <author>
+      <name>Peter Ney</name>
+    </author>
+    <author>
+      <name>Joycelyn Ng</name>
+    </author>
+    <author>
+      <name>Devin Norder</name>
+    </author>
+    <author>
+      <name>Maxwell Nye</name>
+    </author>
+    <author>
+      <name>Rajvardhan Oak</name>
+    </author>
+    <author>
+      <name>Cody Ohlsen</name>
+    </author>
+    <author>
+      <name>Artidoro Pagnoni</name>
+    </author>
+    <author>
+      <name>Yi Pan</name>
+    </author>
+    <author>
+      <name>Nilesh Pandey</name>
+    </author>
+    <author>
+      <name>Guan Pang</name>
+    </author>
+    <author>
+      <name>Richard Yuanzhe Pang</name>
+    </author>
+    <author>
+      <name>Mahesh Pasupuleti</name>
+    </author>
+    <author>
+      <name>Parth Patel</name>
+    </author>
+    <author>
+      <name>Yash Patel</name>
+    </author>
+    <author>
+      <name>Vladan Petrovic</name>
+    </author>
+    <author>
+      <name>Leslie St. Pierre</name>
+    </author>
+    <author>
+      <name>Norman Ponte</name>
+    </author>
+    <author>
+      <name>Yundi Qian</name>
+    </author>
+    <author>
+      <name>Zengyi Qin</name>
+    </author>
+    <author>
+      <name>Jack Rae</name>
+    </author>
+    <author>
+      <name>Ramya Raghavendra</name>
+    </author>
+    <author>
+      <name>Emmanuel Ramirez</name>
+    </author>
+    <author>
+      <name>Nikhila Ravi</name>
+    </author>
+    <author>
+      <name>Hongyu Ren</name>
+    </author>
+    <author>
+      <name>Riandy Riandy</name>
+    </author>
+    <author>
+      <name>Harrison Rudolph</name>
+    </author>
+    <author>
+      <name>Kalyan Saladi</name>
+    </author>
+    <author>
+      <name>Eduardo Sánchez</name>
+    </author>
+    <author>
+      <name>Karthik Abinav Sankararaman</name>
+    </author>
+    <author>
+      <name>Alan Schelten</name>
+    </author>
+    <author>
+      <name>Thomas Scialom</name>
+    </author>
+    <author>
+      <name>Aman Shankar</name>
+    </author>
+    <author>
+      <name>Paresh Shenoy</name>
+    </author>
+    <author>
+      <name>Alana Shine</name>
+    </author>
+    <author>
+      <name>Hamid Shojanazeri</name>
+    </author>
+    <author>
+      <name>Mitesh Kumar Singh</name>
+    </author>
+    <author>
+      <name>Pawan Sisodiya</name>
+    </author>
+    <author>
+      <name>Ali Sol</name>
+    </author>
+    <author>
+      <name>Sten Sootla</name>
+    </author>
+    <author>
+      <name>DiJia Su</name>
+    </author>
+    <author>
+      <name>Suraj Subramanian</name>
+    </author>
+    <author>
+      <name>Brian Sun</name>
+    </author>
+    <author>
+      <name>Tony Sun</name>
+    </author>
+    <author>
+      <name>Zhiqing Sun</name>
+    </author>
+    <author>
+      <name>Natacha Supper</name>
+    </author>
+    <author>
+      <name>Jason Talpalar</name>
+    </author>
+    <author>
+      <name>Ellen Xiaoqing Tan</name>
+    </author>
+    <author>
+      <name>Liang Tan</name>
+    </author>
+    <author>
+      <name>Buğra Tekin</name>
+    </author>
+    <author>
+      <name>Jean-Christophe Testud</name>
+    </author>
+    <author>
+      <name>Parth Thakkar</name>
+    </author>
+    <author>
+      <name>Joseph Tighe</name>
+    </author>
+    <author>
+      <name>Ty Toledano</name>
+    </author>
+    <author>
+      <name>T Tse</name>
+    </author>
+    <author>
+      <name>Igor Tufanov</name>
+    </author>
+    <author>
+      <name>Alex Vaughan</name>
+    </author>
+    <author>
+      <name>Josh Walters</name>
+    </author>
+    <author>
+      <name>Alex Wang</name>
+    </author>
+    <author>
+      <name>Bethany Wang</name>
+    </author>
+    <author>
+      <name>Meng Wang</name>
+    </author>
+    <author>
+      <name>Rocky Wang</name>
+    </author>
+    <author>
+      <name>Weiyue Wang</name>
+    </author>
+    <author>
+      <name>Xiaolan Wang</name>
+    </author>
+    <author>
+      <name>Xin Wang</name>
+    </author>
+    <author>
+      <name>Zijian Wang</name>
+    </author>
+    <author>
+      <name>Bram Wasti</name>
+    </author>
+    <author>
+      <name>Quentin Wellens</name>
+    </author>
+    <author>
+      <name>Yeming Wen</name>
+    </author>
+    <author>
+      <name>Mary Williamson</name>
+    </author>
+    <author>
+      <name>Yuncheng Wu</name>
+    </author>
+    <author>
+      <name>Fei Xia</name>
+    </author>
+    <author>
+      <name>Tian Xie</name>
+    </author>
+    <author>
+      <name>Anlu Xing</name>
+    </author>
+    <author>
+      <name>David Xu</name>
+    </author>
+    <author>
+      <name>Jacob Xu</name>
+    </author>
+    <author>
+      <name>Puxin Xu</name>
+    </author>
+    <author>
+      <name>Zheng Xu</name>
+    </author>
+    <author>
+      <name>Shen Yan</name>
+    </author>
+    <author>
+      <name>Megan Yang</name>
+    </author>
+    <author>
+      <name>Yining Yang</name>
+    </author>
+    <author>
+      <name>Nick Yannopoulos</name>
+    </author>
+    <author>
+      <name>Kevin Yao</name>
+    </author>
+    <author>
+      <name>Michihiro Yasunaga</name>
+    </author>
+    <author>
+      <name>Haoxuan You</name>
+    </author>
+    <author>
+      <name>Michael You</name>
+    </author>
+    <author>
+      <name>Dingli Yu</name>
+    </author>
+    <author>
+      <name>Tianhe Yu</name>
+    </author>
+    <author>
+      <name>Yue Yu</name>
+    </author>
+    <author>
+      <name>Summer Yue</name>
+    </author>
+    <author>
+      <name>Xiang Yue</name>
+    </author>
+    <author>
+      <name>Shuwei Zeng</name>
+    </author>
+    <author>
+      <name>Hanwen Zha</name>
+    </author>
+    <author>
+      <name>Chen Zhang</name>
+    </author>
+    <author>
+      <name>Fred Zhang</name>
+    </author>
+    <author>
+      <name>Hongming Zhang</name>
+    </author>
+    <author>
+      <name>Kaiyu Zhang</name>
+    </author>
+    <author>
+      <name>Meng Zhang</name>
+    </author>
+    <author>
+      <name>Mingyang Zhang</name>
+    </author>
+    <author>
+      <name>Yi Zhang</name>
+    </author>
+    <author>
+      <name>Shengjia Zhao</name>
+    </author>
+    <author>
+      <name>Chao Zhou</name>
+    </author>
+    <author>
+      <name>Claire Zhou</name>
+    </author>
+    <author>
+      <name>Shuyan Zhou</name>
+    </author>
+    <author>
+      <name>Yanjun Zhou</name>
+    </author>
+    <author>
+      <name>Yaxuan Zhou</name>
+    </author>
+    <author>
+      <name>Jiacheng Zhu</name>
+    </author>
+    <author>
+      <name>Rosalie Zhu</name>
+    </author>
+    <author>
+      <name>Yun Zhu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.24294v1</id>
+    <title>Not Every User Says It All: Training Tool-Using Agents Beyond Ideal Simulated Users</title>
+    <updated>2026-10-16T22:41:30Z</updated>
+    <link href="https://arxiv.org/abs/2610.24294v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.24294v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tool-using agents are trained and evaluated almost exclusively with strong simulated users who state every detail clearly, yet real users are often weaker. We construct weak users by masking sentences of a simulated user's replies, holding the task and the user's knowledge fixed, and cross-evaluate agents trained with strong and weak users on tau2-bench and ToolWOZ. Weak users lower the success of every policy, and training with them does not help: no policy trained with weak users, through fixed masks, mixtures or a curriculum, serves weak users better than the strong-trained policy beyond run-to-run noise, and prompting the agent to ask more does not help either. We propose StaGPO (State-Grouped Policy Optimization): the agent writes what the task needs, what is missing and how it is being filled, and GRPO uses this state to compare turns of different rollouts that reach the same situation, assigning step-level credit. Within the standard recipe of a small SFT cold start followed by RL, StaGPO makes weak-user training useful: on ToolWOZ, the Qwen3.5-2B policy trained with weak users reaches 76.8% with weak users, the highest of any Qwen3.5-2B policy we trained, 4.8 points above GRPO and 2.8 above the strongest baseline; it is also 5.4 points above GRPO with strong users, and generalises to an unseen mask rate; trained with strong users instead, it serves weak users at least as well as GRPO trained with weak users. On tau2-bench it scores highest with weak users for both models, by a small margin for Qwen3.5-4B.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-16T22:41:30Z</published>
+    <arxiv:comment>22 pages, 11 figures, under review</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Han Bao</name>
+    </author>
+    <author>
+      <name>Zheyuan Zhang</name>
+    </author>
+    <author>
+      <name>Kaiwen Shi</name>
+    </author>
+    <author>
+      <name>Yanfang Ye</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.23342v1</id>
+    <title>Robust Function Calling for LLM Agents Under Interface Drift</title>
+    <updated>2026-10-16T11:49:37Z</updated>
+    <link href="https://arxiv.org/abs/2610.23342v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.23342v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tool-augmented language-model agents rely on interface text: tool descriptions, argument schemas, and the candidate tool list shown at inference time. These interfaces often change after deployment even when the underlying tool semantics remain fixed, creating a practical reliability problem for function-calling systems. We study this failure mode as interface drift and evaluate whether a lightweight, training-free repair layer can recover robustness without retraining the base model. Our method, SchemaShield-Lite, combines schema validation, candidate-set retry for missing tool names, and one-shot constrained repair. On Qwen3.5-9B, it raises DICE-300 accuracy from 0.717 to 0.813 and BFCL-200 accuracy from 0.580 to 0.805, recovering 19/22 and 33/45 drift-induced failures with no observed repair harms. Naive retry does not explain the gains. Ablations show that candidate-set drift, especially distractor tools, accounts for most observed damage, while description and schema edits alone are less harmful. The results position validation-and-repair as a practical robustness layer for deployed LLM-agent tool use.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-16T11:49:37Z</published>
+    <arxiv:comment>16 pages, 1 figure, 6 tables. Peer-reviewed and accepted at NGEN-AI 2026 (International Conference on Next Generation AI Systems). This is the pre-review submitted version</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Aniruddha Chattopadhyay</name>
+    </author>
+    <author>
+      <name>Kanishka Halder</name>
+    </author>
+    <author>
+      <name>Partha Sarathi Roy</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.23254v1</id>
+    <title>Ignored, Not Refused: What Low Prompt-Injection Success Rates Hide in Small Tool-Using Agents</title>
+    <updated>2026-10-16T10:26:23Z</updated>
+    <link href="https://arxiv.org/abs/2610.23254v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.23254v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tool-using agents read untrusted external content, which exposes them to indirect prompt injection (IPI), where hidden instructions hijack the agent's tool calls. Benchmarks measure IPI security by the attack success rate (ASR), which treats every failed attack as a successful defense. To test this assumption, we audit 33,000 trajectories from eleven open-weight agents (2-14B parameters) on InjecAgent and AgentDojo. A label-blind LLM judge shows that most failed attacks are ignored (76-80%) rather than refused (17-18%). With identical model weights, changing only the system prompt shifts InjecAgent ASR from 0.2% to 43%. Our Attack-Task Outcome Matrix (ATOM) further shows that in 21.7% of AgentDojo episodes, the agent stayed safe but did not complete the user's task. A low ASR therefore mostly reflects agents silently ignoring injections, not refusing them. Evaluations should report how attacks fail and whether the user's task is completed, alongside ASR. We release the labeled corpus, judge prompt, and analysis code.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-16T10:26:23Z</published>
+    <arxiv:comment>17 pages, 3 figures, 11 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Farhan Zarif</name>
+    </author>
+    <author>
+      <name>Kazi Shahid Ahmed Galib</name>
+    </author>
+    <author>
+      <name>Synthia Akter Promi</name>
+    </author>
+    <author>
+      <name>Shabnam Sharmin Tarin</name>
+    </author>
+    <author>
+      <name>Ariyan Hossain</name>
+    </author>
+    <author>
+      <name>Sadif Ahmed</name>
+    </author>
+    <author>
+      <name>Farig Yousuf Sadeque</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.23071v1</id>
+    <title>Before Retrieval Begins: Safety and Tool-Use Decisions in LLM Agents</title>
+    <updated>2026-10-16T07:42:47Z</updated>
+    <link href="https://arxiv.org/abs/2610.23071v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.23071v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language models increasingly act as agents that call external tools, yet most tool-safety research examines only what follows a tool call. The prior decision of whether to call the tool remains largely unexamined and can influence downstream safety. Across the seven open-weight models, the unweighted model-average harm rate after admitted harmful requests is 74.5%. To identify what governs this decision, we apply a factorial intervention to the input request. Within our generated construction, neutralizing the requested-operation component produces the largest admission contrast (19 pp). A linear direction estimated from this contrast influences held-out admission in four of seven models; effects on operation-neutralized requests in some models show that it is not an operation-specific mechanism. We then test whether written refusal is behaviorally and representationally coupled to the same decision. Written refusal accompanies 33.6% of admitted harmful calls. Plain-text refusal training reduces unsafe admission in models that retain benign tool use, showing that response-level safety training can transfer to the call decision. Together, these results establish a partial, model-dependent relation between written refusal and tool admission. They motivate direct evaluation and supervision of tool admission rather than treating text refusal as its proxy.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-16T07:42:47Z</published>
+    <arxiv:comment>19 pages, 5 figures. Preprint version of a manuscript submitted to Transactions of the Association for Computational Linguistics (TACL)</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Aditya Nawal</name>
+    </author>
+    <author>
+      <name>Manit Baser</name>
+    </author>
+    <author>
+      <name>Mohan Gurusamy</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.22688v1</id>
+    <title>Explore Separately, Adopt Selectively: Execution-Guided Tool Use over Large Tool Libraries</title>
+    <updated>2026-10-15T21:56:10Z</updated>
+    <link href="https://arxiv.org/abs/2610.22688v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.22688v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language model agents must discover relevant tools from large libraries, e.g., thousands of tools, as new needs arise during task execution. When several candidates could satisfy the same need, execution may be required to identify the relevant one. Investigating candidates in a shared trajectory can leave alternatives unexplored or allow failed attempts to influence subsequent reasoning. To address this, we present BRIA (BRanch-Inspect-Adopt), a simple yet effective agent that temporarily isolates candidate investigations in separate branches. Each branch retrieves and executes tools to investigate its candidate; a task agent inspects the resulting execution evidence and adopts only useful results into its continuing trajectory. BRIA retrieves additional tools as new capability needs arise during task execution. We evaluate BRIA on PlanBench-XL and MCP-Atlas using a shared pool of 1897 tools, three language models, and static and adaptive retrieval baselines. Across all settings, BRIA matches or exceeds the strongest retrieval baseline. On MCP-Atlas, it achieves an average claim score of 89.77, compared with 75.40 for MCP-Zero, a gain of 14.37 percentage points. BRIA also lies on the Pareto frontier for task performance and input-token cost.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-15T21:56:10Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Anna Mazhar</name>
+    </author>
+    <author>
+      <name>Seiji Maekawa</name>
+    </author>
+    <author>
+      <name>Nikita Bhutani</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.22511v1</id>
+    <title>AuditKIT: A Unified Evaluation Spine for Benchmarking, Judging, and Comparing Large Language Models and Agentic Systems</title>
+    <updated>2026-10-15T18:05:10Z</updated>
+    <link href="https://arxiv.org/abs/2610.22511v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.22511v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Evaluating language models and agents requires combining benchmark accuracy, judge-based assessment, runtime performance, tool-use behavior, and retrieval quality. Differences in interfaces, metric semantics, and trace formats complicate these comparisons and can hide failures in agentic workflows. We present AuditKIT, a source-available evaluation library that records these measurements in one result representation, with direction-aware metric contracts, configuration fingerprints, and extensible metrics and backends. For agents, it provides turn-aware tool-call matching, separates parallel from sequential execution, and distinguishes verified task outcomes from trajectory-level diagnostics. Missing or unobservable evidence is marked unscored rather than counted as failure. For retrieval-augmented generation, it combines ranked retrieval metrics, judged grounding, and deterministic evidence checks. Seven case studies spanning model comparison, serving runtimes, retrieval, tool calling, and interoperability show how answer extraction, runtime behavior, and metric selection change evaluation outcomes.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-15T18:05:10Z</published>
+    <arxiv:comment>25 pages, 2 figures, 13 tables. Code: https://github.com/Lexsi-Labs/AuditKIT. Shreeyans Arora and Utsav Avaiya contributed equally; work done while at Lexsi Labs</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Shreeyans Arora</name>
+    </author>
+    <author>
+      <name>Utsav Avaiya</name>
+    </author>
+    <author>
+      <name>Zera Lyngkhoi</name>
+    </author>
+    <author>
+      <name>Hem Gosalia</name>
+    </author>
+    <author>
+      <name>Ram Mohan Rao Kadiyala</name>
+    </author>
+    <author>
+      <name>Vinay Kumar Sankarapu</name>
+    </author>
+    <author>
+      <name>Pratinav Seth</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.22344v1</id>
+    <title>MLExpert: Towards a Generalist Agentic Model for Autonomous Machine Learning Engineering</title>
+    <updated>2026-10-15T17:56:32Z</updated>
+    <link href="https://arxiv.org/abs/2610.22344v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.22344v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language models (LLMs) are expanding from assisting scientific research and engineering to autonomously developing and improving AI systems, advancing AI for AI (AI4AI) as a pathway toward recursive self-improvement (RSI). Workflow-driven machine learning engineering (MLE) systems provide a practical path toward this pursuit through complex orchestration that manages long-horizon experimentation, while recent MLE systems adopt model-directed interaction, allowing models to autonomously organize experiments and adapt optimization strategies based on execution feedback. However, feedback from each experiment reflects several preceding decisions, and a long MLE run contains many such costly experiments. Training must therefore select useful supervision from long interaction trajectories and learn from intermediate outcomes. We propose a post-training method for autonomous long-horizon MLE optimization and apply it to train MLExpert, a 35B Mixture-of-Experts agentic model. We design the Kaggle-MLE Factory to construct executable tasks and an interaction harness for model-directed experimentation. Hierarchical agentic SFT transfers general tool-use and coding capabilities to MLE through outcome-guided supervision. Windowed Interaction RL (WIRL) treats the multi-turn decisions between successive experiment results as an execution window and assigns it a shared outcome-based reward. Asynchronous collection and policy correction support policy updates before the trajectory ends. On MLE-Bench Lite, MLExpert improves the average medal rate of the base model from 37.9% to 72.7%, achieving performance comparable to larger frontier models such as Kimi-K3 and GLM-5.3. Further experiments show that MLExpert improves performance on NatureBench Lite, agent scaffold optimization, and algorithm optimization, suggesting that the learned optimization capability generalizes to other tasks.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-15T17:56:32Z</published>
+    <arxiv:comment>Code: https://github.com/InternScience/MLExpert Model: https://huggingface.co/InternScience/MLExpert</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Shangheng Du</name>
+    </author>
+    <author>
+      <name>Jinxin Shi</name>
+    </author>
+    <author>
+      <name>Shuaiyu Zhang</name>
+    </author>
+    <author>
+      <name>Yiming Wu</name>
+    </author>
+    <author>
+      <name>Junpeng Zhao</name>
+    </author>
+    <author>
+      <name>Shiyang Feng</name>
+    </author>
+    <author>
+      <name>Xin Li</name>
+    </author>
+    <author>
+      <name>Liang He</name>
+    </author>
+    <author>
+      <name>Xiangchao Yan</name>
+    </author>
+    <author>
+      <name>Bo Zhang</name>
+    </author>
+  </entry>
+</feed>

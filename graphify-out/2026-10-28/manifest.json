@@ -1,0 +1,29 @@
+{
+ "date": "2026-10-28",
+ "kind": "nightly-scout-snapshot",
+ "sources": [
+  "arxiv:cs.AI",
+  "arxiv:cs.MA",
+  "arxiv:mcp",
+  "arxiv:tool-agent",
+  "github:mcp-org-17repos-releases",
+  "github:mcp-org-9repos-commits",
+  "github:security-advisories-servers+registry",
+  "github:anthropic-sdk-python+claude-code",
+  "github:openai-math-raw",
+  "hn:firebaseio-top30",
+  "rss:openai/vercel/google-ai/google-news",
+  "anthropic:news-html-table",
+  "web_fetch:vercel-agent-permission-scopes"
+ ],
+ "raw_dir": "scout-raw",
+ "corpus": "graphify-out/raw/scout-2026-10-28-corpus.md",
+ "node_count": 391,
+ "edge_count": 740,
+ "arxiv_count": 190,
+ "release_count": 68,
+ "commit_count": 47,
+ "advisory_count": 19,
+ "news_count": 33,
+ "next_window": "2026-10-29T00:30+08:00"
+}

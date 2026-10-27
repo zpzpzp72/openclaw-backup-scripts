@@ -1,0 +1,89 @@
+{
+  "note": "Hand-curated summary of survey results from this session's API polling",
+  "collected_at": "2026-10-26T17:00:00Z",
+  "org_repos_top_pushed": [
+    {"name": "registry", "stars": 7409, "pushed": "2026-10-26T16:22Z", "note": "promoted production to 1.8.5"},
+    {"name": "java-sdk", "stars": 3744, "pushed": "2026-10-26T16:12Z"},
+    {"name": "go-sdk", "stars": 5276, "pushed": "2026-10-26T15:25Z"},
+    {"name": "csharp-sdk", "stars": 4601, "pushed": "2026-10-26T15:18Z"},
+    {"name": "typescript-sdk", "stars": 13655, "pushed": "2026-10-26T14:35Z", "latest_rel": "v2.4.0 @2026-10-23"},
+    {"name": "ext-server-card", "stars": 11, "pushed": "2026-10-26T10:46Z"},
+    {"name": "modelcontextprotocol", "stars": 9536, "pushed": "2026-10-26T10:38Z", "note": "deps bumps only 10-25/26"},
+    {"name": "kotlin-sdk", "stars": 1479, "pushed": "2026-10-26T07:38Z"},
+    {"name": "ruby-sdk", "stars": 937, "pushed": "2026-10-26T06:16Z"},
+    {"name": "conformance", "stars": 137, "pushed": "2026-10-26T06:09Z"},
+    {"name": "python-sdk", "stars": 24677, "pushed": "2026-10-25T13:05Z"},
+    {"name": "swift-sdk", "stars": 1516, "pushed": "2026-10-25T12:29Z"},
+    {"name": "inspector", "stars": 11154, "pushed": "2026-10-25T05:56Z", "latest_rel": "2.12.0 @2026-10-21"},
+    {"name": "servers", "stars": 91588, "pushed": "2026-10-25T05:26Z", "latest_rel": "v2.1.0 @2026-10-25"},
+    {"name": "access", "stars": 53, "pushed": "2026-10-24T17:34Z"},
+    {"name": "rust-sdk", "stars": 4052, "pushed": "2026-10-23T21:57Z", "latest_rel": "rmcp-v3.7.0 @2026-10-25"},
+    {"name": "ext-auth", "stars": 171, "pushed": "2026-10-23T16:59Z"},
+    {"name": "ext-apps", "stars": 3008, "pushed": "2026-10-23T14:52Z", "latest_rel": "v2.0.3 @2026-09-25"}
+  ],
+  "servers_recent_commits": [
+    {"date": "2026-10-24T23:40Z", "msg": "Merge PR #5249 v2.1.0 release"},
+    {"date": "2026-10-24T23:15Z", "msg": "Merge PR #5248 python-calver-2"},
+    {"date": "2026-10-24T23:04Z", "msg": "chore: stamp Python CalVer versions for 2026.10.24"},
+    {"date": "2026-10-24T22:42Z", "msg": "test(sequentialthinking): zod 4.6 type-array form"},
+    {"date": "2026-10-24T22:40Z", "msg": "fix(deps): bump gitpython for CVE-2026-114145"}
+  ],
+  "spec_recent_commits": [
+    {"date": "2026-10-26T07:10Z", "msg": "build(deps-dev): bump typescript-eslint (#3443)"},
+    {"date": "2026-10-26T07:08Z", "msg": "build(deps-dev): bump prettier (#3444)"},
+    {"date": "2026-10-26T07:07Z", "msg": "build(deps-dev): bump vite (#3445)"},
+    {"date": "2026-10-26T07:06Z", "msg": "bump npm_and_yarn group"},
+    {"date": "2026-10-26T07:03Z", "msg": "build(deps-dev): bump markdown-it (#3450)"},
+    {"date": "2026-10-23", "msg": "Update Peter Alexander's GitHub handle/affiliation"}
+  ],
+  "registry_commits": [
+    {"date": "2026-10-26T16:22Z", "msg": "chore(deploy): increase production node CPU capacity (#1746)"},
+    {"date": "2026-10-26T16:13Z", "msg": "chore(deploy): configure GCP node size per environment (#1745)"},
+    {"date": "2026-10-26T14:20Z", "msg": "chore(deploy): promote production to 1.8.5 (#1744)"},
+    {"date": "2026-10-26T14:02Z", "msg": "feat(observability): diagnose slow listing requests (#1743)"},
+    {"date": "2026-10-26T13:05Z", "msg": "feat(observability): expose request backlog & DB waits (#1742)"}
+  ],
+  "claude_code_releases": [
+    {"tag": "v2.1.310", "published": "2026-10-23T23:39:00Z"},
+    {"tag": "v2.1.309", "published": "2026-10-22T22:18:57Z"},
+    {"tag": "v2.1.308", "published": "2026-10-22T04:34:55Z"}
+  ],
+  "claude_code_commits": [
+    {"date": "2026-10-26T15:50Z", "msg": "chore: Update mods/"},
+    {"date": "2026-10-25T20:11Z", "msg": "chore: Update mods/"},
+    {"date": "2026-10-24T02:18Z", "msg": "chore: Update mods/"}
+  ],
+  "hn_top10": [
+    {"score": 128, "title": "Sebastian Raschka's from-scratch video course on building reasoning models"},
+    {"score": 878, "title": "Anthropic S-1"},
+    {"score": 32, "title": "CSS-Tricks has a new owner"},
+    {"score": 107, "title": "Fixing Tool-Call Accuracy in vLLM"},
+    {"score": 6, "title": "eMudhra Certificates Are Compromised"},
+    {"score": 31, "title": "SIMD-accelerated computer vision on a $2 microcontroller"},
+    {"score": 111, "title": "Pharo 14"},
+    {"score": 156, "title": "One of the Greatest Inventions in the History of Human Transport"},
+    {"score": 347, "title": "Birdwatching rewires the brain and slows cognitive decline"},
+    {"score": 380, "title": "Switzerland. Block by block. At 1:1 scale"}
+  ],
+  "hn_ai_relevant": [
+    {"score": 124, "title": "Sebastian Raschka's from-scratch video course on building reasoning models"},
+    {"score": 873, "title": "Anthropic S-1"},
+    {"score": 107, "title": "Fixing Tool-Call Accuracy in vLLM"},
+    {"score": 212, "title": "PaperPilot – Zero-Cloud, Pure-Rust PDF Engine with WASM and MCP"},
+    {"score": 92, "title": "Brown student maps the hidden global labor powering AI"},
+    {"score": 380, "title": "PaperPilot MCP (dup ref)"}
+  ],
+  "arxiv_counts": {
+    "csAI_xml": 60,
+    "csMA_xml": 25,
+    "mcp_xml": 25,
+    "tool_xml": 25,
+    "csAI_1027_xml": 200
+  },
+  "arxiv_newest_ids": {
+    "csAI": "2610.32978 (2026-10-23T17:59Z) SceneBloom",
+    "csMA": "2610.32874 (2026-10-23) Do True and False Add Up to One",
+    "mcp": "2610.32555 Tool-Calling LLM Agents Under Realistic MCP Faults",
+    "tool": "2610.28785 Measure First Then Allocate"
+  }
+}

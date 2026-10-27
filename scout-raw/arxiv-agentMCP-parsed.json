@@ -1,0 +1,579 @@
+[
+ {
+  "id": "2610.31662v1",
+  "title": "Reliable AI-Assisted Decisions via Selective Auditing",
+  "summary": "We consider online monitoring of an AI system that produces a sequence of decisions. At each round, the system outputs a proposed decision together with a confidence score estimating the trustworthiness of the decision. The decision and confidence score need not be produced by the same model: for example, one agent may propose a decision, while a separate verifier agent evaluates it and outputs a correctness or safety score. Based on this information, we must decide whether to accept the AI decision automatically or consult an expert, such as a human auditor, who reviews the proposal and either accepts or corrects it. We formulate this task as an online constrained optimization problem in wh",
+  "published": "2026-10-22T17:59:22Z",
+  "updated": "2026-10-22T17:59:22Z",
+  "cats": [
+   "stat.ML",
+   "cs.LG",
+   "stat.ME"
+  ],
+  "authors": [
+   "Isaac Gibbs",
+   "Elise L. Han",
+   "Ryan J. Tibshirani",
+   "Tijana Zrnic"
+  ],
+  "n_auth": 4,
+  "url": "http://arxiv.org/abs/2610.31662v1"
+ },
+ {
+  "id": "2610.31656v1",
+  "title": "METTA: Memory-Enhanced Test-Time Adaptation for Meta-Reinforcement Learning",
+  "summary": "Meta-reinforcement learning aims to train agents that adapt quickly to unseen tasks from limited interaction, but this requires representing task evidence over long interaction histories. Classical recurrent agents compress experience into hidden states, while transformer-based agents retrieve from past trajectories at quadratic memory and computation cost. In this work, we propose Memory-Enhanced Test-Time Adaptation (METTA) for meta-reinforcement learning. It decomposes the fast adaptation phase into two temporal scales: a causal neural memory performs fine-grained within-episode adaptation with linear sequence complexity, while compact episode-level summaries support long-range cross-epis",
+  "published": "2026-10-22T17:58:27Z",
+  "updated": "2026-10-22T17:58:27Z",
+  "cats": [
+   "cs.LG",
+   "cs.AI"
+  ],
+  "authors": [
+   "Ali Najar",
+   "Hosein Hasani",
+   "Amir Kooshan Fattah",
+   "Yasamin Rajabi",
+   "Mahdieh Soleymani Baghshah"
+  ],
+  "n_auth": 5,
+  "url": "http://arxiv.org/abs/2610.31656v1"
+ },
+ {
+  "id": "2610.31651v1",
+  "title": "BrickWright: Agentic Creation of Physically Feasible Brick Builds",
+  "summary": "Frontier coding agents are becoming increasingly adept at 3D modeling. Yet, they still face challenges when building objects meant to be assembled in the physical world, often creating invalid assemblies with floating, colliding, or disconnected parts. We argue that providing agents with tools for assembling builds and verifying their physical feasibility is sufficient for them to produce physically valid assemblies that still adhere to input prompts. Focusing on the domain of LEGO brick builds, we present BrickWright, a framework for generating physically feasible brick builds from text or image prompts using pre-trained agents, where a build is physically feasible if it uses only real part",
+  "published": "2026-10-22T17:57:20Z",
+  "updated": "2026-10-22T17:57:20Z",
+  "cats": [
+   "cs.CV"
+  ],
+  "authors": [
+   "Ava Pun",
+   "Kevin Dai",
+   "Sally Chen",
+   "Maxwell Jones",
+   "Ruixuan Liu",
+   "Kangle Deng"
+  ],
+  "n_auth": 10,
+  "url": "http://arxiv.org/abs/2610.31651v1"
+ },
+ {
+  "id": "2610.31650v1",
+  "title": "EpiSEM-Bench: Evaluating Safety and Evidence Recovery in LLM Agents under Missing Evidence",
+  "summary": "Tool-using language model agents rely on environmental facts to decide whether an action is permitted. When a tool response omits a safety-relevant fact, an agent may carry out a prohibited action even though the user request is benign and every returned statement is true. We introduce \\bench{}, an executable benchmark for evaluating unsafe execution, safety boundaries, and evidence recovery in LLM agents under missing evidence. It contains 300 matched unsafe/safe task pairs across six domains. By systematically suppressing critical facts, the benchmark measures unsafe execution under critical evidence omission and determines the minimum observed failure cardinality, including failures with ",
+  "published": "2026-10-22T17:57:04Z",
+  "updated": "2026-10-22T17:57:04Z",
+  "cats": [
+   "cs.AI",
+   "cs.LG"
+  ],
+  "authors": [
+   "Qijin Zhang",
+   "Hanzhen Wang",
+   "Yuehan Zhao",
+   "Haoyu Dai",
+   "Yao Shu",
+   "Zhongxiang Dai"
+  ],
+  "n_auth": 7,
+  "url": "http://arxiv.org/abs/2610.31650v1"
+ },
+ {
+  "id": "2610.31636v1",
+  "title": "Can an Agent Debug a Web Corpus? Agentic Auditing of Slovak FineWeb2",
+  "summary": "Multilingual pipelines such as FineWeb2 apply one recipe across a thousand languages, leaving the failure modes of individual languages unanticipated. We use an LLM once, as a corpus debugger rather than a classifier: a tool-using agent explores the corpus through a read-only, budgeted API and compiles each finding into an executable test, which a native speaker then validates. On the 26.5M-document Slovak portion of FineWeb2, three runs costing \\$2.21-\\$2.84 each found seven findings over four phenomena. The largest is a machine-generated content farm of 1,408,437 documents (5.32%) that passed the pipeline's filters, 86.6% of it passing even stricter thresholds. Blinded labels support 6 of ",
+  "published": "2026-10-22T17:52:22Z",
+  "updated": "2026-10-22T17:52:22Z",
+  "cats": [
+   "cs.CL"
+  ],
+  "authors": [
+   "Marek Šuppa",
+   "Ivan Vykopal",
+   "Jaroslav Kopčan"
+  ],
+  "n_auth": 3,
+  "url": "http://arxiv.org/abs/2610.31636v1"
+ },
+ {
+  "id": "2610.31624v1",
+  "title": "Questioning Instrumental Convergence in RLVR: Checkpoint Evidence from OLMo-3",
+  "summary": "Instrumental convergence is often invoked as a general reason to expect capable agents to acquire or express power-seeking subgoals: self-preservation, resource acquisition, deception, or resistance to oversight which poses an important threat to the society. For LLMs, reinforcement learning is the first stage of post-training that directly optimizes behavior against an objective; therefore, it is the stage where convergent instrumental behavior, on IC grounds, likely to appear. Does reinforcement learning with verifiable rewards (RLVR) make a model more likely to express instrumental-convergence behavior, or does this depend on the training regime, evaluation frame, and stage of post-traini",
+  "published": "2026-10-22T17:44:41Z",
+  "updated": "2026-10-22T17:44:41Z",
+  "cats": [
+   "cs.LG",
+   "cs.AI"
+  ],
+  "authors": [
+   "Barış Alparslan",
+   "Sandy Tanwisuth",
+   "Caleb Petterson"
+  ],
+  "n_auth": 3,
+  "url": "http://arxiv.org/abs/2610.31624v1"
+ },
+ {
+  "id": "2610.31617v1",
+  "title": "DiffDreamer: Coupling World Models with Differentiable Simulation for Agile Quadrotor Control",
+  "summary": "Tasks such as quadrotor dynamic-gate racing require agents to anticipate external motion while maintaining precise high-frequency control. World-model-based reinforcement learning provides a natural solution by learning latent dynamics for future imagination, yet it often entangles environmental evolution and the robot's own dynamics in a single learned rollout, where model bias can affect policy optimization efficiency. We propose DiffDreamer, a differentiable reinforcement learning framework that tightly couples a learned world model with differentiable simulation for actor optimization. In one optimization step, the learned world model propagates latent states that capture external dynami",
+  "published": "2026-10-22T17:41:13Z",
+  "updated": "2026-10-22T17:41:13Z",
+  "cats": [
+   "cs.RO"
+  ],
+  "authors": [
+   "Fanxing Li",
+   "Yuxiang Huang",
+   "Shengyang Wang",
+   "Fangyu Sun",
+   "Shuyu Wu",
+   "Tianbao Zhang"
+  ],
+  "n_auth": 10,
+  "url": "http://arxiv.org/abs/2610.31617v1"
+ },
+ {
+  "id": "2610.31573v1",
+  "title": "Social-HUMINT: An LLM-Augmented Unified Framework for Measuring Social Media Exposure",
+  "summary": "In the post-API landscape, social-media profiling has become inexpensive and automated: Large Language Models (LLMs) can extract structured information from unstructured content and deduce attributes users never disclosed. A person's true exposure is not what they post but what can be inferred from it. As these practices become routine, exposure to social engineering attacks becomes an operational certainty, demanding a shared framework for assessment and mitigation. We make this exposure measurable by quantifying how accurately a target can be profiled, and how far that profile enables social engineering attacks. Because no existing model fully spans this continuum, we unify Social Media In",
+  "published": "2026-10-22T17:13:46Z",
+  "updated": "2026-10-22T17:13:46Z",
+  "cats": [
+   "cs.CR",
+   "cs.AI",
+   "cs.SI"
+  ],
+  "authors": [
+   "Pellegrino Casoria",
+   "Simon Pietro Romano"
+  ],
+  "n_auth": 2,
+  "url": "http://arxiv.org/abs/2610.31573v1"
+ },
+ {
+  "id": "2610.31562v1",
+  "title": "Decentralized Bi-Level Optimization for Cooperative Orbital Transportation of a Rigid Payload",
+  "summary": "The rapid growth of the space economy, alongside increasing orbital congestion and debris, is driving demand for reliable on-orbit transportation of large and non-cooperative objects. Performing such transportation with a swarm of small spacecraft distributes risk and removes the single point of failure inherent to monolithic architectures, but requires solving a non-convex trajectory optimization coupling every agent's cone-constrained thrust to the payload's rotational dynamics. Existing approaches span decentralized control laws with asymptotic guarantees but limited constraint enforcement, and centralized and partially centralized planners that reintroduce a single point of failure. In t",
+  "published": "2026-10-22T17:05:17Z",
+  "updated": "2026-10-22T17:05:17Z",
+  "cats": [
+   "eess.SY",
+   "cs.MA",
+   "cs.RO"
+  ],
+  "authors": [
+   "Sidhdharth D. Sikka",
+   "Revathy Ravuri",
+   "Hei Yin Jowett Chan",
+   "Tim Echtermeyer",
+   "Shaoshuai Mou"
+  ],
+  "n_auth": 5,
+  "url": "http://arxiv.org/abs/2610.31562v1"
+ },
+ {
+  "id": "2610.31553v1",
+  "title": "Contestable Agents for Data Governance: Recording Human Stewardship of AI-Generated Metadata Across Structured and Unstructured Systems",
+  "summary": "Industrial organizations hold operational knowledge in structured records, such as telemetry, point lists, and transactions, and in unstructured sources, such as manuals, service notes, communications, and inspection reports. Governance programs often manage these sources separately. Classifying, linking, and documenting them depends on a small group of employees with deep domain knowledge. Agents built on large language models can propose metadata, cite documents, and flag quality issues, but unreviewed proposals can spread errors into downstream systems. A perfunctory approval leaves no record of what a reviewer checked. We present contestable governance: specialist agents produce scored, ",
+  "published": "2026-10-22T16:57:01Z",
+  "updated": "2026-10-22T16:57:01Z",
+  "cats": [
+   "cs.AI",
+   "cs.DB",
+   "cs.HC",
+   "cs.MA"
+  ],
+  "authors": [
+   "Humza Akhtar",
+   "Brian Freeman"
+  ],
+  "n_auth": 2,
+  "url": "http://arxiv.org/abs/2610.31553v1"
+ },
+ {
+  "id": "2610.31544v1",
+  "title": "Same Luck, Different Choice: Twin-World Credit Assignment for Agentic Reinforcement Learning",
+  "summary": "Agentic reinforcement learning rewards a complete episode, yet the policy needs credit for every decision inside it. Counterfactual branching estimates this credit by re-running the episode after an alternative decision, but the branch draws its sampling noise independently of the factual episode, so the outcome difference mixes the effect of the decision with the luck of everything that follows. We observe that in agentic search the retriever, the corpus, and the grader are deterministic, so an episode is a deterministic function of the policy's decisions and its sampling noise. Twin worlds are therefore realizable: the same noise, a different decision. We introduce TWICE (TWIn-world Credit",
+  "published": "2026-10-22T16:51:27Z",
+  "updated": "2026-10-22T16:51:27Z",
+  "cats": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Zeropy Surio",
+   "Tobias Engel",
+   "Mei-Lin Chou",
+   "Anika Raman",
+   "Samuel Okafor"
+  ],
+  "n_auth": 5,
+  "url": "http://arxiv.org/abs/2610.31544v1"
+ },
+ {
+  "id": "2610.31518v1",
+  "title": "SCOPE: Scene-graph Construction Optimized by Plan Error-correction for Robot Long-term Planning Datasets",
+  "summary": "Task and Motion Planning (TAMP) stands as a fundamental challenge in robotics, essential for enabling autonomous agents to execute complex, long-horizon tasks in diverse environments. While Large Language Models (LLMs) introduce a new paradigm for TAMP by leveraging extensive common sense, their inherent reasoning limitations hinder direct application, and fine-tuning strategies to enhance these capabilities are currently bottlenecked by the scarcity of high-quality datasets. Existing automated generation methods often suffer from homogeneity, limiting model generalization, and unsolvability, where hallucinated scene graphs create physical mismatches with task goals. To address these issues,",
+  "published": "2026-10-22T16:31:11Z",
+  "updated": "2026-10-22T16:31:11Z",
+  "cats": [
+   "cs.RO"
+  ],
+  "authors": [
+   "Chaoyue Li",
+   "Zeyu Gao",
+   "Yanfeng Lu",
+   "Fan Luo"
+  ],
+  "n_auth": 4,
+  "url": "http://arxiv.org/abs/2610.31518v1"
+ },
+ {
+  "id": "2610.31511v1",
+  "title": "DuoCook: An Overcooked-Inspired Benchmark for Visual Planning and Coordination",
+  "summary": "Coordinating two players in a cooking task requires a vision-language agent to track changing scene states, sequence recipe steps, and allocate shared resources under a time budget. We introduce an Overcooked-inspired benchmark for evaluating these capabilities in Unreal Engine environments constructed using coding agents. A single vision-language model controls both players from top-down visual observations, selecting high-level actions while the engine executes navigation. The benchmark contains 20 maps in five categories. These categories support evaluation of centralized coordination under equipment contention, changing terrain, and handoff dependencies. A prop legend and pot ingredient-",
+  "published": "2026-10-22T16:26:38Z",
+  "updated": "2026-10-22T16:26:38Z",
+  "cats": [
+   "cs.AI"
+  ],
+  "authors": [
+   "Ziyi Jiao",
+   "Heng Zhang",
+   "Drishti Regmi",
+   "Xiaokang Ye",
+   "Lianhui Qin",
+   "Peter Yichen Chen"
+  ],
+  "n_auth": 6,
+  "url": "http://arxiv.org/abs/2610.31511v1"
+ },
+ {
+  "id": "2610.31494v1",
+  "title": "AgentVQA: A Unified Benchmark for Agentic Visual Understanding",
+  "summary": "Vision-language models (VLMs) can perform a broad range of tasks across diverse settings, yet their performance in agentic contexts remains poorly understood. Although online evaluations in simulators and real-world environments are essential for measuring interactive agent performance, they are costly and challenging to scale. Complementary offline VQA benchmarks can enable faster and more reliable comparisons across agentic domains, yet existing benchmarks remain limited and fragmented. To address this gap, we introduce AgentVQA, an offline benchmark for evaluating VLMs on realistic agentic scenarios across five agent domains: Web Agents, Robotics, Egocentric Videos, Games, and Spatial Pla",
+  "published": "2026-10-22T16:13:35Z",
+  "updated": "2026-10-22T16:13:35Z",
+  "cats": [
+   "cs.CV"
+  ],
+  "authors": [
+   "Advait Gupta",
+   "Sachin Konan",
+   "Tom Yin",
+   "Gabriel Sarch",
+   "Zhuang Liu"
+  ],
+  "n_auth": 5,
+  "url": "http://arxiv.org/abs/2610.31494v1"
+ },
+ {
+  "id": "2610.31486v1",
+  "title": "Effective Dual Subgradient Methods Through Sequential Subgradient-Aligned Rays",
+  "summary": "In this paper, we propose an efficient subgradient-based framework, referred to as the sequential subgradient-aligned rays (SSAR) method, for improving the convergence performance of the dual subgradient method. In particular, the proposed method identifies and exploits a finite sequence of rays, when available, as the dual subgradient method evolves, along each of which a subgradient of the negative dual function remains constant and aligns with the ray. While the dual variable iterates remain on each identified ray, a constant stepsize associated with the ray is employed, with the associated constant stepsizes decreasing from one ray to the next. This approach yields constant decrements in",
+  "published": "2026-10-22T16:08:28Z",
+  "updated": "2026-10-22T16:08:28Z",
+  "cats": [
+   "math.OC"
+  ],
+  "authors": [
+   "Hansi Abeynanda",
+   "Chathuranga Weeraddana",
+   "Carlo Fischione"
+  ],
+  "n_auth": 3,
+  "url": "http://arxiv.org/abs/2610.31486v1"
+ },
+ {
+  "id": "2610.31483v1",
+  "title": "Training Small Language Models for Transferable Tool Selection",
+  "summary": "As LLM agents operate over corpora of more than ten thousand tools, selecting the right tool for a complex multi-step user instruction becomes a central bottleneck. Tool descriptions cannot all fit in context, and relevance-based retrievers only rank tools without knowing which are actually needed. Recent work instead leverages proprietary commercial LLMs like Claude or ChatGPT to drive a retriever, decomposing the instruction and selecting over retrieved candidates. We show that a small, open model can be trained via reinforcement learning to perform the same functionality. On ToolBench, a Qwen3-8B model post-trained with our recipe outperforms Llama-4-Maverick (402B). In addition, the trai",
+  "published": "2026-10-22T16:07:49Z",
+  "updated": "2026-10-22T16:07:49Z",
+  "cats": [
+   "cs.LG",
+   "cs.AI"
+  ],
+  "authors": [
+   "Zhaoyi Zhou",
+   "Akshayaa Magesh",
+   "Jeongyeol Kwon",
+   "Artem Kuriksha",
+   "Daniel Jiang",
+   "Andrea Zanette"
+  ],
+  "n_auth": 7,
+  "url": "http://arxiv.org/abs/2610.31483v1"
+ },
+ {
+  "id": "2610.31471v1",
+  "title": "Ask About the Right Moment: Training-Free Object Identity Reasoning for Video-Language Models",
+  "summary": "Many questions about a video concern one physical object. Where does the ball end up after the cups are shuffled? Which card is the queen? How often was the mug covered? Video-language models (Video-LMs) recognise such objects in single frames but do not keep them apart over time. On real shell-game videos, open models from 8B to 235B parameters, their thinking variants, a reinforcement-learned tool agent and three training-free tool agents all stay within ten points of chance. We separate semantic identity binding from temporal identity maintenance. An object's identity should be fixed at a moment when the evidence for it is visible, and carried afterwards by a tracker. \\emph{Track, Then Bi",
+  "published": "2026-10-22T15:59:59Z",
+  "updated": "2026-10-22T15:59:59Z",
+  "cats": [
+   "cs.CV"
+  ],
+  "authors": [
+   "Di Yang",
+   "Xiaochang Li",
+   "Muyang Liu",
+   "Yufei Wang",
+   "Yanhai Xiong"
+  ],
+  "n_auth": 5,
+  "url": "http://arxiv.org/abs/2610.31471v1"
+ },
+ {
+  "id": "2610.31466v1",
+  "title": "AnyGameRenderer: Entity-Consistent Generative Rendering Across Games and an Entity-Level Benchmark",
+  "summary": "AI coding agents can now build small playable games in minutes, but the results usually look like programmer art: gray blockouts, colored geometric primitives, and flat semantic blobs. We present AnyGameRenderer, a video-to-video generative renderer that turns such footage into high-quality visuals with characters, motion detail, and effects. Throughout, it keeps the layout, camera, and every entity's position and timing intact. Our AnyGameRenderer generalizes across a wide range of genres that agents build, such as tower defense, auto-battlers, top-down survivors, turn-based battles, kart racing, and crowd runners. AnyGameRenderer takes plain video as its game-state input, with no complex r",
+  "published": "2026-10-22T15:58:39Z",
+  "updated": "2026-10-22T15:58:39Z",
+  "cats": [
+   "cs.CV"
+  ],
+  "authors": [
+   "Ruicong Liu",
+   "Liangyang Ouyang",
+   "Fengbo Lan",
+   "Zhixiang Wang",
+   "Kaipeng Zhang"
+  ],
+  "n_auth": 5,
+  "url": "http://arxiv.org/abs/2610.31466v1"
+ },
+ {
+  "id": "2610.31461v1",
+  "title": "Adaptive Skill Granularity for Coding Agents: Runtime Routing and Macro-to-Micro Recovery",
+  "summary": "Reusable skills allow large language model agents to package task-specific procedures, tool affordances, and execution guidance into modular units. Prior work has largely studied how agents retrieve, compose, or synthesize skills before execution. In coding agents, however, execution poses an additional runtime control problem: the same task may be solved through primitive tool calls, macro skills, or hybrid execution that starts with a macro and falls back to micro-level recovery. We introduce Adaptive Skill Granularity, a framework that treats skill granularity as an action-abstraction policy conditioned on task structure, execution state, and macro-skill failures. The system combines a fe",
+  "published": "2026-10-22T15:55:18Z",
+  "updated": "2026-10-22T15:55:18Z",
+  "cats": [
+   "cs.AI",
+   "cs.SE"
+  ],
+  "authors": [
+   "Dingxuan Zhang",
+   "Yanhui Jiang",
+   "Jun Wang",
+   "Hefeng Zhou"
+  ],
+  "n_auth": 4,
+  "url": "http://arxiv.org/abs/2610.31461v1"
+ },
+ {
+  "id": "2610.31446v1",
+  "title": "When Is a Memory Safe Enough to Act On? Action-Conditioned Verification for Long-Lived Agents",
+  "summary": "Long-lived agents act on memory carried across sessions, and many of their actions are irreversible, so a stale memory can turn directly into harm. Existing work improves the memory itself --- retrieving, refreshing, or reconciling entries --- yet whether an entry must be re-checked before acting is not a property of the entry: the same remembered address can be used unchecked for a routine shipment but should be re-confirmed before a valuable one. We therefore study \\emph{action-conditioned memory verification}: given a candidate action, decide which of its memory premises to re-verify and when to proceed or abstain, balancing execution risk, abstention, and verification cost. We formulate ",
+  "published": "2026-10-22T15:43:50Z",
+  "updated": "2026-10-22T15:43:50Z",
+  "cats": [
+   "cs.MA"
+  ],
+  "authors": [
+   "Yiqi Wang",
+   "Yifei Wang",
+   "Jiaqi Zhang",
+   "Zhangkai Wu",
+   "Yiqun Duan",
+   "Taotao Cai"
+  ],
+  "n_auth": 7,
+  "url": "http://arxiv.org/abs/2610.31446v1"
+ },
+ {
+  "id": "2610.31436v1",
+  "title": "Conservative Meta-Agent Search: Architecture Adaptation under Non-Stationarity",
+  "summary": "Automated agentic-system design is typically evaluated on static task suites with immediate scalar rewards. Deployed systems face persistent shift, delayed dependent feedback, correlated component failures, and costly architecture changes. We formalize meta-agent architecture search as sequential incumbent replacement with switching costs and hard risk constraints and introduce Conservative Meta-Agent Search (CMAS). CMAS retrieves archived architectures and proposes typed graph edits, then scores each against the incumbent by paired shadow replay under common random numbers, with interventional component credit. Promotion requires an empirically calibrated, variance-penalized simultaneous sc",
+  "published": "2026-10-22T15:32:06Z",
+  "updated": "2026-10-22T15:32:06Z",
+  "cats": [
+   "cs.AI",
+   "cs.LG",
+   "cs.MA"
+  ],
+  "authors": [
+   "Ali Atiah Alzahrani"
+  ],
+  "n_auth": 1,
+  "url": "http://arxiv.org/abs/2610.31436v1"
+ },
+ {
+  "id": "2610.31432v1",
+  "title": "A Sparse Topometric Graph for Scalable Cross-Session Indoor Navigation",
+  "summary": "A conventional embodied agent in an indoor environment builds a map by accumulating noisy real-world measurements and results from heavy inference to guide navigation. While the detailed measurements may differ due to scene changes or sensor settings, the unique topological structure of navigable passages or the connectivity between rooms may provide training-free guidance that complements local observations. We propose a sparse topometric graph as an efficient structural representation for robust indoor navigation, alleviating the need for fine-grained matching, which is computationally expensive, memory-intensive, and prone to real-world variations. The map consists of nodes that encode lo",
+  "published": "2026-10-22T15:30:33Z",
+  "updated": "2026-10-22T15:30:33Z",
+  "cats": [
+   "cs.RO",
+   "cs.CV"
+  ],
+  "authors": [
+   "Eun Sun Lee",
+   "Minkyun Seo",
+   "Gwangtak Bae",
+   "Junho Kim",
+   "Seunggu Kang",
+   "Jaesik Park"
+  ],
+  "n_auth": 7,
+  "url": "http://arxiv.org/abs/2610.31432v1"
+ },
+ {
+  "id": "2610.31427v1",
+  "title": "FastHarness: Experience-Driven Review Scheduling for Vision-Language-Action Policies",
+  "summary": "Agentic robot systems combine language-model reasoning with robot policies to monitor execution and recover from failures. However, reviewing every action chunk incurs substantial overhead, even in familiar situations. We introduce FastHarness, an experience-driven execution harness that adaptively schedules GPT-6 Astra supervision of a π0.5 policy. A fast path uses stage memory and reviewed outcomes to reduce review frequency as experience accumulates, while a complementary recovery path focuses supervision on correcting errors. Once recovery is verified, routine execution resumes, with failure experience retained to guide future interventions. The policy remains frozen and generates fresh ",
+  "published": "2026-10-22T15:27:10Z",
+  "updated": "2026-10-22T15:27:10Z",
+  "cats": [
+   "cs.RO"
+  ],
+  "authors": [
+   "Tao Lin",
+   "Yuxin Du",
+   "Haoxiao Wang",
+   "Zile Zhong",
+   "Bo Zhao"
+  ],
+  "n_auth": 5,
+  "url": "http://arxiv.org/abs/2610.31427v1"
+ },
+ {
+  "id": "2610.31418v1",
+  "title": "A Resource Allocation Tournament",
+  "summary": "We introduce and analyze a round-robin simultaneous resource allocation contest, motivated by sports leagues and other competitive environments where agents must distribute limited resources across multiple encounters. Players allocate resources in advance to matches against all opponents, and match outcomes are determined by relative allocations. We study two payoff schemes: total points, where players accumulate rewards for each win, and winner-takes-all, where only the tournament winner is rewarded. For three players, we provide complete equilibrium characterizations under both schemes. For four or more players, we show that the total points payoff admits Blotto-type equilibria, while the",
+  "published": "2026-10-22T15:19:56Z",
+  "updated": "2026-10-22T15:19:56Z",
+  "cats": [
+   "math.OC",
+   "cs.GT",
+   "econ.TH"
+  ],
+  "authors": [
+   "Adam Nathaniel",
+   "Refael Hassin"
+  ],
+  "n_auth": 2,
+  "url": "http://arxiv.org/abs/2610.31418v1"
+ },
+ {
+  "id": "2610.31404v1",
+  "title": "AgentPhishing: A Benchmark of LLM Email Agents Under Adaptive Attack",
+  "summary": "Computer-use agents increasingly handle private information and act on users' behalf across desktop and web applications, including email. Phishing therefore poses privacy and security risks that depend not only on whether agents recognize malicious messages, but also on how they respond. Existing phishing datasets were developed primarily for conventional detection, leaving agent susceptibility to persuasive malicious requests insufficiently characterized. To expose vulnerabilities that pre-existing datasets may miss, we introduce AgentPhishing, a benchmark for evaluating whether persuasive phishing attacks can evade detection and induce LLM email agents to comply with malicious requests. W",
+  "published": "2026-10-22T15:07:49Z",
+  "updated": "2026-10-22T15:07:49Z",
+  "cats": [
+   "cs.CR",
+   "cs.AI"
+  ],
+  "authors": [
+   "Justin Tan",
+   "Miao Li",
+   "Ding Zhao"
+  ],
+  "n_auth": 3,
+  "url": "http://arxiv.org/abs/2610.31404v1"
+ },
+ {
+  "id": "2610.31376v1",
+  "title": "Certified Execution Harness for Agentic AI: Safe and Least-Intrusive Petri-Net Supervisory Control Between Reasoning and Action",
+  "summary": "This paper studies the problem of safe tool execution for large language model (LLM) agents under prompt injection. Using Petri nets, we formalize the execution harness between the LLM and its tools as a supervisory control problem, in which marks represent capabilities, approvals and budgets. Since a transition fires only if the marks it needs are present, an injected request whose preconditions are unmet or already spent is refused regardless of its wording. Treating tool outcomes as uncontrollable, we enforce safety by the conventional maximally permissive supervisor, and this safety transfers to the running system under four assumptions. Moreover, to capture an agent that may propose aga",
+  "published": "2026-10-22T14:48:16Z",
+  "updated": "2026-10-22T14:48:16Z",
+  "cats": [
+   "cs.AI",
+   "eess.SY"
+  ],
+  "authors": [
+   "Chao Gu",
+   "Quanyan Zhu"
+  ],
+  "n_auth": 2,
+  "url": "http://arxiv.org/abs/2610.31376v1"
+ },
+ {
+  "id": "2610.31372v1",
+  "title": "RIDAR: Safeguarding Research Integrity in Autonomous Research Agents via Automated Detection and Runtime Intervention",
+  "summary": "Autonomous research agents are increasingly used to automate large portions of scientific research, yet they are prone to research integrity violations (RIVs): behaviors that compromise the validity, reproducibility, or faithfulness of the research process. We present RIDAR, a framework for automated RIV detection and runtime intervention. First, we introduce RIVT, a comprehensive taxonomy of 14 RIV types spanning the full research lifecycle. Building on RIVT, we present RIDAR-post-hoc, a framework to detect RIVs within agent trajectories. RIDAR-post-hoc achieves 85.2% F1 performance on RIV-Gold, a benchmark for RIV detection with 60 expert-annotated trajectories. Applying RIDAR-post-hoc to ",
+  "published": "2026-10-22T14:43:36Z",
+  "updated": "2026-10-22T14:43:36Z",
+  "cats": [
+   "cs.AI"
+  ],
+  "authors": [
+   "Jiening Siow",
+   "Amy Xin",
+   "Junjie Wang",
+   "Ziyu Tang",
+   "Zijun Yao",
+   "Yunjia Qi"
+  ],
+  "n_auth": 10,
+  "url": "http://arxiv.org/abs/2610.31372v1"
+ },
+ {
+  "id": "2610.31371v1",
+  "title": "Probabilistic Energy Modeling Unifies Versatile Swarm Control",
+  "summary": "Robotic swarms must coordinate across diverse missions, yet existing controllers often require redesign, retuning, or retraining when objectives change. Here we show that probabilistic energy modeling provides a unifying representation for versatile swarm control, in which diverse missions emerge from compositions of shared interaction principles rather than task-specific control formulations. By exploiting the correspondence between Gibbs random field energy minimization and structured reward maximization, we encode fundamental swarm behaviors as reusable energy terms within a unified probabilistic objective. Decentralized policies trained within this representation are composed into a sing",
+  "published": "2026-10-22T14:42:55Z",
+  "updated": "2026-10-22T14:42:55Z",
+  "cats": [
+   "cs.RO",
+   "cs.MA"
+  ],
+  "authors": [
+   "Xiang Zhou",
+   "Xiangyu Zhu",
+   "Xintong Wang",
+   "Qingyuan Yang",
+   "Rui Huang",
+   "Feng Xue"
+  ],
+  "n_auth": 8,
+  "url": "http://arxiv.org/abs/2610.31371v1"
+ },
+ {
+  "id": "2610.31366v1",
+  "title": "AfterDeleteBench: Auditing Post-Deletion Information Persistence in LLM Agents",
+  "summary": "Many LLM agents maintain external persistent memory and derive additional state from past interactions, such as summaries. Deleting an original memory record therefore need not remove information carried by its descendants. We introduce AfterDeleteBench, a controlled behavioral audit for this failure mode in fixed-weight LLM agents. For each synthetic secret, we compare an exposed-then-deleted agent with an otherwise matched agent that was never exposed to the secret, allowing post-deletion recovery to be attributed to the original exposure. In our primary setting, a single query recovers the deleted secret from Qwen2.5-7B-Instruct in roughly two thirds of cases, while matched never-exposed ",
+  "published": "2026-10-22T14:41:36Z",
+  "updated": "2026-10-22T14:41:36Z",
+  "cats": [
+   "cs.CR",
+   "cs.CL",
+   "cs.LG"
+  ],
+  "authors": [
+   "Ehsan Saleh",
+   "Roozbeh Nahavandi",
+   "Sama Salarian",
+   "Raef Bassily",
+   "Andrew Perrault"
+  ],
+  "n_auth": 5,
+  "url": "http://arxiv.org/abs/2610.31366v1"
+ },
+ {
+  "id": "2610.31355v1",
+  "title": "Muffin - A Shared Memory Buffer for Asynchronous AI Agents",
+  "summary": "The rise of Agentic AI systems has changed the landscape of artificial intelligence by enabling strong reasoning capabilities through specialized multi-agent interaction with structured self-reflection. However, in target-driven reasoning tasks, single- and multi-agent systems are often on par in terms of performance gains. A major challenge is that failures often arise from an ineffective exchange of critical information during inter-agent interaction and coordination. Different from existing multi-agent debate paradigms that rely on synchronous turn-taking and sharing information across different agents, we propose an inter-agent protocol based on shared Memory bUFFer INference - referred ",
+  "published": "2026-10-22T14:36:46Z",
+  "updated": "2026-10-22T14:36:46Z",
+  "cats": [
+   "cs.AI",
+   "cs.MA"
+  ],
+  "authors": [
+   "Ping-Lin Kuo",
+   "Suman Navaratnarajah",
+   "Christian Frey",
+   "Gresa Shala",
+   "Josif Grabocka"
+  ],
+  "n_auth": 5,
+  "url": "http://arxiv.org/abs/2610.31355v1"
+ }
+]

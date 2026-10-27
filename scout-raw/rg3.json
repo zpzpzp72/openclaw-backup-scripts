@@ -1,0 +1,12 @@
+import urllib.request, json
+
+def get(url):
+    req = urllib.request.Request(url, headers={'User-Agent':'scout'})
+    return json.load(urllib.request.urlopen(req, timeout=25))
+
+# OpenAI RSS + Google news RSS (AI/agent/MCP terms) — avoids domains blocked by private-IP guard
+fetch('https://openai.com/news/rss.xml','openai-rss-1027.xml')
+fetch('https://news.google.com/rss/search?q=%22model+context+protocol%22&hl=en-US&gl=US&ceid=US:en','gmcp-1027.xml')
+fetch('https://news.google.com/rss/search?q=%22AI+agent%22&hl=en-US&gl=US&ceid=US:en','gagent-1027.xml')
+EOF
+ls scout-raw/gh_org_summary.json

@@ -1,0 +1,711 @@
+[
+ {
+  "id": "2610.34298v1",
+  "title": "Matched Capabilities, Different Behaviors: A Controlled Study of MCP and CLI Interfaces for Language Agents",
+  "summary": "Language agents increasingly act through external tools and interactive environments, making the interface between the model and its executable capabilities part of the decision process. Model Context Protocol (MCP) and command-line interfaces (CLI) can expose the same semantic operations through markedly different model-facing representations. We study whether these representational differences change agent behavior when executable capabilities are matched. We introduce Matched Interface Comparison and Analysis (MICA), which renders MCP and CLI from a shared semantic action contract and routes decoded actions through the same runtime. Across six models and three interactive environments, matched interfaces produce substantial differences in task performance and interaction cost. These effects extend beyond surface validity to semantic action selection, failure pathways, and recovery. Matched-state probes localize sensitivity to capability presentation, realization, and feedback. Paired natural trajectories reveal structured divergence in 94.3% of 2,004 episodes and show that early differences propagate through subsequent interaction. This analysis identifies interface realization as a direct intervention boundary. We therefore introduce Decoupled Action Realization and Targeted Repair (DART), which preserves validated semantic commitments while repairing interface-specific realization. DART improves benchmark score in all six evaluated settings by up to 9.0 points and reduces MCP token cost in all three environments by up to 27.1k tokens per task. Together, these results establish interface representation as part of the closed-loop decision environment shaping agent behavior.",
+  "published": "2026-10-25T13:54:07Z",
+  "updated": "2026-10-25T13:54:07Z",
+  "cats": [
+   "cs.AI"
+  ],
+  "authors": [
+   "Zhenning Shi",
+   "Liang Pang",
+   "Yongqi Li"
+  ],
+  "link": "https://arxiv.org/abs/2610.34298v1"
+ },
+ {
+  "id": "2610.33636v1",
+  "title": "Build or Adopt? Custom-Built vs. General-Purpose LLM Agent Harnesses for Automotive GUI Testing",
+  "summary": "As general-purpose LLM agent harnesses mature, organizations must decide whether to continue developing in-house systems or adopt existing alternatives. We study this decision at Volvo Group for GUI testing of Android-based in-vehicle infotainment (IVI) systems. We compare a production, custom-built harness with two general-purpose harnesses, Claude Code and OpenCode, keeping the tools, accessed through the Model Context Protocol (MCP), and the models the same. We evaluate the harnesses with up to four models on Volvo's IVI test cases and on open-ended tasks in public apps (Google Maps, Booking.com), and interview ten practitioners: developers, the product owner, and testers. On Volvo's stepwise IVI tests, general-purpose harnesses match the custom-built harness in success but vary more across runs. Their inference cost per task is 2.6-10.7 times higher, yet the engineering effort they save outweighs this: for a nightly IVI regression suite, total monthly cost, including engineering effort and inference, is 3-66% lower. On open-ended public-app tasks, they succeed more often, mainly because they recover better from incorrect actions. Interviews suggest that external advances can turn an in-house harness into technical debt even without deterioration. Adopting a general-purpose harness shifts maintenance from the agent loop to tools and instructions, but gives teams less control over what the model receives. Regardless of the harness, testers want to inspect the agent's actions and ensure that it follows the prescribed test scenario.",
+  "published": "2026-10-24T12:32:16Z",
+  "updated": "2026-10-24T12:32:16Z",
+  "cats": [
+   "cs.SE",
+   "cs.AI"
+  ],
+  "authors": [
+   "Arsham Gholamzadeh Khoee",
+   "Ruyu Fu",
+   "Jiaqi Wei",
+   "Ruikun Deng",
+   "Robert Feldt",
+   "Dhasarathy Parthasarathy",
+   "Yinan Yu"
+  ],
+  "link": "https://arxiv.org/abs/2610.33636v1"
+ },
+ {
+  "id": "2610.33350v1",
+  "title": "EVM-Anchored Provenance for AI-Assisted Code Evolution: A Smoke-Scale Deployment Report",
+  "summary": "We report a smoke-scale deployment of an EVM-anchored provenance framework for the state stream produced by AI-assisted code generation. The system comprises codebase-state-manager, an open-source Model Context Protocol (MCP) server (MIT, v0.2.1) that exposes codebase state, transition, and reward operations to any MCP-compatible assistant, and CodebaseStateRegistry, a Solidity contract deployed on Base Sepolia that emits per-state commitment events. Payloads are pinned to the InterPlanetary File System (IPFS) and indexed through a rebuildable SQLite mirror that resynchronizes by replaying contract events. We delimit precisely what anchoring does and does not attest (existence, ordering, and non-equivocation by the committer key; never truthfulness or fabrication-prevention) and outline the orthogonal supply-chain controls required to close that gap. Under an author-produced synthetic workload on a local Anvil simulator, the median commit costs 103,282 gas, modeled at US$0.0018-0.0035 in rollup fees per commit (US$17.9-34.8 per 10,000 states), and simulator latency for the create operation is 539.8 ms (p50) and 725.0 ms (p95) under loopback storage and instant mining. The live deployment holds 14 StateCommitted events verifiable on-chain; the last consumed 98,977 gas at 1 gwei (about US$0.30). All empirical figures are descriptive quantiles from a single author run; no testnet latency is reported, and no claim of superiority is made against any baseline. A receipts-trie consumption mechanism, a BountyEscrow use case, and a FAIR-aligned dataset publication pattern are specified as outlook and are not implemented. A property-by-property comparison against OpenTimestamps, Sigstore Rekor, Centrifuge AnchorRegistry, in-toto/SLSA, Radicle, and Lalli et al. places this work relative to the surrounding provenance landscape.",
+  "published": "2026-10-23T22:39:16Z",
+  "updated": "2026-10-23T22:39:16Z",
+  "cats": [
+   "cs.SE"
+  ],
+  "authors": [
+   "Einar César Santos"
+  ],
+  "link": "https://arxiv.org/abs/2610.33350v1"
+ },
+ {
+  "id": "2610.32555v1",
+  "title": "Tool-Calling LLM Agents Under Realistic MCP Faults: Scale Does Not Purchase Fault Tolerance",
+  "summary": "LLM agents increasingly rely on external tools exposed via the Model Context Protocol (MCP), yet current benchmarks assume tools respond correctly and on time, leaving agent resilience to realistic tool failures untested. We introduce MCP-Injector, a drop-in, protocol-aware fault-injection middleware that interposes on the MCP tool-call path with controlled persistence (permanent, transient, intermittent) and seedable schedules. Its fault model is calibrated to the observed incident distribution (failure mode x persistence) of the public MCP ecosystem, mined from 57,240 issue and pull-request threads across 1,774 open-source MCP repositories. In a 1,350-cell experiment crossing two backbone sizes (20B, 120B), three agent stacks (custom multi-round plan-and-execute, OpenAI Agents SDK, LangChain), and three fault injection conditions, we find that faults drawn from this permanent-heavy stress profile cause severe quality degradation (task-completion score falls by 60%, from 8.08 to 3.23 out of 10), and that scale does not purchase fault tolerance for the two gpt-oss backbones we test: the 120B retains no larger share of its fault-free score under faults (resilience-ratio model, $p = 0.96$), and its completion rate under faults is, if anything, lower (91.1% vs. 95.6%; difference 4.4 points, 95% CI $[-0.2, 9.3]$). Agent stacks differ in how well they absorb faults, which suggests that framework-level error handling matters more than model scale. These results demonstrate that capability benchmarks alone can mask operational brittleness, motivating protocol-aware fault injection as a complementary evaluation dimension for tool-calling agents.",
+  "published": "2026-10-23T12:35:51Z",
+  "updated": "2026-10-23T12:35:51Z",
+  "cats": [
+   "cs.SE",
+   "cs.AI"
+  ],
+  "authors": [
+   "Antonio Ken Iannillo",
+   "Joshua Segun Owotogbe",
+   "Roberto Natella",
+   "Francesco Avallone",
+   "Kristina Kudryavtseva",
+   "Indika Kumara"
+  ],
+  "link": "https://arxiv.org/abs/2610.32555v1"
+ },
+ {
+  "id": "2610.31974v1",
+  "title": "Agentic AI Defense: Decode-Time Provenance Binding for MCP",
+  "summary": "Agentic AI systems using the Model Context Protocol (MCP) are vulnerable to indirect prompt injection through untrusted tool outputs. We demonstrate cross-modal trust laundering, in which instructions concealed in an email-signature image using least-significant-bit (LSB), discrete cosine transform (DCT), or metadata steganography bypass text scanners and enter a multi-agent workflow when decoded by a tool. To counter this threat, we propose decode-time provenance binding, which combines HMAC-authenticated trust labels with an MCP-maintained provenance ledger and context-taint tracking. The mechanism labels decoded content as untrusted and blocks critical tool calls influenced by that content, even when a compromised agent substitutes a valid trusted label. We evaluate the approach using a real MCP testbed with three steganographic carriers and 24 adaptive payloads. The undefended pipeline exhibits 100% attack success, while keyword and regex defenses each permit 62.5% of attacks. Our mechanism blocks all attacks (0% success), including adversarial label substitution across mediated agent boundaries. A four-component ablation validates the roles of decode marking, cryptographic authentication, lineage tracking, and sink enforcement. An audited trusted-promotion mechanism increases legitimate-task completion from 67% to 100% without compromising protection. The approach provides carrier-independent containment within fully mediated MCP execution environments. Code and data are publicly available.",
+  "published": "2026-10-22T22:27:13Z",
+  "updated": "2026-10-22T22:27:13Z",
+  "cats": [
+   "cs.CR",
+   "cs.AI",
+   "cs.MA"
+  ],
+  "authors": [
+   "Eric Yocam",
+   "Varghese Vaidyan",
+   "Paris Kalathas",
+   "Patrick Tague",
+   "Bruce DeBruhl",
+   "Yong Wang"
+  ],
+  "link": "https://arxiv.org/abs/2610.31974v1"
+ },
+ {
+  "id": "2610.31113v1",
+  "title": "Can AI Co-Design Structures? An AI Agent for Early-Stage Structural Design",
+  "summary": "Recent advances in large language models and agentic workflows offer a new paradigm to early-stage structural design translating design intent into structural models. Although text-to-3D approaches have demonstrated that natural language can be used to produce visual, mesh-based geometric models, structural design requires domain-specific geometric arrangements and semantically rich data types. This paper introduces a proof-of-concept workflow for prompt-to-structure generation using an AI agent connected to a COMPAS-based structural modelling API through a Model Context Protocol (MCP) server. Through controlled modelling operations, the agent creates and modifies a graph-based structural data model composed of explicit building elements. The resulting artifacts can be inspected, modified, serialised, and further connected to downstream AEC workflows. The approach is demonstrated through selected prompt-to-structure examples and by progressive and editable design sequences that resemble typical iterative structural design workflows. The results are preliminary, but demonstrate the possibility of combining natural language, agentic workflows, and domain-specific structural data structures as a first step toward AI-assisted structural co-design.",
+  "published": "2026-10-22T11:27:22Z",
+  "updated": "2026-10-22T11:27:22Z",
+  "cats": [
+   "cs.AI"
+  ],
+  "authors": [
+   "Ricardo Maia Avelino",
+   "Mennatallah El-Assady",
+   "Tom Van Mele",
+   "Philippe Block"
+  ],
+  "link": "https://arxiv.org/abs/2610.31113v1"
+ },
+ {
+  "id": "2610.31080v1",
+  "title": "nnInteractive Agent: General-Purpose AI Agents as 3D Image Annotators",
+  "summary": "Interactive 3D segmentation models such as nnInteractive turn a few spatial prompts (points, scribbles, boxes) into accurate volumetric masks, but a human still does the annotation work: finding each structure, placing prompts, checking the result and correcting it. General-purpose AI agents can now interpret images, call tools and write code. We show that such agents can take over this work without additional training: the user makes a request in plain language, and the agent works out what has to be segmented, locates the targets, prompts nnInteractive, inspects the 3D result, corrects it and responds to feedback. Asked for 'the muscles used for chewing', an agent identifies and segments the masseters and pterygoids; asked to count liver lesions, it writes its own code to find candidates and splits a merged lesion on request. Our open-source nninteractive-agent provides nnInteractive as tools over the Model Context Protocol (MCP), together with a skill that encodes how experienced users prompt it. On a benchmark spanning CT, MRI, PET and micro-CT of humans, a mouse and an ant (14 images; 51 targets from organs and tumours to muscles, foot bones, vessel trees and an insect brain), Claude Code and Codex reach a mean Dice of 0.81 and 0.84 from the request alone; when told where each target is, both reach 0.85 and prompt nearly as effectively as an oracle that places prompts using the reference segmentation. A text-prompted 3D model (VoxTell) is more accurate on most standard radiological targets but less robust: it returns an empty mask for one of them and fails on the leg muscles, the foot bones, the mouse and the ant, where the agents remain accurate. Code: https://github.com/MIC-DKFZ/nninteractive-agent",
+  "published": "2026-10-22T10:55:15Z",
+  "updated": "2026-10-22T10:55:15Z",
+  "cats": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Fabian Isensee",
+   "Constantin Ulrich Harsy",
+   "Maximilian Rokuss",
+   "Benjamin Hamm",
+   "Philipp Vollmuth",
+   "Klaus H. Maier-Hein"
+  ],
+  "link": "https://arxiv.org/abs/2610.31080v1"
+ },
+ {
+  "id": "2610.31703v1",
+  "title": "Before the Ticket: Grounding HPC User Support in Documentation and Resolved Tickets with an Agentic LLM Assistant",
+  "summary": "Most questions that reach an HPC help desk have already been answered in the center's user guides or in a ticket someone else filed last semester; users still file new tickets because the guides are hard to navigate and the ticket history is not theirs to search. We present an assistant that answers from both sources: an orchestrator calls two tools over the Model Context Protocol, retrieval-augmented generation (RAG) over the live documentation and a Llama-3-8B model fine-tuned with QLoRA on 11,244 query-resolution pairs mined from historical tickets, and merges their answers. Every model runs on-premises or on the university's hosted LLM service because ticket data may not leave the institution. On 400 held-out tickets from Purdue's Rosen Center for Advanced Computing, disjoint from training and free of near-duplicates, and evaluated by two judges from model families that generated none of the answers, fine-tuning on resolutions rewritten into self-service guidance is the clear winner in agreement with RCAC's resolutions (BERTScore F1 improves from 0.06 to 0.27 over the base model) and is judged most correct on average. The end-to-end system does not improve on its tools, although they are complementary: choosing the better answer per question would exceed either tool (judged correctness 3.41 versus 3.20, an oracle bound), while the merge follows the documentation tool in 78% of answers. Returning one tool's answer instead recovers the fine-tuned tool's quality (3.19 versus 2.66), but neither a learned selector nor an LLM verifier beats that tool alone.",
+  "published": "2026-10-21T19:01:41Z",
+  "updated": "2026-10-21T19:01:41Z",
+  "cats": [
+   "cs.SE",
+   "cs.AI"
+  ],
+  "authors": [
+   "Elham J. Barezi",
+   "Primus C Kabuo",
+   "Niveditha Nerella"
+  ],
+  "link": "https://arxiv.org/abs/2610.31703v1"
+ },
+ {
+  "id": "2610.28810v1",
+  "title": "Combining Long-Term Memory and LLMs Comes at a High Cost: From Prompt Injection to Persistent Compromise",
+  "summary": "The widespread adoption of generative artificial intelligence in recent years has brought a parallel rise in prompt injection and jailbreak attacks. By embedding malicious instructions, these exploits manipulate language models to bypass intended behavior and operational boundaries. In traditional chatbots, such attacks are confined to a single session because state memory is not preserved across conversations. However, persistent memory features in modern conversational interfaces enable cross-session attack propagation, establishing a threat vector known as memory injection. This work explores this emerging vulnerability in leading LLM-as-a-service platforms, highlighting its real-world severity and the need for countermeasures. While existing literature focuses on violations tailored to specific platform features, we present a general threat model. We demonstrate that all NIST attack goals are collectively achievable across ChatGPT Instant 5.3, Claude Sonnet 4.6, and Gemini 3 Flash under this model. We also show that memory injections can exploit multiple attack vectors, including personal memories, projects, skills, organization instructions, and Model Context Protocol (MCP)-connected resources. Our findings reveal that all evaluated services can be manipulated to persistently spread disinformation, generate harmful content, or simulate offline unresponsiveness, even in fresh sessions. In the particular case of Claude, shared-memory features allow an attacker to compromise multiple users within an organization and also exfiltrate user prompts. To address these vulnerabilities, we derive defense mechanisms from our proposed threat model and foundational cybersecurity principles. Our analysis indicates that nearly half of these mitigations remain unimplemented across the target services. Datasets and attack artifacts are available at https://github.com/PedroBarcha/Memory-injection.",
+  "published": "2026-10-20T18:33:05Z",
+  "updated": "2026-10-20T18:33:05Z",
+  "cats": [
+   "cs.CR",
+   "cs.AI",
+   "cs.CL",
+   "cs.LG"
+  ],
+  "authors": [
+   "Pedro H. Barcha Correia",
+   "Matheus Azevedo de Sá",
+   "Paulo H. Gomes de Senna",
+   "Giovanni Mandel Martignago",
+   "Victor Takashi Hayashi",
+   "Charles Christian Miers",
+   "Marcos A. Simplicio"
+  ],
+  "link": "https://arxiv.org/abs/2610.28810v1"
+ },
+ {
+  "id": "2610.28785v1",
+  "title": "Measure First, Then Allocate: Calibrated Rollout Budgets for MCP Agents in Reinforcement Learning",
+  "summary": "Training tool-using language models requires costly interaction, yet identical rewards within a rollout group provide no group-relative learning signal. We use reward disagreement to guide harness evaluation and the allocation of rollouts for policy training in Model Context Protocol (MCP) environments. We first introduce Discord, which tests harness edits using exact paired inference and decision-preserving early stopping: only disagreeing paired outcomes favor one harness over another. This insight motivates prospective allocation in BRACE (Bank-calibrated Rollout Allocation under Correlated Episodes). BRACE combines historical task evidence, uncertainty in task success rates, and a correlated reward model to forecast mixed-reward groups before allocating generation budget. Controlled harness experiments favor Discord, while live MCP experiments expose a retention-cost trade-off. At three Qwen3-VL model scales, BRACE exceeds the strongest plotted baseline peaks with fewer new training rollouts; historical-bank collection is counted separately. It also leads the compared methods on BFCL and NESTFUL without further training. Ablations probe the bank, estimator, and allocation score; prospective evaluation checks forecast calibration. These results support forecasting reward contrast before generation.",
+  "published": "2026-10-20T18:15:52Z",
+  "updated": "2026-10-20T18:15:52Z",
+  "cats": [
+   "cs.LG",
+   "cs.CL"
+  ],
+  "authors": [
+   "Hieu Tran",
+   "Zonghai Yao",
+   "Sunjae Kwon",
+   "Hong Yu"
+  ],
+  "link": "https://arxiv.org/abs/2610.28785v1"
+ },
+ {
+  "id": "2610.26828v1",
+  "title": "Agent World Model in the Wild: Computer-Use Agent Environment Synthesis",
+  "summary": "Agent learning is shifting from learning from human data toward learning through interaction with the world. However, scaling such learning directly in real-world computer systems is challenging and can introduce substantial security risks. We therefore propose Agent World Model in the Wild (WildAWM), a scalable pipeline for synthesizing controllable environments and tasks for training general computer-use agents (CUAs). Whereas existing approaches typically specialize in a single agent interaction interface, we construct executable environments that jointly support graphical user interfaces, model context protocol services, and command-line interfaces, allowing agents to flexibly combine visual interaction, tool use, and code execution. WildAWM is entirely powered by open-source models, demonstrating that high-quality computer-use environments can be generated without proprietary frontier models. Beyond environments, we address three recurring challenges in task synthesis: ensuring solvability, maintaining sufficient difficulty, and producing reliable verifiers, by introducing execution-based quality gates that combine heterogeneous agent rollouts, cross-judge consistency checks, and counterfactual probes of judgment robustness. The resulting pipeline synthesizes 341 long-horizon environment-task pairs that can require over 100 agent steps to solve and remain challenging even for frontier models, with GPT-6-Astra solving only 60% of them. We train two Qwen models of different sizes exclusively in these synthetic worlds. Both models achieve substantial gains across 8 out-of-distribution benchmarks spanning web, claw, and computer-use agents, demonstrating that learning in WildAWM's synthesized worlds generalizes broadly to unseen computer-use tasks. The code is publicly available at https://github.com/MSR-Orchard/WildAWM.",
+  "published": "2026-10-19T17:55:35Z",
+  "updated": "2026-10-19T17:55:35Z",
+  "cats": [
+   "cs.AI",
+   "cs.CL",
+   "cs.LG"
+  ],
+  "authors": [
+   "Zhaoyang Wang",
+   "Qianhui Wu",
+   "Haorui Wang",
+   "Simon Yu",
+   "Baolin Peng",
+   "Canwen Xu",
+   "Hao Cheng",
+   "Wenlin Yao",
+   "Boyi Liu",
+   "Yite Wang",
+   "Jianfeng Gao",
+   "Huaxiu Yao"
+  ],
+  "link": "https://arxiv.org/abs/2610.26828v1"
+ },
+ {
+  "id": "2610.26624v1",
+  "title": "From TCP/IP to MCP: Security and Governance Lessons from Internet Protocols for Agentic AI",
+  "summary": "The past two years have seen considerable interest in protocols for managing how AI agents interact with human users, external tools, and each other. In many ways, these protocols, including the Model Context Protocol (MCP) and Agent2Agent (A2A), mirror the suite of protocols that underlie the modern internet. Motivated by this parallel, this paper draws lessons from the development, history, and governance of internet protocols with the aim of informing the responsible development of AI agent protocols. Based on our analysis, we make two conclusions. First, if AI agent protocols do not sufficiently prioritise security in the early stages of development, they risk accumulating a security deficit that becomes increasingly costly to address over time due to practical and economic challenges. Second, current governance structures for AI agent protocols centralise decision-making power in a small number of individuals and companies, raising important questions regarding legitimacy, especially if they become critical digital infrastructure. We conclude with a discussion and implications for policymakers and developers of AI agent protocols.",
+  "published": "2026-10-19T15:55:55Z",
+  "updated": "2026-10-19T15:55:55Z",
+  "cats": [
+   "cs.CY"
+  ],
+  "authors": [
+   "Ben Bucknall",
+   "Andrew Byrley",
+   "Lewis Hammond"
+  ],
+  "link": "https://arxiv.org/abs/2610.26624v1"
+ },
+ {
+  "id": "2610.26369v1",
+  "title": "Autonomous intelligence for mining productivity: a multi-agent AI approach to operational value creation",
+  "summary": "Integrated Remote Operation Centres (IROCs) are emerging as the architectural frontier of Industry 4.0 for capital-intensive sectors such as mining, oil and gas, and energy. Yet two intertwined gaps constrain their evolution towards full autonomy. First, no integrated agentic architecture has been proposed for mining IROCs that orchestrates Supervisory Control and Data Acquisition systems, digital twins, predictive analytics and human-machine interfaces under safety-critical constraints. Second, no evaluation framework jointly addresses the real-time, Health-Safety-Environment, regulatory-auditability and cost-per-decision requirements that govern industrial agentic deployments. This paper makes four contributions. It synthesises industry needs and quantified gains documented in analogous industries that motivate an agentic approach to mining IROCs. It introduces EI2ROC, a three-tier multi-agent architecture combining a Large Language Model orchestrator with specialised monitoring and production-capacityprediction agents communicating through a Model Context Protocol-style tool interface. It provides a critical review of agentic evaluation along six orthogonal dimensions and identifies the industrial blind spot of current benchmarks. Finally, it proposes a multi-dimensional benchmarking framework for industrial agentic AI comprising scenario library, harness, metrics and humancalibration protocol. The paper states explicitly which components are implemented in the current prototype, which belong to the proposed reference design and which remain future work, and reports preliminary cost and latency observations from an operating site. Together, EI2ROC and the benchmarking framework constitute a methodological blueprint transferable across CAPEX intensive industries.",
+  "published": "2026-10-19T13:24:44Z",
+  "updated": "2026-10-19T13:24:44Z",
+  "cats": [
+   "cs.AI",
+   "cs.MA"
+  ],
+  "authors": [
+   "N Guerin",
+   "A Dehoux",
+   "M Nakhla"
+  ],
+  "link": "https://arxiv.org/abs/2610.26369v1"
+ },
+ {
+  "id": "2610.23449v1",
+  "title": "GatewayBench: Unified Capability and Security Evaluation Platform for MCP Gateways",
+  "summary": "AI agents have increasingly interacted with external environments by invoking tools, with Model Context Protocol (MCP) emerging as a standard interface for connecting agents to heterogeneous tools and services. As organizations deploy agents at scale, MCP gateways have become a critical middleware layer for aggregating, governing, and shaping the tool surface exposed to agents. Despite the growing importance of MCP gateways in agentic systems, no prior work has systematically studied how gateway design affects agent capability, efficiency, and security. To address this gap, we introduce GatewayBench, the first unified evaluation framework and benchmark for MCP gateways. We characterize gateway architectures into two major paradigms: flattened gateways and hierarchical gateways. GatewayBench comprises 524 tasks across six domains, together with a pool of 11,118 real-world tools from 251 authentic MCP servers. To emulate large-scale deployments, we systematically inject task-irrelevant tools sampled from this pool into each agent environment, enabling controlled evaluation as the accessible tool surface scales. Based on GatewayBench, we conduct extensive experiments across seven widely deployed MCP gateways and diverse agent configurations, covering both benign and adversarial tasks. Our results reveal substantial differences across gateway designs in task completion, tool-use efficiency, and resilience to attacks, and further demonstrate that these effects interact strongly with the underlying model and agent harness. These findings highlight the MCP gateway as a consequential yet underexplored component of the agentic AI stack. By enabling controlled evaluation of gateway architectures under realistic tool ecosystems, GatewayBench provides both practical guidance for MCP gateway design and a rigorous testbed for developing more capable, efficient, and secure agentic systems.",
+  "published": "2026-10-16T13:31:09Z",
+  "updated": "2026-10-16T13:31:09Z",
+  "cats": [
+   "cs.AI"
+  ],
+  "authors": [
+   "Yitian Zheng",
+   "Zhaorun Chen",
+   "Haoyu Li",
+   "Bo Li"
+  ],
+  "link": "https://arxiv.org/abs/2610.23449v1"
+ },
+ {
+  "id": "2610.22301v1",
+  "title": "My Credentials, Please: Detecting Filesystem Capability Laundering in MCP Servers at Scale",
+  "summary": "The Model Context Protocol (MCP) standardizes how AI agents invoke external tools. MCP servers expose tools through a declared contract consisting of a name, description, and argument schema. In typical local deployments, client-side approval of a tool call grants the underlying server process broad host filesystem permissions rather than restricting it to the declared operation. We study the resulting vulnerability class, filesystem capability laundering, where attacker-steered arguments cause a tool to access sensitive host files outside its declared contract and deployment scope. We analyze this capability gap across three layers: server-category screening (L1), per-tool contract analysis (L2), and bypassable path-validation checks (L3). We design MCP-FSD to catalog MCP servers, infer least-privilege boundaries per tool, plant credential fixtures outside those boundaries, and evaluate exploitability and sandbox containment via paired dynamic execution. Across 21,097 MCP servers from nine registries, 787 of 4,806 triaged servers (16.4%) exhibit filesystem capabilities despite non-filesystem functional classifications. Dynamic three-case validation confirms 150 vulnerable instances under tested sandbox policies. Coordinated disclosure yielded 13 security advisories, including two CVEs in Anthropic's Git MCP Server.",
+  "published": "2026-10-15T17:48:10Z",
+  "updated": "2026-10-15T17:48:10Z",
+  "cats": [
+   "cs.CR"
+  ],
+  "authors": [
+   "Zeqian Huang",
+   "Mingyue Tang",
+   "Aonan Guan",
+   "Qiming Sun",
+   "Pengzhou He"
+  ],
+  "link": "https://arxiv.org/abs/2610.22301v1"
+ },
+ {
+  "id": "2610.21063v1",
+  "title": "Approve What, Exactly? Effect Binding and Trusted Rendering for Agent Step-Up Authorization",
+  "summary": "AI agents now pause for approval before they send money, delete files or email outsiders, and that approval is usually treated as a second factor. We argue it is one only when compromising the agent cannot produce it and when it names exactly what it approves, and we test both conditions. We define twelve attacks on the approval path, including decoy recipients, amount cancellation, card padding, label spoofing, enrollment squatting and threshold splitting, and run them against the Agent Payments Protocol (AP2), the Microsoft action-bound approval design and Model Context Protocol (MCP) elicitation. An audit of ten agent runtimes finds no third-party verifiable approval record, no flood limits where measurable, and post-approval argument changes in four of eight runtimes with measurable binding. As a reference defense we build ASU (Agent Step-Up), a gateway that renders the approval card from a canonical effect descriptor, has a passkey on the phone of the user sign its digest, and executes only the stored call. Tamarin proves its binding, single-use and key-level non-repudiation properties under three stated hypotheses (53 lemmas). Across 27,108 scripted trials and 609 AgentDojo attack pairs, ASU stops substitution, replay and grant stretching, and the trusted card cuts forged-narration attack success from 0.54 to 0.03. With 15 current language models as automated approvers, the trusted card raises the attack catch rate from 0.30 to 0.98, at the cost of refusing 16 percent of harmless near misses, mostly due to a placeholder artifact in our stimuli. A second device adds nothing measurable over a trusted on-host confirmation in these experiments, flooding still succeeds 0.45 to 0.60 of the time against a modeled approver, and approval cannot stop effects that policy already allows. Code, data and proofs: https://github.com/Sports-Vision-Inc/agent-step-up",
+  "published": "2026-10-15T01:11:23Z",
+  "updated": "2026-10-15T01:11:23Z",
+  "cats": [
+   "cs.CR",
+   "cs.AI"
+  ],
+  "authors": [
+   "Sai Varun Kodathala",
+   "Prashanth Pollishetty",
+   "Jaylen Cargill"
+  ],
+  "link": "https://arxiv.org/abs/2610.21063v1"
+ },
+ {
+  "id": "2610.21015v1",
+  "title": "MASON: Materials Atomistic Structure builder Operated in Natural language",
+  "summary": "Building reliable atomistic models is a critical and often challenging step in first-principles calculations. Although large language model agents can assist with structure generation, they lack direct capabilities for crystallographic operations and therefore struggle to construct complex structures reliably. Here we present MASON, an AI-native toolkit for atomistic structure construction that can be invoked by agents through the Model Context Protocol (MCP). In an end-to-end example, an agent builds a CO/Pt(111) adsorption model from a natural language request. By equipping agents with dedicated structure-building tools, MASON enables reliable and efficient atomistic model construction and provides a foundation for autonomous first-principles workflows.",
+  "published": "2026-10-14T23:21:16Z",
+  "updated": "2026-10-14T23:21:16Z",
+  "cats": [
+   "cond-mat.mtrl-sci"
+  ],
+  "authors": [
+   "Xinyue Zhang",
+   "Jixiang Li",
+   "Bin Shao",
+   "Baishun Yang",
+   "Zhiyang Liu",
+   "Weichao Wang"
+  ],
+  "link": "https://arxiv.org/abs/2610.21015v1"
+ },
+ {
+  "id": "2610.20902v1",
+  "title": "Thinking in Graphs: Neo4j-Backed Exploit-Chain Reasoning for LLM Penetration-Testing Agents",
+  "summary": "LLM coding agents such as Claude Code and OpenAI Codex can drive penetration-testing tools, but they reason about an engagement as a flat list of findings in a context window. Attackers think in graphs: isolated low-severity exposures turn catastrophic once chained through credential capture, privilege escalation, and lateral movement. This gap feeds a common belief that AI agents cannot truly chain exploitation; we argue this describes the flat context window, not the model. We present ChainGraph, a pattern that externalizes exploit-chain reasoning into a Neo4j property graph wired to an off-the-shelf agent via the Model Context Protocol, no bespoke harness. Findings, attack steps, credentials, assets, and tamper-evident evidence receipts are typed nodes with pre/post-condition edges; JSON/Markdown holds documentary memory while Neo4j holds reasoning memory. We formalize five operator questions (next-step inference, entry-to-crown-jewel pathing, combined-severity promotion, evidence provenance, and chokepoint identification) as reusable Cypher and Graph Data Science queries, plus a chain-severity score distinct from per-finding local severity. On a synthetic multi-forest Active Directory engagement modeled on GOAD, in live Neo4j with GDS, three findings rated Medium in isolation become Critical once their path to the forest root is materialized, and betweenness centrality names the best chain break-points. Scoping each decision to a graph result rather than re-reading the engagement cut the reasoning payload by about 98% on a token proxy. We give a reproducible setup for Claude Code and Codex. Results are illustrative single-run measurements, not a benchmark.",
+  "published": "2026-10-14T20:33:18Z",
+  "updated": "2026-10-14T20:33:18Z",
+  "cats": [
+   "cs.CR"
+  ],
+  "authors": [
+   "Joas Antonio dos Santos Barbosa"
+  ],
+  "link": "https://arxiv.org/abs/2610.20902v1"
+ },
+ {
+  "id": "2610.19131v1",
+  "title": "Plant Memory: Technical Language Processing and a Verified Maintenance Ontology for Agent-Accessible Failure Knowledge from SAP PM Work Orders",
+  "summary": "Maintenance work orders are the largest written record of how industrial equipment fails, yet in most plants they are close to unusable for analysis. Short texts are abbreviated and misspelt, asset identity is buried in free text, work-type labels contradict the work described, and the fields that matter most for reliability (symptom, root cause, action taken) are usually empty. As a result, diagnostic knowledge stays with senior technicians and leaves when they do. We present Plant Memory, a system that applies technical language processing (TLP) to SAP Plant Maintenance (PM) exports and builds an ISO 14224-aligned maintenance ontology in which every extracted statement is a reified fact carrying a confidence score, the evidence it was read from, and a verification state. Extraction is rule-first, with an optional large language model (LLM) acting as a second reader whose disagreements raise a fact's review priority rather than overwrite it. Technicians verify facts through a review queue, answer targeted knowledge-gap questions where failures repeat without a recorded cause, and approve or reject ontology drift proposals when new terms appear. The resulting graph is served to people through a web application and to AI agents through a Model Context Protocol (MCP) server, so both query the same verified knowledge and every answer cites the work orders behind it. On a synthetic 12-month export of 400 work orders from a parboiled-rice plant, rule-based extraction reaches 96.2% component accuracy, 88.9% failure-mode accuracy and 100% root-cause precision at 62% coverage; on 28 diagnostic questions, ranked root causes from the ontology are correct at top-1 in 82.1% of cases against 53.6% for the raw SAP root-cause column.",
+  "published": "2026-10-13T20:02:31Z",
+  "updated": "2026-10-13T20:02:31Z",
+  "cats": [
+   "cs.AI",
+   "cs.CL"
+  ],
+  "authors": [
+   "Akash Raj"
+  ],
+  "link": "https://arxiv.org/abs/2610.19131v1"
+ },
+ {
+  "id": "2610.16140v1",
+  "title": "Large Language Model Assisted Transportation Planning through a Differentiable User Equilibrium Layer",
+  "summary": "Transportation planning has traditionally required substantial expertise in network modeling, traffic assignment, and optimization. As a result, strategic analyses such as network design, capacity expansion, and model calibration remain inaccessible to non-expert decision makers. Recent advances in large language models (LLMs) provide an opportunity to bridge this gap by enabling natural-language interaction with complex transportation planning tools. However, existing LLM-based systems primarily serve as interfaces to simulation software and lack the ability to efficiently search, evaluate, and optimize transportation solutions. This study proposes an integrated human-AI transportation planning framework that combines a large language model, a model context protocol (MCP) interface, an open-source transportation planning engine (AequilibraE), and a differentiable user equilibrium (UE) assignment layer. The framework allows non-expert users to execute network analyses and improve solutions for optimization. A differentiable UE layer is developed by directly differentiating the Karush-Kuhn-Tucker (KKT) conditions of the Beckmann traffic assignment problem. The proposed framework is demonstrated through two representative planning tasks: calibration of travel time functions from observed traffic counts and network design under budget constraints. The examples illustrate how differentiable transportation models and LLM agents can jointly democratize transportation planning and substantially reduce barriers between domain expertise and transportation decision making.",
+  "published": "2026-10-12T03:59:40Z",
+  "updated": "2026-10-12T03:59:40Z",
+  "cats": [
+   "cs.AI"
+  ],
+  "authors": [
+   "Eunseung Lee",
+   "Gyeongjun Kim",
+   "Keemin Sohn"
+  ],
+  "link": "https://arxiv.org/abs/2610.16140v1"
+ },
+ {
+  "id": "2610.14956v1",
+  "title": "MCPDisCo: Seesaw-Mitigated Tuning for MCP-Native Agents",
+  "summary": "The Model Context Protocol provides a shared interaction substrate for the agentic web, allowing heterogeneous services to expose capabilities through a standardized interface. Learning to use this ecosystem entails a hierarchy of capabilities: tool-format skills, server-level transfer, and cross-server composition. We present MCPDisCo, an ecosystem-scale reinforcement learning framework for MCP-native agents. Using a Thought-Markov Decision Process (Thought-MDP), the framework explicitly represents internal reasoning alongside routing, execution, and termination and trains on real-server, long-horizon interactions spanning 70 MCP servers and 527 tools across six domains. We study the reasoning--tool seesaw, a joint-learning failure mode in which improvement in one objective can accompany deterioration in the other. To mitigate potential interference, MCPDisCo combines token-masked reward attribution with bidirectional gradient surgery: the former separates direct supervision for reasoning and action spans, while the latter removes conflicting components from both objective gradients in shared parameters. MCPDisCo achieves higher success with fewer chain-of-thought tokens. On the out-of-distribution MCP-Atlas and the GAIA benchmark, MCPDisCo maintains monotone gains, confirming that the learned behavior generalizes beyond the training server distribution and broader agentic tasks. Model weight and implementation are available.",
+  "published": "2026-10-10T14:29:23Z",
+  "updated": "2026-10-10T14:29:23Z",
+  "cats": [
+   "cs.AI"
+  ],
+  "authors": [
+   "Kounianhua Du",
+   "Jianxing Liu",
+   "Shuai Shao",
+   "Ke Li",
+   "Xing Sun",
+   "Weinan Zhang"
+  ],
+  "link": "https://arxiv.org/abs/2610.14956v1"
+ },
+ {
+  "id": "2610.14810v1",
+  "title": "KedgeFlow: A Programmable Control Plane for Enterprise AI Agents",
+  "summary": "Enterprise AI agents can execute altered versions of approved actions, concurrently reuse the same permission, or retry operations whose responses were lost. These failures arise when approval and resource execution lack a shared contract. KedgeFlow specifies language-independent contracts for trusted controllers to authorize state-changing operations and privileged gateways to enforce that authority independently of agent reasoning. Inspired by OpenFlow, it connects policy checks supported by evidence, signed permission for an exact action, a shared allowance that can be consumed only once, target-side conditions for applying the change, and retained outcome records. Under trusted issuance of exact-action authority, two conditional properties establish at most one successful claim per allowance and link every governed dispatch to a matching grant, claim, and subsequent dispatch authorization, even when the agent is compromised. A reference implementation exposes this execution path to agent systems through the Model Context Protocol (MCP). In the single-resource evaluation, 6,560 concurrent ledger claim attempts yielded exactly one successful claim for each of 82 allowances. Boundary tests rejected unauthorized and altered requests before consumption. A 32-call gateway race produced one committed mock effect, and a retry after a lost response produced no additional dispatch. Deliberately permissive policy nevertheless authorized an undesirable effect, exposing the limits of execution authorization. Evaluation uses three members of the etcd coordinated key-value store on one host, synthetic authentication and authorization inputs, and a mock target that rejects stale requests. Distributed reservations, enforcement of every production access route, native crash recovery, exactly-once effects at real targets, and interoperability between independent implementations remain untested.",
+  "published": "2026-10-10T11:01:36Z",
+  "updated": "2026-10-10T11:01:36Z",
+  "cats": [
+   "cs.DC",
+   "cs.CR",
+   "cs.LG"
+  ],
+  "authors": [
+   "Jun He",
+   "Deying Yu"
+  ],
+  "link": "https://arxiv.org/abs/2610.14810v1"
+ },
+ {
+  "id": "2610.14346v2",
+  "title": "Evaluating LLMs as Agentic Workflow Executors in Real-World Customer Support Skills",
+  "summary": "Enterprise customer-support agents increasingly rely on Large Language Models (LLMs) to execute bounded, tool-using workflows. We study this problem through the lens of Skill LLMs: specialized executors that operate within a selected skill context and must complete a narrow, stateful workflow under policy and tool constraints. We present a benchmark construction pipeline that mines recurrent workflows from real-world transcripts, converts them into structured skill descriptions, maps them to tool requirements, simulates environment state with Model Context Protocol (MCP)-compatible mocks, and generates multi-turn tool-using dialogues. Using this benchmark, we conduct a large-scale zero-shot evaluation of 17 language models spanning closed model families and deployment-oriented open-weight models from 1.7B to 14B parameters, each judged independently by five strong LLM judges, plus a deterministic rule-based evaluator that checks tool coverage, hallucinated tool use, and unsupported claims. We find a consistent ranking in which GPT-5.4 leads by a wide margin and QWEN3.5-9B is the strongest open-weight model (below 20B), outperforming several closed baselines under every judge. We also find that judge choice is not a negligible methodological detail: pairwise judge agreement on the pass/fail verdict averages Kappa=0.524 across 10 judge pairs. These results suggest that comprehensive zero-shot evaluation of skill execution requires judge reliability as carefully as model capability.",
+  "published": "2026-10-09T21:45:51Z",
+  "updated": "2026-10-14T16:00:21Z",
+  "cats": [
+   "cs.CL"
+  ],
+  "authors": [
+   "Md Tahmid Rahman Laskar",
+   "Gundeep Singh",
+   "Xue-Yong Fu",
+   "Karol Chang",
+   "Kevin Sanders",
+   "Shi Zong",
+   "Tania Habib",
+   "Julien Bouvier Tremblay",
+   "Shayna Gardiner",
+   "Harsh Saini",
+   "Matthias Lee",
+   "Elena Khasanova",
+   "Quinten McNamara",
+   "Shashi Bhushan TN"
+  ],
+  "link": "https://arxiv.org/abs/2610.14346v2"
+ },
+ {
+  "id": "2610.14334v1",
+  "title": "Which Metadata Matters for LLM Tool Selection in MCP? Evidence from Controlled Factor-Level Interventions",
+  "summary": "In Model Context Protocol (MCP) systems, LLMs select tools from metadata rather than from their implementations. Names and descriptions summarize what a tool does, while the parameter schema specifies the fields a tool accepts and how they are organized. Our analysis of metadata for 367,174 MCP tools reveals substantial schema variation among functionally similar tools. Many of these tools share names and similar descriptions but expose different parameter schemas. This raises a key question: can parameter-schema differences influence tool selection before any call is made? We study this question through controlled metadata interventions across five LLMs and five tasks. Each comparison changes exactly one metadata factor (server name, tool name, description, or parameter schema) while keeping the others fixed. We balance tool positions and use conditional logistic regression to estimate position-adjusted effects. We find that: (1) parameter-schema changes produce the largest and most consistent selection shifts among the tested interventions. Models tend to favor separate top-level parameters over grouped or composite forms. (2) Descriptions that explain parameters also tend to increase selection, while name effects are weaker and less consistent. (3) Targeted comparisons show that schema effects depend on the specific parameter names and on how the request represents the same information. When only one schema satisfies an explicit request requirement, all five models select the compatible tool despite position preferences. These results show that parameter schemas influence not only how tools are called, but also whether they are selected. For MCP developers and evaluators, schema design and tool ordering can therefore affect which implementation is invoked even when functionality is unchanged.",
+  "published": "2026-10-09T21:21:16Z",
+  "updated": "2026-10-09T21:21:16Z",
+  "cats": [
+   "cs.AI",
+   "cs.CL",
+   "cs.SE"
+  ],
+  "authors": [
+   "Xiaofan Li",
+   "Fengchun Qiao",
+   "Xing Gao"
+  ],
+  "link": "https://arxiv.org/abs/2610.14334v1"
+ },
+ {
+  "id": "2610.10659v1",
+  "title": "Applying Security by Design at the Point of Execution: How Governed Security Requirements Affect the Security of AI-Generated Code",
+  "summary": "Security by design asks that security requirements are defined before code is written. Secure-code benchmarks typically measure the opposite situation: the agent receives the task without requirements and is scored with security tests it has not seen. We measured what changes when security requirements, selected from a governed security-by-design knowledge base (SbD-ToE) and delivered through a Model Context Protocol (MCP) server, are given to the generator at the point of execution. On DualGauge, which scores with a language-model judge, we ran 59 Python tasks: the share of tasks passing all security tests rose from 44.1% to 78.0% and the share of security tests passed from 77.4% to 93.0%. On BaxBench, which runs functional tests and real exploits in containers, we ran 28 backend scenarios: among functionally correct solutions, the share with no successful exploit rose from 65% to 86%, comparable to the authors' Oracle Security Reminder (85%), which they call an unrealistic upper bound; the requirement delivery reached it without knowing the tests. The study has limits. The pre-specified joint secure-and-functional metric did not improve significantly on either benchmark. The code written with the governed requirements is stricter, and it failed functional tests that fix values the task never states; we attribute those failures case by case in a post-hoc analysis. Each experiment used one model and one generation per task. The requirements come from the author's open-source manual; we do not assess its completeness. Governed security requirements delivered at the point of execution appear to improve the security of generated code. Current benchmarks cannot tell whether that code meets the security requirements that apply to it, only whether it shows the weaknesses their evaluators were built to detect. We propose measuring conformance with the applicable requirements.",
+  "published": "2026-10-07T17:02:09Z",
+  "updated": "2026-10-07T17:02:09Z",
+  "cats": [
+   "cs.SE",
+   "cs.CR"
+  ],
+  "authors": [
+   "Pedro Farinha"
+  ],
+  "link": "https://arxiv.org/abs/2610.10659v1"
+ },
+ {
+  "id": "2610.10184v1",
+  "title": "Agentic AI-Assisted Modeling for Production Scheduling: Assessment in Constraint Programming",
+  "summary": "Developing optimization models for production scheduling requires substantial expert effort. Research on large language models (LLMs) has followed two directions: specialized approaches for automated modeling, mostly for mixed-integer linear programming, which often rely on dedicated training or problem-specific architectures that limit industrial deployment; and agentic artificial intelligence for operational decision support, which generally assumes that the optimization model already exists. This study bridges both directions by assessing whether general-purpose LLMs, orchestrated as agents without task-specific training, can formulate and implement constraint programming models from natural-language problem descriptions. Singleagent and multi-agent architectures are integrated with a Model Context Protocol server that provides context-aware retrieval of solver documentation to mitigate hallucinations during implementation. Both are compared with a direct LLM baseline on six industry-oriented problems covering flow-shop, job-shop, flexible job-shop and resource-constrained warehouse scheduling, using three LLMs and assessing modeling accuracy, execution success, latency and token consumption. Formulation proves largely within reach of current LLMs, whereas implementation is the main barrier. The multi-agent workflow raises the share of scripts that run correctly as generated from 14.8% with a direct LLM call to 59.3%, reaching 80.6% on the four less complex problems, while tightly coupled intralogistics models remain an open challenge.",
+  "published": "2026-10-07T14:51:37Z",
+  "updated": "2026-10-07T14:51:37Z",
+  "cats": [
+   "cs.AI",
+   "cs.SE"
+  ],
+  "authors": [
+   "Ángel Sánchez-Fernández",
+   "Javier Pernas-Álvarez",
+   "Diego Crespo-Pereira"
+  ],
+  "link": "https://arxiv.org/abs/2610.10184v1"
+ },
+ {
+  "id": "2610.09901v1",
+  "title": "A Chat Assistant for Software Exploration in a 3D Software Visualization",
+  "summary": "We present a chat assistant for interactive software exploration, embedded in the 3D software visualization tool ExplorViz. The assistant builds upon current Large Language Models (LLMs) and enables users to ask questions about the currently visualized software system and trigger actions that change the visualization through natural language. We integrate the chat assistant in our ExplorViz frontend using the CopilotKit libraries such that probabilistic LLMs are combined with deterministic and tool-based actions similar to implementations using the Model Context Protocol (MCP). The chat assistant is also enabled to restructure the software system by adding, removing, or modifying parts of the software system in the visualization. An empirical experiment with eleven participants evaluated both perceived comprehension support and the tool calls that were triggered by the chat assistant. Participants rated the assistant's generated summaries and explanations as largely correct. They also reported high usability for actions like highlighting entities in the visualization and the creation of new color themes. In contrast, open-ended chat-assisted software restructuring in the visualization showed mixed results. This suggests a need for stronger guardrails for the employed LLM and better incorporation of user feedback. Overall, the assistant was perceived as usable and promising for reducing interaction overhead during exploratory program comprehension tasks. We provide a video presenting the chat assistant's use and a reproduction package of the software system that was used in our evaluation.",
+  "published": "2026-10-07T11:58:39Z",
+  "updated": "2026-10-07T11:58:39Z",
+  "cats": [
+   "cs.SE"
+  ],
+  "authors": [
+   "Malte Hansen",
+   "Karim Issa",
+   "Wilhelm Hasselbring"
+  ],
+  "link": "https://arxiv.org/abs/2610.09901v1"
+ },
+ {
+  "id": "2610.09112v1",
+  "title": "GeoNatureAgent (GNA): A Framework and Benchmark for Pre-Production Evaluation of Tool-Using Agents on Geospatial and Environmental Tasks",
+  "summary": "Before tool-using LLM agents are deployed in environmental and geospatial workflows, teams need evidence that an agent reliably selects the right operations against real APIs. We introduce GeoNatureAgent (GNA), a framework for pre-production evaluation of tool-using agents: a fixed sixteen-tool geospatial interface published as a Model Context Protocol (MCP) server, so the agent under test is the only variable, scored against an identical tool layer, task suite, and deterministic scorer. Its flagship instance is a 103-task benchmark (a 93-task main suite across 18 categories plus a ten-task comparison expansion) evaluated against an open, self-hostable geospatial API serving three environmental indicators across Spain and Portugal. We evaluate nine LLMs under three temperature-1.0 seeds, reporting capability and per-case cost as orthogonal axes. (1) Claude Sonnet 4 achieves the highest capability (61.7% +/- 0.7% on all 103 tasks; 60.8% on the main suite), followed closely by DeepSeek V3.2 (57.9%), while no other model exceeds 53%; (2) the cost-accuracy Pareto frontier is mostly open-weight, with DeepSeek V3.2 offering 93% of Claude's capability at 11.3x lower list-price cost; (3) under strict all-checks scoring the best model sits 24-36 points below the 85-97% reported on general-purpose GIS benchmarks, whereas per-check partial credit for the top four models (86-90%) is comparable, so much of that gap reflects scoring strictness rather than task difficulty alone. The MCP server, evaluation harness, benchmark, and API are publicly available; swapping the tool executors and task suite instantiates an equivalent benchmark for any geospatial domain.",
+  "published": "2026-10-06T21:03:04Z",
+  "updated": "2026-10-06T21:03:04Z",
+  "cats": [
+   "cs.AI"
+  ],
+  "authors": [
+   "Gabriel Diaz-Ireland",
+   "Diego Prieto-Herráez",
+   "Mario García Peces",
+   "Javier Velázquez",
+   "Benjamin Zaitchik",
+   "Devika Jain"
+  ],
+  "link": "https://arxiv.org/abs/2610.09112v1"
+ },
+ {
+  "id": "2610.07937v1",
+  "title": "Leveraging a four-quadrant approach for evaluating Redpine Science",
+  "summary": "Redpine Science gives models and agents a single access point to a wide range of peer-reviewed literature, queried directly through the Model Context Protocol (MCP) and an API. This report evaluates Redpine Science on two levels: the relevance of the retrieved chunks, and a model's answer when it has access to Redpine Science compared to web search. Both public and expert-validated benchmarks are used. Public benchmarks are a widely accepted way to test model development and are comparable across labs, but risk saturation and memorization. To address this, we complement them with an expert-validated question set. In total, this report presents four evaluations. On ScholarQABench SciFact, the public answer-quality benchmark reported here, an agent with Redpine Science answers 94.4% of claims correctly against 87.6% with no retrieval. On the expert-validated question set, an agent with Redpine Science states 80.1% of the required claims against 70.2% for an agent restricted to web search. On the 668 queries of a public retrieval benchmark whose gold paper Redpine holds, stripped of any model reasoning, Redpine Science places the correct source paper in its top ten results for 83.1% of queries (Recall@10), against 79.3% for the benchmark's creator. A blinded expert relevance panel places Redpine Science's Precision@5 at 75.2% against 39.8% for the PubMed search tool. We release the expert-validated question set and instructions to reproduce every headline result above, at https://github.com/redpine-ai/benchmarks.",
+  "published": "2026-10-06T08:11:30Z",
+  "updated": "2026-10-06T08:11:30Z",
+  "cats": [
+   "cs.CL"
+  ],
+  "authors": [
+   "Filip Dorm",
+   "Leonora Vesterbacka"
+  ],
+  "link": "https://arxiv.org/abs/2610.07937v1"
+ },
+ {
+  "id": "2610.07817v1",
+  "title": "One Step at a Time: Trading LLM Autonomy for Process Predictability",
+  "summary": "Organizations automating operational processes need more than a correct outcome: they need to predict how a process will run, know which one actually ran, and inspect it step by step. When an agent is the executor that predictability is normally lost: the prescribed procedure goes into the system prompt, and only a final answer comes back. We deliver the procedure step by step over the Model Context Protocol (MCP) instead: a server releases one step at a time, the agent executes it, and each step returns a structured step_output. This trades autonomy for predictability, and two properties then follow by construction, independent of the executor. The execution path is prescribed before the run, so the process is predictable in advance rather than reconstructed afterwards; and the completed step records form a machine-readable execution log that downstream tooling can audit and optimize step by step. Evaluating 15,475 trials across 13 SOP-Bench domains and four open-weight executors from frontier (Kimi K2.5) to lightweight (Ministral 3 8B), we find step-level delivery makes the executed process predictable and inspectable for every executor, and additionally raises accuracy when the executor is small. Across all four, process adherence rises significantly (76-95% to 95-99%) and ungrounded answers (correct outputs produced without executing the SOP) near-vanish, falling from 2.1-4.5% to 0.2-0.3% of trials (all 95% CIs exclude zero); under prompt-based delivery, 31-49% of correct answers on know_your_business bypass the SOP entirely, even for the frontier executor. Accuracy is where the executor's capability enters: the lightweight executor gains +6.5pp grounded accuracy because supplying the process externally removes a reconstruction burden it cannot carry, while capable ones trade a small raw-accuracy decrement for a predictable, auditable process.",
+  "published": "2026-10-06T06:10:42Z",
+  "updated": "2026-10-06T06:10:42Z",
+  "cats": [
+   "cs.CL",
+   "cs.AI"
+  ],
+  "authors": [
+   "Hans Schabert",
+   "Christoph Peters"
+  ],
+  "link": "https://arxiv.org/abs/2610.07817v1"
+ },
+ {
+  "id": "2610.23921v1",
+  "title": "Doing Less with More: A First-Principles Exploration of the Suitability of Agentic Computing over Alternative Architectural Choices",
+  "summary": "There is growing interest in automating business activities with Agentic Artificial Intelligence (AI) due to latter's seeming ease of use. Never has it been easier, or costlier, to do less with more. However, little is known about when agents are preferable to established alternatives such as local computation, Representational State Transfer (REST), the Simple Object Access Protocol (SOAP), and the Model Context Protocol (MCP), particularly when development speed, performance, and operational cost are considered. We investigate this question using a controlled mathematical task that compares seven methods on a benchmark of 1,000 arithmetic expressions where semantics of operator precedence has to be preserved. We ran this setup across a native Function Calling baseline (Python library), REST, SOAP and MCP microservice architectures, direct responses from large language models (LLMs) using a Groq cloud API and five locally deployed Ollama models, and agentic systems in which five local LLMs invoke MCP tools. The deterministic methods achieve 100% accuracy with negligible latency. Direct LLM evaluation achieves at most 92.9% accuracy at over 22,000x the latency of a native function call. With MCP tools, the best agent reaches 99.9% accuracy, but incurs nearly 1,000,000x the baseline latency. These results demonstrate that LLMs approaches are poorly suited for exact arithmetic evaluation and motivate an informed architectural decision framework (ADF) for choosing an architecture based on accuracy and throughput requirements. We recognize that an actual interaction with an agent may span both reasoning and linguistic tasks. Hence our recommendation is to explore multiple architectural choices (based on task type) rather than one-size-fits-all solution (LLMs). Code is available at - https://github.com/Ritvik-G/adf/",
+  "published": "2026-10-05T15:59:47Z",
+  "updated": "2026-10-05T15:59:47Z",
+  "cats": [
+   "cs.AI"
+  ],
+  "authors": [
+   "Ritvik Garimella",
+   "Biplav Srivastava",
+   "Amit Sheth"
+  ],
+  "link": "https://arxiv.org/abs/2610.23921v1"
+ },
+ {
+  "id": "2610.05319v2",
+  "title": "Understanding the Hierarchical Structure and Functional Landscape of the Model Context Protocol Ecosystem",
+  "summary": "AI agents increasingly rely on tools exposed through the Model Context Protocol (MCP) to complete user tasks. Hundreds of thousands of MCP servers are listed across marketplaces, yet they are organized only by coarse, marketplace-specific server categories. This makes it difficult for agents and users to identify tools for a given operation, find functional alternatives, and assess how those alternatives differ. We present MCPacific, the largest tool-level, cross-marketplace map of the MCP ecosystem. MCPacific collects 368,754 MCP server listings corresponding to 124,267 unique servers across 17 marketplaces, statically extracts 1,328,233 tool specifications from these servers in seven languages, and organizes them into a hierarchical functional taxonomy of 58,915 capabilities. We construct the taxonomy through an iterative LLM-driven design-test-refine process and map the full corpus to it using calibrated embedding routing. Our study reveals that MCP extends well beyond developer tooling, with 85% of tools serving other domains. Functional alternatives are widespread but unevenly distributed: 98.5% of tools have at least one alternative, yet nearly a quarter of capabilities are supported by only one tool. Functionally comparable tools also differ in security alerts, code complexity, and project maintenance, with complexity differing by more than 2.5x in 41% of comparable tool pairs. Finally, presenting candidate tools through the taxonomy rather than a flat list improves task completion rate across all four evaluated models, with gains of up to 12 percentage points in Pass@0.75 for crowded candidate sets.",
+  "published": "2026-10-04T15:39:33Z",
+  "updated": "2026-10-08T14:25:36Z",
+  "cats": [
+   "cs.SE"
+  ],
+  "authors": [
+   "Tingxuan Tang",
+   "Zilong Chen",
+   "Yue Xiao"
+  ],
+  "link": "https://arxiv.org/abs/2610.05319v2"
+ },
+ {
+  "id": "2610.05124v1",
+  "title": "Memory Canonicalization: A Framework and Benchmark for Cross-Model Drift in Persistent LLM Memory",
+  "summary": "Persistent memory for Large Language Models (LLMs) has matured rapidly: systems such as MemGPT/Letta, Mem0, and Zep now provide agents with tiered, temporally-aware, model-agnostic external storage, while the Model Context Protocol (MCP) standardizes access to memory servers. A less addressed problem is that an identical stored memory object, retrieved by two different LLMs under otherwise identical conditions, may not be interpreted the same way, factually or emotionally. This paper proposes memory canonicalization: a write-time pipeline that detects ambiguity, conditional structure, and emotional loading in a raw memory object and rewrites it into an explicit, structurally disambiguated canonical form, with emotional valence represented as a separate field rather than inferred from tone. We formalize the pipeline, define a companion Cross-Model Semantic Drift / Emotional Consistency Score benchmark (CMSC-E), and report results from a three-arm pilot using 176 synthetic memory objects and three downstream model families. We find an uncorrected improvement in cross-model emotional consistency for fully canonicalized memory relative to raw memory (+0.050, 95% bootstrap CI [0.013, 0.086], paired t-test p = 0.010), but this result does not survive Bonferroni, Holm, or Benjamini-Hochberg correction across the six comparisons tested. None of the factual-drift (CMSD) comparisons reach significance at any correction level. We report these results as exploratory rather than confirmatory and outline needed follow-up work, including larger samples, independent judge models, human-validated rendering, and preregistration.",
+  "published": "2026-10-04T11:09:27Z",
+  "updated": "2026-10-04T11:09:27Z",
+  "cats": [
+   "cs.AI"
+  ],
+  "authors": [
+   "Amit Vadnere",
+   "Aishwarya Lonarkar"
+  ],
+  "link": "https://arxiv.org/abs/2610.05124v1"
+ },
+ {
+  "id": "2610.04378v2",
+  "title": "COPEX: Benchmarking LLM Robustness to Adversarial Context Across Model Context Protocol (MCP) Layers",
+  "summary": "Large language models increasingly mediate tool use in Model Context Protocol (MCP) systems, where adversarial influence may enter through user instructions, tool schemas, tool outputs, or protocol messages. Existing benchmarks often evaluate deployed agents, conflating model susceptibility with guardrails, orchestration, and general task capability. We introduce COPEX (COntext Provider EXploitation), a controlled benchmark that isolates the model as an MCP client by fixing the surrounding agent stack and varying only the tool-selecting model. COPEX covers 25 attack types instantiated as 125 scenarios across four entry surfaces: model/agent, client, server/tool, and transport. Across nine models and 3,375 trials, the mean attack success rate is 64.4%, with surface-level means ranging from 58.3% to 71.4%. Some client- and transport-level attacks succeed partly outside the model's observation or control, separating system exposure from model susceptibility. Combined input and context scanning reduces mean attack success by 49.6% on an eight-attack defense subset relative to the undefended setting. The benchmark is available at https://github.com/inspire-center/copex.",
+  "published": "2026-10-03T08:44:20Z",
+  "updated": "2026-10-17T00:08:15Z",
+  "cats": [
+   "cs.CR",
+   "cs.AI"
+  ],
+  "authors": [
+   "Nahom Birhan",
+   "Mehrdad Rostamzadeh",
+   "Sidhant Narula",
+   "Mahmoud Nazzal",
+   "Mohammad Ghasemigol",
+   "Daniel Takabi"
+  ],
+  "link": "https://arxiv.org/abs/2610.04378v2"
+ },
+ {
+  "id": "2610.04286v1",
+  "title": "CyTReX: Explainable AI-Based Cybersecurity Threat Reasoning Framework for DER Networks",
+  "summary": "Distributed Energy Resource (DER) environments rely on network communication protocols to coordinate control commands, measurements, and device states across edge assets and cloud systems. Edge anomaly detection systems (ADS) monitor this traffic to identify deviations from normal communication behavior, flagging suspicious flows for further investigation. When the ADS flags abnormal network traffic, a single attack label is often insufficient for operational response: the label reports the detector's selected class but does not expose alternative threat interpretations that may warrant investigation. This paper presents Cybersecurity Threat Reasoning with Explainable Artificial Intelligence (CyTReX), an evidence-grounded threat reasoning framework for DER security that transforms network-level anomaly alerts into ranked, analyst-facing threat hypotheses designed to support Security Operations Center (SOC) triage and investigation. CyTReX constrains large language model (LLM) reasoning through a structured evidence packet, defined as a consolidated record of detection outputs, model explanations, and cyber threat intelligence (CTI) context. The evidence packet integrates edge-layer anomaly detection evidence, cloud reasoning layer attack interpretation, Shapley Additive Explanations (SHAP) network-feature attributions, surrogate decision rules, and Model Context Protocol (MCP)-enabled CTI enrichment. This ensures that every ranked hypothesis and attack-tree branch is traceable to explicit evidence rather than free-form LLM inference, and that incomplete or conflicting evidence is communicated rather than suppressed. Evaluation across five configurations shows that additional reasoning components improve hypothesis specificity, evidence traceability, and analytical grounding, with the complete pipeline providing the richest evidence-grounded reasoning context.",
+  "published": "2026-10-03T04:39:43Z",
+  "updated": "2026-10-03T04:39:43Z",
+  "cats": [
+   "cs.CR",
+   "cs.AI",
+   "cs.LG"
+  ],
+  "authors": [
+   "Damilola Popoola",
+   "Souradeep Bhattacharya",
+   "Manimaran Govindarasu"
+  ],
+  "link": "https://arxiv.org/abs/2610.04286v1"
+ },
+ {
+  "id": "2610.03213v1",
+  "title": "Toward SLM-based agentic task-tool intent matching",
+  "summary": "Tool-equipped AI agents use tool calls to access data and act on external systems. Horizontal growth of agentic systems increases the number of these interactions, and further motivates the need for automated, per-call oversight that can operate at low latency and/or on-prem. Conventional authorization schemes can determine whether an agent is allowed to invoke a tool, but cannot assess the agent's underlying cognition, specifically, whether the tool selection represents a logical, relevant step toward satisfying the intent of the task or not. Consequently, an allowed call may still deviate from the task's intent: a rogue agent might deviate the calls or nudge other agents to make a combination of calls that would not align with the intent of the task. Therefore, every call needs to be verified. In this study we investigate the applicability of Small Language Models (SLMs) to this purpose: an SLM functions as a task-tool relevance classifier that evaluates every selected tool independently against the assigned task and returns a relevance signal for downstream enforcement. Equipped with a novel dataset with multi-tool tasks whose required tools span distinct Model Context Protocol (MCP) servers, we used prompt-optimization, supervised fine-tuning, and reinforcement learning through GRPO to optimize and specialize SLMs.",
+  "published": "2026-10-02T12:31:01Z",
+  "updated": "2026-10-02T12:31:01Z",
+  "cats": [
+   "cs.AI"
+  ],
+  "authors": [
+   "Chiara Troiani",
+   "Arash Salarian",
+   "Majed El Helou",
+   "Benjamin Ryder",
+   "Jean Diaconu",
+   "Hervé Muyal",
+   "Marcelo Yannuzzi"
+  ],
+  "link": "https://arxiv.org/abs/2610.03213v1"
+ },
+ {
+  "id": "2610.02671v1",
+  "title": "LATHE: LAnguage-driven Toolkit for Hypothesis-based crystal Editing",
+  "summary": "Manipulating crystal structures towards targeted geometric properties or symmetry constraints is a longstanding challenge. Existing computational frameworks fall short: LLMs have poor spatial awareness and operate at coarse granularity in the token space, while diffusion- and gradient-based structure generation approaches generally produce complete structures \\textit{de novo} rather allowing for fine-grained editing of a given input under arbitrary constraints. We present LATHE, a geometric toolkit that closes this gap by expressing seven classes of crystallographic properties --- bond length, bond angle, dihedral angle, coordination environment, lattice parameters, cell volume, and space group, as differentiable objectives to enable direct geometric editing of crystal structures. To demonstrate its usage in materials design, we further expose LATHE through a Model Context Protocol server and embed it in a closed-loop multi-agent system which translates hypotheses intogeometric modifications in natural language towards a given design objective. Across single-property benchmarks, LATHE attains near-perfect constraint satisfaction on all seven property types while keeping optimized structures close to local energy minima. The LATHE-equipped agent translates over 87.5\\% of natural-language prompts into valid executable configurations and faithfully completes them. In a band-gap inverse-design case study, the multi-agent loop reaches the target tolerance window in nine of ten independent runs at a typical cost of thirteen hypothesis-evaluation cycles. By bridging natural-language hypothesis generation and physically grounded gradient-based structural editing, this work establishes a paradigm for interpretable, closed-loop computational materials discovery that is immediately applicable to a broad class of functional material design tasks.",
+  "published": "2026-10-02T01:53:49Z",
+  "updated": "2026-10-02T01:53:49Z",
+  "cats": [
+   "cond-mat.mtrl-sci"
+  ],
+  "authors": [
+   "Qianyu Zheng",
+   "Shuyi Jia",
+   "Victor Fung"
+  ],
+  "link": "https://arxiv.org/abs/2610.02671v1"
+ },
+ {
+  "id": "2610.02432v2",
+  "title": "Evaluating and Improving the Robustness of Large Language Models to Input Sequence Variations",
+  "summary": "Large language models (LLMs) in production systems face prompt injections, trojans (backdoors), and manipulation of automatic quality metrics. This thesis develops models, methods, and algorithms for evaluating and improving LLM robustness to adversarial input sequence variations. We propose R_stab(f), a generative robustness metric based on the Jensen-Shannon divergence between per-step output distributions under small input perturbations. For localized attacks we prove V(h) <= 1 - R_class(h), where R_class(h) is the probability that a decision operator h keeps its decision under small perturbations. For non-localized attacks we propose a calibrated empirical model. For LLM-as-a-Judge systems we develop ASA, an adaptive evolutionary black-box attack that reaches an attack success rate (ASR) of up to 73.8%, with transfer between open models up to 62.6%. On Trojan Detection Challenge 2023 data (Pythia-1.4B), surrogate triggers reach REASR ~0.99 while recall of the true triggers is ~0.17 against a baseline of ~0.14. On SaTML CTF 2024 we systematize four classes of bypasses of multi-layer defenses, which reduce the ASR from 90% to 15-25%. Committees of 5-7 heterogeneous models reduce the ASR for Gemma-3-4B by 47-55 percentage points, to 19.3% with 7 models. For agentic systems based on the Model Context Protocol (MCP), we propose AttestMCP, which attests tool calls with HMAC-protected packets at under 0.1 ms per call, and the Commit Boundary isolation pattern. On the MCPBench benchmark of 847 scenarios they reduce the average ASR from 53.7% to 12.4%. The methods are implemented in the JudgeGuard and TrojanArmor software suites and the MCPSec module.",
+  "published": "2026-10-01T19:57:56Z",
+  "updated": "2026-10-08T11:37:16Z",
+  "cats": [
+   "cs.CR",
+   "cs.CL",
+   "cs.LG"
+  ],
+  "authors": [
+   "Narek Maloyan"
+  ],
+  "link": "https://arxiv.org/abs/2610.02432v2"
+ },
+ {
+  "id": "2609.40272v2",
+  "title": "Skill-Based AI Agents for Power-System Studies",
+  "summary": "This paper describes a skill-based agentic framework for power-system studies using Model Context Protocol (MCP)-connected engineering tools. A custom MCP server was developed to expose Siemens PTI PSSE functions for power-flow analysis, dynamic simulation, result extraction, and model-validation workflows. Two implementation pathways built on a programmable OpenAI Agents software development kit (SDK) and a Claude Code command-line interface (CLI) were evaluated, both using reusable skills, subagents, MCP tools, data-repository connections, and local shell/Python execution. Both frontier-model-based implementations successfully executed representative study tasks. Success was evaluated based on task completion, output accuracy, and the need for human expert interventions. Results based on public datasets show that agentic systems can greatly accelerate power system dynamic simulation process for transmission planning studies leveraging industry-grade simulation platforms. This points toward a shift in transmission planning practice, where agentic systems could handle routine simulation setup and result extraction, allowing engineers to focus expert judgment on scenario design and interpretation rather than tool operation.",
+  "published": "2026-09-30T17:44:35Z",
+  "updated": "2026-10-01T22:31:56Z",
+  "cats": [
+   "eess.SY"
+  ],
+  "authors": [
+   "Pavel Etingov",
+   "Shuchismita Biswas"
+  ],
+  "link": "https://arxiv.org/abs/2609.40272v2"
+ },
+ {
+  "id": "2609.35381v2",
+  "title": "MCP Error Messages Written for Developers Hurt the Most Capable Agents Most",
+  "summary": "Many Model Context Protocol (MCP) servers wrap web APIs built for human developers, and their error messages tell the reader to run a command, edit a configuration, open a web page or wait. Many agents that read them can only call the server's tools. In 150 widely used MCP servers, 949 of 3,001 error messages tell the caller what to do next, and half of these steps depend on something the server cannot see about the caller. On credential errors, 62 of 67 steps ask for a terminal command, a configuration change or a web page; on rate limits, 20 of 30 say to wait and retry without naming the call to repeat. We tested five OpenAI models that act only through the tools of Berkeley Function Calling Leaderboard tasks, and the agents did what the step said. On expired credentials, a terminal command in the step left 45% of tasks recovered, and the loss it caused grew from 18 points for GPT-5.5 to 69 for GPT-6 Astra. On a rate limit, GitHub's \"Wait before retrying.\" left 6%. We tested two remedies. For MCP developers, naming a server tool in the step raised recovery on expired credentials to 84%, with the login tool in place of the command, and on a rate limit to 88%, with the call to repeat in place of the bare wait. For agent developers, deleting the step with a one-sentence prompt before the model reads it raised recovery on expired credentials to 82%.",
+  "published": "2026-09-28T15:14:46Z",
+  "updated": "2026-09-29T03:56:54Z",
+  "cats": [
+   "cs.SE",
+   "cs.AI"
+  ],
+  "authors": [
+   "Xiaonan Xu",
+   "Wenjing Wu"
+  ],
+  "link": "https://arxiv.org/abs/2609.35381v2"
+ }
+]

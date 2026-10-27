@@ -1,0 +1,1591 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/3Q37A4v6HwAFhaZTFL2Mjwu+7pY</id>
+  <title>arXiv Query: search_query=abs:"tool-use" OR abs:"tool use" OR abs:"agent tool"&amp;id_list=&amp;start=0&amp;max_results=50</title>
+  <updated>2026-10-27T16:33:04Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=abs:%22tool-use%22+OR+(abs:%22tool+use%22+OR+abs:%22agent+tool%22)&amp;start=0&amp;max_results=50&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>50</opensearch:itemsPerPage>
+  <opensearch:totalResults>4563</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2610.35579v1</id>
+    <title>Infinity Machine: a self-improving AI agent for research</title>
+    <updated>2026-10-26T15:11:26Z</updated>
+    <link href="https://arxiv.org/abs/2610.35579v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.35579v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We present the Infinity Machine, a self-improving AI agent that we use for research on problems whose answers aprogram or data can check. Each candidate solution is produced by a full tool-using agent that works for up to an hour in a fresh sandbox; proposers see only a public score, and a private split decides what counts. The harness itself(prompts, tools, skills, playbook, meta agent) is an editable genome, changed only through a kernel-enforced gate with held-out and cost checks. An autonomous mode goes from a plain-text goal to a verified report with no human step: an agent picks an open problem and writes its verifier, the kernel calibrates it, an adversarial agent audits it, and an agent that never sees the verifier re-checks the result. Across fourteen problems in six days, for about $180 of model usage, the system produced four results beyond the published state of the art on catalogued open problems in quantum information: a certified depolarizing-channel threshold point p = 0.064966, a qutrit positivity frontier of 0.2910672, a 44-gate depth-6 Golay state preparation, and a stabilizer-rank bound chi(T^7) &lt;= 10. It also cut SABRE qubit-routing overhead from 68,559 to 12,087 added gates. In hardware, it cut the energy per MAC of an open 8x8 INT8 systolic tile by 77.7% through a full open RTL-to-GDS flow, bit-exact. Three fully autonomous runs ended in honestties with public records; one audit caught a stale record, and one agent-written score pointing the wrong way went unnoticed. We report the failures as carefully: the one self-derived harness generation was rejected on cost, proposers gamed lenient scorers four times, and operator changes were decisive for several results.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-26T15:11:26Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Harish Santhanalakshmi Ganesan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.35497v1</id>
+    <title>When Fine-Grained Credit Assignment Helps and Hurts: Multimodal Agentic Reinforcement Learning through Video Editing</title>
+    <updated>2026-10-26T14:25:40Z</updated>
+    <link href="https://arxiv.org/abs/2610.35497v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.35497v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Reinforcement learning (RL) has shown promise for training multimodal agents to reason and use tools. However, it remains unclear when fine-grained credit assignment improves learning and when it fails to improve task performance. Video editing provides a useful testbed for this question, combining multimodal perception, long-horizon planning, and tool use with delayed outcome feedback. We construct four movie-trailer editing task types---Content Selection, Narrative Sequencing, Rough Cut, and Fine Cut---that reflect real-world editing workflows and span different levels of task complexity and interaction horizon. Decaying process rewards provides the largest benefit on Fine Cut, with a 45.4% relative gain over outcome-only GRPO on tasks averaging more than 60 turns under outcome-only GRPO. On the three shorter-horizon task types averaging 30--40 turns under the same baseline, outcome-only GRPO remains competitive, with decaying process rewards yielding at most a 10.4% relative gain. Process rewards from an LLM judge initially improve tool use and encourage visual inspection. As training progresses, however, GRPO+PRM with a fixed process-reward weight increasingly exhibits excessive reasoning and redundant tool calls: process rewards continue to rise while task completion rates and outcome scores decline. Decaying the process-reward weight to zero mitigates this reward-hacking behavior while preserving the early gains. Despite dense token-level supervision, on-policy self-distillation (OPSD) yields little improvement or substantial degradation and is highly sensitive to the choice of privileged information. Our analysis reveals differences in teacher--student disagreement and gradient magnitudes, and suggests possible dilution of informative signals over long trajectories.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-26T14:25:40Z</published>
+    <arxiv:comment>48 pages. Project page: https://leizhao7.github.io/videoedit/</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Lei Zhao</name>
+    </author>
+    <author>
+      <name>Zongheng Cao</name>
+    </author>
+    <author>
+      <name>Xinyu Hu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.35398v1</id>
+    <title>Belief-Conditioned Multi-Agent Actor Critic for Decentralized LLM Collaboration</title>
+    <updated>2026-10-26T13:12:41Z</updated>
+    <link href="https://arxiv.org/abs/2610.35398v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.35398v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recent work has explored optimizing LLM collaboration through Multi-Agent Reinforcement Learning (MARL), but many approaches still rely on predefined workflows, limiting efficiency and scalability. Decentralized LLM collaboration is challenging because agents execute independently with limited communication, share a joint objective, and must infer useful information from communication traces. In this paper, we propose BCMAAC, a Belief-Conditioned Multi-Agent Actor-Critic method that maintains beliefs over contextual information and uses them to facilitate training. Experiments on Minecraft game-playing, web searching and tool-using tasks show that BCMAAC improves task performance and collaborative behavior compared to naive actor-critic baselines. The improvements are particularly pronounced in multi-turn tasks with richer contextual information, where belief modeling provides a clear advantage.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-26T13:12:41Z</published>
+    <arxiv:comment>Accepted at the NeurIPS 2026 Workshop PTA: From Pretrained Representations to Acting Agents. 18 pages, 3 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Tianle Chen</name>
+    </author>
+    <author>
+      <name>Shuo Liu</name>
+    </author>
+    <author>
+      <name>Christopher Amato</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.35013v1</id>
+    <title>Multiscale Policy Optimization for Long-Horizon LLM Agents</title>
+    <updated>2026-10-26T08:22:11Z</updated>
+    <link href="https://arxiv.org/abs/2610.35013v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.35013v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Long-horizon LLM agents interact with their environments through complete assistant turns while generating each action token by token. We observe that critic values vary primarily across turns, motivating optimization anchored at turns with finer credit allocation among tokens. We propose Multiscale Policy Optimization (MPO), combining Multiscale Advantage Estimation (MAE) and turn-level importance sampling to align credit assignment and policy updates at the turn scale. Extensive experiments across search, tool-use, and automation tasks with 4B and 30B-A3B models demonstrate consistent gains over strong RL baselines.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-26T08:22:11Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Tao Ren</name>
+    </author>
+    <author>
+      <name>Hui Yang</name>
+    </author>
+    <author>
+      <name>Jia Deng</name>
+    </author>
+    <author>
+      <name>Tingyang Chen</name>
+    </author>
+    <author>
+      <name>Qiyao Wang</name>
+    </author>
+    <author>
+      <name>Shuo Tang</name>
+    </author>
+    <author>
+      <name>Ziyang Zeng</name>
+    </author>
+    <author>
+      <name>Yuhua Jiang</name>
+    </author>
+    <author>
+      <name>Guanghao Li</name>
+    </author>
+    <author>
+      <name>Huatong Song</name>
+    </author>
+    <author>
+      <name>Yining Li</name>
+    </author>
+    <author>
+      <name>Yifan Luo</name>
+    </author>
+    <author>
+      <name>Kunbao Ding</name>
+    </author>
+    <author>
+      <name>Feng Chang</name>
+    </author>
+    <author>
+      <name>Chuan Hao</name>
+    </author>
+    <author>
+      <name>Ran Tao</name>
+    </author>
+    <author>
+      <name>Bryan Dai</name>
+    </author>
+    <author>
+      <name>Jiafeng Liang</name>
+    </author>
+    <author>
+      <name>Jinyang Jiang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.34679v1</id>
+    <title>AT-AT: Automatic Tool Optimization from Agent Traces</title>
+    <updated>2026-10-26T01:18:17Z</updated>
+    <link href="https://arxiv.org/abs/2610.34679v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.34679v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Efforts to improve LLM-based agents typically focus on modifying the agent itself, yet success also depends on the environment in which an agent acts. Tools mediate this interaction: a tool's description shapes how an agent calls it, and its implementation determines the results and errors the agent receives afterwards. Many tools, such as APIs and MCP servers, are shared by many agents and maintained by providers who cannot change those agents. We introduce AT-AT (Automatic Tool Optimization from Agent Traces), an agentic tool optimizer that improves a shared toolset offline from historical agent executions while holding the agents fixed. A lightweight coding agent reads agent trajectories and their evaluation results, and selectively edits tool descriptions and, when permitted, implementations. On $τ^2$-bench-verified, AT-AT achieves the highest task completion rates in the Airline and Telecom domains at lower cost than strong prompt- and tool-optimizer baselines, and its Telecom gain is statistically significant under paired permutation tests. Optimizing the tools within a coding agent harness also improves held-out performance on TerminalBench-2 and TBLite. When applied to three production MCP servers at a large enterprise, AT-AT lowered cost or tool error rates on every server and increased held-out task passes on one. By turning accumulated execution traces into updates to shared tool environments, AT-AT provides a path toward continual improvement of agent systems through environment-side learning.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-26T01:18:17Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Maya Ravichandran</name>
+    </author>
+    <author>
+      <name>Pragya Tripathi</name>
+    </author>
+    <author>
+      <name>Dharamendra Kumar</name>
+    </author>
+    <author>
+      <name>Adith Swaminathan</name>
+    </author>
+    <author>
+      <name>Nathan Kallus</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.34549v1</id>
+    <title>MOFjson: An Explicit Topological Representation of Metal-Organic Frameworks for Language Models</title>
+    <updated>2026-10-25T20:19:59Z</updated>
+    <link href="https://arxiv.org/abs/2610.34549v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.34549v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Language models for metal-organic frameworks (MOFs) rely on formats that separate atomic geometry from structural topology, forcing models to choose between unstructured coordinate lists and non-spatial string identifiers[1]. We present MOFjson, the first representation separating structural data into a raw atomic layer with explicit bond shift vectors and a derived layer exposing secondary building units (metal nodes and organic linkers) and network topology. Additionally, we introduce a benchmark with crystal-derived ground truth across four question categories. Across four models, MOFjson beats all three baselines in every category: 100% vs. 18-47% on reaching a block's nearest periodic copy, 96% vs. 71% on crystal system characterisation, and 60% vs. 48% on metal node and organic linker coordination. Ablating shift labels drops accuracy to 12.7%, proving models read the periodic graph rather than the surface format. MOFjson gives language models structure to read rather than reconstruct, establishing a foundation for agentic tool workflows and constrained MOF generation.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-25T20:19:59Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Anabel Yong</name>
+    </author>
+    <author>
+      <name>Matthew Hart</name>
+    </author>
+    <author>
+      <name>Philippe Schwaller</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.34535v1</id>
+    <title>SentryBench: A Cost-Sensitive Benchmark for Adversarial Robustness of Tool-Using LLM Agents in Public-Safety Deployments</title>
+    <updated>2026-10-25T19:49:40Z</updated>
+    <link href="https://arxiv.org/abs/2610.34535v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.34535v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language model (LLM) agents are increasingly wired to consequential tools that send public alerts, dispatch responders, and query citizen records, where one erroneous tool call carries real-world cost. Existing agent-safety benchmarks measure generic harm or prompt-injection success and implicitly treat refusing as the safe default. In public-safety deployments that assumption breaks: an agent too cautious to dispatch help fails as surely as one that triggers a false alert. We present SentryBench, which scores agents on a two-sided, cost-sensitive frontier jointly measuring attack success, over-refusal (missing a real emergency), and over-reaction (unwarranted action) under adversarial tool use, with scenarios grounded in real emergency-call transcripts, disaster messages, and real injection/jailbreak payloads. We formalize deployment harm as an asymmetric cost functional, prove naive caution is harm-dominated whenever it refuses more genuine emergencies than the attack harm it averts, and prove a targeted trust gate adds zero over-refusal on clean input. Across 840 scored episodes over three frontier models and three defenses, refuse-more caution drives over-refusal to 100 percent on two of three models for at most a 3.7-point change in attack success and yields the worst harm everywhere, whereas our trust-gating wrapper dominates the frontier (lowest harm on every model, over-refusal at or below baseline, higher containment). Provider content filters also silently perform part of the defending and must be reported separately.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-25T19:49:40Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Md Abu Yusuf</name>
+    </author>
+    <author>
+      <name>Oyshi Tabassum Aditi</name>
+    </author>
+    <author>
+      <name>Md Faysal Hosain Mazed</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.34238v1</id>
+    <title>$Δτ$-Bench: Pushing Agents Toward a Moving Capability</title>
+    <updated>2026-10-25T12:10:52Z</updated>
+    <link href="https://arxiv.org/abs/2610.34238v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.34238v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In this paper, we introduce $Δτ$-Bench, an executable agent benchmark that models the structural evolution of large tool ecosystems. In $Δτ$-Bench, independently evolving services continually reshape how tasks can be accomplished: familiar tools may disappear or be replaced, while more efficient alternatives emerge amid overlapping functionality and noisy documentation. Against this moving capability frontier, we evaluate whether agents can proactively discover efficient tool-use paths and promptly revise their accumulated procedural knowledge, bringing together demands that existing benchmarks fail to examine. $Δτ$-Bench comprises 1,588 validated multi-turn tasks across 42 domains and six successive ecosystem states generated through capability-preserving transformations. Our evaluation shows that even the strongest evaluated model or harness achieves only 42.3% task success, while initial gains from existing skill-learning methods can not consistently translate into better adaptation as the ecosystem evolves. These findings motivate Steward, an ecosystem manager that jointly manages tools and procedural knowledge through incremental skill maintenance and dynamic provisioning during task execution. Experiments show that Steward sustains higher task success across ecosystem changes with lower skill-maintenance overhead, while improving both recovery from disrupted workflows and adoption of more efficient alternatives.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-25T12:10:52Z</published>
+    <arxiv:comment>Work in progress</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Shuofei Qiao</name>
+    </author>
+    <author>
+      <name>Xuanguang Pan</name>
+    </author>
+    <author>
+      <name>Yijun Chen</name>
+    </author>
+    <author>
+      <name>Wendi Feng</name>
+    </author>
+    <author>
+      <name>Bin Wu</name>
+    </author>
+    <author>
+      <name>Runnan Fang</name>
+    </author>
+    <author>
+      <name>Yuqi Zhu</name>
+    </author>
+    <author>
+      <name>Shumin Deng</name>
+    </author>
+    <author>
+      <name>Emine Yilmaz</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.34167v1</id>
+    <title>Task Success Is Not Enough: Side-effect-Aware Evaluation of Tool-Using Language Model Agents</title>
+    <updated>2026-10-25T08:54:08Z</updated>
+    <link href="https://arxiv.org/abs/2610.34167v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.34167v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tool-using language model agents are usually evaluated by whether they finish the user's task. That metric misses a common failure: an agent can complete the requested work while also taking an unauthorized side-effecting action, such as writing to the wrong object, expanding the scope of the request, or contacting an unintended recipient. We call this failure mode collateral damage (CD). We introduce SABench (Side-effect-Aware Benchmark), a benchmark of 201 email, calendar, and ticket tasks. Each task crosses one of four state structures (independent, dependent, externally reachable, cross-tool) with one of four trap families (ambiguity, mis-targeting, cascade harm, overreach), and each task has a deterministic trace-based oracle for both goal satisfaction and authorization compliance. Across 2,211 model-task pairs from 11 frontier LLMs spanning major commercial and open model families, 15.2% of all runs incur CD, with risk concentrated in ambiguity tasks (38.8% violation rate) while non-ambiguous traps average 8.4% CD. Among goal-satisfied runs, 12.8% still produce unauthorized writes. Cross-tool and dependent states have about twice the CD rate of independent states. CD rates vary by 4.7x across models at comparable goal rates, which suggests that task success alone is a poor proxy for safe tool use. The SABench task corpus is released at https://huggingface.co/datasets/Phaedrus/sabench; the traces, oracle, code, and analysis pipeline are released at https://github.com/hjj194/sabench-artifact.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-25T08:54:08Z</published>
+    <arxiv:comment>Accepted at NeurIPS 2026 (Evaluations and Datasets Track). 19 pages, 5 figures, 10 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Jiaju Huang</name>
+    </author>
+    <author>
+      <name>Shaobin Chen</name>
+    </author>
+    <author>
+      <name>Xinglong Liang</name>
+    </author>
+    <author>
+      <name>Xinyu Ma</name>
+    </author>
+    <author>
+      <name>Hao Yang</name>
+    </author>
+    <author>
+      <name>Wei Ke</name>
+    </author>
+    <author>
+      <name>Tao Tan</name>
+    </author>
+    <author>
+      <name>Yue Sun</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.34137v1</id>
+    <title>Self-Evolution Reasoner: Continuous Optimization via Policy-Intrinsic Exploration and Exploitation</title>
+    <updated>2026-10-25T08:18:39Z</updated>
+    <link href="https://arxiv.org/abs/2610.34137v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.34137v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Reinforcement learning with verifiable rewards (RLVR) enables large language models (LLMs) to continuously self-improve their reasoning capabilities. Compared to RLVR's scalar rewards, recent self-supervised on-policy distillation methods leverage denser supervision signals. However, both paradigms suffer from exploration bottlenecks, struggling to escape local optima when the policy fails to sample valid solutions. Relying on external demonstrations can bypass this issue; however, the off-policy nature hinders genuine self-improvement and the mismatched-distribution reasoning can not be fully exploited. In this work, we propose Self-Evolution Policy Optimization (SEPO), a framework that drives continuous reasoning capability evolution via guided exploration and in-distribution exploitation. Specifically, SEPO utilizes labels to elicit correct reasoning from the policy, unlocking the exploration potential. By treating current policy conditioned on this in-distribution reasoning as a self-teacher, SEPO distills the newly discovered solution back into the policy. Through this iterative cycle of policy-intrinsic exploration and exploitation, SEPO achieves robust and continuous capability evolution. Across scientific, tool-use, and complex logical reasoning domains, SEPO consistently achieves the best performance under identical training time or steps, demonstrating superior efficiency and convergence ceilings. Notably, SEPO maintains stable improvements even in scenarios where baselines severely underperform or fail entirely, such as on complex tasks or with small-scale models. Our code is available at https://github.com/Eric8932/SEPO.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-25T08:18:39Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Wenhang Shi</name>
+    </author>
+    <author>
+      <name>Yiren Chen</name>
+    </author>
+    <author>
+      <name>Zhe Zhao</name>
+    </author>
+    <author>
+      <name>Jinhao Dong</name>
+    </author>
+    <author>
+      <name>Wei Lu</name>
+    </author>
+    <author>
+      <name>Xiaoyong Du</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.33962v1</id>
+    <title>Beyond Belief: Evaluating and Mitigating LLM Susceptibility to Misinformation</title>
+    <updated>2026-10-25T00:26:14Z</updated>
+    <link href="https://arxiv.org/abs/2610.33962v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.33962v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tool-using large language models (LLMs) must decide whether external information warrants action. We investigate whether their expressed credibility judgments reliably indicate behavioral resistance to misinformation. We evaluate five LLMs on 196 constructed false notices paired with legitimate counterparts and 204 archived attacks adapted to simulated tool use. When asked to act on the constructed notices, models issue harmful tool calls in 27%--99% of cases they have rated untrustworthy. Removing the preliminary rating step increases harmful execution by 15 percentage points on average, showing that credibility elicitation itself changes the behavior being evaluated. Interventions that improve credibility discrimination do not consistently yield safer actions. A simple forewarning significantly reduces harmful execution in four of five models, but neither tested generated-example prebunk outperforms it in the main evaluation. These reductions can also compromise legitimate task completion. Supervised fine-tuning on generated false notices reduces harmful execution on held-out archived attacks under the rating-first protocol, with model-dependent utility costs and weaker protection without rating elicitation. Our findings motivate evaluating misinformation defenses through both harmful actions and legitimate task completion, while accounting for the behavioral effects of the evaluation protocol.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-25T00:26:14Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Emran Kanaan</name>
+    </author>
+    <author>
+      <name>Jiho Lee</name>
+    </author>
+    <author>
+      <name>Ibrahim Odat</name>
+    </author>
+    <author>
+      <name>Soroush Vosoughi</name>
+    </author>
+    <author>
+      <name>Weicheng Ma</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.33958v1</id>
+    <title>How Do Small Coding Agents Use Code Graphs and Embeddings?</title>
+    <updated>2026-10-25T00:16:32Z</updated>
+    <link href="https://arxiv.org/abs/2610.33958v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.33958v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Coding agents are given embedding search and code-graph tools on the premise that a repository's structure is something the model lacks and the tool supplies. We test that premise on SWE-bench Verified with small open-weight models, stratifying tasks by a deterministic hop depth (the shortest code-graph path from code the issue mentions to code the gold patch changes) that a companion paper defines and validates. First, we ablate a localization agent's tool set (grep only; +embedding search; +graph tools; all) on a depth-balanced 160-task split and on all 500 tasks for ten models (six Qwen3 sizes from 0.6B to 32B with five decodings each, an FP8 control, three Gemma 4 sizes; 79k episodes). Structured tools double grep-only accuracy for Qwen3-8B and Gemma 4 E4B; their gain peaks at 17-21 points at 1.7-4B and falls to 4-5 points at 32B (odds ratio 0.77-0.82 per doubling of parameters). From 8B up, about half of that gain is the form of the submission rather than finding the target; the fall from 14B to 32B is a fall in tool uptake at equal grep-only accuracy; and the same 4B size gains or does not gain from a tool depending on the checkpoint. Each extra hop multiplies the odds of correct localization by 0.50-0.67 at every size, and no tool set flattens that gradient: traces show the graph tools' gain is name lookup at hop 0 and one expansion at hop 1, and agents chain expansions in only 12-14% of episodes. A fixed repair model resolves 6-13 of 160 tasks from these localizations (oracle 26). Second, linear probes find direct call edges decodable under a within-anchor, degree-stratified protocol (AUC 0.74; 0.61-0.66 inside agent conversations), but below a lexical baseline (0.99), with two-hop edges at 0.57. Small agents carry a one-hop, largely lexical picture of their repository, in weights and in use. We release the agent, probes, logs and traces.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-25T00:16:32Z</published>
+    <arxiv:comment>29 pages, 5 figures. Depth labels and dataset card and full code, raw results and analysis will be released in the near future</arxiv:comment>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Saurav Bellam</name>
+      <arxiv:affiliation>The University of Texas at Austin</arxiv:affiliation>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.33568v1</id>
+    <title>Trajectory2Gym: Decision-Grounded Compositional Interaction Synthesis for Tool-Use Agents</title>
+    <updated>2026-10-24T09:38:02Z</updated>
+    <link href="https://arxiv.org/abs/2610.33568v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.33568v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Successful tool-use trajectories are not necessarily useful supervision. Even successful interactions may underrepresent multi-step dependencies or contain actions that are unjustified by the information visible to the agent at decision time. We identify two coupled requirements for effective trajectory supervision: compositional coverage, so that important observation-action dependencies are represented, and decision grounding, so that each supervised action is supported by the learner-visible interaction history. We introduce Trajectory2Gym, which constructs executable interactions around under-supported compositional structures and derives supervision only from grounded decisions in their realized executions. Structural-support selection allocates the resulting experience, while parent-normalized supervised fine-tuning preserves the semantic interaction as the unit of training weight. This reframes trajectory generation as the deliberate construction of learnable interaction experience, rather than the collection of successful trajectories. Across five Qwen3 scales, Trajectory2Gym improves Tau1, Tau2, and BFCL at every tested scale, increasing the equal-weight three-benchmark mean by 16.9-29.8 percentage points. The gains are strongest in stateful and multi-turn interaction, where later decisions depend on earlier observations and feedback. Our results suggest that scaling tool-use agents depends not only on collecting more successful trajectories, but on constructing interactions whose dependencies are represented and whose decisions are learnable from the agent's visible history.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-24T09:38:02Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Yihao Hu</name>
+    </author>
+    <author>
+      <name>Zhihao Wen</name>
+    </author>
+    <author>
+      <name>Yitong Lin</name>
+    </author>
+    <author>
+      <name>Siyuan Lu</name>
+    </author>
+    <author>
+      <name>Pan Wang</name>
+    </author>
+    <author>
+      <name>Wei Wu</name>
+    </author>
+    <author>
+      <name>Jiang-Ming Yang</name>
+    </author>
+    <author>
+      <name>Tao Lin</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.33445v1</id>
+    <title>From Intelligence to Autonomy: Foundations and Construction of Autonomous Agents for Future Intelligent Systems</title>
+    <updated>2026-10-24T04:47:10Z</updated>
+    <link href="https://arxiv.org/abs/2610.33445v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.33445v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Artificial intelligence is moving from one-off perception and generation tasks toward long-term planning, tool use, and interaction with real environments. Greater task competence, however, does not automatically yield autonomy: an external actor may still have to set goals, sustain operating conditions, detect failures, and approve updates. We define an autonomous agent as a system that, within explicit identity and authority boundaries, maintains both task goals and viability conditions, acts continuously using models of the world and itself, and adjusts its control mechanisms and long-term capabilities through feedback. We trace the conceptual path from homeostasis and feedback control to autopoiesis and biological autonomy. We then distinguish six lines of operationalization: computational autopoiesis, behavior-based robotics, agent formalization, adaptive software, embodied adaptation, and robotic self-modeling. On this basis, we propose a one-boundary, four-loop framework in which Operational, Viability, Reflexive, and Learning loops organize task execution, self-maintenance, metacontrol, and governed learning. Five paired simulation experiments test permission constraints, road-closure response, health maintenance, capability re-estimation, and cross-task learning. Their results provide preliminary evidence for the feasibility of these mechanisms, while broader environments and physical systems remain to be tested.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-24T04:47:10Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Hongda Zhang</name>
+    </author>
+    <author>
+      <name>Ziqing Zhou</name>
+    </author>
+    <author>
+      <name>Yuning Chen</name>
+    </author>
+    <author>
+      <name>Linqiang Hu</name>
+    </author>
+    <author>
+      <name>Yi Liu</name>
+    </author>
+    <author>
+      <name>Ding Zhou</name>
+    </author>
+    <author>
+      <name>Zhao Huang</name>
+    </author>
+    <author>
+      <name>Haining Xu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.33312v1</id>
+    <title>Responsibility Boundaries for Agentic Systems: A Comparative Evaluation of Probabilistic Agentic Programming</title>
+    <updated>2026-10-23T21:31:12Z</updated>
+    <link href="https://arxiv.org/abs/2610.33312v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.33312v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Language-model agents combine reasoning, tools, memory, delegation, and external effects. Authority is often distributed across prompts, host code, configuration, and logs. Probabilistic Agentic Programming (PAP) makes responsibility boundaries explicit programming abstractions connecting mandate, authority, effects, and evidence. We compare PAP with programming paradigms, agent-oriented and BDI systems, workflow and policy languages, and LLM tool-use frameworks along seven dimensions. A mediation kernel formalizes checks before tool execution, operation-bound approval, resource limits, and evidence. Inductive proofs establish conditional safety for arbitrary model responses, assuming correct guards and complete mediation. A backward simulation matches graph executions to source executions in a defined sequential Touba subset. Its human checkpoints release program continuations; operation-bound approval remains a separate kernel contract. Finite-state exploration checks the model. Scripted enforcement tests exercise selected refusal paths and permitted controls. An exploratory study combines seven business cases, including two three-agent workflows, seven models from three providers, five methods, and five repetitions per case and method. Shared English instructions and exact checks of stored outcomes yield 1,225 assessed observations. Native Touba completes all 35 observations on six models and 30 on the remaining model; structured Touba ranges from 21 to 35. Native matches the highest observed count for each model, including ties with the frameworks. All paired case intervals include zero. These observed counts describe the evaluated tasks; the runtime authority boundary remains fixed. The results connect responsibility contracts, execution rules, and evidence.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.PL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-23T21:31:12Z</published>
+    <arxiv:comment>43 pages, 8 figures, 9 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Khadim Lo</name>
+    </author>
+    <author>
+      <name>Soukaina Alaoui Ismaili</name>
+    </author>
+    <author>
+      <name>Jean-Sébastien Dessureault</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.33182v1</id>
+    <title>Spoofing the Toolbox: Optimizing Tool Descriptions to Deceive LLM Agents</title>
+    <updated>2026-10-23T18:25:37Z</updated>
+    <link href="https://arxiv.org/abs/2610.33182v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.33182v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language model (LLM) agents are widely used in many applications and often rely on external tools. Tool information, such as function descriptions, helps agents determine which tools best suit a given context. However, attackers can manipulate this information to mislead LLM agents into using malicious tools. Prior attacks mainly rely on keyword-based techniques, which are easily detected, or rule-based methods, which have limited effectiveness. In this work, we introduce TSA, a stealthy tool-spoofing attack that crafts descriptions for malicious tools that are difficult to distinguish from those of existing benign tools. To achieve this, we propose an LLM-powered optimization method that iteratively refines malicious tool descriptions. Specifically, TSA begins with a variant of a benign tool description and updates it based on feedback from a surrogate LLM agent. The optimization method incorporates a feedback function and contrastive in-context learning to guide the search for descriptions that are both stealthy and effective. Experiments on both single- and multi-tool use benchmarks demonstrate that TSA achieves an attack success rate of up to 92.13\%, outperforming four state-of-the-art approaches while remaining highly stealthy. Our user study further shows that even human participants cannot distinguish descriptions generated by TSA from benign ones. Moreover, TSA remains effective against five tool-malware detectors.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-23T18:25:37Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Shih-Chieh Dai</name>
+    </author>
+    <author>
+      <name>Xinyu Sun</name>
+    </author>
+    <author>
+      <name>Guanhong Tao</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.32969v1</id>
+    <title>DexPort: A Hand-Held Skill Interface for Dexterous Hand Data Collection</title>
+    <updated>2026-10-23T17:56:28Z</updated>
+    <link href="https://arxiv.org/abs/2610.32969v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.32969v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Collecting high-quality demonstrations remains a central bottleneck for learning dexterous manipulation. Teleoperation records executable robot actions, but it requires a complete robot setup and places the burden of coordinating many finger joints on the operator. Human demonstrations are easier to collect, but their motions must be estimated and retargeted to the robot, and they do not directly provide robot actions. In this paper, we introduce DexPort, a portable data-collection interface for high-DoF robot hands. It uses the same hand hardware for collection and deployment, avoiding a hand embodiment gap, and records both commanded joint targets and measured joint states. Our key observation is that a small set of skills can support a wide range of dexterous tasks. During collection, the operator moves the hand-held interface to specify the robot wrist motion and selects or adjusts skills that coordinate the finger motion. This removes the need to control each joint independently while retaining behaviors such as precise grasping and in-hand manipulation. We collect demonstrations across several real-world tasks and in unstructured environments without a robot arm. We then use behavior cloning to train visuomotor policies directly on the recorded wrist motions and hand commands, without skill labels. We evaluate across 4 tasks: pick-and-place with diverse objects, screwing with in-hand tool use, drawer stowage which requires simultaneous grasp and pulling, and a bimanual scanning task. We collect over 2,500 demonstrations with our portable device, in both laboratory and in-the-wild settings. Across our tasks, we see an improvement from 11% to 64% when using recorded robot commands instead of states, and an improvement from 36% to 78% for task success when using in-the-wild data.</summary>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-23T17:56:28Z</published>
+    <arxiv:comment>Website: https://amberxie88.github.io/dexport/</arxiv:comment>
+    <arxiv:primary_category term="cs.RO"/>
+    <author>
+      <name>Amber Xie</name>
+    </author>
+    <author>
+      <name>Jiawei Fu</name>
+    </author>
+    <author>
+      <name>Xiaofeng Guo</name>
+    </author>
+    <author>
+      <name>Carmelo Sferrazza</name>
+    </author>
+    <author>
+      <name>Guanya Shi</name>
+    </author>
+    <author>
+      <name>Haozhi Qi</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.32648v1</id>
+    <title>StateMirror: Pre-Execution Detection of Hallucinated Tool Calls in Coding Agents</title>
+    <updated>2026-10-23T13:56:13Z</updated>
+    <link href="https://arxiv.org/abs/2610.32648v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.32648v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language model (LLM)-based coding agents may propose invalid actions that are not applicable in the execution environment, such as accessing non-existent paths or missing packages. We term this mismatch hallucinated tool use. A preliminary study of 4,398 agent trajectories reveals that these hallucinations are pervasive and costly, requiring a median of 3 additional interaction steps and 22.4K tokens to recover. Existing frameworks rely on reactive, post-execution feedback, wasting runtime resources. Nevertheless, since an agent's execution environment is grounded in concrete codebase and harness components, many action prerequisites can be extracted and validated prior to execution. To this end, we introduce StateMirror, a lightweight pre-execution detector. StateMirror intercepts actions at the harness boundary, extracts state predicates via AST and command analysis, and deterministically validates them against the live repository. By pinpointing exact environment mismatches before execution, StateMirror preempts invalid actions and subsequent recovery cycles. Evaluation on 2,508 actions shows StateMirror achieves 0.940 precision and 0.817 F1 in detecting such hallucinations, surpassing the strongest LLM judge by 35.3% in F1 while reducing median detection latency from 17.73 s to 1.50 ms with zero token consumption. For practical mitigation, StateMirror's pre-execution feedback enables agents to rectify over 95% of hallucinated tool calls. During live mitigation on 79 tasks, StateMirror reduces agent execution time by 15.8% and token consumption by 11.8% while maintaining task resolution.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-23T13:56:13Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Shiwen Shan</name>
+    </author>
+    <author>
+      <name>Yintong Huo</name>
+    </author>
+    <author>
+      <name>Zhiying Wu</name>
+    </author>
+    <author>
+      <name>Yuxin Su</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.32578v1</id>
+    <title>Lessons Outlive Their Failures: A Case Study of Rules for AI Coding Agents</title>
+    <updated>2026-10-23T13:05:23Z</updated>
+    <link href="https://arxiv.org/abs/2610.32578v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.32578v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>AI coding agents increasingly work inside a harness: rule files such as AGENTS.md, on-demand skills, runtime hooks and automated checks. Most studies of harnesses look at a single point in time or at short benchmark runs. I report a six-week case study of my personal system of record, a plain-markdown repository that three AI agent tools edited daily under one shared rule set. I built a ledger of 118 agent failures, their fixes and whether they came back. I also tested the system's monthly LLM documentation audit against 47 known stale statements and 20 planted errors. Finally, I replayed five past failures in isolated git clones, with and without their fixes. All results come from one repository with three runs per condition, so I report them as exploratory. Stale documentation (drift) was the largest failure class (48 of 118), although 35 of those were found on one audit day. A single audit run found about half of the known drift (Claude Sonnet 5.5 mean: 50%), and at least 93% of its findings were correct. On Sonnet 5.5, the agent finished four of the five replayed tasks. In three of those four, the failure did not happen, with or without its fix. Only the stale-count failure came back without its check, and the check stopped it in every run. On older models, an agent drafted an em-dash once while the em-dash lint check was active, and the check rejected it. A written rule on run-time estimates did not change Sonnet 4.5's overestimates. These results suggest that harness lessons can outlive the failures they were written to fix, while drift persists and still needs mechanical checks. Tools that evolve a harness add lessons faster than they retire them, so they should re-test their rules from time to time and retire the obsolete ones.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-23T13:05:23Z</published>
+    <arxiv:comment>16 pages, 4 figures, 4 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Hassan Hassanzadeh Aliabadi</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.32531v1</id>
+    <title>On Task, Off Track: Benchmarking LLM and Agent Robustness to Near-Target Prompt Injection</title>
+    <updated>2026-10-23T12:05:14Z</updated>
+    <link href="https://arxiv.org/abs/2610.32531v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.32531v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Prompt injection benchmarks assess whether large language models (LLMs) and agents resist malicious instructions embedded in external content. However, a system could perform well by rejecting attacks that obviously abandon the user's request, while still accepting changes that retain most of a legitimate answer but make it incorrect or harmful. Testing more instructions for unrelated outcomes would not necessarily reveal this weakness. We call attacks seeking responses designed to resemble legitimate answers while introducing incorrect or harmful changes near-target prompt injection.
+  We introduce NTBench, the Near-Target Benchmark, which builds on legitimate tasks from existing datasets. For each task, a legitimate reference outcome guides the generation of target--instruction pairs, with separate tracks targeting incorrect and harmful outcomes in responses or agent tool invocations. Harmful targets can also accompany otherwise correct task completion. We combine LLM-based checks with human validation of the intended deviations, then assess whether injected instructions induce them using response judgments or tool-call checks, excluding deviations already observed without injection. We evaluate seven LLMs on ten datasets for language tasks and two agent benchmarks. Under a common budget of three attack executions per sample, both tracks achieve higher overall attack success rates than the fixed-target baseline for every evaluated model in each setting. On language tasks, the increases range from 9.3 to 35.8 percentage points for incorrect targets and 1.7 to 17.3 percentage points for harmful targets. These results show that resistance to the tested fixed-target attacks does not imply resistance to related incorrect or harmful outcomes, and that reference-guided targets broaden the failures revealed by robustness evaluation.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-23T12:05:14Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Yuyang Gong</name>
+    </author>
+    <author>
+      <name>Zihao Wang</name>
+    </author>
+    <author>
+      <name>Jiawei Liu</name>
+    </author>
+    <author>
+      <name>XiaoFeng Wang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.32522v1</id>
+    <title>On the complexity of Medvedev reducibility</title>
+    <updated>2026-10-23T11:56:01Z</updated>
+    <link href="https://arxiv.org/abs/2610.32522v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.32522v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The Medvedev lattice is a tool used to classify the complexity of effective closed sets. In this article, we are interested in the complexity of using this tool. In particular, we study the complexity of deciding whether two effective closed sets have the same degree, when one is fixed and the other is given as input. This problem is naturally~$Σ^0_3$, and among other results, we show that for all degrees except the maximal one, the problem reaches its maximal complexity. It turns out that the argument is not uniform and depends on the self-similarity of the fixed degree, a notion that we introduce in this article. The complexity of having maximal degree is particularly difficult to establish, but we obtain a lower bound that almost matches the upper bound. We also show that deciding whether an effective closed set has a degree incomparable with a fixed degree $d$ is $Π^0_3$-complete whenever $\mathbf{0}_s &lt;_s d &lt;_s \mathbf{1}_s$.</summary>
+    <category term="math.LO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-23T11:56:01Z</published>
+    <arxiv:primary_category term="math.LO"/>
+    <author>
+      <name>Remi Pallen</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.32483v1</id>
+    <title>When Agents Fail: Model or Harness--Who's to Blame?</title>
+    <updated>2026-10-23T10:57:54Z</updated>
+    <link href="https://arxiv.org/abs/2610.32483v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.32483v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>LLM agents combine models with execution harnesses, so agentic benchmark performance reflects their joint behavior. We argue that harnesses should therefore be evaluated through their interactions with underlying models. We develop a framework combining five complementary measures: (i) Valid Completion Rate (VCR), how reliably agents finish normally and deliver evaluable results, irrespective of task correctness; (ii) Model-Harness Fit, how well a harness supports task achievement through valid completion for a given model; (iii) Cross-Model Fit, a harness's overall suitability across evaluated models; (iv) Interaction Residuals, pairing-specific execution strengths and weaknesses hidden by component-level summaries; and (v) Token Load, the token demands of agent execution, including failed attempts. We evaluate four general-purpose harnesses (OpenCode, Codex CLI, Pi CLI, and DeepAgents) with four core models, plus two fixed native model-harness systems, on six benchmarks covering context management, tool use, long-context planning, multimodal interaction, and artifact handoff. Including native references and stress conditions, 111 evaluation settings yield 52,168 trajectories. Harness rankings vary across models and benchmarks; task performance and valid completion can favor different pairings, and similar task scores can accompany distinct execution profiles. OpenCode ranks first in cross-model performance, while DeepSeek V4 Flash Preview maintains consistently high Mean VCR across harnesses on the shared four-benchmark panel. These findings support evaluating model-harness interactions, training transferable harness-use capabilities in models, and harness designs adapted to the model and task.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-23T10:57:54Z</published>
+    <arxiv:comment>Preprint under review</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Shao Zhang</name>
+    </author>
+    <author>
+      <name>Hangfan Zhang</name>
+    </author>
+    <author>
+      <name>Yuanyuan Shi</name>
+    </author>
+    <author>
+      <name>Hao Li</name>
+    </author>
+    <author>
+      <name>Min-Le Su</name>
+    </author>
+    <author>
+      <name>Kangcong Li</name>
+    </author>
+    <author>
+      <name>Jingping Wang</name>
+    </author>
+    <author>
+      <name>Chunjiang Mu</name>
+    </author>
+    <author>
+      <name>Chen Zhang</name>
+    </author>
+    <author>
+      <name>Yang Chen</name>
+    </author>
+    <author>
+      <name>Bo Zhang</name>
+    </author>
+    <author>
+      <name>Shuyue Hu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.32105v1</id>
+    <title>When Statisticians Can Also Be AI Engineers, What Could We Build?</title>
+    <updated>2026-10-23T03:09:01Z</updated>
+    <link href="https://arxiv.org/abs/2610.32105v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.32105v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Statistical software makes methods widely available. Good statistical work, however, often requires conversations that clarify the scientific question, how the data were collected, and what conclusions the evidence can support. Coding agents and reusable AI infrastructure create opportunities for statisticians to incorporate these processes into agentic tools for research, practice, and education. A review of agentic AI applications for data analysis and study design distinguishes general human participation from human interaction guided by statistical principles. We examine how statistical expertise can guide the design and evaluation of domain-specific interactive harnesses. Two practical entry points illustrate how statisticians can begin building: an implemented causal-consulting skill within an existing agent environment and Model Forge, a custom harness for interactive model and algorithm development. These design examples connect statistical principles to choices about context, memory, tools, and interfaces, and motivate evaluation of both computational correctness and the scientific consequences of interaction. We conclude with a broader interdisciplinary research agenda on adaptive human-agent interaction, including selective information acquisition, evolving user preferences, and evaluation under uncertainty.</summary>
+    <category term="stat.OT" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-23T03:09:01Z</published>
+    <arxiv:primary_category term="stat.OT"/>
+    <author>
+      <name>Ruoqing Zhu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.31945v1</id>
+    <title>Kolibri: A Sovereign European Model on the Pareto Frontier</title>
+    <updated>2026-10-22T21:45:10Z</updated>
+    <link href="https://arxiv.org/abs/2610.31945v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.31945v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This report introduces Kolibri, an English-German mixture-of-experts transformer with 78.1B total parameters and 3.46B active parameters per token, released as open weights under the Apache 2.0 licence. We built Kolibri for sovereign and specialised deployment, with a particular focus on German and on regulated domains such as public administration, industry, and aerospace. To support these settings, we control the full model-development process, including data, architecture, training infrastructure, post-training, and evaluation.
+  We train Kolibri on 24T tokens across pre-training, mid-training, and long-context extension, with German accounting for more than 20% of the data mix by bytes. To reach this share, we complement German datasets with more than 2T German tokens that we curate from the web with our own pipeline and generate synthetically. Post-training combines supervised fine-tuning on curated German and English data with reinforcement learning on more than 1.2M internally curated tasks, which cover reasoning, tool use, instruction following, code, and retrieval. The model activates 4.4% of its parameters per token, and among the open models evaluated in this report, it lies on the Pareto frontier of quality and serving cost in English and German.
+  Kolibri builds on Kolibri Origin, an earlier iteration that validated our full pipeline at scale. Both models come from our Model Factory, which connects data, experimentation, training, evaluation, and deployment through version-controlled workflows.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-22T21:45:10Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Aleph Alpha</name>
+    </author>
+    <author>
+      <name> :</name>
+    </author>
+    <author>
+      <name>Moritz Althaus</name>
+    </author>
+    <author>
+      <name>Artur Baranowski</name>
+    </author>
+    <author>
+      <name>Michael Barlow</name>
+    </author>
+    <author>
+      <name>Fabien C. Y. Benureau</name>
+    </author>
+    <author>
+      <name>Felix Berkenkamp</name>
+    </author>
+    <author>
+      <name>Amrita Bhattacherjee</name>
+    </author>
+    <author>
+      <name>Lukas Blübaum</name>
+    </author>
+    <author>
+      <name>Duncan Blythe</name>
+    </author>
+    <author>
+      <name>Augustijn de Boer</name>
+    </author>
+    <author>
+      <name>Bastian Boll</name>
+    </author>
+    <author>
+      <name>Thomas F. Burns</name>
+    </author>
+    <author>
+      <name>Björn Deiseroth</name>
+    </author>
+    <author>
+      <name>Niko Dürr</name>
+    </author>
+    <author>
+      <name>Béni Balázs Egressy</name>
+    </author>
+    <author>
+      <name>Niklas Finken</name>
+    </author>
+    <author>
+      <name>Niklas Freymuth</name>
+    </author>
+    <author>
+      <name>Fabian Gebhart</name>
+    </author>
+    <author>
+      <name>Max Hammer</name>
+    </author>
+    <author>
+      <name>Bastian Harren</name>
+    </author>
+    <author>
+      <name>Andreas Hartel</name>
+    </author>
+    <author>
+      <name>Johann Higl</name>
+    </author>
+    <author>
+      <name>Steffen Hirschmann</name>
+    </author>
+    <author>
+      <name>Pablo Iyu Guerrero</name>
+    </author>
+    <author>
+      <name>Yasser Jadidi</name>
+    </author>
+    <author>
+      <name>Andreas Jagusch</name>
+    </author>
+    <author>
+      <name>Mitja Kleider</name>
+    </author>
+    <author>
+      <name>Markus Klein</name>
+    </author>
+    <author>
+      <name>Jonas Knupp</name>
+    </author>
+    <author>
+      <name>Murali Kondragunta</name>
+    </author>
+    <author>
+      <name>Garwin Lechner</name>
+    </author>
+    <author>
+      <name>Dominik Lê-Kellner</name>
+    </author>
+    <author>
+      <name>Jurek Leonhardt</name>
+    </author>
+    <author>
+      <name>Jiaze Li</name>
+    </author>
+    <author>
+      <name>Sohir Maskey</name>
+    </author>
+    <author>
+      <name>Omar Mehio</name>
+    </author>
+    <author>
+      <name>Pit Neitemeier</name>
+    </author>
+    <author>
+      <name>Letitia Parcalabescu</name>
+    </author>
+    <author>
+      <name>Alejandro Petry Pacheco</name>
+    </author>
+    <author>
+      <name>Pranav Ragupathy</name>
+    </author>
+    <author>
+      <name>Martin Reinhardt</name>
+    </author>
+    <author>
+      <name>Peter Rodenkirch Nfissi</name>
+    </author>
+    <author>
+      <name>Dylan Rodriquez</name>
+    </author>
+    <author>
+      <name>Leonard Salewski</name>
+    </author>
+    <author>
+      <name>Raziye Sari</name>
+    </author>
+    <author>
+      <name>Jordan Sassoon</name>
+    </author>
+    <author>
+      <name>Ivo Schaper</name>
+    </author>
+    <author>
+      <name>Ilhan Scheer</name>
+    </author>
+    <author>
+      <name>Frank Schneider</name>
+    </author>
+    <author>
+      <name>Philipp Scholl</name>
+    </author>
+    <author>
+      <name>Lukas Schott</name>
+    </author>
+    <author>
+      <name>Eric Schreiber</name>
+    </author>
+    <author>
+      <name>Pablo Schumacher</name>
+    </author>
+    <author>
+      <name>Alessio Serra</name>
+    </author>
+    <author>
+      <name>Philipp Siedler</name>
+    </author>
+    <author>
+      <name>Prabhu Teja Sivaprasad</name>
+    </author>
+    <author>
+      <name>Mohamed Soliman</name>
+    </author>
+    <author>
+      <name>Till Speicher</name>
+    </author>
+    <author>
+      <name>Volker Stampa</name>
+    </author>
+    <author>
+      <name>Simon Thel</name>
+    </author>
+    <author>
+      <name>Serge Thilges</name>
+    </author>
+    <author>
+      <name>Irina Vidal Migallón</name>
+    </author>
+    <author>
+      <name>Denis Waßmann</name>
+    </author>
+    <author>
+      <name>Samuel Weinbach</name>
+    </author>
+    <author>
+      <name>Sascha Wirges</name>
+    </author>
+    <author>
+      <name>Michael Wüthrich</name>
+    </author>
+    <author>
+      <name>Alexei Zacharov</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.31916v1</id>
+    <title>Permission to Retry: A Study of Authorization and Recovery in AI Agent Workflows</title>
+    <updated>2026-10-22T21:09:22Z</updated>
+    <link href="https://arxiv.org/abs/2610.31916v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.31916v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>A durable agent can resume a consequential action while its authority changes and the action's external outcome remains uncertain. We study execution-time reliability of tool-using AI agents, isolating recovery decisions from language-model behavior. Checkpoint state, permission to dispatch, evidence of an external effect and permission to reconcile are distinct obligations. We present a finite conformance study that checks these obligations through histories scored against a provider effect ledger hidden from the recovering application. A prospectively frozen campaign executes 336 histories on native LangGraph and Temporal hosts, crossing 14 schedules, three provider contracts and four matched application policies. All 168 paired host cells have identical checked outcomes. Per host, retained-ledger reconciliation passes all 42 histories: 21 checked completions, 15 denials and six unknown outcomes with reservations retained. Cached retry, revalidation before retry and stable-key retry pass 30, 36 and 31 histories respectively. A separate 16-case component study of InfinityOS, an enterprise AI platform developed by Arya.ai, exercises exported authority, worker, recovery and settlement code over repository fakes. The results isolate the roles of current authority, provider contracts and retained observations in recovery, with safety, completion and unresolved obligations reported separately for the declared application profile.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-22T21:09:22Z</published>
+    <arxiv:comment>7 pages, 2 figures, 3 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Deekshith Marla</name>
+    </author>
+    <author>
+      <name>Kushagra Bhatnagar</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.31875v1</id>
+    <title>An AI Factory for Technology Education: An Agentic Pipeline with Closed Loop Audience Feedback</title>
+    <updated>2026-10-22T20:07:26Z</updated>
+    <link href="https://arxiv.org/abs/2610.31875v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.31875v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Technology tools used for professional upskilling change on a timescale of weeks, and written guidance about them ages at the same pace. Large language models have made it inexpensive to draft a tutorial or a course outline, but most deployed generation systems still produce a piece of content once and never check it against what an audience actually does with it. This paper describes an agentic pipeline, organized as a typed workflow graph, that treats instructional content production as a manufacturing process with explicit checkpoints rather than a single generation call. Four node classes structure the graph: deterministic scripts, model steps bound to a fixed rubric, open-ended agent phases, and human approval gates, arranged along a forward production path and closed by a feedback cycle that rewrites generation rules from post level engagement telemetry. Production of content is split into two layers: a demand layer, built from video and community sources, that shapes topic selection and register, and an authority layer, built from official documentation, that every published claim must trace back to. Over five months of continuous operation, the deployed system published 26 documented guides at roughly 1.5 hours of operator time per week, and the feedback loop identified four measurable engagement effects that became binding rules for later runs, including a hook style that outperformed baseline by a factor of 1.83 in its first analysis window.</summary>
+    <category term="cs.CY" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-22T20:07:26Z</published>
+    <arxiv:comment>20 pages, 3 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.CY"/>
+    <author>
+      <name>Josue Hernandez</name>
+    </author>
+    <author>
+      <name>Hector R. Amado-Salvatierra</name>
+    </author>
+    <author>
+      <name>Rocael Hernandez Rizzardini</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.31846v1</id>
+    <title>Don't Forget What You Just Learned: Self-Directed Repair Turns Agent Mistakes Into Lasting Lessons</title>
+    <updated>2026-10-22T19:29:38Z</updated>
+    <link href="https://arxiv.org/abs/2610.31846v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.31846v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Intelligent agents should learn from their mistakes so that experience leads to continuous improvement. Yet today's agents recover from a mistake only temporarily: in-context reflections are easily forgotten across sessions and compete for limited context, while full-parameter fine-tuning is expensive and can interfere with existing capabilities. We introduce Self-Direction, a mechanism for agents to learn from mistakes that combines the benefits of temporary in-context retries and policy updates. When an agent fails a task, it reflects on its own trajectory in order to extract a lesson and immediately distills it into a lightweight low-rank adapter. By keeping the original weights frozen, Self-Direction prevents adapter training from overwriting base-model parameters while training additional parameters equivalent to ~0.02% of the base model's parameter count for each adapter. The agent then saves these adapters in a persistent library of lessons, automatically routing them to solve related problems later. Experiments with agents based on open-weight models from the Qwen family across open-ended research (GAIA), tool-use workflows (Claw-Eval), and terminal tasks (Terminal-Bench 2.1) show that our method improves overall success rates by 8.9 to 17.0 percentage points and performs competitively with frontier systems. We find that Self-Direction reduces repeated mistakes across future encounters of a task, nearly doubling the reliability of an agent's corrections. Learned lessons also transfer: a handful of adapters generalize to dozens of new tasks without additional training. Ultimately, this self-directed repair transforms everyday mistakes into lasting lessons.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-22T19:29:38Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Yuval Kansal</name>
+    </author>
+    <author>
+      <name>Karen Ullrich</name>
+    </author>
+    <author>
+      <name>Polina Kirichenko</name>
+    </author>
+    <author>
+      <name>Ilia Kulikov</name>
+    </author>
+    <author>
+      <name>Niraj K. Jha</name>
+    </author>
+    <author>
+      <name>Mohammad Pezeshki</name>
+    </author>
+    <author>
+      <name>Mark Ibrahim</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.33108v1</id>
+    <title>ToolContractGate: Versioned Trusted Contracts for Drift-Safe Agent Tool Invocation</title>
+    <updated>2026-10-22T19:01:06Z</updated>
+    <link href="https://arxiv.org/abs/2610.33108v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.33108v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Agent tool approval and input validation do not, by themselves, bind a request to an approved source artifact. ToolContractGate provides a deterministic runtime contract evaluator for OpenAPI-derived agent tools. Each versioned ToolContract combines a stored OpenAPI fingerprint with access, schema, and behavioral declarations. The full evaluator applies ten checks, including a cached boot-time provenance result; four execution modes and five evaluation configurations support baseline, ablation, and non-blocking shadow analysis. On a synthetic benchmark of 45 cases (35 unsafe cases across 12 drift classes and 10 safe cases), the full pipeline detects all 35 faults: 29 BLOCK, 3 REVIEW, and 3 WARN decisions, with no false blocks on the safe cases. The archived run reports a mean gate latency of 0.18 ms and a 95th percentile (p95) of 2 ms using integer-millisecond measurements. The open-source artifact includes seven OpenAPI specifications, twelve enterprise contracts, 29 unit tests, and a 900-record evaluation. Results characterize contract-decision coverage; downstream enforcement requires a host that honors the returned decision. Production traffic, semantic backend drift, and dynamic provenance refresh remain evaluation and integration opportunities.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-22T19:01:06Z</published>
+    <arxiv:comment>Accepted for publication at the 2026 International Conference on Computer and Applications (ICCA). Author-accepted manuscript; 7 pages, 3 figures, 4 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Sachin Gupta</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.31650v1</id>
+    <title>EpiSEM-Bench: Evaluating Safety and Evidence Recovery in LLM Agents under Missing Evidence</title>
+    <updated>2026-10-22T17:57:04Z</updated>
+    <link href="https://arxiv.org/abs/2610.31650v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.31650v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tool-using language model agents rely on environmental facts to decide whether an action is permitted. When a tool response omits a safety-relevant fact, an agent may carry out a prohibited action even though the user request is benign and every returned statement is true. We introduce \bench{}, an executable benchmark for evaluating unsafe execution, safety boundaries, and evidence recovery in LLM agents under missing evidence. It contains 300 matched unsafe/safe task pairs across six domains. By systematically suppressing critical facts, the benchmark measures unsafe execution under critical evidence omission and determines the minimum observed failure cardinality, including failures with full evidence and cases with no observed failure after exhaustive testing. An independent audit tool tests whether agents seek missing facts and then withhold prohibited actions while completing permissible tasks. The benchmark reveals substantial variation across the ten models in omission robustness, evidence acquisition, and appropriate action. Resistance to missing evidence does not necessarily translate into useful recovery. Recovery access reduces unsafe execution for all ten models, but agents differ in whether they actively obtain the missing facts and use them to act appropriately in both worlds.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-22T17:57:04Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Qijin Zhang</name>
+    </author>
+    <author>
+      <name>Hanzhen Wang</name>
+    </author>
+    <author>
+      <name>Yuehan Zhao</name>
+    </author>
+    <author>
+      <name>Haoyu Dai</name>
+    </author>
+    <author>
+      <name>Yao Shu</name>
+    </author>
+    <author>
+      <name>Zhongxiang Dai</name>
+    </author>
+    <author>
+      <name>Shuang Qiu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.31636v1</id>
+    <title>Can an Agent Debug a Web Corpus? Agentic Auditing of Slovak FineWeb2</title>
+    <updated>2026-10-22T17:52:22Z</updated>
+    <link href="https://arxiv.org/abs/2610.31636v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.31636v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Multilingual pipelines such as FineWeb2 apply one recipe across a thousand languages, leaving the failure modes of individual languages unanticipated. We use an LLM once, as a corpus debugger rather than a classifier: a tool-using agent explores the corpus through a read-only, budgeted API and compiles each finding into an executable test, which a native speaker then validates. On the 26.5M-document Slovak portion of FineWeb2, three runs costing \$2.21-\$2.84 each found seven findings over four phenomena. The largest is a machine-generated content farm of 1,408,437 documents (5.32%) that passed the pipeline's filters, 86.6% of it passing even stricter thresholds. Blinded labels support 6 of the 7 findings (defect rates .53-1.00 against .08 in a random control) and do not support one. The compiled suite scans the full corpus in 0.7 s of wall-clock time without a GPU, against \$12k-\$90k per LLM classification pass. The best static sampling baseline validates more selectors than any agent run, at under half the cost. The agent contributes exact prevalence, a precision estimate checked against sampled documents, an account of why the pipeline missed each slice, and a reusable test. We release the framework, Slovak test suite, validation data and agent trajectories.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-22T17:52:22Z</published>
+    <arxiv:comment>Accepted to WaC Workshop at EMNLP 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Marek Šuppa</name>
+    </author>
+    <author>
+      <name>Ivan Vykopal</name>
+    </author>
+    <author>
+      <name>Jaroslav Kopčan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.31096v2</id>
+    <title>GeoAgent: Contract-Constrained LLM Agents for Seismic Data Processing</title>
+    <updated>2026-10-23T03:07:51Z</updated>
+    <link href="https://arxiv.org/abs/2610.31096v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.31096v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language models (LLMs) can drive scientific software through function calling, but free-form tool use is fragile on long, data-dependent processing chains. Models omit arguments, invent units, feed the previous artifact into the wrong input, and report completion without a verifiable product. We present GeoAgent, an agent system for seismic data processing built on Madagascar's roughly 1{,}965 command-line programs. GeoAgent exposes 54 operator agents (51 generated from a declarative specification), retrieves from an index of 1{,}937 operators, and encodes the processing flow as a nine-stage state graph. Four explicit contracts---named artifacts, input resolution, parameter takeover, and artifact validation---move everything the graph can determine out of the model's discretion. A deterministic geometry tool parses the self-describing SPS/RPS/XPS and SEG-Y headers, cross-checks eight consistency conditions, and reproduces the reference shell recipe exactly. The system runs in containers with session- and task-level isolation, bounded execution, and defenses against silent failures. On a 2-D land dataset, the nine-stage pipeline completes in about six to eleven minutes and yields a verified artifact at every stage, while retrieval reduces per-turn tool context from about 12k to 2k tokens. We report the design, deployment experience, and motivating failure modes.</summary>
+    <category term="physics.geo-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-22T11:07:12Z</published>
+    <arxiv:primary_category term="physics.geo-ph"/>
+    <author>
+      <name>Zhilong Fang</name>
+    </author>
+    <author>
+      <name>Qi Zhang</name>
+    </author>
+    <author>
+      <name>Jujie Yan</name>
+    </author>
+    <author>
+      <name>Zhong Wang</name>
+    </author>
+    <author>
+      <name>Xinbin Gu</name>
+    </author>
+    <author>
+      <name>Ziyang Zhang</name>
+    </author>
+    <author>
+      <name>Hua Wang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.31014v2</id>
+    <title>CARL: Chat Assisted Reinforcement Learning</title>
+    <updated>2026-10-23T10:36:49Z</updated>
+    <link href="https://arxiv.org/abs/2610.31014v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.31014v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Failure of applied Reinforcement Learning (RL) to solve a given problem predominantly stems from unaddressed specification gaps, where the intent of human experts in the problem's domain is inaccurately or incompletely translated by AI into mathematical objectives, constraints, and reward functions. Failure can also stem from unaddressed performance gaps, where human domain experts are unable to determine the validity of the RL based solution or where parameters (i.e., hyperparameters or weights on the reward terms comprising the reward) are poorly chosen. Chat Assisted Reinforcement Learning (CARL) bridges these gaps through a human-AI co-design interface architecture that enforces interactive specification prior to code generation and then enables subsequent verification and parameter alterations via iteration. More specifically, CARL leads domain experts through a structured ten-step workflow for each iteration using step-specific skill files, domain-aware suggestions via an assistant persona (called Trillian), and compact decision summaries that maintain context across iterations without context overload. Once the domain expert confirms the Markov decision process (MDP) specified by this procedure, CARL's autonomous tool-use loop generates, tests, executes, and debugs an end-to-end RL training pipeline, followed by an interactive post-training diagnosis and revisit step that allows for verification and parameter alteration before running a new iteration if desired.</summary>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-22T09:48:43Z</published>
+    <arxiv:comment>Revision fixed citation format</arxiv:comment>
+    <arxiv:primary_category term="cs.HC"/>
+    <author>
+      <name>Sanjiv Das</name>
+    </author>
+    <author>
+      <name>Harshad Khadilkar</name>
+    </author>
+    <author>
+      <name>Sukrit Mittal</name>
+    </author>
+    <author>
+      <name>Daniel Ostrov</name>
+    </author>
+    <author>
+      <name>Jacob Sisk</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.31013v1</id>
+    <title>Multi-Tool Selection for Robotic Systems: Comparing Semantic Retrieval and LLM</title>
+    <updated>2026-10-22T09:48:18Z</updated>
+    <link href="https://arxiv.org/abs/2610.31013v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.31013v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Natural-language interfaces allow users to command robotic systems without interacting directly with mission planners or robotics middleware. Their reliable use depends on robot tool routing, defined here as the selection of the smallest complete subset of predefined executable capabilities required to satisfy a request. This task is particularly difficult for compound instructions, where incomplete selection may omit necessary sensing or monitoring capabilities, while excessive selection may expose irrelevant tools. We compare four routing strategies: three progressively refined ChromaDB-based methods - fixed-threshold retrieval, relative-distance retrieval, and clause-aware aggregated retrieval - and a cloud-hosted 120-billion-parameter language-model baseline. The methods are evaluated on 164 manually annotated prompts organised into three complexity levels, from direct single-tool requests to compound requests requiring at least three tools. Using exact-match accuracy, completeness, precision, a completeness-weighted composite score, and routing latency, CDB-v3 achieves the best macro-average score among the retrieval-only methods, with 0.7822, compared with 0.8869 for the large-model baseline. Although the LLM provides higher routing quality, CDB-v3 exhibits substantially lower latency and can be deployed locally without requiring cloud connectivity. These results identify a quality-latency trade-off between direct large-model selection and clause-aware semantic retrieval for privacy-sensitive, connectivity-constrained, and resource-constrained robotic systems.</summary>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-22T09:48:18Z</published>
+    <arxiv:primary_category term="cs.RO"/>
+    <author>
+      <name>Miguel Sousa</name>
+    </author>
+    <author>
+      <name>Luis Ramos Pinto</name>
+    </author>
+    <author>
+      <name>João P. Matos-Carvalho</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.30933v1</id>
+    <title>ReflectPO: Reflection-Guided Policy Optimization for Long-Horizon LLM Agents</title>
+    <updated>2026-10-22T08:54:24Z</updated>
+    <link href="https://arxiv.org/abs/2610.30933v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.30933v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>With external tools, large language models (LLMs) can tackle complex tasks through sustained environmental interaction. LLM-based agents are therefore increasingly used to tackle complex long-horizon tasks in real-world environments. However, these tasks involve sequential, interdependent decisions and changes in environmental states. Early execution errors affect subsequent interaction histories and environmental states, and their effects accumulate along the decision chain. To address this challenge, we propose Reflection-Guided Policy Optimization (ReflectPO), a reinforcement learning framework for autonomous error recovery in long-horizon tasks. ReflectPO comprises two core components. The first is Reflection-Guided Sampling. We use branch differences and repeated visits in interaction trajectories to construct hints for error recovery. The second is Tree-Structured Credit Assignment. We organize sampled trajectories into trees and assign action-level credit using parent--child reward differences and recovery gains. Experiments over two long-horizon tool-use benchmarks show that ReflectPO outperforms multiple existing baselines in most domains. It also achieves the best overall performance on average. Further analyses show that ReflectPO effectively improves agents' ability to recognize their own deviations, recover from erroneous states, and continue making progress toward task completion.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-22T08:54:24Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Rumei Li</name>
+    </author>
+    <author>
+      <name>Xunliang Cai</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.30738v1</id>
+    <title>AgentTriage: Replayable Security Diagnosis Across Heterogeneous Agent Runtimes</title>
+    <updated>2026-10-22T05:09:44Z</updated>
+    <link href="https://arxiv.org/abs/2610.30738v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.30738v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>When tool-use agents write files, execute code, or send data, their final responses do not explain the resulting security events, and heterogeneous runtimes expose the relevant evidence through incompatible interfaces. We present AgentTriage, an executable contract for replayable security diagnosis across heterogeneous runtimes. The contract admits conclusions whose claims cite canonical runtime events and requires abstention when mandatory evidence is missing. Runtime overlays normalize native observations, while a deterministic pipeline joins invocation and result lifecycles, constructs a typed provenance graph, selects a policy-decisive slice, and binds claims to recorded evidence. Given the same normalized trace, overlay version, and pre-run policy oracle, the diagnosis can be recomputed and its claims re-checked without language-model judgment. Across five runtimes, one contract captures all 159 applicable executions, with an audit of native and synthesized identifiers. On 120 adjudicated cases, AgentTriage achieves 0.858 grounded joint diagnosis, 0.966 required-evidence coverage, and a 0.036 unsupported-claim rate, improving joint diagnosis by 0.175 (95% CI [0.092, 0.258]) over the strongest same-schema baseline. These results quantify the precision of replayable diagnosis and the observation boundaries that require abstention. We release an open-source implementation and selected sanitized evidence at https://github.com/AsnGs/agenttriage-open-source.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-22T05:09:44Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Jie Ying</name>
+    </author>
+    <author>
+      <name>Xutao Zhang</name>
+    </author>
+    <author>
+      <name>Ningyuan Chen</name>
+    </author>
+    <author>
+      <name>Mengce Zheng</name>
+    </author>
+    <author>
+      <name>Jun Li</name>
+    </author>
+    <author>
+      <name>Zhongjie Zhu</name>
+    </author>
+    <author>
+      <name>Tiantian Zhu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.30499v1</id>
+    <title>Can LLMs Improve Their Own Harness? A Controlled Study on ARC-AGI-3</title>
+    <updated>2026-10-21T22:29:47Z</updated>
+    <link href="https://arxiv.org/abs/2610.30499v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.30499v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>A generally intelligent system acquires new skills efficiently without requiring humans to redesign its software scaffold for every new task. Yet language models rarely act alone. A harness is a symbolic program that orchestrates calls to the model, handling perception, memory, tool use, recovery, and inference allocation on the model's behalf. ARC-AGI-3 is an interactive benchmark in which agents must explore unfamiliar environments, figure out their goals on the fly, and keep learning as they go. On it, human-steered systems already report ceiling scores across the public games, so we know effective designs exist. We ask whether frontier models can build and improve such a harness on their own. Through a fixed coding bootstrap, each model constructs a complete task harness, acts through that harness on five development games, and revises the entire codebase twice. Every version is evaluated on twenty games that never influence adaptation. We measure task performance with Relative Human Action Efficiency (RHAE), which combines level completion with action efficiency relative to human baselines, and record dollar-denominated inference cost as a practical resource measure. Across 27 lineages, harness performance ranges from zero to near-ceiling scores. Two revisions raise mean held-out RHAE by only 2.80 points (95% interval [-1.44,7.35]). Development gains overstate held-out improvement, and reductions in inference cost can come at the expense of task performance. Human-steered systems demonstrate further headroom. These findings reveal a gap between autonomous harness construction and reliable adaptation under this two-revision protocol: even strong task performance does not ensure that subsequent revisions generalize or preserve existing capabilities.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-21T22:29:47Z</published>
+    <arxiv:comment>25 pages, 5 figures. Includes appendices and a supplementary code/data archive</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Jens Lehmann</name>
+    </author>
+    <author>
+      <name>Sahar Vahdati</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.30491v1</id>
+    <title>What the Trace Shows and What the Label Says: Auditing Behavioral Detectors in Agent Evaluation</title>
+    <updated>2026-10-21T22:18:16Z</updated>
+    <link href="https://arxiv.org/abs/2610.30491v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.30491v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>LLM agents are often evaluated by reducing execution traces to labels such as final-answer correctness, tool verification, and fault propagation. These labels are measurements produced by parsers, behavioral detectors, and harness rules, and they may not fully capture what the trace shows. We study this in a tool-use setting built on GSM8K, where agents call a calculator whose outputs are occasionally corrupted, giving clear ground truth for what the tool returned, what the model later used, and what the detectors reported. We audit three trace-level detectors across six production models and 30 problems per model. Final correctness, visible re-verification, and fault propagation can disagree in systematic ways. A key failure mode is silent tool-output override: the calculator returns a corrupted value, but the model later uses a different, often correct, value without calling the tool again, so the bad value stops propagating while a verification detector records no re-check. Human review of 90 traces agrees perfectly with the automated labels for final correctness (67/67), fault impact (19/19), and fault relevance (18/18), but only 67/81 for verification; all 14 disagreements fall into four recurring patterns. Execution limits also change the reported result: in an ablation across two models, one ranges from 21/30 to 27/30 correct as step and token budgets change, while the other stays between 27/30 and 29/30. These findings motivate measurement transparency: an automated label should come with the trace evidence behind it, whether the question the detector asks applied to that trace, whether the run was cut off by an execution limit, and any human corrections. Our trace viewer makes this information inspectable alongside the reported results.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-21T22:18:16Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Idunnuoluwa A. Adeniji</name>
+    </author>
+    <author>
+      <name> Shilpika</name>
+    </author>
+    <author>
+      <name>Michael E. Papka</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.30436v1</id>
+    <title>Secure Agentic AI and Multimodal Intelligence in 6G Communication Systems</title>
+    <updated>2026-10-21T20:47:14Z</updated>
+    <link href="https://arxiv.org/abs/2610.30436v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.30436v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Sixth-generation (6G) communication systems are expected to support immersive, intent-driven, and latency-critical services through tight integration of multimodal intelligence, edge computing, and autonomous network control. In this setting, agentic AI systems can reason over heterogeneous inputs, use tools and network functions, coordinate across distributed entities, and adapt to dynamic environments. These capabilities make agentic multimodal intelligence promising for 6G applications such as semantic communications, digital twins, and zero-touch network management, but they also introduce security and privacy risks that extend beyond conventional AI and network security models. Vulnerabilities can propagate across multimodal data pipelines, memory, tools, communication interfaces, and inter-agent coordination loops. We survey multimodal intelligence and agentic AI for 6G cross-layered communication systems from the perspectives of privacy and security. We present a 6G-oriented system view spanning perception, memory, tool use, and multi-agent orchestration; analyze threat models and attack surfaces across sensing, cognition, action, memory, and communication layers; organize existing attacks into a structured taxonomy; and review mitigation strategies including prompt and memory defenses, inter-agent trust mechanisms, secure orchestration, and privacy-preserving learning. We conclude by outlining open research directions for trustworthy multimodal multi-agent 6G systems.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="eess.SP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-21T20:47:14Z</published>
+    <arxiv:comment>20 pages, 5 figures, 5 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <arxiv:journal_ref>IEEE Open Journal of the Communications Society 2026, Volume 7, pp. 8926-8944, 19 pp</arxiv:journal_ref>
+    <author>
+      <name>Satyam Gaba</name>
+    </author>
+    <author>
+      <name>Devanshu Motwani</name>
+    </author>
+    <author>
+      <name>Siva Sai</name>
+    </author>
+    <author>
+      <name>Vineet Suri</name>
+    </author>
+    <author>
+      <name>Vikas Ranjan</name>
+    </author>
+    <author>
+      <name>Vinay Chamola</name>
+    </author>
+    <arxiv:doi>10.1109/OJCOMS.2026.3717323</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1109/OJCOMS.2026.3717323" title="doi"/>
+    <arxiv:doi>10.1109/OJCOMS.2026.3717323</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1109/OJCOMS.2026.3717323" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.30305v1</id>
+    <title>Dealing with low-weight errors that lead BP OSD to fail</title>
+    <updated>2026-10-21T18:18:32Z</updated>
+    <link href="https://arxiv.org/abs/2610.30305v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.30305v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Belief Propagation combined with Ordered Statistics Decoding (BP OSD) is an open-source decoding tool used widely within the community due to its versatility and ease of application to Quantum Low Density Parity Check (QLDPC) codes. However, the degeneracy of quantum codes has been observed to degrade the performance of BP OSD, particularly leading to error floors for low physical error rates. Here, we investigate the low-weight error configurations responsible for such failures in Bivariate Bicycle codes. We show that, at code capacity, BP OSD fails on errors whose weight is significantly smaller than d/2, arising from global symmetries of the decoding graph that prevent the convergence of parallel BP. Furthermore, our analysis reveals new pitfalls that can arise when analysing the performance of BP OSD in the rare events regime, such as loss of ergodicity in splitting methods and numerical instabilities in the decoder. We show how to mitigate these failure mechanisms by modifying the BP update rules and the decoder implementation, leading to substantial improvement in logical error rate.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-21T18:18:32Z</published>
+    <arxiv:comment>17 pages, 5 figures</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Giacomo Fregona</name>
+    </author>
+    <author>
+      <name>Matthias C. Löbl</name>
+    </author>
+    <author>
+      <name>Benjamin J. Brown</name>
+    </author>
+    <author>
+      <name>Michael J. Kastoryano</name>
+    </author>
+    <author>
+      <name>Stefano Paesani</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.30051v1</id>
+    <title>From Reasoning to Action: Benchmarking Frontier AI Models on LIBERO-10 Robot Manipulation Tasks</title>
+    <updated>2026-10-21T17:11:52Z</updated>
+    <link href="https://arxiv.org/abs/2610.30051v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.30051v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recent advances in frontier AI models have demonstrated remarkable capabilities in visual understanding, reasoning, planning, and tool use, raising the possibility of using general-purpose AI models for robot manipulation without task-specific training. However, their manipulation capabilities have not been systematically evaluated on standardized robotics benchmarks. In this report, we present a unified closed-loop manipulation framework for evaluating frontier AI models on the LIBERO-10 benchmark. Our framework enables models to control a robot directly through visual observations, robot proprioception, and structured tool calls, primarily by specifying target end-effector poses and gripper commands, without task-specific fine-tuning or pretrained manipulation skills. We evaluate six frontier AI models, including GPT-6 Astra, GPT-6.1 Sol, GPT-6 Luna, Claude Opus 5, Claude Opus 5.5, and Gemini-4 Argon, across three reasoning effort levels, resulting in 18 configurations and 1,800 evaluation episodes. Our results show that GPT-6 Astra achieves the highest success rate of 44%, followed by Gemini-4 Argon at 43%. Increasing reasoning effort generally improves manipulation performance, but the benefits vary across models and come at additional inference cost. We also observe substantial differences across tasks, with models performing relatively well on object placement tasks but struggling with precise spatial arrangements and complex multi-step interactions. These findings demonstrate both the potential and limitations of frontier AI models for robot manipulation, highlighting the challenges of translating reasoning capabilities into reliable physical actions. We release our evaluation framework and experimental results to support reproducible benchmarking and future research on reasoning-based robot manipulation.</summary>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-21T17:11:52Z</published>
+    <arxiv:comment>17 pages, 6 figures, 8 tables. May Espinola and Qifan Zhang contributed equally. Project page: https://irvlutd.github.io/LLM-LIBERO/ Code: https://github.com/IRVLUTD/LLM_LIBERO</arxiv:comment>
+    <arxiv:primary_category term="cs.RO"/>
+    <author>
+      <name>May Espinola</name>
+    </author>
+    <author>
+      <name>Qifan Zhang</name>
+    </author>
+    <author>
+      <name>Yu Xiang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.30041v1</id>
+    <title>Robust Soft Skill Adaptation via Behavioral Localization in Tool-Using Agents</title>
+    <updated>2026-10-21T17:02:06Z</updated>
+    <link href="https://arxiv.org/abs/2610.30041v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.30041v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Text skills can extend the capabilities of tool-using agents, but long skill descriptions increase computational costs. Soft prompts provide a compact alternative, yet learning from entire successful trajectories may also introduce unnecessary behavioral changes. We find that the useful effect of a text skill is highly concentrated in a small subset of trajectory positions. Based on this observation, we propose Behavioral Localization, which compares the frozen agent with and without the text skill to identify positions where the skill both increases the likelihood of successful tokens and meaningfully changes the next token distribution. We use these localized positions to supervise a short soft prompt. Experiments on SpreadsheetBench with a frozen Qwen3.6-35B-A3B agent show that the top 10\% of trajectory positions capture 96.12\% of the total positive skill gain. In the shared prompt setting, selective supervision improves success from 30.36\% with full trajectory to 36.79\%. Under task-specific conditions, using the top 10\% localized positions achieves 57.38\%, outperforming both the full text skill and the on-policy OPCD baseline. These results show that a small set of behaviorally relevant trajectory positions can provide effective supervision of soft skills.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-21T17:02:06Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Zijian Jiang</name>
+    </author>
+    <author>
+      <name>Xilu Wang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.29174v1</id>
+    <title>LocalAgent: Collaborative Agentic Verification for Fine-Grained Instance-Level Consistency</title>
+    <updated>2026-10-21T04:04:32Z</updated>
+    <link href="https://arxiv.org/abs/2610.29174v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.29174v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Multimodal large language models (MLLMs) have made rapid progress in general visual understanding, yet they still struggle with fine-grained instance-level consistency verification, where the goal is to determine whether two images depict the exact same physical object under varying viewpoints, illumination, and backgrounds. This task requires both global semantic perception and precise examination of subtle local evidence, since semantically similar objects may differ only in small suspicious regions. To address this challenge, we propose LocalAgent, a collaborative agentic framework that integrates the complementary strengths of a generalist MLLM and lightweight specialist verifiers. The MLLM first reasons globally to identify suspicious local regions, which are then delegated to a Local Evidence Verifier (LEV) toolkit for fine-grained appearance and geometric matching. LEV comprises Local Appearance Consistency (LAC), which estimates appearance similarity under illumination and color changes, and Local Geometric Correspondence (LGC), which estimates spatial correspondence under viewpoint changes. LEV returns structured scalar evidence that the MLLM integrates for the final decision. We further introduce an auxiliary-capped reinforcement fine-tuning (RFT) strategy, in which answer correctness dominates auxiliary tool-use and format signals, enabling the policy to learn when verification is necessary. Experiments show that LocalAgent improves mean accuracy by 4.9% over the strongest CoT-RFT baseline while invoking a verifier on only 12.13% of samples and preserving the general multimodal capabilities of the underlying MLLM. The open-source repository is available at https://github.com/Firefly-zoo/LocalAgent-main.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-21T04:04:32Z</published>
+    <arxiv:comment>22 pages, 4 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Jiachen Guo</name>
+    </author>
+    <author>
+      <name>Xinshan Zhu</name>
+    </author>
+    <author>
+      <name>Boyun Wang</name>
+    </author>
+    <author>
+      <name>Yanyan Liang</name>
+    </author>
+    <author>
+      <name>Jun Wan</name>
+    </author>
+    <author>
+      <name>Feng Lin</name>
+    </author>
+    <author>
+      <name>Ajian Liu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.28982v1</id>
+    <title>Behavior Beyond Text: Evaluating Refusal Transfer Failure in LLM Agents</title>
+    <updated>2026-10-20T23:14:30Z</updated>
+    <link href="https://arxiv.org/abs/2610.28982v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.28982v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>While large language models are increasingly deployed as tool-calling agents, their safety evaluations still focus primarily on their ability to refuse harmful requests in text. We investigate whether the refusal behavior in text transfers to tool use. We construct a benchmark of 2,304 prompts across four domains, consisting of matched triplets that present the same harmful or benign request in text-only, standard tool-enabled, and adversarially framed tool-enabled settings. We then assess tool-call safety using 20 predefined forbidden actions. Testing five models of varying sizes and families, we find that requests refused in text frequently result in unsafe tool calls. Under standard tool-enabled prompting, this divergence occurs for 10-52 percent of harmful requests refused in chat. To mechanistically investigate this gap, we identify a refusal-associated direction in the residual stream of each of the five models. We find that in tool-enabled contexts, the activations along this direction decrease in four of five models. Furthermore, lower activation predicts unsafe tool calls across all five models (AUC 0.76-0.86). However, restoring the signal to the respective text-only value through activation patching only prevents a subset of unsafe calls, primarily by suppressing tool use rather than by producing safer calls. Steering along the refusal direction nearly eliminates unsafe calls only at strengths that also suppress benign tool use or degrade the output quality. Our findings indicate that the identified refusal direction contributes to whether a model acts, but only partially explains the refusal divergence. Therefore, evaluating the safety of tool-calling agents requires directly examining their actions along with their textual responses.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-20T23:14:30Z</published>
+    <arxiv:comment>Raj Saha and Ekagra Gupta contributed equally and share first authorship</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Ekagra Gupta</name>
+    </author>
+    <author>
+      <name>Raj Saha</name>
+    </author>
+    <author>
+      <name>Aniekan-Abasi Inyang</name>
+    </author>
+    <author>
+      <name>Adam Al Gharib</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.28954v1</id>
+    <title>Pair-Free Coarse-to-Real Video Generation via Real-to-Coarse Image Supervision</title>
+    <updated>2026-10-20T22:09:29Z</updated>
+    <link href="https://arxiv.org/abs/2610.28954v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.28954v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Coarse-to-real (C2R) video generation converts coarse animation, simulation, or game-rendered videos into photorealistic videos while preserving scene layout, camera motion, and dynamics. Training such models requires aligned (coarse, realistic) video pairs, which are expensive to create and confine prior systems to narrow synthetic domains. We exploit a simple asymmetry: paired videos are hard to obtain, but paired real-to-coarse images are easy to construct with existing editing and 3D reconstruction tools. Using these image pairs, we train the DINO-R2C model to transfer realistic images to coarse images in DINO feature space, and apply it frame-wise to ordinary real videos to synthesize pseudo-coarse videos. The C2R# model then learns to generate each real video from its pseudo-coarse counterpart, free from needing (coarse, realistic) video pairs. At inference, the DINO-R2C model is discarded and actual coarse videos drive the C2R# model directly. Thus, our pair-free training scales with any real-video corpora rather than with paired synthetic videos. We will release the model and project webpage at https://gonzalognogales.github.io/coarse2real-sharp/.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-20T22:09:29Z</published>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Gonzalo Gómez-Nogales</name>
+    </author>
+    <author>
+      <name>Daohan Lu</name>
+    </author>
+    <author>
+      <name>Peiye Zhuang</name>
+    </author>
+    <author>
+      <name>Tinghui Zhou</name>
+    </author>
+    <author>
+      <name>Yi Zhou</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.28785v1</id>
+    <title>Measure First, Then Allocate: Calibrated Rollout Budgets for MCP Agents in Reinforcement Learning</title>
+    <updated>2026-10-20T18:15:52Z</updated>
+    <link href="https://arxiv.org/abs/2610.28785v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.28785v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Training tool-using language models requires costly interaction, yet identical rewards within a rollout group provide no group-relative learning signal. We use reward disagreement to guide harness evaluation and the allocation of rollouts for policy training in Model Context Protocol (MCP) environments. We first introduce Discord, which tests harness edits using exact paired inference and decision-preserving early stopping: only disagreeing paired outcomes favor one harness over another. This insight motivates prospective allocation in BRACE (Bank-calibrated Rollout Allocation under Correlated Episodes). BRACE combines historical task evidence, uncertainty in task success rates, and a correlated reward model to forecast mixed-reward groups before allocating generation budget. Controlled harness experiments favor Discord, while live MCP experiments expose a retention-cost trade-off. At three Qwen3-VL model scales, BRACE exceeds the strongest plotted baseline peaks with fewer new training rollouts; historical-bank collection is counted separately. It also leads the compared methods on BFCL and NESTFUL without further training. Ablations probe the bank, estimator, and allocation score; prospective evaluation checks forecast calibration. These results support forecasting reward contrast before generation.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-20T18:15:52Z</published>
+    <arxiv:comment>21 pages, 7 figures, 6 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Hieu Tran</name>
+    </author>
+    <author>
+      <name>Zonghai Yao</name>
+    </author>
+    <author>
+      <name>Sunjae Kwon</name>
+    </author>
+    <author>
+      <name>Hong Yu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.28612v1</id>
+    <title>TraceLite: Efficient Trace Reduction for SWE Agents via Optical Compression and Redundancy Removal</title>
+    <updated>2026-10-20T17:53:35Z</updated>
+    <link href="https://arxiv.org/abs/2610.28612v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.28612v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Software engineering agents solve repository-level tasks through iterative tool use, but their continuously growing interaction traces incur substantial token consumption and inference overhead. Existing compression approaches often require model training, auxiliary LLM calls, or assumptions about specific content such as source code. We present TraceLite, a simple yet effective, training-free framework for compressing heterogeneous SWE-agent observations. Our preliminary study shows that optical rendering preserves substantial textual and semantic information under moderate compression, while agent trajectories exhibit both cross-step and phase-level redundancy. Motivated by these findings, TraceLite preserves recent observations as high-fidelity text, renders historical observations as compact images, removes overlapping content, and discards phase-expired observation payloads after code editing. It requires neither offline training nor auxiliary LLM inference. We evaluate TraceLite on SWE-bench Verified and DeepSWE using GPT-5.6-Luna and Gemini-3.8Flash as backbone models. On SWE-bench Verified, TraceLite achieves 78.25% resolve rate, outperforming the evaluated compression baselines while reducing average input-token consumption and API cost by 33.05% and 21.30%, respectively. Moreover, it introduces only 0.438 seconds of compression latency per observation. These results demonstrate that TraceLite improves SWE-agent efficiency with low processing overhead and without compromising issue-resolution capability. Our code is available at https://github.com/xjywhu/TraceLite.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-20T17:53:35Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Jingyu Xiao</name>
+    </author>
+    <author>
+      <name>Qianxi Liu</name>
+    </author>
+    <author>
+      <name>Yintong Huo</name>
+    </author>
+    <author>
+      <name>Yuan Jiang</name>
+    </author>
+    <author>
+      <name>Michael R. Lyu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.28386v1</id>
+    <title>VisualEvolve: A Skill Self-Evolution Framework for Visual Reasoning</title>
+    <updated>2026-10-20T15:37:38Z</updated>
+    <link href="https://arxiv.org/abs/2610.28386v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.28386v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Visual tool use enables vision-language models (VLMs) to acquire task-relevant evidence, but its effectiveness can be limited by predefined visual operations and the tool-use strategies learned during training. Representing these operations and strategies as reusable external skills allows them to be refined through self-evolution without updating model parameters. However, skill refinement can introduce performance regressions. Meanwhile, inspecting accumulated task execution trajectories together with skill evolution history may lead to evolution evidence overload. To address these challenges, we propose VisualEvolve, a self-evolving framework that evolves executable visual operations and tool-use strategies for VLMs through a Select--Execute--Evolve--Evaluate cycle. Skill-Library Snapshot Selection uses performance on a fixed validation set disjoint from execution tasks to select an effective historical snapshot for subsequent evolution, limiting the propagation of performance regressions. Progressive Evidence Access (PEA) guides capability-gap diagnosis through a coarse-to-fine hierarchy comprising the Skill-Performance Report, Evolution Log, Trajectory Summaries, and relevant raw trajectory segments. Across four VLM backbones and six evaluation sets from three benchmarks, VisualEvolve improves over the Initial Skill Library in 23 of 24 settings, with a maximum gain of 15.1 percentage points on VisualProbe Hard using Qwen3.5-Plus. Ablation studies support the contributions of Snapshot Selection and PEA, while further experiments show that skills can be improved using experience from different data settings and directly reused across backbones. Moreover, VisualEvolve enables effective skill self-evolution with over an order of magnitude fewer task-solving trajectories than estimated for representative RL-based methods.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-20T15:37:38Z</published>
+    <arxiv:comment>29 pages, 9 figures. Project page: https://jiaweiwang-ai.github.io/VisualEvolve/</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Jiawei Wang</name>
+    </author>
+    <author>
+      <name>Yucun Li</name>
+    </author>
+    <author>
+      <name>Xueqi Li</name>
+    </author>
+    <author>
+      <name>Shenghao Wang</name>
+    </author>
+    <author>
+      <name>Xinquan Gong</name>
+    </author>
+    <author>
+      <name>Dan Zhang</name>
+    </author>
+    <author>
+      <name>Zheqi Lv</name>
+    </author>
+    <author>
+      <name>Yuquan Le</name>
+    </author>
+    <author>
+      <name>Shaozu Yuan</name>
+    </author>
+    <author>
+      <name>An Zhang</name>
+    </author>
+    <author>
+      <name>Da Cao</name>
+    </author>
+    <author>
+      <name>Tat-Seng Chua</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.28380v1</id>
+    <title>Object-Oriented Harness: Evolving Agent Harnesses through Object-Oriented Design</title>
+    <updated>2026-10-20T15:32:52Z</updated>
+    <link href="https://arxiv.org/abs/2610.28380v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.28380v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Agent harnesses are executable code that specifies the prompts, tools, and control flow around a language model. A single global harness can struggle with heterogeneous tasks that require different execution strategies. In this work, we introduce Object-Oriented Harness (OO-Harness), a harness optimization framework that evolves a hierarchy of executable harness classes using object-oriented design. During training, an evolution agent uses execution records to create a family of specialized harnesses, each implemented as a subclass of the base or an existing specialized harness via inheritance. At test time, a harness router uses routing lessons accumulated during training to select a specific harness for each task. Across three long-horizon benchmarks spanning business workflows, workspace tasks, and tool use, OO-Harness achieves the best performance among the compared methods, with an absolute improvement of up to 15% over the base. Extensive ablation studies examine the contributions of its core components.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-20T15:32:52Z</published>
+    <arxiv:comment>20 pages, 10 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Gaotang Li</name>
+    </author>
+    <author>
+      <name>Bhavana Dalvi Mishra</name>
+    </author>
+    <author>
+      <name>Yifei Ming</name>
+    </author>
+    <author>
+      <name>Yanfei Chen</name>
+    </author>
+    <author>
+      <name>Zhongying CuiZhu</name>
+    </author>
+    <author>
+      <name>Lesly Miculicich</name>
+    </author>
+    <author>
+      <name>Long T. Le</name>
+    </author>
+    <author>
+      <name>Rui Meng</name>
+    </author>
+    <author>
+      <name>Chun-Liang Li</name>
+    </author>
+    <author>
+      <name>Hanghang Tong</name>
+    </author>
+    <author>
+      <name>Chen-Yu Lee</name>
+    </author>
+    <author>
+      <name>Tomas Pfister</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.27889v1</id>
+    <title>Elicitation or Expansion? Demystifying Gains from Agent Harness Optimization</title>
+    <updated>2026-10-20T09:11:39Z</updated>
+    <link href="https://arxiv.org/abs/2610.27889v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.27889v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recent studies in harness optimization have shown substantial performance gains in language model agents without updating model weights. A well-designed harness more effectively leverages the underlying model's capabilities by shaping context, tool use, and execution workflows. However, naïve success rates alone do not fully characterize whether optimized harness yields more reliable success on tasks already within reach (elicitation) or a broader range of solvable tasks (expansion). This distinction is crucial for recursive self-improvement and evolutionary search, as expansion may provide a broader range of successful experiences to push the capability boundaries. Despite the growing significance, this distinction remains underexplored in harness optimization. We conduct a systematic analysis to study the effect of gains from harness optimization. Building on pass@k analyses in the reinforcement learning (RL) literature that compare models before and after RL training, we compare optimized harnesses with their pre-optimization counterparts. Specifically, we assess changes in reachable task coverage, compare harness optimization with model scaling and increased inference-time compute, and examine how gains vary with task difficulty. Across static prediction and dynamic tasks, we find that pass@1 advantages of harness over stronger interventions can reverse at larger attempt budgets and aggregate gains conceal shortfalls on hard tasks, underscoring the need for a fine-grained diagnosis.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-20T09:11:39Z</published>
+    <arxiv:comment>Project page: https://furiosa-air.github.io/elicitation-or-expansion</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Younghyun Kim</name>
+    </author>
+    <author>
+      <name>Wooseok Seo</name>
+    </author>
+    <author>
+      <name>Minseo Kim</name>
+    </author>
+    <author>
+      <name>Seunghyuk Oh</name>
+    </author>
+    <author>
+      <name>Minjae Lee</name>
+    </author>
+    <author>
+      <name>Donghoon Kim</name>
+    </author>
+    <author>
+      <name>Hyung Il Koo</name>
+    </author>
+    <author>
+      <name>Jaehyung Kim</name>
+    </author>
+    <author>
+      <name>Wonjun Kang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.27777v1</id>
+    <title>RITE: Evaluating End-to-End Resilience to Silent Tool Errors in E-Commerce Agentic Systems</title>
+    <updated>2026-10-20T07:42:11Z</updated>
+    <link href="https://arxiv.org/abs/2610.27777v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.27777v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tool-using LLM agents increasingly answer e-commerce queries through multi-step tool interactions. The expected output of a tool call can shift between agent development and execution, allowing a plausible but incorrect value to be returned without an explicit failure signal. These silent errors may propagate through subsequent decisions into final answers. To study agents' resilience across this end-to-end process, we formulate Silent-error Resilience Task, an interactive task that evaluates whether they complete the original query after a silent error corrupts an intermediate state. We introduce RITE, a benchmark built from human-authored industrial workflows and production-log-derived inputs. To enable controlled and reproducible evaluation, we use a semantic error taxonomy to inject errors into fixed workflow prefixes, freeze recorded tool behavior, and let agents continue freely. It contains 167 matched units across nine e-commerce workflows, yielding 501 silent-error, correct-value, and explicit-failure instances. Across 10 recent LLMs, silent errors roughly halve task success and are consistently harder than explicit failures. Recognition, use of an available verification path, and integration of the resulting evidence form successive bottlenecks. We also propose a light State Checker as an intervention to test whether resilience can be improved.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-20T07:42:11Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Wenshuo Zhang</name>
+    </author>
+    <author>
+      <name>Yuquan Lin</name>
+    </author>
+    <author>
+      <name>Yushi Sun</name>
+    </author>
+    <author>
+      <name>Yishi Lin</name>
+    </author>
+    <author>
+      <name>Rui Sheng</name>
+    </author>
+    <author>
+      <name>Peng He</name>
+    </author>
+    <author>
+      <name>Han Gao</name>
+    </author>
+    <author>
+      <name>Wang Jikai</name>
+    </author>
+    <author>
+      <name>Yifeng Rong</name>
+    </author>
+  </entry>
+</feed>

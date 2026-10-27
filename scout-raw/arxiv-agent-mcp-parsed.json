@@ -1,0 +1,504 @@
+[
+  {
+    "id": "2610.26860v1",
+    "title": "OpenVLHarness: Real World Visual Agentic Tool-Use with Multimodal Memory",
+    "authors": [
+      "Yu Zhou",
+      "Cheng-Fu Yang",
+      "Rui Sun",
+      "Di Wu"
+    ],
+    "summary": "Multimodal large language models (MLLMs) have made rapid progress on visual reasoning, yet many tasks require evidence that is difficult to obtain through internal reasoning alone: our controlled study on 22 benchmarks shows that simply increasing the inference budget of the base model yields only modest gains. Such tasks demand grounded perception, external knowledge, and numerical measurements obtained through heterogeneous tools, whose outputs must be made interpretable to the model and retained across reasoning steps. We introduce OpenVLHarness, a multimodal reasoning harness organized aro",
+    "primary": "cs.CL",
+    "cats": [
+      "cs.CL",
+      "cs.AI",
+      "cs.CV",
+      "cs.LG",
+      "cs.MM"
+    ],
+    "published": "2026-10-19T17:59:58Z"
+  },
+  {
+    "id": "2610.26861v1",
+    "title": "Can It Actually Work? Synthesizing Functional CAD Mechanisms",
+    "authors": [
+      "Wenqian Zhang",
+      "Yangyi Huang",
+      "Zigeng Xu",
+      "Weiyang Liu"
+    ],
+    "summary": "While LLM agents can generate visually plausible CAD assemblies, these designs often fail to fulfill their intended physical functions. We study functional CAD design, a setting where agents interpret underspecified requests to construct and iteratively revise mechanisms that satisfy functional requirements in physical simulation. Verifying these requirements is nontrivial: different candidate mechanisms may realize the same function through entirely different components, controls, and operating sequences. To bridge this gap, we propose FunCAD-Harness, a framework that translates abstract requ",
+    "primary": "cs.CV",
+    "cats": [
+      "cs.CV",
+      "cs.CL",
+      "cs.GR"
+    ],
+    "published": "2026-10-19T17:59:58Z"
+  },
+  {
+    "id": "2610.26855v1",
+    "title": "Ropedia W0: Scaling Loco-Manipulation World Models across Embodiments with Human Experience",
+    "authors": [
+      "Tianqi Liu",
+      "Hanfei Zhao",
+      "Qifeng Liang",
+      "Hui En Pang"
+    ],
+    "summary": "World models enable embodied agents to anticipate action consequences, yet jointly modeling locomotion and manipulation across diverse embodiments remains challenging due to heterogeneous action spaces and limited multimodal supervision. We present Ropedia W0, the first egocentric loco-manipulation world foundation model spanning humans and robots with diverse embodiments. We curate Xp-Data, comprising 10k hours of egocentric human data and 3k hours of robot data with unified multimodal annotations and systematic quality control. A unified kinematic representation encodes locomotion through ca",
+    "primary": "cs.CV",
+    "cats": [
+      "cs.CV",
+      "cs.RO"
+    ],
+    "published": "2026-10-19T17:59:55Z"
+  },
+  {
+    "id": "2610.26852v1",
+    "title": "CoopUQ: Robust Multi-Robot Social Navigation via Uncertainty-Aware Cooperative Forecasting",
+    "authors": [
+      "Zehao Wang",
+      "Jianpeng Yao",
+      "Yuping Wang",
+      "Yiping Li"
+    ],
+    "summary": "Reinforcement learning enables mobile robots to make fast and scalable navigation decisions in constrained human-shared environments. However, directly extending single-robot approaches to multi-robot settings often fails to ensure safety and efficiency, especially under occlusions and out-of-distribution (OOD) scenarios, where individual robots may overlook potential risks or make inaccurate predictions. Leveraging cooperation effectively for both prediction and navigation remains a major challenge. We propose CoopUQ, a multi-robot social navigation framework that bridges uncertainty-aware co",
+    "primary": "cs.RO",
+    "cats": [
+      "cs.RO",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "published": "2026-10-19T17:59:49Z"
+  },
+  {
+    "id": "2610.26851v1",
+    "title": "Manga2Animate: An Agentic Framework for Faithful Manga Animation with Script and Storyboard Planning",
+    "authors": [
+      "Sheng-Wei Zhang",
+      "Hsi-An Chen",
+      "Yan-Ting Liou",
+      "Chih-Hsuan Chen"
+    ],
+    "summary": "Adapting existing manga into coherent animation that stays faithful to the source is a valuable yet challenging task. Existing methods either access the manga mainly through text, losing its characters and art style, or feed manga pages directly into video generation models, which misinterpret the manga's structure and produce incorrect storylines. In this paper, we propose Manga2Animate, a multi-agent framework that grounds every stage of generation in the source manga. We decompose the task into two intermediate representations, an animation script and a visual storyboard. Each representatio",
+    "primary": "cs.CV",
+    "cats": [
+      "cs.CV"
+    ],
+    "published": "2026-10-19T17:59:46Z"
+  },
+  {
+    "id": "2610.26849v1",
+    "title": "SARP: An On-SSD Index for KVCache with Fast Prefix Matching and Recovery",
+    "authors": [
+      "Jun Kong",
+      "Qi Lin",
+      "Zhichao Cao"
+    ],
+    "summary": "Distributed LLM serving relies on a global index to locate reusable key-value cache (KVCache) blocks through prefix matching. Losing the index after a crash or restart forces affected requests to recompute existing KVCache on GPUs. Persisting the index restores access after a failure. Existing persistent indexes face a tension between prefix-matching performance and recovery time. A snapshot-backed in-memory index supports fast prefix matching, but rebuilding the full index delays recovery. An on-SSD index avoids this rebuild, but adds storage accesses to prefix matching. Our core insight is t",
+    "primary": "cs.DB",
+    "cats": [
+      "cs.DB"
+    ],
+    "published": "2026-10-19T17:59:39Z"
+  },
+  {
+    "id": "2610.26848v1",
+    "title": "Where is Physical RSI capability from? An Observational Scaling Law of LLM-as-policy",
+    "authors": [
+      "Zekai Li",
+      "Jiayi Yu",
+      "Jinlu Zhang",
+      "Luyang Niu"
+    ],
+    "summary": "In this paper, we systematically investigate the mechanisms, scaling behavior, and generalization of physical Recursive self-improvement. We introduce PhysRSI-eval to quantify physical RSI through a five-axis metric: First-Attempt Performance, Efficiency, Success, Budget and Improvement from failure. Different VLMs are evaluated on 18 manipulation tasks under a fixed interaction budget. The analysis of experimental results motivates the Physical Barrel Hypothesis: different capabilities may constrain different parts of improvement. The five-axis metrics also distinguish systems with close publ",
+    "primary": "cs.RO",
+    "cats": [
+      "cs.RO",
+      "cs.AI",
+      "cs.CV"
+    ],
+    "published": "2026-10-19T17:59:30Z"
+  },
+  {
+    "id": "2610.26847v1",
+    "title": "WeAct: Dynamic Weight Switching as Agent Actions",
+    "authors": [
+      "Rui Shi",
+      "Xunjian Yin",
+      "Jiacheng Sang",
+      "Zichuan Liu"
+    ],
+    "summary": "Long-horizon agents must learn heterogeneous capabilities from interleaved trajectories. Updating shared parameters to learn new capabilities can degrade previously acquired ones, resulting in catastrophic forgetting. As a trajectory unfolds, different stages may require different capabilities, yet conventional joint training and static adapter merging maintain a fixed parameter configuration throughout execution. We introduce WeAct (Weight-level Internal Actions), which trains independent capability-specific LoRA adapters over a frozen backbone and adds adapter selection to the agent's action",
+    "primary": "cs.LG",
+    "cats": [
+      "cs.LG",
+      "cs.AI",
+      "cs.CL"
+    ],
+    "published": "2026-10-19T17:59:19Z"
+  },
+  {
+    "id": "2610.26845v1",
+    "title": "Train An Imaginative Agent",
+    "authors": [
+      "Jiaxin Ge",
+      "Junyi Zhang",
+      "Tianning Chai",
+      "Hanjun Yoo"
+    ],
+    "summary": "A seemingly reasonable push in Sokoban can make the puzzle unsolvable. To avoid such mistakes, an agent has to anticipate the consequences of its actions before execution, especially when feedback from the real environment is sparse or actions are irreversible. We introduce Agentic Imagination (Agima), a training framework that trains an agent to imagine before acting, i.e. to be imaginative. Agima trains a single omni model to propose actions, generate images of their outcomes, and then reason over these imagined futures to decide what to execute in the real environment. Rather than committin",
+    "primary": "cs.AI",
+    "cats": [
+      "cs.AI"
+    ],
+    "published": "2026-10-19T17:59:12Z"
+  },
+  {
+    "id": "2610.26844v1",
+    "title": "AnyGoal: On World Model Generalization Beyond Expert Rollouts",
+    "authors": [
+      "Heejeong Nam",
+      "Divyat Mahajan",
+      "Quentin Le Lidec",
+      "Randall Balestriero"
+    ],
+    "summary": "The goal of a world model is to capture the dynamics of an environment. This has the great appeal that it allows agents to plan and simulate a course of actions with the help of a world model. For these uses to be reliable, however, the learned dynamics must behave well beyond the specific state-action combinations observed in expert rollouts. Despite this, the relationship between data coverage, dynamics generalization, and downstream planning performance remains underexplored. We study this relationship through the lens of compositional generalization: can a world model recombine familiar st",
+    "primary": "cs.AI",
+    "cats": [
+      "cs.AI"
+    ],
+    "published": "2026-10-19T17:59:05Z"
+  },
+  {
+    "id": "2610.26836v1",
+    "title": "Same Simulation, Different Evidence: Where Retrieved Tool Output Costs LLM Agents Accuracy",
+    "authors": [
+      "Ke Zhang",
+      "Sahchit Chundur",
+      "Jerry Peprah Owusu",
+      "Mohammad Javad Abdolhosseini Qomi"
+    ],
+    "summary": "LLM agents that compute the right answer can still answer wrongly. Agent harnesses increasingly keep long tool outputs out of the context window, saving them to files that the agent searches or reads on demand. We ask where this costs accuracy with a real scientific tool: PHREEQC, a widely used geochemistry simulator from the USGS, whose reports reach 846.8k characters and whose determinism lets every printed value be traced. Agents use it to answer 158 execution-verified multiple-choice items. When agents read the simulator's report through a section index rather than in context, GPT-5.1 and ",
+    "primary": "cs.AI",
+    "cats": [
+      "cs.AI"
+    ],
+    "published": "2026-10-19T17:57:41Z"
+  },
+  {
+    "id": "2610.26831v1",
+    "title": "AGR: Agentic Generative Retrieval with Tool-Augmented Search",
+    "authors": [
+      "Ming Yang",
+      "Yaqi Yin",
+      "Zhibo Wang",
+      "Xiaoze Jiang"
+    ],
+    "summary": "Large-scale search and recommendation systems derive much of their retrieval quality from rich, heterogeneous features, yet existing generative retrieval (GR) methods struggle to exploit such feature ecosystems efficiently. Static feature injection either encodes all available signals or places them according to predetermined schemes, increasing serving cost and introducing irrelevant or conflicting evidence. More fundamentally, existing methods cannot adaptively determine when a feature is needed, which feature to select, or where it should influence hierarchical Semantic ID (SID) generation.",
+    "primary": "cs.IR",
+    "cats": [
+      "cs.IR"
+    ],
+    "published": "2026-10-19T17:56:04Z"
+  },
+  {
+    "id": "2610.26829v1",
+    "title": "ProteinGeoBench: Frontier Structural-Biology Agents Are Fluent at Lookup but Lost in Geometry",
+    "authors": [
+      "Matt Turk",
+      "Brandon L. Neel",
+      "Diana M. Lopez",
+      "Zachary D. Smith"
+    ],
+    "summary": "Frontier agents retrieve structural metadata well and compute geometry from coordinates less reliably. We ask how much of a benchmark score reflects that gap and how much reflects the evaluation configuration around the model. We study ProteinGeoBench, a suite of 131 protein-structure tasks, using 4,249 rollouts from four frontier models and 4,486 further trials across 26 models. Three of the four frontier models fall within 0.031 of one another (0.785 to 0.816) with no difference between them resolved, while the fourth scores 0.707 and all three gaps to it exclude zero. Three of the four do b",
+    "primary": "cs.AI",
+    "cats": [
+      "cs.AI",
+      "cs.LG",
+      "q-bio.BM"
+    ],
+    "published": "2026-10-19T17:55:38Z"
+  },
+  {
+    "id": "2610.26828v1",
+    "title": "Agent World Model in the Wild: Computer-Use Agent Environment Synthesis",
+    "authors": [
+      "Zhaoyang Wang",
+      "Qianhui Wu",
+      "Haorui Wang",
+      "Simon Yu"
+    ],
+    "summary": "Agent learning is shifting from learning from human data toward learning through interaction with the world. However, scaling such learning directly in real-world computer systems is challenging and can introduce substantial security risks. We therefore propose Agent World Model in the Wild (WildAWM), a scalable pipeline for synthesizing controllable environments and tasks for training general computer-use agents (CUAs). Whereas existing approaches typically specialize in a single agent interaction interface, we construct executable environments that jointly support graphical user interfaces, ",
+    "primary": "cs.AI",
+    "cats": [
+      "cs.AI",
+      "cs.CL",
+      "cs.LG"
+    ],
+    "published": "2026-10-19T17:55:35Z"
+  },
+  {
+    "id": "2610.26826v1",
+    "title": "RefCraft: Benchmarking Visual-Reference-Conditioned Agentic Generation through Web Development",
+    "authors": [
+      "Yuchi Wang",
+      "Rongyao Fang",
+      "Weihao Yu",
+      "Xilin Wei"
+    ],
+    "summary": "Beyond basic tool use and coding skills, effectively incorporating visual references into agentic generation is equally essential for applying AI agents to real-world productivity tasks. We study this crucial capability through webpage development, a practical and readily evaluable setting in which existing benchmarks remain largely idealized: they typically focus on reconstructing visual targets or generating webpages from textual instructions alone, overlooking the more common workflow of developing from visual examples. Specifically, we introduce RefCraft, a benchmark comprising 300 realist",
+    "primary": "cs.CL",
+    "cats": [
+      "cs.CL",
+      "cs.AI",
+      "cs.CV"
+    ],
+    "published": "2026-10-19T17:55:06Z"
+  },
+  {
+    "id": "2610.26825v1",
+    "title": "MemT-1.0: Towards Memory-Native Evolution",
+    "authors": [
+      "Zhiyu Li",
+      "Zeyu Zhang",
+      "Linyun Liu",
+      "Yiwei Bu"
+    ],
+    "summary": "Memory-native evolution requires making memory an intrinsic capability of foundation models, enabling them to continuously accumulate and utilize information. To this end, we introduce MemT-1.0, a new architecture of memory foundation models that internalize memory as part of model computation. Building on Metis, MemT-1.0 employs Gated DeltaNet-2 with a stable token-level memory update mechanism within each turn. We further introduce Mixture-of-Storage to scale native memory capacity. Following a deliberate backbone preparation, we develop a two-stage training pipeline consisting of continued ",
+    "primary": "cs.CL",
+    "cats": [
+      "cs.CL",
+      "cs.LG"
+    ],
+    "published": "2026-10-19T17:54:35Z"
+  },
+  {
+    "id": "2610.26819v1",
+    "title": "ASTOR: Benchmarking and Improving Autoformulation for Soft-Constraint Optimization with a Formal Grammar",
+    "authors": [
+      "Amer Goel",
+      "Yeganeh Alimohammadi",
+      "Andrew Daw"
+    ],
+    "summary": "Real-world decision problems combine two qualitatively different kinds of constraints: requirements that must be satisfied, called hard constraints, and preferences that can be violated, called soft constraints. Because these problems are often posed to decision-makers in natural language, large language models offer a natural tool for assisting with their solution. This has given rise to autoformulation, which focuses on using LLMs to translate natural-language descriptions of decision problems into executable mathematical optimization models. However, this research often neglects soft constr",
+    "primary": "cs.CL",
+    "cats": [
+      "cs.CL"
+    ],
+    "published": "2026-10-19T17:52:35Z"
+  },
+  {
+    "id": "2610.26805v1",
+    "title": "What Language Adds, and at What Cost: Four Controlled Probes of Pathology Vision-Language Models",
+    "authors": [
+      "Wenhao Zhang",
+      "Zhongliang Zhou",
+      "Yi Ping",
+      "Zirui Wang"
+    ],
+    "summary": "Vision--language models (VLMs) promise to make computational pathology queryable and able to draft reports, but how much language adds beyond the vision backbone is unclear, because almost every system is evaluated by its developers on test sets of their own choosing. We grade published evidence by how it was produced and test four claims with controlled probes that reuse released checkpoints and public data, varying one input at a time. Report text adds prognostic signal: adding a frozen embedding of the stage-redacted report to a slide embedding raises the pooled C-index by 0.019 for progres",
+    "primary": "cs.CV",
+    "cats": [
+      "cs.CV",
+      "q-bio.QM"
+    ],
+    "published": "2026-10-19T17:48:31Z"
+  },
+  {
+    "id": "2610.26799v1",
+    "title": "Accountable partial understanding: securing the epistemic attack surface of agentic systems",
+    "authors": [
+      "Josiah Dykstra"
+    ],
+    "summary": "Attackers profit from what defenders do not understand. Software security has treated the gap between system behavior and human comprehension as a condition to narrow through analysis and assurance, booking the remainder as accepted risk. Agentic AI systems change that gap: when software reads, writes, explains, and authorizes security-relevant behavior, partial understanding moves faster, grows more opaque, and couples to delegated authority. This paper characterizes the resulting epistemic attack surface and presents a taxonomy of four interacting attack categories, which target the interpre",
+    "primary": "cs.CR",
+    "cats": [
+      "cs.CR"
+    ],
+    "published": "2026-10-19T17:44:48Z"
+  },
+  {
+    "id": "2610.26789v1",
+    "title": "Cooperative Multi-Agent Reinforcement Learning for Market Making on Prediction-Market Order Books",
+    "authors": [
+      "Skander Lejmi"
+    ],
+    "summary": "A market maker provides liquidity by quoting prices to buy and sell an asset, earning the spread while managing inventory risk. We study market makers trained with multi-agent reinforcement learning on prediction markets, specifically Polymarket, whose thin order books pose distinct challenges. Three challenges underpin this research: adverse selection may cause a policy trained on real data to stop quoting; the consequences of a quote can arrive many steps after the action; and prediction-market L2 data does not identify individual orders needed for simulation. We address these challenges by ",
+    "primary": "stat.ML",
+    "cats": [
+      "stat.ML",
+      "cs.LG",
+      "cs.MA",
+      "q-fin.TR"
+    ],
+    "published": "2026-10-19T17:38:36Z"
+  },
+  {
+    "id": "2610.26781v1",
+    "title": "Game of Phones: Harnessing Game Theory and LLMs in 'Bot Wars' to Counteract Phone Scams",
+    "authors": [
+      "Nardine Basta",
+      "Robin Carpentier",
+      "Benjamin Zi Hao Zhao",
+      "Dali Kaafar"
+    ],
+    "summary": "Phone scams impose substantial and growing costs on individuals and financial systems worldwide, yet existing countermeasures impose no resource cost on perpetrators. Strategic scam-baiting, in which automated agents engage scammers to deplete their operational capacity, offers a proactive alternative but requires dynamic strategy adaptation that static systems cannot provide. We introduce a game-theoretic framework enabling LLMs to learn effective counter-strategies through in-context experience without fine-tuning. The framework models scammer-baiter interactions as a two-player game with em",
+    "primary": "cs.CR",
+    "cats": [
+      "cs.CR",
+      "cs.AI",
+      "cs.CL",
+      "cs.GT"
+    ],
+    "published": "2026-10-19T17:35:02Z"
+  },
+  {
+    "id": "2610.26777v1",
+    "title": "Topological Sheaves of Irreducibility: A Theoretical Framework for Multi-Agent Task Obstructions",
+    "authors": [
+      "Steven Motta",
+      "Davide Mambelli",
+      "Alessandro Rozza"
+    ],
+    "summary": "Multi-agent systems can differ under identical agents and communication budgets when they support different forms of joint interaction. We introduce Topological Sheaves of Irreducibility (TSI), a sheaf-theoretic framework separating task-level compatibility obstructions from system capability. A task is represented by an interaction complex $K$ and a capacity sheaf $\\mathcal{F}$; nonzero $H^n(K;\\mathcal{F})$ defines a structural signature, while registered interventions test capability. For cocycle data, cochain realization is solvable exactly when the represented cohomology class vanishes. Ex",
+    "primary": "cs.LG",
+    "cats": [
+      "cs.LG",
+      "cs.MA"
+    ],
+    "published": "2026-10-19T17:30:40Z"
+  },
+  {
+    "id": "2610.26770v1",
+    "title": "HarnessPro: Recursive Harness Self-Improvement with Pareto Optimization for Performance-Cost Trade-offs",
+    "authors": [
+      "Zhuoshi Pan",
+      "ZhiYuan Feng",
+      "Yukuo Cen",
+      "Honglin Lin"
+    ],
+    "summary": "Harness development plays a crucial role in building capable AI agents. Recent approaches improve harnesses through recursive self-improvement (RSI), but their performance gains often come with higher execution costs. We introduce HarnessPro, a label-free method for evolving harnesses to improve task performance while reducing execution cost. In this setting, candidate harnesses are evaluated using LLM-generated tests without access to ground-truth solutions or official tests. Specialized agents diagnose execution trajectories, plan updates with different performance-cost priorities, and imple",
+    "primary": "cs.LG",
+    "cats": [
+      "cs.LG",
+      "cs.CL"
+    ],
+    "published": "2026-10-19T17:27:38Z"
+  },
+  {
+    "id": "2610.26743v1",
+    "title": "FOMTools: Development and AI-Assisted Code Generation for First-Order Methods",
+    "authors": [
+      "Vinit Ranjan",
+      "Daniel Deza",
+      "Anushka Acharya",
+      "Jisun Park"
+    ],
+    "summary": "We present FOMTools, an open-source Python package for developing, analyzing, and deploying first-order algorithms for parametric linear and convex quadratic optimization. The user specifies an iteration in Python, with syntax close to its mathematical description. The package represents the iteration as a computation graph of affine and piecewise affine operations. To analyze worst-case performance, FOMTools formulates a mixed-integer verification problem that maximizes a convergence residual over a specified set of problem instances and initial iterates. For probabilistic performance analysi",
+    "primary": "math.OC",
+    "cats": [
+      "math.OC"
+    ],
+    "published": "2026-10-19T17:08:17Z"
+  },
+  {
+    "id": "2610.26714v1",
+    "title": "HoloCosm: Beyond Single-Metric Benchmark Compression Across Multiple Metrics",
+    "authors": [
+      "Yupei Lin",
+      "Zhongzhan Huang",
+      "Junxin Li",
+      "Guoming Ling"
+    ],
+    "summary": "Benchmark compression reduces evaluation cost by selecting a small set of samples. Existing methods typically guide selection using a single metric, although benchmarks often assess models along multiple dimensions. We find that model rankings are often weakly correlated across metrics, indicating that different metrics capture distinct aspects of model performance. Samples selected for one metric do not reliably preserve scores and rankings on others when used for compressed evaluation. At 80\\% compression, each of the five single-metric baselines yields higher reconstruction error than equal",
+    "primary": "cs.CL",
+    "cats": [
+      "cs.CL"
+    ],
+    "published": "2026-10-19T16:47:29Z"
+  },
+  {
+    "id": "2610.26711v1",
+    "title": "PVBench: Quantifying Physical Plausibility in Video Generation with Object-Level Physical Measurements",
+    "authors": [
+      "Kaiwei Chen",
+      "Moran Li",
+      "Zhenye Gan",
+      "Yabiao Wang"
+    ],
+    "summary": "Recent video generation models produce visually compelling outputs, yet their physical plausibility remains poorly measured. Physical plausibility asks whether generated objects obey geometry, kinematics, dynamics, and conservation laws. Existing benchmarks rely on coarse visual-language model judgments or target embodied world models rather than video generation itself. We introduce PVBench, a physical video benchmark that quantitatively measures the plausibility of generated videos across 46 dimensions organized into seven domains, spanning: i) instruction and semantic fidelity, ii) behavior",
+    "primary": "cs.CV",
+    "cats": [
+      "cs.CV"
+    ],
+    "published": "2026-10-19T16:44:45Z"
+  },
+  {
+    "id": "2610.26703v1",
+    "title": "Comparing Computer Use Behavior Across Multiple Levels of Abstraction",
+    "authors": [
+      "Ananya Gubbi Mohanbabu",
+      "Rosiana Natalie",
+      "Anhong Guo",
+      "Amy Pavel"
+    ],
+    "summary": "Interaction traces record how people and agents use computers, and comparing them can reveal usability barriers, differences in expertise, and human--agent similarity. Yet traces are recorded as low-level, interface-specific actions, making comparisons difficult across tasks, interfaces, and input modalities. Existing approaches either compare these actions directly, reduce traces to aggregate outcomes, or summarize them at higher-level goals, obscuring where behavior differs. We present MAP (Multi-level Action Parsing), a hierarchical semantic representation and annotation pipeline that maps ",
+    "primary": "cs.HC",
+    "cats": [
+      "cs.HC"
+    ],
+    "published": "2026-10-19T16:39:11Z"
+  },
+  {
+    "id": "2610.26679v1",
+    "title": "StepBench: Diagnosing Real-World Procedural Understanding in AI Agents",
+    "authors": [
+      "Hossein A. Rahmani",
+      "Bin Wu",
+      "Chaeeun Lee",
+      "Fanghua Ye"
+    ],
+    "summary": "Evaluating an agent's planning ability remains challenging for open-domain tasks, where verifying procedures through execution is often impractical. Existing evaluations typically assess only the final plan and do not distinguish procedural errors such as missing, incorrect, or misordered actions. We introduce STEPBENCH, a benchmark of 6,885 verified procedures crawled from wikiHow across 81 open-domain categories. From each procedure, we derive 5 diagnostic tasks: four with deterministic answers involving withheld, incorrect, or shuffled steps, and one requiring next-step generation. We addit",
+    "primary": "cs.AI",
+    "cats": [
+      "cs.AI"
+    ],
+    "published": "2026-10-19T16:27:14Z"
+  },
+  {
+    "id": "2610.26676v1",
+    "title": "Which Model for Which Role? Cost-Efficient Pareto Recommendation for LLM Agentic Workflows",
+    "authors": [
+      "Qian Xie",
+      "Wenyue Hua",
+      "Yueli He",
+      "Sripad Karne"
+    ],
+    "summary": "LLM agentic workflows increasingly employ different models for specialized roles. Users may prefer different trade-offs between task quality and deployment cost, sometimes also considering latency. Finding good assignments incurs a separate search cost from evaluating multiple candidates. We introduce Cost-Coupled Gittins (CC-Gittins), a multi-objective extension of single-objective cost-aware Gittins search for Pareto recommendation. It exploits the coupling between evaluation and deployment costs: assignments that cost more to deploy also cost more to evaluate. The search alternates between ",
+    "primary": "cs.LG",
+    "cats": [
+      "cs.LG",
+      "cs.CL",
+      "stat.ML"
+    ],
+    "published": "2026-10-19T16:25:07Z"
+  },
+  {
+    "id": "2610.26671v1",
+    "title": "PACT: Plan-Augmented Coordination via Trace-Graphs for Dynamic Multi-Agent Combinatorial Optimization",
+    "authors": [
+      "Xiao Zhou",
+      "Alex Schutz",
+      "Victor-Alexandru Darvariu",
+      "Nick Hawes"
+    ],
+    "summary": "Multi-agent approaches have been investigated recently as a means of improving the scalability of reinforcement learning for neural combinatorial optimization. Existing methods assume that all problem instance information is known upfront. However, real-world problems are often dynamic: relevant information is progressively revealed as the agents take actions (e.g., arriving at an edge in a routing problem only to discover it is untraversable). In such cases, existing methods fail to coordinate agents to explore and exploit the progressively revealed information. To address the arising coordin",
+    "primary": "cs.LG",
+    "cats": [
+      "cs.LG"
+    ],
+    "published": "2026-10-19T16:22:22Z"
+  }
+]

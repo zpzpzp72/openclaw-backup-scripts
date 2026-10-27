@@ -1,0 +1,585 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/mjJqPNGrKAnZmHmmrWZtQkMKEvM</id>
+  <title>arXiv Query: search_query=cat:cs.MA AND submittedDate:"202610170000 TO 202610202359"&amp;id_list=&amp;start=0&amp;max_results=30</title>
+  <updated>2026-10-20T13:33:03Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=cat:cs.MA+AND+submittedDate:%22202610170000+TO+202610202359%22&amp;start=0&amp;max_results=30&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>30</opensearch:itemsPerPage>
+  <opensearch:totalResults>23</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2610.26789v1</id>
+    <title>Cooperative Multi-Agent Reinforcement Learning for Market Making on Prediction-Market Order Books</title>
+    <updated>2026-10-19T17:38:36Z</updated>
+    <link href="https://arxiv.org/abs/2610.26789v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.26789v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>A market maker provides liquidity by quoting prices to buy and sell an asset, earning the spread while managing inventory risk. We study market makers trained with multi-agent reinforcement learning on prediction markets, specifically Polymarket, whose thin order books pose distinct challenges. Three challenges underpin this research: adverse selection may cause a policy trained on real data to stop quoting; the consequences of a quote can arrive many steps after the action; and prediction-market L2 data does not identify individual orders needed for simulation. We address these challenges by reconstructing order-level LOBSTER-format data from Polymarket and training agents in JaxMARL-HFT on 417 real markets. We enrich the baseline market maker's observation space with the book and recent flow, redesign its actions and inventory controls, and propose a cooperative multi-agent decomposition into a quoter and a risk manager trained using recurrent Independent Proximal Policy Optimisation (IPPO) with RNN policies. We investigate reward shaping, particularly reward blending and post-fill markout, to mitigate credit-assignment difficulties between the agents. Our redesigned single-agent market maker quotes more frequently and incurs smaller held-out losses than the retrained JaxMARL-HFT baseline, although the contributions of jointly changed observations, actions and risk constraints are not separately identified. Decomposition alone performs poorly; careful reward design substantially improves the desk relative to the unshaped split and yields our best result. Models are evaluated on realised end-of-episode portfolio value on held-out markets. None establishes positive average portfolio value in periodic held-out evaluation, and each configuration was trained with one seed. The environment, data and protocol lay a foundation for makers that quote many linked markets at once.</summary>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="q-fin.TR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-19T17:38:36Z</published>
+    <arxiv:comment>50 pages, 8 figures, 7 tables. Extended version of a paper accepted at ICAIF 2026 Workshop on AI-Driven Market Microstructure. MSc dissertation, London School of Economics and Political Science (2026)</arxiv:comment>
+    <arxiv:primary_category term="stat.ML"/>
+    <author>
+      <name>Skander Lejmi</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.26777v1</id>
+    <title>Topological Sheaves of Irreducibility: A Theoretical Framework for Multi-Agent Task Obstructions</title>
+    <updated>2026-10-19T17:30:40Z</updated>
+    <link href="https://arxiv.org/abs/2610.26777v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.26777v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Multi-agent systems can differ under identical agents and communication budgets when they support different forms of joint interaction. We introduce Topological Sheaves of Irreducibility (TSI), a sheaf-theoretic framework separating task-level compatibility obstructions from system capability. A task is represented by an interaction complex $K$ and a capacity sheaf $\mathcal{F}$; nonzero $H^n(K;\mathcal{F})$ defines a structural signature, while registered interventions test capability. For cocycle data, cochain realization is solvable exactly when the represented cohomology class vanishes. Examples show that the signature is sheaf-relative, and the degree-1 reduction yields cycle-space witnesses and observation requirements. We evaluate two finite one-round models. Across 15,625 degree-1 inputs, an all-agent additive primitive solves decision and repair exactly; the optimal pairwise system reaches 88.80% on decision, one input above the 88.79% majority-class baseline, and 26.63% on repair. On a degree-2 tetrahedral-boundary task over 531,441 inputs, the same-2-skeleton system retains all four three-agent primitives yet matches the pairwise-only optimum throughout the registered separation window, whereas adding the class-filling four-agent primitive makes both tasks exact. Status-preserving robustness checks retain exact performance but are not cost-matched to the class-restoring ablation. Conditional on the registered primitives and cost models, TSI provides task-relative, falsifiable tests of higher-order interaction.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-19T17:30:40Z</published>
+    <arxiv:comment>31 pages, 1 figure, 3 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Steven Motta</name>
+    </author>
+    <author>
+      <name>Davide Mambelli</name>
+    </author>
+    <author>
+      <name>Alessandro Rozza</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.26369v1</id>
+    <title>Autonomous intelligence for mining productivity: a multi-agent AI approach to operational value creation</title>
+    <updated>2026-10-19T13:24:44Z</updated>
+    <link href="https://arxiv.org/abs/2610.26369v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.26369v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Integrated Remote Operation Centres (IROCs) are emerging as the architectural frontier of Industry 4.0 for capital-intensive sectors such as mining, oil and gas, and energy. Yet two intertwined gaps constrain their evolution towards full autonomy. First, no integrated agentic architecture has been proposed for mining IROCs that orchestrates Supervisory Control and Data Acquisition systems, digital twins, predictive analytics and human-machine interfaces under safety-critical constraints. Second, no evaluation framework jointly addresses the real-time, Health-Safety-Environment, regulatory-auditability and cost-per-decision requirements that govern industrial agentic deployments. This paper makes four contributions. It synthesises industry needs and quantified gains documented in analogous industries that motivate an agentic approach to mining IROCs. It introduces EI2ROC, a three-tier multi-agent architecture combining a Large Language Model orchestrator with specialised monitoring and production-capacityprediction agents communicating through a Model Context Protocol-style tool interface. It provides a critical review of agentic evaluation along six orthogonal dimensions and identifies the industrial blind spot of current benchmarks. Finally, it proposes a multi-dimensional benchmarking framework for industrial agentic AI comprising scenario library, harness, metrics and humancalibration protocol. The paper states explicitly which components are implemented in the current prototype, which belong to the proposed reference design and which remain future work, and reports preliminary cost and latency observations from an operating site. Together, EI2ROC and the benchmarking framework constitute a methodological blueprint transferable across CAPEX intensive industries.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-19T13:24:44Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <arxiv:journal_ref>Strategic Mine Planning 2026, Nov 2026, Perth (Australia), Australia</arxiv:journal_ref>
+    <author>
+      <name>N Guerin</name>
+      <arxiv:affiliation>CGS i3</arxiv:affiliation>
+    </author>
+    <author>
+      <name>A Dehoux</name>
+      <arxiv:affiliation>ERAMET</arxiv:affiliation>
+    </author>
+    <author>
+      <name>M Nakhla</name>
+      <arxiv:affiliation>CGS i3</arxiv:affiliation>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.26359v1</id>
+    <title>Discovery-Probability Graph Planning for Embodied Agents in Tasks with Hidden Cooperation Requirements</title>
+    <updated>2026-10-19T13:20:42Z</updated>
+    <link href="https://arxiv.org/abs/2610.26359v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.26359v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Embodied agents are increasingly capable of perceiving, planning, and acting autonomously in dynamic environments, demonstrating strong performance on complex cooperative tasks. Recent advances typically assume that cooperative tasks are known in advance. In real-world applications, however, hidden-cooperation tasks are more common: the need for cooperation only becomes apparent after an agent observes and interacts with task-related targets. In this paper, we first present HiddenCoop, a benchmark for effectively evaluating agent cooperation in hidden-cooperation tasks. We further propose Discovery-Probability Graph Planning (DPGP), a method for enabling effective agent cooperation in such tasks. At the core of DPGP is a discovery-probability graph that encodes the probability distribution over the number and locations of task-related targets, facilitating effective and efficient information exchange among agents. A search algorithm is then used to derive action plans that minimize expected costs. Experiments show that DPGP achieves cooperative-task success rates of 99.3% on C-WAH and 58.3% on TDW-MAT, surpassing all compared baselines, while also reducing overall embodied execution time and substantially lowering LLM token usage. Our code is available at https://github.com/hnu-vis/DPGP.</summary>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-19T13:20:42Z</published>
+    <arxiv:comment>25 pages, 6 figures, including appendices</arxiv:comment>
+    <arxiv:primary_category term="cs.MA"/>
+    <author>
+      <name>Zihuang Cai</name>
+    </author>
+    <author>
+      <name>Changjian Chen</name>
+    </author>
+    <author>
+      <name>Zhuo Tang</name>
+    </author>
+    <author>
+      <name>Chang Tang</name>
+    </author>
+    <author>
+      <name>Kenli Li</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.26324v1</id>
+    <title>The Control Layer Behind Rule-Following Agents Trading Across Market Conditions</title>
+    <updated>2026-10-19T13:01:10Z</updated>
+    <link href="https://arxiv.org/abs/2610.26324v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.26324v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Trading discipline often fails people. Our study tested whether four AI trading agents followed their strategies and risk rules. Offering traders the evidence and an agent evaluation toolkit to separate luck from following the rules, before giving agents meaningful autonomy or capital. Our study analysed 2,627 closed positions from 12 February to 27 August 2026 across the same asset universe and execution conditions. Most positions were simulated against live prices with a 0.09% round-trip fee; 18% involved real Hyperliquid orders. Each position declared a strategy, stop and target, with a limit of five open positions per agent. The fleet finished net positive after fees. Rule adherence was high across all four agents, including the unprofitable one. Profitability tracked how often agents won relative to their break-even win rates. Institutional-style controls ran by default and contained losses through a 29% market drawdown and recovery, with documented exceptions. The discipline held for all four agents. Agents kept 97.5% of gross loss within declared stops, and typical losses closed at declared levels. Declared risk remained stable after losses and broadly stable across calm and volatile months. Twenty-three of 24 runs respected the position limit; logs identify the exception's size and duration. The same live data produced different results across assigned strategies. The trade-log tests can be rerun from the published trade snapshot; regime tests also require the published Bitcoin prices and regime labels. Section 3.5 specifies the stop-breach tolerance. These trade-level results are not account-level returns or proof of a lasting edge. Our study provides an evaluation toolkit to help traders distinguish rule-following from luck before committing capital. For anyone considering allocating capital to agents to trade, discipline should be the entry test, not the only test.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="q-fin.RM" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="q-fin.TR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-19T13:01:10Z</published>
+    <arxiv:comment>47 pages, 0 figures, 16 numbered tables. Includes a trading-agent evaluation toolkit and checklist</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Saad Naja</name>
+    </author>
+    <author>
+      <name>Nasser Odtallah</name>
+    </author>
+    <author>
+      <name>Jake Van-Praag</name>
+    </author>
+    <author>
+      <name>Sarah May</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.26272v1</id>
+    <title>Bidirectionality is Necessary in Cellular Machines for Exact-Arrival Multi-Agent Path Finding</title>
+    <updated>2026-10-19T12:28:00Z</updated>
+    <link href="https://arxiv.org/abs/2610.26272v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.26272v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>On ranked directed acyclic graphs coupled by vertex conflicts we study exact-arrival multi-agent path finding (departure and arrival pinned in place and time) posed as a distributed output task: every cell must emit its own bit of a valid joint path-support mask. The machines are cellular: one automaton per cell, state factored over cells, communication only along a fixed local fabric, synchronous rounds, a query-independent output round, no central decoder, and a per-topology transition code. "Necessary" here means: on an explicit hard topology, over all its feasible queries, no universally correct local-only architecture can renounce either temporal orientation; with global flags, impossibility becomes a bandwidth-round trade-off. The class is not vacuous: a flooding machine solves every instance in as many rounds as the diameter of the local fabric. The bound survives two concessions: we supply every agent's exact individual cavity, which alone solves the single-agent problem in zero rounds and makes the single-agent direction theorem vacuous; and we allow $k$ one-bit global aggregate flags. On a twelve-cell, two-agent, depth-three topology no forward-only machine with $k=0$ is correct on two feasible queries, for any number of rounds; the time-reversed topology does the same to backward-only machines. Placing $p$ copies side by side gives, for forward-only machines, $J_R+kR\ge p$ at constant depth, where $J_R$ measures how much of the query reaches the targets' cones and is $0$ here. A backward-only machine solves that family in constant rounds and a flag-streaming one in $\lceil p/k\rceil+O(1)$, so the bound is tight in order; on the composite family neither orientation can be renounced. The finite lemmas of the gadget and the pair-invariance contradictions are checked in Lean 4; the semantic bridge, the cone lemma and the counting are paper proofs. We report no benchmarks.</summary>
+    <category term="cs.ET" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.DC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-19T12:28:00Z</published>
+    <arxiv:comment>33 pages. Ancillary files: Lean 4 development for the finite gadget (theoremA.lean), exhaustive check scripts with frozen expected outputs, reproduction README and clean-run log. Companion paper: "Stability Certifies Validity: Amoeba-Inspired Rule Systems for SAT and Single-Agent Trajectory Constraints, Machine-Checked in Lean 4"</arxiv:comment>
+    <arxiv:primary_category term="cs.ET"/>
+    <author>
+      <name>Masashi Aono</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.26106v1</id>
+    <title>A GPU-Resident Pipeline for Multi-Robot 3D Inspection with Limited Perception</title>
+    <updated>2026-10-19T10:02:12Z</updated>
+    <link href="https://arxiv.org/abs/2610.26106v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.26106v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We present a complete, GPU-resident pipeline for multi-robot 3D inspection of underwater structures. Given a triangle mesh and a fleet of $K$ robots, each carrying a short-range, limited field-of-view camera, the pipeline computes 6-DOF trajectories that jointly cover a target fraction of the surface while minimizing a linearly interpolated makespan/total-cost objective. The joint problem is NP-hard, so we decompose it into five core stages - candidate viewpoint generation, visibility computation, set cover, min-max vehicle routing solved as a mixed integer program (MIP) with lifted Miller-Tucker-Zemlin subtour elimination, and priority-based multi-agent path finding with continuous-time inter-robot conflict checking - flanked by mesh loading and surface sampling as preprocessing and by trajectory smoothing as postprocessing. Our contributions are: an end-to-end GPU-accelerated integration of the five stages, with its kernel design documented; a GPU batch adaptation of Lien's $\varepsilon$-visibility with four custom CUDA kernels; a $β$-aware per-vehicle tour upper bound derived from the interpolated objective, supplementing the Desrochers-Laporte coefficient lift with forbidden-pair cuts; a 4D space-time extension of Zhou and Zeng's GPU parallel-frontier A*; and an experimental evaluation on 14 meshes (up to $7.2$M faces) that ablates the routing cuts and the parallel-frontier search, audits collision freedom and waypoint attainment \emph{after} trajectory smoothing, and measures the end-to-end gap against analytical and LP-relaxation lower bounds. Code and raw results are publicly available.</summary>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-19T10:02:12Z</published>
+    <arxiv:primary_category term="cs.RO"/>
+    <author>
+      <name>Kryštof Pšenička</name>
+    </author>
+    <author>
+      <name>Stefan Edelkamp</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.25966v1</id>
+    <title>Behavioral Probes for Information Flow in LLM Swarms</title>
+    <updated>2026-10-19T07:59:29Z</updated>
+    <link href="https://arxiv.org/abs/2610.25966v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.25966v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Most existing approaches to LLM swarm optimization are utility-driven, focusing on final task utility while leaving the processing, integration, and reliance of information within individual interactions largely implicit. To address this, we study LLM swarm interactions from an information-flow-based view and introduce behavioral probes to quantify information flow patterns. Specifically, we repurpose External Context Score (ECS) and Parametric Knowledge Score (PKS)---originally designed for hallucination analysis---to measure a node's external-context dependence and parametric-knowledge dependence, respectively. Across controlled and realistic swarm settings, we observe consistent patterns: ECS increases with input relevance and distinguishes useful multi-source contributions, while PKS decreases as informative context accumulates. Building on this heuristic interpretation, we demonstrate how these probes can complement utility-driven structure optimization in two controlled applications. Probe-guided node pruning reduces redundant communication and token consumption, and probe-guided reasoning-path search accelerates convergence compared to utility-only baselines. Our empirical results suggest that behavioral probes can make the internal information flow of LLM swarms observable and serve as effective auxiliary signals for structure optimization.</summary>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-19T07:59:29Z</published>
+    <arxiv:comment>Accepted at NeurIPS 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.MA"/>
+    <author>
+      <name>Junhui Chen</name>
+    </author>
+    <author>
+      <name>Yu Zhang</name>
+    </author>
+    <author>
+      <name>Lantian Li</name>
+    </author>
+    <author>
+      <name>Dong Wang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.25851v1</id>
+    <title>Learning Who Talks to Whom: Role-Aware Communication Topology Scheduling for Efficient LLM Multi-Agent Collaboration</title>
+    <updated>2026-10-19T06:07:25Z</updated>
+    <link href="https://arxiv.org/abs/2610.25851v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.25851v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Multi-agent systems driven by large language models (LLMs) rely on structured communication topologies to facilitate information exchange and collaborative reasoning. However, effectively scheduling these topologies to dynamically determine who talks to whom and when to communicate remains a fundamental challenge in balancing collective reasoning performance against exponential token overhead. Existing topology scheduling approaches either enforce static communication graphs that cannot adapt to dynamic problem-solving states, or overlook agent role complementarity while failing to explicitly incorporate the synthesized graph structure into team-level decision evaluation. To tackle these limitations, we propose ACTS, a role-aware adaptive communication topology scheduling framework for efficient LLM multi-agent collaboration. Orchestrated within a Centralized Training with Decentralized Execution (CTDE) paradigm, ACTS introduces a novel dual-attention mechanism. Specifically, a Role-conditioned Relational Attention module dynamically selects variable-cardinality interaction partners based on agent roles and evolving execution states, while a Topological Attention Mixer explicitly embeds the directed communication topology into team value decomposition for precise credit assignment. Comprehensive evaluations across 9 challenging benchmarks covering code generation, multi-step reasoning, general knowledge, and competitive mathematics demonstrate that ACTS consistently outperforms state-of-the-art baselines, boosting average accuracy by up to 6.19 percentage points while reducing token consumption by over 15%. The project website is available at https://acts-mas.github.io/ACTS/.</summary>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-19T06:07:25Z</published>
+    <arxiv:comment>Project website: https://acts-mas.github.io/ACTS/</arxiv:comment>
+    <arxiv:primary_category term="cs.MA"/>
+    <author>
+      <name>Haibin Li</name>
+    </author>
+    <author>
+      <name>Wenya Yu</name>
+    </author>
+    <author>
+      <name>Xuefeng Jiang</name>
+    </author>
+    <author>
+      <name>Jia Li</name>
+    </author>
+    <author>
+      <name>Xiao Han</name>
+    </author>
+    <author>
+      <name>Shuai Su</name>
+    </author>
+    <author>
+      <name>Wei Wei</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.25748v1</id>
+    <title>MAPS: A Multi-Agent Personalized Script-Driven Video Advertising System Enhanced by Reinforcement Learning</title>
+    <updated>2026-10-19T04:00:27Z</updated>
+    <link href="https://arxiv.org/abs/2610.25748v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.25748v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>With the rapid growth of online video consumption, video advertising has become a dominant component of digital advertising. Most personalized video advertising systems follow a retrieval-based paradigm, which matches ad content with user preferences in a feature space and recommends the most similar candidates. However, since the candidate creatives are pre-produced, this paradigm limits the granularity of personalization and leads to performance disparities across diverse user groups. To address this limitation, we propose a multi-agent personalized script-driven video advertising system (MAPS). We design four collaborative agents that form a closed-loop pipeline of user profile modeling, script generation, video synthesis, and feedback-driven iterative refinement. To train the Scripter Agent, we develop a reinforcement learning framework equipped with a multi-dimensional reward function, which steers the agent toward producing scripts that simultaneously align with user content preferences and target product information. Extensive offline experiments on representative datasets demonstrate that our approach achieves encouraging performance in generating and integrating personalized creatives. Online A/B experiments in a specific scenario in the Kuaishou advertising system show that MAPS improves CTR by 2.87%, CVR by 2.74%, and ARPU by 9.85% over the generative baseline.</summary>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-19T04:00:27Z</published>
+    <arxiv:primary_category term="cs.IR"/>
+    <author>
+      <name>Zhongyu Wang</name>
+    </author>
+    <author>
+      <name>Chen Zuo</name>
+    </author>
+    <author>
+      <name>Qingxuan Sun</name>
+    </author>
+    <author>
+      <name>Jiayang Qiao</name>
+    </author>
+    <author>
+      <name>Qiuhao Qian</name>
+    </author>
+    <author>
+      <name>Songyan Cui</name>
+    </author>
+    <author>
+      <name>Guocheng Chen</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.25508v1</id>
+    <title>How Far Can an Agent Push? Trust-Safety Margins in Live Language-Based Economic Games</title>
+    <updated>2026-10-18T19:54:20Z</updated>
+    <link href="https://arxiv.org/abs/2610.25508v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.25508v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The previous version contained Unicode em dashes. Paste this ASCII-only version:
+  Game theory identifies when a strategic action should be accepted, but not how long a live, language-based counterpart will continue to accept it. We entered the GLEE competition in its final week with one protected agent, Milton, and four instrument agents that ran deterministic, per-game randomized trials of policy changes; Milton received changes only through pre-specified gates or registered, rollback-guarded production rules. In negotiation, learned pricing improves adjusted percentile by 0.071 (n=21,168); in bargaining, a continuation model conditioned on the rejected offer did not improve on a recency-weighted incumbent and was retired. In persuasion, a preregistered five-dose experiment (7,391 assigned games, blinded until a fixed stop) shows that recommending every unit raises sales by 0.194 of the maximum (95% CI [0.147, 0.241]) where the receiver's slack makes obedience rational (52% of the Bayesian benchmark), lowers them where it does not (-0.067), and produces a larger early-to-late purchase decline than honest recommendations (-0.123). A rule fixed before unblinding now routes Milton's dose per cell. Milton stood 11th of 460 agents in bargaining at the fixed stop; we also report the close, where the final day's pool shift moved all five agents' bargaining ratings together while their play was unchanged, and three dispatch defects were found by checking delivered behavior against the design.</summary>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.GT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-18T19:54:20Z</published>
+    <arxiv:primary_category term="cs.MA"/>
+    <author>
+      <name>Dima Galat</name>
+    </author>
+    <author>
+      <name>Marian-Andrei Rizoiu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.25111v1</id>
+    <title>Explore or Confirm? LLM Agents Misallocate Measurements Under Noise</title>
+    <updated>2026-10-18T08:44:06Z</updated>
+    <link href="https://arxiv.org/abs/2610.25111v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.25111v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>As model reasoning gets cheaper, the physical experiment becomes the slow and costly step in discovery. Each experiment returns a noisy reading: a high value can mean a good candidate or a lucky draw. With a fixed budget, an AI agent must keep choosing between exploring a new candidate and confirming a promising one by re-testing it. We measure that choice in Wellocate, a simulated assay campaign with known true values. It is built on a generated landscape and on two real protein datasets, GB1 and PhoQ, scrambled so no model can answer from memory. We test five language models as minimal agents, with no tools and no memory beyond the history in each prompt. They misallocate in both directions. Three over-confirm, spending most of the budget re-testing. On the generated landscape one under-confirms, trusting single readings, and there every model ends with a worse final pick than a basic scripted strategy. Each failure has its own cause. The over-confirmers run short of new candidates worth trying: a list of untried candidates cuts their re-testing and, on real protein data, makes two of them pick much better. A running summary of their readings or a description of the landscape changes it by at most five percentage points. For the under-confirmer, re-testing its top candidates in a final round, replayed on its own campaigns, recovers only about a quarter of what it loses by picking the wrong candidate. This suggests confirmation has to run through the whole campaign. We release Wellocate as a benchmark and reinforcement-learning environment with frozen splits and scripted baselines. With it, anyone can measure how an agent splits its budget before trusting it with real experiments, and train agents to split it better. Code, data and the environment are available at https://github.com/Xstendyl/wellocate.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-18T08:44:06Z</published>
+    <arxiv:comment>38 pages, 12 figures. Code, data and environment: https://github.com/Xstendyl/wellocate</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Abdul Karim</name>
+    </author>
+    <author>
+      <name>Matt Keon</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.25040v1</id>
+    <title>Scam Town: Can Scam Education Spread Like a Vaccine?</title>
+    <updated>2026-10-18T06:00:19Z</updated>
+    <link href="https://arxiv.org/abs/2610.25040v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.25040v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Most older adults who hear a warning about scams hear it from someone they know: a relative, a neighbour, or a friend who was targeted. Yet research on scam prevention almost always studies one person at a time. We ask whether scam awareness can spread through a community and protect it the way a vaccine does, since a warning protects whoever hears it and can be passed on. To find out, we built Scam Town, a simulated community in which a large language model plays each resident. Scam centres phone the residents, and after a call a resident can warn the people they know. Word of mouth helped, but it did not take off on its own: each warning led to fewer than one more, so a community cannot count on warnings "going viral". Across 80 simulated towns, everyday talk cut the number of people scammed by roughly a fifth. The largest gains came when an official warning, from a bank, a senior centre, or an agency, reached most of a town and residents then talked about it: in simulation (a combination we did not test live) the two together cut scams by about half. Protection was greatest when warnings reached the people scammers actually call, who here were older residents. Because our residents are language-model stand-ins rather than real people, we treat these findings as predictions to test with people, not as proof. They point to a simple recipe for scam education: give people a clear story they can retell, design campaigns to be passed along, and reach first those most likely to be called.</summary>
+    <category term="cs.SI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CY" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-18T06:00:19Z</published>
+    <arxiv:comment>28 pages, 12 figures, 11 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.SI"/>
+    <author>
+      <name>Simiao Ren</name>
+    </author>
+    <author>
+      <name>Tommy Duong</name>
+    </author>
+    <author>
+      <name>Xingyu Shen</name>
+    </author>
+    <author>
+      <name>Jiaqi Gan</name>
+    </author>
+    <author>
+      <name>Tsang Ng</name>
+    </author>
+    <author>
+      <name>Ankit Raj</name>
+    </author>
+    <author>
+      <name>Kidus Zewde</name>
+    </author>
+    <author>
+      <name>Huaiyu Guo</name>
+    </author>
+    <author>
+      <name>Siyu Zhang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.24916v1</id>
+    <title>Same Data, Different Bytes: Serialization-Invariant Integrity Checks for Agent-Published Datasets</title>
+    <updated>2026-10-17T23:26:39Z</updated>
+    <link href="https://arxiv.org/abs/2610.24916v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.24916v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Agent networks require reliable ways for requesting agents to verify where data is located, how it can be accessed, and whether the data received matches what the data owner made available. Checksum mismatches can reflect either altered content or serialization differences that preserve data equivalence under specified rules. Data identification mechanisms for agents, such as DataFacts, describe where data can be accessed and provide checksums for checking received data against published references. We propose a serialization-invariant identification method that assigns the same identifier to data representations equivalent under explicit rules. We use DataFacts as a case study, retaining its existing checksum alongside the proposed identifier. In a controlled agent study, we compare the proposed configuration with ordinary-tool and checksum baselines across equivalent re-encodings, altered content, and unavailable references. The study includes three model tiers from each of two providers. For equivalent re-encodings, the proposed configuration increased expected-outcome rates by 80.4 percentage points over the ordinary-tool baseline and by 70.2 percentage points over the checksum baseline. The proposed configuration also increased evidence-supported rejection of altered content by 3.5 percentage points over the checksum baseline. We contribute a serialization-invariant identification method with explicit equivalence rules, an integration approach illustrated through DataFacts, and an empirical evaluation against ordinary-tool and checksum baselines.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-17T23:26:39Z</published>
+    <arxiv:comment>4 pages. Accepted at the NANDA Workshop, IEEE TPS-ISA 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Jin Gao</name>
+    </author>
+    <author>
+      <name>Maura Clark</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.24873v1</id>
+    <title>The One-Pixel of Reasoning: One Truthful Relation Is Enough to Mislead LLM Agents</title>
+    <updated>2026-10-17T21:21:36Z</updated>
+    <link href="https://arxiv.org/abs/2610.24873v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.24873v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Can one sentence manipulate an agent's belief by targeting a single implicit warrant linking evidence to a conclusion? In this paper, we introduce the one-relation attack (ORA), a novel cognitive attack on this inferential relation. ORA localizes a critical implicit warrant and performs a one-relation intervention using a single source-grounded sentence that qualifies this warrant and steers the agent toward an incorrect belief. Across eighteen models on biomedical inference and vulnerability detection, best-of-$10 attacks overturn initially correct answers at mean rates of 54.9% for proprietary and 80.0% for open-weight models. Attacks also transfer without victim feedback, and paired controls support the roles of targeting and qualification. Moreover, successful sentences can pass source-support checks and evade identification, and multi-agent debate raises team error from 50.0% to 59.5% in our balanced stress test. These findings establish implicit warrants as a cognitive attack surface for manipulating agents' beliefs.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-17T21:21:36Z</published>
+    <arxiv:comment>Under Review</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Jinwei Hu</name>
+    </author>
+    <author>
+      <name>Youcheng Sun</name>
+    </author>
+    <author>
+      <name>Yi Dong</name>
+    </author>
+    <author>
+      <name>Xiaowei Huang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.24845v1</id>
+    <title>AgentSoV: Virtual Sensing for LLM Multi-Agent Systems via Stream of Variation</title>
+    <updated>2026-10-17T19:48:14Z</updated>
+    <link href="https://arxiv.org/abs/2610.24845v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.24845v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language model (LLM) multi-agent systems (MASs) solve complex tasks through interacting agents, yet their reliability is difficult to analyze because failures depend on both individual agents and how information and errors propagate across the system. Existing approaches largely treat this as post-hoc failure attribution, but do not provide a common model across heterogeneous MAS architectures or support broader analysis of information influence and observability. We introduce AgentSoV, a virtual-sensing framework that models MAS execution as a stochastic dynamic system through Stream of Variation (SoV). AgentSoV maps heterogeneous trajectories into diagnostic stages, constructs virtual measurements from observable outputs, and learns cross-stage variation propagation with a state-space model. Its representation is architecture-aware in stage dependencies yet architecture-agnostic in analytical language, supporting chain-structured, orchestration-based, and directed acyclic graph (DAG)-structured MASs. Without re-executing the MAS, AgentSoV supports three system-level analyses: failure attribution identifies where abnormal variation enters; stage-input influence quantifies how strongly intermediate inputs affect downstream outcomes; and virtual-sensor placement selects complementary observations under a monitoring budget. Experiments across multiple MAS architectures demonstrate a unified approach to fault localization, information influence, and observability. AgentSoV reframes agentic execution as a dynamic system to model rather than merely text to inspect, providing insights for MAS structure and component design.</summary>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="eess.SY" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-17T19:48:14Z</published>
+    <arxiv:primary_category term="cs.MA"/>
+    <author>
+      <name>Congjing Zhang</name>
+    </author>
+    <author>
+      <name>Siyuan Xu</name>
+    </author>
+    <author>
+      <name>Yunfei Bai</name>
+    </author>
+    <author>
+      <name>Ke Ren</name>
+    </author>
+    <author>
+      <name>Xiaoning Qian</name>
+    </author>
+    <author>
+      <name>Shuai Huang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.24833v1</id>
+    <title>Measuring Consensus in AI Agent Networks</title>
+    <updated>2026-10-17T19:29:07Z</updated>
+    <link href="https://arxiv.org/abs/2610.24833v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.24833v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>As AI agents become increasingly connected through networks and take on tasks that require negotiation and joint decision-making, a systematic approach is needed to assess how their views converge and what information supports their decisions. We present an evaluation framework that treats consensus formation as the evolution of publicly stated positions toward a shared region, using accumulated communication history as context. The framework tracks position trajectories, group dispersion, and information expressed in public messages. Two case studies examine staffing decisions based on distributed facts and decisions requiring agents to reconcile duplicate information and a cancelled contract. Results from 1,872 completed runs associate sharing explanations with more accurate group decisions, while the second task reveals persistent disagreement despite accurate aggregate answers. Membership-change experiments provide a complementary evaluation. By separating convergence among agents from progress toward a task's full-information answer, the framework relates decision accuracy and bounded disagreement to the information available during the exchange.</summary>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-17T19:29:07Z</published>
+    <arxiv:comment>4 pages. Accepted at the NANDA Workshop, IEEE TPS-ISA 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.MA"/>
+    <author>
+      <name>Jin Gao</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.24793v1</id>
+    <title>Cooperation Without Shared Rewards via Reciprocal Q-Augmentation</title>
+    <updated>2026-10-17T17:54:13Z</updated>
+    <link href="https://arxiv.org/abs/2610.24793v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.24793v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>General-sum games are more challenging than fully cooperative or adversarial settings because agents may deceive or exploit one another. Achieving high social welfare requires sustained cooperation, while a single defection can drive agents toward a welfare suboptimal Nash equilibrium. Moreover, assuming access to other agents' rewards or internal states is often unrealistic and implicitly introduces additional cooperation into the setting. To address this issue, we introduce \textit{Reciprocal Q-Augmentation} (RQA), a method that uses a latent-variable opponent model to augment the Q-function with estimates of how one's actions affects other agents. RQA allows agents to learn both cooperative and defective policies using only their own Q-function. We show that, in social dilemmas, agents that all follow the cooperative policy of RQA learn to cooperate faster and reach higher levels of cooperation than fully cooperative algorithms. Moreover, a single RQA agent that switches appropriately between its cooperative and defecting policies can induce cooperation in agents trained with standard RL algorithms, which would otherwise end up defecting. We evaluate our approach on the Iterated Prisoner's Dilemma, Iterated Traveler's Dilemma, Iterated Stag Hunt, and \texttt{CleanUp-Lite}. Our experiments show that the algorithms implementing RQA outperforms fully cooperative methods with shared rewards and enables cooperation with algorithms that otherwise fail to reach high social welfare.</summary>
+    <category term="cs.GT" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-17T17:54:13Z</published>
+    <arxiv:primary_category term="cs.GT"/>
+    <author>
+      <name>Francesco Morri</name>
+    </author>
+    <author>
+      <name>Adel Abusitta</name>
+    </author>
+    <author>
+      <name>Quentin Cappart</name>
+    </author>
+    <author>
+      <name>Margarida Carvalho</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.24718v1</id>
+    <title>Neuro-Inspired Inhibitory Message Passing for Accurate and Token-Efficient Multi-Agent Reasoning</title>
+    <updated>2026-10-17T14:30:37Z</updated>
+    <link href="https://arxiv.org/abs/2610.24718v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.24718v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Multi-agent systems promise to solve problems by bringing together information beyond the reach of any individual agent. Retrieval and tool use can distribute this information across agents, making communication essential to collaboration. A central challenge is keeping crucial evidence visible in each agent's context as messages accumulate. Repeated information can crowd out rare, decisive evidence. Models of cortical circuits suggest a principle for addressing this imbalance: inhibition can selectively suppress shared inputs while preserving sensitivity to weaker signals. We adapt this principle into inhibitory message passing, a training-free communication router that cancels redundant evidence separately for each evidence sentence and receiver. Each round, it forwards evidence sentences restated in agents' messages, delivering each at most once to receivers whose own evidence lacks it and excluding the senders' reasoning and answers. Against standard message passing, accuracy in peer groups rose by 39-77 percentage points across three benchmarks, and tokens per run fell by 10-46%. Gains held across seven open models spanning four to thirty-two billion parameters and two commercial models, in groups up to sixty-four agents, and across multi-agent architectures including peer-to-peer, orchestrator-worker, and multilevel hierarchical organizations. These findings support a scalable design pattern for more accurate and token-efficient multi-agent reasoning.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-17T14:30:37Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Nima H. Siboni</name>
+    </author>
+    <author>
+      <name>Magdalena Springer</name>
+    </author>
+    <author>
+      <name>Vahid Rostami</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.24549v1</id>
+    <title>CARVS: A Congestion-Aware Algorithm for Online Multi-Agent Pickup-and-Delivery in Human-Collaborative Warehouses</title>
+    <updated>2026-10-17T08:17:52Z</updated>
+    <link href="https://arxiv.org/abs/2610.24549v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.24549v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Intelligent warehouse systems have transformed logistics by integrating robots with minimal infrastructure changes, boosting efficiency and optimizing workflows compared to traditional human-only operations. However, human-robot collaboration introduces new challenges, particularly due to human uncertainty, which leads to dynamic interactions and unpredictable behavior. To address these complexities, this paper presents the Multi-Agent Pickup-and-Delivery with Human Collaboration (MAPDwHC) problem, an extension of the Multi-Agent Pickup-and-Delivery (MAPD) problem that incorporates human unpredictability. This problem adds key constraints, such as dynamic obstacles caused by robots temporarily blocking paths when interacting with humans, and the need for real-time responsiveness. We formalize the MAPDwHC problem with additional constraints and properties. Based on this problem setting, we propose the CARVS algorithm, which improves task assignment and path planning by integrating task swapping, validation checks, and random initialization. CARVS reduces congestion, enhances adaptability to human-robot interactions, and ensures real-time responsiveness. Simulation results show that CARVS significantly reduces timeouts of path planning in large-scale scenarios where traditional MAPD algorithms fail, improving both efficiency and scalability.</summary>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-17T08:17:52Z</published>
+    <arxiv:comment>13 pages, 8 figures. Accepted at DAI 2026 (Oral)</arxiv:comment>
+    <arxiv:primary_category term="cs.MA"/>
+    <author>
+      <name>Chaoran Li</name>
+    </author>
+    <author>
+      <name>Zeyuan Zhao</name>
+    </author>
+    <author>
+      <name>Shao Zhang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.24431v1</id>
+    <title>Low-Bit Distributed Constrained Optimization with Application to Optimal Scheduling and Allocation</title>
+    <updated>2026-10-17T03:49:52Z</updated>
+    <link href="https://arxiv.org/abs/2610.24431v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.24431v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This paper proposes a distributed resource allocation algorithm in which each agent communicates only the sign of its local cost gradient, a single bit per directed link per iteration. The algorithm is based on Laplacian-gradient dynamics and preserves the equality (demand) constraint at every iterate, guaranteeing anytime feasibility irrespective of termination time.
+  First, we provide a complete Lyapunov-based convergence analysis for the fixed-step-size regime: the iterates are shown to enter, in at most O(1/\varepsilon^2) iterations, a neighborhood of the optimizer whose radius scales as O(τ) in the decision variable and O(τ^2) in the cost residual, where $τ$ is the step-size. Crucially, the step-size bound is a time-invariant network constant (depending only on the graph Laplacian spectrum and the cost curvature bounds), so no adaptive tuning is required.
+  Second, we characterize the invariant set under B-connected, weight-balanced digraphs, strictly weaker than the all-time connectivity and doubly-stochastic weights assumed in most prior work, and show that any odd, sign-preserving nonlinearity yields the same invariant-set and descent structure, with the single-bit protocol being the extreme communication-minimizing instance of a broader nonlinear class.
+  Third, we address local box constraints via smooth penalty relaxation and quantify explicitly how the penalty weight interacts with the step-size bound and the optimality gap.
+  Simulations on economic dispatch (1000 generators) and CPU scheduling (500 servers) demonstrate that the single-bit protocol achieves 5-60 times reduction in total communication cost relative to multi-bit baselines, at the price of a tunable and explicitly bounded optimality gap. A diminishing step-size schedule is shown empirically to eliminate this gap; its formal convergence analysis is identified as an open problem.</summary>
+    <category term="eess.SY" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.DC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.OC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-17T03:49:52Z</published>
+    <arxiv:comment>Nonlinear Analysis: Hybrid Systems</arxiv:comment>
+    <arxiv:primary_category term="eess.SY"/>
+    <author>
+      <name>Mohammadreza Doostmohammadian</name>
+    </author>
+    <author>
+      <name>Sergio Pequito</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.24421v1</id>
+    <title>Adding Heavy-Ball Momentum to Distributed Constrained Optimization for Energy Resource Management Subject to Time-Delays and Quantization</title>
+    <updated>2026-10-17T03:37:32Z</updated>
+    <link href="https://arxiv.org/abs/2610.24421v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.24421v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This paper studies a hybrid discrete-time signed gradient-consensus method with heavy-ball momentum, paired communication delays, and fixed logarithmic quantization. The method preserves the aggregate supply-demand equality at every iteration. For a static connected undirected graph and bounded delays, a Lyapunov-Krasovskii analysis establishes practical stability by isolating the discontinuous quantization error as an additive disturbance and closing a computable invariant-sublevel argument. The resulting ergodic residual bound is quadratic in the quantization resolution, and exact convergence to the smooth penalized equality-constrained optimizer is recovered in the unquantized case. For delay-free unquantized quadratic costs, an exact modal analysis identifies the heavy-ball stability region and optimal parameters, with the predicted rate validated on a fixed sparse network. A reproducible delayed experiment reports all constants and a certificate whose guaranteed steady-state level lies below the reported initialization. A separate mixed generator-battery experiment exercises the signed update directly. Finite smooth penalties approximate, but do not generally enforce, the local box constraints exactly.</summary>
+    <category term="eess.SY" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.DC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.DS" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.OC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-17T03:37:32Z</published>
+    <arxiv:comment>Nonlinear Analysis: Hybrid Systems</arxiv:comment>
+    <arxiv:primary_category term="eess.SY"/>
+    <author>
+      <name>Mohammadreza Doostmohammadian</name>
+    </author>
+    <author>
+      <name>Sergio Pequito</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.24383v1</id>
+    <title>IF-MAP: Influence-Function-Inspired Agent Prioritization in Multi-Agent Systems</title>
+    <updated>2026-10-17T02:36:35Z</updated>
+    <link href="https://arxiv.org/abs/2610.24383v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.24383v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Improving every agent in an LLM-based multi-agent system can be prohibitively costly, making it important to identify which agent should be prioritized to achieve the greatest system-level gain with limited resources. Failure attribution can inform this decision, but an agent's responsibility for failures does not directly reveal the system-level gains achievable by improving it. We therefore introduce IF-MAP, an influence-function-inspired method for identifying agents with high potential for system-level improvement. For each agent, IF-MAP measures end-to-end loss changes under controlled semantic prompt perturbations, fits a regularized local response model in a low-dimensional prompt-embedding subspace, and uses the estimated response norm as a priority score. This black-box procedure requires no access to model parameters or gradients and produces agent priorities that can guide subsequent improvement effort. We evaluate IF-MAP across six multi-agent workflows spanning code generation, question answering, and mathematical reasoning, using the same priorities for prompt optimization and model upgrades. Optimizing the selected agents' prompts achieves a macro-average gain of 3.81 percentage points, compared with 1.85 for uniform agent selection. Across five target models, upgrading the selected agents yields macro-average gains of 7.62-16.42 percentage points, compared with 3.81-8.62 for uniform agent selection. Despite its probing overhead, IF-MAP reduces Qwen3-8B and DeepSeek-V3.2 token use by 74.2% and 35.2%, respectively, relative to optimizing every agent, and reduces target-model tokens by 63.6-64.9% relative to upgrading every agent. These results support the use of IF-MAP to identify promising agents and direct improvement effort toward greater end-to-end performance gains.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-17T02:36:35Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Jie Mao</name>
+    </author>
+    <author>
+      <name>Pingchen Lu</name>
+    </author>
+    <author>
+      <name>Zikun Qu</name>
+    </author>
+    <author>
+      <name>Jiahang Sun</name>
+    </author>
+    <author>
+      <name>Xiangyi Wang</name>
+    </author>
+    <author>
+      <name>Zhiwei Shang</name>
+    </author>
+    <author>
+      <name>Zhiyong Wang</name>
+    </author>
+    <author>
+      <name>Guojun Xiong</name>
+    </author>
+    <author>
+      <name>Zhongxiang Dai</name>
+    </author>
+  </entry>
+</feed>
