@@ -1,0 +1,19 @@
+{
+ "date": "2026-10-27",
+ "kind": "nightly-scout-snapshot",
+ "sources": [
+  "arxiv:cs.AI/cs.MA/mcp/tool-agent (incl. 10-26 backlog)",
+  "github:gh CLI (servers/spec/registry/inspector/claude-code/anthropic-sdk-py/py-sdk/ts-sdk)",
+  "hn:top30",
+  "rss:openai/vercel/gnews-mcp/gnews-agent"
+ ],
+ "raw_dir": "scout-raw",
+ "node_count": 385,
+ "edge_count": 744,
+ "arxiv_count": 317,
+ "release_count": 9,
+ "commit_count": 30,
+ "news_count": 12,
+ "note": "github api rate-limited via urllib, refetched with gh cli",
+ "next_window": "2026-10-28T00:30+08:00"
+}

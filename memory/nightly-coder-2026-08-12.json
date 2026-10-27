@@ -1,0 +1,25 @@
+{
+  "date": "2026-08-12",
+  "agent": "NightOps-Coder",
+  "runtime": "OpenClaw v2026.7.1-2",
+  "gateway": {
+    "status": "running",
+    "pid": 677,
+    "bind": "127.0.0.1:18789"
+  },
+  "openclaw_source": "MISSING from workspace",
+  "npm_outdated_count": 12,
+  "workspace_changes": {
+    "modified": [".learnings/ERRORS.md", "MEMORY.md", "agents/orchestrator/AGENTS.md", "agents/orchestrator/DIRECTIVE.md", "agents/orchestrator/HEARTBEAT.md", "agents/orchestrator/IDENTITY.md", "agents/orchestrator/SOUL.md", "agents/orchestrator/output/Tomorrow_Action_Plan.md", "scripts/openclaw-backup.sh"],
+    "untracked_new": [".graphify_new_extract.json", ".learnings/LEARNINGS.md", "AGENTS.md", "HEARTBEAT.md", "IDENTITY.md", "SOUL.md", "TOOLS.md", "USER.md", "agents/coder/", "agents/finance/", "agents/health/"]
+  },
+  "gh_auth": "timeout — needs refresh",
+  "action_items": [
+    "openclaw-source repo missing — re-clone if needed",
+    "push/commit feature/hot-backup + new agent dirs",
+    "gh auth refresh",
+    "batch npm update (10 of 12 packages outdated)",
+    "investigate new agent directories"
+  ],
+  "report_file": "heartbeat/nightly-coder-2026-08-12.md"
+}

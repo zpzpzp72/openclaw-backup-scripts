@@ -1,0 +1,432 @@
+{
+  "nodes": [
+    {
+      "id": "arxiv_2608_31082",
+      "label": "Agentic Data Cracking",
+      "file_type": "paper",
+      "source_file": "raw/scout-2026-09-01-corpus.md",
+      "source_location": null,
+      "author": "milad Rezaei Hajidehi",
+      "contributor": "Scout Agent NightOps"
+    },
+    {
+      "id": "arxiv_2608_31057",
+      "label": "Agent Working Memory",
+      "file_type": "paper",
+      "source_file": "raw/scout-2026-09-01-corpus.md",
+      "source_location": null,
+      "author": "Le Chen",
+      "contributor": "Scout Agent NightOps"
+    },
+    {
+      "id": "arxiv_2608_30567",
+      "label": "Turing-20B-A2B MoE",
+      "file_type": "paper",
+      "source_file": "raw/scout-2026-09-01-corpus.md",
+      "source_location": null,
+      "author": "Yuheng Zhang",
+      "contributor": "Scout Agent NightOps"
+    },
+    {
+      "id": "arxiv_2608_30955",
+      "label": "OHCAM Action Model Learning",
+      "file_type": "paper",
+      "source_file": "raw/scout-2026-09-01-corpus.md",
+      "source_location": null,
+      "author": "William Solow",
+      "contributor": "Scout Agent NightOps"
+    },
+    {
+      "id": "arxiv_2608_30429",
+      "label": "SARGE Red-Teaming",
+      "file_type": "paper",
+      "source_file": "raw/scout-2026-09-01-corpus.md",
+      "source_location": null,
+      "author": "Doyun Kim",
+      "contributor": "Scout Agent NightOps"
+    },
+    {
+      "id": "arxiv_2608_30685",
+      "label": "ATLAS Dual-Horizon Eval",
+      "file_type": "paper",
+      "source_file": "raw/scout-2026-09-01-corpus.md",
+      "source_location": null,
+      "author": "Wei Chen",
+      "contributor": "Scout Agent NightOps"
+    },
+    {
+      "id": "arxiv_2608_30369",
+      "label": "OLIVE XR+BCI Agent",
+      "file_type": "paper",
+      "source_file": "raw/scout-2026-09-01-corpus.md",
+      "source_location": null,
+      "author": "Ziheng Li",
+      "contributor": "Scout Agent NightOps"
+    },
+    {
+      "id": "arxiv_2608_30345",
+      "label": "APTS Answer Probing",
+      "file_type": "paper",
+      "source_file": "raw/scout-2026-09-01-corpus.md",
+      "source_location": null,
+      "author": "Yi Fang",
+      "contributor": "Scout Agent NightOps"
+    },
+    {
+      "id": "arxiv_2608_30785",
+      "label": "Skill Compression",
+      "file_type": "paper",
+      "source_file": "raw/scout-2026-09-01-corpus.md",
+      "source_location": null,
+      "author": "Xiaofan Bai",
+      "contributor": "Scout Agent NightOps"
+    },
+    {
+      "id": "arxiv_2608_31137",
+      "label": "OntoAligner-Ensemble",
+      "file_type": "paper",
+      "source_file": "raw/scout-2026-09-01-corpus.md",
+      "source_location": null,
+      "author": "Hamed Babaei Giglou",
+      "contributor": "Scout Agent NightOps"
+    },
+    {
+      "id": "arxiv_2608_31118",
+      "label": "LLM Scale for Ontology Learning",
+      "file_type": "paper",
+      "source_file": "raw/scout-2026-09-01-corpus.md",
+      "source_location": null,
+      "author": "Hamed Babaei Giglou",
+      "contributor": "Scout Agent NightOps"
+    },
+    {
+      "id": "arxiv_2608_31022",
+      "label": "MNIST-PRO Agent Perception",
+      "file_type": "paper",
+      "source_file": "raw/scout-2026-09-01-corpus.md",
+      "source_location": null,
+      "author": "Vernon Toh",
+      "contributor": "Scout Agent NightOps"
+    },
+    {
+      "id": "arxiv_2608_30277",
+      "label": "SimCRAFT Remote Sensing",
+      "file_type": "paper",
+      "source_file": "raw/scout-2026-09-01-corpus.md",
+      "source_location": null,
+      "author": "Jing Yao",
+      "contributor": "Scout Agent NightOps"
+    },
+    {
+      "id": "arxiv_2608_30235",
+      "label": "CoSC KG Completion",
+      "file_type": "paper",
+      "source_file": "raw/scout-2026-09-01-corpus.md",
+      "source_location": null,
+      "author": "Dongying Lin",
+      "contributor": "Scout Agent NightOps"
+    },
+    {
+      "id": "arxiv_2608_30757",
+      "label": "Policy-Centroid Routing",
+      "file_type": "paper",
+      "source_file": "raw/scout-2026-09-01-corpus.md",
+      "source_location": null,
+      "author": "Thomson Nguy",
+      "contributor": "Scout Agent NightOps"
+    },
+    {
+      "id": "arxiv_2608_30581",
+      "label": "LLM Explainer Testing",
+      "file_type": "paper",
+      "source_file": "raw/scout-2026-09-01-corpus.md",
+      "source_location": null,
+      "author": "Dennis Gross",
+      "contributor": "Scout Agent NightOps"
+    },
+    {
+      "id": "trend_agent_working_memory",
+      "label": "Agent Working Memory Management",
+      "file_type": "concept",
+      "source_file": "raw/scout-2026-09-01-corpus.md",
+      "source_location": null,
+      "author": "Scout Agent NightOps",
+      "contributor": null
+    },
+    {
+      "id": "trend_self_evolving_security",
+      "label": "Self-Evolving Agent Security",
+      "file_type": "concept",
+      "source_file": "raw/scout-2026-09-01-corpus.md",
+      "source_location": null,
+      "author": "Scout Agent NightOps",
+      "contributor": null
+    },
+    {
+      "id": "trend_token_efficiency",
+      "label": "Token Efficiency in Agentic Systems",
+      "file_type": "concept",
+      "source_file": "raw/scout-2026-09-01-corpus.md",
+      "source_location": null,
+      "author": "Scout Agent NightOps",
+      "contributor": null
+    },
+    {
+      "id": "trend_industrial_agent_eval",
+      "label": "Industrial Agent Evaluation",
+      "file_type": "concept",
+      "source_file": "raw/scout-2026-09-01-corpus.md",
+      "source_location": null,
+      "author": "Scout Agent NightOps",
+      "contributor": null
+    },
+    {
+      "id": "trend_moe_physical_ai",
+      "label": "MoE for Physical AI",
+      "file_type": "concept",
+      "source_file": "raw/scout-2026-09-01-corpus.md",
+      "source_location": null,
+      "author": "Scout Agent NightOps",
+      "contributor": null
+    },
+    {
+      "id": "trend_bci_xr_agent",
+      "label": "BCI-Enhanced XR Agents",
+      "file_type": "concept",
+      "source_file": "raw/scout-2026-09-01-corpus.md",
+      "source_location": null,
+      "author": "Scout Agent NightOps",
+      "contributor": null
+    },
+    {
+      "id": "trend_knowledge_graph_llm",
+      "label": "Knowledge Graph + LLM Integration",
+      "file_type": "concept",
+      "source_file": "raw/scout-2026-09-01-corpus.md",
+      "source_location": null,
+      "author": "Scout Agent NightOps",
+      "contributor": null
+    },
+    {
+      "id": "trend_llm_scaling_studies",
+      "label": "LLM Scaling Studies",
+      "file_type": "concept",
+      "source_file": "raw/scout-2026-09-01-corpus.md",
+      "source_location": null,
+      "author": "Scout Agent NightOps",
+      "contributor": null
+    },
+    {
+      "id": "trend_agent_benchmark",
+      "label": "Agent Benchmark Design",
+      "file_type": "concept",
+      "source_file": "raw/scout-2026-09-01-corpus.md",
+      "source_location": null,
+      "author": "Scout Agent NightOps",
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "arxiv_2608_31082",
+      "target": "trend_token_efficiency",
+      "relation": "addresses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/scout-2026-09-01-corpus.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "arxiv_2608_31057",
+      "target": "trend_agent_working_memory",
+      "relation": "addresses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/scout-2026-09-01-corpus.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "arxiv_2608_30429",
+      "target": "trend_self_evolving_security",
+      "relation": "addresses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/scout-2026-09-01-corpus.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "arxiv_2608_30685",
+      "target": "trend_industrial_agent_eval",
+      "relation": "addresses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/scout-2026-09-01-corpus.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "arxiv_2608_30567",
+      "target": "trend_moe_physical_ai",
+      "relation": "addresses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/scout-2026-09-01-corpus.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "arxiv_2608_30369",
+      "target": "trend_bci_xr_agent",
+      "relation": "addresses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/scout-2026-09-01-corpus.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "arxiv_2608_30785",
+      "target": "trend_token_efficiency",
+      "relation": "addresses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/scout-2026-09-01-corpus.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "arxiv_2608_31137",
+      "target": "trend_knowledge_graph_llm",
+      "relation": "addresses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/scout-2026-09-01-corpus.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "arxiv_2608_30235",
+      "target": "trend_knowledge_graph_llm",
+      "relation": "addresses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/scout-2026-09-01-corpus.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "arxiv_2608_31118",
+      "target": "trend_llm_scaling_studies",
+      "relation": "addresses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/scout-2026-09-01-corpus.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "arxiv_2608_31022",
+      "target": "trend_agent_benchmark",
+      "relation": "addresses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/scout-2026-09-01-corpus.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "arxiv_2608_31082",
+      "target": "arxiv_2608_31057",
+      "relation": "shares_topic",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "raw/scout-2026-09-01-corpus.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "arxiv_2608_30429",
+      "target": "arxiv_2608_30785",
+      "relation": "shares_topic",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "raw/scout-2026-09-01-corpus.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "arxiv_2608_31137",
+      "target": "arxiv_2608_30235",
+      "relation": "shares_topic",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "raw/scout-2026-09-01-corpus.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "arxiv_2608_30429",
+      "target": "arxiv_2608_30757",
+      "relation": "shares_topic",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "raw/scout-2026-09-01-corpus.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "arxiv_2608_30785",
+      "target": "arxiv_2608_30429",
+      "relation": "enables",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "raw/scout-2026-09-01-corpus.md",
+      "source_location": null,
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "emsec_2026_emnlp_cluster",
+      "label": "EMNLP 2026 Agent Security Papers",
+      "nodes": [
+        "arxiv_2608_30429",
+        "arxiv_2608_30345"
+      ],
+      "relation": "conference_cluster",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "raw/scout-2026-09-01-corpus.md"
+    },
+    {
+      "id": "iswc_2026_kg_cluster",
+      "label": "ISWC 2026 Knowledge Graph Papers",
+      "nodes": [
+        "arxiv_2608_31137",
+        "arxiv_2608_30235"
+      ],
+      "relation": "conference_cluster",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "raw/scout-2026-09-01-corpus.md"
+    },
+    {
+      "id": "token_efficiency_cluster",
+      "label": "Token Efficiency Research Cluster",
+      "nodes": [
+        "arxiv_2608_31082",
+        "arxiv_2608_30785",
+        "arxiv_2608_30567"
+      ],
+      "relation": "thematic_cluster",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "raw/scout-2026-09-01-corpus.md"
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

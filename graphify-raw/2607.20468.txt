@@ -1,0 +1,5 @@
+InferenceBench: A Benchmark for Open-Ended LLM Inference Optimization by AI Agents
+
+Abstract: AI agents are increasingly used to automate research and development tasks. We introduce InferenceBench, where an agent must deploy an OpenAI-compatible inference server and optimize the speed of LLM inference. Each agent receives a target LLM, one H100 GPU, an optimization scenario, and a wall-clock time budget of two hours. Across 15 frontier agent configurations, agents reliably improve over a naive PyTorch baseline (up to 8.08x) and often match or exceed serving engines with default settings (4.05x for vLLM), but still fall below a simple hyperparameter search (up to 11.53x).
+
+Topics: LLM inference, optimization, benchmark, AI agents, vLLM, H100 GPU, inference serving

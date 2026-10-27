@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-07",
+  "agent": "nightly-scout",
+  "status": "incremental-snapshot-staged",
+  "corpus_root": "/home/zhiping/.openclaw/workspace/graphify-raw",
+  "staged_files": [
+    "graphify-raw/2026-10-07-scout.md"
+  ],
+  "previous_snapshot_dir": "/home/zhiping/.openclaw/workspace/graphify-out/2026-10-06",
+  "graphify_attempts": [
+    {"cmd": "graphify update graphify-raw", "result": "no-code-files (graphify-raw is markdown-only)"},
+    {"cmd": "graphify add <local-path>", "result": "blocked: graphify add requires http(s) URL, local files must be staged by file-watch + LLM rebuild"}
+  ],
+  "recommendation": "Re-run `graphify watch graphify-raw` from the openclaw skill_workshop or trigger a manual `graphify update graphify-raw` after enabling the LLM-backed extractor. Today's scout raw file is staged for that next run.",
+  "carryover_from_2026-10-06": "snapshot.json structure preserved; no GRAPH_REPORT.md regeneration today (LLM unavailable this run)."
+}

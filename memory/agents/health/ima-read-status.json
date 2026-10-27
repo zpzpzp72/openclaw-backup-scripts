@@ -1,0 +1,17 @@
+{
+  "lastScan": "2026-10-09T10:00:00+08:00",
+  "lastScanStatus": "FAILED_CONFIG_MISSING",
+  "consecutiveFailures": 11,
+  "firstFailureDate": "2026-07-23",
+  "lastAttemptDate": "2026-10-09",
+  "failureReason": "IMA integration not configured: chrome not running (port 9222), ima-note plugin disabled, no credentials, no URL, no skill files on disk",
+  "requiredActions": [
+    "Start Chrome with --remote-debugging-port=9222",
+    "Enable ima-note plugin in openclaw.json",
+    "Provide IMA OpenAPI credentials (base URL + API key)",
+    "Install or create ima-note skill files",
+    "Verify IMA knowledge base URL and health directory folder_id"
+  ],
+  "healthDirectoryTarget": "晃晃悠悠个人知识库 > 健康",
+  "scanResults": []
+}

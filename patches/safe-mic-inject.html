@@ -1,0 +1,128 @@
+<!-- openclaw:safe-mic-inject:v1 -->
+    <script>
+// Safe microphone (SpeechRecognition) injection for OpenClaw Control UI.
+// Design rules:
+//  - Never touch existing DOM elements; only createElement + insertBefore/append new ones.
+//  - No MutationObserver (avoid clashing with Lit re-renders).
+//  - No innerHTML on existing nodes; innerHTML only on our own button (for SVG).
+//  - Self-healing: if container/textarea not found, silently no-op; UI unaffected.
+//  - Upgrade-friendly: keyed off class substrings, re-run on a few timers.
+(function () {
+  "use strict";
+  var BTN_MARK = "data-openclaw-mic";
+  var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+  var MIC_SVG =
+    '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+    '<rect x="9" y="2" width="6" height="12" rx="3"></rect>' +
+    '<path d="M5 10v1a7 7 0 0 0 14 0v-1"></path>' +
+    '<line x1="12" y1="18" x2="12" y2="22"></line>' +
+    '</svg>';
+
+  if (!document.getElementById("openclaw-mic-style")) {
+    var st = document.createElement("style");
+    st.id = "openclaw-mic-style";
+    st.textContent =
+      ".openclaw-mic-btn{display:inline-flex;align-items:center;justify-content:center;" +
+      "width:32px;height:32px;padding:0;margin:0 2px;border:none;border-radius:8px;" +
+      "background:transparent;color:var(--openclaw-muted,#8a939b);cursor:pointer;" +
+      "transition:background .15s,color .15s;align-self:center;}" +
+      ".openclaw-mic-btn:hover{background:var(--openclaw-surface-hover,rgba(148,163,184,.15));" +
+      "color:var(--openclaw-fg,#e6edf3);}" +
+      ".openclaw-mic-btn.recording{color:#ff5a5f;animation:openclaw-mic-pulse 1.1s ease-in-out infinite;}" +
+      "@keyframes openclaw-mic-pulse{0%,100%{opacity:1}50%{opacity:.45}}";
+    (document.head || document.documentElement).appendChild(st);
+  }
+
+  function findContainer() {
+    return document.querySelector('[class*="composer-controls"]');
+  }
+  function findTextarea() {
+    var c = findContainer();
+    var ta = c && c.querySelector("textarea");
+    if (ta) return ta;
+    return document.querySelector('[class*="composer-combobox"] textarea') ||
+           document.querySelector("textarea");
+  }
+
+  function makeButton() {
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "openclaw-mic-btn";
+    btn.setAttribute(BTN_MARK, "");
+    btn.setAttribute("title", SR ? "Voice input" : "Voice input not supported in this browser");
+    btn.setAttribute("aria-label", "Voice input");
+    btn.innerHTML = MIC_SVG; // own element only
+    if (!SR) { btn.disabled = true; btn.style.opacity = "0.4"; }
+    else { attachRecognition(btn); }
+    return btn;
+  }
+
+  function attachRecognition(btn) {
+    var rec = null, active = false, silenceTimer = null;
+
+    function stop() {
+      if (silenceTimer) { clearTimeout(silenceTimer); silenceTimer = null; }
+      if (rec) { try { rec.stop(); } catch (e) {} }
+    }
+    function armSilence() {
+      if (silenceTimer) clearTimeout(silenceTimer);
+      silenceTimer = setTimeout(stop, 4000); // 4s of no speech -> close
+    }
+    function commit(text) {
+      if (!text) return;
+      var ta = findTextarea();
+      if (!ta) return;
+      var sep = ta.value && !/\s$/.test(ta.value) ? " " : "";
+      ta.value = ta.value + sep + text;
+      ta.dispatchEvent(new Event("input", { bubbles: true }));
+      ta.dispatchEvent(new Event("change", { bubbles: true }));
+      try { ta.focus(); } catch (e) {}
+    }
+
+    btn.addEventListener("click", function () {
+      if (active) { stop(); return; }
+      try {
+        rec = new SR();
+      } catch (e) { return; }
+      rec.lang = "zh-CN";
+      rec.continuous = true;
+      rec.interimResults = true;
+      rec.maxAlternatives = 1;
+
+      rec.onstart = function () { active = true; btn.classList.add("recording"); armSilence(); };
+      rec.onresult = function (ev) {
+        armSilence();
+        var finalText = "";
+        for (var i = ev.resultIndex; i < ev.results.length; i++) {
+          if (ev.results[i].isFinal) finalText += ev.results[i][0].transcript;
+        }
+        if (finalText) commit(finalText);
+      };
+      rec.onerror = function () { /* self-heal: just stop */ stop(); };
+      rec.onend = function () {
+        active = false;
+        btn.classList.remove("recording");
+        if (silenceTimer) { clearTimeout(silenceTimer); silenceTimer = null; }
+        rec = null;
+      };
+      try { rec.start(); } catch (e) { active = false; btn.classList.remove("recording"); }
+    });
+  }
+
+  function inject() {
+    var c = findContainer();
+    if (!c) return false;
+    if (c.querySelector("[" + BTN_MARK + "]")) return true; // already present
+    var btn = makeButton();
+    // Insert after the settings chip (children[1] slot): settings-wrapper, [mic], send/split
+    var ref = c.children && c.children.length > 1 ? c.children[1] : null;
+    if (ref) c.insertBefore(btn, ref);
+    else c.appendChild(btn);
+    return true;
+  }
+
+  // Fire at three points; harmless if already injected (idempotent).
+  [1500, 3000, 6000].forEach(function (ms) { setTimeout(inject, ms); });
+})();
+    </script>

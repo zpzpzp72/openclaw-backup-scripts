@@ -1,0 +1,309 @@
+#!/bin/bash
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/zhiping/.local/share/pnpm:/home/zhiping/.openclaw/workspace/scripts
+
+# ★ 热备份开关：0=不停服热备份（默认），1=停服备份
+STOP_GATEWAY=${STOP_GATEWAY:-0}
+
+# 防止并发运行（crontab 双触发保底）
+exec 200>/var/lock/openclaw-backup.lock
+flock -n 200 || { echo "[$(date '+%Y-%m-%d %H:%M:%S')] 备份已在运行，退出" >> "$HOME/.openclaw-backup.log"; exit 0; }
+
+# OpenClaw 自动备份脚本（带旧文件清理）
+# 每天凌晨执行，检查目录修改后备份并发送邮件
+#
+# 修复记录 (2026-03-13):
+# - 改回使用 openclaw gateway stop/start（避免 systemctl）
+# - 屏蔽 systemctl 报错
+# - 自动清理旧备份 (新增)
+# - 优化 gateway stop/start 稳定性
+
+BACKUP_DIR="/mnt/h/AI/openclaw.zone/WSL"
+SOURCE_DIR="$HOME/.openclaw"
+LOG_FILE="$HOME/.openclaw-backup.log"
+HEARTBEAT_FILE="$HOME/.openclaw-backup.heartbeat"   # ★ ERR-20260826-001: 独立心跳，供 Windows 侧健康检查读取
+RETAIN_DAYS=30   # ⭐ 保留天数，可以改为 14/30
+FORCE_TAR_HOURS=25   # ★ ERR-20260826-001: 超过 25 小时无备份强制心跳（即使源目录无变化）
+# 获取当前时间
+NOW=$(date "+%Y%m%d-%H%M")
+TIMESTAMP=$(date "+%Y-%m-%d %H:%M:%S")
+NOW_EPOCH=$(date +%s)
+
+# 查找最新备份文件
+LATEST_BACKUP=$(ls -t "$BACKUP_DIR"/openclaw-*.tgz 2>/dev/null | head -1)
+
+# 判断是否需要备份
+if [ -z "$LATEST_BACKUP" ]; then
+    # 没有历史备份，需要备份
+    NEED_BACKUP=true
+    LAST_MOD_TIME="1970-01-01"
+else
+    # 获取上次备份的时间
+    LAST_MOD_TIME=$(stat -c %y "$LATEST_BACKUP" | cut -d'.' -f1)
+    # 获取源目录的最近修改时间
+    SOURCE_MOD_TIME=$(find "$SOURCE_DIR" -type f -newer "$LATEST_BACKUP" -printf "%T+\n" 2>/dev/null | head -1)
+
+    if [ -n "$SOURCE_MOD_TIME" ]; then
+        NEED_BACKUP=true
+    else
+        NEED_BACKUP=false
+    fi
+fi
+
+# ★ ERR-20260826-001: 强制 tar 兜底逻辑
+# 即使源目录无修改，如果距上次备份超过 FORCE_TAR_HOURS 小时，
+# 也强制跑一次 tar（保证 LATEST_BACKUP 时间戳被更新，外部健康检查能感知）
+if [ -z "$LATEST_BACKUP" ]; then
+    HOURS_SINCE_LAST=999
+else
+    LAST_BACKUP_EPOCH=$(stat -c %Y "$LATEST_BACKUP" 2>/dev/null || echo 0)
+    if [ "$LAST_BACKUP_EPOCH" -gt 0 ]; then
+        HOURS_SINCE_LAST=$(( (NOW_EPOCH - LAST_BACKUP_EPOCH) / 3600 ))
+    else
+        HOURS_SINCE_LAST=999
+    fi
+fi
+if [ "$NEED_BACKUP" = false ] && [ "$HOURS_SINCE_LAST" -ge "$FORCE_TAR_HOURS" ]; then
+    log "★ 强制 tar 触发: 距上次备份 ${HOURS_SINCE_LAST}h (>= ${FORCE_TAR_HOURS}h)，源目录无变化但仍执行"
+    NEED_BACKUP=true
+    FORCE_TAR_REASON="stale_${HOURS_SINCE_LAST}h"
+else
+    FORCE_TAR_REASON=""
+fi
+
+log() {
+    echo "[$TIMESTAMP] $1" >> "$LOG_FILE"
+}
+
+# ★ ERR-20260826-001: 写心跳文件（cron 每次执行都更新）
+# Windows 侧独立健康检查（PowerShell + 任务计划程序）会读取此文件判断 WSL/cron 是否还活着
+write_heartbeat() {
+    local status="$1"   # ok | skipped | error
+    local detail="$2"
+    cat > "$HEARTBEAT_FILE" <<EOF
+last_run=$TIMESTAMP
+last_run_epoch=$NOW_EPOCH
+last_backup=$LATEST_BACKUP
+last_backup_epoch=$LAST_BACKUP_EPOCH
+hours_since_last_backup=$HOURS_SINCE_LAST
+need_backup=$NEED_BACKUP
+force_tar_reason=$FORCE_TAR_REASON
+status=$status
+detail=$detail
+EOF
+}
+
+# 邮件通知
+send_mail() {
+    local subject="$1"
+    local body="$2"
+    cd ~/.openclaw/workspace/agents/finance && \
+    python3 send_email.py \
+        --provider qq \
+        --to "9892890@qq.com" \
+        --subject "$subject" \
+        --body "$body" 2>> "$LOG_FILE"
+}
+
+##############################################
+# 自动清理旧备份（新增）
+##############################################
+cleanup_old() {
+    find "$BACKUP_DIR" -name "openclaw-*.tgz" -mtime +$RETAIN_DAYS \
+        -exec rm -f {} \;
+
+    log "清理超过 $RETAIN_DAYS 天的旧备份完成"
+}
+
+##############################################
+# 停止 gateway
+##############################################
+stop_gateway() {
+    log "Checking gateway process..."
+
+    # Gateway 实际进程匹配（更稳健）
+    gateway_pid=$(pgrep -f "openclaw-gateway" || true)
+
+    if [ -z "$gateway_pid" ]; then
+        log "Gateway process not running"
+        return 0
+    fi
+
+    log "Gateway running (PID=$gateway_pid), sending stop..."
+
+    # 直接调用 openclaw gateway stop
+    timeout 20s openclaw gateway stop 2>&1 | grep -v "systemctl is-enabled unavailable" >> "$LOG_FILE"
+    stop_result=$?
+
+    if [ $stop_result -eq 0 ]; then
+        log "Gateway stop command completed"
+    else
+        log "Gateway stop timeout/failed, forcing kill..."
+        kill "$gateway_pid" 2>/dev/null || true
+        sleep 1
+
+        if kill -0 "$gateway_pid" 2>/dev/null; then
+            log "Force killing with SIGKILL..."
+            kill -9 "$gateway_pid" 2>/dev/null || true
+        fi
+    fi
+
+    sleep 2
+    # 确认已停止
+    if kill -0 "$gateway_pid" 2>/dev/null; then
+        log "Gateway stop failed"
+        return 1
+    fi
+
+    log "Gateway stopped successfully"
+    return 0
+}
+
+##############################################
+# 重启 gateway
+##############################################
+restart_gateway() {
+    log "Starting gateway..."
+
+    timeout 60s openclaw gateway start 2>&1 \
+        | grep -v "systemctl" >> "$LOG_FILE"
+
+    # 等待进程启动
+    sleep 5
+
+    # 验证是否已启动
+    if openclaw gateway status 2>/dev/null \
+         | grep -q "RPC probe: ok"; then
+        log "Gateway started successfully"
+        return 0
+    fi
+
+    log "Gateway failed to start"
+    return 1
+}
+
+##############################################
+# 主备份流程
+##############################################
+
+log "上次备份文件: $LATEST_BACKUP"
+write_heartbeat "starting" "开始本次备份流程"   # ★ ERR-20260826-001: 心跳最早记录点
+
+if [ "$NEED_BACKUP" = true ]; then
+    log "开始备份，源目录自 $LAST_MOD_TIME 后有修改"
+
+    send_mail "OpenClaw 备份开始 - $NOW" \
+              "备份开始于 $TIMESTAMP，源目录自 $LAST_MOD_TIME 后已修改。日志：$LOG_FILE"
+
+    log "备份开始邮件已发送"
+
+    if [ "$STOP_GATEWAY" = "1" ]; then
+        if ! stop_gateway; then
+            log "停止 gateway 失败"
+            send_mail "OpenClaw 备份失败 - $NOW" "停止 gateway 失败！
+时间: $TIMESTAMP
+日志: $LOG_FILE"
+            restart_gateway
+            exit 1
+        fi
+        # 等待10秒钟确保进程完全退出
+        sleep 10
+    else
+        log "[HOT] STOP_GATEWAY=0，跳过停服，执行热备份"
+    fi
+
+    # 执行备份
+    log "执行 tar 备份..."
+    ARCHIVE="$BACKUP_DIR/openclaw-$NOW.tgz"
+	log "tar --exclude 热目录 -czf $ARCHIVE -C $HOME .openclaw 2>> $LOG_FILE"
+    # ★ 修复 (2026-07-13): 排除热目录避免 "file changed as we read it"
+    # - sessions: gateway 持续写入的对话历史
+    # - daily:     日报快照,可从 git 重生成
+    # - lancedb:   向量库重启自重建
+    # - node_modules / .git: 体积大且可重装
+    # ★ 修复 (2026-07-13): --warning=no-file-changed 让 tar 在文件变化时只警告不报错
+    # 排除的热目录本身已不会变化,但 .openclaw 根目录的 mtime 仍会变
+    # ★ 修复 (2026-07-13): 用 PIPESTATUS/直接捕获,避免 $? 被中间命令污染
+    set +e
+    tar --warning=no-file-changed \
+        --exclude='.openclaw/agents/main/sessions' \
+        --exclude='.openclaw/memory/daily' \
+        --exclude='.openclaw/data/lancedb' \
+        --exclude='.openclaw/plugins/*/node_modules' \
+        --exclude='.openclaw/plugins/*/.git' \
+        --exclude='.openclaw/agents/*/sessions' \
+        --exclude='.openclaw/memory-core' \
+        -czf "$ARCHIVE" -C "$HOME" .openclaw 2>>"$LOG_FILE"
+    BACKUP_STATUS=$?
+    set -e
+    log "tar 退出码: $BACKUP_STATUS"
+
+    if [ "$STOP_GATEWAY" = "1" ]; then
+        if ! restart_gateway; then
+            FILE_SIZE=$(du -h "$ARCHIVE" 2>/dev/null | cut -f1)
+            log "备份成功但 gateway 重启失败: $ARCHIVE ($FILE_SIZE)"
+            send_mail "OpenClaw 备份部分成功 - $NOW" \
+                      "备份成功但 gateway 重启失败：
+文件: $ARCHIVE
+大小: $FILE_SIZE
+时间: $TIMESTAMP
+
+⚠️ 请手动检查 gateway 状态: openclaw status"
+            exit 1
+        fi
+    fi
+
+    # tar 退出码: 0=成功, 1=部分文件有变化(热备份可接受), 2+=严重错误
+    if [ $BACKUP_STATUS -le 1 ]; then
+        FILE_SIZE=$(du -h "$ARCHIVE" | cut -f1)
+        log "备份成功: $ARCHIVE ($FILE_SIZE)"
+        write_heartbeat "ok" "备份成功: $ARCHIVE ($FILE_SIZE)"   # ★ ERR-20260826-001
+
+        send_mail "OpenClaw 备份完成 - $NOW" \
+                  "源目录自 $LAST_MOD_TIME后有修改，备份成功：
+
+文件: $ARCHIVE
+大小: $FILE_SIZE
+时间: $TIMESTAMP"
+        log "备份完成邮件已发送"
+
+        ############ 清理旧备份（新增）############
+        cleanup_old
+
+    else
+        log "备份失败"
+        write_heartbeat "error" "tar 退出码: $BACKUP_STATUS"   # ★ ERR-20260826-001
+        send_mail "OpenClaw 备份失败 - $NOW" "tar 出错，请检查日志：$LOG_FILE"
+    fi
+
+else
+    log "无需备份，源目录自 $LAST_MOD_TIME 后无修改"
+    write_heartbeat "skipped" "源目录无修改，跳过备份"   # ★ ERR-20260826-001: 即使跳过也写心跳，证明 cron 还活着
+    # 不发送通知
+fi
+
+# 推送状态到飞书 (best-effort，不影响备份流程)
+# 脚本：~/.openclaw/workspace/cron-scripts/send-backup-log-feishu.py
+#       从 ~/.openclaw-backup.log 读今日记录，自动构造摘要推送
+unset HTTP_PROXY HTTPS_PROXY http_proxy https_proxy NO_PROXY 2>/dev/null
+if [ -f "$HOME/.openclaw/workspace/cron-scripts/send-backup-log-feishu.py" ]; then
+    python3 "$HOME/.openclaw/workspace/cron-scripts/send-backup-log-feishu.py" >> "$LOG_FILE" 2>&1 || \
+        log "⚠️ 飞书推送失败 (备份本身已成功/正常)"
+fi
+
+# ★ A1 fix (2026-10-19): emit heartbeat status to stdout so cron's >> backup-cron.log captures it.
+# Before this, the cron-redirected file stayed empty because the script wrote only
+# to LOG_FILE / HEARTBEAT_FILE internally, never to stdout — NightOps/Scout's
+# "X days silent" check on backup-cron.log then read stale content and produced
+# false P0 ("backup failing 9 nights") even when .tgz files were being produced daily.
+# Fix: read the structured heartbeat (which is the source of truth) and echo one
+# status line so the cron's >> /home/zhiping/.openclaw/logs/backup-cron.log 2>&1
+# actually gets fresh content every night.
+if [ -f "$HEARTBEAT_FILE" ]; then
+    HB_STATUS=$(grep -oP '^status=\K\S+' "$HEARTBEAT_FILE" 2>/dev/null | head -1)
+    HB_LAST=$(grep -oP '^last_run=\K\S+' "$HEARTBEAT_FILE" 2>/dev/null | head -1)
+    HB_BACKUP=$(grep -oP '^last_backup=\K\S+' "$HEARTBEAT_FILE" 2>/dev/null | head -1)
+    HB_EPOCH=$(grep -oP '^last_run_epoch=\K\S+' "$HEARTBEAT_FILE" 2>/dev/null | head -1)
+    echo "[$TIMESTAMP] backup status=$HB_STATUS last_run=$HB_LAST last_backup=$HB_BACKUP last_run_epoch=$HB_EPOCH"
+else
+    echo "[$TIMESTAMP] backup status=unknown heartbeat_file_missing=$HEARTBEAT_FILE"
+fi

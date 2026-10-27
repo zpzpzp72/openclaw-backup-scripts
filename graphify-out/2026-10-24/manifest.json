@@ -1,0 +1,27 @@
+{
+ "date": "2026-10-24",
+ "kind": "nightly-scout-snapshot",
+ "sources": [
+  "arxiv:cs.AI",
+  "arxiv:cs.MA",
+  "arxiv:agent/mcp-keyword",
+  "arxiv:mcp-exact",
+  "arxiv:tool-agent",
+  "github:mcp-org",
+  "github:spec/servers/inspector/anthropic-sdk-py",
+  "github:mcp-sdk-ts/rust/csharp/go",
+  "github:registry/ext-auth/ext-apps",
+  "github:claude-code",
+  "hn:firebaseio",
+  "rss:openai/google/vercel",
+  "web_fetch:articles"
+ ],
+ "raw_dir": "scout-raw",
+ "node_count": 200,
+ "edge_count": 367,
+ "arxiv_count": 115,
+ "release_count": 30,
+ "commit_count": 30,
+ "news_count": 7,
+ "next_window": "2026-10-25T00:30+08:00"
+}

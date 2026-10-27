@@ -1,0 +1,481 @@
+{
+  "nodes": [
+    {
+      "id": "theme-2026-10-20",
+      "kind": "theme",
+      "label": "AI/Agent/MCP 2026-10-20",
+      "attrs": {}
+    },
+    {
+      "id": "arxiv:2610.26860",
+      "kind": "arxiv",
+      "label": "OpenVLHarness: Real World Visual Agentic Tool-Use with Multimodal Memory",
+      "attrs": {
+        "id": "2610.26860",
+        "theme": "agent-tools",
+        "tag": "visual-agentic-tool-use"
+      }
+    },
+    {
+      "id": "arxiv:2610.26826",
+      "kind": "arxiv",
+      "label": "RefCraft: Benchmarking Visual-Reference-Conditioned Agentic Generation through Web Development",
+      "attrs": {
+        "id": "2610.26826",
+        "theme": "agent-tools",
+        "tag": "agentic-web-dev"
+      }
+    },
+    {
+      "id": "arxiv:2610.26664",
+      "kind": "arxiv",
+      "label": "Honeypots for AI Agent Insider Threats",
+      "attrs": {
+        "id": "2610.26664",
+        "theme": "agent-safety",
+        "tag": "honeypot-insider"
+      }
+    },
+    {
+      "id": "arxiv:2610.26828",
+      "kind": "arxiv",
+      "label": "Agent World Model in the Wild (WildAWM)",
+      "attrs": {
+        "id": "2610.26828",
+        "theme": "agent-world-model",
+        "tag": "computer-use-env"
+      }
+    },
+    {
+      "id": "arxiv:2610.26503",
+      "kind": "arxiv",
+      "label": "ScopeMem: Latent Memory for Frozen GUI Agents",
+      "attrs": {
+        "id": "2610.26503",
+        "theme": "agent-memory",
+        "tag": "gui-latent-memory"
+      }
+    },
+    {
+      "id": "arxiv:2610.26554",
+      "kind": "arxiv",
+      "label": "BetaMem: Memory for Embodied Agents",
+      "attrs": {
+        "id": "2610.26554",
+        "theme": "agent-memory",
+        "tag": "embodied-memory"
+      }
+    },
+    {
+      "id": "arxiv:2610.26836",
+      "kind": "arxiv",
+      "label": "Same Simulation, Different Evidence",
+      "attrs": {
+        "id": "2610.26836",
+        "theme": "agent-tools",
+        "tag": "tool-output-costs-accuracy"
+      }
+    },
+    {
+      "id": "arxiv:2610.26847",
+      "kind": "arxiv",
+      "label": "WeAct: Dynamic Weight Switching as Agent Actions",
+      "attrs": {
+        "id": "2610.26847",
+        "theme": "agent-train",
+        "tag": "dynamic-weight-switching"
+      }
+    },
+    {
+      "id": "arxiv:2610.26856",
+      "kind": "arxiv",
+      "label": "RL with Visually Attributable On-Policy Self-Distillation",
+      "attrs": {
+        "id": "2610.26856",
+        "theme": "agent-train",
+        "tag": "on-policy-self-distill"
+      }
+    },
+    {
+      "id": "arxiv:2610.26844",
+      "kind": "arxiv",
+      "label": "AnyGoal: World Model Generalization Beyond Expert Rollouts",
+      "attrs": {
+        "id": "2610.26844",
+        "theme": "agent-world-model",
+        "tag": "wm-generalization"
+      }
+    },
+    {
+      "id": "arxiv:2610.26685",
+      "kind": "arxiv",
+      "label": "Intra-Rubric Reward Divergence",
+      "attrs": {
+        "id": "2610.26685",
+        "theme": "agent-train",
+        "tag": "rubric-hacking-fix"
+      }
+    },
+    {
+      "id": "arxiv:2610.26551",
+      "kind": "arxiv",
+      "label": "Training Natural Schemers",
+      "attrs": {
+        "id": "2610.26551",
+        "theme": "agent-train",
+        "tag": "oversight-conditional-amplification"
+      }
+    },
+    {
+      "id": "arxiv:2610.26679",
+      "kind": "arxiv",
+      "label": "StepBench",
+      "attrs": {
+        "id": "2610.26679",
+        "theme": "eval",
+        "tag": "procedural-understanding"
+      }
+    },
+    {
+      "id": "arxiv:2610.26829",
+      "kind": "arxiv",
+      "label": "ProteinGeoBench",
+      "attrs": {
+        "id": "2610.26829",
+        "theme": "eval",
+        "tag": "protein-agent-geometry"
+      }
+    },
+    {
+      "id": "arxiv:2610.26848",
+      "kind": "arxiv",
+      "label": "Where is Physical RSI capability from?",
+      "attrs": {
+        "id": "2610.26848",
+        "theme": "eval",
+        "tag": "physical-rsi-scaling"
+      }
+    },
+    {
+      "id": "arxiv:2610.26595",
+      "kind": "arxiv",
+      "label": "Concerns in Benchmarking Jailbreaks",
+      "attrs": {
+        "id": "2610.26595",
+        "theme": "eval",
+        "tag": "asr-protocol-disagreement"
+      }
+    },
+    {
+      "id": "github:mcp-servers",
+      "kind": "github",
+      "label": "mcp/servers",
+      "attrs": {
+        "stars": 91406,
+        "status": "release:v2.0.0@2026-10-19"
+      }
+    },
+    {
+      "id": "github:mcp-inspector",
+      "kind": "github",
+      "label": "mcp/inspector",
+      "attrs": {
+        "stars": 11107,
+        "status": "release:v2.11.0@2026-10-14"
+      }
+    },
+    {
+      "id": "github:mcp-spec",
+      "kind": "github",
+      "label": "mcp/modelcontextprotocol",
+      "attrs": {
+        "stars": 9488,
+        "status": "latest-release:2026-07-28"
+      }
+    },
+    {
+      "id": "github:mcp-ext-apps",
+      "kind": "github",
+      "label": "mcp/ext-apps",
+      "attrs": {
+        "stars": 2983,
+        "status": "2026-10-20-active"
+      }
+    },
+    {
+      "id": "github:mcp-ext-skills",
+      "kind": "github",
+      "label": "mcp/ext-skills",
+      "attrs": {
+        "stars": 743,
+        "status": "2026-10-20-active"
+      }
+    },
+    {
+      "id": "github:mcp-java-sdk",
+      "kind": "github",
+      "label": "mcp/java-sdk",
+      "attrs": {
+        "stars": 3745,
+        "status": "2026-10-20-active"
+      }
+    },
+    {
+      "id": "github:mcp-kotlin-sdk",
+      "kind": "github",
+      "label": "mcp/kotlin-sdk",
+      "attrs": {
+        "stars": 1473,
+        "status": "2026-10-20-active"
+      }
+    },
+    {
+      "id": "github:anthropic-sdk-python",
+      "kind": "github",
+      "label": "anthropics/anthropic-sdk-python",
+      "attrs": {
+        "release": "v1.15.0@2026-10-15",
+        "features": [
+          "speed param",
+          "usage.speed",
+          "OTel defaults",
+          "between_tools"
+        ]
+      }
+    },
+    {
+      "id": "news:hn-DeepInfer",
+      "kind": "news",
+      "label": "DeepSeek DeepInfer opensourced",
+      "attrs": {
+        "url": "https://github.com/deepseek-ai/DeepInfer"
+      }
+    },
+    {
+      "id": "news:hn-DHSBan",
+      "kind": "news",
+      "label": "DeepSeek US federal civilian agency ban",
+      "attrs": {
+        "url": "https://www.reuters.com/technology/us-banning-chinese-ai-deepseek-government-agency-it-systems-2026-10-19/"
+      }
+    },
+    {
+      "id": "news:hn-M3-Flash",
+      "kind": "news",
+      "label": "MiniMax M3.1 Flash release",
+      "attrs": {
+        "url": "https://www.minimax.io/blog/minimax-m31f"
+      }
+    },
+    {
+      "id": "news:hn-WhatsApp-LLM",
+      "kind": "news",
+      "label": "WhatsApp help pages hid LLM instructions",
+      "attrs": {
+        "url": "https://redact.dev/blog/whatsapp-help-pages-hidden-ai-instructions"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "src": "arxiv:2610.26860",
+      "dst": "theme-2026-10-20",
+      "rel": "features",
+      "attrs": {}
+    },
+    {
+      "src": "arxiv:2610.26826",
+      "dst": "theme-2026-10-20",
+      "rel": "features",
+      "attrs": {}
+    },
+    {
+      "src": "arxiv:2610.26664",
+      "dst": "theme-2026-10-20",
+      "rel": "features",
+      "attrs": {}
+    },
+    {
+      "src": "arxiv:2610.26828",
+      "dst": "theme-2026-10-20",
+      "rel": "features",
+      "attrs": {}
+    },
+    {
+      "src": "arxiv:2610.26503",
+      "dst": "theme-2026-10-20",
+      "rel": "features",
+      "attrs": {}
+    },
+    {
+      "src": "arxiv:2610.26554",
+      "dst": "theme-2026-10-20",
+      "rel": "features",
+      "attrs": {}
+    },
+    {
+      "src": "arxiv:2610.26836",
+      "dst": "theme-2026-10-20",
+      "rel": "features",
+      "attrs": {}
+    },
+    {
+      "src": "arxiv:2610.26847",
+      "dst": "theme-2026-10-20",
+      "rel": "features",
+      "attrs": {}
+    },
+    {
+      "src": "arxiv:2610.26856",
+      "dst": "theme-2026-10-20",
+      "rel": "features",
+      "attrs": {}
+    },
+    {
+      "src": "arxiv:2610.26844",
+      "dst": "theme-2026-10-20",
+      "rel": "features",
+      "attrs": {}
+    },
+    {
+      "src": "arxiv:2610.26685",
+      "dst": "theme-2026-10-20",
+      "rel": "features",
+      "attrs": {}
+    },
+    {
+      "src": "arxiv:2610.26551",
+      "dst": "theme-2026-10-20",
+      "rel": "features",
+      "attrs": {}
+    },
+    {
+      "src": "arxiv:2610.26679",
+      "dst": "theme-2026-10-20",
+      "rel": "features",
+      "attrs": {}
+    },
+    {
+      "src": "arxiv:2610.26829",
+      "dst": "theme-2026-10-20",
+      "rel": "features",
+      "attrs": {}
+    },
+    {
+      "src": "arxiv:2610.26848",
+      "dst": "theme-2026-10-20",
+      "rel": "features",
+      "attrs": {}
+    },
+    {
+      "src": "arxiv:2610.26595",
+      "dst": "theme-2026-10-20",
+      "rel": "features",
+      "attrs": {}
+    },
+    {
+      "src": "github:mcp-servers",
+      "dst": "theme-2026-10-20",
+      "rel": "observed_in",
+      "attrs": {}
+    },
+    {
+      "src": "github:mcp-inspector",
+      "dst": "theme-2026-10-20",
+      "rel": "observed_in",
+      "attrs": {}
+    },
+    {
+      "src": "github:mcp-spec",
+      "dst": "theme-2026-10-20",
+      "rel": "observed_in",
+      "attrs": {}
+    },
+    {
+      "src": "github:mcp-ext-apps",
+      "dst": "theme-2026-10-20",
+      "rel": "observed_in",
+      "attrs": {}
+    },
+    {
+      "src": "github:mcp-ext-skills",
+      "dst": "theme-2026-10-20",
+      "rel": "observed_in",
+      "attrs": {}
+    },
+    {
+      "src": "github:mcp-java-sdk",
+      "dst": "theme-2026-10-20",
+      "rel": "observed_in",
+      "attrs": {}
+    },
+    {
+      "src": "github:mcp-kotlin-sdk",
+      "dst": "theme-2026-10-20",
+      "rel": "observed_in",
+      "attrs": {}
+    },
+    {
+      "src": "github:anthropic-sdk-python",
+      "dst": "theme-2026-10-20",
+      "rel": "observed_in",
+      "attrs": {}
+    },
+    {
+      "src": "news:hn-DeepInfer",
+      "dst": "theme-2026-10-20",
+      "rel": "highlighted_in",
+      "attrs": {}
+    },
+    {
+      "src": "news:hn-DHSBan",
+      "dst": "theme-2026-10-20",
+      "rel": "highlighted_in",
+      "attrs": {}
+    },
+    {
+      "src": "news:hn-M3-Flash",
+      "dst": "theme-2026-10-20",
+      "rel": "highlighted_in",
+      "attrs": {}
+    },
+    {
+      "src": "news:hn-WhatsApp-LLM",
+      "dst": "theme-2026-10-20",
+      "rel": "highlighted_in",
+      "attrs": {}
+    },
+    {
+      "src": "arxiv:2610.26860",
+      "dst": "github:mcp-servers",
+      "rel": "evaluates",
+      "attrs": {}
+    },
+    {
+      "src": "arxiv:2610.26664",
+      "dst": "news:hn-WhatsApp-LLM",
+      "rel": "related_to",
+      "attrs": {}
+    },
+    {
+      "src": "arxiv:2610.26828",
+      "dst": "github:mcp-inspector",
+      "rel": "related_to",
+      "attrs": {}
+    },
+    {
+      "src": "arxiv:2610.26847",
+      "dst": "github:anthropic-sdk-python",
+      "rel": "complementary_to",
+      "attrs": {}
+    }
+  ],
+  "meta": {
+    "date": "2026-10-20",
+    "generated": "2026-10-20T13:35Z",
+    "source": "NightOps-Scout",
+    "node_count": 29,
+    "edge_count": 32,
+    "hash": "a8ef2504e41d4060"
+  }
+}

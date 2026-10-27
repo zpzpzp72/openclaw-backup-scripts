@@ -1,0 +1,5 @@
+ATM: Autonomous Topology Mutation for Safe Runtime Restructuring of Multi-Agent LLM Systems
+
+Abstract: Multi-agent LLM frameworks typically fix team topology at boot time. ATM introduces runtime team-mutation with three safety invariants: capability monotonicity, state-routing completeness, and shadow-before-live validation. Monitors a six-signal Bottleneck Index. On 720 DeepSeek-V3-driven task runs, ATM factoriser lifts code-task success from 3.3% to 61.7%. Privacy exposure reduced from 2.0 to 0.0 events per task. Runtime overhead <500μs p99 latency.
+
+Topics: multi-agent systems, runtime restructuring, safety invariants, LLM, topology mutation, DeepSeek-V3

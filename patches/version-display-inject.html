@@ -1,0 +1,65 @@
+<!-- openclaw:version-display-inject:v1 -->
+    <script>
+// Version display injection for OpenClaw Control UI.
+// Shows the current OpenClaw version next to the connection status dot in the sidebar footer.
+(function () {
+  "use strict";
+  var MARK = "data-openclaw-version";
+
+  function extractVersion() {
+    var ver = null;
+    try {
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', '/sw.js', false);
+      xhr.send();
+      if (xhr.status === 200) {
+        var m = xhr.responseText.match(/EMBEDDED_CACHE_VERSION\s*=\s*["']([^"']+)["']/);
+        if (m && m[1] && m[1].indexOf('__OPENCLAW') === -1) {
+          ver = m[1].split('-').slice(0, 3).join('-');
+        }
+      }
+    } catch (e) {}
+    if (!ver && window.__OPENCLAW_VERSION__) ver = window.__OPENCLAW_VERSION__;
+    return ver || "v?";
+  }
+
+  function makeBadge(version) {
+    var span = document.createElement("span");
+    span.setAttribute(MARK, "");
+    span.className = "openclaw-version-badge";
+    span.textContent = version;
+    span.setAttribute("title", "OpenClaw " + version);
+    return span;
+  }
+
+  function inject() {
+    var statusDot = document.querySelector('[class*="sidebar-status__dot"]');
+    if (!statusDot) return false;
+    var footer = statusDot.closest('[class*="sidebar-footer-bar"]');
+    if (!footer) return false;
+    if (footer.querySelector("[" + MARK + "]")) return true;
+
+    var badge = makeBadge(extractVersion());
+    // Insert right after the status dot element
+    statusDot.parentNode.insertBefore(badge, statusDot.nextSibling);
+    return true;
+  }
+
+  // Inject style
+  if (!document.getElementById("openclaw-version-style")) {
+    var st = document.createElement("style");
+    st.id = "openclaw-version-style";
+    st.textContent =
+      ".openclaw-version-badge{display:inline-flex;align-items:center;margin-left:6px;" +
+      "padding:1px 6px;font-size:10px;font-weight:600;line-height:1.4;letter-spacing:.02em;" +
+      "border-radius:4px;white-space:nowrap;vertical-align:middle;" +
+      "background:var(--openclaw-surface-active,rgba(148,163,184,.12));" +
+      "color:var(--openclaw-muted,#8a939b);" +
+      "border:1px solid var(--openclaw-border,rgba(148,163,184,.18));}";
+    (document.head || document.documentElement).appendChild(st);
+  }
+
+  // Fire at a few points; idempotent.
+  [1500, 3000, 6000].forEach(function (ms) { setTimeout(inject, ms); });
+})();
+    </script>

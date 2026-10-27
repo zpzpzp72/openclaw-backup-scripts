@@ -1,0 +1,5 @@
+ExpectBench: Expectation Alignment of Language Models for Real-World User Expectations
+
+Abstract: LLMs demonstrate remarkable performance on standard benchmarks, yet it remains largely unexplored whether they truly meet user expectations. We present the first systematic study of user expectations in real-world LLM interactions. Introduce ExpectBench, a benchmark grounded in real user expectations. Propose LENS, a lightweight latent expectation-aware response generation framework that internalizes user expectations and generates better-aligned responses.
+
+Topics: user expectations, alignment, LLM, benchmark, personalization, ICML 2026

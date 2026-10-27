@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-19",
+  "generated_at": "2026-10-19T13:40:34.609574+00:00",
+  "generator": "NightOps-Scout cron 0597835a",
+  "source_graph": "graphify-out/graph.json",
+  "corpus_files": [
+    "arxiv_2610_23307.md",
+    "arxiv_2610_23342.md",
+    "arxiv_2610_23449.md",
+    "github_com_modelcontextprotocol_inspector_releases_tag_2_11_0.md",
+    "github_com_modelcontextprotocol_modelcontextprotocol.md",
+    "github_com_modelcontextprotocol_servers_releases_tag_v2_0_0.md",
+    "scout-2026-09-01-corpus.md",
+    "scout-2026-10-01-evening-corpus.md",
+    "scout-2026-10-19-corpus.md"
+  ],
+  "stats": {
+    "total_nodes": 157,
+    "total_hyperedges": 4,
+    "total_links": 394,
+    "communities": {
+      "Eval": 18,
+      "RL": 3,
+      "Agents": 16,
+      "MCP/Tools": 0,
+      "Vision/MM": 2,
+      "Safety/Alignment": 5,
+      "Memory": 4,
+      "Robotics/Embodied": 0,
+      "Reasoning": 5,
+      "Other": 104
+    }
+  },
+  "headlines": [
+    "MCP servers v2.0.0 RELEASED 2026-10-19 (resolves 6-session watch item)",
+    "modelcontextprotocol/spec -> modelcontextprotocol/modelcontextprotocol (renamed)",
+    "5 SDK burst on 10-18: php-sdk 0.9.0 prep + ruby-sdk request-id hardening",
+    "Inspector 2.11.0 released 10-14 (3 releases in 7 days)",
+    "arXiv cs.AI fresh = 2026-10-16 batch only (40 papers, IDs 2610.23027-2610.23854)",
+    "web_search still provider_error (DuckDuckGo, 5th consecutive day)"
+  ],
+  "next_watch": [
+    "servers v2.0.0 adoption signal (npm/PyPI download counts)",
+    "SEP-3405 (Conformance-Driven SDK Tiers) merge",
+    "SEP-3415 (Events Extension) draft progression",
+    "web_search provider switch (Brave/Tavily evaluation)",
+    "spec 2026-11 release (post 2026-07-28 stagnation)",
+    "arXiv 2610 weekend batch (10-17/18) arrival"
+  ]
+}

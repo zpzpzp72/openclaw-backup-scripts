@@ -1,0 +1,5 @@
+Benchmarking Autonomous TPU Kernel Optimization (JAXBench)
+
+Abstract: Rigorous benchmarks have driven progress in autonomous GPU kernel performance optimization, but no equivalent exists for TPUs. We present JAXBench, a TPU-native benchmark suite for AI-generated kernel optimization on Google Cloud TPUs. JAXBench comprises 50 JAX workloads. We evaluate four feedback-driven methods on generating candidate Pallas kernels. Across the full suite with Gemini 3 Flash, we find that target-specific context matters more than model scale on a sparsely-documented DSL like Pallas. Conditioning on curated TPU documentation raises per-sample correctness from 5.8% to 37.3% and solves 48 of 50 benchmarks at a 1.28x geomean speedup.
+
+Topics: TPU, kernel optimization, JAX, Pallas, AI agents, benchmark, Gemini 3 Flash, DSL

@@ -1,0 +1,30 @@
+{
+  "date": "2026-08-27",
+  "agent": "coder",
+  "nightopsCycle": 34,
+  "executedAt": "2026-08-27T22:20:00+08:00",
+  "github": {
+    "auth": "invalid",
+    "branch": "feature/hot-backup",
+    "aheadOfOrigin": 1,
+    "actionRequired": "gh auth login -h github.com"
+  },
+  "gateway": {
+    "status": "running",
+    "pid": 623,
+    "version": "2026.7.1-2",
+    "port": 18789,
+    "probe": "ok"
+  },
+  "codebase": {
+    "dirty": true,
+    "changedFiles": 9,
+    "netLines": "+506/-1043",
+    "alerts": ["COPILOT_BARE_EXCEPT", "REPO_STALE", "MISSING_GITIGNORE", "ORIGIN_ORPHAN"]
+  },
+  "security": {
+    "npmAudit": "passed",
+    "vulnerabilities": 0
+  },
+  "reportFile": "heartbeat/nightly-coder-2026-08-27.md"
+}

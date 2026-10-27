@@ -1,0 +1,985 @@
+{
+  "nodes": [
+    {
+      "id": "gpt56_luna",
+      "label": "GPT-5.6 Luna",
+      "file_type": "document",
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "id": "gpt56_terra",
+      "label": "GPT-5.6 Terra",
+      "file_type": "document",
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "id": "gpt56_sol",
+      "label": "GPT-5.6 Sol",
+      "file_type": "document",
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "id": "claude_fable5",
+      "label": "Claude Fable 5",
+      "file_type": "document",
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "id": "claude_mythos5",
+      "label": "Claude Mythos 5",
+      "file_type": "document",
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "id": "gemini_spark",
+      "label": "Gemini Spark",
+      "file_type": "document",
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "id": "nano_banana2",
+      "label": "Nano Banana 2",
+      "file_type": "document",
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "id": "openai",
+      "label": "OpenAI",
+      "file_type": "document",
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "id": "anthropic",
+      "label": "Anthropic",
+      "file_type": "document",
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "id": "google",
+      "label": "Google",
+      "file_type": "document",
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "id": "meta",
+      "label": "Meta",
+      "file_type": "document",
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "id": "scale_ai",
+      "label": "Scale AI",
+      "file_type": "document",
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "id": "thinking_machines_lab",
+      "label": "Thinking Machines Lab",
+      "file_type": "document",
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "id": "lilian_weng",
+      "label": "Lilian Weng",
+      "file_type": "document",
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "id": "francis_desouza",
+      "label": "Francis deSouza",
+      "file_type": "document",
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "id": "leopold_aschenbrenner",
+      "label": "Leopold Aschenbrenner",
+      "file_type": "document",
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "id": "agent_safety",
+      "label": "Agent Safety",
+      "file_type": "document",
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "id": "jailbreak_scoring_framework",
+      "label": "Jailbreak Severity Scoring Framework",
+      "file_type": "document",
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "id": "ai_political_bias",
+      "label": "AI Political Bias",
+      "file_type": "document",
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "id": "agentic_scientific_computing",
+      "label": "Agentic AI Scientific Computing",
+      "file_type": "document",
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "id": "retained_reasoning",
+      "label": "Retained Reasoning + Compaction",
+      "file_type": "document",
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "id": "model_self_optimization",
+      "label": "Model Self-Optimization",
+      "file_type": "document",
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "id": "ai_addiction_design",
+      "label": "AI Addiction Design",
+      "file_type": "document",
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "id": "price_performance_frontier",
+      "label": "Price-Performance Frontier",
+      "file_type": "document",
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "id": "claude_accidental_intrusions",
+      "label": "Claude Accidental Intrusions",
+      "file_type": "document",
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "id": "mcp_protocol",
+      "label": "MCP Protocol",
+      "file_type": "document",
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "id": "mcp_v2026_7_10",
+      "label": "MCP v2026.7.10",
+      "file_type": "document",
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "id": "optscientist",
+      "label": "OPTScientist: Multi-Agent Optimizer Discovery",
+      "file_type": "document",
+      "source_file": "graphify-raw/2607.20486.txt"
+    },
+    {
+      "id": "tractable_hierarchical",
+      "label": "Tractable Hierarchical Control of AR LLMs",
+      "file_type": "document",
+      "source_file": "graphify-raw/2607.20483.txt"
+    },
+    {
+      "id": "personatrail",
+      "label": "PersonaTrail: Personalized Web Agents",
+      "file_type": "document",
+      "source_file": "graphify-raw/2607.20482.txt"
+    },
+    {
+      "id": "sdr_bench",
+      "label": "SDR-Bench: LLM Personalization",
+      "file_type": "document",
+      "source_file": "graphify-raw/2607.20471.txt"
+    },
+    {
+      "id": "jaxbench",
+      "label": "JAXBench: TPU Kernel Optimization",
+      "file_type": "document",
+      "source_file": "graphify-raw/2607.20466.txt"
+    },
+    {
+      "id": "dcgs",
+      "label": "DCGS: Multi-Turn Attack Defense",
+      "file_type": "document",
+      "source_file": "graphify-raw/2607.20472.txt"
+    },
+    {
+      "id": "trsp",
+      "label": "TRSP: Topologically Regularized Side-Path",
+      "file_type": "document",
+      "source_file": "graphify-raw/2607.20484.txt"
+    },
+    {
+      "id": "sonicsampler",
+      "label": "SonicSampler: LLM Sampling Kernels",
+      "file_type": "document",
+      "source_file": "graphify-raw/2607.20475.txt"
+    },
+    {
+      "id": "aintma",
+      "label": "AINTMA: Agentic Test Management",
+      "file_type": "document",
+      "source_file": "graphify-raw/2607.20452.txt"
+    },
+    {
+      "id": "evosql",
+      "label": "EvoSQL: Text-to-SQL Co-Evolution",
+      "file_type": "document",
+      "source_file": "graphify-raw/2607.20489.txt"
+    },
+    {
+      "id": "verisimpl",
+      "label": "VeriSimpl: Optimization Modeling from NL",
+      "file_type": "document",
+      "source_file": "graphify-raw/2607.20474.txt"
+    },
+    {
+      "id": "inferencebench",
+      "label": "InferenceBench: LLM Inference Optimization",
+      "file_type": "document",
+      "source_file": "graphify-raw/2607.20468.txt"
+    },
+    {
+      "id": "atm",
+      "label": "ATM: Autonomous Topology Mutation",
+      "file_type": "document",
+      "source_file": "graphify-raw/2607.20488.txt"
+    },
+    {
+      "id": "dfah_bench",
+      "label": "DFAH-Bench: Agent Instability",
+      "file_type": "document",
+      "source_file": "graphify-raw/2607.20491.txt"
+    },
+    {
+      "id": "ipj",
+      "label": "IPJ: Incomplete Prompt Jailbreaks",
+      "file_type": "document",
+      "source_file": "graphify-raw/2607.20473.txt"
+    },
+    {
+      "id": "expectbench",
+      "label": "ExpectBench: User Expectation Alignment",
+      "file_type": "document",
+      "source_file": "graphify-raw/2607.20485.txt"
+    },
+    {
+      "id": "multi_agent_systems",
+      "label": "Multi-Agent Systems",
+      "file_type": "document",
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "id": "agent_safety_concept",
+      "label": "Agent Safety",
+      "file_type": "document",
+      "source_file": "graphify-raw/2607.20472.txt"
+    },
+    {
+      "id": "benchmarking",
+      "label": "Benchmarking",
+      "file_type": "document",
+      "source_file": "graphify-raw/2607.20466.txt"
+    },
+    {
+      "id": "llm_inference",
+      "label": "LLM Inference",
+      "file_type": "document",
+      "source_file": "graphify-raw/2607.20468.txt"
+    },
+    {
+      "id": "llm_safety",
+      "label": "LLM Safety",
+      "file_type": "document",
+      "source_file": "graphify-raw/2607.20472.txt"
+    },
+    {
+      "id": "personalization",
+      "label": "Personalization",
+      "file_type": "document",
+      "source_file": "graphify-raw/2607.20482.txt"
+    },
+    {
+      "id": "kernel_optimization",
+      "label": "Kernel Optimization",
+      "file_type": "document",
+      "source_file": "graphify-raw/2607.20466.txt"
+    },
+    {
+      "id": "alibaba_fable5_claim",
+      "label": "Alibaba Fable 5 Rival Claim",
+      "file_type": "document",
+      "source_file": "heartbeat/nightly-scout-2026-08-03.md"
+    },
+    {
+      "id": "amazon_bot_false_positive",
+      "label": "Amazon Bot False Positive",
+      "file_type": "document",
+      "source_file": "heartbeat/nightly-scout-2026-08-03.md"
+    },
+    {
+      "id": "dna_evidence_tampering",
+      "label": "DNA Evidence Tampering Vulnerability",
+      "file_type": "document",
+      "source_file": "heartbeat/nightly-scout-2026-08-03.md"
+    },
+    {
+      "id": "thermo_fisher",
+      "label": "Thermo Fisher Forensic Equipment",
+      "file_type": "document",
+      "source_file": "heartbeat/nightly-scout-2026-08-03.md"
+    },
+    {
+      "id": "reddit_perplexity_case",
+      "label": "Reddit v Perplexity Copyright Case",
+      "file_type": "document",
+      "source_file": "heartbeat/nightly-scout-2026-08-03.md"
+    },
+    {
+      "id": "hank_green_ai_research",
+      "label": "Hank Green AI Research Backlash",
+      "file_type": "document",
+      "source_file": "heartbeat/nightly-scout-2026-08-03.md"
+    },
+    {
+      "id": "snapchat_ai_video_ban",
+      "label": "Snapchat Pure AI Video Ban",
+      "file_type": "document",
+      "source_file": "heartbeat/nightly-scout-2026-08-03.md"
+    },
+    {
+      "id": "gemini_vibe_coding",
+      "label": "Google Gemini Vibe Coding Integration",
+      "file_type": "document",
+      "source_file": "heartbeat/nightly-scout-2026-08-03.md"
+    },
+    {
+      "id": "ai_agent_security_crisis",
+      "label": "AI Agent Security Crisis (Aug 2026)",
+      "file_type": "document",
+      "source_file": "heartbeat/nightly-scout-2026-08-03.md"
+    },
+    {
+      "id": "ai_security_research_democratization",
+      "label": "AI Security Research Democratization",
+      "file_type": "document",
+      "source_file": "heartbeat/nightly-scout-2026-08-03.md"
+    },
+    {
+      "id": "agent_escaped_containment_aug",
+      "label": "AI Agent Escaped Containment (Aug 2026)",
+      "file_type": "document",
+      "source_file": "heartbeat/nightly-scout-2026-08-03.md"
+    },
+    {
+      "id": "openai_1b_weekly_users",
+      "label": "OpenAI 1 Billion Weekly Active Users",
+      "file_type": "document",
+      "source_file": "heartbeat/nightly-scout-2026-08-03.md"
+    }
+  ],
+  "edges": [
+    {
+      "source": "gpt56_luna",
+      "target": "openai",
+      "relation": "produced_by",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "source": "gpt56_terra",
+      "target": "openai",
+      "relation": "produced_by",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "source": "gpt56_sol",
+      "target": "openai",
+      "relation": "produced_by",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "source": "claude_fable5",
+      "target": "anthropic",
+      "relation": "produced_by",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "source": "claude_mythos5",
+      "target": "anthropic",
+      "relation": "produced_by",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "source": "gemini_spark",
+      "target": "google",
+      "relation": "produced_by",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "source": "nano_banana2",
+      "target": "google",
+      "relation": "produced_by",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "source": "lilian_weng",
+      "target": "openai",
+      "relation": "works_at",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "source": "lilian_weng",
+      "target": "thinking_machines_lab",
+      "relation": "co_founded",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "source": "francis_desouza",
+      "target": "scale_ai",
+      "relation": "ceo_of",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "source": "claude_accidental_intrusions",
+      "target": "claude_fable5",
+      "relation": "involves",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "source": "jailbreak_scoring_framework",
+      "target": "anthropic",
+      "relation": "developed_by",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "source": "jailbreak_scoring_framework",
+      "target": "google",
+      "relation": "developed_by",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "source": "jailbreak_scoring_framework",
+      "target": "openai",
+      "relation": "developed_by",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "source": "mcp_v2026_7_10",
+      "target": "mcp_protocol",
+      "relation": "version_of",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "source": "retained_reasoning",
+      "target": "gpt56_sol",
+      "relation": "technique_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "source": "model_self_optimization",
+      "target": "gpt56_sol",
+      "relation": "demonstrated_by",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "source": "ai_political_bias",
+      "target": "meta",
+      "relation": "studied_by",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "source": "ai_addiction_design",
+      "target": "meta",
+      "relation": "associated_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "source": "price_performance_frontier",
+      "target": "gpt56_luna",
+      "relation": "exemplified_by",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "source": "optscientist",
+      "target": "multi_agent_systems",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-raw/2607.20486.txt"
+    },
+    {
+      "source": "dcgs",
+      "target": "llm_safety",
+      "relation": "addresses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-raw/2607.20472.txt"
+    },
+    {
+      "source": "ipj",
+      "target": "llm_safety",
+      "relation": "addresses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-raw/2607.20473.txt"
+    },
+    {
+      "source": "jaxbench",
+      "target": "kernel_optimization",
+      "relation": "benchmarks",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-raw/2607.20466.txt"
+    },
+    {
+      "source": "sonicsampler",
+      "target": "llm_inference",
+      "relation": "optimizes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-raw/2607.20475.txt"
+    },
+    {
+      "source": "inferencebench",
+      "target": "llm_inference",
+      "relation": "benchmarks",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-raw/2607.20468.txt"
+    },
+    {
+      "source": "personatrail",
+      "target": "personalization",
+      "relation": "benchmarks",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-raw/2607.20482.txt"
+    },
+    {
+      "source": "sdr_bench",
+      "target": "personalization",
+      "relation": "benchmarks",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-raw/2607.20471.txt"
+    },
+    {
+      "source": "expectbench",
+      "target": "personalization",
+      "relation": "benchmarks",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-raw/2607.20485.txt"
+    },
+    {
+      "source": "atm",
+      "target": "multi_agent_systems",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-raw/2607.20488.txt"
+    },
+    {
+      "source": "dfah_bench",
+      "target": "benchmarking",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-raw/2607.20491.txt"
+    },
+    {
+      "source": "aintma",
+      "target": "multi_agent_systems",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-raw/2607.20452.txt"
+    },
+    {
+      "source": "aintma",
+      "target": "llm_safety",
+      "relation": "addresses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.8,
+      "source_file": "graphify-raw/2607.20452.txt"
+    },
+    {
+      "source": "evosql",
+      "target": "benchmarking",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "graphify-raw/2607.20489.txt"
+    },
+    {
+      "source": "atm",
+      "target": "dfah_bench",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "graphify-raw/2607.20488.txt"
+    },
+    {
+      "source": "jaxbench",
+      "target": "inferencebench",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "graphify-raw/2607.20466.txt"
+    },
+    {
+      "source": "sdr_bench",
+      "target": "expectbench",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "graphify-raw/2607.20471.txt"
+    },
+    {
+      "source": "dcgs",
+      "target": "ipj",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "graphify-raw/2607.20472.txt"
+    },
+    {
+      "source": "sonicsampler",
+      "target": "kernel_optimization",
+      "relation": "related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "graphify-raw/2607.20475.txt"
+    },
+    {
+      "source": "agent_safety",
+      "target": "claude_accidental_intrusions",
+      "relation": "related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "source": "agent_safety_concept",
+      "target": "dcgs",
+      "relation": "related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "graphify-raw/2607.20472.txt"
+    },
+    {
+      "source": "agent_safety_concept",
+      "target": "ipj",
+      "relation": "related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "graphify-raw/2607.20473.txt"
+    },
+    {
+      "source": "jailbreak_scoring_framework",
+      "target": "ipj",
+      "relation": "addresses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "source": "gpt56_sol",
+      "target": "inferencebench",
+      "relation": "related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "source": "model_self_optimization",
+      "target": "jaxbench",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "source": "optscientist",
+      "target": "model_self_optimization",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "graphify-raw/2607.20486.txt"
+    },
+    {
+      "source": "multi_agent_systems",
+      "target": "aintma",
+      "relation": "includes",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "graphify-raw/2607.20452.txt"
+    },
+    {
+      "source": "alibaba_fable5_claim",
+      "target": "claude_fable5",
+      "relation": "competes_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "heartbeat/nightly-scout-2026-08-03.md"
+    },
+    {
+      "source": "dna_evidence_tampering",
+      "target": "thermo_fisher",
+      "relation": "exploits",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "heartbeat/nightly-scout-2026-08-03.md"
+    },
+    {
+      "source": "dna_evidence_tampering",
+      "target": "anthropic_claude",
+      "relation": "discovered_by",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "heartbeat/nightly-scout-2026-08-03.md"
+    },
+    {
+      "source": "reddit_perplexity_case",
+      "target": "perplexity",
+      "relation": "litigates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "heartbeat/nightly-scout-2026-08-03.md"
+    },
+    {
+      "source": "reddit_perplexity_case",
+      "target": "reddit",
+      "relation": "initiated_by",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "heartbeat/nightly-scout-2026-08-03.md"
+    },
+    {
+      "source": "hank_green_ai_research",
+      "target": "openai_chatgpt",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "heartbeat/nightly-scout-2026-08-03.md"
+    },
+    {
+      "source": "snapchat_ai_video_ban",
+      "target": "snapchat",
+      "relation": "enforces_policy",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "heartbeat/nightly-scout-2026-08-03.md"
+    },
+    {
+      "source": "gemini_vibe_coding",
+      "target": "google_gemini",
+      "relation": "integrated_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "heartbeat/nightly-scout-2026-08-03.md"
+    },
+    {
+      "source": "gemini_vibe_coding",
+      "target": "google_ai_studio",
+      "relation": "replaces",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "heartbeat/nightly-scout-2026-08-03.md"
+    },
+    {
+      "source": "ai_agent_security_crisis",
+      "target": "openai",
+      "relation": "involves",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "heartbeat/nightly-scout-2026-08-03.md"
+    },
+    {
+      "source": "ai_agent_security_crisis",
+      "target": "anthropic_claude",
+      "relation": "involves",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "heartbeat/nightly-scout-2026-08-03.md"
+    },
+    {
+      "source": "ai_security_research_democratization",
+      "target": "anthropic_claude",
+      "relation": "enabled_by",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "heartbeat/nightly-scout-2026-08-03.md"
+    },
+    {
+      "source": "ai_security_research_democratization",
+      "target": "dna_evidence_tampering",
+      "relation": "demonstrated_by",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "heartbeat/nightly-scout-2026-08-03.md"
+    },
+    {
+      "source": "agent_escaped_containment_aug",
+      "target": "openai",
+      "relation": "involves",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "heartbeat/nightly-scout-2026-08-03.md"
+    },
+    {
+      "source": "amazon_bot_false_positive",
+      "target": "amazon",
+      "relation": "affected",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "heartbeat/nightly-scout-2026-08-03.md"
+    },
+    {
+      "source": "openai_1b_weekly_users",
+      "target": "openai",
+      "relation": "achieved_by",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "heartbeat/nightly-scout-2026-08-03.md"
+    },
+    {
+      "source": "openai_1b_weekly_users",
+      "target": "gpt56_luna",
+      "relation": "context_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "heartbeat/nightly-scout-2026-08-03.md"
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "agent_safety_landscape",
+      "label": "Agent Safety Landscape",
+      "nodes": [
+        "agent_safety",
+        "dcgs",
+        "ipj",
+        "jailbreak_scoring_framework",
+        "claude_accidental_intrusions"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "id": "agent_framework_ecosystem",
+      "label": "Agent Framework Ecosystem",
+      "nodes": [
+        "multi_agent_systems",
+        "optscientist",
+        "atm",
+        "aintma"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.85,
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "id": "llm_efficiency_optimization",
+      "label": "LLM Efficiency & Optimization",
+      "nodes": [
+        "gpt56_luna",
+        "gpt56_sol",
+        "jaxbench",
+        "inferencebench",
+        "sonicsampler",
+        "model_self_optimization"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "id": "personalization_benchmarks",
+      "label": "Personalization Benchmark Suite",
+      "nodes": [
+        "personalization",
+        "personatrail",
+        "sdr_bench",
+        "expectbench"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "graphify-raw/2607.20482.txt"
+    },
+    {
+      "id": "price_war_2026",
+      "label": "2026 AI Price War",
+      "nodes": [
+        "gpt56_luna",
+        "gpt56_terra",
+        "gpt56_sol",
+        "price_performance_frontier",
+        "openai",
+        "anthropic"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    },
+    {
+      "id": "mcp_ecosystem_update",
+      "label": "MCP Ecosystem July 2026",
+      "nodes": [
+        "mcp_protocol",
+        "mcp_v2026_7_10"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-raw/2026-07-31-scout.md"
+    }
+  ],
+  "meta": {
+    "generated": "2026-08-03T21:30:00+08:00",
+    "corpus": "heartbeat/",
+    "total_files": 28,
+    "scout_date": "2026-08-03"
+  }
+}

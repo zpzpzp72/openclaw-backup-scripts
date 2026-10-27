@@ -1,0 +1,5 @@
+SonicSampler: Unified Tile-Aware Kernels for LLM Sampling and Speculative Verification
+
+Abstract: Sampling in LLM inference comprises a combinatorial set of logit processing, token selection, and verification operations for speculative decoding. We present SonicSampler, a unified suite of tile-aware Triton kernels that vertically fuses the complete sampling pipeline into a fixed, workload-aware execution model. Supports dynamic per-request sampling behaviors including grammar-constrained decoding, repetition penalties, temperature scaling, top-k/top-p filtering, and speculative verification within a single batched kernel while remaining CUDA Graph-compatible. Achieves up to 16x speedup over state-of-the-art baselines.
+
+Topics: LLM inference, sampling, speculative decoding, Triton kernels, CUDA Graph, kernel fusion

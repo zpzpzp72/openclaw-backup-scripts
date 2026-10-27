@@ -1,0 +1,5 @@
+PersonaTrail: Benchmarking Personalized Web Agents through Browsing Trails
+
+Abstract: Recent advances in LLMs have enabled web agents to autonomously execute complex tasks. We introduce PersonaTrail, a benchmark for personalized web agents operating in a managed open web environment. Propose Preference-Aware Contextual Memory (PACMem), a framework that decomposes raw browsing histories into factual memories and preference memories. PACMem consistently outperforms existing memory-based baselines.
+
+Topics: web agents, personalization, browsing history, memory, LLM, benchmark

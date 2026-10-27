@@ -1,0 +1,5 @@
+Tractable Hierarchical Control of Autoregressive Language Models
+
+Abstract: Constraining the generation of autoregressive LLMs is important for integrating language models into formal systems. This paper demonstrates that the satisfaction of any LR(k) grammar of finite duration can be calculated in polynomial time. This result enables efficient constraint and steering of LLM generation towards output that better satisfies formal syntactic constraints. Applicable to SQL, JSON, and other context-free grammars.
+
+Topics: LLM generation, formal constraints, grammar, LR(k), polynomial time, constrained decoding

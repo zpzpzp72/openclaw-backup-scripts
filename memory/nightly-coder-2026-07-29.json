@@ -1,0 +1,47 @@
+{
+  "date": "2026-07-29",
+  "generated": "2026-07-29 22:20 CST",
+  "window": "NightOps",
+  "openclaw_version": "2026.7.1-2",
+  "node_version": "v24.15.0",
+  "ci_status": {
+    "zpzpzp72/openclaw": {
+      "pr_ci_sweeper": [
+        { "status": "failure", "time": "2026-07-29T09:45:14Z" },
+        { "status": "failure", "time": "2026-07-29T12:09:55Z" }
+      ],
+      "codeql": [
+        { "status": "success", "time": "2026-07-29T08:18:20Z" },
+        { "status": "success", "time": "2026-07-29T09:21:33Z" }
+      ]
+    },
+    "other_repos": "no workflows"
+  },
+  "gateway": {
+    "status": "running",
+    "pid": 358312,
+    "memory_pressure": {
+      "peak_rss_gb": 2.56,
+      "threshold_gb": 1.5,
+      "peak_ratio_pct": 170.8,
+      "trend": "worsening"
+    }
+  },
+  "channels": {
+    "feishu": "ok",
+    "wechat_ilinkai": "dns_failure_EAI_AGAIN"
+  },
+  "npm_updates_available": {
+    "high_priority": ["@openai/codex", "@steipete/oracle", "clawhub", "mcporter"],
+    "medium_priority": ["@google/gemini-cli", "@anthropic-ai/claude-code", "openclaw-qqbot", "npm"],
+    "low_priority": ["pnpm", "@jackwener/opencli", "mmx-cli"]
+  },
+  "workspace_uncommitted": 48,
+  "action_items": [
+    { "priority": "critical", "item": "Gateway memory 171% threshold — restart immediately" },
+    { "priority": "high", "item": "WeChat ilinkai DNS failure — check WSL2 network/proxy" },
+    { "priority": "high", "item": "Upgrade npm global packages: codex, oracle, clawhub, mcporter" },
+    { "priority": "medium", "item": "PR CI Sweeper failing 4 consecutive days — investigate" },
+    { "priority": "medium", "item": "Commit 48 workspace changes" }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "date": "2026-08-04",
+  "agent": "NightOps-Coder",
+  "window": "21:30-23:30 CST",
+  "gateway_status": "running 2026.7.1-2",
+  "repos": {
+    "openclaw-backup": "ok",
+    "openclaw-backup-scripts": "PR#5 merged, local feature/hot-backup 1 commit ahead",
+    "openclaw-zero-token": "35 commits behind origin/main"
+  },
+  "risks": [
+    {"item": "browser.py:41 bare except", "since": "2026-06-25", "duration": "40+ days", "severity": "P1"},
+    {"item": "dns-drift-monitor.sh missing", "since": "2026-08-03", "severity": "P2"},
+    {"item": "graphify command format error", "since": "2026-08-03", "severity": "P2"}
+  ],
+  "action_items": [
+    "push feature/hot-backup to origin",
+    "fix dns-drift-monitor.sh or remove cron ref",
+    "fix graphify subcommand format",
+    "git pull --ff-only in openclaw-zero-token"
+  ]
+}

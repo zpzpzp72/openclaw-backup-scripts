@@ -1,0 +1,5 @@
+VeriSimpl: Robust Optimization Modeling from Natural Language using Simplification-based Verification
+
+Abstract: Natural language interfaces can greatly benefit the accessibility and usability of optimization modeling. We introduce VeriSimpl, a solver LLM framework for robust natural-language-to-optimization formalization. Based on simplification-based verification, the optimization solver generates simplified diagnostic queries about a candidate formulation to allow the LLM to reason about correctness.
+
+Topics: optimization modeling, natural language, LLM, formalization, verification, ICML 2026

@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-09",
+  "arxiv_entries": 120,
+  "arxiv_id_range": "2610.12466v1 \u2192 2610.11690v1",
+  "mcp_nodes": 16,
+  "total_nodes": 136,
+  "total_edges": 2153,
+  "communities": {
+    "Eval": 73,
+    "RL": 70,
+    "Agents": 35,
+    "Vision/Multimodal": 33,
+    "MCP/Tools": 30,
+    "Reasoning": 28,
+    "Safety/Alignment": 22,
+    "Memory": 19,
+    "Robotics/Embodied": 12,
+    "Other": 6
+  },
+  "generated_at": "2026-10-09T13:36:16.582366Z"
+}

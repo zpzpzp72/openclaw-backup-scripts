@@ -1,0 +1,5 @@
+EvoSQL: Memory-Augmented Critic-Generator Co-Evolution for Text-to-SQL
+
+Abstract: Text-to-SQL has advanced rapidly with LLMs, but complex database queries require reasoning beyond one-shot generation. EvoSQL is a co-evolution framework that formulates SQL synthesis as iterative interaction between a generator and a critic. Maintains contextualized candidate memory, verifies SQL candidates with both execution signals and LLM-based critique. Introduces Self-Distillation Policy Optimization (SDPO) fine-tuning. Experiments on Spider and BIRD show consistent improvements.
+
+Topics: text-to-SQL, LLM, co-evolution, critic-generator, memory, SDPO

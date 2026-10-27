@@ -1,0 +1,77 @@
+#!/usr/bin/env bash
+# Cron Watchdog - 检查关键 cron 任务健康
+# 触发时间: 每天 08:00 / 20:00
+set -euo pipefail
+LOG=/home/zhiping/.openclaw/workspace/logs/cron-watchdog.log
+mkdir -p "$(dirname "$LOG")"
+echo "=== Watchdog $(date '+%Y-%m-%d %H:%M:%S %Z') ===" >> "$LOG"
+# 检查 backup-cron 最近 30h 是否成功
+LAST=$(stat -c %Y /home/zhiping/.openclaw-backup.heartbeat 2>/dev/null || echo 0)
+NOW=$(date +%s)
+if (( NOW - LAST > 30*3600 )); then
+  echo "WARN: backup-cron 超 30h 未刷新" >> "$LOG"
+fi
+# 检查 lancedb-pro lock
+LOCK=/home/zhiping/.openclaw/memory/lancedb-pro/.memory-write.lock.lock
+if [ -f "$LOCK" ]; then
+  AGE=$(($(date +%s) - $(stat -c %Y "$LOCK")))
+  if (( AGE > 3600 )); then
+    echo "WARN: lancedb lock ${AGE}s old" >> "$LOG"
+  fi
+fi
+# 检查 tar 残留
+if pgrep -f "tar.*openclaw-" > /dev/null; then
+  echo "WARN: tar openclaw backup 仍在跑" >> "$LOG"
+fi
+
+# ── gateway 进程健康检查（2026-10-24 新增）────────────────────────
+# 背景：gateway 长驻进程会缓慢劣化（RSS 膨胀 + 事件循环打满），
+# 导致内部 fetch 全部 ~10s 连接超时，而同机新进程一切正常。
+# 症状：所有 cron agent run 报 "All models failed (3) ... fetch failed (timeout)"
+# 检测：RSS > 8GB 或 model-fetch 连续失败 → 记录 WARN
+# 注意：只报告不自动重启，重启需人工确认（避免误杀正在运行的会话）
+GW_PID=$(pgrep -f "openclaw/dist/index.js gateway" | head -1)
+if [ -n "$GW_PID" ]; then
+  GW_RSS_KB=$(awk '/^VmRSS:/{print $2}' "/proc/$GW_PID/status" 2>/dev/null || echo 0)
+  GW_RSS_GB=$(( GW_RSS_KB / 1024 / 1024 ))
+  GW_CPU=$(ps -o pcpu= -p "$GW_PID" 2>/dev/null | tr -d ' ' | cut -d. -f1)
+  GW_ETIME=$(ps -o etime= -p "$GW_PID" 2>/dev/null | tr -d ' ')
+  echo "gateway pid=$GW_PID rss=${GW_RSS_GB}GB cpu=${GW_CPU:-?}% uptime=${GW_ETIME}" >> "$LOG"
+  # 阈值 6GB：历史实测到 8GB 时已伴随 CPU 99% + 全量 fetch 超时，提前告警留出处置窗口
+  if (( GW_RSS_KB > 6 * 1024 * 1024 )); then
+    echo "WARN: gateway RSS ${GW_RSS_GB}GB 超阈值 6GB（进程劣化，建议重启 gateway: systemctl --user restart openclaw-gateway）" >> "$LOG"
+  fi
+  # RSS 趋势：记录每小时增速，预测到达 8GB 的剩余时间
+  TREND=/home/zhiping/.openclaw/workspace/logs/gateway-rss-trend.txt
+  echo "$(date +%s) ${GW_RSS_KB}" >> "$TREND"
+  if [ -s "$TREND" ]; then
+    FIRST=$(head -1 "$TREND" | awk '{print $1" "$2}')
+    F_TS=${FIRST%% *}; F_KB=${FIRST##* }
+    NOW_TS=$(date +%s); DT=$(( NOW_TS - F_TS ))
+    if (( DT >= 1800 && F_KB > 0 )); then
+      RATE_KB_H=$(( (GW_RSS_KB - F_KB) * 3600 / DT ))
+      echo "gateway RSS 趋势: ${GW_RSS_GB}GB 自 ${F_KB}KB 起 ${DT}s 增长 ${RATE_KB_H}KB/h" >> "$LOG"
+      if (( GW_RSS_KB < 8 * 1024 * 1024 && RATE_KB_H > 0 )); then
+        ETA_H=$(( (8 * 1024 * 1024 - GW_RSS_KB) / RATE_KB_H ))
+        echo "  预测 ${ETA_H}h 后触及 8GB" >> "$LOG"
+      fi
+    fi
+  fi
+  if [ -n "${GW_CPU:-}" ] && [ "$GW_CPU" -ge 90 ] 2>/dev/null; then
+    echo "WARN: gateway CPU ${GW_CPU}% 持续满载（事件循环可能已劣化）" >> "$LOG"
+  fi
+else
+  echo "WARN: gateway 进程未运行" >> "$LOG"
+fi
+
+# ── model-fetch 健康检查（近 1h 成功率）────────────────────────────
+LOGDIR=/tmp/openclaw
+TODAY_LOG="$LOGDIR/openclaw-$(date +%Y-%m-%d).log"
+if [ -f "$TODAY_LOG" ]; then
+  OK=$(grep -c 'model-fetch\] response' "$TODAY_LOG" 2>/dev/null); OK=${OK:-0}
+  ERR=$(grep -c 'model-fetch\] error' "$TODAY_LOG" 2>/dev/null); ERR=${ERR:-0}
+  echo "model-fetch today: ok=${OK:-0} err=${ERR:-0}" >> "$LOG"
+  if [ "${ERR:-0}" -gt 50 ] && [ "${OK:-0}" -eq 0 ]; then
+    echo "WARN: model-fetch 今日 0 成功 / ${ERR} 次失败（provider 全线超时）" >> "$LOG"
+  fi
+fi

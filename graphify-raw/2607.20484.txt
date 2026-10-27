@@ -1,0 +1,5 @@
+TRSP: The Devil is in the Spectrum - Mitigating Representation Collapse in LLMs via Topologically Regularized Side-Path
+
+Abstract: LLMs are fundamentally limited by representation collapse, a bottleneck that severely degrades long-context performance. We identify that existing approaches risk drifting into homogenization collapse (attention sinks) or isolation collapse (local attention causing context disconnection). Propose Topologically Regularized Side-Path (TRSP), a non-invasive architectural intervention that achieves spectral balance. On NoLiMa at 8x the training length, TRSP retains 83% accuracy and surpasses Differential Transformer and Gated Attention by ~30 and ~50 percentage points.
+
+Topics: LLM, representation collapse, attention, long-context, spectral analysis, TRSP, ICML 2026

@@ -1,0 +1,5 @@
+DFAH-Bench: Benchmarking Observable Agent Instability in Financial Decision-Making
+
+Abstract: Standard evaluation benchmarks measure what a tool-using agent decides, not whether it arrives at that decision through the same process each time. DFAH-Bench measures observable behavioral instability across tool-call trajectories, evidence contacts, and decision concentration. Across 8,127 replay episodes (10 models, 3 financial tasks): frontier models agree on decisions 95% of the time but follow the same tool path only 77% - an 18pp gap. Three behavioral profiles: pattern matchers, stable executors, trajectory divergers.
+
+Topics: agent instability, financial agents, benchmark, process evaluation, tool-use, behavioral profiles

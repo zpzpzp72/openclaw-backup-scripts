@@ -1,0 +1,54 @@
+{
+  "communities": [
+    {
+      "name": "Eval",
+      "size": 73,
+      "share_pct": 53.7
+    },
+    {
+      "name": "RL",
+      "size": 70,
+      "share_pct": 51.5
+    },
+    {
+      "name": "Agents",
+      "size": 35,
+      "share_pct": 25.7
+    },
+    {
+      "name": "Vision/Multimodal",
+      "size": 33,
+      "share_pct": 24.3
+    },
+    {
+      "name": "MCP/Tools",
+      "size": 30,
+      "share_pct": 22.1
+    },
+    {
+      "name": "Reasoning",
+      "size": 28,
+      "share_pct": 20.6
+    },
+    {
+      "name": "Safety/Alignment",
+      "size": 22,
+      "share_pct": 16.2
+    },
+    {
+      "name": "Memory",
+      "size": 19,
+      "share_pct": 14.0
+    },
+    {
+      "name": "Robotics/Embodied",
+      "size": 12,
+      "share_pct": 8.8
+    },
+    {
+      "name": "Other",
+      "size": 6,
+      "share_pct": 4.4
+    }
+  ]
+}

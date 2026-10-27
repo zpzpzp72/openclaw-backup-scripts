@@ -1,0 +1,993 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/kkGoXq9jC/tQQdcH2hoiuxkH6rM</id>
+  <title>arXiv Query: search_query=cat:cs.CL AND abs:"agent"&amp;id_list=&amp;start=0&amp;max_results=15</title>
+  <updated>2026-10-09T13:34:45Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=cat:cs.CL+AND+abs:%22agent%22&amp;start=0&amp;max_results=15&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>15</opensearch:itemsPerPage>
+  <opensearch:totalResults>10778</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2610.12403v1</id>
+    <title>ViSkill: Reinforcing VLM Agents with Evolving Visual-Native Skills</title>
+    <updated>2026-10-08T17:44:19Z</updated>
+    <link href="https://arxiv.org/abs/2610.12403v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.12403v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Skill-augmented agents improve sample efficiency by distilling successful trajectories into reusable strategies. Yet most existing approaches remain text-centric, linearizing spatial layouts and action-state correspondences into language that loses critical geometric structure. Recent efforts have begun incorporating visual evidence, but construct and update skills separately from policy optimization, leaving their mutual improvement underexplored. We propose ViSkill, a visual-native skill learning framework that encodes successful interactions as composite visual skill cards directly accessible to VLM agents. Retrieved skills guide both inference and reward shaping, while successful trajectories are distilled back into the library, forming a closed feedback loop in which skill accumulation and policy improvement reinforce each other. An optional cold-start mechanism further accelerates early-stage learning. Evaluated on Sokoban, FrozenLake, and PrimitiveSkill, ViSkill achieves an overall success rate of 0.89, rising to 0.91 with cold-start initialization, outperforming all evaluated proprietary and open-source baselines while converging faster than standard PPO. Our code is available at https://github.com/ZJU-REAL/ViSkill.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-08T17:44:19Z</published>
+    <arxiv:comment>Code: https://github.com/ZJU-REAL/ViSkill</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Hongxing Li</name>
+    </author>
+    <author>
+      <name>Dingming Li</name>
+    </author>
+    <author>
+      <name>Yixin Li</name>
+    </author>
+    <author>
+      <name>Yong Du</name>
+    </author>
+    <author>
+      <name>Wenqi Zhang</name>
+    </author>
+    <author>
+      <name>Weiming Lu</name>
+    </author>
+    <author>
+      <name>Jun Xiao</name>
+    </author>
+    <author>
+      <name>Yueting Zhuang</name>
+    </author>
+    <author>
+      <name>Yongliang Shen</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.12375v1</id>
+    <title>OnTrack: Real-Time Monitoring and Intervention in LLM Agent Trajectories via Streaming Structure-Aware Optimal Transport</title>
+    <updated>2026-10-08T17:32:08Z</updated>
+    <link href="https://arxiv.org/abs/2610.12375v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.12375v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Agents are deployed in applications from trip planners and stock trading to IT incident triage. In most cases, LLM agents work autonomously with minimal rule-based safeguarding, leading to cost and safety issues from irreversible actions. Recent works resolve this either by using a safeguard agent to monitor behavior or evaluating logs post-hoc. The first adds cost and latency to every step; the second delivers its verdict after the run, when tokens are burned and damage is done. To overcome this, we propose OnTrack, a streaming monitoring mechanism that compares an agent's steps and dependencies against recorded successful runs to alert users or block the agent in about a millisecond per step. We study this problem in three regimes of decreasing access: full reference access (historical runs and tool schemas), intermediate access (only tool schemas), and no prior knowledge (only step logs as generated). Expectation of OnTrack's monitoring capabilities reduces as data access drops, ranging from plan violation detection to identifying loops, stalls, and repeated tool calls. Finally, we evaluate OnTrack using SWE-bench trajectories. Based on the first 8 steps, our method ranks failing trajectories below succeeding ones better than content similarity approaches (+0.057 AUROC). With an abort policy, we save about 18% of compute that would be burned on failing runs, where 83% of interrupted runs were actually heading to failure (5 out of 6 aborts were correct).</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CY" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-08T17:32:08Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Babak Barazandeh</name>
+    </author>
+    <author>
+      <name>Connor Swanson</name>
+    </author>
+    <author>
+      <name>Chinmay Kulkarni</name>
+    </author>
+    <author>
+      <name>Nikhil Mungel</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.12360v1</id>
+    <title>Accurate but Not Humble: Evaluating Epistemic Humility in LLM Agents under Knowledge Conflict</title>
+    <updated>2026-10-08T17:25:06Z</updated>
+    <link href="https://arxiv.org/abs/2610.12360v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.12360v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>When retrieved evidence contradicts an agent's prior beliefs, does it revise its answer, acknowledge uncertainty, or persist with an incorrect conclusion? Existing evaluations of agentic systems focus primarily on task success, offering limited insight into how agents handle such conflicts. We propose to evaluate agents on epistemic humility (EH): the agent's willingness to recognize, act on, and communicate uncertainty during task execution. We operationalize EH through three trajectory-level behavioral dimensions: Identify, Solve, and Escalate (ISE). Through knowledge conflict, situations where the backbone language model's parametric knowledge contradicts the evidence it encounters, or where two contextual sources disagree, we evaluate two conflict settings: (1) controlled conflict and (2) naturally occurring conflict during multi-step agentic execution, each paired with matched no-conflict controls. Evaluating four agents, we find that higher task accuracy does not necessarily correspond to greater epistemic humility: some high-accuracy configurations recognize conflicts during execution but do not communicate unresolved uncertainty in their incorrect final answers. Trajectory-level analysis further reveals that agents frequently detect conflicts in early steps of execution but fail to maintain or resolve them in later steps. Finally, we show that model-level interventions can improve EH, but often at the cost of task accuracy, suggesting that epistemic humility emerges from the interaction among the backbone model, agent harness, and evaluation environment.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-08T17:25:06Z</published>
+    <arxiv:comment>EMNLP 2026 Camera Ready</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <arxiv:journal_ref>EMNLP2026</arxiv:journal_ref>
+    <author>
+      <name>Kaiser Sun</name>
+    </author>
+    <author>
+      <name>Bernal Jimenez Gutierrez</name>
+    </author>
+    <author>
+      <name>Hongjun Liu</name>
+    </author>
+    <author>
+      <name>Jingyu Zhang</name>
+    </author>
+    <author>
+      <name>Jie Gao</name>
+    </author>
+    <author>
+      <name>Mark Dredze</name>
+    </author>
+    <author>
+      <name>Daniel Khashabi</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.12341v1</id>
+    <title>Can AI Agents Learn Their Way to the Top? Evaluating Heuristic Learning in a Long-Running Game Agent Competition</title>
+    <updated>2026-10-08T17:15:48Z</updated>
+    <link href="https://arxiv.org/abs/2610.12341v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.12341v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Adversarial games have driven advances from heuristic search to reinforcement learning, yet learning and adapting strategies from limited samples remain challenging. AI agents offer an alternative by turning game experience into revisions of executable policies. Building on heuristic learning (HL), we formalize Adversarial Heuristic Learning (AHL), a paradigm that uses AI agents as learning engines to refine game policies and supporting software while keeping model weights fixed. We introduce AAArena, a benchmark comprising 12 authentic adversarial games and 1,920 archived human programs, with an evaluation protocol modeled on real-world game competitions. Agents interpret rules, choose opponents, analyze replays, and revise game agents to achieve their highest ranking within fixed match and evaluation budgets. We evaluate \val{completedmodels} model and harness configurations: Opus5.5 with Claude Code earns 6 gold medals, while no evaluated configuration tops the remaining 6 human ladders. Performance is generally weaker in games with more complex rule specifications. Further experiments show that opponent selection and dense feedback support policy improvement, and that agents learn from both on-policy replays of their own matches and off-policy replays of other players' matches. These results highlight HL's potential in adversarial games and identify persistent challenges in game understanding, strategy implementation, and long-horizon policy development.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-08T17:15:48Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Kaisen Yang</name>
+    </author>
+    <author>
+      <name>Qingle Liu</name>
+    </author>
+    <author>
+      <name>Kejin Wang</name>
+    </author>
+    <author>
+      <name>Yicheng Zhao</name>
+    </author>
+    <author>
+      <name>Jieming Li</name>
+    </author>
+    <author>
+      <name>Shenghan Zheng</name>
+    </author>
+    <author>
+      <name>Ruize Yang</name>
+    </author>
+    <author>
+      <name>Bojun Yang</name>
+    </author>
+    <author>
+      <name>Heng Gong</name>
+    </author>
+    <author>
+      <name>Xiang Gao</name>
+    </author>
+    <author>
+      <name>Lanyue Zhang</name>
+    </author>
+    <author>
+      <name>Kaiyu Zhong</name>
+    </author>
+    <author>
+      <name>Zhuo Liu</name>
+    </author>
+    <author>
+      <name>Shaoxuan Li</name>
+    </author>
+    <author>
+      <name>Chengxi Li</name>
+    </author>
+    <author>
+      <name>Yong Yan</name>
+    </author>
+    <author>
+      <name>Weixuan Zhang</name>
+    </author>
+    <author>
+      <name>Tianwei Luo</name>
+    </author>
+    <author>
+      <name>Situ Wang</name>
+    </author>
+    <author>
+      <name>Youjie Zheng</name>
+    </author>
+    <author>
+      <name>Sihan Zhao</name>
+    </author>
+    <author>
+      <name>Shengyuan Wang</name>
+    </author>
+    <author>
+      <name>Huan-ang Gao</name>
+    </author>
+    <author>
+      <name>Jiazheng Xu</name>
+    </author>
+    <author>
+      <name>Xiaohui Xie</name>
+    </author>
+    <author>
+      <name>Wentao Han</name>
+    </author>
+    <author>
+      <name>Hongning Wang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.12274v1</id>
+    <title>HarnessSQL: Harness-Native Training for SQL Agents in Realistic Database Environments</title>
+    <updated>2026-10-08T16:36:39Z</updated>
+    <link href="https://arxiv.org/abs/2610.12274v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.12274v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Text-to-SQL models are commonly trained to map questions directly to static queries, whereas real-world database agents operate through stateful, multi-turn interaction with live databases -- inspecting schemas, executing probe queries, diagnosing errors, and revising hypotheses. This creates a critical train-deploy mismatch, as the execution harness that mediates this interaction is introduced only at inference time. To bridge this gap, we propose HarnessSQL, a harness-native post-training framework that preserves the full interaction structure throughout both supervised fine-tuning and reinforcement learning. HarnessSQL builds isolated, executable database environments paired with hidden execution oracles, rolls out teachers directly inside the target SQL harness, and retains only verified trajectories for full-sequence SFT, followed by execution-reward RL. Across Spider 2.0-SQLite, HarnessSQL dramatically boosts the execution accuracy of compact models, raising Qwen3-8B from 15.5% to 45.2% and Qwen3-14B from 22.2% to 54.8%, while transferring effectively to out-of-distribution interactive benchmarks such as BIRD-Interact and LiveSQLBench. Our findings demonstrate that training database agents directly within their execution harness is essential for mastering complex, long-horizon database workflows.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-08T16:36:39Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Haolin Yang</name>
+    </author>
+    <author>
+      <name>Jipeng Zhang</name>
+    </author>
+    <author>
+      <name>Jian Xie</name>
+    </author>
+    <author>
+      <name>Shuaishuai Gong</name>
+    </author>
+    <author>
+      <name>Sirui Han</name>
+    </author>
+    <author>
+      <name>Yike Guo</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.12235v1</id>
+    <title>Language Models as AI Research World Models</title>
+    <updated>2026-10-08T16:18:54Z</updated>
+    <link href="https://arxiv.org/abs/2610.12235v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.12235v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>AI research agents automate the cycle of proposing, implementing, and evaluating experiments, opening a path toward recursive self-improvement. Yet their ability to propose experiments outpaces their capacity to execute them in real environments, making outcome prediction a key capability for sustained self-improvement under limited experimental budgets. We investigate language models as Research World Models (RWMs), which predict the outcomes of candidate interventions across research environments. Our evaluation draws on over 2,600 experimental records from nine research environments spanning pretraining, post-training, and inference, representing more than 171,000 H100 GPU-hours of experimentation. Research knowledge acquired from real experimental experience improves RWM predictions of unseen interventions within the same environment (Spearman +0.27), and can be reused across environments. For example, using only pretraining experience from OLMo3, Marin, and Nanochat, an RWM reduces selection regret in the Qwen3 environment by 78% compared with zero-experience setting. These benefits extend to multi-round Autoresearch under a fixed selection budget: RWMs with in-env and cross-env research knowledge increase the best gain achieved by 15.8% and 11.6%, respectively. Ablations across 13 language models used as RWMs show that adding research knowledge can improve intervention ranking more than changing models or increasing reasoning effort alone. These findings support language models as RWMs and motivate accumulating experimental data for future RWM training.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-08T16:18:54Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Zijun Wang</name>
+    </author>
+    <author>
+      <name>Zewen Liu</name>
+    </author>
+    <author>
+      <name>Minhua Lin</name>
+    </author>
+    <author>
+      <name>Zhaotian Weng</name>
+    </author>
+    <author>
+      <name>Zhan Shi</name>
+    </author>
+    <author>
+      <name>Bing He</name>
+    </author>
+    <author>
+      <name>Yisi Sang</name>
+    </author>
+    <author>
+      <name>Dakuo Wang</name>
+    </author>
+    <author>
+      <name>Benoit Dumoulin</name>
+    </author>
+    <author>
+      <name>Wei Jin</name>
+    </author>
+    <author>
+      <name>Yuyin Zhou</name>
+    </author>
+    <author>
+      <name>Cihang Xie</name>
+    </author>
+    <author>
+      <name>Hanqing Lu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.12061v1</id>
+    <title>When Should Agents Think? Adaptive Reasoning via Cross-Turn Estimation</title>
+    <updated>2026-10-08T14:43:09Z</updated>
+    <link href="https://arxiv.org/abs/2610.12061v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.12061v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language model (LLM)-based agents have demonstrated strong capabilities on complex tasks. They typically perform reasoning before each action throughout an interaction trajectory. However, reasoning may not be necessary at every turn, as reasoning produced earlier can continue to support subsequent actions. A key challenge is therefore to determine when existing reasoning remains sufficient and when a new reasoning step is needed, without relying on costly generation-based verification. We find that decreases in the likelihood of subsequent reference actions after removing additional reasoning closely track whether those actions remain recoverable given earlier reasoning, providing an effective and lightweight signal for estimating cross-turn action support. Based on this observation, we propose Reasoning Adaptation through Cross-Turn Estimation (RACE), a training approach for adaptive agent reasoning. RACE introduces a Likelihood-Guided Progressive Reasoning Cover Detection (LoGiC) procedure that progressively identifies reasoning turns whose removal has limited impact on the current and subsequent reference actions. The resulting removal signals are incorporated into both supervised fine-tuning and agentic reinforcement learning, enabling the policy to learn when to reason and when to act directly. Extensive experiments on four representative agent benchmarks show that RACE substantially reduces reasoning cost while maintaining or improving task performance.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-08T14:43:09Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Yiruo Cheng</name>
+    </author>
+    <author>
+      <name>Shen Huang</name>
+    </author>
+    <author>
+      <name>Xiaoshuai Song</name>
+    </author>
+    <author>
+      <name>Jiejun Tan</name>
+    </author>
+    <author>
+      <name>Guanting Dong</name>
+    </author>
+    <author>
+      <name>Pengjun Xie</name>
+    </author>
+    <author>
+      <name>Ji-Rong Wen</name>
+    </author>
+    <author>
+      <name>Zhicheng Dou</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.12022v1</id>
+    <title>Examining Social Attribution in LLM Reasoning: A Theory-Guided Probing Methodology</title>
+    <updated>2026-10-08T14:20:06Z</updated>
+    <link href="https://arxiv.org/abs/2610.12022v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.12022v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language models (LLMs) are increasingly deployed in sociotechnical systems where social attribution, the reasoning process attributing external events to the causes and reasons of agents' social behaviors, plays a critical role. These processes involve judgments of social cause, responsibility, and blame/credit to agents. Although attributional models are well-studied in social psychology and cognition through Attribution Theory, social attribution remains underexplored in AI, particularly LLM social reasoning. This paper provides the first systematic exploration of LLM social attribution. Our work focuses on responsibility and blame attributions, examining current LLMs' judgments and their underlying internal mechanisms. Guided by attribution theory, we construct a social attribution benchmark consisting of a Vignette subset based on classic scenarios from attribution theory research and a Reality subset based on real-world social narratives, yielding 7,639 responsibility/blame judgment questions. On this basis, we evaluate 32 representative LLMs and 5 basic non-LLM baselines. To further explore the internal mechanisms underlying the LLM judgment process, we develop a probing-based methodology to investigate the latent-space representations of 5 key attribution dimensions and the consistency of their influences on LLM judgments compared to those in human social attribution. Our research findings reveal that current LLMs exhibit measurable but incomplete agreement with human responsibility and blame judgments, and meanwhile, this agreement is positively correlated with model size. Some attribution dimensions are systematically decodable from specific positions in LLM hidden states, and their influences on the final judgment are consistent with those indicated by human Attribution Theory. The dataset and associated code are available at https://github.com/Yuzhaoxin946/SAB-Bench.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-08T14:20:06Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Zhaoxin Yu</name>
+    </author>
+    <author>
+      <name>Qingchao Kong</name>
+    </author>
+    <author>
+      <name>Dajun Zeng</name>
+    </author>
+    <author>
+      <name>Wenji Mao</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.12002v1</id>
+    <title>Agentic-TTT: Training test-time policy for test-time training</title>
+    <updated>2026-10-08T14:06:26Z</updated>
+    <link href="https://arxiv.org/abs/2610.12002v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.12002v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Test-time training (TTT) adapts an LLM's parameters using signals derived from test inputs, and can make striking improvements in pre-specified settings such as IMO competitions or designated open problems. By turning deployment experience into parameter updates, TTT provides a direct mechanism for model-level self-improvement. Yet TTT is not universally beneficial: each TTT algorithm works in different settings, and applying an ill-suited method could waste test-time compute or even damage model performance. Therefore, such parameter-level self-improvement requires agency: the model must decide when TTT is warranted, which algorithm to invoke, and whether an existing skill can be reused. To fill this gap, we introduce Agentic-TTT, which learns a test-time policy to govern those decisions. Agentic-TTT turns TTT procedures into callable tools, treats accumulated skills as an evolving deployment environment, and trains its policy using the observed utility gains from its decisions. On our benchmark, Agentic-TTT nearly doubles the utility over the backbone model, learns to trade off utility against compute, and generalizes to domains unseen during training. Together, these results point toward autonomous self-improvement: models that can decide how to learn from their own deployment experience.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-08T14:06:26Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Jiahao Lu</name>
+    </author>
+    <author>
+      <name>Mohan Kankanhalli</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.11966v1</id>
+    <title>MindFlow: Mind Supernet Powered Thinking Flows for Research Idea Innovation</title>
+    <updated>2026-10-08T13:45:51Z</updated>
+    <link href="https://arxiv.org/abs/2610.11966v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.11966v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Research idea innovation is a fundamental engine of scientific progress, yet it remains difficult to generate and evaluate in a scalable and controllable way. This challenge lies in its inherently open-ended and multi-objective nature, where ideas should balance novelty, plausibility and feasibility. While recent LLM-based approaches have made progress through carefully designed prompts or agent pipelines, they are constrained by predefined, static ideation workflows. To address this limitation, we propose MindFlow, a framework that explicitly formulates ideation as a graph-structured Flow in Mind, which is composed of modular thinking operators and modeled by a probabilistic mind supernet. Given a research topic, a controller dynamically samples thinking flows to generate candidate ideas. This open-ended problem is optimized using a tournament-based relative ranking, enabling the controller to progressively favor higher-quality thinking flows. We further introduce an evaluation protocol that jointly assesses problem finding and problem solving, going beyond title- or abstractonly judgments. Across diverse topics, MindFlow shows its superiority as an explicit, controllable and optimizable research idea innovator.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-08T13:45:51Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Mengdi Liu</name>
+    </author>
+    <author>
+      <name>Wenjue Chen</name>
+    </author>
+    <author>
+      <name>Wenyue Chen</name>
+    </author>
+    <author>
+      <name>Cheng Yang</name>
+    </author>
+    <author>
+      <name>Fanqi Kong</name>
+    </author>
+    <author>
+      <name>Zhangyang Gao</name>
+    </author>
+    <author>
+      <name>Xiaoxue Cheng</name>
+    </author>
+    <author>
+      <name>Yiheng Li</name>
+    </author>
+    <author>
+      <name>Yujian Yuan</name>
+    </author>
+    <author>
+      <name>Keliang Li</name>
+    </author>
+    <author>
+      <name>Hong Chang</name>
+    </author>
+    <author>
+      <name>Shiguang Shan</name>
+    </author>
+    <author>
+      <name>Chenglin Wu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.11959v1</id>
+    <title>MiMo-V2.6: Scaling Reinforcement Learning Towards Self-Improvement</title>
+    <updated>2026-10-08T13:41:53Z</updated>
+    <link href="https://arxiv.org/abs/2610.11959v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.11959v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Reinforcement learning (RL) is the central training paradigm for advancing large foundation models towards self-improvement. This report introduces the MiMo-V2.6 series, an omni-modal family that pushes the frontier of model intelligence by scaling RL compute. Prior to RL, we conduct mid-training on a broad multimodal corpus to provide ample exploration space, and build a solid infrastructure on the pretrained hybrid-SWA architecture to support subsequent scale-up. We scale RL compute along three dimensions: (1) larger batches and higher throughput, with an asynchronous training that consumes 1,568 samples and 2.7-3.7B tokens per step at context lengths of up to 1M; (2) more diverse and complex environments, spanning code, general, visual, and cyber domains under a mixture of agent harnesses; and (3) more grader compute, via groupwise agentic grading that yields more accurate reward signals for long-horizon tasks and steers the model towards shorter, more token-efficient solutions. To keep training stable at scale, we freeze the MoE router and establish a multi-layer defense against reward hacking. We further build infrastructure for mixed-task agentic RL, including a unified trajectory representation, high-concurrency multi-framework rollout, decoupled control and data planes, and training-inference consistency. We open-source the training dynamics, RL environments, and RL framework to facilitate reproduction and further research on scaled RL and model self-improvement.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-08T13:41:53Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Xiaomi LLM-Core Team</name>
+    </author>
+    <author>
+      <name> :</name>
+    </author>
+    <author>
+      <name>Zongming Qiao</name>
+    </author>
+    <author>
+      <name>Ziyue Hua</name>
+    </author>
+    <author>
+      <name>Zirui Ou</name>
+    </author>
+    <author>
+      <name>Zihao Yue</name>
+    </author>
+    <author>
+      <name>Zihan Jiang</name>
+    </author>
+    <author>
+      <name>Zhuo Huang</name>
+    </author>
+    <author>
+      <name>Zhiyang Chen</name>
+    </author>
+    <author>
+      <name>Zhixian Zheng</name>
+    </author>
+    <author>
+      <name>Zhipeng Xu</name>
+    </author>
+    <author>
+      <name>Zhengrui Ma</name>
+    </author>
+    <author>
+      <name>Yuyang Hu</name>
+    </author>
+    <author>
+      <name>Yuhang Dong</name>
+    </author>
+    <author>
+      <name>Yuechen Zhang</name>
+    </author>
+    <author>
+      <name>Yudong Wang</name>
+    </author>
+    <author>
+      <name>Yuanxin Liu</name>
+    </author>
+    <author>
+      <name>Yixin Yang</name>
+    </author>
+    <author>
+      <name>Yishuo Cai</name>
+    </author>
+    <author>
+      <name>Yikai Zhao</name>
+    </author>
+    <author>
+      <name>Yihan Yan</name>
+    </author>
+    <author>
+      <name>Yifan Zhang</name>
+    </author>
+    <author>
+      <name>Yifan Song</name>
+    </author>
+    <author>
+      <name>Xiyu Wei</name>
+    </author>
+    <author>
+      <name>Xing Zhang</name>
+    </author>
+    <author>
+      <name>Xin Zhang</name>
+    </author>
+    <author>
+      <name>Xiaoqian Liu</name>
+    </author>
+    <author>
+      <name>Xiaodong Ji</name>
+    </author>
+    <author>
+      <name>Xiangwei Deng</name>
+    </author>
+    <author>
+      <name>Xueyu Guo</name>
+    </author>
+    <author>
+      <name>Wenhan Ma</name>
+    </author>
+    <author>
+      <name>Weimin Xiong</name>
+    </author>
+    <author>
+      <name>Weikun Wang</name>
+    </author>
+    <author>
+      <name>Weiji Zhuang</name>
+    </author>
+    <author>
+      <name>Shuo Liu</name>
+    </author>
+    <author>
+      <name>Shuhuai Ren</name>
+    </author>
+    <author>
+      <name>Shuhao Gu</name>
+    </author>
+    <author>
+      <name>Shimao Chen</name>
+    </author>
+    <author>
+      <name>Shijie Cao</name>
+    </author>
+    <author>
+      <name>Shihua Yu</name>
+    </author>
+    <author>
+      <name>Shicheng Li</name>
+    </author>
+    <author>
+      <name>Shengjie Zhou</name>
+    </author>
+    <author>
+      <name>Shaolei Zhang</name>
+    </author>
+    <author>
+      <name>Rang Li</name>
+    </author>
+    <author>
+      <name>Qiying Wang</name>
+    </author>
+    <author>
+      <name>Qingkai Fang</name>
+    </author>
+    <author>
+      <name>Qianli Chen</name>
+    </author>
+    <author>
+      <name>Minzheng Wang</name>
+    </author>
+    <author>
+      <name>Liwen Wang</name>
+    </author>
+    <author>
+      <name>Linli Yao</name>
+    </author>
+    <author>
+      <name>Linghao Zhang</name>
+    </author>
+    <author>
+      <name>Liangyu Cheng</name>
+    </author>
+    <author>
+      <name>Liang Zhao</name>
+    </author>
+    <author>
+      <name>Lei Li</name>
+    </author>
+    <author>
+      <name>Jinhao Dong</name>
+    </author>
+    <author>
+      <name>Jinyu Xiang</name>
+    </author>
+    <author>
+      <name>Jianyu Wei</name>
+    </author>
+    <author>
+      <name>Jiangshan Duo</name>
+    </author>
+    <author>
+      <name>Huaqiu Liu</name>
+    </author>
+    <author>
+      <name>Huanjie Fan</name>
+    </author>
+    <author>
+      <name>Hongyi Guan</name>
+    </author>
+    <author>
+      <name>Hongshen Xu</name>
+    </author>
+    <author>
+      <name>Hao Tian</name>
+    </author>
+    <author>
+      <name>Hanyu Li</name>
+    </author>
+    <author>
+      <name>Hailin Zhang</name>
+    </author>
+    <author>
+      <name>Gang Wang</name>
+    </author>
+    <author>
+      <name>Fuli Luo</name>
+    </author>
+    <author>
+      <name>Feng Wei</name>
+    </author>
+    <author>
+      <name>Dong Zhang</name>
+    </author>
+    <author>
+      <name>Dawei Zhu</name>
+    </author>
+    <author>
+      <name>Chiheng Lou</name>
+    </author>
+    <author>
+      <name>Chenhong He</name>
+    </author>
+    <author>
+      <name>Chenhao He</name>
+    </author>
+    <author>
+      <name>Chenghua Liu</name>
+    </author>
+    <author>
+      <name>Bowen Ye</name>
+    </author>
+    <author>
+      <name>Bowen Shen</name>
+    </author>
+    <author>
+      <name>Boshen Xu</name>
+    </author>
+    <author>
+      <name>Bo Yang</name>
+    </author>
+    <author>
+      <name>Bingquan Xia</name>
+    </author>
+    <author>
+      <name>Bangjun Xiao</name>
+    </author>
+    <author>
+      <name>Baixuan Xu</name>
+    </author>
+    <author>
+      <name>Zhouxiang Mao</name>
+    </author>
+    <author>
+      <name>Zhiyang Zhang</name>
+    </author>
+    <author>
+      <name>Zhixiang Xu</name>
+    </author>
+    <author>
+      <name>Zhenru Lin</name>
+    </author>
+    <author>
+      <name>Zhengju Tang</name>
+    </author>
+    <author>
+      <name>Zhaojun Huang</name>
+    </author>
+    <author>
+      <name>Yuzhe Weng</name>
+    </author>
+    <author>
+      <name>Yuxing Xiang</name>
+    </author>
+    <author>
+      <name>Yuxiao Li</name>
+    </author>
+    <author>
+      <name>Yuheng Yang</name>
+    </author>
+    <author>
+      <name>Yuhang Wang</name>
+    </author>
+    <author>
+      <name>Yuchen Liu</name>
+    </author>
+    <author>
+      <name>Yuanyuan Tian</name>
+    </author>
+    <author>
+      <name>Yuanliang Dong</name>
+    </author>
+    <author>
+      <name>Yu Cheng</name>
+    </author>
+    <author>
+      <name>Yongzhe He</name>
+    </author>
+    <author>
+      <name>Yongshun Liang</name>
+    </author>
+    <author>
+      <name>Yong Wang</name>
+    </author>
+    <author>
+      <name>Yiyan Wang</name>
+    </author>
+    <author>
+      <name>Yitian Gong</name>
+    </author>
+    <author>
+      <name>Yijie Zhang</name>
+    </author>
+    <author>
+      <name>Yanshu Xin</name>
+    </author>
+    <author>
+      <name>Xun Zhang</name>
+    </author>
+    <author>
+      <name>Xingjian Zhao</name>
+    </author>
+    <author>
+      <name>Wenyu Yang</name>
+    </author>
+    <author>
+      <name>Wenshan Huang</name>
+    </author>
+    <author>
+      <name>Wenhao Li</name>
+    </author>
+    <author>
+      <name>Tingwei Huang</name>
+    </author>
+    <author>
+      <name>Tianyu Yu</name>
+    </author>
+    <author>
+      <name>Tianyang Lu</name>
+    </author>
+    <author>
+      <name>Taoyu Yang</name>
+    </author>
+    <author>
+      <name>Sinan Du</name>
+    </author>
+    <author>
+      <name>Shutong Tian</name>
+    </author>
+    <author>
+      <name>Shulin Du</name>
+    </author>
+    <author>
+      <name>Shengfan Wang</name>
+    </author>
+    <author>
+      <name>Shanchuan Fang</name>
+    </author>
+    <author>
+      <name>Qihao Zhang</name>
+    </author>
+    <author>
+      <name>Qibin Yang</name>
+    </author>
+    <author>
+      <name>Qian Yu</name>
+    </author>
+    <author>
+      <name>Qian Tu</name>
+    </author>
+    <author>
+      <name>Pengrong Xie</name>
+    </author>
+    <author>
+      <name>Peipei Wang</name>
+    </author>
+    <author>
+      <name>Peidian Li</name>
+    </author>
+    <author>
+      <name>Minkun Guo</name>
+    </author>
+    <author>
+      <name>Mingchen Shao</name>
+    </author>
+    <author>
+      <name>Luohan Gao</name>
+    </author>
+    <author>
+      <name>Lijie Wang</name>
+    </author>
+    <author>
+      <name>Liang Shi</name>
+    </author>
+    <author>
+      <name>Kaiqi Chen</name>
+    </author>
+    <author>
+      <name>Kaiming Liu</name>
+    </author>
+    <author>
+      <name>Kaifei Wang</name>
+    </author>
+    <author>
+      <name>Kai Yang</name>
+    </author>
+    <author>
+      <name>Jinlong Xue</name>
+    </author>
+    <author>
+      <name>Jiechen Zhang</name>
+    </author>
+    <author>
+      <name>Jiaxuan Liu</name>
+    </author>
+    <author>
+      <name>Hongxu An</name>
+    </author>
+    <author>
+      <name>Hao Peng</name>
+    </author>
+    <author>
+      <name>Hanglong Lü</name>
+    </author>
+    <author>
+      <name>Guonan Wang</name>
+    </author>
+    <author>
+      <name>Feiyu Yang</name>
+    </author>
+    <author>
+      <name>Fanyu Cao</name>
+    </author>
+    <author>
+      <name>Fangyue Liu</name>
+    </author>
+    <author>
+      <name>Fan Cui</name>
+    </author>
+    <author>
+      <name>Cong Wang</name>
+    </author>
+    <author>
+      <name>Chun Chen</name>
+    </author>
+    <author>
+      <name>Chenxu Bai</name>
+    </author>
+    <author>
+      <name>Chengxuan Zhu</name>
+    </author>
+    <author>
+      <name>Chenghua Wang</name>
+    </author>
+    <author>
+      <name>Boyi Zeng</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.11922v1</id>
+    <title>Project Greenhouse: Progress Toward Fully Open and Sovereign Agentic Search</title>
+    <updated>2026-10-08T13:19:46Z</updated>
+    <link href="https://arxiv.org/abs/2610.11922v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.11922v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Project Greenhouse represents our exploration of a simple thesis: We believe that it is possible to build fully open and sovereign models for agentic search with only modest computational resources. As a first milestone, we describe how to build a competitive pointwise decoder-only reranker using a simple two-step recipe comprising pre-training from scratch followed by supervised fine-tuning, starting only from commonly available datasets. Contrary to the dominant approach in the literature, we do not rely on existing open-weight backbones from third parties, and thus we are fully in control of model training, from end to end. We were able to accomplish the bulk of our experiments using no more than a handful of GPUs. This report articulates the importance and benefits of our approach, and we share artifacts that enable transparent, independent reproduction of all aspects of model training. Beyond data, code, and configurations that capture our efforts, we also release checkpoints for our family of Gaggle models, demonstrating the feasibility of our approach and providing a first step toward validating our broader thesis.</summary>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-08T13:19:46Z</published>
+    <arxiv:primary_category term="cs.IR"/>
+    <author>
+      <name>Jimmy Lin</name>
+    </author>
+    <author>
+      <name>Sahel Sharifymoghaddam</name>
+    </author>
+    <author>
+      <name>Lingwei Gu</name>
+    </author>
+    <author>
+      <name>Nour Jedidi</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.11920v1</id>
+    <title>Event-Centric Memory with Query-Aware Graph Augmentation for Long-Term Conversational Agents</title>
+    <updated>2026-10-08T13:17:59Z</updated>
+    <link href="https://arxiv.org/abs/2610.11920v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.11920v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>For persistent and personalized conversational agents, memory systems can enable them to remember, update, and reason over long histories by storing past interactions and retrieving relevant information. Existing memory systems typically follow two paradigms: flat-structured memory and graph-based memory. The former is lightweight but leaves event relations and state updates implicit, while the latter explicitly models memory structure but incurs additional construction cost and introduces irrelevant relations over long histories. To address these limitations, we propose QGMem, a novel memory construction and activation framework motivated by human memory, in which experience is organized into events and query-relevant events are modeled by graph as working memory. QGMem converts long dialogue histories into event-indexed atomic memory units that preserve individual experiences and consolidates related units into dynamic memory traces that retain state trajectories and current states. When a query arrives, hybrid memory retrieval gathers complementary candidate memories, and query-aware reranking activates the most relevant units as a compact working memory. To expose relational dependencies in the working memory and support conflict-aware reasoning, QGMem organizes the working memory as a local graph, which is then encoded as a graph token and provided to the LLM together with the textual working memory to improve evidence utilization during answer generation. Experiments across six benchmarks validate the framework and show consistent gains in retrieval, multi-hop evidence composition, conflict resolution, and ultra-long dialogue reasoning with compact contexts and moderate inference cost.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-08T13:17:59Z</published>
+    <arxiv:comment>17 pages, 7 figures. Submitted to IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Yichen Liu</name>
+    </author>
+    <author>
+      <name>Chunfeng Yuan</name>
+    </author>
+    <author>
+      <name>Haowei Liu</name>
+    </author>
+    <author>
+      <name>Wenjuan Li</name>
+    </author>
+    <author>
+      <name>Zefeng Lin</name>
+    </author>
+    <author>
+      <name>Bing Li</name>
+    </author>
+    <author>
+      <name>Xu Chen</name>
+    </author>
+    <author>
+      <name>Weiming Hu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.11899v1</id>
+    <title>Forms of LLM-Integrated Applications from LLM-Chats to Autonomous AI Agent System</title>
+    <updated>2026-10-08T13:05:33Z</updated>
+    <link href="https://arxiv.org/abs/2610.11899v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.11899v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language models (LLMs) are increasingly embedded as components in software systems, marketed under labels such as chatbot, copilot, retrieval-augmented generation, workflow, coding agent and AI agent. Whether these labels denote genuine architectural forms or serve as branding has not been assessed systematically.
+  In the sources surveyed, labels do carry architectural content, most clearly in vendor usage: copilot denotes a router-worker architecture operating a host application under step-by-step user confirmation, while the more recent shift to the label agent coincides with AI-planned multi-step execution of which the user sees only the outcome. The coding agents of four major providers share one architecture, a reason-and-act loop delegating to subagents.
+  This survey describes seven recurring forms---LLM chats, custom agents, retrieval-augmented generation (RAG), AI-enhanced workflows, copilots, coding agents, and, in part, agentic RAG---in a common vocabulary of agents and tools. Each is characterized along four structural dimensions (agentic RAG only partially): the architectural pattern, the control of execution and the point of user intervention, the number of agent calls per task, and tool use. An illustrative corpus of 22 systems from research publications and vendor documentation grounds the descriptions and shows where they reach their limit.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-08T13:05:33Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Irene Weber</name>
+      <arxiv:affiliation>University of Applied Sciences Kempten, Germany</arxiv:affiliation>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.11794v1</id>
+    <title>Memento 3: Model-Based Recursive Self-Improvement through Reflective Rulebooks</title>
+    <updated>2026-10-08T12:06:54Z</updated>
+    <link href="https://arxiv.org/abs/2610.11794v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.11794v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Learning to act in unfamiliar environments requires agents to infer how the world works and revise that understanding as new evidence arrives. Yet limited observations can support multiple world models that explain past interactions but predict different outcomes in unseen states. We introduce Memento 3, building on the Memento series to enable frozen LLM agents to continually learn explicit world models through external memory. The agent maintains a natural-language rulebook as persistent semantic memory, recording revisable hypotheses about environment dynamics while leaving unknown aspects underspecified. It compiles this rulebook into executable code for prediction and planning. Through a continual loop of observation, reflection, rule revision, compilation, and verification, the agent uses prediction errors to refine both the rulebook and its code. Updated code is accepted only when the LLM judges it faithful to the rulebook and cell-exact replay reproduces the observed transitions. We investigate this process as a model-based route to recursive self-improvement (RSI): the agent autonomously explores the environment, revises its world model, and uses verified updates to guide subsequent interaction and learning, while the underlying LLM remains fixed. A population extension maintains multiple world models in parallel, sharing interaction evidence and using their predictions to guide exploration. On ARC-AGI-3, the single-model agent clears every level of all 25 public games, achieves a mean Relative Human Action Efficiency (RHAE) of 100.0, and uses 44% of the human action count. In an Atari Pong case study, a learned feedback controller wins 21:0 in each of three evaluated episodes with different openings, without further LLM calls.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-08T12:06:54Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Haoyu Zhao</name>
+    </author>
+    <author>
+      <name>Zhengxu Yu</name>
+    </author>
+    <author>
+      <name>Zhiyuan He</name>
+    </author>
+    <author>
+      <name>Meng Fang</name>
+    </author>
+    <author>
+      <name>Rasul Tutunov</name>
+    </author>
+    <author>
+      <name>Haitham Bou-Ammar</name>
+    </author>
+    <author>
+      <name>Weilin Luo</name>
+    </author>
+    <author>
+      <name>Jun Wang</name>
+    </author>
+  </entry>
+</feed>

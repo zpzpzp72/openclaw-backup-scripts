@@ -1,0 +1,7 @@
+{
+  "date": "2026-10-06T13:34:50.846994+00:00",
+  "note": "No live arXiv/GitHub fetch possible (network unreachable 2026-10-06). Snapshot reused from 2026-10-05 build; no new ingest.",
+  "node_count": 157,
+  "edge_count": 394,
+  "source_graph": "graphify-out/graph.json"
+}

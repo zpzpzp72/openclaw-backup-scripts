@@ -1,0 +1,196 @@
+{
+  "nodes": [
+    {
+      "id": "2609.04518_WhatDoesMulti-HarnessRLLea",
+      "label": "What Does Multi-Harness RL Learn? Credit Assignment and Portability in Coding Agents",
+      "file_type": "paper",
+      "source_file": "graphify-raw/nightly-scout-2026-09-08.md",
+      "captured_at": "2026-09-08"
+    },
+    {
+      "id": "2609.04523_MaxKernel:AgenticKernelGene",
+      "label": "MaxKernel: Agentic Kernel Generation for TPUs",
+      "file_type": "paper",
+      "source_file": "graphify-raw/nightly-scout-2026-09-08.md",
+      "captured_at": "2026-09-08"
+    },
+    {
+      "id": "2609.04373_WhyBetterModelsCanCreateR",
+      "label": "Why Better Models Can Create Riskier Systems: Evidence from LLM Agents in Financial Markets",
+      "file_type": "paper",
+      "source_file": "graphify-raw/nightly-scout-2026-09-08.md",
+      "captured_at": "2026-09-08"
+    },
+    {
+      "id": "2609.04298_HarborAdaptersandHarbor-Ind",
+      "label": "Harbor Adapters and Harbor-Index: Infrastructure and a Curated Meta-Dataset for Large-Scale Agentic Evaluation",
+      "file_type": "paper",
+      "source_file": "graphify-raw/nightly-scout-2026-09-08.md",
+      "captured_at": "2026-09-08"
+    },
+    {
+      "id": "2609.04565_ExtremelySparseSupervisionI",
+      "label": "Extremely Sparse Supervision Incentivizes Reasoning Ability",
+      "file_type": "paper",
+      "source_file": "graphify-raw/nightly-scout-2026-09-08.md",
+      "captured_at": "2026-09-08"
+    },
+    {
+      "id": "2609.04476_HarvestBench:MeasuringWhethe",
+      "label": "HarvestBench: Measuring Whether LLM Agents Will Pay to Avoid Killing Animals",
+      "file_type": "paper",
+      "source_file": "graphify-raw/nightly-scout-2026-09-08.md",
+      "captured_at": "2026-09-08"
+    },
+    {
+      "id": "2609.04495_RethinkingIndirectPromptInj",
+      "label": "Rethinking Indirect Prompt Injection as a Test-Time Search Problem",
+      "file_type": "paper",
+      "source_file": "graphify-raw/nightly-scout-2026-09-08.md",
+      "captured_at": "2026-09-08"
+    },
+    {
+      "id": "2609.04343_ARemovalBasedApproachtoIm",
+      "label": "A Removal Based Approach to Improve LLM Faithfulness at Test-Time",
+      "file_type": "paper",
+      "source_file": "graphify-raw/nightly-scout-2026-09-08.md",
+      "captured_at": "2026-09-08"
+    },
+    {
+      "id": "2609.04490_WhenQuantizationBreaksMemor",
+      "label": "When Quantization Breaks Memory: Recurrent-State Write-Back in Low-Precision Temporal Inference",
+      "file_type": "paper",
+      "source_file": "graphify-raw/nightly-scout-2026-09-08.md",
+      "captured_at": "2026-09-08"
+    },
+    {
+      "id": "multi_harness_rl",
+      "label": "Multi-Harness RL",
+      "file_type": "document",
+      "source_file": "graphify-raw/nightly-scout-2026-09-08.md",
+      "captured_at": "2026-09-08"
+    },
+    {
+      "id": "maxkernel",
+      "label": "MaxKernel TPU Kernel Generation",
+      "file_type": "document",
+      "source_file": "graphify-raw/nightly-scout-2026-09-08.md",
+      "captured_at": "2026-09-08"
+    },
+    {
+      "id": "capability_paradox",
+      "label": "Capability Paradox in LLM Agents",
+      "file_type": "document",
+      "source_file": "graphify-raw/nightly-scout-2026-09-08.md",
+      "captured_at": "2026-09-08"
+    },
+    {
+      "id": "harbor_adapters",
+      "label": "Harbor Adapters",
+      "file_type": "document",
+      "source_file": "graphify-raw/nightly-scout-2026-09-08.md",
+      "captured_at": "2026-09-08"
+    },
+    {
+      "id": "harbor_index",
+      "label": "Harbor-Index",
+      "file_type": "document",
+      "source_file": "graphify-raw/nightly-scout-2026-09-08.md",
+      "captured_at": "2026-09-08"
+    },
+    {
+      "id": "sparse_supervision",
+      "label": "Extremely Sparse Supervision",
+      "file_type": "document",
+      "source_file": "graphify-raw/nightly-scout-2026-09-08.md",
+      "captured_at": "2026-09-08"
+    },
+    {
+      "id": "harvestbench",
+      "label": "HarvestBench",
+      "file_type": "document",
+      "source_file": "graphify-raw/nightly-scout-2026-09-08.md",
+      "captured_at": "2026-09-08"
+    },
+    {
+      "id": "indirect_prompt_injection",
+      "label": "Indirect Prompt Injection",
+      "file_type": "document",
+      "source_file": "graphify-raw/nightly-scout-2026-09-08.md",
+      "captured_at": "2026-09-08"
+    },
+    {
+      "id": "llm_faithfulness",
+      "label": "LLM Faithfulness Test-Time",
+      "file_type": "document",
+      "source_file": "graphify-raw/nightly-scout-2026-09-08.md",
+      "captured_at": "2026-09-08"
+    },
+    {
+      "id": "recurrent_state_writeback",
+      "label": "Recurrent-State Write-Back",
+      "file_type": "document",
+      "source_file": "graphify-raw/nightly-scout-2026-09-08.md",
+      "captured_at": "2026-09-08"
+    },
+    {
+      "id": "agentic_evaluation",
+      "label": "Agentic Evaluation Infrastructure",
+      "file_type": "document",
+      "source_file": "graphify-raw/nightly-scout-2026-09-08.md",
+      "captured_at": "2026-09-08"
+    },
+    {
+      "id": "credit_assignment",
+      "label": "Credit Assignment in Multi-Harness RL",
+      "file_type": "document",
+      "source_file": "graphify-raw/nightly-scout-2026-09-08.md",
+      "captured_at": "2026-09-08"
+    }
+  ],
+  "edges": [
+    {
+      "source": "multi_harness_rl",
+      "target": "credit_assignment",
+      "relation": "addresses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "graphify-raw/nightly-scout-2026-09-08.md"
+    },
+    {
+      "source": "harbor_adapters",
+      "target": "agentic_evaluation",
+      "relation": "provides_infrastructure_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "graphify-raw/nightly-scout-2026-09-08.md"
+    },
+    {
+      "source": "harbor_index",
+      "target": "agentic_evaluation",
+      "relation": "is_benchmark_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "graphify-raw/nightly-scout-2026-09-08.md"
+    },
+    {
+      "source": "sparse_supervision",
+      "target": "credit_assignment",
+      "relation": "provides_method_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "graphify-raw/nightly-scout-2026-09-08.md"
+    },
+    {
+      "source": "indirect_prompt_injection",
+      "target": "capability_paradox",
+      "relation": "is_security_concern_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "graphify-raw/nightly-scout-2026-09-08.md"
+    }
+  ],
+  "hyperedges": [],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

@@ -1,0 +1,4049 @@
+{
+  "generated_at": "2026-10-08T21:38:00+08:00",
+  "scout_run": "nightly-scout-2026-10-08",
+  "window": "Thu 21:30-23:30",
+  "arxiv_total_2610": 200,
+  "arxiv_id_range": "2610.09146 \u2192 2610.10538",
+  "concept_count": 16,
+  "mcp_repo_count": 10,
+  "edge_count": 217,
+  "node_count": 226,
+  "nodes": [
+    {
+      "id": "concept:Long-Horizon_Memory",
+      "type": "concept",
+      "label": "Long-Horizon Memory",
+      "source": "scout-2026-10-08"
+    },
+    {
+      "id": "concept:Agent_Harness",
+      "type": "concept",
+      "label": "Agent Harness",
+      "source": "scout-2026-10-08"
+    },
+    {
+      "id": "concept:Tool_Use",
+      "type": "concept",
+      "label": "Tool Use",
+      "source": "scout-2026-10-08"
+    },
+    {
+      "id": "concept:Multi-Agent_Coordination",
+      "type": "concept",
+      "label": "Multi-Agent Coordination",
+      "source": "scout-2026-10-08"
+    },
+    {
+      "id": "concept:Agent_Safety",
+      "type": "concept",
+      "label": "Agent Safety",
+      "source": "scout-2026-10-08"
+    },
+    {
+      "id": "concept:RAG_Retrieval",
+      "type": "concept",
+      "label": "RAG/Retrieval",
+      "source": "scout-2026-10-08"
+    },
+    {
+      "id": "concept:Skill_Lifecycle",
+      "type": "concept",
+      "label": "Skill Lifecycle",
+      "source": "scout-2026-10-08"
+    },
+    {
+      "id": "concept:Planning_Reasoning",
+      "type": "concept",
+      "label": "Planning/Reasoning",
+      "source": "scout-2026-10-08"
+    },
+    {
+      "id": "concept:Code_Agent",
+      "type": "concept",
+      "label": "Code Agent",
+      "source": "scout-2026-10-08"
+    },
+    {
+      "id": "concept:RL_Post-Training",
+      "type": "concept",
+      "label": "RL Post-Training",
+      "source": "scout-2026-10-08"
+    },
+    {
+      "id": "concept:Multimodal",
+      "type": "concept",
+      "label": "Multimodal",
+      "source": "scout-2026-10-08"
+    },
+    {
+      "id": "concept:MCP_Protocol",
+      "type": "concept",
+      "label": "MCP Protocol",
+      "source": "scout-2026-10-08"
+    },
+    {
+      "id": "concept:OpenClaw",
+      "type": "concept",
+      "label": "OpenClaw",
+      "source": "scout-2026-10-08"
+    },
+    {
+      "id": "concept:Memory_Wiki",
+      "type": "concept",
+      "label": "Memory Wiki",
+      "source": "scout-2026-10-08"
+    },
+    {
+      "id": "concept:skill_workshop",
+      "type": "concept",
+      "label": "skill_workshop",
+      "source": "scout-2026-10-08"
+    },
+    {
+      "id": "concept:mcporter",
+      "type": "concept",
+      "label": "mcporter",
+      "source": "scout-2026-10-08"
+    },
+    {
+      "id": "arxiv:2610.10538",
+      "type": "paper",
+      "category": "memory",
+      "title": "Never Look Back: Understanding Persistence in 3D Object Memory from Egocentric Videos",
+      "authors": [
+        "Shravan Chaudhari",
+        "William Paul",
+        "Suchi Saria"
+      ],
+      "published": "2026-10-07T17:59:41Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10183",
+      "type": "paper",
+      "category": "memory",
+      "title": "VideoEvolve: Co-Evolving Memory and Retrieval for Long Video Understanding",
+      "authors": [
+        "Yongchao Xu",
+        "Bowen Ye",
+        "Jiefeng Gan"
+      ],
+      "published": "2026-10-07T14:51:23Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09593",
+      "type": "paper",
+      "category": "memory",
+      "title": "Structured pre-generation elicitation versus single-shot prompting in AI-assisted enterprise decision-making: a randomised online experiment",
+      "authors": [
+        "William Scott-Jackson"
+      ],
+      "published": "2026-10-07T07:39:52Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09496",
+      "type": "paper",
+      "category": "memory",
+      "title": "Sparse Feature Policy Unlearning Mitigates State Hallucination in Vision-Language-Action Models",
+      "authors": [
+        "Jiho Lee",
+        "Jeongeun Park",
+        "Heayoun Choi"
+      ],
+      "published": "2026-10-07T05:52:02Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09215",
+      "type": "paper",
+      "category": "memory",
+      "title": "AGAR: a reinforcement learning substrate for LLM program evolution",
+      "authors": [
+        "Haoran Li",
+        "Zengle Ge",
+        "Xiaomin Yuan"
+      ],
+      "published": "2026-10-06T23:22:26Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09193",
+      "type": "paper",
+      "category": "memory",
+      "title": "Bookkeeping, Composition, or Unreachable Gold? Reading MemoryAgentBench's Conflict-Resolution Scores Against a Frozen Last-Write Resolver",
+      "authors": [
+        "Egor Pakhomov",
+        "Erik Nijkamp"
+      ],
+      "published": "2026-10-06T22:44:32Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10528",
+      "type": "paper",
+      "category": "memory",
+      "title": "Long-WAM: Scaling the Context of World-Action Models",
+      "authors": [
+        "Wei Huang",
+        "Bohan Zhang",
+        "Chenzhi Liu"
+      ],
+      "published": "2026-10-07T17:58:04Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10444",
+      "type": "paper",
+      "category": "memory",
+      "title": "RunningTab: Direct Workspace Interaction with Environment-Side Tabs",
+      "authors": [
+        "Jinheon Baek",
+        "Soyeong Jeong",
+        "Yumin Choi"
+      ],
+      "published": "2026-10-07T17:16:56Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10266",
+      "type": "paper",
+      "category": "memory",
+      "title": "LoomSC: Scalable Deep Subspace Clustering with Projector Factorization and Exact Spectral Reduction",
+      "authors": [
+        "Nairouz Mrabah",
+        "Youssef Melki",
+        "Mohamed Bouguessa"
+      ],
+      "published": "2026-10-07T15:37:39Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10242",
+      "type": "paper",
+      "category": "memory",
+      "title": "TestGRAD: Evolving Test Suites via Failure Pattern Momentum for SWE-Agent Ensemble",
+      "authors": [
+        "Pengfei He",
+        "Jiayuan Zhou",
+        "Shaowei Wang"
+      ],
+      "published": "2026-10-07T15:25:15Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10091",
+      "type": "paper",
+      "category": "memory",
+      "title": "ExperienceIndex: Artifact-Grounded Memory",
+      "authors": [
+        "Peter Baile Chen",
+        "Geoffrey X. Yu",
+        "Xinming Liu"
+      ],
+      "published": "2026-10-07T13:50:33Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09835",
+      "type": "paper",
+      "category": "memory",
+      "title": "A Deafening Silence: Catastrophic Forgetting Lives in the Output Embeddings of Tokens the Data Never Speaks",
+      "authors": [
+        "Jonghyun Han",
+        "Younghoon Song",
+        "Jongyoul Park"
+      ],
+      "published": "2026-10-07T11:01:01Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09761",
+      "type": "paper",
+      "category": "memory",
+      "title": "PARC-Loc: Text-to-Point-Cloud Localization with Partial Assignment and Relational Consistency",
+      "authors": [
+        "Shengkai Ma",
+        "Zhenyu Hou",
+        "Weihua Cao"
+      ],
+      "published": "2026-10-07T09:46:34Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09590",
+      "type": "paper",
+      "category": "memory",
+      "title": "Learning Situation-Conditioned Thinking Policies for Long-Term LLM Agents",
+      "authors": [
+        "Hong Su"
+      ],
+      "published": "2026-10-07T07:34:08Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10126",
+      "type": "paper",
+      "category": "multi_agent",
+      "title": "Know the Shape, Find the Fault: Topology-Conditioned Diagnosis of Multi-Agent LLM Failures",
+      "authors": [
+        "Xinwen Liu",
+        "Zhuocheng Pan",
+        "Isabella Zhu"
+      ],
+      "published": "2026-10-07T14:07:48Z",
+      "score": 3,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09872",
+      "type": "paper",
+      "category": "multi_agent",
+      "title": "LiveMACE: Process-Aware Evaluation of LLM Agent Capabilities in Evolving Markets",
+      "authors": [
+        "Jun Zhao",
+        "Leiming Fu",
+        "Yanbo Wen"
+      ],
+      "published": "2026-10-07T11:33:21Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09497",
+      "type": "paper",
+      "category": "multi_agent",
+      "title": "Ream: Unfolding Mutual Awareness in Human-Agent Workspaces",
+      "authors": [
+        "Peiling Jiang",
+        "Sangho Suh",
+        "Varsha Kishore"
+      ],
+      "published": "2026-10-07T05:52:15Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09466",
+      "type": "paper",
+      "category": "multi_agent",
+      "title": "LLM-Enabled UAV Dispatch: A System-Level Survey and Taxonomy",
+      "authors": [
+        "Xiao Han",
+        "Aoyang Quan",
+        "Xiangyu Zhao"
+      ],
+      "published": "2026-10-07T05:22:51Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10468",
+      "type": "paper",
+      "category": "multi_agent",
+      "title": "A Society of Researchers: Designing Institutions for Populations of Autonomous Research Agents",
+      "authors": [
+        "Ali Asaria",
+        "Deep Gandhi",
+        "Tony Salomone"
+      ],
+      "published": "2026-10-07T17:30:45Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10232",
+      "type": "paper",
+      "category": "multi_agent",
+      "title": "LLM Persuasion Is in the Eye of the Evaluation",
+      "authors": [
+        "Kamile Dementaviciute",
+        "Julija Vaitonyte",
+        "Tijl De Bie"
+      ],
+      "published": "2026-10-07T15:19:54Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10184",
+      "type": "paper",
+      "category": "multi_agent",
+      "title": "Agentic AI-Assisted Modeling for Production Scheduling: Assessment in Constraint Programming",
+      "authors": [
+        "\u00c1ngel S\u00e1nchez-Fern\u00e1ndez",
+        "Javier Pernas-\u00c1lvarez",
+        "Diego Crespo-Pereira"
+      ],
+      "published": "2026-10-07T14:51:37Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09769",
+      "type": "paper",
+      "category": "multi_agent",
+      "title": "From Expert-Guided Proof Search to Automated Open-Problem Solving",
+      "authors": [
+        "Adri\u00e1n Z\u00e1me\u010dn\u00edk",
+        "Mat\u011bj Kripner",
+        "Martin Kouteck\u00fd"
+      ],
+      "published": "2026-10-07T09:52:46Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09587",
+      "type": "paper",
+      "category": "multi_agent",
+      "title": "Collaborative Reasoning Distillation via Cross-Feedback and Coherent Curation",
+      "authors": [
+        "Taehoon Kim",
+        "Seunggeun Cho",
+        "Dongsu Han"
+      ],
+      "published": "2026-10-07T07:31:33Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09371",
+      "type": "paper",
+      "category": "multi_agent",
+      "title": "The Confidence Game: Strategic Miscalibration in Human-AI Delegation",
+      "authors": [
+        "Raghu Arghal",
+        "Saswati Sarkar",
+        "Shirin Saeedi Bidokhti"
+      ],
+      "published": "2026-10-07T03:25:44Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10478",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "Before They Can Solve: Predicting Post-Training Coding-Agent Performance from Base Models",
+      "authors": [
+        "Tan Yu",
+        "Alexander Bukharin",
+        "Khushi Bhardwaj"
+      ],
+      "published": "2026-10-07T17:37:19Z",
+      "score": 4,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10355",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "MIRA: A Musical Intent Refinement Agent for Aligning Text-to-Music Generation with User Intent",
+      "authors": [
+        "Zekai Liu",
+        "Zhilin Wang",
+        "Xuzheng He"
+      ],
+      "published": "2026-10-07T16:29:46Z",
+      "score": 4,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10120",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "RewardWeaver: Long-Horizon Interactive Learning for Language Agents via Self-Evolving Reward Adaptation",
+      "authors": [
+        "Hengbo Xiao",
+        "Boyao Zhang",
+        "Purui Liu"
+      ],
+      "published": "2026-10-07T14:04:45Z",
+      "score": 4,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10513",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "SciExam for ENSO: Can AI Agents Build Climate Models?",
+      "authors": [
+        "Yinling Zhang",
+        "Langchen Liu",
+        "Dongbin Xiu"
+      ],
+      "published": "2026-10-07T17:52:52Z",
+      "score": 3,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10411",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "Training Parallel Speculative Draft Models by Directly Minimizing Expected Decoding Rounds",
+      "authors": [
+        "Yunxiao Zhao",
+        "Changxiao Cai"
+      ],
+      "published": "2026-10-07T16:56:29Z",
+      "score": 3,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10265",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "Stale, Misattributed, or Late: Where Personal Memory Fails Before Generation",
+      "authors": [
+        "Haonan Deng",
+        "Park Sinchaisri"
+      ],
+      "published": "2026-10-07T15:37:12Z",
+      "score": 3,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09944",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "AgentTime: Can Agents Estimate and Control Their Own Runtime?",
+      "authors": [
+        "Michael Ofengenden",
+        "Maksym Andriushchenko"
+      ],
+      "published": "2026-10-07T12:26:24Z",
+      "score": 3,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09823",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "UltraText Bench: A Comprehensive Bilingual Benchmark for Evaluating Visual Text Rendering in Image Generation",
+      "authors": [
+        "Deyuan Liu",
+        "Yihao Hu",
+        "Jingxuan Zhang"
+      ],
+      "published": "2026-10-07T10:47:52Z",
+      "score": 3,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09681",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "Cost-Efficient Theorem Proving via Agent Orchestration in Program Verification",
+      "authors": [
+        "Shuangjie Yao",
+        "Nikolaus Holzer",
+        "Mark Paul Santolucito"
+      ],
+      "published": "2026-10-07T08:42:24Z",
+      "score": 3,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09633",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "Coding-Agent Benchmarks Should Match Their Users' Task Flows",
+      "authors": [
+        "Igor Slinko",
+        "Yaroslav Golubev",
+        "Sergey Titov"
+      ],
+      "published": "2026-10-07T08:08:39Z",
+      "score": 3,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09558",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "DrugTargetWorld: A Synthetic Biobank for Training and Benchmarking AI Scientists",
+      "authors": [
+        "Samuel Margolis",
+        "Paul Schmiedmayer",
+        "Alan Huang"
+      ],
+      "published": "2026-10-07T06:59:54Z",
+      "score": 3,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09554",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "Reliability of LLM Judges for Evaluating Entity Alignment",
+      "authors": [
+        "Vaibhava Lakshmi Ravideshik",
+        "Mayank Kejriwal"
+      ],
+      "published": "2026-10-07T06:55:45Z",
+      "score": 3,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09374",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "DUDA-Bench: Benchmarking LLM Agents on Multimodal Data-Driven Urban Diagnosis",
+      "authors": [
+        "Yizhi Song",
+        "Hang Ni",
+        "Weijia Zhang"
+      ],
+      "published": "2026-10-07T03:29:27Z",
+      "score": 3,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09229",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "Conditional Accuracy Profiles: Diagnosing LLM Judges across Deployment Conditions",
+      "authors": [
+        "Wenqi Li",
+        "Bin Liu",
+        "Mindi Ruan"
+      ],
+      "published": "2026-10-06T23:46:43Z",
+      "score": 3,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09152",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "sk-bench: A Native-First Benchmark for Evaluating Large Language Models in Slovak",
+      "authors": [
+        "Marek \u0160uppa",
+        "Ivan Vykopal",
+        "Andrej Ridzik"
+      ],
+      "published": "2026-10-06T21:51:22Z",
+      "score": 3,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10506",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "Validity Without Ground Truth: What Stated-Preference Economics Offers the Evaluation of Language Models",
+      "authors": [
+        "Daniel Robert Kling Alexander",
+        "Catherine Louise Kling"
+      ],
+      "published": "2026-10-07T17:51:07Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10498",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "EmbodiedRSI: Active Continual Robot Learning Through Hypothesis-Guided Co-Evolution",
+      "authors": [
+        "Python Song",
+        "Zhixuan Liang",
+        "Kelsey Fu"
+      ],
+      "published": "2026-10-07T17:48:02Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10455",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "PHRBench: A Behavioral Evaluation of Post-Hallucination Reasoning in LLMs",
+      "authors": [
+        "Linghao Meng",
+        "Feng He",
+        "Xuan Yang"
+      ],
+      "published": "2026-10-07T17:25:23Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10388",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "RoboQuest: Generalist Physical Agents that Search, Inspect and Test",
+      "authors": [
+        "Liu Renhang",
+        "Navonil Majumder",
+        "Tej Deep Pala"
+      ],
+      "published": "2026-10-07T16:46:45Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10324",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "Performance at What Cost? A Sustainability-Aware Performance Index for Cell and Nucleus Instance Segmentation",
+      "authors": [
+        "Eiram Mahera Sheikh",
+        "Alaa Tharwat",
+        "Wolfram Schenck"
+      ],
+      "published": "2026-10-07T16:12:53Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10320",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "LLM-Assisted Generation of Transparent, Open-Source Multiphysics Models of Electrochemical Devices",
+      "authors": [
+        "Sebastian Castro",
+        "Maya F. Schuchert",
+        "Spencer A. McCluskey"
+      ],
+      "published": "2026-10-07T16:11:56Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10066",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "From Pixel to Coding: Evaluating the Figure Reproduction Capabilities of MLLMs",
+      "authors": [
+        "Zijian Chen",
+        "Zhengyu Chen",
+        "Bohan Liang"
+      ],
+      "published": "2026-10-07T13:33:04Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09993",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "Efficient Patch-Based Anomaly Detection Fused with Diffusion Driven Generative Modeling for Semiconductor Wafer Bin Map Open Set Anomaly Detection",
+      "authors": [
+        "Limon Bin Hossain",
+        "Md Sadib Rahman Ananta"
+      ],
+      "published": "2026-10-07T12:52:58Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09927",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "KGATE : a Knowledge Graph Embedding Training Environment",
+      "authors": [
+        "Benjamin Loire",
+        "Galadriel Bri\u00e8re",
+        "C\u00e9lia Brahimi"
+      ],
+      "published": "2026-10-07T12:14:50Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09896",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "NL2Hull: A Natural Language-Driven Constrained Ship Design Decision Framework",
+      "authors": [
+        "Wenhua Huo",
+        "Fenglei Han",
+        "Wangyuan Zhao"
+      ],
+      "published": "2026-10-07T11:55:01Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09802",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "DisParQ: Self-Supervised Part Concepts for Interpretable Vision Foundation Models",
+      "authors": [
+        "Adam Pardyl",
+        "Siddhartha Gairola",
+        "Sukrut Rao"
+      ],
+      "published": "2026-10-07T10:19:04Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09795",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "MIRROR: From Imitation to Internalization in LLM Personalization",
+      "authors": [
+        "Huayi Lai",
+        "Jicheng Yang",
+        "Min Yi"
+      ],
+      "published": "2026-10-07T10:10:01Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09772",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "Decoupling Logic from Persona: Structural Immunity of Edge LLM Agents to Context Pollution",
+      "authors": [
+        "Masaaki Nakatsu",
+        "Reno Wang"
+      ],
+      "published": "2026-10-07T09:53:28Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09693",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "A Tale of Two Error Categories: Exploring Concealed Trade-Offs in the Errors of Automated Judges in Evaluation of Uncertainty Quantifiers",
+      "authors": [
+        "Evgenia Ilia",
+        "Wilker Aziz"
+      ],
+      "published": "2026-10-07T08:52:32Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09692",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "Few-Shot Learning for Personalised Automated Pain Assessment",
+      "authors": [
+        "Heinke Hihn",
+        "Ibrahim Eisawy",
+        "Patrick Thiam"
+      ],
+      "published": "2026-10-07T08:52:31Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09607",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "Which Language Should a Skeleton Speak? Language Choices in Multilingual Reasoning",
+      "authors": [
+        "HyeonSeok Lim",
+        "SeungWoo Song",
+        "Inho Won"
+      ],
+      "published": "2026-10-07T07:53:13Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09588",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "Adaptive Code Generation for Controlling Robots",
+      "authors": [
+        "Justus Flerlage",
+        "Thorsten Wittkopp",
+        "Alexander Acker"
+      ],
+      "published": "2026-10-07T07:33:16Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09571",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "How Do LLMs Change Predictions Under Negation?",
+      "authors": [
+        "Jongwook Yoon",
+        "Jongwon Lim",
+        "Sungjib Lim"
+      ],
+      "published": "2026-10-07T07:12:16Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09525",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "Align Before You Combine: Reference Space Calibration for Supervision Without Ground Truth",
+      "authors": [
+        "Jackson Eshbaugh",
+        "Jorge Silveyra"
+      ],
+      "published": "2026-10-07T06:18:07Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09493",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "The Attribution Blind Spot: Layerwise Trajectory Diagnostics for Source Reliance in Retrieval-Augmented Language Models",
+      "authors": [
+        "Zhe Yu",
+        "Wenpeng Xing",
+        "Yunzhao Wei"
+      ],
+      "published": "2026-10-07T05:47:31Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09487",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "Correspondences as Decisions: JevNexus for Decision-Centric Schema Matching",
+      "authors": [
+        "Runze Li",
+        "Hanchen Wang",
+        "Ying Zhang"
+      ],
+      "published": "2026-10-07T05:42:41Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09446",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "Arctic Questions, Missing Answers: A Dataset and Benchmark for LLM Abstention in Arctic Science",
+      "authors": [
+        "Benjamin Wilcox",
+        "Dawei Gao",
+        "Pradeeban Kathiravelu"
+      ],
+      "published": "2026-10-07T04:58:28Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09426",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "RSI-Forge: From Research Papers to Environments for Recursive Self-Improvement",
+      "authors": [
+        "Renxiong Wang",
+        "Darvin Yi",
+        "Abril Herrlein"
+      ],
+      "published": "2026-10-07T04:27:21Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09377",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "From Plausible Hierarchies to Useful Taxonomies: Evaluating Agentic Harnesses on Customer Feedback",
+      "authors": [
+        "Prabhath Chellingi",
+        "Raviraja G",
+        "Viraj Bagal"
+      ],
+      "published": "2026-10-07T03:32:07Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09328",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "Visual Jev Rewards: Reference-Bound Verification for Multi-Subject Image Generation",
+      "authors": [
+        "Baoteng Li",
+        "Wenzhuo Wu",
+        "Kongming Liang"
+      ],
+      "published": "2026-10-07T02:34:09Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09305",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "Kuration SDK: Addressing the Virtual2Real Gap via Data Curation",
+      "authors": [
+        "Nirmit Desai",
+        "Eric Song",
+        "Mayank Sengupta"
+      ],
+      "published": "2026-10-07T02:03:08Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09296",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "The AI Evaluation Ecosystem",
+      "authors": [
+        "Yash Dave",
+        "Sang T. Truong",
+        "Serena Wang"
+      ],
+      "published": "2026-10-07T01:58:25Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09294",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "RT-Safe: Benchmarking Agent Safety in Real-Time Embodied Environment",
+      "authors": [
+        "Tianruo Rose Xu",
+        "Jiawei Ren",
+        "Yichi Yang"
+      ],
+      "published": "2026-10-07T01:57:17Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09218",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "RLDISCOVER: LLM-driven co-evolution of reinforcement learning algorithms",
+      "authors": [
+        "Haoran Li",
+        "Zengle Ge",
+        "Xiaomin Yuan"
+      ],
+      "published": "2026-10-06T23:26:38Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09209",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "Multi-Objective Aligned Small Language Model Framework for SUD Patient Dialogue Generation",
+      "authors": [
+        "Thushara Manjari Naduvilakandy",
+        "Hyeju Jang",
+        "Mohammad Al Hasan"
+      ],
+      "published": "2026-10-06T23:10:21Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09188",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "From Probabilities to Decisions: Search and Multi-Teacher Distillation with Jev",
+      "authors": [
+        "Mohamad Yazan Sadoun",
+        "Sarah Sharif",
+        "Yaser Mike Banad"
+      ],
+      "published": "2026-10-06T22:37:58Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09163",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "ToolRACER: A Robust Agentic Conversation Emulation Resource for Agent Training and Evaluation",
+      "authors": [
+        "Arkajyoti Chakraborty",
+        "Aryan Tayal",
+        "Ishika Agarwal"
+      ],
+      "published": "2026-10-06T22:06:17Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10515",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "RoboJEPA: Scaling Robotic Latent World Models",
+      "authors": [
+        "Artem Zholus",
+        "Nicolas Beltran-Velez",
+        "Jianhao Yuan"
+      ],
+      "published": "2026-10-07T17:54:42Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10462",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "FoldBack: Self-Correcting Masked Generative Policy for Long-Horizon Garment Folding",
+      "authors": [
+        "Lipeng Zhuang",
+        "Shiyu Fan",
+        "Yingdong Ru"
+      ],
+      "published": "2026-10-07T17:28:32Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10345",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "SLDR: Defending Against Malicious Fine-tuning via Selective Layers Recovery and Dynamic Routing",
+      "authors": [
+        "Hui Zhang",
+        "Yachao Yuan",
+        "Jiayun Wang"
+      ],
+      "published": "2026-10-07T16:23:45Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10256",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "OOM-RL II: Reality Is an Oracle, Not a Debugger Provenance-Constrained Diagnosis in Continually Evolving Agent-Engineered Systems",
+      "authors": [
+        "Kun Liu",
+        "Liqun Chen"
+      ],
+      "published": "2026-10-07T15:33:17Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10246",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "Stationary Bias and Extrapolation in Nonlinear Two-Timescale Stochastic Approximation",
+      "authors": [
+        "A. Ch. Madhusudanarao",
+        "Rahul Singh"
+      ],
+      "published": "2026-10-07T15:28:13Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10241",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "When Scientific Cognition Is No Longer Scarce",
+      "authors": [
+        "Nathan DeBardeleben"
+      ],
+      "published": "2026-10-07T15:25:04Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10182",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "EEG and Eye-Tracking Evidence That AI Disclosure Shapes Face Evaluation",
+      "authors": [
+        "Teodora Mitrevska",
+        "Luise Donat",
+        "Andreas Butz"
+      ],
+      "published": "2026-10-07T14:50:35Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10085",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "Activation-Aware Weight Tensorization: A Calibration-Time Preconditioner for Tensor-Network LLM Compression",
+      "authors": [
+        "Alessandro Beatini",
+        "Marco Maronese",
+        "Emanuele Rodol\u00e0"
+      ],
+      "published": "2026-10-07T13:48:04Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10015",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "What the Sleeve Feels: Explainable Machine Learning for Textile Pressure-Based Postural Screening",
+      "authors": [
+        "Limon Bin Hossain",
+        "Md Sadib Rahman Ananta"
+      ],
+      "published": "2026-10-07T13:04:23Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09934",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "Itgan at NADI 2026 shared task: Parameter-Efficient Whisper Adaptation for Robust, Mixed-Dialect and Code-Switched Arabic ASR",
+      "authors": [
+        "Ibrahim Almajai"
+      ],
+      "published": "2026-10-07T12:18:40Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09890",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "Outperformance Inverse Optimization: Learning Objective Functions that Outperform Agent Decisions",
+      "authors": [
+        "Akira Kitaoka"
+      ],
+      "published": "2026-10-07T11:51:24Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09876",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "Think Before You Paint: Recursive Latent Reasoning for Diffusion Models",
+      "authors": [
+        "Pawe\u0142 Skier\u015b",
+        "Ma\u0142gorzata Grzanka",
+        "Wojciech Masarczyk"
+      ],
+      "published": "2026-10-07T11:36:56Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09858",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "Training Advisors for LLM Agents from Task Outcomes",
+      "authors": [
+        "Sergei Polezhaev",
+        "Barys Liskavets",
+        "Ori Press"
+      ],
+      "published": "2026-10-07T11:14:26Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09700",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "What Makes Synthetic Hard Negatives Work in Vision-Language Pretraining?",
+      "authors": [
+        "Nikos Giakoumoglou",
+        "Paschalis Giakoumoglou",
+        "Andreas Floros"
+      ],
+      "published": "2026-10-07T08:58:57Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09684",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "From Pareto to Preference: Personalized Test-Time Scaling via Amortized Agentic Policy Discovery",
+      "authors": [
+        "Xinglin Wang",
+        "Zishen Liu",
+        "Tong Zheng"
+      ],
+      "published": "2026-10-07T08:46:56Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09667",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "Shared and structured inputs undermine collective random choice by reasoning AI agents",
+      "authors": [
+        "Takahiro Ezaki",
+        "Naoto Imura",
+        "Katsuhiro Nishinari"
+      ],
+      "published": "2026-10-07T08:32:36Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09652",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "MeshSIPP: Efficient Lattice Planning in Dynamic Environment",
+      "authors": [
+        "Marat Agranovskiy",
+        "Konstantin Yakovlev"
+      ],
+      "published": "2026-10-07T08:24:28Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09581",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "Correct Answers, Unsupported Findings: Evidence Binding in Forensic Reconstruction of LLM Agent Logs",
+      "authors": [
+        "Taehyeon Yun",
+        "Dongho Kim",
+        "Geonwoo Kim"
+      ],
+      "published": "2026-10-07T07:26:33Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09534",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "KASALv2: Fully Automatic 3D Rotational Symmetry Classification and Axis Localization",
+      "authors": [
+        "Mengxin Zhang",
+        "Yulin Wang",
+        "Chen Luo"
+      ],
+      "published": "2026-10-07T06:37:29Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09513",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "OmniCam: Omni-Camera Trajectory Generation via Geometry-Grounded Pose Token Learning",
+      "authors": [
+        "Zhenyang Liu",
+        "Chenjie Cao",
+        "Yisu Zhang"
+      ],
+      "published": "2026-10-07T06:08:28Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09495",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "Cognitive Schemas, Laws and Tasks",
+      "authors": [
+        "Antal Jakov\u00e1c",
+        "Andr\u00e1s Telcs"
+      ],
+      "published": "2026-10-07T05:50:09Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09473",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "MORA: Modeling Observed Changes for Drift-Robust Time-Series Anomaly Detection",
+      "authors": [
+        "Xudong Mou",
+        "Tiejun Wang",
+        "Rui Wang"
+      ],
+      "published": "2026-10-07T05:31:22Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09456",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "GeoPrior-Mamba: Structured Process Priors with Mamba for Fine-Resolution XCO2 Reconstruction",
+      "authors": [
+        "Zhao Meng",
+        "Yinan Cai",
+        "Siru Zhong"
+      ],
+      "published": "2026-10-07T05:11:52Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09450",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "Iris-3B: Going Beyond the Latent with Pixel-Space Diffusion Training, Conversion and Fine-Tuning",
+      "authors": [
+        "Hanqiu Li Cai",
+        "Chema Garabito"
+      ],
+      "published": "2026-10-07T05:07:09Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09311",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "Denoising Blocks, Not Tokens: Efficient Compressed Continuous Diffusion with Branching Token Realization",
+      "authors": [
+        "Xinsong Feng",
+        "Peng Du",
+        "Zhizhuo Yang"
+      ],
+      "published": "2026-10-07T02:08:22Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09272",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "Evaluating Trajectory Features for Routing Final-Layer Attention",
+      "authors": [
+        "Yupeng Yao"
+      ],
+      "published": "2026-10-07T01:12:37Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09239",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "The Winner's Curse in LLM Self-Improvement Loops: Selection Noise, Lock-in, and Acceptance Rules",
+      "authors": [
+        "Litao Hu",
+        "Yutong Tang"
+      ],
+      "published": "2026-10-07T00:05:23Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09221",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "Consistent Distribution Matching for Data-Free Diffusion Distillation",
+      "authors": [
+        "Yuxiang Fu",
+        "Qi Yan",
+        "Zike Wu"
+      ],
+      "published": "2026-10-06T23:34:13Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09202",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "Few Bits, One Law: Toward W2A4KV2",
+      "authors": [
+        "Kai Yi",
+        "Tarek Elgamal",
+        "Sruthikesh Surineni"
+      ],
+      "published": "2026-10-06T22:55:36Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09166",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "Lower Bounds for Parallel Diffusion Sampling",
+      "authors": [
+        "Yiwen Kou",
+        "Yimeng Wang"
+      ],
+      "published": "2026-10-06T22:09:42Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09164",
+      "type": "paper",
+      "category": "harness_eval",
+      "title": "Training Language Models To Be Coherent Decision-Makers",
+      "authors": [
+        "Khurram Yamin",
+        "Xavier Fernandes",
+        "Paul Koch"
+      ],
+      "published": "2026-10-06T22:07:02Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09624",
+      "type": "paper",
+      "category": "tool_use",
+      "title": "How Do Agentic LLMs Decide to Call Tools? A Tool-Call Vector Shaped by Suppression",
+      "authors": [
+        "Xijie Gong",
+        "Tingxu Han",
+        "Jiahao Zhang"
+      ],
+      "published": "2026-10-07T08:01:39Z",
+      "score": 3,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09264",
+      "type": "paper",
+      "category": "safety",
+      "title": "Package Hallucination Attacks on Coding Agents through Prompt Injection in Rule Files",
+      "authors": [
+        "Yupu Wang",
+        "Zhengyuan Jiang",
+        "Reachal Wang"
+      ],
+      "published": "2026-10-07T00:59:19Z",
+      "score": 4,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10358",
+      "type": "paper",
+      "category": "safety",
+      "title": "Open-MMUnlearning: Unifying Methods and Evaluation for MLLM Unlearning",
+      "authors": [
+        "Junkai Chen",
+        "Yuhao He",
+        "Qianshan Wei"
+      ],
+      "published": "2026-10-07T16:30:59Z",
+      "score": 3,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10000",
+      "type": "paper",
+      "category": "safety",
+      "title": "Beyond Reward Suppression: Near-Optimal Offline Attacks on Warm-Start Bandits with Bounded Rewards",
+      "authors": [
+        "Qirun Zeng",
+        "Manhin Poon",
+        "Xiangxiang Dai"
+      ],
+      "published": "2026-10-07T12:57:18Z",
+      "score": 3,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09906",
+      "type": "paper",
+      "category": "safety",
+      "title": "Constrained-Action AI Remediation for SIEM/XDR via a NeMo-Guardrails Proxy",
+      "authors": [
+        "Georgios Koutidis",
+        "Nikolaos Kekatos",
+        "Tom Nianios"
+      ],
+      "published": "2026-10-07T12:00:51Z",
+      "score": 3,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09159",
+      "type": "paper",
+      "category": "safety",
+      "title": "SpecGuard: Proving a Task Is Broken Before the Agent Cheats",
+      "authors": [
+        "Param Biyani",
+        "Krishnamurthy Dvijotham"
+      ],
+      "published": "2026-10-06T22:00:49Z",
+      "score": 3,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10405",
+      "type": "paper",
+      "category": "safety",
+      "title": "Reasoning-Token Spikes Under Prompted Untruthful Responding in Large Language Models",
+      "authors": [
+        "Maverick Morales",
+        "Tom\u00e1\u0161 Dominik",
+        "Vermut Gao"
+      ],
+      "published": "2026-10-07T16:53:11Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10285",
+      "type": "paper",
+      "category": "safety",
+      "title": "AI Safety Considerations for Agents With Limited Time to Act",
+      "authors": [
+        "Leo Zeitler",
+        "Jack Richings",
+        "Victoria Nockles"
+      ],
+      "published": "2026-10-07T15:49:06Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09600",
+      "type": "paper",
+      "category": "safety",
+      "title": "SafeEvo: Deciphering the Safety Alignment Mechanism and Evolution in Language Models",
+      "authors": [
+        "Miao Yu",
+        "Hao Huang",
+        "Lu Yuan"
+      ],
+      "published": "2026-10-07T07:48:20Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09469",
+      "type": "paper",
+      "category": "safety",
+      "title": "Secure-CUA: Controlling Untrusted Influence in Computer-Use Agents",
+      "authors": [
+        "Sarthak Choudhary",
+        "Mihai Christodorescu",
+        "Ashish Hooda"
+      ],
+      "published": "2026-10-07T05:24:40Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10235",
+      "type": "paper",
+      "category": "safety",
+      "title": "Beyond LLM-GA: Secure Fluid Antenna Systems with ReEvo-Designed Memetic Algorithm",
+      "authors": [
+        "Hanyong Xu",
+        "Zhaolai Dang",
+        "Tong Zhang"
+      ],
+      "published": "2026-10-07T15:20:52Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10064",
+      "type": "paper",
+      "category": "safety",
+      "title": "Comprehension Audits to Mitigate Risks from Automated AI Research",
+      "authors": [
+        "Ronald J. Bodkin",
+        "Bahrad A. Sokhansanj",
+        "Gillian K. Hadfield"
+      ],
+      "published": "2026-10-07T13:30:47Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09973",
+      "type": "paper",
+      "category": "safety",
+      "title": "From Expected Harmfulness to Likelihood: A Probabilistic Reformulation of Jailbreaking LLM Agents",
+      "authors": [
+        "Juanyang Xu",
+        "Zheng Wang",
+        "Xingyu Zhao"
+      ],
+      "published": "2026-10-07T12:40:20Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09964",
+      "type": "paper",
+      "category": "safety",
+      "title": "Successive Training Stages and Large Language Model Persuasion: Effects of Misalignment, Supervised Fine-Tuning, and Preference Optimization",
+      "authors": [
+        "Antony Dalmiere",
+        "Pascal Marchand",
+        "Guillaume Auriol"
+      ],
+      "published": "2026-10-07T12:36:18Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09892",
+      "type": "paper",
+      "category": "safety",
+      "title": "Defensive Sufficiency in a Stackelberg Model of AI Security",
+      "authors": [
+        "Subhabrata Majumdar",
+        "Rajlakshmi Chavan"
+      ],
+      "published": "2026-10-07T11:51:56Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09361",
+      "type": "paper",
+      "category": "rag_retrieval",
+      "title": "From Chunks to Functional Evidence: Function-Aware Retrieval for EDA Documentation QA",
+      "authors": [
+        "Xiaotian Qiu",
+        "Kairui Liu",
+        "Shi Chenyi"
+      ],
+      "published": "2026-10-07T03:16:06Z",
+      "score": 4,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09360",
+      "type": "paper",
+      "category": "rag_retrieval",
+      "title": "TopoGraphRAG-Bench: Evaluating Multimodal GraphRAG on Layout-Grounded Evidence Reasoning",
+      "authors": [
+        "Ruochi Li",
+        "Jianzhe Lin",
+        "Haoxuan Zhang"
+      ],
+      "published": "2026-10-07T03:15:31Z",
+      "score": 4,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10507",
+      "type": "paper",
+      "category": "rag_retrieval",
+      "title": "RECAST: Learning to Compute the Right Context through Adaptive Evidence Routing",
+      "authors": [
+        "Yilun Hao",
+        "Krishna Sayana",
+        "Isabella Ye"
+      ],
+      "published": "2026-10-07T17:51:08Z",
+      "score": 3,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09348",
+      "type": "paper",
+      "category": "rag_retrieval",
+      "title": "Relevance Is Not Sufficiency: What Actually Closes the Evidence Gap in Long-Term Memory QA",
+      "authors": [
+        "Yufeng Li",
+        "Shuxin Li",
+        "Zhenhua Xu"
+      ],
+      "published": "2026-10-07T03:09:08Z",
+      "score": 3,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10170",
+      "type": "paper",
+      "category": "rag_retrieval",
+      "title": "Does Document Structure Help Dense Retrieval? A Placebo-Controlled Ablation of Four Mechanisms Across Two Corpora",
+      "authors": [
+        "Andrey Kuehlkamp",
+        "Priscila Correa Saboia Moreira",
+        "Samuel Rund"
+      ],
+      "published": "2026-10-07T14:45:26Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10071",
+      "type": "paper",
+      "category": "rag_retrieval",
+      "title": "HGP:An on-device personalized agent memory via hybrid graph storage",
+      "authors": [
+        "Ran Zhou",
+        "Xueming Han",
+        "Jiaheng Liu"
+      ],
+      "published": "2026-10-07T13:37:38Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09401",
+      "type": "paper",
+      "category": "rag_retrieval",
+      "title": "Let the Library Speak: Self-Advertised Method Selection for Formal Proving",
+      "authors": [
+        "Xiaopeng Yuan",
+        "Suijin Wang",
+        "Yanli Wang"
+      ],
+      "published": "2026-10-07T04:03:49Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09197",
+      "type": "paper",
+      "category": "rag_retrieval",
+      "title": "FreeEvolve: Learning to Evolve Beyond Fixed Loops",
+      "authors": [
+        "Lecheng Kong",
+        "Like Hui",
+        "Nikos Kanakaris"
+      ],
+      "published": "2026-10-06T22:47:19Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09194",
+      "type": "paper",
+      "category": "rag_retrieval",
+      "title": "Patient, Place, Prior (P$^3$): What Counts as Personalization in Medical World Models?",
+      "authors": [
+        "Xingrui Gu",
+        "Hanxue Gu",
+        "Yuxiang Zhang"
+      ],
+      "published": "2026-10-06T22:45:39Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10463",
+      "type": "paper",
+      "category": "rag_retrieval",
+      "title": "How assigned AI use before class shapes active student engagement in class",
+      "authors": [
+        "Dan J. Wang",
+        "Neelam Modi Jain",
+        "Vanessa Burbano"
+      ],
+      "published": "2026-10-07T17:29:14Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10437",
+      "type": "paper",
+      "category": "rag_retrieval",
+      "title": "Q-Learning with Scalar Adjoint Matching",
+      "authors": [
+        "Yonghoon Dong",
+        "Minsung Yoon",
+        "Jaehyuk Kim"
+      ],
+      "published": "2026-10-07T17:13:35Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09937",
+      "type": "paper",
+      "category": "rag_retrieval",
+      "title": "Where Can a Decision Model Diagnose HVAC Faults? Reasoning Demand, Physical Representation, and Robustness Under Shift",
+      "authors": [
+        "Wooyoung Jung"
+      ],
+      "published": "2026-10-07T12:23:55Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09346",
+      "type": "paper",
+      "category": "rag_retrieval",
+      "title": "OnlineQAT: On-Policy Distillation for Ultra-Low-Bit Large Language Models",
+      "authors": [
+        "Wenjun Wang",
+        "Heng Li",
+        "Yanggan Gu"
+      ],
+      "published": "2026-10-07T03:05:42Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09342",
+      "type": "paper",
+      "category": "rag_retrieval",
+      "title": "Shared Low-rank Basis Factorization for Data-free Mixture-of-Experts Compression",
+      "authors": [
+        "Tianxiao Cao",
+        "Jiahe Shao",
+        "Yuning Qiu"
+      ],
+      "published": "2026-10-07T03:01:19Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09243",
+      "type": "paper",
+      "category": "rag_retrieval",
+      "title": "We Query, Therefore We Compute: On Oracle Computation beyond the Machine, with an Application to Agents",
+      "authors": [
+        "Kefan Liu",
+        "Fengning Ou",
+        "Yelin Luo"
+      ],
+      "published": "2026-10-07T00:14:09Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10352",
+      "type": "paper",
+      "category": "skill",
+      "title": "The Handover Problem: Governing Autonomy Transitions in Human-AI Collaboration",
+      "authors": [
+        "Vicente Pelechano",
+        "Antoni Mestre",
+        "Manoli Albert"
+      ],
+      "published": "2026-10-07T16:27:29Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10088",
+      "type": "paper",
+      "category": "skill",
+      "title": "SkillSandbox: Skill Verification via Dynamic Scenario Synthesis",
+      "authors": [
+        "Serin Kim",
+        "Kwangwook Seo",
+        "Dokyung Song"
+      ],
+      "published": "2026-10-07T13:48:58Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09894",
+      "type": "paper",
+      "category": "skill",
+      "title": "QCATS: Query Context-Aware Transformer Slicing for Efficient Predictive Query Processing",
+      "authors": [
+        "Yueying Li",
+        "Zhongle Xie",
+        "Ke Chen"
+      ],
+      "published": "2026-10-07T11:52:57Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09871",
+      "type": "paper",
+      "category": "skill",
+      "title": "An AI-assisted conditioning and geological interpretation workflow for usage in implicit geological modeling",
+      "authors": [
+        "Stefan Carpentier",
+        "Jan Diederik van Wees",
+        "Eva de Boever"
+      ],
+      "published": "2026-10-07T11:32:47Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09838",
+      "type": "paper",
+      "category": "skill",
+      "title": "Fully Interpretable Minimal Transformers: From Geometry to Algorithm",
+      "authors": [
+        "Raneem Mahajne",
+        "Toviah Moldwin"
+      ],
+      "published": "2026-10-07T11:01:54Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09770",
+      "type": "paper",
+      "category": "skill",
+      "title": "Artificial intelligence pathways from weather to climate",
+      "authors": [
+        "Tom Beucler",
+        "J. David Neelin",
+        "Hui Su"
+      ],
+      "published": "2026-10-07T09:52:47Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09663",
+      "type": "paper",
+      "category": "skill",
+      "title": "Real-world application of deep learning in large-scale seismic interference attenuation: A case study in the Camie field of Angola",
+      "authors": [
+        "Jing Sun",
+        "Song Hou"
+      ],
+      "published": "2026-10-07T08:30:42Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09237",
+      "type": "paper",
+      "category": "skill",
+      "title": "Trajectory Abstraction for the Science of Language Agent Behavior",
+      "authors": [
+        "Tianqiang Yan"
+      ],
+      "published": "2026-10-06T23:58:44Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10201",
+      "type": "paper",
+      "category": "planning",
+      "title": "GAGR-Lab: Evaluating Joint Spatial-Geometric and Analytic Function Reasoning",
+      "authors": [
+        "Jingyao Zhang",
+        "Yun Li",
+        "Lu Han"
+      ],
+      "published": "2026-10-07T15:01:54Z",
+      "score": 3,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09683",
+      "type": "paper",
+      "category": "planning",
+      "title": "System Switch: When Should a Fast Decision Model Stop and Think?",
+      "authors": [
+        "Gian Luca Bailo"
+      ],
+      "published": "2026-10-07T08:44:47Z",
+      "score": 3,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10304",
+      "type": "paper",
+      "category": "planning",
+      "title": "SemanticFold: Latent Sequence Compression SeparatesLanguage Modeling, Decodability, and Reasoning",
+      "authors": [
+        "Mingyan Liu",
+        "Min Huang"
+      ],
+      "published": "2026-10-07T16:00:59Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10062",
+      "type": "paper",
+      "category": "planning",
+      "title": "Loud Failures, Quiet Failures: Fault Detection and Recovery in Tool-Using Language Model Agents",
+      "authors": [
+        "Obada Kraishan"
+      ],
+      "published": "2026-10-07T13:29:59Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09643",
+      "type": "paper",
+      "category": "planning",
+      "title": "CircuitATLAS: Agentic reasoning over a systems neuroscience knowledge graph for target discovery in circuitopathies",
+      "authors": [
+        "Gabriel Ocana-Santero",
+        "Marko Tvrdic"
+      ],
+      "published": "2026-10-07T08:19:27Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09520",
+      "type": "paper",
+      "category": "planning",
+      "title": "Not All Uncertainty Matters: Simulation-in-the-Loop Fast-Slow Reasoning for Decision-Critical Autonomous Driving System",
+      "authors": [
+        "Jiayi Chen",
+        "Shuai Wang",
+        "Guangxu Zhu"
+      ],
+      "published": "2026-10-07T06:15:44Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09416",
+      "type": "paper",
+      "category": "planning",
+      "title": "Efficient Reasoning with Flow Language Models",
+      "authors": [
+        "Hanru Bai",
+        "Faissal Izermine",
+        "Oscar Davis"
+      ],
+      "published": "2026-10-07T04:18:22Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09335",
+      "type": "paper",
+      "category": "planning",
+      "title": "SearchWorld: Spatial Value-Grounded Imagination for UAV Object Search via World Models",
+      "authors": [
+        "Yatai Ji",
+        "Zhengqiu Zhu",
+        "Yong Zhao"
+      ],
+      "published": "2026-10-07T02:51:02Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09219",
+      "type": "paper",
+      "category": "planning",
+      "title": "CM-DPO: Constraint-Margin Direct Preference Optimization for LLM Planning",
+      "authors": [
+        "Rabimba Karanjai",
+        "Qun Gu",
+        "Hemanth Hegadehalli Madhavarao"
+      ],
+      "published": "2026-10-06T23:30:17Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09205",
+      "type": "paper",
+      "category": "planning",
+      "title": "Do Vision Models Learn Physical Constraints or Rendering Shortcuts? A Counterfactual Benchmark for Grounded Physical Consistency",
+      "authors": [
+        "M. Moein Esfahani",
+        "Sepehr Salem",
+        "Mohammed Alser"
+      ],
+      "published": "2026-10-06T23:06:44Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10250",
+      "type": "paper",
+      "category": "planning",
+      "title": "Logarithmic Regret via Passive Change Detection in Piecewise-Stationary Self-Tuning Regulation",
+      "authors": [
+        "A. Ch. Madhusudanarao",
+        "Rahul Singh"
+      ],
+      "published": "2026-10-07T15:31:27Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09759",
+      "type": "paper",
+      "category": "planning",
+      "title": "Unrolled Flow Models for Reasoning",
+      "authors": [
+        "Faissal Izermine",
+        "Hanru Bai",
+        "Oscar Davis"
+      ],
+      "published": "2026-10-07T09:45:54Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09740",
+      "type": "paper",
+      "category": "planning",
+      "title": "Healthy skepticism in AI: a data visualization research agenda",
+      "authors": [
+        "G. Elisabeta Marai",
+        "Marc Baaden",
+        "Michael Behrisch"
+      ],
+      "published": "2026-10-07T09:31:46Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09179",
+      "type": "paper",
+      "category": "planning",
+      "title": "LayerRoPE: Dynamic Depth-wise Magnitude &amp; Angular Superposition",
+      "authors": [
+        "Shikhar Srivastava",
+        "Christopher Kanan"
+      ],
+      "published": "2026-10-06T22:30:58Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10258",
+      "type": "paper",
+      "category": "code_agent",
+      "title": "QuSema: Detecting Silent Bugs in Quantum Libraries via Quantum-knowledge-enhanced Agents",
+      "authors": [
+        "Yujin Song",
+        "Kaining Zhang",
+        "Qixin Zhang"
+      ],
+      "published": "2026-10-07T15:33:38Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10226",
+      "type": "paper",
+      "category": "code_agent",
+      "title": "Why Software Engineering Is Indispensable in the Age of Coding Agents",
+      "authors": [
+        "Alfonso Fuggetta"
+      ],
+      "published": "2026-10-07T15:17:37Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10129",
+      "type": "paper",
+      "category": "code_agent",
+      "title": "When Algorithmic Exploration Becomes Cheap: A Case Study of Agentic Research in EDA",
+      "authors": [
+        "Keren Zhu",
+        "Yu Deng",
+        "Xiaoyu Hao"
+      ],
+      "published": "2026-10-07T14:10:57Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10227",
+      "type": "paper",
+      "category": "code_agent",
+      "title": "From Prompts to Trees: Effective LLM-Guided Tree Generation for Few-Shot Tabular Classification",
+      "authors": [
+        "Yue Qiu",
+        "Zekang Du",
+        "Yiqun Diao"
+      ],
+      "published": "2026-10-07T15:18:11Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10061",
+      "type": "paper",
+      "category": "code_agent",
+      "title": "TRACK: Telemetry-Based Racing Analysis and Coaching Kit in Sim Racing Games",
+      "authors": [
+        "Efe \u00c7ang\u0131r\u0131l\u0131",
+        "Murat Kurt"
+      ],
+      "published": "2026-10-07T13:29:45Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09994",
+      "type": "paper",
+      "category": "code_agent",
+      "title": "Temporal Predictive Multiplicity: Equally Accurate Time Series Models Yield Different Forecast Trajectories",
+      "authors": [
+        "Emanuele Albini",
+        "Francesca Toni",
+        "Saumitra Mishra"
+      ],
+      "published": "2026-10-07T12:53:29Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09848",
+      "type": "paper",
+      "category": "code_agent",
+      "title": "Stream-Based Active Learning with Cooperative Neural Networks for Data-Efficient Partial Inverse Design: An Automotive Glass Run Channel Case Study",
+      "authors": [
+        "Agung Nugraha",
+        "Hyerin Kwon",
+        "Heungjun Im"
+      ],
+      "published": "2026-10-07T11:07:22Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09589",
+      "type": "paper",
+      "category": "code_agent",
+      "title": "Dual- versus Single-Suggestion AI Support for Radiographic Interpretation in Residents: Randomized Multireader Study",
+      "authors": [
+        "Lin Wu",
+        "Zhe Xu",
+        "Hongyi Wang"
+      ],
+      "published": "2026-10-07T07:33:23Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09535",
+      "type": "paper",
+      "category": "code_agent",
+      "title": "WAPR: A Foundation Model for Wide-Angle Refinement in Unseen Object Pose Estimation",
+      "authors": [
+        "Yulin Wang",
+        "Mengting Hu",
+        "Hongli Li"
+      ],
+      "published": "2026-10-07T06:38:15Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09498",
+      "type": "paper",
+      "category": "code_agent",
+      "title": "SpatialUQ: Post-Hoc Uncertainty Quantification from Spatial Consistency in Black-Box Vision Models",
+      "authors": [
+        "Md Kawsher Mahbub",
+        "Milon Biswas",
+        "Mirza Niaz Morshed"
+      ],
+      "published": "2026-10-07T05:53:08Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09457",
+      "type": "paper",
+      "category": "code_agent",
+      "title": "DSReg: Provably Recovering Individual World Latents without Reconstruction",
+      "authors": [
+        "Yujia Zheng",
+        "David Klindt",
+        "Randall Balestriero"
+      ],
+      "published": "2026-10-07T05:12:39Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09297",
+      "type": "paper",
+      "category": "code_agent",
+      "title": "Node-level Graph Neural Architecture Search Framework",
+      "authors": [
+        "Lintao Yanga",
+        "Sirui Lia",
+        "Yaqing Wang"
+      ],
+      "published": "2026-10-07T01:58:33Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09285",
+      "type": "paper",
+      "category": "code_agent",
+      "title": "LeCuration: A Tiny World Model as a Data Curation Multi-Tool",
+      "authors": [
+        "Mayank Sengupta",
+        "Nirmit Desai",
+        "Eric Song"
+      ],
+      "published": "2026-10-07T01:41:23Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09212",
+      "type": "paper",
+      "category": "code_agent",
+      "title": "CurveTQ: Rotation-Free Trellis Quantization of LLM Weights via Curvature-Weighted Search",
+      "authors": [
+        "Guanhua Ding",
+        "Zi Wang",
+        "Ruichao Li"
+      ],
+      "published": "2026-10-06T23:14:06Z",
+      "score": 1,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10536",
+      "type": "paper",
+      "category": "rl_posttrain",
+      "title": "Decoupling Exploration from Optimization in RLVR",
+      "authors": [
+        "Saif Punjwani",
+        "Micah Goldblum"
+      ],
+      "published": "2026-10-07T17:59:26Z",
+      "score": 4,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10042",
+      "type": "paper",
+      "category": "rl_posttrain",
+      "title": "Learning to Accumulate Knowledge with Mutual Information",
+      "authors": [
+        "Yuyang Zhao",
+        "Lizi Liao",
+        "Leyang Shen"
+      ],
+      "published": "2026-10-07T13:20:18Z",
+      "score": 4,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09763",
+      "type": "paper",
+      "category": "rl_posttrain",
+      "title": "Beyond Policy Support: Interaction Constrained Offline Reinforcement Learning for Autonomous Driving",
+      "authors": [
+        "Mahmoud Selim",
+        "Cristina Cipriani",
+        "Karl Henrik Johansson"
+      ],
+      "published": "2026-10-07T09:48:53Z",
+      "score": 4,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09560",
+      "type": "paper",
+      "category": "rl_posttrain",
+      "title": "World Potential Model: Pretrained World Knowledge as Progress Potentials",
+      "authors": [
+        "Jun Zhao",
+        "Jixin Tang",
+        "Yang Shu"
+      ],
+      "published": "2026-10-07T07:01:35Z",
+      "score": 4,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10460",
+      "type": "paper",
+      "category": "rl_posttrain",
+      "title": "Composing What Each Teacher Learned: Multi-Teacher On-Policy Distillation through Teacher-Relative Shifts",
+      "authors": [
+        "Hejian Sang",
+        "Zhengze Zhou",
+        "Shayan Mohajer Hamidi"
+      ],
+      "published": "2026-10-07T17:27:46Z",
+      "score": 3,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10447",
+      "type": "paper",
+      "category": "rl_posttrain",
+      "title": "A Good Self-Teacher Meets the Student Where They Are: Joint On-Policy Learning and Teaching",
+      "authors": [
+        "Randy Ardywibowo",
+        "Arnav Dalal",
+        "Jiantao Jiao"
+      ],
+      "published": "2026-10-07T17:19:19Z",
+      "score": 3,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10179",
+      "type": "paper",
+      "category": "rl_posttrain",
+      "title": "Beyond Outcome Rewards: Constructing and Assigning Retrieval Credit for Search Agents",
+      "authors": [
+        "Wenyu Huang",
+        "Xinyu Hou",
+        "Pavlos Vougiouklis"
+      ],
+      "published": "2026-10-07T14:48:47Z",
+      "score": 3,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10164",
+      "type": "paper",
+      "category": "rl_posttrain",
+      "title": "UniSkill: Learning Actor-Aligned Skill Proposals for an Evolving Policy",
+      "authors": [
+        "Yifei Lu",
+        "Cheng Liu",
+        "Dianzhi Yu"
+      ],
+      "published": "2026-10-07T14:41:51Z",
+      "score": 3,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09870",
+      "type": "paper",
+      "category": "rl_posttrain",
+      "title": "Deadline-Aware Multi-Agent Reinforcement Learning for TSN-Based Vehicular Edge Networks",
+      "authors": [
+        "Bernardo A. C. Pereira",
+        "Marcos Carvalho",
+        "Fatih Temiz"
+      ],
+      "published": "2026-10-07T11:30:19Z",
+      "score": 3,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09856",
+      "type": "paper",
+      "category": "rl_posttrain",
+      "title": "Self-Evolve With a Reference:Anchored Training of Tool-Integrated Agents",
+      "authors": [
+        "Wenjie Liao",
+        "Liangjie Zhao",
+        "Zehong Cao"
+      ],
+      "published": "2026-10-07T11:13:35Z",
+      "score": 3,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09832",
+      "type": "paper",
+      "category": "rl_posttrain",
+      "title": "SkillForge: Co-Evolving Skills and Agents via Dynamic Skill Lifecycles",
+      "authors": [
+        "Yuyao Ge",
+        "Yiwei Wang",
+        "Yuchen He"
+      ],
+      "published": "2026-10-07T10:52:15Z",
+      "score": 3,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09679",
+      "type": "paper",
+      "category": "rl_posttrain",
+      "title": "CERO: Where and When to Allocate Rollouts for RL Post-Training",
+      "authors": [
+        "Yiming Zong",
+        "Yige Wang",
+        "Xing Hu"
+      ],
+      "published": "2026-10-07T08:40:53Z",
+      "score": 3,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09484",
+      "type": "paper",
+      "category": "rl_posttrain",
+      "title": "MIMESIS: Learning User Simulators as Training Environments for Interactive Agents",
+      "authors": [
+        "Hoang Phan",
+        "Dat Huynh",
+        "Andrey Zhmoginov"
+      ],
+      "published": "2026-10-07T05:37:09Z",
+      "score": 3,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09323",
+      "type": "paper",
+      "category": "rl_posttrain",
+      "title": "Constrained Diffusion for Data-Scarce Orbital Monte Carlo in Constellation Tasking",
+      "authors": [
+        "Omar Ramadan",
+        "Sam Siavoshian",
+        "Amir Kashif Saeed"
+      ],
+      "published": "2026-10-07T02:29:17Z",
+      "score": 3,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10407",
+      "type": "paper",
+      "category": "rl_posttrain",
+      "title": "SOTA: Stock Options Trading Agents Guided by Option-Implied Return Distributions",
+      "authors": [
+        "Yizhen Xie",
+        "Mengyang Liu"
+      ],
+      "published": "2026-10-07T16:55:05Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09914",
+      "type": "paper",
+      "category": "rl_posttrain",
+      "title": "RollVerify: Bridging Efficiency and Accuracy in Long-Tail Rollout Reinforcement Learning",
+      "authors": [
+        "Yongqiang Yao",
+        "Jinru Tan",
+        "Kaihuan Liang"
+      ],
+      "published": "2026-10-07T12:05:33Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09891",
+      "type": "paper",
+      "category": "rl_posttrain",
+      "title": "A Scoping Review and Experimental Study on Reinforcement Learning from Human Feedback for Human-Robot Collaboration",
+      "authors": [
+        "Alexandra Coroiu",
+        "Andrea Vogt",
+        "Viktor Werbilo"
+      ],
+      "published": "2026-10-07T11:51:54Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09553",
+      "type": "paper",
+      "category": "rl_posttrain",
+      "title": "MARS: Malware Analysis with Rule-Based Scoring of LLM Claims",
+      "authors": [
+        "Hyeongjun Choi"
+      ],
+      "published": "2026-10-07T06:55:35Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09508",
+      "type": "paper",
+      "category": "rl_posttrain",
+      "title": "Safe on Average, Unsafe in the Tail: When Is the Episodic-Cost Tail Controllable?",
+      "authors": [
+        "Samuel Tetteh",
+        "Cody Fleming"
+      ],
+      "published": "2026-10-07T06:07:06Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09400",
+      "type": "paper",
+      "category": "rl_posttrain",
+      "title": "TutorLoop: Regulating Student Learning Behaviors via Sensor-in-the-Loop Generative Feedback",
+      "authors": [
+        "Songlin Xu",
+        "Xinyu Zhang"
+      ],
+      "published": "2026-10-07T04:03:32Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09250",
+      "type": "paper",
+      "category": "rl_posttrain",
+      "title": "Efficient Best-of-N policy evaluation for inference-time alignment",
+      "authors": [
+        "Jonas Schweisthal",
+        "Yuxin Wang",
+        "Athiya Deviyani"
+      ],
+      "published": "2026-10-07T00:26:39Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09247",
+      "type": "paper",
+      "category": "rl_posttrain",
+      "title": "An Informational Curse of Horizon in Goal-Conditioned Policy Learning",
+      "authors": [
+        "John L. Zhou",
+        "Yuxuan Dong",
+        "Jonathan C. Kao"
+      ],
+      "published": "2026-10-07T00:20:45Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09355",
+      "type": "paper",
+      "category": "multimodal",
+      "title": "Multimodal LLMs Can Learn to Read Brain Signals: A Vision--Language Model for Unified Multi-Task EEG Decoding",
+      "authors": [
+        "Parastoo Azizeddin",
+        "Omid Sharafi",
+        "Maryam M. Shanechi"
+      ],
+      "published": "2026-10-07T03:13:03Z",
+      "score": 4,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09146",
+      "type": "paper",
+      "category": "multimodal",
+      "title": "Frozen Models, Evolving Expertise: Model-Agnostic Learning from Deployment Experience for Multimodal Medical AI",
+      "authors": [
+        "Yexiao He",
+        "Yucheng Tang",
+        "Pengfei Guo"
+      ],
+      "published": "2026-10-06T21:41:27Z",
+      "score": 4,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10374",
+      "type": "paper",
+      "category": "multimodal",
+      "title": "TaoD2C-Bench: Benchmarking MLLMs for Industrial UI Code Generation Beyond Visual Fidelity",
+      "authors": [
+        "Chengwei Shi",
+        "Yunnong Chen",
+        "Tingting Zhou"
+      ],
+      "published": "2026-10-07T16:38:10Z",
+      "score": 3,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09440",
+      "type": "paper",
+      "category": "multimodal",
+      "title": "Mixture of Layers: Dynamic Layer Routing for Visual Reasoning",
+      "authors": [
+        "Jeonghwan Kim",
+        "Sofia Stoica",
+        "Jiwan Chung"
+      ],
+      "published": "2026-10-07T04:50:48Z",
+      "score": 3,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09240",
+      "type": "paper",
+      "category": "multimodal",
+      "title": "Adversarial Images Hijack Web Agents from Visual Grounding to Browser Execution",
+      "authors": [
+        "Wanjing Han",
+        "Levi Taiji Li",
+        "Mu Zhang"
+      ],
+      "published": "2026-10-07T00:05:53Z",
+      "score": 3,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09217",
+      "type": "paper",
+      "category": "multimodal",
+      "title": "A Deterministic Evidence Layer for Vision-Language Autism Screening from Naturalistic Home Video",
+      "authors": [
+        "Wenqi Li",
+        "Mindi Ruan",
+        "Chuanbo Hu"
+      ],
+      "published": "2026-10-06T23:25:18Z",
+      "score": 3,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09411",
+      "type": "paper",
+      "category": "multimodal",
+      "title": "Shared Geometry As A Rosetta Stone: Cross-Modal Alignment Without Paired Data",
+      "authors": [
+        "Dominik Schnaus",
+        "Thomas Dag\u00e8s",
+        "Daniel Cremers"
+      ],
+      "published": "2026-10-07T04:12:30Z",
+      "score": 2,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.10311",
+      "type": "paper",
+      "category": "other_ai",
+      "title": "Fault-tolerant foundation models",
+      "authors": [
+        "Trevor McCourt",
+        "Ila R. Fiete",
+        "Isaac L. Chuang"
+      ],
+      "published": "2026-10-07T16:05:48Z",
+      "score": 0,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09938",
+      "type": "paper",
+      "category": "other_ai",
+      "title": "Fast holographic inversion of superconducting domes",
+      "authors": [
+        "Sejin Kim"
+      ],
+      "published": "2026-10-07T12:24:00Z",
+      "score": 0,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "arxiv:2610.09644",
+      "type": "paper",
+      "category": "other_ai",
+      "title": "Automatically Building and Updating a Knowledge Graph of MLIP Models",
+      "authors": [
+        "Alexis Beer",
+        "Liudmyla Klochko",
+        "Mathieu d'Aquin"
+      ],
+      "published": "2026-10-07T08:19:49Z",
+      "score": 0,
+      "source": "arxiv-2610"
+    },
+    {
+      "id": "github:modelcontextprotocol",
+      "type": "mcp_repo",
+      "kind": "spec",
+      "full_name": "modelcontextprotocol/modelcontextprotocol",
+      "stars": 9400,
+      "last_activity": "2026-10-08",
+      "note": "PR #3418: docs/inspector-2450-security-mcpdo",
+      "source": "github-api"
+    },
+    {
+      "id": "github:typescript-sdk",
+      "type": "mcp_repo",
+      "kind": "sdk",
+      "full_name": "modelcontextprotocol/typescript-sdk",
+      "stars": 13531,
+      "last_activity": "2026-10-07",
+      "note": "v2.3.1 (10-05) + CI optimization",
+      "source": "github-api"
+    },
+    {
+      "id": "github:python-sdk",
+      "type": "mcp_repo",
+      "kind": "sdk",
+      "full_name": "modelcontextprotocol/python-sdk",
+      "stars": 24502,
+      "last_activity": "2026-10-05",
+      "note": "pyjwt upgrade + OAuth fixes",
+      "source": "github-api"
+    },
+    {
+      "id": "github:rust-sdk",
+      "type": "mcp_repo",
+      "kind": "sdk",
+      "full_name": "modelcontextprotocol/rust-sdk",
+      "stars": 3982,
+      "last_activity": "2026-10-06",
+      "note": "v3.5.1 (10-05)",
+      "source": "github-api"
+    },
+    {
+      "id": "github:csharp-sdk",
+      "type": "mcp_repo",
+      "kind": "sdk",
+      "full_name": "modelcontextprotocol/csharp-sdk",
+      "stars": 4569,
+      "last_activity": "2026-10-05",
+      "note": "McpServerFactory removed \u26a0\ufe0f",
+      "source": "github-api"
+    },
+    {
+      "id": "github:go-sdk",
+      "type": "mcp_repo",
+      "kind": "sdk",
+      "full_name": "modelcontextprotocol/go-sdk",
+      "stars": 5188,
+      "last_activity": "2026-10-07",
+      "note": "auth: token expiry check",
+      "source": "github-api"
+    },
+    {
+      "id": "github:java-sdk",
+      "type": "mcp_repo",
+      "kind": "sdk",
+      "full_name": "modelcontextprotocol/java-sdk",
+      "stars": 3722,
+      "last_activity": "2026-10-08",
+      "note": "Reject non-JSON POST #1164",
+      "source": "github-api"
+    },
+    {
+      "id": "github:registry",
+      "type": "mcp_repo",
+      "kind": "infra",
+      "full_name": "modelcontextprotocol/registry",
+      "stars": 7325,
+      "last_activity": "2026-10-06",
+      "note": "remote publishing docs",
+      "source": "github-api"
+    },
+    {
+      "id": "github:inspector",
+      "type": "mcp_repo",
+      "kind": "tool",
+      "full_name": "modelcontextprotocol/inspector",
+      "stars": 11034,
+      "last_activity": "2026-10-07",
+      "note": "mcpdo tutorial video",
+      "source": "github-api"
+    },
+    {
+      "id": "github:servers",
+      "type": "mcp_repo",
+      "kind": "apps",
+      "full_name": "modelcontextprotocol/servers",
+      "stars": 91058,
+      "last_activity": "2026-10-05",
+      "note": "v2026.8.31 (v2.0.0 pending)",
+      "source": "github-api"
+    }
+  ],
+  "edges": [
+    {
+      "from": "arxiv:2610.10538",
+      "to": "concept:Memory",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10183",
+      "to": "concept:Memory",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09593",
+      "to": "concept:Memory",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09496",
+      "to": "concept:Memory",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09215",
+      "to": "concept:Memory",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09193",
+      "to": "concept:Memory",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10528",
+      "to": "concept:Memory",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10444",
+      "to": "concept:Memory",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10266",
+      "to": "concept:Memory",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10242",
+      "to": "concept:Memory",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10091",
+      "to": "concept:Memory",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09835",
+      "to": "concept:Memory",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09761",
+      "to": "concept:Memory",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09590",
+      "to": "concept:Memory",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10126",
+      "to": "concept:Multi_Agent",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09872",
+      "to": "concept:Multi_Agent",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09497",
+      "to": "concept:Multi_Agent",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09466",
+      "to": "concept:Multi_Agent",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10468",
+      "to": "concept:Multi_Agent",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10232",
+      "to": "concept:Multi_Agent",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10184",
+      "to": "concept:Multi_Agent",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09769",
+      "to": "concept:Multi_Agent",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09587",
+      "to": "concept:Multi_Agent",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09371",
+      "to": "concept:Multi_Agent",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10478",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10355",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10120",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10513",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10411",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10265",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09944",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09823",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09681",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09633",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09558",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09554",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09374",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09229",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09152",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10506",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10498",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10455",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10388",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10324",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10320",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10066",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09993",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09927",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09896",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09802",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09795",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09772",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09693",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09692",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09607",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09588",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09571",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09525",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09493",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09487",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09446",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09426",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09377",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09328",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09305",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09296",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09294",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09218",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09209",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09188",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09163",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10515",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10462",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10345",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10256",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10246",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10241",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10182",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10085",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10015",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09934",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09890",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09876",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09858",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09700",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09684",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09667",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09652",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09581",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09534",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09513",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09495",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09473",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09456",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09450",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09311",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09272",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09239",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09221",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09202",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09166",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09164",
+      "to": "concept:Harness_Eval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09624",
+      "to": "concept:Tool_Use",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09264",
+      "to": "concept:Safety",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10358",
+      "to": "concept:Safety",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10000",
+      "to": "concept:Safety",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09906",
+      "to": "concept:Safety",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09159",
+      "to": "concept:Safety",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10405",
+      "to": "concept:Safety",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10285",
+      "to": "concept:Safety",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09600",
+      "to": "concept:Safety",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09469",
+      "to": "concept:Safety",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10235",
+      "to": "concept:Safety",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10064",
+      "to": "concept:Safety",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09973",
+      "to": "concept:Safety",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09964",
+      "to": "concept:Safety",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09892",
+      "to": "concept:Safety",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09361",
+      "to": "concept:Rag_Retrieval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09360",
+      "to": "concept:Rag_Retrieval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10507",
+      "to": "concept:Rag_Retrieval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09348",
+      "to": "concept:Rag_Retrieval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10170",
+      "to": "concept:Rag_Retrieval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10071",
+      "to": "concept:Rag_Retrieval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09401",
+      "to": "concept:Rag_Retrieval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09197",
+      "to": "concept:Rag_Retrieval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09194",
+      "to": "concept:Rag_Retrieval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10463",
+      "to": "concept:Rag_Retrieval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10437",
+      "to": "concept:Rag_Retrieval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09937",
+      "to": "concept:Rag_Retrieval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09346",
+      "to": "concept:Rag_Retrieval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09342",
+      "to": "concept:Rag_Retrieval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09243",
+      "to": "concept:Rag_Retrieval",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10352",
+      "to": "concept:Skill",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10088",
+      "to": "concept:Skill",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09894",
+      "to": "concept:Skill",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09871",
+      "to": "concept:Skill",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09838",
+      "to": "concept:Skill",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09770",
+      "to": "concept:Skill",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09663",
+      "to": "concept:Skill",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09237",
+      "to": "concept:Skill",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10201",
+      "to": "concept:Planning",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09683",
+      "to": "concept:Planning",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10304",
+      "to": "concept:Planning",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10062",
+      "to": "concept:Planning",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09643",
+      "to": "concept:Planning",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09520",
+      "to": "concept:Planning",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09416",
+      "to": "concept:Planning",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09335",
+      "to": "concept:Planning",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09219",
+      "to": "concept:Planning",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09205",
+      "to": "concept:Planning",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10250",
+      "to": "concept:Planning",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09759",
+      "to": "concept:Planning",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09740",
+      "to": "concept:Planning",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09179",
+      "to": "concept:Planning",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10258",
+      "to": "concept:Code_Agent",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10226",
+      "to": "concept:Code_Agent",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10129",
+      "to": "concept:Code_Agent",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10227",
+      "to": "concept:Code_Agent",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10061",
+      "to": "concept:Code_Agent",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09994",
+      "to": "concept:Code_Agent",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09848",
+      "to": "concept:Code_Agent",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09589",
+      "to": "concept:Code_Agent",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09535",
+      "to": "concept:Code_Agent",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09498",
+      "to": "concept:Code_Agent",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09457",
+      "to": "concept:Code_Agent",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09297",
+      "to": "concept:Code_Agent",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09285",
+      "to": "concept:Code_Agent",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09212",
+      "to": "concept:Code_Agent",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10536",
+      "to": "concept:Rl_Posttrain",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10042",
+      "to": "concept:Rl_Posttrain",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09763",
+      "to": "concept:Rl_Posttrain",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09560",
+      "to": "concept:Rl_Posttrain",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10460",
+      "to": "concept:Rl_Posttrain",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10447",
+      "to": "concept:Rl_Posttrain",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10179",
+      "to": "concept:Rl_Posttrain",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10164",
+      "to": "concept:Rl_Posttrain",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09870",
+      "to": "concept:Rl_Posttrain",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09856",
+      "to": "concept:Rl_Posttrain",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09832",
+      "to": "concept:Rl_Posttrain",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09679",
+      "to": "concept:Rl_Posttrain",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09484",
+      "to": "concept:Rl_Posttrain",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09323",
+      "to": "concept:Rl_Posttrain",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10407",
+      "to": "concept:Rl_Posttrain",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09914",
+      "to": "concept:Rl_Posttrain",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09891",
+      "to": "concept:Rl_Posttrain",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09553",
+      "to": "concept:Rl_Posttrain",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09508",
+      "to": "concept:Rl_Posttrain",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09400",
+      "to": "concept:Rl_Posttrain",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09250",
+      "to": "concept:Rl_Posttrain",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09247",
+      "to": "concept:Rl_Posttrain",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09355",
+      "to": "concept:Multimodal",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09146",
+      "to": "concept:Multimodal",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.10374",
+      "to": "concept:Multimodal",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09440",
+      "to": "concept:Multimodal",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09240",
+      "to": "concept:Multimodal",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09217",
+      "to": "concept:Multimodal",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "arxiv:2610.09411",
+      "to": "concept:Multimodal",
+      "rel": "belongs_to"
+    },
+    {
+      "from": "github:modelcontextprotocol",
+      "to": "concept:MCP_Protocol",
+      "rel": "implements"
+    },
+    {
+      "from": "github:typescript-sdk",
+      "to": "concept:MCP_Protocol",
+      "rel": "implements"
+    },
+    {
+      "from": "github:python-sdk",
+      "to": "concept:MCP_Protocol",
+      "rel": "implements"
+    },
+    {
+      "from": "github:rust-sdk",
+      "to": "concept:MCP_Protocol",
+      "rel": "implements"
+    },
+    {
+      "from": "github:csharp-sdk",
+      "to": "concept:MCP_Protocol",
+      "rel": "implements"
+    },
+    {
+      "from": "github:go-sdk",
+      "to": "concept:MCP_Protocol",
+      "rel": "implements"
+    },
+    {
+      "from": "github:java-sdk",
+      "to": "concept:MCP_Protocol",
+      "rel": "implements"
+    },
+    {
+      "from": "github:registry",
+      "to": "concept:MCP_Protocol",
+      "rel": "implements"
+    },
+    {
+      "from": "github:inspector",
+      "to": "concept:MCP_Protocol",
+      "rel": "implements"
+    },
+    {
+      "from": "github:servers",
+      "to": "concept:MCP_Protocol",
+      "rel": "implements"
+    },
+    {
+      "from": "arxiv:2610.10071",
+      "to": "concept:Memory_Wiki",
+      "rel": "connects_to",
+      "note": "HGP: on-device hybrid graph memory"
+    },
+    {
+      "from": "arxiv:2610.09832",
+      "to": "concept:skill_workshop",
+      "rel": "connects_to",
+      "note": "SkillForge: co-evolving skills and agents"
+    },
+    {
+      "from": "arxiv:2610.09264",
+      "to": "concept:OpenClaw",
+      "rel": "connects_to",
+      "note": "Package hallucination via AGENTS.md/cursorrules"
+    },
+    {
+      "from": "arxiv:2610.09215",
+      "to": "concept:skill_workshop",
+      "rel": "connects_to",
+      "note": "AGAR: RL substrate for LLM program evolution"
+    },
+    {
+      "from": "arxiv:2610.09590",
+      "to": "concept:Memory_Wiki",
+      "rel": "connects_to",
+      "note": "Situation-Conditioned Thinking Policies"
+    },
+    {
+      "from": "arxiv:2610.09348",
+      "to": "concept:Memory_Wiki",
+      "rel": "connects_to",
+      "note": "Relevance Is Not Sufficiency: evidence gap"
+    },
+    {
+      "from": "arxiv:2610.10126",
+      "to": "concept:OpenClaw",
+      "rel": "connects_to",
+      "note": "Topology-Conditioned multi-agent failure diagnosis"
+    },
+    {
+      "from": "arxiv:2610.09497",
+      "to": "concept:OpenClaw",
+      "rel": "connects_to",
+      "note": "Ream: mutual awareness human-agent"
+    },
+    {
+      "from": "arxiv:2610.09624",
+      "to": "concept:mcporter",
+      "rel": "connects_to",
+      "note": "Tool-call vector shaped by suppression"
+    },
+    {
+      "from": "arxiv:2610.10507",
+      "to": "concept:OpenClaw",
+      "rel": "connects_to",
+      "note": "RECAST: adaptive evidence routing for RAG"
+    }
+  ]
+}

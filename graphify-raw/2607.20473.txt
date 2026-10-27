@@ -1,0 +1,5 @@
+Incomplete Prompt Jailbreaks in Large Language Models
+
+Abstract: Large language models (LLMs) are increasingly released as open-weight models with safeguards against harmful requests. Nevertheless, sentence completion remains vulnerable to incomplete harmful prompts. We formalize this phenomenon as incomplete prompt jailbreaks (IPJ) and provide a systematic empirical characterization. We analyze diverse attractor types associated with incomplete sentence continuation and show that LLMs systematically delay refusal until sentence termination. Training models to refuse incomplete harmful prompts via parameter tuning is insufficient. We identify two functional neurons: termination and continuation neurons.
+
+Topics: LLM safety, jailbreak, incomplete prompt, parameter tuning, neuron-level intervention
