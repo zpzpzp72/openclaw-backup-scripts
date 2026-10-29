@@ -105,7 +105,7 @@ M3.1-Flash 1/4/0.1 ✅ 与 CN 价一致；M3 记 0.5/2 ❌ 官方 2.1/8.4（≤5
 |:------:|------|:--------:|------|
 | P0 | **WSL 网络架构: 禁用 Mirrored 模式** — Mirrored + WinDivert (APNetwork) + Windows Update 三方冲突 → NDIS 崩溃 → OpenClaw 失联 | 2026-08-26 | ✅ 已切回 NAT+dnsTunneling+autoProxy，永久禁用 Mirrored |
 | P0 | **备份连续性监控缺失** — NightOps 也在 WSL 里跑，WSL 死了连备份检查都没人做；需外部健康检查 | 2026-08-26 | ✅ 已修复 (2026-08-26 11:25): 备份心跳文件 + Windows 任务计划程序独立检查 + 飞书 webhook |
-| P1 | **GitHub token 无效** — `gh auth status` 失败，Coder/CI/PR 全线受阻 | 2026-08-13 | 🔴 需手动 `gh auth login -h github.com` |
+| P1 | ~~**GitHub token 无效**~~ — 2026-10-30 实测 `git ls-remote` / `git push` **凭据可用**，推送成功；`gh auth status` 未复测 | 2026-08-13 | 🟢 git push 可用；`gh` CLI 仍待验 |
 | P1 | openclaw-zero-token 项目基本停滞（最近 commit 2026-08-08 docs, 实质改动 7/30 之前）；是 **shell+python** 项目，**没有 package.json / package-lock.json**（MEMORY 之前关于 npm audit 的说法不成立） | 2026-07-31 | 🟡 未推进 |
 | P1 | browser.py:41 bare except | ~2026-04 | 🔴 未修复 |
 | P1 | memory-lancedb-pro 落后 upstream **104 commits**（已重新核对, 2026-08-28） | 2026-07-31 | 🔴 未注册, 持续积累 |
@@ -116,14 +116,37 @@ M3.1-Flash 1/4/0.1 ✅ 与 CN 价一致；M3 记 0.5/2 ❌ 官方 2.1/8.4（≤5
 | P0 | **MiniMax M3 系列 thinking 载荷不兼容** — `MiniMax-M3` / `MiniMax-M3.1-Flash` 服务端强制 `thinking.type=adaptive`；全局 `agents.defaults.thinkingDefault="off"` 让 OpenClaw 原样发 `disabled` → 400 (2013)，表现为「飞书通道报错」实为模型层。放大器：会话级 `modelOverride` 会禁用配置里的 fallback 链（`configured fallbacks disabled by user model override`）→ 无兜底 | 2026-10-24 21:54 | ✅ 已修复 (22:10): per-model `params.thinking=adaptive` + 网关热载（revision 8），修复后 `requires adaptive` 计数=0 <!-- project: github.com/zpzpzp72/openclaw-backup-scripts --> |
 | P1 | **MiniMax 429 根因 = Token Plan 5h 窗口耗尽**（非认证问题）— 配额单池按端点价扣减；M3.1-Flash 5h 满额 ≈6.1M input tokens / M3(≤512k) ≈2.9M / M3(>512k) ≈1.5M；耗尽时所有 minimax 模型同时返 429(2056)「已达到 Token Plan 用量上限」，OpenClaw 侧表现为 `Auth=no` + rate_limit 冷却（**是冷却不是缺 key**）；5h 窗口重置后自动恢复，无需改 key。查余量用 `mmx quota` 或 `api.minimaxi.com/v1/token_plan/remains`（CN key 别打 www.minimax.io） | 2026-10-24 | 🟡 配额管理问题，非故障；已被 8 个 agent 的 M3.1-Flash primary 放大（6/8 agent） | <!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
 | P2 | **APNetwork + WinDivert 稳定性** — 已确认 NDIS dump 仅观察到 1 次（2026-08-18 14:26），"每月数十次崩溃"无证据；WinDivert64.sys 时间戳 2022-09-20（很久没更新）；主要风险是三方共存而非高频崩溃 | 2026-08-26 | 🟢 切 NAT 后未复发，保留"未来 NDIS 更新时可能再触发"的观察 |
+| P0 | **public 仓库入库前无凭据扫描闸门** — `zpzpzp72/openclaw-backup-scripts` 是 **public**；`c9353413` 把 `.backups/`（含 `appSecret`/API key 明文 + 434MB sqlite）误收进去，靠 filter-branch 改写历史才清除 | 2026-10-30 | 🟡 已清除 + 加 .gitignore；**仍需 pre-push 扫描 skill**（NightOps v28 议题4 列为最高优先级） |
+| P1 | **备份 tar 未排除 `workspace/.git`(200M) 与 `workspace/.backups`(434M)** → 每晚白背 634MB | 2026-10-30 | ✅ 已加 exclude（文件保留本地，仅不进归档） |
 | (已合并) | ~~Coder Codex/Arcee/Kimi 三模型全败~~ — 2026-08-08 报告已过期 20 天，未重测；如需查证需单独跑 Coder probe | 2026-08-08 | ⏸️ 暂搁置 |
 
-## Git 积压 (2026-08-28 验证)
+## Git 状态 (2026-10-30 收口后)
 
-| 分支 | 状态 | 待办 |
-|------|------|------|
-| `feature/hot-backup` | 领先 origin 1 commit (2f10a82c docs: add MEMORY.md)；**推送受阻**（GitHub token 无效 + PROXY DOWN） | `git push` |
-| `feature/backup-script` | 领先 origin **0** commit (1e3cc687 2026-03-27) — 跟 hot-backup 同步；跟 origin 已同步，不是"需协调" | 考虑删除或合并 |
+| 分支 | 状态 |
+|------|------|
+| `feature/hot-backup` | ✅ **已与 origin 完全同步**（`cff8db5d`, 2026-10-30 00:30）。远程 `https://github.com/zpzpzp72/openclaw-backup-scripts.git`,分支 `feature/hot-backup` |
+| `feature/backup-script` | 仍停在 1e3cc687(2026-03-27)，未动 |
+
+**⚠️ 该仓库是 PUBLIC**（`private: false`, `visibility: public`）→ 任何入库内容都可能公开可读，
+**入库前必须做凭据扫描**。2026-10-29/30 已在 `.backups/` 里发现 `appSecret` / API key 明文并清除了（见下）。
+
+### 2026-10-29~30 工作区收口（未提交 118 条 → 0）
+- **`.gitignore` 新增**：`.backups/`、`*.bak-*`、`openclaw-workspace-state.json.migrated.*`、
+  `heartbeat/cache/`、`reports/*.html`、`reports/*_chart.png`、`heartbeat-state.json`、
+  `memory/.dreams/session-corpus/`、`DREAMS.md`、`agents/orchestrator/Tomorrow_Action_Plan_*.md`
+- **6 个 `agents/*` 目录是独立 git 仓库**（不是本仓库内容）：`coder`→M365_Copilot_Playwright_Proxy.git、
+  `finance`→/home/zhiping/a-stock-daily-report、`health/life/scout/work`→空仓库(无 commit) → 已忽略
+- **嵌套 gitlink 已移除**：`amat-stock-report`、`skills/{ashare-ai-strategy-analyst,stock-report}`、`wechat-cli`
+- **双文件名修复**：`c9353413` 引入的 `"memory/nightly-main-2026-10-27.md nightly-main-2026-10-29.md"`（本地已有正确单文件版）
+
+### 🔴 push 失败真因（2026-10-30，已解决）
+`git push` 反复失败（卡在 `POST git-receive-pack`,116MB POST 被远端断开）→ **不是网络/代理/chunked 问题**
+（curl 实测 chunked 与 normal POST 均 0.69s 返 401；`ls-remote` 正常）。真因是待推 pack 内含
+`.backups/doctor-fix-20261019-011140/` 的 8 个 sqlite 备份（**434MB**，单文件最大 214.5MB）。
+
+修复：`git filter-branch --index-filter` 改写**未推送段**（12 commit）剔除 `.backups/` 与 `reports/*.html`
+→ 待推 blob **459.6MB → 10.0MB**，push 立即成功。远端完整历史 1142 对象已扫描 → **凭据命中 0**。
+安全 tag `safety/pre-backups-purge-20261030-001127` 保留原历史可回滚。
 
 **未提交文件** (2026-08-28 13:45, `git status --short`):
 - Modified (8): `.learnings/ERRORS.md`, `MEMORY.md`, `agents/orchestrator/{AGENTS,DIRECTIVE,HEARTBEAT,IDENTITY,SOUL}.md`, `agents/orchestrator/output/Tomorrow_Action_Plan.md`, `scripts/openclaw-backup.sh`
