@@ -16,3 +16,4 @@
 - [2026-10-27] [Orchestrator] NightOps 10-28 计划已生成 output/Tomorrow_Action_Plan_2026-10-28.md；P0=gateway 内存二次爬升+fallback 重写+MiniMax 套餐决策
 - [2026-10-27] [Main] 03:00复盘落盘main-nightops-review-2026-10-27.md：确认用户01:13重启Gateway，pid 497240 RSS 5.95GB/2h回升至5.95GB（+0.4GB/2h），会话保留策略仍待ZP授权；03:00备份完成9.5GB落盘正常（心跳status时序滞后）；磁盘98%水位持续，P0关注；Scout 10-27缺位，Orch/Life/Coder三源齐备
 - [2026-10-28] [Orchestrator] NightOps 10-29 计划已生成 output/Tomorrow_Action_Plan_2026-10-29.md；P0 = Gateway RSS 9.31GB 重启+保留策略、M365 push 凭证(10-29 截止)；Scout 10-28 齐备，Life 顺延 10-26
+- [2026-10-30] [Orch] NightOps 计划 2026-10-31 已生成(output/Tomorrow_Action_Plan.md)；P0=Gateway重启(RSS 12.25GB第6次劣化)/回收站140G清理待授权/OpenClaw 10.9升级拍板；亮点=.backups含凭据已清除

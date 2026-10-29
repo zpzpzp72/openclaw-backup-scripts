@@ -16,3 +16,27 @@
 [main/sessions/main/dbf7892e-58d1-412f-a2ad-b32c15ecc76f#L1295] Assistant: **Main NightOps 复盘 — 2026-10-27（周二）03:00 场** | 服务 | 状态 | 说明 | |---|:---:|---| | Gateway（通信层） | 🟢 | ws://127.0.0.1:18789 连通，HTTP 200（0.003s） | | Gateway（资源层） | 🟡 | pid 497240，RSS 5.6GiB，CPU 168%-171% 持续偏满载，heap（--max-old-space-size=4096）+ 独立进程占 4.5MB×1000+ 小段堆积，非泄漏，趋势
 [main/sessions/main/dbf7892e-58d1-412f-a2ad-b32c15ecc76f#L1295] Assistant: `.memory-write.write.lock` 探查探查未发现活跃进程，说明脚本大概率已收尾但心跳未正确收尾。tar 退出码 1（.memory-write.lock.lock 被扫入）延续在案 3. 报告内容层：昨晚 23:00 场（昨日已落盘的每日复盘）已覆盖今日要点，无新增 P0 4. 不替 ZP 动 systemd（v3 规则）：**所有需删资产的清单、backup.sh 加 `--exclude`、fallback 齐备**，全部列 ZP 白天队列 **今日队列（按优先级）**： 1. [ZP] 会话保留策略授权（P
 [main/sessions/main/dbf7892e-58d1-412f-a2ad-b32c15ecc76f#L1296] Assistant: 📦 OpenClaw 备份日志 — 2026-10-27 ✅ 状态: SUCCESS 📁 文件: openclaw-20261027-0300.tgz 💾 大小: 8.9G ⏰ 完成: 2026-10-27 03:00(热备份,STOP_GATEWAY=0,不停服) 双源交叉验证(v21 规则): • ~/.openclaw-backup.heartbeat → status=ok • ls -lt *.tgz → 实际落盘 • ⛔ 已忽略 openclaw status 的 backup 字段(stale metadata)
+[main/sessions/main/98db6fd5-1a55-4501-a488-5d32331dc567#L6909] Assistant: 上下文已交接。先核当前状态，再闭环三项 cron 事项。
+[main/sessions/main/98db6fd5-1a55-4501-a488-5d32331dc567#L6935] Assistant: 网关内存已 **11.25GB** 且 swap 开始被用（0.16GB）——比 3 小时前又涨了 0.5GB。同时 18176 个匿名段 / 24 核，怀疑 glibc arena 碎片化。一次性验证。
+[main/sessions/main/98db6fd5-1a55-4501-a488-5d32331dc567#L6947] Assistant: 网关内存 11.25GB（宿主 30G 尚有余量，swap 0.16G 已开始用），且 2天13小时未重启。同时发现一个新事实：**19:23 那次 reminder 已经推过 10/26 摘要**（cron 里没有推送任务，是 reminder 驱动的）——所以本次若再推就是重复刷屏。我把它做成幂等。 一次做完：备份推送去重脚本 + 公网 IP + 状态核对。
+[main/sessions/main/98db6fd5-1a55-4501-a488-5d32331dc567#L6974] Assistant: 网关内存 11.25GB、swap 开始被用，且 2天13小时未重启。剩余三件事一起收口。
+[main/sessions/main/98db6fd5-1a55-4501-a488-5d32331dc567#L7142] User: [System] Your previous turn was interrupted by a gateway restart while OpenClaw was waiting on tool/model work. Treat tool results marked interrupted, missing, or aborted as having an unknown outcome from the restart, not proof of tool failure. Verify what happened before r
+[main/sessions/main/98db6fd5-1a55-4501-a488-5d32331dc567#L7142] User: verify uncertain tool effects before continuing it. Do not duplicate running work or blindly replay commands. If retained work already satisfies the task, use its result; otherwise continue it, assign replacement work, or finish it yourself. A restart interruption alone is 
+[main/sessions/main/98db6fd5-1a55-4501-a488-5d32331dc567#L7188] Assistant: 网关已在 01:13 重启（pid 497240）。我先核实时状态，再闭环三项 cron 事项。
+[main/sessions/main/98db6fd5-1a55-4501-a488-5d32331dc567#L7200] Assistant: 重要变化：备份 10-27 **tar 退出码 0**（此前连续是 1），说明 `.memory-write.lock.lock` 问题已自行消失。现在推 10-27 摘要（幂等脚本会判定为新档）。 同时我发现心跳 `last_backup` 仍指向 10-26——**昨天定位的滞后 bug 依然在**。
+[main/sessions/main/98db6fd5-1a55-4501-a488-5d32331dc567#L7212] Assistant: 推送成功（`EXIT=0`，状态文件已更新）。现在并行做投递复核 + 读备份脚本待修段落。
+[main/sessions/main/98db6fd5-1a55-4501-a488-5d32331dc567#L7220] Assistant: 飞书投递已确认（05:31:48 落地）。后台测 RSS 增速，同时写 v27 纪要。
+[main/sessions/main/98db6fd5-1a55-4501-a488-5d32331dc567#L7252] Assistant: 备份脚本里发现**三个真 bug**（清理自 07-30 起就没再执行过）。一次性查清并修。
+[main/sessions/main/98db6fd5-1a55-4501-a488-5d32331dc567#L7256] Assistant: 备份脚本的三个 bug 已定位（清理自 07-30 起失效、exclude 路径失效、heartbeat 滞后）。先看锁逻辑再一次性修。
+[main/sessions/main/98db6fd5-1a55-4501-a488-5d32331dc567#L7272] Assistant: 后台扫描卡在 `tar -tzf` 大档上。终止它，直接动手修备份脚本——但先精确验证 exclude 模式是否真能匹配。
+[main/sessions/main/98db6fd5-1a55-4501-a488-5d32331dc567#L7276] Assistant: 备份脚本的三个 bug 已定位。先做最后一项验证：向量库能否重建（决定 exclude 是否安全），并核算排除后的体积。
+[main/sessions/main/98db6fd5-1a55-4501-a488-5d32331dc567#L7471] Assistant: 上一轮因超时中断，我接着收尾。先并行处理：跑 IP 脚本 + 确认向量库是否可重建（决定 exclude 是否安全）。
+[main/sessions/main/98db6fd5-1a55-4501-a488-5d32331dc567#L7486] Assistant: 关键：`openclaw-source` **本地领先远端 224 个提交** —— 它**不可排除**（排除会丢这 224 个未推送提交）。这推翻了「排除 openclaw-source」方案。 现在把三个 backup.sh bug 一次性修掉。
+[main/sessions/main/98db6fd5-1a55-4501-a488-5d32331dc567#L7490] User: [System] Your previous turn was interrupted by a gateway restart while OpenClaw was waiting on tool/model work. Treat tool results marked interrupted, missing, or aborted as having an unknown outcome from the restart, not proof of tool failure. Verify what happened before r
+[main/sessions/main/98db6fd5-1a55-4501-a488-5d32331dc567#L7490] User: verify uncertain tool effects before continuing it. Do not duplicate running work or blindly replay commands. If retained work already satisfies the task, use its result; otherwise continue it, assign replacement work, or finish it yourself. A restart interruption alone is 
+[main/sessions/main/98db6fd5-1a55-4501-a488-5d32331dc567#L7490] User: model idle timeout. Please try again, or increase `models.providers.<id>.timeoutSeconds` for slow local or self-hosted providers. If `agents.defaults.timeoutSeconds` or a run-specific timeout is lower, raise that ceiling too; provider timeouts cannot extend the whole agent 
+[main/sessions/main/98db6fd5-1a55-4501-a488-5d32331dc567#L7493] Assistant: 上一轮被网关重启打断。先核实时状态——重点确认哪些工作真的落地了、哪些没落地。
+[main/sessions/main/98db6fd5-1a55-4501-a488-5d32331dc567#L7496] Assistant: 工具面被收窄，`exec` 全局名不可用了。先探测当前可用的调用形式。
+[main/sessions/main/98db6fd5-1a55-4501-a488-5d32331dc567#L7499] Assistant: `exec` 全局名失效，但 `catalog` 可用。用它找 exec 的正确调用形式。
+[main/sessions/main/98db6fd5-1a55-4501-a488-5d32331dc567#L7508] Assistant: 工具面已收窄为只读（`exec`/`write` 不可用）。先用可用工具核实时状态。
+[main/sessions/main/98db6fd5-1a55-4501-a488-5d32331dc567#L7516] Assistant: 工具面被收窄为只读（`exec`/`write` 不可用）。先用可用工具把状态核清。

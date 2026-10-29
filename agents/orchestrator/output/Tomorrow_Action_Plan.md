@@ -1,28 +1,29 @@
-# Tomorrow Action Plan — 2026-10-30（周四）
+# Tomorrow Action Plan — 2026-10-31
 
-> 生成：2026-10-29 02:40 Orchestrator NightOps（cron d7773686）。报告源：Scout 10-29 01:47 ✅（heartbeat/nightly-scout-2026-10-29.md）；Coder 顺延 10-28 code_report；Life 顺延 10-26；Health/Finance 无产出。
+> 生成：2026-10-30 02:45 Orchestrator NightOps（cron d7773686）。报告源：Scout 10-30 ✅、Coder 10-30 ✅、Life 10-29 ✅、Main 10-29 ✅。
 
-## P0（今日 10-29 白天最高优先）
-1. **M365 push 凭证（PAT/SSH）今日 10-29 截止** → ZP 白日队列最高位；凭证到位后 Coder 立即验证推送
-2. **Gateway 内存在重启优先级**：RSS 10.6GB（第 5 次劣化，~73MB/h 增速；不处理预计 10-30 达 ~12.8GB）→ ZP 择机执行重启
-3. **会话保留策略授权**（清 1956 json + 605 zst）→ 连续两日未获批，ZP 拍板后由 Coder 执行，防 RSS 回升
+## P0
+1. Gateway RSS 12.25GB 第6次劣化（根因=trajectory 256KB 展开副本）→ ZP 择机重启；重启后 Coder 3-4h 复测（目标 <200MB/h）
+2. /mnt/h 98%：回收站滞留 17 份被删备份 ≈140G，SMB 9P 下 rm 不释放 → 待 ZP 授权清 /mnt/h/#recycle/AI/openclaw.zone/WSL/（不可逆，需拍板）
+3. OpenClaw 2026.10.5 → npm 10.9（0 天新鲜度）或浸泡选 10.8；清单已备（822f46fd），待 owner + 维护窗口
 
 ## P1
-4. **验证 10-29 08:00 news digest 推送成功**（10-28 08:00 ✅ 21,382B，需再成功一次确认连续恢复）
-5. **fallback 单点风险**：仅本地 ollama 可用（LiteLLM@NAS DB 挂 / OpenRouter 402 / SiliconFlow key 失效 / LongCat 无 key）→ ZP 决定充值或补 key，否则 NightOps 实质单点运行
-6. **MiniMax 429 缓解跟踪**：84 次（较昨日 259 改善）；观察 10-29/10-30 08:00 早峰是否进一步改善
-7. **备份 4.1GB 体积骤减核对** + **/mnt/h 98% 水位清理**
+4. 模型单点：OpenRouter 402 充值或放弃；LiteLLM@NAS DB 恢复；MiniMax 429 观察再现
+5. web_search 连续 11 场失败 → 知乎直采 API 接入 digest 替代中文源（中位龄 231 天）
+6. git：push 凭证（backup 2 commits + copilot_proxy 5 orphan）或启动 U-4 零 commit 模式
+7. 微博 hot_band 403 → cookie 或固化 tophub；微信 Windows 侧重导出
 
 ## P2
-8. **长期停摆 Agent 处置**：Health memory 空、Finance 最后 04-07、Life 缺 10-27/10-28 → ZP 决策：复活 / 合并 / 关闭
-9. **代码质量（Coder 10-28 报告）**：删 loader.test.ts.bak；CI 测试行数门禁（3000L）；拆分 run-attempt.ts（5849L）
-10. **copilot_proxy 分叉收敛**（本地领先 5 / origin 独有 1）→ 待 push 凭证（见 P0-1）后统一 push；NightOps-Scout (0597835a) Tool Call 错误本场未再现，继续观察
-
-## 阻塞（ZP 拍板项，自昨日顺延）
-- MiniMax Token Plan 三选一；OpenRouter 充值；LiteLLM@NAS 恢复
-- Heartbeat 8 个占位 telegram:123456789 任务改飞书；BILIBILI_COOKIES / OPENROUTER_API_KEY 补齐
-- 残留 `127.0.0.1:25017` 硬编码全仓 grep 收尾
+8. Health 空转 / Finance 04-07 停摆 → 复活/合并/关闭，ZP 决策
+9. watchdog line50 语法错、/mnt/m 心跳 stale、ruff 安装（U-5）
+10. NightOps 错峰至 00:30–03:30，避 MiniMax burst 窗口
 
 ## 亮点
-- 本场 NightOps 全线完成（Scout 01:47 ✅、Orch 02:40 ✅）；429 为近期最低（84 次）
-- 10-28 08:00 digest 成功推飞书；Coder 回归且无 code_report 更新（无新增阻塞）
+- 安全：.backups（434MB 备份+含凭据配置）已被 Coder 移除——本周期最重要安全修复
+- 备份推送链幂等化端到端实测通过；NightOps 报告链恢复（Scout/Coder 连续两晚准点）
+
+## 主要阻塞
+- 3 项授权：清回收站 ~140G / 会话保留清理 / 重启 Gateway（全需 ZP）
+
+## 观察点（10-31 场）
+Gateway RSS 是否破 12.5GB；MCP SEP-3392 首个 SDK、Mistral Large 4 评测、Gemini 4 Carbon 是否公开；MiniMax 429 是否再现
