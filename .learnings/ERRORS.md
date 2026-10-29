@@ -173,3 +173,36 @@ text(JSON.stringify(h).slice(0, 2000));
 - `pkill -f <pattern>` 会匹配**命令行中含该字符串的当前 shell 本身**
 - 正确做法:`ps -eo pid,args | grep '[g]it push'`(方括号技巧)先定位 PID,再 `kill <PID>`
 - 或用 `kill -9 <pid>` 精确杀,不用模式匹配
+
+## ERR-20261030-003 runtime 报 session 仍在跑,但 /proc 已无该进程 → 假警报,勿反复清理
+
+**现象**:runtime 上下文持续列出 `fresh-shoal` 为「running, pid 607358」,
+但 `ps`/`/proc/607358` 均查无此进程。反复 `process kill/remove` 只得到
+`No active session found` / `No session found`。
+
+**真相**:`process list` 返回的 6 个 session 中,匹配到 `fresh-shoal` 字样的那条
+其实是 **`salty-cedar`**,其 command 文本里含 `fresh-shoal` 字样(我自己写的 grep 模式)
+→ 字符串匹配命中,并非该 session 本身。**`status=running` 的 session 实际为 0 个**。
+
+**教训**:
+- runtime 的 session 索引可能是**陈旧快照**;判定「进程是否活着」用 `ps`/`/proc` 实测,不靠 runtime 文本
+- `process list` 的结果要按 **sessionId 精确比对**,不要用「命令行里含某字符串」当匹配条件
+- 反复尝试清理一个已消失的对象是**无效轮次**;确认无副作用后即可停止
+
+---
+
+## ERR-20261030-004 长耗时网络命令在 exec 内会超时丢结果 → 必须 nohup + 轮询日志文件
+
+**现象**:`openclaw update status` / `npm view openclaw version` 走代理链路,
+单次超过 120s,exec 返回 "running" + sessionId,后续 wait 拿不到最终输出,
+多次重复执行反而互相干扰(`/tmp/upd.log` 被并发覆盖)。
+
+**正确做法**:
+```bash
+nohup bash -c '...' > /tmp/upd.log 2>&1 &   # 后台写文件
+sleep N; cat /tmp/upd.log                  # 轮询读取
+```
+**教训**:
+- 预计耗时 >60s 的命令一律后台化 + 日志轮询,不要依赖 exec 的 wait 链
+- 同一命令**不要并发启动多次**(会互相覆盖日志/抢锁)
+- 已拿到结论后**主动 kill 残留查询进程**,避免空转耗 token
