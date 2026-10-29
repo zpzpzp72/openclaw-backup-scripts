@@ -1,0 +1,26 @@
+{
+  "lastChecks": {
+    "orchestrator_nightops": 1792803000,
+    "proxy_fix": 1792789000,
+    "ollama_fix": 1792790000,
+    "m365_commit": 1792794000,
+    "nightops_rootcause": 1792810000,
+    "fallback_hardened": 1792810200,
+    "minimax_quota": 1792810500
+  },
+  "currentStatus": {
+    "proxy_25017": "FIXED (hardcoded 127.0.0.1 -> 172.18.160.1)",
+    "news_digest": "RECOVERED 01:11 20123 bytes feishu sent",
+    "ollama_provider": "FIXED -> http://172.18.160.1:11434/v1",
+    "fallbacks": "['ollama/qwen3:4b-instruct','ollama/qwen3.6:27b','longcat/LongCat-2.0'] - local ollama is ONLY working fallback",
+    "openrouter": "402 credits exhausted",
+    "m365_repo": "UNFROZEN commit e5f498e",
+    "life": "last report 09-08 (46d)",
+    "health": "memory empty",
+    "finance": "last report 04-07",
+    "tomorrow_action_plan": "generated 2026-10-24",
+    "nightops_0450": "ERROR (MiniMax Token Plan 429 burst exhaustion, 382 hits 02-05h)",
+    "cloud_fallbacks": "ALL DOWN: litellm(no_db_connection) siliconflow(key invalid) longcat(no key) openrouter(402)",
+    "minimax_quota": "burst type - 429 in 02:00-05:00 window, 200 OK at 06:05"
+  }
+}
