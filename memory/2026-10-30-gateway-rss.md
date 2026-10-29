@@ -151,3 +151,111 @@ import sqlite3,glob
 print(sum(sqlite3.connect(f'file:{f}?mode=ro',uri=True).execute('SELECT COUNT(*) FROM trajectory_runtime_events').fetchone()[0]
  for f in glob.glob('/home/zhiping/.openclaw/agents/*/agent/openclaw-agent.sqlite')))"
 ```
+
+---
+
+## 追加(00:50):源码侧机制确认 + 保留器的两个缺陷
+
+### A. 256KB 尺寸来源确认(非巧合)
+```
+openclaw/dist/runtime-retention.sqlite-BlXqycCY.mjs:11
+  const TRAJECTORY_RUNTIME_EVENT_MAX_BYTES = 262144;   ← 正好 256KB
+  const TRAJECTORY_RUNTIME_CAPTURE_MAX_BYTES = 10485760; ← 10MB
+  const TRAJECTORY_RUNTIME_FILE_MAX_BYTES   = 52428800; ← 50MB
+
+runtime-8mt5O-ko.mjs:590
+  limitBytes: TRAJECTORY_RUNTIME_EVENT_MAX_BYTES,
+  reason: "trajectory-event-size-limit"
+```
+→ **实测 17454 个内存段尺寸 = 262144,与 OpenClaw 自己的常量逐一相等**。
+→ 该常量用于「超限轨迹事件截断」。截断逻辑 `if (bytes <= 262144) return line;`
+   (runtime-8mt5O-ko.mjs:583) 说明**每个事件占一个 256KB 槽位**。
+
+### B. 保留器(sweep)机制与它的两个缺陷
+```
+保留器入口: settleIncognitoTrajectoryRuntimeRetention (runtime-8mt5O-ko.mjs:47)
+  → session.trajectory.retention.prepare → trajectoryRuntimeRetentionState / Due
+  → session.trajectory.retention.delete → trajectory.runtime.retention.delete
+
+常量:
+  RETENTION_MAX_AGE_MS = 12096e5   = 14 天
+  GLOBAL_MAX_BYTES      = 536870912 = 512 MB
+  SWEEP_INTERVAL_MS     = 36e5      = 1 小时
+  DELETE_RUN_BATCH_SIZE = 16
+```
+
+**缺陷 1:字节预算按 DB 字节计,与内存实耗差 32.6 倍 → 预算永不触发**
+```
+DB 计量(sum(octet_length(event_json)+1)) =  134.9 MB   ← 保留器用它算预算
+内存实耗(262144 × 17887 段)              = 4394.0 MB   ← 真实占用
+放大倍数 = 32.6×
+预算阈值 GLOBAL_MAX_BYTES = 512 MB
+→ DB 计量永远达不到 512MB → 字节预算这条清理路径形同虚设
+```
+
+**缺陷 2:sweep 是 append 触发,不是定时器 → 空闲 agent 永远不清**
+```
+runtime-8mt5O-ko.mjs:408  (在轨迹 append 路径的 finally 块里)
+  if (inFlight !== batch && !unsettledAppend) await settleIncognitoTrajectoryRuntimeRetention({...})
+```
+实测(超龄 = 超过 14 天):
+```
+agent          总事件   超龄(>14d)   最近事件距今    结论
+coder           4151        0          21.3h       活跃→sweep 已跑,超龄已清
+life            2932        0          22.7h       活跃→sweep 已跑,超龄已清
+main           15509        0           0.0h       活跃→sweep 已跑,超龄已清
+orchestrator    3329        0          21.2h       活跃→sweep 已跑,超龄已清
+scout           6841        0          15.9h       活跃→sweep 已跑,超龄已清
+finance          38       15         255.8h       空闲→从未被 sweep
+health           78       78         345.6h       空闲→从未被 sweep
+work            368       48          92.3h       空闲→从未被 sweep
+```
+→ 活跃 agent 的 14 天前事件**确实被清掉了**(超龄=0),证明 sweep 逻辑本身正确;
+→ 但它**只在有轨迹写入时才会被调用**。空闲 agent(health 78/78 全超龄)永远不会被扫。
+
+### C. 内置 session cleanup 覆盖不到轨迹事件
+```
+$ openclaw sessions cleanup --dry-run --all-agents
+  Agent: main
+  Maintenance mode: enforce
+  Entries: 1902 -> 1902 (remove 0)
+  Would prune unreferenced artifacts: 17
+  Would enforce disk budget: 257237534 -> 257237534 bytes (files 0, entries 0)
+```
+→ 只清 17 个无引用产物,磁盘预算 **完全不动**(257MB→257MB),
+→ **`openclaw sessions cleanup` 不触及 `trajectory_runtime_events`**。
+
+### D. 配置侧排查结果(否定「纯配置解」)
+```
+session.maintenance schema 存在,但当前 openclaw.json 里 session.maintenance = null(未配置,走默认)
+可用键: mode(enforce|warn) / coldStorage{enabled,afterDays} / pruneAfter(默认 30d)
+        archiveDashboardAfter / maxEntries(默认 5000) / preserveRecent
+        resetArchiveRetention / maxDiskBytes(默认 10gb) / highWaterBytes
+→ 这些全部作用于 **会话条目/transcript 归档**,不作用于 trajectory_runtime_events
+
+$ openclaw config get session.maintenance
+  Config path is valid but unset: session.maintenance. The runtime default applies...
+
+$ openclaw sessions cleanup --dry-run --all-agents   → 见上,轨迹事件不在其清理范围
+```
+**结论:没有纯配置开关能解决轨迹事件内存驻留。**
+`maxGlobalRuntimeBytes` 虽可传参(`prepareTrajectoryRuntimeRetention` 的
+`input.maxGlobalRuntimeBytes ?? GLOBAL_MAX_BYTES`),但其唯一调用方
+runtime-8mt5O-ko.mjs:93 是内部代码,**未暴露为用户配置项**。
+
+### E. 因此可行的修复路径(按风险从低到高)
+
+| # | 手段 | 效果 | 风险 | 授权 |
+|:--:|------|------|------|:--:|
+| 1 | **升级到 2026.10.9** | 可能已修(当前 2026.10.5) | 低 | ZP 执行 `openclaw update` |
+| 2 | 重启 Gateway | RSS 归零,**但只掩盖** | 中(中断) | ZP 执行 `/restart` |
+| 3 | 手工 DELETE 旧 trajectory 事件 | 减少 DB 与(重启后)内存基数 | 中(丢审计数据) | 需 ZP 授权 + 先备份 sqlite |
+| 4 | 直接删 `trajectory_runtime_events` 行**并重启** | 唯一能同时降低 DB 与内存基数的方法 | 中高 | 需 ZP 授权 |
+| 5 | 向上游提 issue | 根治 | 无 | 需 ZP 同意公开 |
+
+**实测数据(保留最近 3 天 / 7 天可清量)**:
+```
+保留最近 3 天  → 保留 7084 事件 (21.4%),可清 26052 事件 (78.6%)
+保留最近 7 天  → 保留 25249 事件 (76.2%),可清 7887 事件 (23.8%)
+保留最近 14 天 → 保留 32995 事件 (99.6%),可清 141 事件 (0.4%)
+```
