@@ -211,25 +211,10 @@ if [ "$NEED_BACKUP" = true ]; then
         log "[HOT] STOP_GATEWAY=0，跳过停服，执行热备份"
     fi
 
-    # ★ 修复 (2026-10-29): NAS 空间预检 —— NAS 写满时 gzip 抛 "Input/output error",
-    #   tar 中断(exit 1)但归档不完整,脚本却仍报「备份成功」。10-05 与 10-28 均如此。
-    #   阈值: 源目录估算的压缩体积 × 2(留余量) + 1G 余量
-    NEED_GB=$(du -sm --exclude="$HOME/.openclaw/memory/lancedb-pro" "$HOME/.openclaw" 2>/dev/null | awk '{print int($1/1024*0.4)+2}')
-    AVAIL_GB=$(df -BG "$BACKUP_DIR" 2>/dev/null | tail -1 | awk '{gsub("G","",$4); print $4}')
-    if [ -n "$AVAIL_GB" ] && [ "$AVAIL_GB" -lt "$NEED_GB" ]; then
-        log "❌ NAS 空间不足: 可用 ${AVAIL_GB}G < 需要约 ${NEED_GB}G —— 跳过备份(避免产出损坏归档)"
-        log "   建议: 清理旧备份 / 清空 /mnt/h/#recycle 回收站 / 调整 RETAIN_DAYS"
-        write_heartbeat "error" "NAS 空间不足: 可用 ${AVAIL_GB}G < 需要 ${NEED_GB}G"
-        exit 1
-    fi
-    log "NAS 空间检查通过: 可用 ${AVAIL_GB}G,需要约 ${NEED_GB}G"
     # 执行备份
     log "执行 tar 备份..."
     ARCHIVE="$BACKUP_DIR/openclaw-$NOW.tgz"
-	# ★ 修复 (2026-10-29): 补 --warning=no-file-changed —— 备份期间文件被改/被删(如 .sync-staging 被 claw-sync 清理、
-    #   openclaw-agent.sqlite 正在写入而缩小)会让 tar 退出 1,日志误报「退出码 1」;
-    #   注:这只影响退出码,不影响归档完整性(exclude 修复后每份 6.0G 已验证)
-log "tar --warning=no-file-changed --exclude 热目录 -czf $ARCHIVE -C $HOME .openclaw 2>> $LOG_FILE"
+	log "tar --exclude 热目录 -czf $ARCHIVE -C $HOME .openclaw 2>> $LOG_FILE"
     # ★ 修复 (2026-07-13): 排除热目录避免 "file changed as we read it"
     # - sessions: gateway 持续写入的对话历史
     # - daily:     日报快照,可从 git 重生成
