@@ -90,3 +90,9 @@ memory/heartbeat-state.json
 memory/.dreams/session-corpus/
 DREAMS.md
 agents/orchestrator/DREAMS.md
+
+# .backups/ 是 doctor/mic 修复时的本地备份:
+#   - doctor-fix-*/  含 8 个 sqlite 数据库备份(434MB,单文件最大 214MB)
+#   - openclaw.json.before-*  含 appSecret / API key 明文
+# 既撑爆 git push(远端因 116MB POST 被断开),又是凭据泄漏面 → 整个目录不入库
+.backups/
