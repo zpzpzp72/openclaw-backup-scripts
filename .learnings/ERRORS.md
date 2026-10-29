@@ -206,3 +206,41 @@ sleep N; cat /tmp/upd.log                  # 轮询读取
 - 预计耗时 >60s 的命令一律后台化 + 日志轮询,不要依赖 exec 的 wait 链
 - 同一命令**不要并发启动多次**(会互相覆盖日志/抢锁)
 - 已拿到结论后**主动 kill 残留查询进程**,避免空转耗 token
+
+## ERR-20261030-005 push 被拒的精确原因是 GitHub pre-receive 对 >100MB blob 的硬拒绝
+
+**现象演进**(三次尝试,三种症状,同一根因):
+1. `git push` 卡在 `POST git-receive-pack (chunked)`,119s 无输出
+2. 加 `http.postBuffer=524288000` 后:`POST git-receive-pack (116416597 bytes)` →
+   `send-pack: unexpected disconnect while reading sideband packet` →
+   `fatal: the remote end hung up unexpectedly`
+3. 最早的 push 终于返回完整错误:
+   `! [remote rejected] feature/hot-backup -> feature/hot-backup (pre-receive hook declined)`
+
+**精确根因**:`pre-receive hook declined` = GitHub 拒绝接收含 **>100MB blob** 的推送。
+实测待推历史中:
+```
+214.5 MB  .backups/doctor-fix-20261019-011140/agents__main__agent__openclaw-agent.sqlite
+```
+单 blob 214.5MB 远超 GitHub 的 100MB 硬限制 → 服务端在接收阶段就拒绝,
+客户端看到的「远端断开」只是**服务端拒绝后的连接中断现象**,不是网络问题。
+
+**为什么前两次诊断都走偏**:
+- 第 1 次:以为是 chunked 编码被阻断 → curl 实测 chunked 与 normal POST **都是 0.69s 返 401**,chunked 没问题
+- 第 2 次:以为是网络/代理 → `curl github.com` 0.71s、`ls-remote` 正常,网络没问题
+- **正确顺序**:push 失败 → **先查待推对象的 blob 尺寸分布**,再查网络
+  ```bash
+  git rev-list --objects origin/branch..HEAD | \
+    git cat-file --batch-check='%(objecttype) %(objectsize) %(rest)' | \
+    sort -k2 -rn | head
+  ```
+
+**修复与验证**:
+- `git filter-branch --index-filter` 改写未推送段 → 待推 blob 459.6MB → **10.0MB**
+- push 立即成功(exit 0),远端确认 `.backups` 文件数 = 0、无 >100MB blob
+- 远端完整历史 1142 对象凭据扫描 → 命中 0
+
+**教训**:
+- 「远端断开 / hung up」是**服务端拒绝后的表象**,不是网络故障的证据
+- 遇到 push 失败,**先量 pack 和最大 blob**,再看网络 —— 顺序反了会浪费大量轮次
+- 大文件(>50MB)入库前必须问「这该进 Git 吗」;public 仓库尤其如此
