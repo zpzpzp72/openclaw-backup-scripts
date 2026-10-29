@@ -128,3 +128,48 @@ text(JSON.stringify(h).slice(0, 2000));
 
 **教训**:**动手前先 grep 目标实现是否已包含该行为**。若已包含,要么放弃改动,
 要么改成真正有增量的内容(如本轮把矛盾日志句改为短路写法)。
+
+## ERR-20261030-001 c9353413 把 434MB 数据库备份误收进 public 仓库 → push 被远端断开
+
+**现象**:`git push` 反复失败。错误演进:
+1. 卡在 `POST git-receive-pack (chunked)`,119s 无输出
+2. 加 `-c http.postBuffer=524288000` 后明确报错:
+   `POST git-receive-pack (116416597 bytes)` → `send-pack: unexpected disconnect while reading sideband packet` →
+   `fatal: the remote end hung up unexpectedly`
+
+**排查路径(错误的诊断弯路)**:
+- 先怀疑 chunked 编码被阻断 → curl 实测 chunked POST 与 normal POST **都是 0.69s 返 401**,chunked 没被阻断
+- 先怀疑网络/代理 → `curl github.com` 0.71s,`ls-remote` 正常 → 网络没问题
+- **真因**:待推 pack 里塞着 `.backups/doctor-fix-20261019-011140/` 的 8 个 sqlite 文件(合计 434MB,单文件最大 214.5MB)
+  → 116MB 的 POST 被 GitHub 断开
+
+**更严重的问题**:`.backups/openclaw.json.before-*` 含 **appSecret / API key 明文**,
+而该仓库是 **public**(`private: false`, visibility=public)。
+
+**修复**:
+1. `git rm --cached -r .backups/` + `.gitignore` 加 `.backups/`
+2. `git filter-branch --index-filter` 改写未推送段(12 commit),从历史彻底剔除
+   - 待推 blob:459.6MB → **10.0MB**;push 立即成功(exit 0)
+   - 远端确认 `.backups` 文件数 = 0
+3. 全量扫描远端完整历史 1142 个对象 → **凭据命中 0**(未发生泄露)
+4. 保留安全 tag `safety/pre-backups-purge-20261030-001127` 以便回滚
+
+**教训**:
+- **「push 失败」先查 pack 体积**:`git rev-list --objects origin/branch..HEAD | git cat-file --batch-check`
+  列出最大 blob —— 比猜网络/编码快得多
+- **public 仓库必须做凭据扫描**:`"appSecret"\s*:\s*"..."`、`sk-[A-Za-z0-9]{24,}`、
+  `LITELLM_MASTER_KEY\s*=` 三条正则覆盖本项目已知凭据形态
+- **仅从索引移除不够**:文件已进入 commit 历史,不改写历史 blob 仍会被上传
+- 大文件(>50MB)入库前必须问「这该进 Git 吗」
+
+---
+
+## ERR-20261030-002 pkill 模式匹配到自身 shell → 命令被自己杀掉
+
+**现象**:`pkill -f 'git push'` 后,执行该命令的 bash 自身被 SIGKILL,
+后续诊断步骤全部丢失,输出只剩第一段标题。
+
+**教训**:
+- `pkill -f <pattern>` 会匹配**命令行中含该字符串的当前 shell 本身**
+- 正确做法:`ps -eo pid,args | grep '[g]it push'`(方括号技巧)先定位 PID,再 `kill <PID>`
+- 或用 `kill -9 <pid>` 精确杀,不用模式匹配

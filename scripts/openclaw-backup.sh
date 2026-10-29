@@ -233,6 +233,8 @@ if [ "$NEED_BACKUP" = true ]; then
         --exclude='.openclaw/plugins/*/.git' \
         --exclude='.openclaw/agents/*/sessions' \
         --exclude='.openclaw/memory-core' \
+        --exclude='.openclaw/workspace/.backups' \
+        --exclude='.openclaw/workspace/.git' \
         -czf "$ARCHIVE" -C "$HOME" .openclaw 2>>"$LOG_FILE"
     BACKUP_STATUS=$?
     set -e
