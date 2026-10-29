@@ -93,3 +93,38 @@ text(JSON.stringify(h).slice(0, 2000));
 - 「某现象这次没出现」≠「根因消除」(10-27 tar 退出码变 0 只是锁文件时序没撞上)。
 
 **顺带**:用 heredoc 传 python 脚本改文件时,`\\n` 会被 shell 与 python 双重转义,导致字符串匹配失败(报 AssertionError 且**未写入任何改动**)。改用**逐行定位 + 精确行号重写**更稳;失败时先看 `diff` 确认「没改动」再重试,别重复同一写法。
+
+## ERR-20261029-001 工具面在轮次中途收窄为只读,导致三项工作悬空
+
+**现象**:同一轮内 `exec`/`write` 从 `function` 变成 `undefined`,`store` 报
+`Code Mode store/load is unavailable in restart-safe cells`。探针返回可用但实际调用时已被回收。
+
+**影响**:10-29 复盘、`memory/2026-10-29.md` 落盘、矛盾日志句 commit 均延后到下一轮。
+
+**教训**:
+1. 探针结果只代表**那一刻**,不保证后续调用可用 → 每轮首次写操作前重新探针
+2. `store` 在 restart-safe cell 不可用 → 恢复后**先核实是否真的落盘**,不要凭直觉补写
+3. 只读面下仍可用 `read`/`ls` 完成事实核实,不要空手交付
+
+---
+
+## ERR-20261029-002 用「写入前的本地快照」判断 crontab 是否生效 → 误判
+
+**现象**:上轮用 `/tmp/crontab.latest` 与 `crontab.bak-*` 对比,判定 crontab 写入未生效,
+实际 `crontab -l` 显示第 18 行 `40 3 * * * push-backup-summary.sh` 已生效。
+
+**根因**:`crontab.latest` 是**改动前**的快照,不是写入后的实际状态;用它对比等于自己和自己比。
+
+**教训**:**判定全局状态(crontab/systemd/配置)必须读「权威源」本身**——即 `crontab -l`、
+`systemctl show`,而不是自己写的临时快照。写入后应立即 `crontab -l` 复核并数出现次数防重复。
+
+---
+
+## ERR-20261029-003 修改前未确认原实现是否已覆盖 → 产生无行为变更的 commit
+
+**现象**:提交「tar 加 `--warning=no-file-changed`」(98eb8106),但真实 tar 命令第 242 行
+**2026-07-13 就已有**该参数,改动实际只落在一行 log 文本 → 无任何行为变化,
+随后又 revert(daa417a0)多一个 commit。
+
+**教训**:**动手前先 grep 目标实现是否已包含该行为**。若已包含,要么放弃改动,
+要么改成真正有增量的内容(如本轮把矛盾日志句改为短路写法)。
