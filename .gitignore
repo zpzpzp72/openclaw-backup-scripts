@@ -46,3 +46,47 @@ credentials/
 *.zip
 *.tar.gz
 *.tgz
+
+# ── 2026-10-29 收口新增 ──
+# 备份脚本的临时副本(每次改动都会生成 .bak-YYYYMMDD-HHMMSS)
+*.bak-*
+*.bak
+# OpenClaw 状态迁移残留临时文件
+openclaw-workspace-state.json.migrated.*
+# heartbeat 缓存
+heartbeat/cache/
+# 报告生成物(每次 cron 都会新产出一份,体积大且无归档价值)
+reports/*.html
+reports/*_chart.png
+
+# agents/ 下的 6 个目录是独立 git 仓库(嵌套仓库),各自有不同远端,不入本仓库
+#   coder   → M365_Copilot_Playwright_Proxy.git
+#   finance → /home/zhiping/a-stock-daily-report
+#   health/life/scout/work → 空仓库(无 commit)
+# 提交嵌套仓库会让 git add 报 "adding embedded git repository"
+agents/coder/
+agents/finance/
+agents/health/
+agents/life/
+agents/scout/
+agents/work/
+
+# orchestrator 日报:每晚新增一份,无限累积(36 份)。只跟踪 output/ 下的正式版
+agents/orchestrator/Tomorrow_Action_Plan_*.md
+
+# 更多嵌套仓库(各自独立远端,不入本仓库)
+amat-stock-report/
+skills/ashare-ai-strategy-analyst/
+skills/stock-report/
+wechat-cli/
+
+# 每次运行内容都变的生成物(追踪只会产生无意义 diff)
+reports/*_chart.png
+reports/amat_chart.png
+
+# 运行时状态与梦境语料(每日生成,体积大)
+heartbeat/heartbeat-state.json
+memory/heartbeat-state.json
+memory/.dreams/session-corpus/
+DREAMS.md
+agents/orchestrator/DREAMS.md
