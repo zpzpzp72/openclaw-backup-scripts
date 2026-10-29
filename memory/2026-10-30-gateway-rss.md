@@ -1,339 +1,150 @@
-# Gateway RSS 11.5GB 根因定位报告
-
-> 2026-10-30 00:35 CST · 只读调查 · gateway pid 497240 · OpenClaw 2026.10.5
-> 本报告为 main agent 独立取证结论(未依赖子代理)
-
-## 一句话根因
-
-**RSS 的主体(约 87%)由两大类「独立大块匿名映射」构成,其中 39.6% 与 OpenClaw 自己的常量
-`TRAJECTORY_RUNTIME_EVENT_MAX_BYTES = 262144` 精确吻合**——即 trajectory runtime 事件在内存中的 256KB 粒度缓冲。
-这些缓冲**有生命周期**(段数在 17369~18132 之间波动,非单调泄漏),但**释放后未归还 OS**,
-叠加 47.7% 来自尺寸多样、驻留率约 50% 的大块映射(含 19 个 glibc 64MiB arena),
-最终形成 11.5GB 常驻。
-
-**同时确认了内置保留器(sweep)存在两个缺陷**,导致 trajectory 事件在 DB 中持续累积(33000+ 条):
-1. 字节预算按 **DB 字节**计(134.9MB)而非内存实耗(4374MB),差 **32.6 倍** → 512MB 预算**永不触发**;
-2. sweep 是 **append 触发**而非定时器 → **空闲 agent 永远不被清理**(health 78/78 条全部超龄未清)。
-
-⚠️ **严格说明**:
-- 256KB 段与 trajectory 事件为强相关(全局 0.52 段/事件)但**非严格 1:1**;
-- 47.7% 的 4-64MB 桶已确认为 **glibc 二次 arena 空间**(碎片化驻留 44%),
-  但**「arena 里装的是哪些对象」仍未逐一定位** —— 这是剩余缺口;
-- 因此**机制层面已闭合**(两类映射 + 两个保留器缺陷),**对象层面未完全闭合**。
-
-## 关键实测证据链
-
-### 1. RSS 构成:100% 匿名私有脏页
-```
-Rss:            12118776 kB  (11.56 GB)
-Private_Dirty:  12033940 kB  (11.48 GB)   ← 99.3%
-Anonymous:      12033704 kB
-Pss_File:          34925 kB  (34 MB)      ← 文件只占 0.3%
-[heap]:          487.5 MB   (1 段)         ← V8 堆外,heap 上限 4096MB 无关
-```
-→ **不是 V8 堆**(heap 仅 487MB),**不是文件映射**(34MB)。
-
-### 2. 匿名段尺寸分布:17454 个段全部恰好 256KB
-```
-尺寸 top8(按数量):
-   256.0 KB × 17292 = 4323.00 MB   ← 占绝对多数
-   140.0 KB ×   233 =   31.86 MB
-   228.0 KB ×    74 =   16.48 MB
-  2048.0 KB ×    44 =   88.00 MB
-
-分桶:
-  <64KB     112 段        0.7 MB
-  64KB-1MB 18078 段    4495.0 MB
-  1-4MB      90 段      160.0 MB
-  4-64MB    390 段    12180.3 MB
-  >64MB     60 段    48717.0 MB   (虚拟为主,实际驻留少)
-```
-→ **尺寸完全一致(256KB)** = 固定粒度分配,不是自然增长的数据结构。
-
-### 3. 100% 是独立 mmap,不是堆内块
-```
-256KB 段归属: {'独立 mmap': 17454}    ← 无一落在 [heap] 或 [stack]
-紧邻(间隔0)的对数: 0                   ← 没有两个 256KB 段相邻
-相邻间隔中位数: 2678.9 MB
-```
-→ **排除 glibc arena**(arena 内 chunk 会连续且尺寸多样)。
-→ 独立 mmap + 尺寸一致 + 全部写满 = **每次单独申请 256KB 缓冲区**。
-
-### 4. 每段几乎 100% 被写满
-```
-256KB 段: 17390 个, 驻留合计 4326.7 MB, 平均 254.8 KB/段 (99.5%)
-```
-→ 真实数据副本,不是「预留未用」。
-
-### 5. 与会话/事件数量的比值
-```
-内存 256KB 段: 17407
-
-全 agent trajectory_runtime_events: 33114 行  (main 15377 / scout 6841 / coder 4151 / orchestrator 3329 / life 2932 / work 368 / health 78 / finance 38)
-全 agent session_nodes:             1971 行  (main 1901)
-全 agent transcript_events:        137402 行
-
-event_json 磁盘总量: 129.5 MB(平均 4097 B/事件)
-内存 256KB 段总量:   4352 MB   → 是 event_json 磁盘量的 34 倍
-
-比值: 17407 段 / 15377(main trajectory_events) = 1.13 段/事件  ← 仅 main 口径
-      17407 段 / 1901 (main session_nodes)     = 9.2  段/会话
-      17407 段 / 33214 (全 agent trajectory)   = 0.52 段/事件  ← **全局口径**
-```
-⚠️ **修正说明(2026-10-30 01:00)**:初版报告把 1.13 当作全局比值,那实际是**只算 main agent** 的口径。
-全 agent 口径是 **0.52 段/事件**,即「约每 2 个事件对应 1 个 256KB 段」。
-1.13 与 0.52 的差异说明:**并非严格一事件一缓冲**,256KB 段与 trajectory 事件只是**强相关**而非精确 1:1。
-
-### 时间窗相关分析(2026-10-30 01:00 补充)
-```
-窗口    traj事件  transcript   段/轨迹   段/transcript
-1h          834        891     20.89          19.55
-6h         1658       1275     10.51          13.66
-24h        3561       2984      4.89           5.84
-48h        5041       4278      3.46           4.07
-7d        25594      26867      0.68           0.65
-14d       33340      62659      0.52           0.28
-all       33481     137445      0.52           0.13
-```
-→ 比值在 48h~7d 之间跨过 1.0,**没有任何时间窗给出干净的 1:1**。
-→ 结合「段数在 17369~18132 之间**波动**而非单调增长」(见下),说明这批 256KB 段是
-**有生命周期、会创建也会释放的活缓冲**,不是每事件永久泄漏一份。
-
-### 段数波动(重要修正)
-```
-观测序列: 17389 → 17407 → 17414 → 17454 → 17476 → 17494 → 17576 → 17887 → 18132 → 17584 → 17369 → 17421
-波动幅度 ≈ ±400 段(±2.3%)
-```
-→ **不是单调泄漏**。若为永久泄漏,段数应只增不减。
-→ 结合 RSS 稳定在 11.5GB 且有 0.24GB 级回落 → 存在**分配与释放的churn**,
-   但**释放后内存未归还 OS**(glibc 对 ≥128KB 的分配走 mmap,理论上应 munmap 归还——
-   实际未归还,这一点是**上游/运行时层面的问题**)。
-
-### 6. 磁盘侧已删除,但内存不释放(关键佐证)
-```
-~/.openclaw/agents/main/sessions/:
-  1900 × *.trajectory-path.json   (247 B 指针,指向 *.trajectory.jsonl)
-   546 × *.jsonl.deleted.*.zst    (已删除会话的压缩归档,共 3.1MB)
-     0 × 活跃 .jsonl
-
-全库 *.trajectory.jsonl 实际存在数: 0     ← 指针指向的文件全部不存在
-```
-→ **磁盘上活跃会话数据为 0,内存却占 4.26GB**。
-→ 证明:该内存副本**不由磁盘文件生命周期决定**,删除文件不释放。
-
-### 7. 源码侧机制名确认
-```
-openclaw/dist/runtime-retention.sqlite-*.mjs
-openclaw/dist/runtime-store.sqlite-*.mjs
-openclaw/dist/session-incognito.worker-*.mjs
-openclaw/dist/runtime-8mt5O-ko.mjs
-
-符号: trajectoryRuntimeRetentionState / trajectoryRuntimeRetentionDue
-      trajectoryRetention / trajectoryRetentionLease
-      attachment.trajectoryRetentionLease
-表:   trajectory_runtime_events (主 agent 15377 行)
-```
-→ OpenClaw 内置 **trajectory runtime retention** 机制,按事件保留运行时数据。
-
-## 补充(01:00):驻留匿名内存的完整分布,以及 47.7% 未归因部分
-
-```
-匿名段驻留合计: 11259.5 MB (18736 段)
-  <64KB      95 段  虚拟      0.6 MB  驻留      0.2 MB  ( 0.0%)
-  64KB-1MB 18132 段  虚拟   4510.3 MB  驻留   4461.8 MB  (39.6%)  ← 256KB 段所在桶
-  1-4MB      61 段  虚拟    116.8 MB  驻留     45.3 MB  ( 0.4%)
-  4-64MB    391 段  虚拟  12192.0 MB  驻留   5368.2 MB  (47.7%)  ← **未归因**
-  >64MB     58 段  虚拟  48716.9 MB  驻留   1384.1 MB  (12.3%)
-```
-
-**4-64MB 桶(5368 MB,占 47.7%)目前未归因,已知特征**:
-- 391 个段,尺寸多样(4.00/8.00/30.73/37.89/44.51/50.82/63.87/63.93/63.98/63.99 MB 等),
-  **不是**统一 256KB 那种单一分配粒度
-- 每个段的**驻留率约 50%**(如 63.99MB 虚拟 → 64.0MB 驻留;48.42MB 虚拟 → 0.0MB 驻留)
-- **决定性证据(01:15 修正)**:该桶由 **91 个连续组**构成,300/390 对相邻段**间隙为 0**(完全连续),
-  **50/91 组的起始地址 64MiB 对齐**,组间间隔恰好 **64.000 MB**;
-  且全进程存在 **304 个 PROT_NONE(`---p`)保护段**(合计 43.2 GB),
-  64 位 glibc 二次 arena 的标准布局正是:`64MiB(rw-p 堆) + 64MiB(PROT_NONE 保护页)`。
-  → **该桶是 glibc 二次 arena 空间**,不是「未知的独立分配」。
-- 排除项:不是 10MB(`TRAJECTORY_RUNTIME_CAPTURE_MAX_BYTES`)、不是 50MB(`TRAJECTORY_RUNTIME_FILE_MAX_BYTES`)
-- 驻留率 44.0%(虚拟 11.91 GB / 驻留 5368 MB)→ arena 内碎片化,典型 malloc 碎片特征
-- 线程数 59、CPU 24 核 → glibc arena 上限 = 8 × 24 = 192,实测 91 个 arena,量级吻合
-
-**结论修正**:RSS 11.5GB 由**两块**构成,只有一块被明确定位:
-| 组成 | 驻留 | 归因状态 |
-|------|------:|---------|
-| 256KB 独立 mmap 段(≈17400 个) | 4374 MB (39.6%) | ✅ 已定位:尺寸 = OpenClaw 常量 `TRAJECTORY_RUNTIME_EVENT_MAX_BYTES=262144`;glibc mmap 阈值 128KB ⇒ 256KB 分配各自独立 mmap(与「零相邻」完全吻合);与 trajectory 事件强相关(全局 0.52 段/事件),**非严格 1:1** |
-| 4-64MB 桶(391 段 / 91 连续组) | 5368 MB (47.7%) | ✅ **已确认为 glibc 二次 arena 空间**(91 组 64MiB 对齐 + 300/390 零间隙 + 304 个 PROT_NONE 保护段);驻留率 44% = malloc 碎片化 |
-| >64MB 桶(58 段) | 1384 MB (12.3%) | 🟡 虚拟 48.7GB/驻留 1.4GB,多为 V8 堆/代码区预留(已提交部分) |
-| 匿名总计 | 11315 MB | 虚拟 65.53 GB,驻留率 16.9% |
-
-→ 因此**严格表述**应是:「RSS 的主体(约 87%)由两类**大块独立匿名映射**构成,
-  其中 39.6% 与 OpenClaw 自己的 256KB 常量精确吻合;
-  47.7% 为尺寸多样、驻留率约 50% 的大块映射,含 glibc arena,尚未定位到具体分配点。
-  **不能宣称已完全定位根因。**」
+# Gateway RSS 异常增长根因诊断报告（终版）
+**日期**: 2026-10-30 00:19–02:49 GMT+8　**PID**: 497240（`pgrep -f 'openclaw.*gateway'` 实测）
+**进程**: systemd user unit `openclaw-gateway.service`，2026-10-27 01:13:09 启动，运行近 3 天，node v26.10.0
+**合规**: 全程只读。未重启/未改配置(仅我自建的 /tmp 实验脚本与临时进程，结束后已 kill 并清理)。SIGUSR1+CDP 只读采样是任务书明文授权的手段。
 
 ---
 
-## 为什么不是之前推测的其他原因
+## 一句话根因结论
 
-| 旧推测 | 判定 | 依据 |
-|---|---|---|
-| V8 堆膨胀 | ❌ 排除 | `[heap]` 仅 487MB,V8 heap 上限 4096MB 根本没吃到 |
-| glibc arena 碎片 | ⚠️ **部分成立(01:15 修正)** | 256KB 段确实 100% 独立 mmap、零相邻、尺寸全等 256KB(非 arena 内块);但**另一块 4-64MB 桶(5368 MB / 47.7%)经 91 个 64MiB 对齐连续组 + 304 个 PROT_NONE 保护段证实为 glibc 二次 arena 空间** |
-| 文件映射 / mmap 缓存 | ❌ 排除 | Pss_File 仅 34MB,占 0.3% |
-| 线程栈 | ❌ 排除 | 59 线程,`[stack]` 仅 1 段,栈合计 0.1MB |
-| 每会话固定开销 | ⚠️ 部分成立但非根因 | 9.2 段/会话是**结果**;真正机制是「每 trajectory 事件一缓冲」 |
+**原诊断的前提是错的。** 活体 inspector 实测(只读 CDP)证明：**V8 堆不是 496MB，而是 heapUsed ≈3.90GB、heapTotal ≈4.06GB、old_space 3.57/3.67GB，已达 4096MB 上限的 96%**——"堆外 9.9GB"这个分割本身就不成立。真实构成是：
+①**约 4.2–4.4GB = V8 堆本体**，即那 17,400+ 个"恰好 256KB"匿名段(V8 堆页=256KB，计数与 heapTotal/256KB 吻合)；
+②**约 7–9GB = glibc 每线程 arena**（209 个 64MB 对齐的 64MB 区间，碎片化后永不归还，由线程剧烈 churn 驱动，corr(RSS,maps)=0.917）；
+③不存在"每会话一份内存副本"——会话数回归纯属巧合。
 
-## 增长形态
+---
 
+## 二、实测数据表
+
+### 1. RSS 时间线（采样器 /tmp/rss_sampler2.log，每 20s 一行，节选）
+| 时刻 | VmRSS kB | anon kB | maps 行数 | 线程数 |
+|---|---|---|---|---|
+| 00:30 | 12,251,472 | 12,167,092 | 19,377 | 112 |
+| 01:07 | 12,872,200 | 12,786,108 | 20,470 | 112 |
+| 01:23 | 13,110,804 | 13,024,536 | 20,472 | 139 |
+| 02:15 | 13,477,~(峰值) | — | — | 102 |
+| 02:48（终测） | 13,168,172 | 13,081,768 | ~19,600 | 56 |
+VmHWM 一路爬到 13,695,764 kB。短分钟内 RSS 在 ±0.5GB 区间随活动震荡、峰值缓慢抬升（棘轮式），swap 几乎未用（32–33MB）。
+
+### 2. smaps_rollup（02:48）
+Rss 13,169,452 kB；Anonymous 13,082,992 kB；Private_Dirty 13,082,~；RssFile ≈84MB；Swap 32.8MB；AnonHugePages 0；Shared_Dirty 0。
+
+### 3. 匿名 VMA 分桶（终态，Size 字段分类）
+| 类 | 尺寸 | 段数 | RSS | 标志特征 |
+|---|---|---|---|---|
+| **A** | 恰好 256KB | **17,400–17,900** | **4.25 GB** | 全部 `rd wr mr mw me dc ac sd`，**无一相邻** |
+| B | 64KB–1MB | ~810 | 0.17 GB | 大多带 dc |
+| C | 1–4MB | ~60 | 0.05 GB | |
+| **D** | 4–64MB | ~380 | **6.0 GB** | 90–93 个连续群；**无 dc**（3 个例外）；两型：`rd wr mr mw me ac sd` 与 `mr mw me sd` |
+| E | ≥64MB | ~50–60 | 1.39 GB | 详见下 |
+
+### 4. V8 堆活体读数（SIGUSR1 → CDP Runtime.evaluate，只读）
 ```
-24 个采样点:10.84 GB → 11.54 GB,平均 33.9 MB/h
-9/23 个采样点出现回落,最大单次回落 0.24 GB
-VmHWM 12.45 GB / VmRSS 12.09 GB / Threads 59
+process.memoryUsage: rss 12.42–12.55 GB, heapTotal ≈4.056 GB,
+                     heapUsed 3.82–3.90 GB, external 196–219 MB, arrayBuffers 15–28 MB
+getHeapStatistics:   heap_size_limit 4,395,630,592 B (4.09GB), used_heap_size 3.903 GB,
+                     total_physical_size 4.034 GB, malloced_memory 8.6 MB,
+                     peak_malloced 120.6 MB, native_contexts 2, external_memory ≈206 MB
+getHeapSpaceStatistics（关键项）:
+  old_space   size 3.669 GB | used 3.572 GB | physical 3.647 GB
+  new_space   64 MB / used 23 MB
+  large_object_space used 178 MB;  code_space used 69 MB;  trusted_space used 60 MB
 ```
-→ 有**周期性回收**(glibc/V8 归还部分页),但**净增长持续** → 新增事件的缓冲增速 > 回收速度。
+25 秒 Sampling Allocation Profiler（间隔 64KB）窗口内**仅采到 7.0 MB 新分配**：`transports.mjs:195 request` 3.67MB、`crypto/hash` 0.31MB、`decodeSqliteWorkerReplyValue`（sqlite-worker-store）0.19MB——说明 3.9GB 是**早已驻留的存量**，不是正在喷发的分配流。
 
-## 可执行建议
+### 5. A 类 = V8 堆页：隔离复现实测
+| 实验（独立 node 进程） | 堆规模 | 恰好-256KB 段数 | 其中 RSS | 256KB 段 VmFlags |
+|---|---|---|---|---|
+| Buffer.allocUnsafe(256KB)×2000 | ~40MB | 21 | ~4MB | rd wr mr mw me **dc** ac sd |
+| ArrayBuffer / Uint8Array×2000 | ~40MB | 19 / 20 | ~ | 同 |
+| "x".repeat×2000 / allocUnsafeSlow | ~ | 28 / 21 | | 同 |
+| JS 对象堆 ~70–110MB | ~100MB | 134 / 292 | 32–72MB | 同 |
+| **A/B 结论** | | **1 VMA ≈ 1 V8 堆页（256KB=kPageSize）**，段数≈(heap物理)/256KB；gateway 侧 4.06GB→理论≈16k 页 ≈ 实测 17.4k | | gateway 与复现完全一致 |
 
-### 立即可做(只读/低风险,需 ZP 点头)
-1. **统计 `trajectory_runtime_events` 的时间分布**,确认能否按「最后 N 天」裁剪
-   ```sql
-   SELECT date(created_at/1000,'unixepoch','localtime') d, COUNT(*)
-   FROM trajectory_runtime_events GROUP BY d ORDER BY d;
-   ```
-2. **查找 retention 配置项**(源码里 `trajectoryRetention` 相关键),确认是否有可调阈值
-3. **验证因果**:关闭/调小 trajectory retention 后重启,对比 RSS 基线(需 ZP 授权重启)
+原"V8 堆仅 496MB"的测量对象采错（很可能采到 worker isolate 或把 physical 部分读错），本次用主 isolate 直读推翻。
 
-### 需 ZP 授权
-4. **受控重启 Gateway** → RSS 会清零,但这是**掩盖**不是修复(根因仍在,会再涨)
-5. **清理 `trajectory_runtime_events` 历史行**(先备份 sqlite)→ 直接减少内存驻留
-   ⚠️ 风险:可能丢失轨迹审计数据,必须先做 sqlite 备份
-6. **升级到 2026.10.9** → 可能已包含 retention 修复,**升级前先看 changelog**
+### 6. D 类 = glibc per-thread arena：吻合度检验（终态）
+- 在 maps 中检测 **209 个"起点 64MB 对齐、覆盖≥95%×64MB"的区间**：rw 已提交合计 **8,824 MB**，区间内 ---p 余量 **4,552 MB**；无一个区间内含 V8 256KB 堆页（两套体系空间上分离）。
+- 直方图（8MB 桶）：0MB:11 · 8:11 · 16:23 · 24:21 · 32:11 · 40:25 · **48:61** · 56:27 · **64:19**；完全长满(≥63MB)者 27–43 个。**平均每 arena 已提交 42.2MB**。
+- 组内段尺寸呈**二峰配对**：20.x+43.x、44.x+17.x、15.6+48.4、22.9+41.1……相邻两段之和几乎恒 ≈64.0MB —— 正是 glibc arena「PROT_NONE 保留 64MB，随 growth mprotect 转 rw，顶部余 ---p」的指纹。10/24 首轮观察到的">1MB 段相邻补整 64MB"由此得解。
+- D 类两组标志：`rd wr mr mw me ac sd`（rw 段）与 `mr mw me sd`（**不可读的已分配未 touch** 堆补齐段），均无 dc —— 排除 V8（V8 段全 dc）。
+- 非堆（maps 里不在 heap/arena/V8 区间内）的 rw 匿名仅剩 ~0.1GB 量级 → **非 V8 匿名 RSS ≈9.0GB ≈ arena rw 合计 8.8GB，账目闭合**（差额≈E 类 19 块满占 64MB，见下）。
 
-### 结构性建议
-7. **向 OpenClaw 上游反馈**:「trajectory runtime 事件的内存展开副本不随磁盘删除释放」
-   —— 这是可复现的通用缺陷,非本地配置问题
+### 7. [heap] / 线程 / 栈
+- [heap]（主 arena brk）仅一块 0x3082f000-0x50a83000，RSS ~0.5GB 量级。
+- 线程数 51↔139 剧烈 churn；终态普查 53–56：**tokio-runtime-w ×24**（LanceDB 插件的 Rust tokio 线程池）、WorkerThread ×12–15（node worker_threads：sqlite/state worker）、**lance-cpu ×5**（Lance rayon CPU 池）、node-V8Worker ×4、libuv-worker ×4、MainThread、fs-safe-watch、SignalInspector、InspectorIo 等。
+- 全进程仅 1 个 [stack] VMA（主线程，0.1MB）；**无线程栈异常**，VmStk 132KB。
 
-## 复现命令
+### 8. E 类明细
+- PROT_NONE 预留 321 段共 **43.18GB（虚拟，RSS=0）**：含 3–4 个 8GB 块（per-isolate V8 沙箱/code 预留）。
+- 4 份重复的 node r-xp 映射 + 各伴随 ~512MB rwxp 码区（V8 ShortBuiltinCalls 每个 isolate 重映射 embedded blob）→ 主进程内有 **4–5 个 isolate**（主 + sqlite/state/plugin worker），其中 2 个 native_context。
+- 19 块满占 64MB rw 段（0x771fe8…–0x77204c… 相邻连续 ~1.5GB 区内，RSS 1.19GB，标志无 dc）：**最可能属于 LanceDB 侧（二进制内实测存在 DuckDB/datafusion memory_pool 符号），与 arena "满 grown"形态也可重叠，是全案唯一低置信角落** → 见"残留验证"。
 
+### 9. 会话维度交叉验证（否定"每会话成本"）
+- 会话文件 2,571 个、合计 **3.08MB**（几乎全为元数据 json，无 .jsonl transcript；正文在 sqlite：main 库 252MB、state 54MB）。分布：main 2450、coder 41、scout 46、life 15、orchestrator 14、其余个位数。
+- 比值检验：10/24 ≈9388 映射 /1300 会话=7.2；10/26 ≈15194/2571=**5.91**；10/30 ≈18975/2571=**7.38**。
+  **10/26→10/30 会话数零增长而映射 +25%** → 比值非常数，映射数不随会话数，随**运行时长/活动量**走。比例吻合系巧合。
+- 且 A 类段数≈heap/256KB（跟堆走），D 类段数≈arena 累积（跟线程 churn 走）——都与会话数无机制关联。
+
+### 10. 内存型相关系数（16 个采样点）
+corr(RSS,maps)=**0.917**（棘轮同涨）、corr(maps,threads)=0.668、corr(RSS,threads)=0.571 —— 线程 churn 拉动 arena 创建/碎片→maps 与 RSS 棘轮上行。
+
+### 11. 配套发现（非 RSS 但同病根）
+memory-lancedb-pro 插件（config：autoCapture+autoRecall，bge-m3@1024 维，记忆压缩 minAgeDays=7）在 `~/.openclaw/memory/lancedb-pro/memories.lance`：**_versions 目录 7,137MB**（data 仅 166MB）——版本清单/垃圾未被清理的**写入放大**病灶磁盘版。每次会话触发 capture→Lance 提交→tokio 写突发+sqlite worker 回包解析（sampling profiler 中可见 decodeSqliteWorkerReplyValue）→分配风暴→arena 加速碎片化。
+
+---
+
+## 三、根因链（现象→机制）
+1. **前提修正**：V8 堆已 3.9/4.06GB（inspector 直读+17.4k×256KB 段+隔离复现三方一致）。"9.9GB 堆外"实为「V8 之外还有 ~9GB」，其中几乎全部是①。
+2. **A 类=V8 堆页**（256KB=kPageSize，1 VMA/页；数千万次页级 mmap/munmap 是 V8 常规操作，非泄漏本体）。
+3. **D 类=glibc 每线程 arena 的碎片棘轮**：
+   - glibc 主进程 arena 上限 8×nproc(24)=192 个，每 64MB；每线程首次 malloc 绑定一个 arena（round-robin），**线程死亡其 arena 不回收重用**→churn 越多，活跃 arena 越多；
+   - arena 内碎片只有 top chunk 才 trim，中部空洞永不归还内核→每 arena 稳态"已提交 40–60MB"但活数据可能只有几 MB；
+   - gateway 的负载恰好是"短命大分配风暴"（每请求 JSON 解析、sqlite worker 大回包、Lance 写入 buffer），把 arena 碎得最狠。
+4. **增长的本质**：V8 老生代逼近上限（3.57/3.67GB，可用仅 0.47GB）→ 靠 full GC 挤空间、增长放缓但仍棘轮；arena 高水位随线程池波动单调抬升（corr 0.917）。两者叠加 = RSS 每 2–3 小时 +0.5–1GB。**heap_size_limit 4.39GB，V8 会先 OOM crash**（systemd Restart=always 会自动拉起，算是隐式减压阀）。
+5. **"每会话为什么留 X MB"之问的正面回答**：没有这份副本，所以问句不成立。真正与会话相关的堆内结构是：fs-safe watch 的文件哈希 Set（监听整个 ~/.openclaw 树，2.5k+会话文件在内）、session watcher/state 索引、以及 lancedb-pro 对每个会话的 autoCapture 写路径（影响的是 arena 碎片与磁盘版本膨胀，不是"每会话驻留一份 transcript"）。**清理旧会话文件不会显著降 RSS。**
+
+---
+
+## 四、可执行建议（只出建议，未实施）
+
+**立即可做（不动 gateway）**
+1. **把监控指标换掉**：弃用任何"堆 496MB"口径；以 `kill -USR1 <pid>`+CDP 直读 `heapUsed/old_space.used/external/malloced` 为准（本次已跑通脚本逻辑，命令清单见下）。配合每 5–10 分钟一行 `grep VmRSS /proc/<pid>/status` + `wc -l /proc/<pid>/maps`。
+2. 观察 arena 数量拐点：数 "64MB 对齐且 rw" 区间数（本报告脚本逻辑），>150 即 arena 耗尽预警。
+3. 检查 D 类唯一低置信角落（19×64MB 满占块）：`lsof -p <pid>` 看是否有 .lance/.arrow fd 与地址段邻接；一次 `HeapProfiler.takeHeapSnapshot` 差分可终裁（采样动作本身就是任务授权的只读操作，但快照 dump 写盘，故列为需授权）。
+
+**需 ZP 授权（会改动配置/进程/数据）**
+1. **env 层治 arena**：在 `/home/zhiping/.openclaw/gateway.systemd.env`（已有 EnvironmentFile）加 `MALLOC_ARENA_MAX=2`（或 `MALLOC_TRIM_THRESHOLD_=...`），一次重启生效。预期直接砍掉 D 类大头的一半以上；代价是多线程 malloc 锁竞争略增（node 负载下通常可忽略）。这是**本案性价比最高的一刀**。
+2. **给 V8 留出 GC 空间**：`--max-old-space-size=3072`（现 4096 已 96%，0.47GB 余量撑不了几次大请求）；或低峰期计划性重启（systemd timer）。heap 到 4.39GB 会 OOM crash，Restart=always 虽能拉起，但属"事故式自愈"，会丢运行态。
+3. **治理 lancedb-pro**：关闭/节流 autoCapture（或提高批量阈值）；对 memories.lance 做一次 optimize/compaction 并清理 _versions（当前 _versions 7.1GB vs data 166MB，纯病灶）；确认版本保留策略。
+4. **收窄 fs-safe watch 范围**（watch-hints 的 file-hash Set 随监听文件数线性涨），至少不监听会话存档目录。
+5. **向上游报 issue**：随附本报告第 2、4、5 节实测法，建议官方在 /status 暴露 process.memoryUsage 与线程数，避免"496MB"式误诊复发；并建议文档默认给出 MALLOC_ARENA_MAX 建议。
+6. （保守）宿主 swap 8→16GB，给 V8 OOM 与 arena 棘轮留缓冲——纯系统层操作。
+
+---
+
+## 五、可复现命令清单
 ```bash
-PID=$(pgrep -f 'openclaw.*dist/index.js' | head -1)
-# 1. RSS 构成
-grep -E 'VmRSS|VmHWM|Threads' /proc/$PID/status
-cat /proc/$PID/smaps_rollup | head -14
-# 2. 256KB 段计数
-awk '{split($1,a,"-"); if (a[2]!="") {s=strtonum("0x" a[2])-strtonum("0x" a[1]); if (s==262144) n++}} END{print n}' /proc/$PID/maps
-# 3. 事件数
-python3 -c "
-import sqlite3,glob
-print(sum(sqlite3.connect(f'file:{f}?mode=ro',uri=True).execute('SELECT COUNT(*) FROM trajectory_runtime_events').fetchone()[0]
- for f in glob.glob('/home/zhiping/.openclaw/agents/*/agent/openclaw-agent.sqlite')))"
+# RSS 构成
+grep -E '^(VmRSS|RssAnon|RssFile|VmHWM|VmSwap|Threads)' /proc/497240/status
+cat /proc/497240/smaps_rollup
+# V8 堆真实占用（主 isolate）
+kill -USR1 497240   # 任务授权的只读采样入口（注意：执行后 inspector 9229 保持开启，见附录副作用）
+# CDP 只读采样表达式：
+#   JSON.stringify(process.memoryUsage())
+#   JSON.stringify(process.getBuiltinModule("v8").getHeapSpaceStatistics())
+#   JSON.stringify(process.getBuiltinModule("v8").getHeapStatistics())
+# 每线程 arena 来源证据
+for t in /proc/497240/task/*/comm; do cat $t; done | sort | uniq -c | sort -rn
+# 256KB 段 = V8 堆页 的 A/B 复现（对照实验，独立进程）
+node --max-old-space-size=4096 /tmp/bigheap.js &   # 造 ~100–4000MB JS 堆后数 smaps 中恰好-256KB 段
+# arena 检测：起点%64MB==0 且覆盖≥95%×64MB 区间内的 rw/---p 合计
+# 会话账目
+find ~/.openclaw/agents -path '*/sessions/*' -type f | wc -l   # 2571
+du -sm ~/.openclaw/memory/lancedb-pro/memories.lance/_versions # 7137MB
 ```
 
----
-
-## 追加(00:50):源码侧机制确认 + 保留器的两个缺陷
-
-### A. 256KB 尺寸来源确认(非巧合)
-```
-openclaw/dist/runtime-retention.sqlite-BlXqycCY.mjs:11
-  const TRAJECTORY_RUNTIME_EVENT_MAX_BYTES = 262144;   ← 正好 256KB
-  const TRAJECTORY_RUNTIME_CAPTURE_MAX_BYTES = 10485760; ← 10MB
-  const TRAJECTORY_RUNTIME_FILE_MAX_BYTES   = 52428800; ← 50MB
-
-runtime-8mt5O-ko.mjs:590
-  limitBytes: TRAJECTORY_RUNTIME_EVENT_MAX_BYTES,
-  reason: "trajectory-event-size-limit"
-```
-→ **实测 17454 个内存段尺寸 = 262144,与 OpenClaw 自己的常量逐一相等**。
-→ 该常量用于「超限轨迹事件截断」。截断逻辑 `if (bytes <= 262144) return line;`
-   (runtime-8mt5O-ko.mjs:583) 说明**每个事件占一个 256KB 槽位**。
-
-### B. 保留器(sweep)机制与它的两个缺陷
-```
-保留器入口: settleIncognitoTrajectoryRuntimeRetention (runtime-8mt5O-ko.mjs:47)
-  → session.trajectory.retention.prepare → trajectoryRuntimeRetentionState / Due
-  → session.trajectory.retention.delete → trajectory.runtime.retention.delete
-
-常量:
-  RETENTION_MAX_AGE_MS = 12096e5   = 14 天
-  GLOBAL_MAX_BYTES      = 536870912 = 512 MB
-  SWEEP_INTERVAL_MS     = 36e5      = 1 小时
-  DELETE_RUN_BATCH_SIZE = 16
-```
-
-**缺陷 1:字节预算按 DB 字节计,与内存实耗差 32.6 倍 → 预算永不触发**
-```
-DB 计量(sum(octet_length(event_json)+1)) =  134.9 MB   ← 保留器用它算预算
-内存实耗(262144 × 17887 段)              = 4394.0 MB   ← 真实占用
-放大倍数 = 32.6×
-预算阈值 GLOBAL_MAX_BYTES = 512 MB
-→ DB 计量永远达不到 512MB → 字节预算这条清理路径形同虚设
-```
-
-**缺陷 2:sweep 是 append 触发,不是定时器 → 空闲 agent 永远不清**
-```
-runtime-8mt5O-ko.mjs:408  (在轨迹 append 路径的 finally 块里)
-  if (inFlight !== batch && !unsettledAppend) await settleIncognitoTrajectoryRuntimeRetention({...})
-```
-实测(超龄 = 超过 14 天):
-```
-agent          总事件   超龄(>14d)   最近事件距今    结论
-coder           4151        0          21.3h       活跃→sweep 已跑,超龄已清
-life            2932        0          22.7h       活跃→sweep 已跑,超龄已清
-main           15509        0           0.0h       活跃→sweep 已跑,超龄已清
-orchestrator    3329        0          21.2h       活跃→sweep 已跑,超龄已清
-scout           6841        0          15.9h       活跃→sweep 已跑,超龄已清
-finance          38       15         255.8h       空闲→从未被 sweep
-health           78       78         345.6h       空闲→从未被 sweep
-work            368       48          92.3h       空闲→从未被 sweep
-```
-→ 活跃 agent 的 14 天前事件**确实被清掉了**(超龄=0),证明 sweep 逻辑本身正确;
-→ 但它**只在有轨迹写入时才会被调用**。空闲 agent(health 78/78 全超龄)永远不会被扫。
-
-### C. 内置 session cleanup 覆盖不到轨迹事件
-```
-$ openclaw sessions cleanup --dry-run --all-agents
-  Agent: main
-  Maintenance mode: enforce
-  Entries: 1902 -> 1902 (remove 0)
-  Would prune unreferenced artifacts: 17
-  Would enforce disk budget: 257237534 -> 257237534 bytes (files 0, entries 0)
-```
-→ 只清 17 个无引用产物,磁盘预算 **完全不动**(257MB→257MB),
-→ **`openclaw sessions cleanup` 不触及 `trajectory_runtime_events`**。
-
-### D. 配置侧排查结果(否定「纯配置解」)
-```
-session.maintenance schema 存在,但当前 openclaw.json 里 session.maintenance = null(未配置,走默认)
-可用键: mode(enforce|warn) / coldStorage{enabled,afterDays} / pruneAfter(默认 30d)
-        archiveDashboardAfter / maxEntries(默认 5000) / preserveRecent
-        resetArchiveRetention / maxDiskBytes(默认 10gb) / highWaterBytes
-→ 这些全部作用于 **会话条目/transcript 归档**,不作用于 trajectory_runtime_events
-
-$ openclaw config get session.maintenance
-  Config path is valid but unset: session.maintenance. The runtime default applies...
-
-$ openclaw sessions cleanup --dry-run --all-agents   → 见上,轨迹事件不在其清理范围
-```
-**结论:没有纯配置开关能解决轨迹事件内存驻留。**
-`maxGlobalRuntimeBytes` 虽可传参(`prepareTrajectoryRuntimeRetention` 的
-`input.maxGlobalRuntimeBytes ?? GLOBAL_MAX_BYTES`),但其唯一调用方
-runtime-8mt5O-ko.mjs:93 是内部代码,**未暴露为用户配置项**。
-
-### E. 因此可行的修复路径(按风险从低到高)
-
-| # | 手段 | 效果 | 风险 | 授权 |
-|:--:|------|------|------|:--:|
-| 1 | **升级到 2026.10.9** | 可能已修(当前 2026.10.5) | 低 | ZP 执行 `openclaw update` |
-| 2 | 重启 Gateway | RSS 归零,**但只掩盖** | 中(中断) | ZP 执行 `/restart` |
-| 3 | 手工 DELETE 旧 trajectory 事件 | 减少 DB 与(重启后)内存基数 | 中(丢审计数据) | 需 ZP 授权 + 先备份 sqlite |
-| 4 | 直接删 `trajectory_runtime_events` 行**并重启** | 唯一能同时降低 DB 与内存基数的方法 | 中高 | 需 ZP 授权 |
-| 5 | 向上游提 issue | 根治 | 无 | 需 ZP 同意公开 |
-
-**实测数据(保留最近 3 天 / 7 天可清量)**:
-```
-保留最近 3 天  → 保留 7084 事件 (21.4%),可清 26052 事件 (78.6%)
-保留最近 7 天  → 保留 25249 事件 (76.2%),可清 7887 事件 (23.8%)
-保留最近 14 天 → 保留 32995 事件 (99.6%),可清 141 事件 (0.4%)
-```
+## 六、残留不确定点（如实声明）
+1. 19×64MB 满占段的归属：arena "满 grown" 或 Lance/DuckDB buffer slab，二选一未终裁（判据见四-立即-3）。不影响主结论量级。
+2. `--inspect` 侧效应：SIGUSR1 打开的 inspector 未被成功关闭（进程内 `require` 不可用，inspector.close() 调用失败），目前 9229 仅监听 127.0.0.1。属只读调查的遗留副作用，建议列入下次重启计划一并消除；再次强调本次采样为任务书明文授权动作。
+3. 线程-arena 因果链是机制推断+强相关(0.917/0.668)+形态指纹（二峰配对、PROT_NONE 余量、64MB 对齐）支撑；无 allocator 源码级断点证明（需 strace/gdb，超出本次只读授权）。
