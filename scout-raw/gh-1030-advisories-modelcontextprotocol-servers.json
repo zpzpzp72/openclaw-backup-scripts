@@ -1,0 +1,15 @@
+{"ghsa_id":"GHSA-w766-5x43-whvw","published_at":"2026-10-28T21:13:40Z","severity":"medium","summary":"mcp-server-git: nested gitdir file bypasses --repository confinement"}
+{"ghsa_id":"GHSA-3jqg-r5pp-rmp2","published_at":"2026-10-25T00:15:37Z","severity":"low","summary":"robots.txt enforcement bypass via HTTP redirects in mcp-server-fetch"}
+{"ghsa_id":"GHSA-4gxg-m5jx-9j57","published_at":"2026-10-25T00:18:21Z","severity":"medium","summary":"Case-variant path bypasses symlink check and allows creating files outside allowed directories in server-filesystem"}
+{"ghsa_id":"GHSA-7rgq-gccq-qphx","published_at":"2026-10-25T00:18:38Z","severity":"medium","summary":"Path traversal via trailing quote/whitespace in validatePath (Check/Use Mismatch)"}
+{"ghsa_id":"GHSA-66qx-2266-pmj6","published_at":"2026-10-25T00:18:52Z","severity":"low","summary":"fetch server: SSRF guard treats the well-known NAT64 prefix 64:ff9b::/96 as public, so a metadata address is reachable on NAT64/DNS64 egress"}
+{"ghsa_id":"GHSA-v38p-wf49-hx2j","published_at":"2026-10-25T00:19:06Z","severity":"medium","summary":"fetch: private-address guard bypass via IDNA hostnames (check and connect resolve different names)"}
+{"ghsa_id":"GHSA-53mr-w429-c597","published_at":"2026-10-25T00:19:21Z","severity":"low","summary":"Parent-Directory Fallback TOCTOU in @modelcontextprotocol/server-filesystem Permits Arbitrary File Write Outside allowedDirectories"}
+{"ghsa_id":"GHSA-hhwq-wxfx-cj7g","published_at":"2026-10-25T00:19:37Z","severity":"low","summary":"@modelcontextprotocol/server-filesystem list_directory_with_sizes follows symlinks and leaks outside-directory file metadata"}
+{"ghsa_id":"GHSA-mvf5-2qqv-rg3c","published_at":"2026-10-25T00:19:52Z","severity":"medium","summary":" Cross-Origin Environment Variable Exfiltration in @modelcontextprotocol/server-everything"}
+{"ghsa_id":"GHSA-vjqx-cfc4-9h6v","published_at":"2026-02-25T23:21:57Z","severity":"medium","summary":"Path traversal in git_add allows staging files outside repository boundaries in mcp-server-git"}
+{"ghsa_id":"GHSA-5cgr-j3jf-jw3v","published_at":"2025-12-17T15:55:26Z","severity":"medium","summary":"Unrestricted git_init tool allows repository creation at arbitrary filesystem locations in mcp-server-git"}
+{"ghsa_id":"GHSA-9xwc-hfwc-8w59","published_at":"2025-12-17T16:01:56Z","severity":"medium","summary":"Argument injection in git_diff and git_checkout functions for mcp-server-git allows overwriting local files"}
+{"ghsa_id":"GHSA-j22h-9j4x-23w5","published_at":"2025-12-17T16:04:43Z","severity":"medium","summary":"Missing path validation when using --repository flag in mcp-server-git"}
+{"ghsa_id":"GHSA-hc55-p739-j48w","published_at":"2025-07-01T18:39:04Z","severity":"high","summary":"Path validation bypass via colliding path prefix"}
+{"ghsa_id":"GHSA-q66q-fx2p-7w4m","published_at":"2025-07-01T18:38:24Z","severity":"high","summary":"Path validation bypass via symlink handling"}

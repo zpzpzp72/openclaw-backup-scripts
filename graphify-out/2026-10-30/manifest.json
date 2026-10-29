@@ -1,0 +1,30 @@
+{
+ "date": "2026-10-30",
+ "kind": "nightly-scout-snapshot",
+ "sources": [
+  "arxiv:cs.AI",
+  "arxiv:cs.MA",
+  "arxiv:mcp",
+  "arxiv:tool-agent",
+  "github:mcp-org+anthropic+openai+vercel releases",
+  "github:6repos-commits",
+  "github:security-advisories-servers+registry",
+  "hn:firebaseio-top30",
+  "rss:openai/vercel/google-ai",
+  "anthropic:news-html-table",
+  "web:the-decoder/openai-cpu-cache",
+  "web:artificialanalysis/gemini-4-carbon",
+  "web:divagr/qwenputer"
+ ],
+ "raw_dir": "scout-raw",
+ "corpus": "graphify-out/raw/scout-2026-10-30-corpus.md",
+ "node_count": 249,
+ "edge_count": 465,
+ "arxiv_count": 127,
+ "release_count": 28,
+ "commit_count": 27,
+ "advisory_count": 20,
+ "news_count": 31,
+ "previous_snapshot": "graphify-out/2026-10-28",
+ "next_window": "2026-10-31T00:30+08:00"
+}

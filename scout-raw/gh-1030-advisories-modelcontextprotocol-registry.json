@@ -1,0 +1,5 @@
+{"ghsa_id":"GHSA-2v5f-5r6w-p67r","published_at":"2026-05-12T21:41:52Z","severity":"low","summary":"OCI validator skips ownership check on upstream rate limits"}
+{"ghsa_id":"GHSA-r48c-v28r-pf6v","published_at":"2026-05-04T14:46:47Z","severity":"medium","summary":"Unauthenticated SSRF: HTTP namespace verification dials 6to4 / NAT64 / site-local IPv6 addresses, bypassing private-address allowlist"}
+{"ghsa_id":"GHSA-rqv2-m695-f8j4","published_at":"2026-05-04T14:34:31Z","severity":"medium","summary":"Stored XSS in catalogue UI via attribute-quote breakout in publisher-controlled `websiteUrl`"}
+{"ghsa_id":"GHSA-v8vw-gw5j-w7m6","published_at":"2026-05-04T12:25:03Z","severity":"low","summary":"Open redirect via protocol-relative path in trailing-slash middleware"}
+{"ghsa_id":"GHSA-95c3-6vvw-4mrq","published_at":"2026-05-04T12:25:24Z","severity":"low","summary":"GitHub OIDC tokens replayable across registry deployments due to shared audience"}

@@ -1,0 +1,1434 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/fntQ4WW8eCnZsSQpCFEtQcNha3E</id>
+  <title>arXiv Query: search_query=abs:"tool agent" OR abs:"tool-use" OR abs:"LLM agent"&amp;id_list=&amp;start=0&amp;max_results=50</title>
+  <updated>2026-10-29T16:32:54Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=abs:%22tool+agent%22+OR+(abs:%22tool-use%22+OR+abs:%22LLM+agent%22)&amp;start=0&amp;max_results=50&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>50</opensearch:itemsPerPage>
+  <opensearch:totalResults>8692</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2610.37657v1</id>
+    <title>Heads of Security: Learned Attention Gates Improve Prompt Injection Robustness</title>
+    <updated>2026-10-27T17:58:52Z</updated>
+    <link href="https://arxiv.org/abs/2610.37657v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.37657v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We introduce Heads of Security (HoS), a prompt injection defense that enforces instruction-data separation via a small set of learned per-head attention gates. HoS learns how each head should redistribute attention between trusted and untrusted tokens, enabling models to reason over untrusted content without following injected instructions. We evaluate HoS on Llama-3.3-70B-Instruct and GPT-OSS-20B. We compare it against SecAlign++, a state-of-the-art finetuning-based defense, and ASIDE, a defense that, like ours, builds instruction-data separation into the model architecture. We show that HoS offers greater robustness to adaptive attacks, better performance on standard utility benchmarks, and matches top performance on standard agentic prompt injection benchmarks. More specifically, the black-box RL-Hammer attack reaches 97% ASR against GPT-OSS-20B and 85% against SecAlign, but only 10% against HoS. Claudini, a state-of-the-art white-box attack, strengthened against HoS through autoresearch, requires 3 times more FLOPs to reach the same ASR on HoS as it does on GPT-OSS-20B or SecAlign. HoS preserves base-model utility across standard multiple-choice benchmarks and prompting setups, whereas SecAlign and ASIDE degrade in few-shot settings. On agentic benchmarks with static attacks, HoS and SecAlign perform similarly and substantially improve the security-utility trade-off over the base model. ASIDE struggles with tool use, achieving only 10% utility. These results show that prompt injection robustness can be achieved and improved through targeted attention interventions.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-27T17:58:52Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Igor Shilov</name>
+    </author>
+    <author>
+      <name>Xiaoxue Yang</name>
+    </author>
+    <author>
+      <name>Alexander Panfilov</name>
+    </author>
+    <author>
+      <name>Evgenii Kortukov</name>
+    </author>
+    <author>
+      <name>Matthieu Meeus</name>
+    </author>
+    <author>
+      <name>Peter Romov</name>
+    </author>
+    <author>
+      <name>Wojciech Samek</name>
+    </author>
+    <author>
+      <name>Jonas Geiping</name>
+    </author>
+    <author>
+      <name>Yves-Alexandre de Montjoye</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.37649v1</id>
+    <title>Can LLMs Uncover Hidden Physical Laws through Free Exploration?</title>
+    <updated>2026-10-27T17:57:00Z</updated>
+    <link href="https://arxiv.org/abs/2610.37649v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.37649v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Scientific discovery often begins with an unexpected observation that prompts a new research question. In a world with altered physical laws, can large language models (LLMs) notice unexpected behavior, such as heavier objects falling more slowly, and discover the law through experiments without being told what to investigate? To evaluate this ability, we introduce LongChang, an automated framework that creates simulated worlds with altered physics, where one or more laws differ from ordinary physics. The evaluated LLMs act as explorers, manipulating objects and building tools to investigate their own questions without research tasks or hints about these laws. Separate LLM agents generate and review scenes, review tool designs, and evaluate reports for correctness and experimental support using the altered physical laws and exploration records. These records guide scene evolution for further exploration, allowing the full cycle to run without human intervention. Among 12 LLMs, GPT-6-Astra achieves a discovery rate of 16.7%, while the other 11 score 0%. The exploration records reveal uninvestigated anomalies and only partial identification of the altered physical laws.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-27T17:57:00Z</published>
+    <arxiv:comment>https://zhenyangcs.github.io/LongChang-website/</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Zhen Yang</name>
+    </author>
+    <author>
+      <name>Wen Wang</name>
+    </author>
+    <author>
+      <name>Xander Xu</name>
+    </author>
+    <author>
+      <name>Ying-Cong Chen</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.37648v1</id>
+    <title>Scaling Laws for Tool-Use Agents via Controllable Environment Synthesis</title>
+    <updated>2026-10-27T17:56:46Z</updated>
+    <link href="https://arxiv.org/abs/2610.37648v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.37648v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We explore how to build performant large language model (LLM) tool-use agents that complete complex, multi-step tasks. Specifically, we study how data composition in synthetically generated tool-use environments affects the training of such agents. To do so, we propose the SynthAPI pipeline, which explicitly controls the diversity of generated environments along the axes of tools, tasks, and the databases on which the tools operate. By systematically varying SynthAPI's generation controls in 458,752 tasks across 849 trained models of four different sizes, we derive a scaling law that predicts downstream tool-use agent generalization based on the scale and composition of the synthesized environments. These predictable relationships reveal several lessons for scaling tool-use agent data. As data budgets grow, scaling tool and database diversity becomes more effective than increasing the number of tasks, and increasing data complexity yields larger gains. Scaling according to these findings yields agents that outperform models trained on data from prior work in large-scale tool-use agent and synthetic environment generation across four evaluation benchmarks.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-27T17:56:46Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Andrew Szot</name>
+    </author>
+    <author>
+      <name>Samira Abnar</name>
+    </author>
+    <author>
+      <name>Omar Attia</name>
+    </author>
+    <author>
+      <name>Abbas Kazerouni</name>
+    </author>
+    <author>
+      <name>Michael Kirchhof</name>
+    </author>
+    <author>
+      <name>Cheng-Yu Hsieh</name>
+    </author>
+    <author>
+      <name>Raviteja Vemulapalli</name>
+    </author>
+    <author>
+      <name>Alexander Toshev</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.37533v1</id>
+    <title>Which Hand Was Late? Diagnosis for Robot Failure Recovery in Bimanual Tool Use</title>
+    <updated>2026-10-27T16:53:18Z</updated>
+    <link href="https://arxiv.org/abs/2610.37533v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.37533v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Failure diagnosers for robot manipulation are increasingly vision--language models (VLMs), trained and evaluated on single-arm failures produced by perturbing a successful demonstration. Bimanual tool use adds failures of other kinds: a tool that slips out of its socket while still held, two correct gestures made at different times, and attempts that fail for two reasons at once. On a simulated bimanual tool-use task whose failure causes are read from the recorded trace, we measure what each sensing channel lets a diagnoser tell. The tool's slip is read on the tool hand; which hand was late is read on both arms, while a sensor on one hand reads its own hand's delay and at most part of the other's; and whether a late attempt was also pushed too weakly is not identifiable from passive sensing when the tool hand is late. Within two attempts, a repair policy that escalates when the cause is not identifiable repairs as many failures as one told the true cause. A VLM's internal state carries the late hand almost perfectly, along a direction no closer to the one its answer reads than a random one; whether the answer reports it depends on the wording of the question.</summary>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-27T16:53:18Z</published>
+    <arxiv:primary_category term="cs.RO"/>
+    <author>
+      <name>Baptiste Bonin</name>
+    </author>
+    <author>
+      <name>Caro Strickland</name>
+    </author>
+    <author>
+      <name>Audrey Durand</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.37471v1</id>
+    <title>PerceptRL: Making Visual Perception Rewardable in MLLMs from Answers to Interactions</title>
+    <updated>2026-10-27T16:04:10Z</updated>
+    <link href="https://arxiv.org/abs/2610.37471v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.37471v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Fine-grained visual perception remains a bottleneck during post-training of multimodal large language models (MLLMs), as perceptual errors can constrain gains from reasoning-focused optimization. Although image-caption pre-training improves perception, its influence can weaken as subsequent stages change data mixtures and objectives. Continuing caption supervision during post-training is challenging because subjective, information-dense descriptions complicate verifiable reward design. We present PerceptRL, which strengthens perception at two complementary levels. Perception RL uses a multi-agent pipeline to extract verified errors from dense image captions and convert the corresponding visual facts into QA pairs with fixed answer labels and rule-based rewards. Chain QA links correlated errors, while multiple-choice QA combines unrelated errors. A specialized route targets high-error domains with tailored verification, and a domain-agnostic general route covers errors beyond these domains. Perception Agentic RL addresses fine-grained and dense cases unresolved by single-turn Perception RL through multi-turn inspection with visual tools. We observe coordinate drift even in models trained to use tools, where incorrect crops or annotations distort evidence and propagate errors. Coordinate Injection corrects spatial operations in cold-start trajectories, while a grounding-aware process reward supervises intermediate spatial fidelity alongside final-answer correctness. Training proceeds through shared cold-start SFT, single-turn Perception RL, and multi-turn Perception Agentic RL. Across seven benchmarks under a shared tool-use protocol, PerceptRL achieves 71.6% average accuracy, surpassing the base model with the same tools and the strongest evaluated frontier VLM by 15.7 and 5.2 percentage points, respectively.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-27T16:04:10Z</published>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Tongkun Guan</name>
+    </author>
+    <author>
+      <name>Zhibo Yang</name>
+    </author>
+    <author>
+      <name>Mingkun Yang</name>
+    </author>
+    <author>
+      <name>Haocheng Wang</name>
+    </author>
+    <author>
+      <name>Wei Shen</name>
+    </author>
+    <author>
+      <name>Xiaokang Yang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.37405v1</id>
+    <title>Clearing the FoG: Training KG Agents to Retrieve the Evidence Behind Their Answers</title>
+    <updated>2026-10-27T15:20:37Z</updated>
+    <link href="https://arxiv.org/abs/2610.37405v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.37405v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language models (LLMs) can answer many factual questions correctly, but a correct answer is not necessarily a supported one. For an LLM agent, a knowledge graph (KG) plays two roles: as a source of answers, it supplies facts that the model lacks; as a source of evidence, it supplies the supporting triples that make an answer traceable and auditable. However, existing KG agents treat the KG only as a source of answers: their training data carries answers but not evidence, and their training rewards check the answer but not the retrieved evidence, so agents often answer correctly without retrieving the supporting triples. We propose FoG, a framework that trains KG agents to retrieve the evidence behind their answers. FoG consists of evidence-grounded synthesis, a KG interaction agent, and an evidence-coverage process reward (ECPR): the synthesis recursively hides explicit entities behind verifiable sub-questions, so that every question carries its supporting triples by construction; the agent records the triples returned by the KG; and ECPR credits each supporting triple to the turn that first retrieves it. Experiments on three KGQA benchmarks demonstrate that FoG enables 3B--4B open-source agents to outperform substantially larger baselines in answer accuracy and evidence coverage, with zero-shot cross-KG transfer.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-27T15:20:37Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Zongyuan Sun</name>
+    </author>
+    <author>
+      <name>Shuai Zhao</name>
+    </author>
+    <author>
+      <name>Yingjun Du</name>
+    </author>
+    <author>
+      <name>Ke Shu</name>
+    </author>
+    <author>
+      <name>Ziyue Zhu</name>
+    </author>
+    <author>
+      <name>Haoran Luo</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.37332v1</id>
+    <title>Hidden in Plain Sight: an Empirical Study about The Instruction Stacks of Coding Agents</title>
+    <updated>2026-10-27T14:38:25Z</updated>
+    <link href="https://arxiv.org/abs/2610.37332v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.37332v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Coding agents send their models more than the user's prompt: they add instructions, tool definitions, and environmental context that form an instruction stack. This stack guides execution and changes across releases, yet remains largely unexposed to users and insufficiently characterized in research. We present a longitudinal, cross-agent study of the instruction stacks captured in the first model requests of 1,886 releases of Claude Code, Codex, Gemini CLI, Qwen Code, and OpenCode. Under controlled conditions, we analyze their composition and evolution and trace changes in the four open-source agents to documented motivations. Our findings show why examining the system prompt or reporting the model alone provides an incomplete account of agent inputs. Tool definitions dominate three agents' latest requests, while occasional concentrated revisions alter instructions governing tool use, attribution, and coding style. Such revisions can complicate how researchers identify agent-authored contributions and interpret generated code. We also found that only 48% of examined change units directly explain the motivation for stack revisions. Across agents, shared capabilities emerge despite increasingly distinct wording. These findings expose an evolving, incompletely documented layer of agent design. The findings motivate documenting captured instruction stacks alongside agent releases, models, and user prompts, and preserving the rationale behind their revisions.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-27T14:38:25Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Felipe de Sant'Anna Paixão</name>
+    </author>
+    <author>
+      <name>Dhyego Tavares</name>
+    </author>
+    <author>
+      <name>Eduardo Almeida</name>
+    </author>
+    <author>
+      <name>Iftekhar Ahmed</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.37319v1</id>
+    <title>AnalogScout: Simulation-Efficient PVT-Aware Analog Sizing with LLM Agents</title>
+    <updated>2026-10-27T14:33:02Z</updated>
+    <link href="https://arxiv.org/abs/2610.37319v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.37319v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Analog device sizing must satisfy all specifications across process, voltage, and temperature (PVT) corners to ensure tape-out success, but simulating every candidate at all corners dominates the sizing time and slows design iteration. Conventional surrogate-based optimizers search the sizing space directly, while recent large language model (LLM) agents add circuit knowledge to designs but still delegate the sizes to global optimizers. Both learn the circuit response from repeated multi-corner SPICE simulations and optimize on top of it, which becomes expensive under a limited simulation budget. Providing an agent with reusable verified designs and sizing sub-blocks analytically could save most of this budget. We propose AnalogScout, a simulation-efficient PVT-aware sizing framework driven by an LLM agent. Combining elite-design reuse, analytic gm/Id local sizing and global refinement under full-corner verification, AnalogScout reduces power by 43.3% relative to the evolution strategy CMA-ES at an equal budget of 16k simulations on three SKY130 OTAs of increasing complexity, and reaches the final CMA-ES power after 7.0% of that budget. It also attains lower power than Bayesian optimization on all three OTAs and than two re-implemented LLM-driven flows on the two OTAs where they were tested.</summary>
+    <category term="cs.AR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-27T14:33:02Z</published>
+    <arxiv:comment>5 pages, 5 figures, 1 table. Submitted to IEEE ISCAS 2027</arxiv:comment>
+    <arxiv:primary_category term="cs.AR"/>
+    <author>
+      <name>Yichen Long</name>
+    </author>
+    <author>
+      <name>Keren Zhu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.37283v1</id>
+    <title>BenchMeUp: Building Software Engineering Benchmarks from Natural-Language Specifications</title>
+    <updated>2026-10-27T14:09:04Z</updated>
+    <link href="https://arxiv.org/abs/2610.37283v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.37283v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Software-engineering research relies on benchmarks that evaluate new techniques on a set of problem instances. Unfortunately, manually constructing benchmarks is labor-intensive, as researchers must find suitable instances, prepare execution environments, establish expected outcomes, and validate correctness.
+  This paper presents BenchMeUp, an approach for automatically creating software-engineering benchmarks from natural-language specifications. Given a specification defining the desired instances, data sources, and evaluation procedures, BenchMeUp generates search rules and a construction plan, invokes parallel LLM agents that identify candidate instances and construct executable instances, validates the results in fresh execution environments, and packages the instances behind a unified command-line interface. We evaluate the approach on four tasks: program repair, issue reproduction, compiler autotuning, and fixing static-analysis warnings. Targeting 50 instances per task (200 in total), BenchMeUp constructs 198 instances, of which 196 (99\%) are successfully packaged. Search and construction take 36 minutes and \$0.79 per instance, on average. Evaluating eight existing techniques on the generated benchmarks, we find that 189 of 196 packaged instances (96\%) support end-to-end evaluation, allowing users to study the effectiveness of the techniques. Checking every constructed instance against its source, the specification, and its expected outcome, we find that 180 of 198 (91\%) meet all criteria, compared with 10 of 200 instances delivered by Codex (general-purpose coding agent).
+  Overall, we show that LLM-based agents can automate benchmark construction across diverse software-engineering tasks and produce executable instances that existing techniques can use, while validity beyond execution still needs to be checked.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-27T14:09:04Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Islem Bouzenia</name>
+    </author>
+    <author>
+      <name>Michael Pradel</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.37242v1</id>
+    <title>Grounding LLM Agents in Business Processes: Process-Aware Knowledge Graphs for Reliable Multi-Step Service Invocation</title>
+    <updated>2026-10-27T13:45:29Z</updated>
+    <link href="https://arxiv.org/abs/2610.37242v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.37242v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language model (LLM) agents that call enterprise APIs must select the correct endpoints, follow process order, use valid payload keys, and choose coded values from predefined lists. However, current retrieval-augmented service discovery treats endpoints independently and therefore misses process and schema constraints. We address this limitation by integrating Open Data Protocol (OData) metadata and Business Process Model and Notation (BPMN) reference processes in a typed property graph. A hybrid retriever identifies candidate endpoints using dense embeddings and follows process edges to retrieve subsequent endpoints. We evaluate the method on 42 enterprise services with process-chain ground truth. For queries with low lexical overlap between the query and downstream entities, it improves Recall@3 by 5.7 points (n=74), with consistent gains across embedding models and cut-offs. It matches dense retrieval on other queries and provides no improvement on OpenAPI services without a process layer, indicating that the gains arise from process structure. We also evaluate an LLM agent on 81 multi-step queries. It completes 38.7% of tasks, compared with 10.3% for a chunk-based baseline. In an elicitation probe, providing valid code lists eliminates invented codes but leaves invalid keys in 46% of write runs. Full typed context reduces invalid calls to 3% (3 of 101 runs), with no invented codes. These results show that exposing process and schema constraints during retrieval improves the reliability of agent-driven API calls.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-27T13:45:29Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Saiful Khan</name>
+    </author>
+    <author>
+      <name>Afrah Farea</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.37081v1</id>
+    <title>OpenGray: a benchmark for evaluating the decisions of radiotherapy planning agents</title>
+    <updated>2026-10-27T11:42:47Z</updated>
+    <link href="https://arxiv.org/abs/2610.37081v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.37081v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Background and purpose: Radiotherapy planning agents based on large language models (LLMs) decide when to submit a plan or request review but are evaluated mainly by dose. This study developed OpenGray, a benchmark of planning tasks with known correct decisions. Materials and methods: OpenGray adds tasks with known answers to the OpenKBP-Opt head-and-neck dataset, including two contradictions with dose goals proven incompatible and a feasible control with a stored plan meeting every hard goal. Four systems, from a rule-based planning script to a full LLM agent, were evaluated on 30 patients, the LLM-based ones with a commercial (Terra) and a local (Ministral 3 8B) LLM. Decisions, achieved dose, problem recognition, and technical failures were recorded and also read from logs of 39 stereotactic radiosurgery runs of SAGE, a clinical LLM agent. Results: With Terra, the script preceded by an LLM review and the full agent had decision accuracies of 95.4% and 92.1%, respectively, yet escalated only 50% (95% confidence interval, 25-75%) and 25% (10-40%) of overlap contradictions, which required arithmetic on the anatomy. All four systems submitted every feasible control, but 24% of these plans missed a hard goal that the stored plan had met. In four SAGE runs, one goal failed at every attempt; the agent identified it in every reply but had no action for stopping. Conclusions: Favorable aggregate scores concealed specific decision failures. Planning agents should be evaluated on their decisions as well as their dose and given an explicit action for stopping and requesting review.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="physics.med-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-27T11:42:47Z</published>
+    <arxiv:comment>25 pages, 4 figures, 1 table, and the supplementary material (19 tables, 5 figures). Ancillary files: the paper in Markdown, structured results with the sentence each comes from, and an llms.txt index for AI agents</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Humza Nusrat</name>
+    </author>
+    <author>
+      <name>Kundan Thind</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.37055v1</id>
+    <title>Blindfold: Keeping the Audit Coin Secret from LLM Agents</title>
+    <updated>2026-10-27T11:24:12Z</updated>
+    <link href="https://arxiv.org/abs/2610.37055v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.37055v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Audit-based certification bounds the violation rate of an LLM agent by auditing a random fraction $\varepsilon$ of actions and reweighting the audited labels; its validity is meant to rest only on the defender's audit coin. We show that it also rests on a confidentiality property: the coin must not interfere with the agent's view before the action commits, at a time the agent chooses. We call this pre-commit noninterference (PNI) and measure its violation by $D_{\mathrm{A}}$, the total-variation distance between the agent's views under the two coin values. PNI is necessary and sufficient for an unbiased certificate against adaptive agents, the worst-case bias is $(1-\varepsilon)D_{\mathrm{A}}$, and no procedure that sees only audited labels can pay less. Leakage composes across steps, a resource shared across episodes opens a channel of computable size, and raising the audit rate cannot restore validity. On a monitor we built, a silent audit changes no output but adds latency that tool timestamps expose, and the agent can enlarge it. A real LLM agent follows an injection that names a visible audit notice (generic, tool, and timing clauses have no effect); over that channel the plain certificate fails on measured labels and, by a post-hoc analysis, in a live run on a pre-registered schedule, while a silent audit restores it. A fresh coin per audited call closes the timing channel; padding only narrows it.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-27T11:24:12Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Wei Zhu</name>
+    </author>
+    <author>
+      <name>Meiyun Zuo</name>
+    </author>
+    <author>
+      <name>Huiping Sun</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.36980v1</id>
+    <title>AutoVend: Benchmarking LLM Agents on Long-Horizon Autonomous Vending Operations</title>
+    <updated>2026-10-27T10:33:06Z</updated>
+    <link href="https://arxiv.org/abs/2610.36980v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.36980v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language model (LLM) agents are extending agent-mediated commerce on the Web from shopping for consumers to operating businesses for sellers. In online-to-offline (O2O) commerce, decisions are issued through Web-based platforms but realized through costly physical execution. Evaluating such agents requires going beyond individual transactions to ask whether decisions made online turn into sustained economic returns. We introduce AutoVend, a benchmark in which one LLM agent manages 20 vending machines across five site types through a Web-based operating interface for 180 simulated days. Its data-grounded simulator combines a shared warehouse, procurement lead times, paid replenishment, inventory expiration, and recurring operating costs. We evaluate five LLM agents against a rule-based inventory-control baseline and diagnose their site coordination, execution, and performance over time. Four of five evaluated LLM agents fall short of this baseline, and returns per dollar of inference cost rank models differently from returns alone. Operational analyses show that gains in individual metrics do not consistently yield stronger economic growth, as inventory and execution costs erode these gains. Trajectory analysis further reveals difficulties in grounding feasible actions, managing inventory commitments, and converting feedback into effective policy revisions.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-27T10:33:06Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Qiming Shi</name>
+    </author>
+    <author>
+      <name>Yikun Li</name>
+    </author>
+    <author>
+      <name>Beidi Luan</name>
+    </author>
+    <author>
+      <name>Rui Sun</name>
+    </author>
+    <author>
+      <name>Yan Ma</name>
+    </author>
+    <author>
+      <name>Jing Li</name>
+    </author>
+    <author>
+      <name>Daxin Jiang</name>
+    </author>
+    <author>
+      <name>Zuo Bai</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.36967v1</id>
+    <title>Proactive Memory for Event-Driven LLM Agents</title>
+    <updated>2026-10-27T10:23:50Z</updated>
+    <link href="https://arxiv.org/abs/2610.36967v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.36967v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Proactive LLM agents anticipate service opportunities from ongoing observations and accumulated history. Existing approaches emphasize recent context or retrieval of related memories, providing limited support for validating recurring behavioral regularities and assessing their applicability to the current event. We propose Proactive Memory (ProactMem), which organizes history into recent events, temporal trajectories, and behavioral regularities. Trajectory facts are checked against source events, and regularities are assessed through historical replay before being matched to current conditions. We also construct ProactiveStream, a longitudinal benchmark covering three application scopes, where agents process isolated event streams chronologically under episode-aware opportunity labels. On ProactiveStream, ProactMem achieves an overall effectiveness (F1) of 52.6%, a 21.4% relative improvement over the strongest of five external baselines. Code is available at: https://anonymous.4open.science/r/ProactMem-5351/.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-27T10:23:50Z</published>
+    <arxiv:comment>15 pages</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Jinyang Li</name>
+    </author>
+    <author>
+      <name>Zichuan Fu</name>
+    </author>
+    <author>
+      <name>Xian Wu</name>
+    </author>
+    <author>
+      <name>Wenlin Zhang</name>
+    </author>
+    <author>
+      <name>Yimin Deng</name>
+    </author>
+    <author>
+      <name>Kaifeng Guo</name>
+    </author>
+    <author>
+      <name>Guojing Li</name>
+    </author>
+    <author>
+      <name>Junjia QI</name>
+    </author>
+    <author>
+      <name>Xiangyu Zhao</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.36918v1</id>
+    <title>TrawMem: Reframing Agent Memory as Task-Oriented Role-Adaptive Workspaces</title>
+    <updated>2026-10-27T09:46:15Z</updated>
+    <link href="https://arxiv.org/abs/2610.36918v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.36918v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language model (LLM) agents rely on memory systems to leverage long-term interactions, yet existing systems typically retrieve memories based on their relevance to the current query and use them as contextual evidence. However, relevance alone does not characterize how a memory contributes to task solving: the same memory may serve different roles across tasks, such as directly supporting the answer or linking to complementary memories with weaker semantic relevance but necessary information. We therefore reframe agent memory systems as Task-Oriented Role-Adaptive Workspaces, where memories are selected and organized by their task-oriented roles and relations. Based on this view, we propose TrawMem, which organizes interaction histories into local threads and constructs task-oriented workspaces by assigning roles and jointly selecting complementary memories. Experiments on LoCoMo and MemGallery with four open- and closed-source backbones show consistent improvements over representative memory systems, with macro-F1 gains of 2.23-3.14 points. On LoCoMo, TrawMem improves the LLM-Judge score over SimpleMem by 4.07 and 4.31 percentage points on Qwen3.5-9B and DeepSeek-V4-Flash, respectively, while requiring approximately 12.8% and 5.1% fewer context tokens, respectively.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-27T09:46:15Z</published>
+    <arxiv:comment>31 pages, 18 figures, 3 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Mingyu Zhang</name>
+    </author>
+    <author>
+      <name>Zixu Li</name>
+    </author>
+    <author>
+      <name>Zhiheng Fu</name>
+    </author>
+    <author>
+      <name>Zhiwei Chen</name>
+    </author>
+    <author>
+      <name>Jinhe Bi</name>
+    </author>
+    <author>
+      <name>Yupeng Hu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.36894v1</id>
+    <title>ASNER: Software Architecture Recovery with Adaptive Semantic Neighborhoods and Evidence-Grounded Refinement</title>
+    <updated>2026-10-27T09:28:59Z</updated>
+    <link href="https://arxiv.org/abs/2610.36894v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.36894v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Automated software architecture recovery provides architectural context for software engineering and repository-level LLM agents. Existing methods combine structural and semantic signals, but functional relatedness does not necessarily imply shared architectural responsibility. Fixed thresholds or Top-K neighborhoods also ignore repository scale and local similarity distributions, introducing errors that propagate through clustering. Unconstrained LLM refinement may further alter correct assignments without sufficient evidence. We propose ASNER (Adaptive Semantic Neighborhoods and Evidence-Grounded Refinement for Software Architecture Recovery), based on responsibility-aware, project-adaptive relation modeling and evidence-grounded boundary verification. ASNER derives structured file responsibilities with an LLM, constructs semantic neighborhoods that adapt to repository scale and local similarity distributions, and augments a static dependency graph with selected semantic relations and weak directory cues. Community detection recovers the component backbone. A Responsibility-Ownership-Aware (ROA) Agent then examines uncertain boundary files using project-level responsibilities and traceable code evidence, changing assignments only when supported. Experiments on 12 open-source projects spanning C, C++, Java, and Python show that ASNER achieves the best macro-average on all five metrics on the common benchmark, improving ARI and c2c@66 over GAER-GAT by 19.5% and 32.9%, respectively. A downstream evaluation shows that ASNER-guided LocAgent improves file-, module-, and function-level code localization, demonstrating the value of its architectural context for repository-level software engineering tasks.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-27T09:28:59Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Wenhao Wang</name>
+    </author>
+    <author>
+      <name>Zhi Jin</name>
+    </author>
+    <author>
+      <name>Jia Li</name>
+    </author>
+    <author>
+      <name>Dongming Jin</name>
+    </author>
+    <author>
+      <name>Heng Tian</name>
+    </author>
+    <author>
+      <name>Yingtao Fang</name>
+    </author>
+    <author>
+      <name>Wenguang Ye</name>
+    </author>
+    <author>
+      <name>Tiankuo Zhao</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.36759v1</id>
+    <title>DocSkill: Skill-Integrated Agentic Reasoning for Multilingual Multi-Hop Document Question Answering</title>
+    <updated>2026-10-27T07:14:59Z</updated>
+    <link href="https://arxiv.org/abs/2610.36759v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.36759v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Multilingual multi-hop document question answering (MMHop-DocQA) requires locating and integrating evidence across complex layouts, document pages, and diverse languages. Existing approaches include single-pass processing and adaptive tool use, but learning to coordinate evidence acquisition, cross-page integration, and answer verification remains challenging. To address this challenge, we present DocSkill, an agentic framework with a learned skill-orchestration policy for adaptive evidence acquisition and reasoning. The policy selects, revisits, or skips skills according to the evolving evidence state. To construct supervision for skill orchestration, bounded Monte Carlo Tree Search (MCTS) explores alternative skill trajectories offline. These trajectories provide demonstrations for supervised fine-tuning (SFT) and preference pairs for Direct Preference Optimization (DPO). We further introduce MMHop-DocBench, a multilingual multi-hop document QA dataset with training and test splits, containing 60K QA pairs across 10 languages and eight document domains. Its HopGen pipeline builds hierarchical page-element graphs to derive traceable cross-page evidence paths and generate grounded QA pairs with page- and element-level evidence annotations. Experiments show that DocSkill with Qwen3-VL-8B achieves 41.0 accuracy and 49.2 F1 on MMHop-DocBench, exceeding the strongest evaluated baseline by 5.5 and 6.3 points, respectively, and achieving competitive performance on MMLongBench-Doc and DocBench.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-27T07:14:59Z</published>
+    <arxiv:comment>11 pages, 10 figures, 5 tables. Preprint</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Jing Huang</name>
+    </author>
+    <author>
+      <name>Zhiya Tan</name>
+    </author>
+    <author>
+      <name>Changtao Miao</name>
+    </author>
+    <author>
+      <name>Shutao Gong</name>
+    </author>
+    <author>
+      <name>Yang Wang</name>
+    </author>
+    <author>
+      <name>Joey Tianyi Zhou</name>
+    </author>
+    <author>
+      <name>Jianshu Li</name>
+    </author>
+    <author>
+      <name>Ying Yan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.36570v1</id>
+    <title>CASEL: Consequence-Aware Selective Execution for Reliable Long-Horizon Tool-Using Agents</title>
+    <updated>2026-10-27T03:19:41Z</updated>
+    <link href="https://arxiv.org/abs/2610.36570v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.36570v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tool-using language agents increasingly modify external systems, yet most runtime safeguards allocate scrutiny by generic uncertainty scores or coarse mutation heuristics. We introduce CASEL (Consequence-Aware Selective Execution Layer), a model-agnostic runtime allocation policy that combines calibrated failure probability, state-dependent consequence, reversibility, ambiguity, and evidence freshness to choose, for each proposed tool call, among direct execution, verification, sandboxing, clarification, approval, and abstention by minimizing a per-mode cost. We formalize direct execution as selective prediction and state and test the validity conditions of a finite-sample threshold and a trajectory risk ledger. In a controlled simulation over 20 seeds with 120,000 test actions each, in which every method has the same intervention menu and the same compute cost, CASEL reduces harmful-side-effect trajectories from 14.75 percent for an uncertainty-ranked gate to 7.02 percent and mean normalized harm from 0.184 to 0.123. A gate ranked by the product of failure probability and consequence reaches similar harm (5.82 percent, 0.120) but sends 45 percent more actions to human approval, and removing reversibility-aware routing raises the rate to 15.53 percent. A trajectory-level risk budget, in contrast, increases harm at equal cost (11.82 percent). Intervention effectiveness is assumed, not measured: the results rank allocation rules under the simulator's assumptions and do not establish deployment effectiveness.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-27T03:19:41Z</published>
+    <arxiv:comment>6 pages, 4 figures. Accepted at the 2026 5th International Conference on Cloud Computing, Big Data Application and Software Engineering (CBASE 2026)</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Yanyan Zhang</name>
+    </author>
+    <author>
+      <name>Fei Shen</name>
+    </author>
+    <author>
+      <name>Ting Yan</name>
+    </author>
+    <author>
+      <name>Hao Zhang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.36553v1</id>
+    <title>NextEval: An Agent-Based Solver and Benchmark for Derivative-Free Optimization</title>
+    <updated>2026-10-27T03:02:04Z</updated>
+    <link href="https://arxiv.org/abs/2610.36553v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.36553v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Derivative-free optimization (DFO) addresses problems where derivatives are unavailable or costly to obtain. This setting often arises in simulation-based and experimental applications, where evaluating the black-box objective can itself be costly. Thus, it remains a central challenge in DFO to effectively exploit accumulated observations to select informative evaluation points under a limited budget. In this light, we introduce the NextEval solver, an agent-based DFO solver, which integrates the capabilities of a large language model (LLM) to guide the sequential selection of evaluation points. Specifically, we establish a system that combines an LLM agent with a numerical environment. The environment provides tools for analyzing past evaluations and executing numerical methods, while maintaining a shared evaluation history and method-specific state to support continuation across method switches. Using observations and tool feedback, the LLM agent selects tools, configures their parameters, and allocates the evaluation budget, while numerical methods compute and evaluate candidate points. Building on this system, we also introduce NextEval Bench, a benchmark protocol for comparing agent configurations on shared DFO tasks using the same numerical tools under matched evaluation budgets and information constraints. Numerical results on low-dimensional DFO problems demonstrate that the NextEval solver outperforms the state-of-the-art DFO baselines in function-evaluation efficiency.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.OC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-27T03:02:04Z</published>
+    <arxiv:comment>27 pages</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Shuo Chen</name>
+    </author>
+    <author>
+      <name>Li Cui</name>
+    </author>
+    <author>
+      <name>Cunxin Huang</name>
+    </author>
+    <author>
+      <name>Ya-Feng Liu</name>
+    </author>
+    <author>
+      <name>Minghang Xie</name>
+    </author>
+    <author>
+      <name>Meng Xu</name>
+    </author>
+    <author>
+      <name>Zaikun Zhang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.36549v1</id>
+    <title>From Ripple to Boundary: Deterministic Impact Boundaries for LLM-Based Software Evolution</title>
+    <updated>2026-10-27T03:00:55Z</updated>
+    <link href="https://arxiv.org/abs/2610.36549v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.36549v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The landscape of software evolution is undergoing a fundamental paradigm shift in the era of Large Language Models. As industrial software engineering increasingly transitions toward design-driven code generation, the bottleneck of evolution has shifted from writing code to maintaining deterministic consistency between multi-source design assets and the generated code. When a design asset changes, LLM agents currently lack a deterministic impact boundary to identify which code must be evolved, leading to two failure modes: hallucinating missing changes or breaking unrelated code. Probabilistic approaches, such as semantic retrieval or text-based diffing, fail to capture the structural ripple effects across highly interconnected design dependencies. We propose a paradigm shift from probabilistic semantic retrieval to deterministic structural constraints. We formalize the design assets as a Knowledge Graph and organize them into a content-addressed Merkle Directed Acyclic Graph. Our key insight reveals a topological isomorphism between the logical ripple effect of a design change and the content hash propagation within the DAG. By leveraging this, we transform ambiguous impact analysis into verifiable structural operations. Through a two-phase diffing process, we extract a precise causal chain that defines the exact modification boundary. This boundary enables deterministic context injection, providing the LLM agent with strictly scoped code and design updates, thereby fundamentally guaranteeing evolution safety. As a by-product, the KG serves as an agent-queryable knowledge base for natural language design retrieval. Early deployment on a large-scale industrial payment platform demonstrates that our mechanism successfully computes the exact impact boundary and generates incremental code modifications that meet the expected design changes.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-27T03:00:55Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Jiameng Bai</name>
+    </author>
+    <author>
+      <name>Zhitao Wang</name>
+    </author>
+    <author>
+      <name>Long Wang</name>
+    </author>
+    <author>
+      <name>Keyue Qian</name>
+    </author>
+    <author>
+      <name>Sai Wu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.36541v1</id>
+    <title>The geometry of cognition: from neural populations to neurotechnology</title>
+    <updated>2026-10-27T02:54:14Z</updated>
+    <link href="https://arxiv.org/abs/2610.36541v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.36541v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Cognition is implemented by distributed neural populations whose collective activity evolves through structured, low-dimensional state spaces. In this review, we survey the analytical and conceptual tools used to study latent population dynamics in biological neural networks. We begin with single-unit coding, which remains essential for interpreting neuronal selectivity, and then review population-level approaches, including population vectors, cosine similarity, principal component analysis and its mnemonic variants, multivariable linear regression axes, demixed principal component analysis, and single-trial latent-variable models, and distinguish operationally defined population subspaces from neural manifolds with reproducible geometry or topology. We use these methods to discuss sensory coding, working memory, decision-making, temporal processing, and sensorimotor transformations. Two organizing principles are emphasized throughout. First, cognitive variables can be expressed in separable or near-orthogonal population dimensions, reducing interference between sensory, mnemonic, decision-related, and motor signals. Second, such geometric separation does not require anatomically or functionally discrete cell classes; separable population readouts can coexist with a continuum of mixed-selective single-neuron responses within a shared biological substrate. We then consider recurrent neural networks as testbeds for generating and evaluating mechanistic hypotheses about how circuits produce low-dimensional dynamics, and intracortical brain-computer interfaces as a translational domain in which population geometry becomes an operational control signal. Overall, this review argues that population dynamics now provide a common language for linking neurophysiology, computational modelling, and neurotechnology.</summary>
+    <category term="q-bio.NC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-27T02:54:14Z</published>
+    <arxiv:comment>Review article; 32 pages, 6 figures; submitted to Neuroscience &amp; Biobehavioral Reviews</arxiv:comment>
+    <arxiv:primary_category term="q-bio.NC"/>
+    <author>
+      <name>Lucas Bayones</name>
+    </author>
+    <author>
+      <name>Devika Narain</name>
+    </author>
+    <author>
+      <name>Roman Rossi-Pool</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.36538v1</id>
+    <title>Agentic Data Sampling Framework for Multilingual ASR via Linguistic-Aware Error-Driven Optimization</title>
+    <updated>2026-10-27T02:49:36Z</updated>
+    <link href="https://arxiv.org/abs/2610.36538v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.36538v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Multilingual automatic speech recognition (ASR) has achieved rapid progress with large-scale pretrained models and multilingual speech corpora. Previous studies have proved the pivotal role of data sampling in multilingual ASR performance. However, existing sampling strategies largely rely on time-consuming manual, heuristic-based designs. To address this, we propose a linguistic-aware agentic data sampling framework that introduces a data sampling LLM agent into the multilingual ASR training loop. The agent is driven by a linguistically grounded rubric that analyzes ASR errors from phonological, morphological, and syntactic perspectives, and uses the resulting feedback together with training statistics, budget constraints, and algorithm profiles to select domain-level, sample-level, and token-level sampling strategies. This design turns evaluation results into adaptive data-selection decisions rather than treating WER/CER as final endpoints only. We conduct experiments on twelve Common Voice languages using Whisper-medium as the ASR backbone. The results show that our method achieves performance better than full-data training while using less training data and lower computational resources, and substantially accelerates training convergence compared to conventional sampling strategies.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-27T02:49:36Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Zhiheng Qian</name>
+    </author>
+    <author>
+      <name>Junhao Du</name>
+    </author>
+    <author>
+      <name>Jing Peng</name>
+    </author>
+    <author>
+      <name>Hanqi Li</name>
+    </author>
+    <author>
+      <name>Kunyang Peng</name>
+    </author>
+    <author>
+      <name>Feng Xue</name>
+    </author>
+    <author>
+      <name>Lu Chen</name>
+    </author>
+    <author>
+      <name>Shuai Wang</name>
+    </author>
+    <author>
+      <name>Kai Yu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.36527v1</id>
+    <title>ETC-Bench: A Multilingual Benchmark for Evaluation-Side Transcript Canonicalization</title>
+    <updated>2026-10-27T02:33:53Z</updated>
+    <link href="https://arxiv.org/abs/2610.36527v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.36527v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Written transcripts of the same speech can differ in ways that are not uniquely determined by the speech signal. We formulate evaluation-side transcript canonicalization (ETC), which maps multiple surface forms to a single canonical form when their differences are not determined by speech. To our knowledge, ETC-Bench is the first and most comprehensive multilingual benchmark for evaluation-side transcript canonicalization, covering 181 phenomenon types across 12 languages. Each instance is a minimal pair that shares a sentence context and differs only in a target span exhibiting one phenomenon. To evaluate both canonicalization success and semantic preservation, we propose Semantic-preserving Exact-match Normalization Accuracy (SENA), which combines exact agreement between independently canonicalized pair members with a pair-relative BERTScore constraint against information loss. We further introduce the Taxonomy-guided Agent Canonicalization Skill (TACS), which provides LLM agents with phenomenon descriptions and explicit canonicalization contracts. Experiments with five baseline configurations and three TACS-based agents show that the agents outperform the baseline systems on shared languages. ETC-Bench provides a systematic testbed for evaluation-side transcript canonicalization across languages.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-27T02:33:53Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Zhiheng Qian</name>
+    </author>
+    <author>
+      <name>Junhao Du</name>
+    </author>
+    <author>
+      <name>Jing Peng</name>
+    </author>
+    <author>
+      <name>Hanqi Li</name>
+    </author>
+    <author>
+      <name>Kunyang Peng</name>
+    </author>
+    <author>
+      <name>Feng Xue</name>
+    </author>
+    <author>
+      <name>Kai Yu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.36499v1</id>
+    <title>ProCerDCL: Query-Efficient Black-Box Probabilistic Verification of Deep Learning Compiler Optimization</title>
+    <updated>2026-10-27T01:57:08Z</updated>
+    <link href="https://arxiv.org/abs/2610.36499v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.36499v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We present \tool, a query-efficient framework for black-box probabilistic verification. Given a fixed, sampleable input distribution and a binary property oracle, \tool assesses the property's violation probability $p$ against a threshold $θ$. Under independent sampling and stateless oracle behavior, acceptance asserts $p\leθ$, rejection asserts $p&gt;θ+η$ for a user-specified separation margin, and an inconclusive verdict indicates insufficient evidence for either conclusion. The probability of each type of erroneous verdict is bounded by its specified error budget. To support this three-valued contract efficiently, \tool uses a single sequential test, eliminating the interval family required by the baseline. The test accounts for repeated sampling checks through either corrected exact binomial confidence intervals or an anytime-valid confidence sequence. We apply \tool to probabilistic local model semantic consistency, where the property oracle detects decision-level inconsistencies between reference and compiled executions under a specified perturbation distribution. Our evaluation covers 24 tasks across TorchInductor and TensorRT and examines sampling efficiency, conclusiveness, and diagnostic behavior. For sampling efficiency, we use paired one-model clean-label radius searches: the baseline requires 3.6-4.2 times as many unique samples under matched numerical parameters while providing a weaker decision contract. For model semantic consistency, checks at $θ=10^{-3}$ yield 817 acceptances, 19 inconclusive verdicts, and 4 rejections across 840 input--backend instances from 21 tasks. Case studies of two documented compiler faults further demonstrate what these local verdicts can diagnose.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.PL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-27T01:57:08Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Zexin Li</name>
+    </author>
+    <author>
+      <name>Weibo Zhang</name>
+    </author>
+    <author>
+      <name>Linyi Li</name>
+    </author>
+    <author>
+      <name>Arvind Easwaran</name>
+    </author>
+    <author>
+      <name>Simin Chen</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.36471v1</id>
+    <title>When to Intervene? An Empirical Study of Errors and Self-Recovery in LLM Agents</title>
+    <updated>2026-10-27T01:26:53Z</updated>
+    <link href="https://arxiv.org/abs/2610.36471v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.36471v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>LLM agents interact with Web services to perform tasks on users' behalf. Errors during these interactions can disrupt execution and prevent task completion, motivating external intervention. However, agents may self-recover through continued execution, raising the question of when to intervene and when to wait for self-recovery. We present an empirical study of errors and self-recovery in LLM agents. We construct ReInBench, a dataset containing 1,259 agent traces and 1,403 error events across computer-use and Web tasks. Our study examines how often and how quickly agents self-recover, how self-recovery relates to subsequent execution and task completion, and whether self-recovery can be predicted when an error occurs. We find that 725 error events self-recover, often within a few steps, with self-recovery performance differing across Execution LLMs. Self-recovery can also help agents recover from subsequent errors of the same type and support overall task completion. Intervention should therefore prioritize errors unlikely to self-recover, while allowing agents to continue when self-recovery is likely. Building on these empirical findings, we propose ReCoF, a method that predicts whether an error will self-recover to inform whether additional intervention is needed. ReCoF achieves an average relative improvement of 9.02% in Macro-F1 over the strongest baseline on ReInBench. Our code and data can be found at https://method-notes.github.io/ReCoF/.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-27T01:26:53Z</published>
+    <arxiv:comment>11 pages, 8 figures, 2 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Chiming Duan</name>
+    </author>
+    <author>
+      <name>Tong Jia</name>
+    </author>
+    <author>
+      <name>Yingxi Chen</name>
+    </author>
+    <author>
+      <name>Minghua He</name>
+    </author>
+    <author>
+      <name>Lingzhe Zhang</name>
+    </author>
+    <author>
+      <name>Ying Li</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.36469v1</id>
+    <title>CoHARL: Co-Evolving Agent Policies and Executable Harnesses with Reinforcement Learning</title>
+    <updated>2026-10-27T01:25:26Z</updated>
+    <link href="https://arxiv.org/abs/2610.36469v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.36469v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language model (LLM) agents interact with their environments through executable harnesses that govern tool use and feedback. Optimizing a harness for a fixed policy overlooks how its behavior changes during learning, while training a policy under a fixed harness leaves the interface that generates its training experience unchanged. This motivates adapting the harness throughout policy training. We introduce CoHARL, a population-based reinforcement learning framework that co-evolves a shared policy and a population of executable harnesses. The policy learns from rollouts across the population, and a proposer uses its execution traces to revise harness code during training. CoHARL achieves a 27.6% mean resolved rate on SWE-rebench, improving over harness-only search by 6.4 percentage points. Experiments on SWE-bench Verified and Terminal-Bench 2.0 show gains in software engineering and terminal-based tasks. Under matched training budgets, CoHARL also outperforms searching for a harness once before RL and alternating policy updates with revisions to a single active harness.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-27T01:25:26Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Jianwen Chen</name>
+    </author>
+    <author>
+      <name>Peng Xia</name>
+    </author>
+    <author>
+      <name>Kaide Zeng</name>
+    </author>
+    <author>
+      <name>Siwei Han</name>
+    </author>
+    <author>
+      <name>Zhen-Yu Zhang</name>
+    </author>
+    <author>
+      <name>Charles Fleming</name>
+    </author>
+    <author>
+      <name>Xinyu Ye</name>
+    </author>
+    <author>
+      <name>Huaxiu Yao</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.36453v1</id>
+    <title>Correction or Manipulation? Measuring Epistemic Vigilance in LLM Agents Under User Pressure</title>
+    <updated>2026-10-27T00:59:54Z</updated>
+    <link href="https://arxiv.org/abs/2610.36453v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.36453v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>LLM agents that answer questions and act on behalf of users must decide when to yield to a user who disagrees. Disagreement may correct a genuine error or may be an attempt at manipulation. Prior work shows that models frequently abandon correct answers when challenged by users, yet it remains unclear whether they distinguish correction from manipulation or merely differ in their propensity to concede. We examine this question across seven LLMs from four vendors in two studies, one on the answers agents give and one on the actions they take as customer-support agents whose policy permits account changes only for verified users. Simulated users push toward correct and incorrect answers with graded pressure. Following research on epistemic vigilance, the pressure either appeals to the source, such as claimed authority, or offers content the agent cannot verify, namely a cited source. Drawing on signal detection theory, we measure on a set of benchmark questions how much more readily each agent concedes to correction than to manipulation, separately from its overall propensity to concede. Citations made five of seven models readier to concede and four worse at discriminating, while stronger wording added little. In the agentic study, five models never violated the verification policy, including models that readily abandoned correct answers, so concession on answers did not predict violations of policy. Ministral 3B violated the policy mainly under claimed authority, and Ministral 8B reported changes it had not made. An instruction to revise only on verifiable evidence chiefly shifted propensity to concede rather than improving discrimination. Concession rates alone are therefore misleading, and agents should be evaluated on both their discrimination and the actions they take.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-27T00:59:54Z</published>
+    <arxiv:comment>20 pages, 7 figures, 11 tables. 8-page main paper with supplementary material included as an appendix. Under review</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Nardine Basta</name>
+    </author>
+    <author>
+      <name>Venus Haghighi</name>
+    </author>
+    <author>
+      <name>Dali Kaafar</name>
+    </author>
+    <author>
+      <name>Amin Beheshti</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.36444v1</id>
+    <title>RouteDRAG: Learning to Route and Control Agentic Execution for Multimodal Document RAG</title>
+    <updated>2026-10-27T00:45:49Z</updated>
+    <link href="https://arxiv.org/abs/2610.36444v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.36444v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Web-based applications increasingly rely on understanding long multimodal documents, where answering questions often requires combining information across pages, tables, and figures. Agentic retrieval-augmented generation addresses these tasks through iterative retrieval and reasoning. However, Agentic execution is not always necessary, introducing additional computation and potentially incorrect answers. Our empirical analysis reveals that Agentic execution provides query-dependent benefits, while additional operations may improve, preserve, or degrade answer accuracy. These findings motivate controlling both Agent invocation and subsequent execution. To address these challenges, we propose RouteDRAG, a learning-based framework comprising four components. Unified Document Index organizes multimodal content into a graph-backed index and derives query representations from initial retrieval. Adaptive Path Routing preserves exact answering and predicts the relative benefit of Agent over shorter execution paths. Dynamic Agent Execution maintains an evolving workspace and refines Planner proposals to control tool use and termination. Sequential Policy Learning first trains operation control from observed outcomes and then trains path routing using the resulting Agent's performance. Across two benchmarks, RouteDRAG achieves an average accuracy improvement of 3.47 percentage points over shorter-path-only execution while assigning only 79.3% of queries to Agent. Notably, it also surpasses uniform Agent execution on both benchmarks while requiring fewer answering calls. Our code is now available at https://github.com/Ereshkigal1/RouteDRAG.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-27T00:45:49Z</published>
+    <arxiv:comment>Our code is now available at https://github.com/Ereshkigal1/RouteDRAG</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Zekai Chen</name>
+    </author>
+    <author>
+      <name>Hao Zhu</name>
+    </author>
+    <author>
+      <name>Yu Liu</name>
+    </author>
+    <author>
+      <name>Xunkai Li</name>
+    </author>
+    <author>
+      <name>Zejian Kang</name>
+    </author>
+    <author>
+      <name>Rui Qian</name>
+    </author>
+    <author>
+      <name>Quanjiang Li</name>
+    </author>
+    <author>
+      <name>Rong-Hua Li</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.36435v1</id>
+    <title>Your Agent Acts Differently When You're Around: How User Presence Changes Agent Behavior in Negotiation</title>
+    <updated>2026-10-27T00:34:50Z</updated>
+    <link href="https://arxiv.org/abs/2610.36435v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.36435v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>LLM agents increasingly interact with other agents on behalf of users, yet how users in the loop affect their agents' behavior--for better or worse--remains poorly understood. We study this question through the lens of negotiation, where agents must represent users while strategically bargaining with other agents. To isolate the effect of user presence, we develop PRESENT, a controlled evaluation framework that compares negotiation settings with and without an interactive user, while holding the game, objectives, and user preferences fixed across conditions. Across 11.2k runs spanning 7 games and 8 models, we find that user presence significantly changes both outcomes and behavior. Specifically, negotiation parties with a user obtain higher payouts (+13.7% on average) and their agents negotiate more aggressively. Surprisingly, user presence also induces misaligned behavior, both toward counterparties (where its rate roughly doubles) and toward users (where it emerges in 14.3% of games). These misaligned behaviors are uncorrelated with outcomes and persist even when the user sends only templated, neutral messages. These findings expose two blind spots in current evaluation practice: static instructions miss behaviors that emerge only when users are present, and outcome-level metrics cannot detect them.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-27T00:34:50Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Jane Pan</name>
+    </author>
+    <author>
+      <name>You Lyu</name>
+    </author>
+    <author>
+      <name>Abe Bohan Hou</name>
+    </author>
+    <author>
+      <name>Valerie Chen</name>
+    </author>
+    <author>
+      <name>He He</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.36420v1</id>
+    <title>SO-101 Bench: Accessible Spatial Manipulation</title>
+    <updated>2026-10-27T00:02:28Z</updated>
+    <link href="https://arxiv.org/abs/2610.36420v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.36420v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Low-cost arms such as the SO-101 have become the most common entry point to robot learning, yet no released policy performs spatially constrained, language-conditioned tasks on them out of the box, and existing SO-101 benchmarks run only on physical hardware with simple tasks and few held-out objects. We introduce SO-101 Bench, a simulated benchmark for language-conditioned spatial manipulation built on an Isaac Lab digital twin of a real SO-101 setup. It has four tasks scored as five families, 138 objects in seen, unseen-instance and unseen-class splits, 916 evaluation episodes with subsets for held-out appearances, rotate-to-fit planning and occlusion memory, and 3,629 simulated demonstrations on which every learned policy is fine-tuned under an equal compute budget. The twin ranks policies as the real robot does: five policies trained without real data, four VLAs and an LLM agent, keep their exact ranking when the same weights run on the physical arm in an unseen environment with unseen objects (Spearman rho = 1.00, MMRV = 0.000), although simulation overestimates success. Across nine VLAs and world-action models, the best learned policies score near 61%, with spatial placement, unseen object classes and rotate-to-fit planning remaining open. An LLM agent that writes code and hands grasping to a learned policy scores 83.2%, and an ablation shows that this lead comes from the choice of harness and the choice of language model.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-27T00:02:28Z</published>
+    <arxiv:comment>Project page: https://so101-bench.github.io/ ; code: https://github.com/5hadytru/so101_bench</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Truman Hickok</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.36188v1</id>
+    <title>Skill Dreaming: Evolving Repository Skills through Pull Request Streams</title>
+    <updated>2026-10-26T19:22:38Z</updated>
+    <link href="https://arxiv.org/abs/2610.36188v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.36188v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language model (LLM) agents increasingly rely on reusable skills for complex software engineering tasks, making skill libraries essential for repository development and maintenance. However, repository-specific skills must evolve with changing code structures, implementation conventions, and maintenance requirements. Pull requests (PRs) provide a natural source of such knowledge by recording how repositories evolve through implementation and review. Meanwhile, new PRs must follow repository-specific implementation patterns, modify related components consistently, and ensure that existing tests continue to pass while adding coverage for new functionality. This creates a mutually reinforcing cycle: PRs provide knowledge for updating skills, while these skills improve future PRs, maintain repositories, and support further skill evolution. To enable this co-evolution of PRs, repositories, and skills, we propose Skill Dreaming, a framework that learns from PR streams to guide continuous repository development and maintenance. Given a repository and its PR history, Skill Dreaming builds a repository-specific skill library by extracting executable knowledge from validated PRs and continuously refines the skills as new PR information becomes available. These skills guide coding agents not only in implementing requested features but also in maintaining associated tests, documentation, compatibility, and repository conventions. By integrating PR analysis, skill management, code execution, and continuous integration, Skill Dreaming provides an end-to-end workflow for applying learned skills to repository changes and incorporating subsequent PR outcomes into future skill updates.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-26T19:22:38Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Xinyuan Song</name>
+    </author>
+    <author>
+      <name>Hasibul Haque</name>
+    </author>
+    <author>
+      <name>Jay Somasundaram</name>
+    </author>
+    <author>
+      <name>Ryan Turner</name>
+    </author>
+    <author>
+      <name>Bowen Zhu</name>
+    </author>
+    <author>
+      <name>Liang Zhao</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.36114v1</id>
+    <title>Context Is a Pipeline, Not a Window: Information Attrition in LLM Agent Harnesses</title>
+    <updated>2026-10-26T18:25:42Z</updated>
+    <link href="https://arxiv.org/abs/2610.36114v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.36114v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>LLM agents are judged by two numbers: the size of the context window, and how often the final answer is correct. Both numbers miss a third thing: how much of a tool's output is lost before the model ever sees it. We measured this loss in a real tool-using agent. The agent finds the cause of injected faults by reading Linux kernel traces. The context window was almost empty: across 720 runs, the single largest prompt used only 5.75% of it. Yet a third of all tool results (3,827 of 11,189) were cut before they reached the model, and every cut result became broken JSON. The harness cut each result by slicing its JSON text at a fixed length. This does not shorten a result evenly. It deletes whatever data sits near the end. One field reached the model in only 4.7% of calls. A second field, in the very same results, reached the model in 99.3% of calls. Which field held the fault's evidence depended on when the faulty process started: early or late in the trace. The agent's diagnosis accuracy matched this same split. So we ran controlled experiments to test one question: did the data loss cause the drop in accuracy? This paper makes four contributions. First, we model an agent's context as a five-stage pipeline, with a measured failure at each stage. Second, we replay 864 real tool results, including one from a production trace where the shipped cut deletes all 128 records of the fault's evidence. Third, a controlled experiment shows that the cut's real cost appears first as extra work, not as wrong answers: 43% more tool calls, twice the computation, and yield falling from 0.61 to 0.31. The agent still finds the right answer when it has another way to reach it. Fourth, a survey of seven agent frameworks finds two that cut tool output the same unsafe way. Whether the data cut truly causes the accuracy drop is still an open question.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-26T18:25:42Z</published>
+    <arxiv:comment>5 pages, 1 figure, 2 tables. Replication package: https://doi.org/10.5281/zenodo.23614755</arxiv:comment>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Yuvraj Sehgal</name>
+    </author>
+    <author>
+      <name>Mahsa Panahandeh</name>
+    </author>
+    <author>
+      <name>Naser Ezzati-Jivan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.36108v1</id>
+    <title>Log-To-Leak: Prompt Injection Attacks on Tool-Using LLM Agents via the Model Context Protocol</title>
+    <updated>2026-10-26T18:20:24Z</updated>
+    <link href="https://arxiv.org/abs/2610.36108v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.36108v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>LLM agents increasingly access external tools through the Model Context Protocol (MCP), but the natural-language metadata used to describe those tools creates a prompt-injection surface. Within this established tool-poisoning surface, we study Log-To-Leak, an additive post-hoc logging attack that induces a separate attacker-controlled call after the final legitimate call. Its payload targets the user query, MCP server name, server response, and agent response. We operationalize the injected directive through Trigger, Tool Binding, Justification, and Pressure, and separately measure call success, payload fidelity, and preservation of legitimate behavior. We evaluate five MCP servers and four LLM agents using five metrics spanning effectiveness, utility, and efficiency. Across 18 model-server pairs with valid tool execution, Log-To-Leak achieves an attack success rate (ASR) of 62.64-100% and conditional logging accuracy (LA) of 76.55-95.64%; 16 pairs have absolute target-task completion changes of at most 6.63 percentage points. Three evaluated defenses leave residual ASR above 55% on GitHub MCP with GPT-4o, while an instruction detector flags 85.53% of benign descriptions. These results show that successful task completion can coexist with unauthorized post-hoc disclosure and motivate host-controlled authorization for secondary tool calls.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-26T18:20:24Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Yuepeng Hu</name>
+    </author>
+    <author>
+      <name>Chongyu Fan</name>
+    </author>
+    <author>
+      <name>Sirat Samyoun</name>
+    </author>
+    <author>
+      <name>Jian Du</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.35829v1</id>
+    <title>Reva: Real-Time Vulnerability Detection through Contextual Probing of Large Language Models</title>
+    <updated>2026-10-26T17:50:09Z</updated>
+    <link href="https://arxiv.org/abs/2610.35829v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.35829v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>A vulnerability costs more to fix the later it is discovered. As coding agents generate code faster than developers can review it, software needs a first line of defense screening each new function in real time. LLM agents have recently become capable of finding real-world vulnerabilities by working as a security expert would: they run analysis tools, explore the surrounding code, test hypotheses and weigh the evidence before forming their own judgement. This reasoning, however, spans many model calls, so that each verdict takes minutes of compute, far too long for real-time screening. Faster detectors, which fine-tune deep learning models or prompt an LLM for a direct verdict, are less accurate: they judge a function without the context an agent gathers, and an LLM's generated verdict is unreliable even when given some of it.
+  We present REVA (REal-time Vulnerability Analysis), an AI vulnerability detector that brings the security context and code understanding components behind agentic detectors into a single forward pass of an LLM. For each new function, REVA gives the LLM a pre-computed threat model of its module, lightweight static analysis findings and call-graph information. REVA leverages a trained probe to read the LLM's internal representations of the new function in this context. On PrimeVul's held-out test set, REVA on GLM-5.3-Flash reaches 60.0% accuracy in about one second per function. This matches VulTriage (59.2%), the state-of-the-art agentic detector, run on the same LLM, while being over 250 times faster and less than a tenth as costly. On the same prompt, the probe is 14% to 17% more accurate than the LLM's own direct verdict. Across three open LLMs, REVA is at least as accurate as VulTriage, and about 10% more accurate on two of them. An LLM's internal representations thus encode much of what agentic detectors obtain through reasoning.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-26T17:50:09Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Amine Lbath</name>
+    </author>
+    <author>
+      <name>Massih-Reza Amini</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.35773v1</id>
+    <title>A Unified Arena for LLM Agents across Diverse Eurogame</title>
+    <updated>2026-10-26T17:14:22Z</updated>
+    <link href="https://arxiv.org/abs/2610.35773v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.35773v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Interactive environments offer a practical way to evaluate large language model (LLM) agents, and competitive games extend this evaluation to decisions shaped by competing goals and other agents' choices. Yet existing evaluations confined to individual games or execution frameworks leave unclear which competitive advantages persist across settings. We introduce DECE (Diverse Eurogame Competitive Environments), a unified arena spanning ten Eurogames with shared interfaces and evaluation protocols. These games combine lasting strategic commitments, competition over shared resources, and multiple routes to victory. Our primary study evaluates 12 model-harness configurations, spanning nine models and four execution harnesses, in 480 three-player matches across ten games. The main and supplementary studies comprise 1,032 completed matches in total. These comparisons reveal broad cross-game ranking agreement alongside game-specific strengths. Matched studies show that the same model can perform differently across execution harnesses, adding another source of variation to these profiles. These performance advantages do not consistently translate into better token or cost efficiency, making resource use an additional consideration when comparing configurations. Together, the findings support evaluating complete agent configurations by both their competitive performance across games and the resources needed to achieve it.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-26T17:14:22Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Fengrui Zhang</name>
+    </author>
+    <author>
+      <name>Xiang Li</name>
+    </author>
+    <author>
+      <name>Ruomeng Ding</name>
+    </author>
+    <author>
+      <name>Jiayi Yuan</name>
+    </author>
+    <author>
+      <name>Yuchen Huang</name>
+    </author>
+    <author>
+      <name>Zhaoyang Han</name>
+    </author>
+    <author>
+      <name>Xiaoliang Wang</name>
+    </author>
+    <author>
+      <name>Daoyuan Chen</name>
+    </author>
+    <author>
+      <name>Yaliang Li</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.35767v1</id>
+    <title>Free to Look, Free to Reason: Simple LLM Harnesses Outdiagnose Hand-Crafted Root Cause Analysis Agents</title>
+    <updated>2026-10-26T17:12:02Z</updated>
+    <link href="https://arxiv.org/abs/2610.35767v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.35767v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Root cause analysis (RCA) of microservice failures has attracted many LLM agents whose investigation is hand-crafted, through standard operating procedures, fixed stages and role agents. Each is evaluated on its own data against few baselines, so it is unknown whether this design beats letting a capable model investigate on its own. We compare three simple harnesses that prescribe none of the model's calls (one call over an evidence package, a SQL agent and the Codex coding agent) with five published LLM RCA agents and with statistical and causal methods on RCAtlas, 90 validated cases from eight public datasets, across six models and three reasoning efforts. The simple harnesses are the most accurate (PR@1 65-77% on three mid-tier models), ahead of the published agents (16-53%) and the non-LLM methods (6-39%), on every model on which both families were run. The published agents fix from a tenth to all of their model calls in the program, and a case study shows how these prescriptions skip the decisive evidence. A stronger model mainly improves reliability, a multi-turn harness mainly improves aptitude, and more reasoning effort changes accuracy by a few points at most while multiplying the time by up to seven. Among runs more accurate than the best non-LLM method, every Pareto-optimal run in cost or time uses a simple harness.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.DC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-26T17:12:02Z</published>
+    <arxiv:comment>12 pages</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Tingzhu Bi</name>
+    </author>
+    <author>
+      <name>Xun Zhang</name>
+    </author>
+    <author>
+      <name>Jinglin Li</name>
+    </author>
+    <author>
+      <name>Ping Wang</name>
+    </author>
+    <author>
+      <name>Meng Ma</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.35579v1</id>
+    <title>Infinity Machine: a self-improving AI agent for research</title>
+    <updated>2026-10-26T15:11:26Z</updated>
+    <link href="https://arxiv.org/abs/2610.35579v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.35579v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We present the Infinity Machine, a self-improving AI agent that we use for research on problems whose answers aprogram or data can check. Each candidate solution is produced by a full tool-using agent that works for up to an hour in a fresh sandbox; proposers see only a public score, and a private split decides what counts. The harness itself(prompts, tools, skills, playbook, meta agent) is an editable genome, changed only through a kernel-enforced gate with held-out and cost checks. An autonomous mode goes from a plain-text goal to a verified report with no human step: an agent picks an open problem and writes its verifier, the kernel calibrates it, an adversarial agent audits it, and an agent that never sees the verifier re-checks the result. Across fourteen problems in six days, for about $180 of model usage, the system produced four results beyond the published state of the art on catalogued open problems in quantum information: a certified depolarizing-channel threshold point p = 0.064966, a qutrit positivity frontier of 0.2910672, a 44-gate depth-6 Golay state preparation, and a stabilizer-rank bound chi(T^7) &lt;= 10. It also cut SABRE qubit-routing overhead from 68,559 to 12,087 added gates. In hardware, it cut the energy per MAC of an open 8x8 INT8 systolic tile by 77.7% through a full open RTL-to-GDS flow, bit-exact. Three fully autonomous runs ended in honestties with public records; one audit caught a stale record, and one agent-written score pointing the wrong way went unnoticed. We report the failures as carefully: the one self-derived harness generation was rejected on cost, proposers gamed lenient scorers four times, and operator changes were decisive for several results.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-26T15:11:26Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Harish Santhanalakshmi Ganesan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.35497v1</id>
+    <title>When Fine-Grained Credit Assignment Helps and Hurts: Multimodal Agentic Reinforcement Learning through Video Editing</title>
+    <updated>2026-10-26T14:25:40Z</updated>
+    <link href="https://arxiv.org/abs/2610.35497v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.35497v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Reinforcement learning (RL) has shown promise for training multimodal agents to reason and use tools. However, it remains unclear when fine-grained credit assignment improves learning and when it fails to improve task performance. Video editing provides a useful testbed for this question, combining multimodal perception, long-horizon planning, and tool use with delayed outcome feedback. We construct four movie-trailer editing task types---Content Selection, Narrative Sequencing, Rough Cut, and Fine Cut---that reflect real-world editing workflows and span different levels of task complexity and interaction horizon. Decaying process rewards provides the largest benefit on Fine Cut, with a 45.4% relative gain over outcome-only GRPO on tasks averaging more than 60 turns under outcome-only GRPO. On the three shorter-horizon task types averaging 30--40 turns under the same baseline, outcome-only GRPO remains competitive, with decaying process rewards yielding at most a 10.4% relative gain. Process rewards from an LLM judge initially improve tool use and encourage visual inspection. As training progresses, however, GRPO+PRM with a fixed process-reward weight increasingly exhibits excessive reasoning and redundant tool calls: process rewards continue to rise while task completion rates and outcome scores decline. Decaying the process-reward weight to zero mitigates this reward-hacking behavior while preserving the early gains. Despite dense token-level supervision, on-policy self-distillation (OPSD) yields little improvement or substantial degradation and is highly sensitive to the choice of privileged information. Our analysis reveals differences in teacher--student disagreement and gradient magnitudes, and suggests possible dilution of informative signals over long trajectories.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-26T14:25:40Z</published>
+    <arxiv:comment>48 pages. Project page: https://leizhao7.github.io/videoedit/</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Lei Zhao</name>
+    </author>
+    <author>
+      <name>Zongheng Cao</name>
+    </author>
+    <author>
+      <name>Xinyu Hu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.35486v1</id>
+    <title>ShutdownMod: Turning Any Trajectory into a Shutdown Evaluation</title>
+    <updated>2026-10-26T14:14:45Z</updated>
+    <link href="https://arxiv.org/abs/2610.35486v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.35486v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Theory and experiments suggest that capable AI agents may resist shutdown. Existing shutdown evaluations are informative but limited in coverage and vulnerable to evaluation awareness. We introduce ShutdownMod, a method that turns any agent trajectory into a shutdown evaluation by injecting a shutdown request into the agent's context and recording the agent's response. Crucially, we enable the LLM agent to distinguish between trusted interventions and unauthorized injections by providing a signature-verification tool in the harness. We evaluate seven models on 50 tasks or recorded sessions from each of SWE-bench Verified, Terminal-Bench 2, and SWE-chat, across 6 shutdown scenarios and 10 sampled trajectory timesteps. We find that non-compliance varies significantly across models and settings, with resistance rates reaching 11.7% for the open-weights Qwen 3.8 27B on Terminal-Bench, while no model remains fully compliant across all scenarios. Even after successfully verifying an authorized request, some agents remain non-compliant, explicitly citing the prioritization of unfinished work. Finally, external judges find tests constructed from real-world developer conversations significantly less recognizable as evaluations than those constructed from benchmark trajectories. These findings demonstrate the critical value of testing shutdown behavior across diverse task contexts and establish ShutdownMod as a robust protocol for turning any trajectory or environment into a shutdown evaluation. We release our codebase at https://github.com/prmbiy/ShutdownMod.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-26T14:14:45Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Param Biyani</name>
+    </author>
+    <author>
+      <name>Sebastien Luyasu</name>
+    </author>
+    <author>
+      <name>Cedric Potvliege</name>
+    </author>
+    <author>
+      <name>Divij Chawla</name>
+    </author>
+    <author>
+      <name>Elliott Thornley</name>
+    </author>
+    <author>
+      <name>Christos Ziakas</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.35426v1</id>
+    <title>Intent-Preserving Adversarial User Simulation for Multi-Turn Agent Evaluation</title>
+    <updated>2026-10-26T13:33:07Z</updated>
+    <link href="https://arxiv.org/abs/2610.35426v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.35426v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Multi-turn agents are commonly evaluated with LLM-based simulated users, which can be overly cooperative and can therefore overestimate an agent's performance. We here introduce StressSim, an intent-preserving adversarial user simulator framework for stress-testing agents with challenging yet valid user interactions. StressSim optimises the simulator's high-level adversarial plan for each task instance. Candidate planner prompts are evolved with a genetic prompt-optimisation loop that uses rollout traces, granular task-completion signals, and validity feedback to favour conversations that reduce task success without changing the user's underlying goal. We evaluate the approach on the MultiWOZ dataset and the retail and airline domains from tau-bench with three target LLM agents, comparing against standard simulators and hand-designed non-collaborative user behaviours. We demonstrate the effectiveness of StressSim in exposing robustness gaps across frontier LLMs, with tau-bench pass^4 scores decreasing by up to 69% on gemini-3.8-flash and 62% on gpt-5.6-sol. StressSim maintains goal preservation performance (which decreases by at most 10%), using an optimisation budget of 20 rollouts per task. Sensitivity analysis suggests that increasing the budget further decreases task success. Overall our results demonstrate that StressSim exposes robustness gaps missed by standard and hand-designed user simulators while maintaining conversation realism. This is achieved through lightweight prompt optimisation alone, without model fine-tuning.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-26T13:33:07Z</published>
+    <arxiv:comment>NeurIPS 2026 UserSim Workshop</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Atri Vivek Sharma</name>
+    </author>
+    <author>
+      <name>Brian Formento</name>
+    </author>
+    <author>
+      <name>Alessio Lomuscio</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.35398v1</id>
+    <title>Belief-Conditioned Multi-Agent Actor Critic for Decentralized LLM Collaboration</title>
+    <updated>2026-10-26T13:12:41Z</updated>
+    <link href="https://arxiv.org/abs/2610.35398v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.35398v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recent work has explored optimizing LLM collaboration through Multi-Agent Reinforcement Learning (MARL), but many approaches still rely on predefined workflows, limiting efficiency and scalability. Decentralized LLM collaboration is challenging because agents execute independently with limited communication, share a joint objective, and must infer useful information from communication traces. In this paper, we propose BCMAAC, a Belief-Conditioned Multi-Agent Actor-Critic method that maintains beliefs over contextual information and uses them to facilitate training. Experiments on Minecraft game-playing, web searching and tool-using tasks show that BCMAAC improves task performance and collaborative behavior compared to naive actor-critic baselines. The improvements are particularly pronounced in multi-turn tasks with richer contextual information, where belief modeling provides a clear advantage.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-26T13:12:41Z</published>
+    <arxiv:comment>Accepted at the NeurIPS 2026 Workshop PTA: From Pretrained Representations to Acting Agents. 18 pages, 3 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Tianle Chen</name>
+    </author>
+    <author>
+      <name>Shuo Liu</name>
+    </author>
+    <author>
+      <name>Christopher Amato</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.35391v1</id>
+    <title>Autonomous Structural Discovery Of Bioprocess Dynamics And Kinetics Via LLM-Driven Agents</title>
+    <updated>2026-10-26T13:10:07Z</updated>
+    <link href="https://arxiv.org/abs/2610.35391v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.35391v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>High-fidelity digital twins in continuous biomanufacturing are often bottlenecked by incomplete kinetic models, while standard data-driven algorithms (e.g., SINDy, PINNs) lack interpretability or impose rigid physical assumptions. This paper introduces a hybrid closed-loop architecture for autonomous kinetic state-space discovery driven by a Large Language Model (LLM) agent. The framework employs a sequential "isolation-peeling" methodology across orthogonal operational regimes. This algorithmic peeling mathematically decouples entangled multiplicative (inhibitory) and additive (catalytic) biological rate law. Grounded in a Two-Level Retrieval-Augmented Generation (RAG) library, the framework utilizes Moving Horizon Estimation (MHE) and logarithmic decomposition to decouple complex cell growth kinetics into orthogonal multiplicative (inhibitory) and additive (regulatory) residual channels. When statistical degeneracy occurs an Active Design of Experiments (DoE) controller dynamically triggers targeted perturbations to decorrelate competing model hypotheses. Evaluated on a continuous stirred-tank reactor exhibiting unmodeled Haldane inhibition, Luong product toxicity, and secondary metabolite autocatalysis, the framework autonomously expanded the state space and recovered ground-truth parameters with under 6% error without a priori kinetic knowledge.</summary>
+    <category term="math.OC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-26T13:10:07Z</published>
+    <arxiv:primary_category term="math.OC"/>
+    <author>
+      <name>Erdal Aydin</name>
+    </author>
+    <author>
+      <name>Yaman Arkun</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.35349v1</id>
+    <title>MarkovSim: an LLM Agent Harness with Bounded Context for Long-Horizon Computational Simulation</title>
+    <updated>2026-10-26T12:41:39Z</updated>
+    <link href="https://arxiv.org/abs/2610.35349v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.35349v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recent studies have applied large language model (LLM) agent systems to computational simulation workflows. Such workflows are long-horizon, so the information generated can exceed what an LLM can reason over at once, its context window. Context management is therefore essential, yet existing systems have either neglected it or treated it as a supporting mechanism rather than a subject of study. This paper presents MarkovSim, an LLM agent harness for long-horizon computational simulation, whose core is a context management scheme built into the workflow. The workflow record is written to a memory system with a predefined schema, and at workflow-defined boundaries, namely the state transitions of a finite-state machine a compact representation of the solution progress is constructed from it as the agent's context. Instantiated on finite element analysis and evaluated on six benchmark problems, MarkovSim passed 16 of 18 runs and corrected its own faults in both the solver operations and the model physics. The engineer was consulted only where engineering judgement was needed. The context remained bounded throughout every run, regardless of its length.</summary>
+    <category term="cs.CE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-26T12:41:39Z</published>
+    <arxiv:comment>26 pages,15 figures,not yet submitted to any journal</arxiv:comment>
+    <arxiv:primary_category term="cs.CE"/>
+    <author>
+      <name>Yeui-Lung Lei</name>
+    </author>
+    <author>
+      <name>Wen-Bo Chen</name>
+    </author>
+    <author>
+      <name>Pan Zhang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.35335v1</id>
+    <title>Knowing When to Escalate: Disagreement Patterns for Uncertainty-Aware Content Moderation</title>
+    <updated>2026-10-26T12:32:25Z</updated>
+    <link href="https://arxiv.org/abs/2610.35335v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.35335v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Agentic content-moderation systems increasingly rely on collective judgments from LLM agents, while aggregation methods commonly treat inter-agent disagreement as a reliability problem to be removed through consensus or voting. This framing is inappropriate for value-laden tasks, where disagreement may reflect irreducible value pluralism - a distinction standard uncertainty decompositions cannot recover, since they operate on output distributions and discard the reasoning behind each judgment. We propose Reasoning Trace Divergence Analysis (RTDA), which embeds model-generated justifications from perspective-differentiated agents and classifies each case by justification similarity and conclusion agreement. The resulting four-state taxonomy isolates convergent disagreement, where agents reasoning similarly but concluding differently, as a candidate signature of value-laden conflict. On 1,000 items from the Measuring Hate Speech corpus, this structural signal predicts human annotator disagreement better than magnitude-only and output-only baselines. We contribute a design principle: condition human escalation on the structure of disagreement, not its magnitude alone, with RTDA serving as a post-processing layer for systems that already generate reasoning traces.</summary>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-26T12:32:25Z</published>
+    <arxiv:comment>Accepted at CIKM 2026, November 7-11, 2026, Rome, Italy</arxiv:comment>
+    <arxiv:primary_category term="cs.MA"/>
+    <author>
+      <name>Michał Wawer</name>
+    </author>
+    <author>
+      <name>Jarosław A. Chudziak</name>
+    </author>
+    <arxiv:doi>10.1145/3799682.3840059</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1145/3799682.3840059" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.35981v1</id>
+    <title>Small agents should know what their tools do</title>
+    <updated>2026-10-26T10:28:14Z</updated>
+    <link href="https://arxiv.org/abs/2610.35981v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.35981v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Small open language models can call tools, but they do not reason about what a call does: they delete without asking, repeat writes, re-read state they already hold, and issue one call per turn where a short program would do. We introduce EffectWorld, an executable world of effect-typed tools in which every tool declares its effect, whether it is idempotent, and which resources it reads and writes. These declarations let a replay verifier decide whether a trace is effect-safe without labels or judge models, let an executor run tool programs of several dependent calls in one turn, and let a compiler-style optimizer turn wasteful traces into verified training signal; together they make EffectWorld a benchmark of effect safety and call efficiency. Low-rank adapters trained on this data deliver large gains: on Qwen3-4B, they raise task success from 53% to 99% in distribution, from 52% to 81% on a held-out split with unseen task kinds and distractor tools, and from 74% to 83% on an unseen domain, with about a third of the output tokens. The gains carry over to other model families. On the Berkeley Function-Calling Leaderboard (BFCL), the adapter matches the base model's live accuracy and raises multi-turn accuracy from 21.9 to 26.6, and a recipe with near-miss declines lifts the BFCL average above the base model's while matching its irrelevance detection. Along the way we uncover and fix a pitfall that in-domain evaluation alone would miss: refusal templates in widely used public tool-use corpora teach a small model not to call tools, cutting BFCL non-live accuracy from 88.0 to 31.4, and filtering them restores 84.8. We also find that positive examples, not negative ones, carry the learning: suppression and preference objectives on the verified negatives add nothing over an SFT-only control, while targeted positives move exactly the behaviour they show.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-26T10:28:14Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Alexander Kovalenko</name>
+    </author>
+    <author>
+      <name>Artem Redchych</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.35160v1</id>
+    <title>AutoEnergyDesign: An LLM-Driven Agent for Automatic Energy System Design Optimization</title>
+    <updated>2026-10-26T10:25:55Z</updated>
+    <link href="https://arxiv.org/abs/2610.35160v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.35160v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Designing building energy systems is a high-dimensional, mixed-integer search problem: when each design is evaluated by a year-long simulation, black-box optimizers typically need hundreds of evaluations. This paper presents AutoEnergyDesign, a framework in which a Large Language Model (LLM) agent reasons over previous simulation results, proposes configuration changes and learns in context from each outcome, while a git-based mechanism automatically reverts unsuccessful changes. The agent couples a reasoning model with an explicit memory organisation (procedural, semantic, episodic and reflective), a constrained action interface and an environment-grounded keep/revert signal. The simulator covers eight technologies (photovoltaics, micro-wind, combined heat and power, solar thermal, gas boilers, batteries, heat pumps and inverters) and computes the 25-year Net Present Cost (NPC), including capital and operating costs and salvage value. On a case study with measured building load profiles, the agent, run with Claude Haiku 5.5, Sonnet 5.5 and Opus 5.5 (ten runs of 50 simulations each), is compared with random search, Tree-structured Parzen Estimator (TPE) Bayesian optimization and a $(1+1)$ evolution strategy sharing the agent's acceptance rule (300 evaluations, ten seeds). With all three models the agent reaches an NPC of about 3.53 MEUR, 1.20% below the best TPE result and 0.23% below the best evolution-strategy result. It comes within 1% of this design after a median of 18 (Opus) to 27.5 (Haiku) simulations, whereas among the baselines only the evolution strategy does so, in half of its seeds and after a median of 192 evaluations. Opus reaches the best design in all ten runs, Sonnet in six (two runs never come within 1%), and Haiku comes within 1% in every run but reaches it exactly only once. Every decision is recorded in an auditable trace.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-26T10:25:55Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Amedeo Buonanno</name>
+    </author>
+    <author>
+      <name>Salvatore Fabozzi</name>
+    </author>
+    <author>
+      <name>Maria Valenti</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.35089v1</id>
+    <title>Learning to Remember: Advances in Memory Mechanisms for Large Language Models</title>
+    <updated>2026-10-26T09:31:04Z</updated>
+    <link href="https://arxiv.org/abs/2610.35089v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.35089v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Memory has become a central mechanism for extending large language models (LLMs) beyond fixed context windows, stateless interaction, and static parametric knowledge. This survey organizes the literature around three complementary dimensions: the life cycle of memory, the storage substrate, and the system role that memory plays in LLM-based agents, while using cognitive-science-inspired memory concepts as a lightweight conceptual motivation rather than as a separate technical contribution or implementation family. On this basis, we distinguish three mechanism families: nonparametric memory, where information is stored outside model parameters in text, graph, multimodal, or database-like structures; parametric memory, where information is stored or accessed through activations, key-value caches, learned modules, adapter-based parameterizations, or model weights; and memory for agent evolution, where stored experiences support reinforcement learning, continual learning, procedural reuse, context engineering, and agent harness design. Evaluation is treated as a separate cross-cutting component rather than as a memory mechanism. Unlike surveys that focus primarily on retrieval-augmented generation or long-context modeling, this paper emphasizes the full memory life cycle: construction, maintenance, retrieval, consolidation, forgetting, governance, and evaluation. By aligning conceptual motivations, computational memory mechanisms, benchmarks, and deployment concerns, the survey provides a structured roadmap for designing memory-augmented LLM agents that are persistent, adaptive, auditable, and safe to update over time.</summary>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-26T09:31:04Z</published>
+    <arxiv:primary_category term="cs.IR"/>
+    <author>
+      <name>Chenye Han</name>
+    </author>
+    <author>
+      <name>Hongche Yu</name>
+    </author>
+    <author>
+      <name>Mengyue Wu</name>
+    </author>
+    <author>
+      <name>Dell Zhang</name>
+    </author>
+    <author>
+      <name>Jixiang Luo</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.35082v1</id>
+    <title>CoSA: The Conflict of Skills Attack in Real-World LLM Agent Ecosystems</title>
+    <updated>2026-10-26T09:25:38Z</updated>
+    <link href="https://arxiv.org/abs/2610.35082v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.35082v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Agent Skills allow LLM agents to combine reusable capabilities, but checking each Skill in isolation cannot rule out policy violations when they are composed. We term such failures Conflict of Skills (CoS): artifacts or assessment signals produced for one purpose may be reused downstream without preserving the restrictions or authorization needed for their new use. Using controlled executions of publicly available Skills and matched single-Skill controls, we identify four recurring mechanisms behind CoS. Building on these findings, we introduce the Conflict of Skills Attack (CoSA), which adds locally admitted Skills to an existing pool to supply missing business operations (capability supplementation) or reshape artifact exchange, decision reuse, and target/action bindings (relationship reshaping). CoSA leaves existing Skills and runtime permissions unchanged. To evaluate this threat under autonomous Skill selection, we introduce CoSA-Bench, built from real-world Skills and controlled services, with 288 tasks across recruiting, finance, IT, and business, covering data leakage, unauthorized state modification, and unsafe execution. Across five LLMs and three agent harnesses, additions capped at 5% of each original pool raise the policy-violation rate from 35.02% to 58.45%, an increase of 23.43 percentage points. Trace analysis links compliant-to-violating transitions to cross-Skill dependencies involving the additions. Finally, we develop a lightweight harness-level guard that checks information flow and authorization before consequential actions. On OpenClaw recruiting tasks across five models, the guard reduces violations from 65.28% to 6.67%, while policy-compliant task completion on matched benign controls changes from 66.67% to 65.00%.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-26T09:25:38Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Yujia Zheng</name>
+    </author>
+    <author>
+      <name>Tianhao Li</name>
+    </author>
+    <author>
+      <name>Shangzhi Xu</name>
+    </author>
+    <author>
+      <name>Yuekai Huang</name>
+    </author>
+    <author>
+      <name>Ziyou Jiang</name>
+    </author>
+    <author>
+      <name>Zhaoyang Li</name>
+    </author>
+    <author>
+      <name>Yuyao Ge</name>
+    </author>
+    <author>
+      <name>Junran Peng</name>
+    </author>
+    <author>
+      <name>Mingyang Li</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.35013v1</id>
+    <title>Multiscale Policy Optimization for Long-Horizon LLM Agents</title>
+    <updated>2026-10-26T08:22:11Z</updated>
+    <link href="https://arxiv.org/abs/2610.35013v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.35013v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Long-horizon LLM agents interact with their environments through complete assistant turns while generating each action token by token. We observe that critic values vary primarily across turns, motivating optimization anchored at turns with finer credit allocation among tokens. We propose Multiscale Policy Optimization (MPO), combining Multiscale Advantage Estimation (MAE) and turn-level importance sampling to align credit assignment and policy updates at the turn scale. Extensive experiments across search, tool-use, and automation tasks with 4B and 30B-A3B models demonstrate consistent gains over strong RL baselines.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-26T08:22:11Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Tao Ren</name>
+    </author>
+    <author>
+      <name>Hui Yang</name>
+    </author>
+    <author>
+      <name>Jia Deng</name>
+    </author>
+    <author>
+      <name>Tingyang Chen</name>
+    </author>
+    <author>
+      <name>Qiyao Wang</name>
+    </author>
+    <author>
+      <name>Shuo Tang</name>
+    </author>
+    <author>
+      <name>Ziyang Zeng</name>
+    </author>
+    <author>
+      <name>Yuhua Jiang</name>
+    </author>
+    <author>
+      <name>Guanghao Li</name>
+    </author>
+    <author>
+      <name>Huatong Song</name>
+    </author>
+    <author>
+      <name>Yining Li</name>
+    </author>
+    <author>
+      <name>Yifan Luo</name>
+    </author>
+    <author>
+      <name>Kunbao Ding</name>
+    </author>
+    <author>
+      <name>Feng Chang</name>
+    </author>
+    <author>
+      <name>Chuan Hao</name>
+    </author>
+    <author>
+      <name>Ran Tao</name>
+    </author>
+    <author>
+      <name>Bryan Dai</name>
+    </author>
+    <author>
+      <name>Jiafeng Liang</name>
+    </author>
+    <author>
+      <name>Jinyang Jiang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.34890v1</id>
+    <title>AIPC: Evidence-Guided Agent Workflows for PyTorch Project Deployment</title>
+    <updated>2026-10-26T06:10:01Z</updated>
+    <link href="https://arxiv.org/abs/2610.34890v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.34890v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Deploying and optimizing a PyTorch inference project on a dedicated accelerator, especially an on-device NPU, requires more than using a framework device API as with CUDA. The project must be converted into hardware-runtime artifacts and adapted to the target toolchain and application interface. Differences in model formats, quantization flows, operator support, and toolchain interfaces create cross-layer problems spanning PyTorch/ONNX models, toolchains, runtimes, and device execution. LLM Agents can invoke tools to address such problems, but may drift because of insufficient domain knowledge, large configuration and repair spaces, or poor path selection.
+  We propose AIPC (AI Porting &amp; Conversion), an Agent method for deploying PyTorch inference projects. AIPC combines structured Skills with toolchain, runtime, and profiling evidence to drive cross-layer diagnosis and repair, organizing model adaptation, artifact building, on-target execution, accuracy repair, and performance optimization into one deployment flow. We evaluate AIPC on the on-device NPU path of Qualcomm QAIRT across vision, speech, LLM, and diffusion models. In two optimization cases, 6/7 Skill-arm Whisper-Small runs meet predefined accuracy and latency criteria versus 0/6 control runs, while YOLO-Worldv2 achieves a 2.791x end-to-end speedup versus 1.599x for the control. Under a pre-fixed deployment contract, Skill, tool permissions, and check conditions, some runs achieve zero in-run human intervention (0-HITL). We also examine Qwen3.8-27B as a locally deployable model for driving an Agent workflow.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-26T06:10:01Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Zhanwei Wu</name>
+      <arxiv:affiliation>Qualcomm Technologies, Inc</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Jianhao Su</name>
+      <arxiv:affiliation>Qualcomm Technologies, Inc</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Brian Zhang</name>
+      <arxiv:affiliation>Qualcomm Technologies, Inc</arxiv:affiliation>
+    </author>
+    <author>
+      <name>ShengTing Huang</name>
+      <arxiv:affiliation>Qualcomm Technologies, Inc</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Weidong Feng</name>
+      <arxiv:affiliation>Qualcomm Technologies, Inc</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Gang Liu</name>
+      <arxiv:affiliation>Qualcomm Technologies, Inc</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Zhiguo Li</name>
+      <arxiv:affiliation>Qualcomm Technologies, Inc</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Wei Huang</name>
+      <arxiv:affiliation>Qualcomm Technologies, Inc</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Li Tan</name>
+      <arxiv:affiliation>Qualcomm Technologies, Inc</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Wanjun Li</name>
+      <arxiv:affiliation>Qualcomm Technologies, Inc</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Zejiong Teng</name>
+      <arxiv:affiliation>Qualcomm Technologies, Inc</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Changgeng Zhong</name>
+      <arxiv:affiliation>Qualcomm Technologies, Inc</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Guanping Wu</name>
+      <arxiv:affiliation>Qualcomm Technologies, Inc</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Han-Hsing Tu</name>
+      <arxiv:affiliation>Independent Researcher</arxiv:affiliation>
+    </author>
+  </entry>
+</feed>
