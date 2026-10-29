@@ -271,8 +271,8 @@ if [ "$NEED_BACKUP" = true ]; then
         # ★ 修复 (2026-10-27): 邮件失败不得中断脚本(set -e),否则清理与最终心跳都不执行
         send_mail "OpenClaw 备份完成 - $NOW" \
                   "源目录自 $LAST_MOD_TIME后有修改，备份成功：\n\n文件: $ARCHIVE\n大小: $FILE_SIZE\n时间: $TIMESTAMP" \
+                  && log "备份完成邮件已发送" \
                   || log "⚠️ 备份完成邮件发送失败(已忽略,不影响清理与心跳)"
-        log "备份完成邮件已发送"
 
     else
         log "备份失败"
