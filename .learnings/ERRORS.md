@@ -270,3 +270,21 @@ sleep N; cat /tmp/upd.log                  # 轮询读取
 ---
 
 - [2026-10-30 02:45][Orch] NightOps cron 会话收到 <error-detected> 假阳性：引用 exec 标准输出片段(nightly-scout 内容)，当日两次 exec 实际均成功退出；判为调度层误报，仅记录，若同模式再现再深查。
+
+## ERR-20261030-006 `python3 -c "..."` 内用 f-string 双引号 → 被 shell 吃掉 → NameError
+
+**现象**:
+```bash
+python3 -c "
+import json
+...
+print(f'  {k:12} primary={str(m.get(\"primary\")):32} fallbacks={fb}')
+"
+→ NameError: name 'primary' is not defined
+```
+**根因**:外层是双引号,内层 f-string 里的 `m.get("primary")` 的双引号被 shell 提前闭合 →
+传给 python 的代码里 `primary` 变成了裸标识符 → NameError。
+**教训**:
+- `python3 -c "..."` 里**不要出现双引号**,一律用单引号;需要引号时改用 `'''...'''` 或写临时 .py 文件
+- 更稳的做法:**一律写临时脚本文件再执行**(如 /tmp/x.py),彻底避开 shell 引号地狱
+- 本次该错误只影响一条诊断命令的输出格式,未造成副作用;但同型错误在写配置时会静默改错值
