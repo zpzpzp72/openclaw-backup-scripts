@@ -107,6 +107,23 @@ M3.1-Flash 1/4/0.1 ✅ 与 CN 价一致；M3 记 0.5/2 ❌ 官方 2.1/8.4（≤5
 - **派子代理做独立验证是值得的**:本轮子代理用 inspector 直读推翻了我的结论并补全了 arena 归因,两者交叉验证后才得到可靠结论。
 - **「每 X 留一份内存副本」这类假设要先做趋势检验**:会话数零增长而映射 +25% 即可否定。
 
+## Windows 盘(/mnt/c)空间治理(2026-10-31)
+
+| 项目 | 数值 |
+|------|------|
+| 总容量 | 465G |
+| 已用 | 425G |
+| **Avail** | **40G (92%)** |
+
+**2026-10-30→10-31 回收 34GB**:
+- `Temp/wsl-crashes` **33GB** ← 两个 node 崩溃转储(22.0GB @pid319857 / 13.2GB @pid497240),  **非用户数据**,删前已留证 `memory/2026-10-31-wsl-core-dumps.md`;
+- `ima.copilot/User Data.cdp` **1.0GB** ← 10-30 IMA 周任务自我复制的副本(ZP 授权删),原件 6457 文件完好;
+- 另清:Temp/Diagnostics、Edge Cache、npm-cache、CrashDumps、Prefetch、DiagOutputDir、IMA 安装残留。
+
+**明确保护未动**:`Temp/D99EBC2B-*/swap.vhdx`(1.6GB,活跃 WSL 交换文件)、`Temp/WSLDVCPlugin/`、`SoftwareDistribution/Download`(373M,需 Windows 管理员)。
+
+**踩坑**:`du`/`find` 在 `/mnt/c` 上极慢(单个目录可 >45s),会让 exec 超时丢结果 —— 统计 Windows 盘必须**逐目录限时**(`timeout 25 du -sh <dir>`),不要递归全盘扫。
+
 ## 持续性风险
 
 | 优先级 | 问题 | 首次发现 | 状态 |
@@ -120,7 +137,7 @@ M3.1-Flash 1/4/0.1 ✅ 与 CN 价一致；M3 记 0.5/2 ❌ 官方 2.1/8.4（≤5
 | ~~P1~~ | ~~WeChat DNS `EAI_AGAIN` 持久化问题~~ | 2026-08-13 (cron 报告) | ✅ 2026-10-24 复测不复现：5 个微信域名 DNS 解析正常、TCP 全通、HTTPS 0.17–0.38s | <!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
 | P0 | **PROXY DOWN 127.0.0.1:25017** — `curl http://127.0.0.1:25017/` Failed to connect, 无 proxyon 进程，2026-08-27 发现；导致 `git fetch origin` 失败（memory-lancedb-pro 同步受阻）。**注意：`172.18.160.1:25017` 是通的**（根路径 404 属正常，实测能代理 wx.qq.com 200/0.28s），微信通道用的是后者，不受影响 | 2026-08-27 | 🔴 Main 未处理（仅影响 git fetch） | <!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
 | P2 | Coder 最近 code_report 停留在 **2026-07-30**（29 天没更新）；orchestrator 标"08-27 cron 恢复"但实际产物未刷新 | 2026-08-28 | 🟡 待核查 |
-| P1 | **Gateway RSS 13.7GB 根因已定位(2026-10-30)** — 活体 inspector 实测:**V8 堆 heapUsed 3.90GB / heapTotal 4.06GB (达 --max-old-space-size=4096 上限的 96%)** + **约 9GB 是 glibc 每线程 arena 碎片棘轮**(209 个 64MB arena,rw 已提交 8.8GB)。那 17400+ 个「恰好 256KB」匿名段 = **V8 堆页**(256KB=kPageSize,隔离复现已证实)。**「每会话一份内存副本」已被否定**:10/26→10/30 会话数零增长而映射 +25%,比例吻合系巧合。驱动源 = 线程 churn(87 个 `tokio-runtime-w` 来自 LanceDB 插件的 Rust 线程池)。重启后 A/B 验证:arena 数 209→202(几乎不变)但 arena 内 rw 8824→1943MB(↓78%)→ 证实是**碎片未归还**而非 arena 耗尽。**最佳一刀**: `MALLOC_ARENA_MAX=2` 写进 `~/.openclaw/gateway.systemd.env`。**附带病灶**:memory-lancedb-pro 的 `memories.lance/_versions` **6.9GB vs data 164MB**(磁盘侧同病根)。终版报告 `memory/2026-10-30-gateway-rss.md` | 2026-10-30 | 🟢 根因已定位;**修复需 ZP 授权**(重启只清零不治本;env 加 MALLOC_ARENA_MAX 需改配置 + 重启) || P0 | **MiniMax M3 系列 thinking 载荷不兼容** — `MiniMax-M3` / `MiniMax-M3.1-Flash` 服务端强制 `thinking.type=adaptive`；全局 `agents.defaults.thinkingDefault="off"` 让 OpenClaw 原样发 `disabled` → 400 (2013)，表现为「飞书通道报错」实为模型层。放大器：会话级 `modelOverride` 会禁用配置里的 fallback 链（`configured fallbacks disabled by user model override`）→ 无兜底 | 2026-10-24 21:54 | ✅ 已修复 (22:10): per-model `params.thinking=adaptive` + 网关热载（revision 8），修复后 `requires adaptive` 计数=0 <!-- project: github.com/zpzpzp72/openclaw-backup-scripts --> |
+| P1 | **Gateway RSS 13.7GB 根因已定位(2026-10-30)** — 活体 inspector 实测:**V8 堆 heapUsed 3.90GB / heapTotal 4.06GB (达 --max-old-space-size=4096 上限的 96%)** + **约 9GB 是 glibc 每线程 arena 碎片棘轮**(209 个 64MB arena,rw 已提交 8.8GB)。那 17400+ 个「恰好 256KB」匿名段 = **V8 堆页**(256KB=kPageSize,隔离复现已证实)。**「每会话一份内存副本」已被否定**:10/26→10/30 会话数零增长而映射 +25%,比例吻合系巧合。驱动源 = 线程 churn(87 个 `tokio-runtime-w` 来自 LanceDB 插件的 Rust 线程池)。重启后 A/B 验证:arena 数 209→202(几乎不变)但 arena 内 rw 8824→1943MB(↓78%)→ 证实是**碎片未归还**而非 arena 耗尽。**最佳一刀**: `MALLOC_ARENA_MAX=2` 写进 `~/.openclaw/gateway.systemd.env`。**附带病灶**:memory-lancedb-pro 的 `memories.lance/_versions` **6.9GB vs data 164MB**(磁盘侧同病根)。终版报告 `memory/2026-10-30-gateway-rss.md` | 2026-10-30 | 🟢 根因已定位;**`MALLOC_ARENA_MAX=2` 已预置到 `~/.openclaw/gateway.systemd.env`(2026-10-31),等下次重启生效**;systemd 加载已实测验证 || P0 | **MiniMax M3 系列 thinking 载荷不兼容** — `MiniMax-M3` / `MiniMax-M3.1-Flash` 服务端强制 `thinking.type=adaptive`；全局 `agents.defaults.thinkingDefault="off"` 让 OpenClaw 原样发 `disabled` → 400 (2013)，表现为「飞书通道报错」实为模型层。放大器：会话级 `modelOverride` 会禁用配置里的 fallback 链（`configured fallbacks disabled by user model override`）→ 无兜底 | 2026-10-24 21:54 | ✅ 已修复 (22:10): per-model `params.thinking=adaptive` + 网关热载（revision 8），修复后 `requires adaptive` 计数=0 <!-- project: github.com/zpzpzp72/openclaw-backup-scripts --> |
 | P1 | **OpenClaw 升级被 Node 版本卡住（2026-10-31 实测）** — npm latest=2026.10.9（beta 10.10-beta.5 / extended-stable 2026.9.36）；10.6 起连续三个版本（10.6 / 10.8 / 10.9）都是安全发布，10.6+ `engines: node >=24.22.1 <25 \|\| >=26.12.1`（eMudhra 证书泄露补救）。本机 Node v26.10.0 **不满足** → 必须先升 Node（可用 v26.12.1 / v26.13.0）。10.7 新增 updater 守卫：Node 版本不匹配时**主动停止并保留当前 Gateway 运行**，不会半途搞坏 | 2026-10-31 | 🟡 待 owner 决策（先升 Node，再 `/update`）| <!-- project: github.com/zpzpzp72/openclaw-backup-scripts --> |
 | P1 | **MiniMax 429 根因 = Token Plan 5h 窗口耗尽**（非认证问题）— 配额单池按端点价扣减；M3.1-Flash 5h 满额 ≈6.1M input tokens / M3(≤512k) ≈2.9M / M3(>512k) ≈1.5M；耗尽时所有 minimax 模型同时返 429(2056)「已达到 Token Plan 用量上限」，OpenClaw 侧表现为 `Auth=no` + rate_limit 冷却（**是冷却不是缺 key**）；5h 窗口重置后自动恢复，无需改 key。查余量用 `mmx quota` 或 `api.minimaxi.com/v1/token_plan/remains`（CN key 别打 www.minimax.io） | 2026-10-24 | 🟡 配额管理问题，非故障；已被 8 个 agent 的 M3.1-Flash primary 放大（6/8 agent） | <!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
 | P2 | **APNetwork + WinDivert 稳定性** — 已确认 NDIS dump 仅观察到 1 次（2026-08-18 14:26），"每月数十次崩溃"无证据；WinDivert64.sys 时间戳 2022-09-20（很久没更新）；主要风险是三方共存而非高频崩溃 | 2026-08-26 | 🟢 切 NAT 后未复发，保留"未来 NDIS 更新时可能再触发"的观察 |
