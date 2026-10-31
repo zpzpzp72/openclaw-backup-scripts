@@ -6,8 +6,9 @@ _Curated insights from sessions past. Updated periodically from daily notes._
 
 ## 系统架构
 
-- **Gateway** (2026-10-03 17:30 CST 验证): 端口 18789, **app 2026.9.7 (c074824)** linux 6.6.87.2-microsoft-standard-WSL2
+- **Gateway** (2026-10-31 18:00 CST 实测): 端口 18789, **app 2026.10.5 (1b58cb9)** linux 6.6.87.2-microsoft-standard-WSL2, systemd user unit pid 648941（10-30 04:16 启动）
   - 实际安装路径: **NVM** `/home/zhiping/.nvm/versions/node/v26.10.0/lib/node_modules/openclaw`（不是 npm-global）
+  - ⚠️ **Gateway service 的 ExecStart 用的是 `/usr/local/bin/node`（→ `/usr/local/lib/nodejs/node-v26.10.0`，独立于 nvm），但 openclaw 包体在 nvm 里** —— 两套 node 同为 v26.10.0，升 Node 时两处都要动 <!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
   - RSS 2.7-3.4 GB（heap 上限 `--max-old-space-size=4096`，从 8192 降下来）
   - 前次 (8/28) 记录的 pid 623 / 1.29 GiB 已过时；升级路径见 `.learnings/LEARNINGS.md` 2026-10-03 条目
 - **Agents** (openclaw.json `agents.list`, 8 个): main / orchestrator / scout / coder / life / finance / **health** / **work**
@@ -120,6 +121,7 @@ M3.1-Flash 1/4/0.1 ✅ 与 CN 价一致；M3 记 0.5/2 ❌ 官方 2.1/8.4（≤5
 | P0 | **PROXY DOWN 127.0.0.1:25017** — `curl http://127.0.0.1:25017/` Failed to connect, 无 proxyon 进程，2026-08-27 发现；导致 `git fetch origin` 失败（memory-lancedb-pro 同步受阻）。**注意：`172.18.160.1:25017` 是通的**（根路径 404 属正常，实测能代理 wx.qq.com 200/0.28s），微信通道用的是后者，不受影响 | 2026-08-27 | 🔴 Main 未处理（仅影响 git fetch） | <!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
 | P2 | Coder 最近 code_report 停留在 **2026-07-30**（29 天没更新）；orchestrator 标"08-27 cron 恢复"但实际产物未刷新 | 2026-08-28 | 🟡 待核查 |
 | P1 | **Gateway RSS 13.7GB 根因已定位(2026-10-30)** — 活体 inspector 实测:**V8 堆 heapUsed 3.90GB / heapTotal 4.06GB (达 --max-old-space-size=4096 上限的 96%)** + **约 9GB 是 glibc 每线程 arena 碎片棘轮**(209 个 64MB arena,rw 已提交 8.8GB)。那 17400+ 个「恰好 256KB」匿名段 = **V8 堆页**(256KB=kPageSize,隔离复现已证实)。**「每会话一份内存副本」已被否定**:10/26→10/30 会话数零增长而映射 +25%,比例吻合系巧合。驱动源 = 线程 churn(87 个 `tokio-runtime-w` 来自 LanceDB 插件的 Rust 线程池)。重启后 A/B 验证:arena 数 209→202(几乎不变)但 arena 内 rw 8824→1943MB(↓78%)→ 证实是**碎片未归还**而非 arena 耗尽。**最佳一刀**: `MALLOC_ARENA_MAX=2` 写进 `~/.openclaw/gateway.systemd.env`。**附带病灶**:memory-lancedb-pro 的 `memories.lance/_versions` **6.9GB vs data 164MB**(磁盘侧同病根)。终版报告 `memory/2026-10-30-gateway-rss.md` | 2026-10-30 | 🟢 根因已定位;**修复需 ZP 授权**(重启只清零不治本;env 加 MALLOC_ARENA_MAX 需改配置 + 重启) || P0 | **MiniMax M3 系列 thinking 载荷不兼容** — `MiniMax-M3` / `MiniMax-M3.1-Flash` 服务端强制 `thinking.type=adaptive`；全局 `agents.defaults.thinkingDefault="off"` 让 OpenClaw 原样发 `disabled` → 400 (2013)，表现为「飞书通道报错」实为模型层。放大器：会话级 `modelOverride` 会禁用配置里的 fallback 链（`configured fallbacks disabled by user model override`）→ 无兜底 | 2026-10-24 21:54 | ✅ 已修复 (22:10): per-model `params.thinking=adaptive` + 网关热载（revision 8），修复后 `requires adaptive` 计数=0 <!-- project: github.com/zpzpzp72/openclaw-backup-scripts --> |
+| P1 | **OpenClaw 升级被 Node 版本卡住（2026-10-31 实测）** — npm latest=2026.10.9（beta 10.10-beta.5 / extended-stable 2026.9.36）；10.6 起连续三个版本（10.6 / 10.8 / 10.9）都是安全发布，10.6+ `engines: node >=24.22.1 <25 \|\| >=26.12.1`（eMudhra 证书泄露补救）。本机 Node v26.10.0 **不满足** → 必须先升 Node（可用 v26.12.1 / v26.13.0）。10.7 新增 updater 守卫：Node 版本不匹配时**主动停止并保留当前 Gateway 运行**，不会半途搞坏 | 2026-10-31 | 🟡 待 owner 决策（先升 Node，再 `/update`）| <!-- project: github.com/zpzpzp72/openclaw-backup-scripts --> |
 | P1 | **MiniMax 429 根因 = Token Plan 5h 窗口耗尽**（非认证问题）— 配额单池按端点价扣减；M3.1-Flash 5h 满额 ≈6.1M input tokens / M3(≤512k) ≈2.9M / M3(>512k) ≈1.5M；耗尽时所有 minimax 模型同时返 429(2056)「已达到 Token Plan 用量上限」，OpenClaw 侧表现为 `Auth=no` + rate_limit 冷却（**是冷却不是缺 key**）；5h 窗口重置后自动恢复，无需改 key。查余量用 `mmx quota` 或 `api.minimaxi.com/v1/token_plan/remains`（CN key 别打 www.minimax.io） | 2026-10-24 | 🟡 配额管理问题，非故障；已被 8 个 agent 的 M3.1-Flash primary 放大（6/8 agent） | <!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
 | P2 | **APNetwork + WinDivert 稳定性** — 已确认 NDIS dump 仅观察到 1 次（2026-08-18 14:26），"每月数十次崩溃"无证据；WinDivert64.sys 时间戳 2022-09-20（很久没更新）；主要风险是三方共存而非高频崩溃 | 2026-08-26 | 🟢 切 NAT 后未复发，保留"未来 NDIS 更新时可能再触发"的观察 |
 | P0 | **public 仓库入库前无凭据扫描闸门** — `zpzpzp72/openclaw-backup-scripts` 是 **public**；`c9353413` 把 `.backups/`（含 `appSecret`/API key 明文 + 434MB sqlite）误收进去，靠 filter-branch 改写历史才清除 | 2026-10-30 | 🟡 已清除 + 加 .gitignore；**仍需 pre-push 扫描 skill**（NightOps v28 议题4 列为最高优先级） |
@@ -215,7 +217,7 @@ M3.1-Flash 1/4/0.1 ✅ 与 CN 价一致；M3 记 0.5/2 ❌ 官方 2.1/8.4（≤5
 
 ---
 
-_Last updated: 2026-10-26 01:25 CST (新增：Gateway 10.29GB 内存定位 — 会话量线性增长非泄漏；Gateway service config 三条 issue 已修 + node 链路归一；npm prefix 污染修复)_
+_Last updated: 2026-10-31 18:10 CST (新增：OpenClaw 10.5→10.7/10.9 升级评估 —— 内容层无新功能、三版皆安全发布；Node v26.10.0 < 要求 26.12.1 为硬门槛；Gateway 版本行纠正为 2026.10.5)_
 
 ## 审计日志 (Audit Trail)
 
