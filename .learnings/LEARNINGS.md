@@ -95,3 +95,8 @@ anon Private_Dirty 9.88GB / file 0.15GB
 - 看到「磁盘快满」先分清三层:① 卷总用量 ② 某目录占用 ③ 增长源。`df` 只回答①,`du` 回答②,`find -newermt` 回答③。
 - **备份体积异常膨胀,先查源目录的 exclude 规则**,而不是先删旧备份 —— 不修 exclude,删了也会再涨回来。
 - `du` 在网络盘(NAS)上极慢(单目录 >100s),要**定向查少数几个可疑目录**,别全量扫。
+
+## 2026-10-31 nvm 0.40 + ~/.npmrc prefix 冲突坑
+- 经过: 装 rea-agents 需 node>=26.12.1；nodejs.org tarball sha256 检验通过, 但 ~/.npmrc 的 prefix 钉死 v26.10.0 使 nvm install/use 流程整体非零退出; npmmirror 镜像 SHASUMS256.txt 返回空无法校验。
+- 处理: 不动用户 ~/.npmrc; 手动 tar -xJf 解包 nvm 已验证的缓存 tarball 到 ~/.nvm/versions/node/; npm 加 --userconfig=<空文件> 绕过 prefix + --prefix 指向目标 node 树; CLI 用 shim 钉到特定 node 版本; nvm default alias 钉回用户默认版本防劫持。
+- 补充：npmmirror 兜底装 node 时镜像 SHASUMS 返回空 → 已解包目录视为不可信，移入 .nvm-quarantine，防止 nvm use 26 解析到未验证版本；确需该版本用 nodejs.org 官方 tarball 重装。

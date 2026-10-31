@@ -42,6 +42,8 @@ _Curated insights from sessions past. Updated periodically from daily notes._
   - **⚠️ M3 系列必须 `thinking=adaptive`**（2026-10-24 22:10 修复并热载）: `MiniMax-M3` / `MiniMax-M3.1-Flash` 服务端**强制** `thinking.type=adaptive`，发 `disabled` 直接 400 (2013)「requires adaptive thinking」。全局 `agents.defaults.thinkingDefault="off"` 会触发它 → 必须在 `agents.defaults.models` 给这两个模型单设 `params.thinking="adaptive"`（per-model 优先级高于全局，resolution order #5 > #6，见 docs/tools/thinking.md）。M2.7 / litellm / ollama 不受影响。备份 `openclaw.json.bak.thinkingfix-20261024-221008` <!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
 
 
+- **本地工具 REA (Reverse Engineer Anything)**: `rea-agents@6.8.0`（官方 `morluto/rea`, MIT）装在 nvm **v26.12.1** 树；CLI shim `~/.local/bin/rea`；MCP 已注册 codex / claude_code / opencode（配置带 `*.rea.backup` 备份）。nvm default alias 已钉回 26.10.0 防劫持（npmmirror 来源的 v26.13.0 校验失败→隔离 ~/.nvm/.nvm-quarantine，可取回）；npm audit 6 项（2 high: zod 内存 DoS，上游暂无修复版）；原生分析引擎（Ghidra/IDA/Hopper/JADX/Kuna）未配置——JS/Electron/网页分析开箱即用
+
 ## MiniMax Token Plan 配额机制（2026-10-24 22:00 官方文档 + 受控实测） <!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
 
 **⚠️ 核心结论：429 的根因是 Token Plan 5 小时窗口耗尽，不是认证问题。** 认证（API Key）全程有效；配额打满时 MiniMax 返回
@@ -234,7 +236,7 @@ M3.1-Flash 1/4/0.1 ✅ 与 CN 价一致；M3 记 0.5/2 ❌ 官方 2.1/8.4（≤5
 
 ---
 
-_Last updated: 2026-10-31 18:10 CST (新增：OpenClaw 10.5→10.7/10.9 升级评估 —— 内容层无新功能、三版皆安全发布；Node v26.10.0 < 要求 26.12.1 为硬门槛；Gateway 版本行纠正为 2026.10.5)_
+_Last updated: 2026-10-31 20:57 CST (新增：REA 工具链安装（rea-agents@6.8.0，nvm 新增已验证 v26.12.1，v26.13.0 未证实→隔离）；此前：OpenClaw 10.5→10.7/10.9 升级评估 —— 内容层无新功能、三版皆安全发布；Node v26.10.0 < 要求 26.12.1 为硬门槛；Gateway 版本行纠正为 2026.10.5)_
 
 ## 审计日志 (Audit Trail)
 
