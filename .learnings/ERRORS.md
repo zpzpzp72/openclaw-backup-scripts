@@ -424,3 +424,36 @@ Validation failed for tool "exec":
 - **error-detected 里的信号必须逐条核实,不能默认都是真错误**。
   判据:该条对应的工具调用是否真的返回了 failure/exception,而不是只看它"像不像"错误输出。
 - 本轮据此定位到唯一的真实问题(漏传 title),其余两条排除 —— **避免为误报去"修"根本没坏的东西**。
+
+## ERR-20261102-003 File History 队列通道竞态:运行中覆写 queue.ps1 的新载荷被收尾清理删除
+
+**现象**:fh-diag-F 载荷运行期间(04:59:02–05:01:19)向 `C:\Scripts\logs\queue.ps1` 重写放入 M 载荷(maintenance task 实验),写入返回成功 6070B;但 F 收尾完成后 queue.ps1 被清空删除 → M 载荷**从未执行且无任何报错**,差点误判「已投递」。
+**机制**:runner 消费后清理 queue.ps1;若在载荷运行中写入,新文件会随旧载荷收尾一并被删(或被收尾清理覆盖)。queue-run.log 显示 F 是最后一条记录,证明 M 从未入过执行序列。
+**教训**:
+- **写 queue.ps1 前必须确认 queue-run.log 最后一条是 `payload done` + exit code**(通道空闲)。F 的日志结尾是 `payload exit code = 0 / === queued payload done ===` 才算收完。
+- 「已重投/已投递」宣称必须有事后 `ls`/日志佐证,不能只看 write 返回值(同类:声称已做但无工具调用证据)。
+- 同一队列通道一次只放一个载荷;需串行实验就在 payload 内部串联步骤,或在确认前一载荷 done 后再投。
+- 载荷可在开头 `Remove-Item ... queue.ps1 -ErrorAction SilentlyContinue` 自声明防重入(防 15 分钟内下一次 ResetAPNetwork 重复执行);若与自身句柄冲突删除失败也无害,靠 runner 收尾清理兜底。
+
+## ERR-20261102-004 File History 配置回写机制翻案:推导源是文件系统而非 catalog
+
+**背景**:干净重建后(11-01 23:23 删除全部 store+catalog)曾观察到 23:29/00:31/01:31 配置被回写成 44 项,当时结论「仅改 Config*.xml 不可靠,服务从 catalog 重建清单并覆写 XML」。
+**翻案**:
+- B/D/E 三轮一致证明:**catalog 全删的窗口,服务照样回写 44 项** → 推导源是**文件系统**(profile 顶层目录 + shell 库),不是 catalog;「XML 是 catalog 镜像」的旧结论不完整。
+- 但 fh-diag-F 实测:fresh 启动的服务(无 catalog)运行 2 分钟内**不回写**;23:29/00:31/01:31 的回写点与 maintenance task COM 激活(或 fhmanagew 孤儿)窗口吻合 → 回写疑似绑定**maintenance task COM 激活上下文**而非普通 Start-Service,精确触发条件仍待 M2 测试定论。
+- **服务自停模式(第 3 次实锤)**:F 04:59:18 由载荷启动 → 05:01 Running → 05:07 已 Stopped/Manual,中间无人成功 stop(elevated Stop-Service 报「无法打开计算机上的 fhsvc 服务」,是 SCM 权限噪声,不掩盖自停事实)→ **无合法 catalog 时空闲服务 3–4 分钟自停**。
+- **fhsvcctl P/Invoke 另一失败模式**:`Add-Type` 后调用 `FhServiceOpenPipe(out uint)` 抛 NullReference(调用层反射 marshalling 问题,而非签名猜错)→ 管道路线放弃,需 COM 接口 IFhService + 正确 marshaling 才能进一步,不再投入。
+- **COM 盲调不可行**:`FhReassociation`/`FhTargetMigration` 实例化成功但 10 个方法全部 NullReference(fhcfg 无 typelib/无 dispatch 绑定)。
+- **TGT Config2 = 21 项(缺 .agents)**,其余三份 22 项 — 存档副本小不一致,无实质影响,不修。
+- **M2 后记(06:20)**:维护任务 Enable+Start 实测成功(Ready/True,0x0)但 fhsvc ≤20 秒自停、catalog 零产出、UF 恒 22 零回写 → 「COM 激活触发回写」假说未获证实,触因仍未知(仅三个不明窗口出现过),不再追。
+- **自停升级为第 4 次实锤且更快**:M2 服务 Running→Stopped ≤20 秒(F 约 2–6 分钟)——无合法 catalog 时服务确定性快速自停,官方 COM 激活也救不回。
+**教训**:机制结论(「推导源是 X」)必须有跨条件证据(有无 catalog/有无孤儿/有无 COM 激活各一组实验),仅凭单轮时间相关性下结论会被下一轮翻案。
+
+## ERR-20261102-005 PowerShell 对无 typelib 的 COM 用 InvokeMember 盲调:全量方法 NRE
+
+**现象**:probe-fh 对 fhcfg.dll 的 FhReassociation/FhTargetMigration 用 Type.InvokeMember 按名调用 10 个疑似方法,实例化成功但全部抛「未将对象引用设置到对象的实例」(NRE),hr 无法获知。
+**根因**:fhcfg.dll 未注册 typelib,COM 接口是 custom vtable 接口,不能 IDispatch/InvokeMember 按名绑定;实例化成功仅说明 coclass 可创建,不说明方法可调。
+**教训**:
+- 遇到「实例化成功但方法全 NRE」,先查 typelib 注册(`oleview`/注册表 TypeLib),不要继续换方法名盲调。
+- 无 typelib 的自定义 COM 需要 vtable 顺序 + Marshal 显式调用,工程量与收益不成比例 → 判定为「不可行」并记录,不反复尝试。
+- 同类教训:fhmanagew.exe CLI 动词(提权 `-checktarget`/`-backupnow`)依旧 exit=1 无输出且留 180 秒孤儿进程(53932/91040) → **fhmanagew 无可用 CLI**,每次尝试后必须 taskkill 清孤儿。

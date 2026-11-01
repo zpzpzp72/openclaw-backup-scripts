@@ -150,9 +150,16 @@ M3.1-Flash 1/4/0.1 ✅ 与 CN 价一致；M3 记 0.5/2 ❌ 官方 2.1/8.4（≤5
 **踩坑**:`du`/`find` 在 `/mnt/c` 上极慢(单个目录可 >45s),会让 exec 超时丢结果 —— 统计 Windows 盘必须**逐目录限时**(`timeout 25 du -sh <dir>`),不要递归全盘扫。
 
 
-## Windows D 盘空间治理（2026-11-01 22:40 更新） <!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
+## Windows D 盘空间治理（2026-11-02 收官 · M2 试败终局） <!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
 
-**症状**：`/mnt/d` 100% 满（477G，Avail 0）。**根因已查明，清理已执行，D 盘现空闲 215.3 GB。**
+### 2026-11-02 收官实况（06:40 · M2 试败后）
+
+- **干净重建完成 + 全系统冻结**：store / catalog（LOCAL+TGT 四个 edb）/ staging 全空；D 盘空闲 **≈345.1GB**（df 346G，口径差 <1G）；`fhsvc=Stopped/Manual`；维护任务 **Disabled**（COM handler 89917B7C-A1A6-11DF-8BF6-18A90531A85A，Principal=LOCAL SERVICE）；四份 Config 冻在 22 项 + `AGE LIMIT/7`（FE=0：`FolderExclude` 未持久化；TGT C2=21 缺 `.agents`，存档瑕疵不修）；无孤儿进程。P2（`BKP X1 20240619` 146.55G / `wzp` 18.9G）未获授权未动。
+- **程序化路径正式穷尽（M2 试败收口）**：fhmanagew CLI（提权也 exit=1 零输出 + 180s 孤儿）；fhcfg COM 无 typelib 盲调全 NRE；fhsvcctl Add-Type P/Invoke 调用层 NRE；**maintenance task COM 激活（M2）试败**——任务成功激活（Ready/True/0x0）但 fhsvc ≤20 秒自停（第 4 次复现）、catalog 零产出、UF 恒 22 零回写、BackupLog/WHC 零事件。**官方入口只剩 GUI**（五步清单见 memory/2026-11-02.md）。
+- **44 项回写机制（终版）**：推导源 = **文件系统**（catalog 全删窗口照样回写 44 项）；M2 实测 COM 激活后**零回写** → 「COM 激活触发回写」假说未证实，回写触因不再追（成本>收益）。
+- **冻结期 ~9GB 消耗已定位**（M2 探针）：= **VSS 影子副本 Allocated 9.53GB**（Used 17.3MB，Max 191GB=40%）；USN journal Max 32MB 忽略；页文件在 C:（43GB）非 D:。**处置待授权（列而不动）**：`vssadmin delete shadows /for=D: /all` 预估回收 ~9.5G——涉还原点，破坏性边缘，须 ZP 点头；是否关 D: 系统保护/压低上限由 ZP 定。
+
+**症状**：`/mnt/d` 曾 100% 满（477G，Avail 0）。根因已查明，P0→P1 清理执行完毕，最终态以顶部「2026-11-02 收官实况（06:40）」为准。
 
 ### 根因：File History 保留策略被禁用 + 高频写小文件源目录
 
@@ -179,9 +186,9 @@ M3.1-Flash 1/4/0.1 ✅ 与 CN 价一致；M3 记 0.5/2 ❌ 官方 2.1/8.4（≤5
 | P0 | 删旧格式区 `Data\$OF`（`fh-of-remove.ps1`，`robocopy /MIR` 788,834 个只读文件） | 释放 ≈ 66 GB，205s | ✅ |
 | P1 | 从两侧 `<UserFolder>` 移除 `.ollama`/`.workbuddy`/`.vscode`/`.codex`/`.cache` | **无效 —— 被服务还原**（见下） | ❌ |
 | P1 | 17 个源目录加 SYSTEM `Deny ReadAndExecute` | **无效 —— 服务照拷**（见下）；**已彻底回滚**（`denySYSTEM=0`） | ↩️ |
-| — | 止血开关：`fh-halt.ps1`（停服务+禁用维护任务）/ `fh-resume.ps1`（恢复） | 现为 `fhsvc=Running/Automatic`、维护任务 `Ready` | ✅ |
+| — | 止血开关：`fh-halt.ps1`（停服务+禁维护任务）/ `fh-resume.ps1`（恢复） | 终态：`fhsvc=Stopped/Manual`、任务 `Disabled`（M2 自动回冻） | ✅ |
 
-**当前状态**：`D` 空闲 **215.3 GB**（起始 0）；`fhsvc=Running/Automatic`；维护任务 `Ready`；
+**过程态存档（已被 06:40 终态取代）**：彼时 D 空闲 215.3GB、fhsvc Running/Automatic、维护任务 Ready、恢复后 6 分钟零增长——23:23 转入干净重建，store+catalog 整体删除，终态见顶部。
 恢复后 6 分钟**零增长**（964,080 文件 / 136.47 GB 恒定）→ catalog 已自洽，不再重播种。
 
 ### 三条被实测证伪的手段（详见 `.learnings/ERRORS.md` ERR-20261101-002）
@@ -203,7 +210,7 @@ M3.1-Flash 1/4/0.1 ✅ 与 CN 价一致；M3 记 0.5/2 ❌ 官方 2.1/8.4（≤5
 → **排除目录的唯一可靠入口是 catalog，命令行不可达**（`fhmanagew.exe` 无 CLI 参数、注册表无清单）
 → 若必须排除，只能走 GUI（控制面板 File History）或接受现状。
 
-### Store 现状（`C:\Scripts\fh-scan-run.ps1`，C# 加速，全量 964,080 文件 / 136.47 GB）
+### Store 现状（历史快照 2026-11-01 清理前；23:23 重建已整体删除，仅存档）
 
 | 目录 | 文件数 | 占用 | 超 7 天版本 | 7 天内版本 |
 |---|---:|---:|---:|---:|
@@ -365,7 +372,7 @@ M3.1-Flash 1/4/0.1 ✅ 与 CN 价一致；M3 记 0.5/2 ❌ 官方 2.1/8.4（≤5
 
 ---
 
-_Last updated: 2026-10-31 20:57 CST (新增：REA 工具链安装（rea-agents@6.8.0，nvm 新增已验证 v26.12.1，v26.13.0 未证实→隔离）；此前：OpenClaw 10.5→10.7/10.9 升级评估 —— 内容层无新功能、三版皆安全发布；Node v26.10.0 < 要求 26.12.1 为硬门槛；Gateway 版本行纠正为 2026.10.5)_
+_Last updated: 2026-11-02 06:44 CST (M2 试败收口——File History 程序化路径穷尽、恢复只剩 GUI；冻结期 9GB 去向＝VSS 影子副本 9.53GB 待授权删除；此前 10-31：REA 四路引擎配齐)
 
 ## 审计日志 (Audit Trail)
 
