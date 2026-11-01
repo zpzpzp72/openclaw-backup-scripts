@@ -32,7 +32,7 @@ _Curated insights from sessions past. Updated periodically from daily notes._
   - NightOps / claw-sync / heartbeat: `@reboot` + `30 3 * * *` + `0 * * * *`
 - **模型 fallback 链** (`openclaw.json` `agents.entries`, 2026-10-24 05:10 Main 全局收敛) <!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
   - **统一链条（2026-10-24 实测，8 agent + defaults 全部相同）**: `minimax/MiniMax-M3.1-Flash` → `minimax/MiniMax-M2.7` → `litellm/GLM-5.3-Flash` → `litellm/deepseek-flash` → `litellm/LongCat-2.0` → `ollama/qwen3:4b-instruct`（末位兜底）
-  - `agents.defaults.model`: primary `minimax/MiniMax-M2.7`; `agents.entries.orchestrator`: primary `minimax/MiniMax-M2.7`; **`{scout,coder,life,finance,health,work}`(6 个) primary = `minimax/MiniMax-M3.1-Flash`**; `main`: 继承 defaults
+  - `agents.defaults.model`: primary `minimax/MiniMax-M2.7`; `agents.entries.orchestrator`: primary `minimax/MiniMax-M2.7`; **`{scout,coder}`(2 个) primary = `minimax/MiniMax-M3.1-Flash`**；**`{life,finance,health,work}`(4 个) primary = `minimax/MiniMax-M2.7`**（2026-10-31 调整，按近7天活跃度与上下文需求分流）；`orchestrator` primary = `minimax/MiniMax-M2.7`；`main`: 继承 defaults
   - `agents.entries.health` 的 primary 已从 `longcat/LongCat-2.0`(401 无 key) 改为 `minimax/MiniMax-M2.7`
   - **provider 实际列表**: minimax / litellm / ollama / longcat / siliconflow / openrouter（6 个）
   - **provider 状态（2026-10-24 22:00 用 sqlite 真实 key 逐个实测）**: 🟢 minimax(CN) 200/1.23s · litellm@NAS **全通**(M2.7 200/1.12s, deepseek-flash 200/0.60s, LongCat-2.0 200/1.32s, GLM-5.3-Flash 200/5.71s) · siliconflow **200/1.96s**（旧记「30014 key 失效」已证伪）· longcat **200/2.11s**（旧记「401 无 key」已证伪）· ollama 200（qwen3:4b-instruct 0.64s / qwen3.6:27b 30s）· 🔴 **openrouter 402 Insufficient credits（余额 0，唯一真死链）**
@@ -64,17 +64,38 @@ OpenClaw 侧表现为 `models list` 里该模型 `Auth=no` + `authProfiles.state
 
 官方只公布百分比、不公布 token 绝对值。2026-10-24 22:00 用「已知 input token 数 → 观察窗口余量百分比变化」反推（CN 标准价）：
 
-| 模型 | 输入 元/百万 | 输出 元/百万 | 缓存读取 元/百万 | 5h 窗口满额可跑 input |
-|---|---:|---:|---:|---:|
-| **MiniMax-M3.1-Flash** | 1.00 | 4.00 | 0.10 | **≈ 6.1 M tokens** |
-| MiniMax-M3 (≤512k 输入) | 2.10 | 8.40 | 0.42 | ≈ 2.9 M tokens |
-| MiniMax-M3 (>512k 输入) | 4.20 | 16.80 | 0.84 | ≈ 1.5 M tokens |
-| MiniMax-M2.7 | 现行定价页已不单列（旧模型） | | | — |
+| 模型 | 输入 元/百万 | 输出 元/百万 | 缓存读取 元/百万 | 上下文上限 | 5h 窗口可跑 input（区间） |
+|---|---:|---:|---:|---:|---:|
+| **MiniMax-M3.1-Flash** | 1.00 | 4.00 | 0.10 | 1049k | **≈ 6 M – 25 M tokens** |
+| MiniMax-M3 (≤512k 输入) | 2.10 | 8.40 | 0.42 | 1000k | ≈ 3 M – 12 M tokens |
+| MiniMax-M3 (>512k 输入) | 4.20 | 16.80 | 0.84 | 1000k | ≈ 1.5 M – 6 M tokens |
+| MiniMax-M2.7 | 现行定价页已不单列（旧模型） | | | **205k** | ≈ 6 M – 25 M tokens（与 M3.1-Flash 实测同量级） |
 
-- 实测斜率：676,006 input tokens → 窗口余量 59%→48%（11%）→ **每 1% ≈ 61,455 input tokens**
-- 换算：6.1M ÷ 2.1 = 2.9M（对 M3 ≤512k）；6.1M ÷ 4.2 = 1.5M（对 M3 >512k）
-- ⚠️ 该数为**单请求 input 口径**，输出与 thinking token 按 4x 价另行扣减；M3.1-Flash thinking 恒开且不可关（官方 OpenClaw 指南），实际可用量低于表值
-- 优先服务（`service_tier=priority`）= 标准价 ×1.5，同样窗口内可跑量再降 1/3
+**⚠️ 斜率法在本机不可靠，区间才是诚实答案。** 2026-10-31 做了 4 轮受控反推，斜率从 **61,455 → 246,933 → 177,849 → 141,144 tokens/1%** 大幅漂移，差 4 倍。原因有两个，都是**测量法缺陷**而非配额机制变化：
+
+1. **背景消耗污染**：本机 8 个 agent 的 primary 全是 minimax，本会话自身也是 `minimax/MiniMax-M2.7` → 窗口余量下降 = 我的探针 + 8 个 agent + cron 的**合计**。
+   做过空窗口对照（70 秒不发请求）：余量 84%→84%，0% 降幅，说明背景消耗是**间歇突发**（agent 醒来就烧一波）而非持续，与探针窗口是否重叠完全看运气。
+2. **服务端 prompt cache 让 usage 失真**：重复内容命中缓存时 `input_tokens` 报成 **1**（而非真实值），但**仍然扣费**。第一轮那批 `round2/3/4 in=1` 就是缓存命中信号 —— 那轮 11% 降幅里有相当部分是缓存读取计费被记在了我头上，导致斜率被严重低估。
+
+**方法论修正**：在「有其他消费者共享同一配额池」的机器上反推斜率，**必须**（a）先做空窗口基线、（b）用**不可缓存的随机内容**（`random.choices` 生成）避免 cache_read 干扰、（c）**加大样本到百分比粒度可分辨**（≥4% 降幅）。否则得到的数字没有意义。
+→ 结论：**官方不公布绝对 token 上限这件事不是文档缺失，是设计上就不打算让你用反推法得到精确值**。区间 6M–25M 足够做规划决策，别再引用单一数字。 <!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
+
+**M2.7 与 M3.1-Flash 的实测单价几乎相同**：同一次对照实验（等量随机内容、去缓存）中两者斜率仅差 **0.98x**（251,983 vs 246,933 tokens/1%）。→ **换 M2.7 不省配额**（同一池子、同一量级）。
+但实测出两个**真实且重要的差异**：
+
+| 维度 | MiniMax-M2.7 | MiniMax-M3.1-Flash |
+|---|---|---|
+| **上下文上限** | **205k**（超了报 `400 invalid params, context window exceeds limit (2013)`） | **1049k** |
+| `thinking=disabled` | ✅ HTTP 200 | ❌ **HTTP 400**（服务端强制 adaptive） |
+| `thinking=adaptive` | ✅ HTTP 200 | ✅ HTTP 200 |
+| 实测输出 token | 115（thinking 42） | 260（thinking 175） |
+
+→ **重上下文任务必须留在 M3.1-Flash**；M2.7 适合短上下文的日常 agent。
+
+**换 M2.7 的真实收益是「分散故障域」，不是「分散配额」**：
+- M3 与 M3.1-Flash **共用同一把 CN key + 同一个 Token Plan 池**，429 时**同时**失败；M2.7 虽同池但**独立生效**，是唯一能在 M3 系全挂时单独存活的 minimax 模型。
+- M3.1-Flash 强制 `thinking=adaptive`；若某次网关误发 `disabled` 会 400(2013)。M2.7 无此约束，是**故障隔离点**。
+- 反面成本：M2.7 上下文只有 205k，扛不住长会话；且 M2.7 单价在现行定价页已下架，无法精确折算。
 
 **省钱排序**（对 Plus 档）：① 缓存命中只要 input 价的 1/10（0.10 vs 1.00）→ 长会话固定前缀务必命中；② 上下文控制在 512k 以内（超了 M3 直接变 4.2 元/M）；③ M3.1-Flash 比 M3 便宜 2.1–4.2 倍；④ 简单任务降 thinking 深度（M3 可调，M3.1-Flash 不可）。
 
@@ -126,6 +147,67 @@ M3.1-Flash 1/4/0.1 ✅ 与 CN 价一致；M3 记 0.5/2 ❌ 官方 2.1/8.4（≤5
 
 **踩坑**:`du`/`find` 在 `/mnt/c` 上极慢(单个目录可 >45s),会让 exec 超时丢结果 —— 统计 Windows 盘必须**逐目录限时**(`timeout 25 du -sh <dir>`),不要递归全盘扫。
 
+
+## Windows D 盘空间治理（2026-11-01 22:30 实测） <!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
+
+**症状**：`/mnt/d` 100% 满（`df` 显示 477G/477G, Avail 0；PowerShell `SizeRemaining=0`）。**已查明根因，未删任何文件。**
+
+### 占用排序（D 盘总计 476.73 GiB）
+
+| 目录 | 占用 | 性质 | 是否还在长 |
+|---|---:|---|---|
+| **`D:\FileHistory`** | **351.72 GB** | **Windows 文件历史记录备份**（`fhsvc` 服务 Running/Automatic，备份 `C:\Users\Zhiping Wu`） | ⚠️ **是**（见下） |
+| `D:\BKP X1 20240619` | 146.55 GB | 2024-06-19 整盘镜像备份（c: 61.79 + d: 84.76） | ❌ 静态 |
+| `D:\wzp` | 18.90 GB | AMAT 11.38 + OutlookMailExport 4.37 + .7z 3.16 | ❌ 静态 |
+| `D:\Antigravity` / `EdgeGo` / `VS Code` / `ima.copilot` / `ChromeGo` | 各 0.5–2.3 GB | 应用数据 | 部分增长 |
+| `D:\$RECYCLE.BIN` | 2.3 MB | 回收站 | — |
+
+> 逐目录 `du` 在 9p 挂载上极慢（单目录可 >25s），**必须用 Windows 侧 PowerShell `Get-ChildItem -Recurse | Measure-Object Length`** 统计，否则会超时丢结果。MEMORY 原有「/mnt/c 治理」经验同样适用。
+
+### 根因：文件历史记录的保留策略被禁用
+
+`D:\FileHistory\Zhiping Wu\AMD-AI9-X1-HX37\Configuration\Config1.xml` 与 `Config2.xml` 均含：
+
+```xml
+<RetentionPolicies>
+  <RetentionPolicyType>DISABLED</RetentionPolicyType>
+  <MinimumRetentionAge>365</MinimumRetentionAge>
+</RetentionPolicies>
+```
+
+**`RetentionPolicyType=DISABLED` = Windows 永不清理旧版本**，而 `fhsvc` 每小时（`DPFrequency=3600`）扫一遍源目录，把每个改动过的文件存成一份新副本 `原名 (YYYY_MM_DD HH_MM_SS UTC)`。两者叠加 → **只进不出，单调累积**。这是「为什么这么快就没了空间」的全部答案。
+
+放大它的两个源（都在 `Config1.xml` 的 `<UserFolder>` 列表里）：
+- `C:\Users\Zhiping Wu\Documents\Wechat_WZP` —— 源目录仅 **6.41 GB**，但备份出 **213.22 GB**（**33 倍膨胀**）。版本按月分布：2026-04 起每月 1.1 万–8.4 万个副本，**2026-08 单月 84,185 副本 / 118.65 GB**。源目录含微信的 `apm_record/process_duration/*.ts` 等高频写小文件 → 每小时全量新副本。
+- `C:\Users\Zhiping Wu\.ollama`（18.38 GB）、`.workbuddy`（23.02 GB）、`.vscode`（6.06 GB）、`.codex`（0.81 GB）、`.cache`（0.80 GB）—— 缓存与依赖目录，**备份价值极低、增量极大**。
+
+另：`Data\$OF`（旧格式区）**65.96 GB / 15,103 个版本目录**，最后写入 2026-04-15 —— 是 File History 早期格式的历史包袱，同样无人清理。
+
+### 清理方案（**待 ZP 拍板，助手未执行任何删除**）
+
+| 优先级 | 动作 | 可释放 | 风险 | 说明 |
+|:--:|---|---:|---|---|
+| **P0** | 改 File History 保留策略：`RetentionPolicyType` 由 `DISABLED` 改为有限保留（如 30/90 天），或改用「磁盘空间不足时清理」 | **不立刻释放，但止血** | 低 | **必须先做**，否则清完还会长回来 |
+| **P0** | 删 `Data\C\Users\Zhiping Wu\Documents\Wechat_WZP` 下的历史版本（保留最近 1–2 个） | ≈ 210 GB | 低 | 源文件在 C 盘完好，删的只是 D 盘副本 |
+| **P1** | 从 `Config1.xml` 的 `<UserFolder>` 列表移除 `.ollama` / `.workbuddy` / `.vscode` / `.codex` / `.cache` | 不释放但**长期止血** | 低 | 这些是缓存/依赖，重装即可恢复 |
+| **P1** | 删 `Data\$OF`（65.96 GB / 15,103 目录，2026-04-15 后未再写入） | ≈ 66 GB | 低 | 旧格式历史包袱 |
+| **P2** | `D:\BKP X1 20240619`（146.55 GB）迁移到 NAS `/mnt/h` 或删除 | ≈ 146 GB | 中 | **NAS 也只剩 148 GB 且 98%**，建议先删或外移，不要往 NAS 塞 |
+| **P2** | `D:\wzp\OutlookMailExport.7z`（3.16 GB）与其解压目录（4.37 GB）二选一 | ≈ 3–4 GB | 低 | 重复数据 |
+| **P3** | `D:\$RECYCLE.BIN`、各类应用 cache | ≈ 1–3 GB | 低 | 收益小 |
+
+**注意事项**：
+1. ⚠️ **不要手动删 `FileHistory` 里除 `Wechat_WZP` 以外的东西再指望服务自愈** —— `Configuration\Catalog1.edb` / `Catalog2.edb`（各 424 MB）是**目录索引**，与 `Data` 内容一一对应；索引与数据不一致会导致 File History 备份状态损坏、无法恢复。**正确做法是先用 `Config1.xml` 改策略让 Windows 自己清**，而不是手删 Data 下的文件。
+2. ⚠️ `fhsvc` 在跑，**任何删除前先 `Stop-Service fhsvc`**，删完再起；否则服务可能在删除过程中写 Catalog 造成损坏。
+3. ⚠️ 我统计的目录合计（约 517 GB）**大于** `df` 的 476.73 GB —— 存在 NTFS 压缩/稀疏文件，**实际释放量会低于账面数**，别按账面预期验收。
+4. `D:\APNetwork`（74 MB，含 `WinDivert64.sys`）在 D 盘上 —— **删 D 盘任何东西前确认别碰 APNetwork**，那是当前代理隧道的依赖（已实测代理 `wx.qq.com` HTTP 200 / 0.21s 正常）。
+
+**连带影响检查（已做，均正常）**：
+- 代理隧道 `http://172.18.160.1:25017` → `wx.qq.com` HTTP 200 / 0.209s ✅（APNetwork 在 D 盘但未受影响）
+- WSL 写 `/mnt/d` ✅ 正常（9p 写入未因满盘失败）
+- 备份脚本目标 `/mnt/h`（NAS）✅ 正常，但 **NAS 也 98% / 仅剩 148 GB** ⚠️ —— 这是下一个会爆的地方
+- 微信通道代理 `172.18.160.1:25017` ✅ 正常
+
+**建议改掉的高频备份源**：`C:\Users\Zhiping Wu\Downloads` 里每天一个新版本 `MiniMax Code Setup 3.0.68 (…UTC).exe`（102 MB/份，已见 10-26/27/29/30 各一份）—— 下载目录被纳入 File History 是纯粹的浪费。
 ## 持续性风险
 
 | 优先级 | 问题 | 首次发现 | 状态 |
@@ -142,6 +224,7 @@ M3.1-Flash 1/4/0.1 ✅ 与 CN 价一致；M3 记 0.5/2 ❌ 官方 2.1/8.4（≤5
 | P1 | **Gateway RSS 13.7GB 根因已定位(2026-10-30)** — 活体 inspector 实测:**V8 堆 heapUsed 3.90GB / heapTotal 4.06GB (达 --max-old-space-size=4096 上限的 96%)** + **约 9GB 是 glibc 每线程 arena 碎片棘轮**(209 个 64MB arena,rw 已提交 8.8GB)。那 17400+ 个「恰好 256KB」匿名段 = **V8 堆页**(256KB=kPageSize,隔离复现已证实)。**「每会话一份内存副本」已被否定**:10/26→10/30 会话数零增长而映射 +25%,比例吻合系巧合。驱动源 = 线程 churn(87 个 `tokio-runtime-w` 来自 LanceDB 插件的 Rust 线程池)。重启后 A/B 验证:arena 数 209→202(几乎不变)但 arena 内 rw 8824→1943MB(↓78%)→ 证实是**碎片未归还**而非 arena 耗尽。**最佳一刀**: `MALLOC_ARENA_MAX=2` 写进 `~/.openclaw/gateway.systemd.env`。**附带病灶**:memory-lancedb-pro 的 `memories.lance/_versions` **6.9GB vs data 164MB**(磁盘侧同病根)。终版报告 `memory/2026-10-30-gateway-rss.md` | 2026-10-30 | 🟢 根因已定位;**`MALLOC_ARENA_MAX=2` 已预置到 `~/.openclaw/gateway.systemd.env`(2026-10-31),等下次重启生效**;systemd 加载已实测验证 || P0 | **MiniMax M3 系列 thinking 载荷不兼容** — `MiniMax-M3` / `MiniMax-M3.1-Flash` 服务端强制 `thinking.type=adaptive`；全局 `agents.defaults.thinkingDefault="off"` 让 OpenClaw 原样发 `disabled` → 400 (2013)，表现为「飞书通道报错」实为模型层。放大器：会话级 `modelOverride` 会禁用配置里的 fallback 链（`configured fallbacks disabled by user model override`）→ 无兜底 | 2026-10-24 21:54 | ✅ 已修复 (22:10): per-model `params.thinking=adaptive` + 网关热载（revision 8），修复后 `requires adaptive` 计数=0 <!-- project: github.com/zpzpzp72/openclaw-backup-scripts --> |
 | P1 | **OpenClaw 升级被 Node 版本卡住（2026-10-31 实测）** — npm latest=2026.10.9（beta 10.10-beta.5 / extended-stable 2026.9.36）；10.6 起连续三个版本（10.6 / 10.8 / 10.9）都是安全发布，10.6+ `engines: node >=24.22.1 <25 \|\| >=26.12.1`（eMudhra 证书泄露补救）。本机 Node v26.10.0 **不满足** → 必须先升 Node（可用 v26.12.1 / v26.13.0）。10.7 新增 updater 守卫：Node 版本不匹配时**主动停止并保留当前 Gateway 运行**，不会半途搞坏 | 2026-10-31 | 🟡 待 owner 决策（先升 Node，再 `/update`）| <!-- project: github.com/zpzpzp72/openclaw-backup-scripts --> |
 | P1 | **MiniMax 429 根因 = Token Plan 5h 窗口耗尽**（非认证问题）— 配额单池按端点价扣减；M3.1-Flash 5h 满额 ≈6.1M input tokens / M3(≤512k) ≈2.9M / M3(>512k) ≈1.5M；耗尽时所有 minimax 模型同时返 429(2056)「已达到 Token Plan 用量上限」，OpenClaw 侧表现为 `Auth=no` + rate_limit 冷却（**是冷却不是缺 key**）；5h 窗口重置后自动恢复，无需改 key。查余量用 `mmx quota` 或 `api.minimaxi.com/v1/token_plan/remains`（CN key 别打 www.minimax.io） | 2026-10-24 | 🟡 配额管理问题，非故障；已被 8 个 agent 的 M3.1-Flash primary 放大（6/8 agent） | <!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
+| P1 | **D 盘 100% 满（2026-11-01 实测，根因已定位未删）** — `D:\FileHistory` 占 351.72 GB：`fhsvc` 每小时备份 `C:\Users\Zhiping Wu`，而 `Config1.xml` 的 `RetentionPolicyType=DISABLED` **永不清理旧版本** → 单调累积；`Documents\Wechat_WZP` 源仅 6.41 GB 却备份出 213.22 GB（33 倍膨胀，2026-08 单月 8.4 万副本）；`Data\$OF` 旧格式区另有 65.96 GB。另有 `BKP X1 20240619` 146.55 GB（静态）、`wzp` 18.9 GB。**清理前必须先改保留策略 + 停 `fhsvc`，且不能手删 Data 下的文件（会损坏 `Catalog*.edb` 索引）** | 2026-11-01 | 🟡 根因已定位、方案已列，**待 ZP 拍板执行**（助手未删任何文件） | <!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
 | P2 | **APNetwork + WinDivert 稳定性** — 已确认 NDIS dump 仅观察到 1 次（2026-08-18 14:26），"每月数十次崩溃"无证据；WinDivert64.sys 时间戳 2022-09-20（很久没更新）；主要风险是三方共存而非高频崩溃 | 2026-08-26 | 🟢 切 NAT 后未复发，保留"未来 NDIS 更新时可能再触发"的观察 |
 | P0 | **public 仓库入库前无凭据扫描闸门** — `zpzpzp72/openclaw-backup-scripts` 是 **public**；`c9353413` 把 `.backups/`（含 `appSecret`/API key 明文 + 434MB sqlite）误收进去，靠 filter-branch 改写历史才清除 | 2026-10-30 | 🟡 已清除 + 加 .gitignore；**仍需 pre-push 扫描 skill**（NightOps v28 议题4 列为最高优先级） |
 | P1 | **备份 tar 未排除 `workspace/.git`(200M) 与 `workspace/.backups`(434M)** → 每晚白背 634MB | 2026-10-30 | ✅ 已加 exclude（文件保留本地，仅不进归档） |
