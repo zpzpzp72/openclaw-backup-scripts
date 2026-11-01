@@ -390,3 +390,37 @@ const res = await write({ path, content: prev + memo });   // ← 用截断的 p
 - 已彻底回滚无效的 ACL 改动(17 个目录 `denySYSTEM=0`,SYSTEM allow=1),不留副作用。
 - **可逆操作记录**:`fh-halt.ps1`(停服务+禁用任务) / `fh-resume.ps1`(恢复);
   钩子挂在 `C:\Scripts\CheckAPNetwork.ps1` 的 `ResetAPNetwork` 计划任务(已是管理员上下文)。
+
+## ERR-20261102-001 调 exec 漏传 `title` → 工具直接拒绝,命令未派发
+
+**现象**:两次调用 code-mode 的 `exec` 时只给了 `{command, yield_time_ms, code}`,
+漏掉必填的 `title`,返回:
+```
+Validation failed for tool "exec":
+  - title: must have required properties title
+```
+→ **命令根本没有派发**(无副作用),但那一轮的工作全白做,必须重发。
+
+**发生场景**:连续两次都是我「先想好命令、直接塞进 exec」的写法,没有走
+「先写 title 再写命令」的顺序 —— 漏字段比写错内容更容易发生,因为它不报错在
+我的思维里,只报在工具校验里。
+
+**教训**:
+- **`exec` 的必填字段是 `title` + `code`**(不是 `description`)。写 `description` 会被拒。
+- 每次调 `exec` 前先确认参数名:`{ title, code, yield_time_ms?, awaitResults?, background? }`。
+- 与 ERR-20261030-006(shell 引号吃掉 f-string 双引号)同属一类:
+  **「构造调用」本身会出错,且错误发生在工具层而非我的逻辑层** → 必须在调用前过一遍必填字段清单。
+
+---
+
+## ERR-20261102-002 error-detected 把正常输出误报为错误
+
+**现象**:本轮收到 3 条 error-detected 信号,只有第 1 条(`title` 缺失)是真实错误,
+第 2、3 条是**我自己的正常诊断输出**被关键词触发:
+- `==== 1. 备份心跳文件:内容 vs 修改时间 ==== ... last_backup=...` → 因含 `last_backup`/`error` 类字样被误报
+- `{"status":"completed",...}` → 正常完成回执被误报
+
+**教训**:
+- **error-detected 里的信号必须逐条核实,不能默认都是真错误**。
+  判据:该条对应的工具调用是否真的返回了 failure/exception,而不是只看它"像不像"错误输出。
+- 本轮据此定位到唯一的真实问题(漏传 title),其余两条排除 —— **避免为误报去"修"根本没坏的东西**。

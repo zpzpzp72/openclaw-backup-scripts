@@ -36,4 +36,10 @@ else
     echo "$PUBLIC_IP" > "$LAST_IP_FILE"
 fi
 
+# 记录最后成功运行时刻(即使 IP 未变也写)
+# 用途:区分「IP 没变」与「cron 任务失败/未执行」——
+#      11-01 曾因该 cron 连续失败,导致 IP 实际已换(10-31 18:17)却 11 小时无人察觉。
+LAST_RUN_FILE="/home/zhiping/.openclaw/workspace/cron-scripts/.last_public_ip_run"
+date '+%Y-%m-%d %H:%M:%S' > "$LAST_RUN_FILE"
+
 echo "=== 检查完成 ==="
