@@ -340,3 +340,53 @@ const res = await write({ path, content: prev + memo });   // ← 用截断的 p
   而我自己在写 v30 时就犯了「先读后写」这个错,说明**规则必须写进工具层的默认行为,而不是靠每次记得**。
 - 与 ERR-20261030-006(shell 引号吃掉 f-string)同类:**都是「构造命令/内容」的引号与转义陷阱**,
   且都能被「写完立刻核对产物」的固定动作挡住。
+
+## ERR-20261101-002 D 盘 File History 治理：三条"看似合理"的手段全被实测证伪
+
+**背景**:D 盘 100% 满(477G/Avail 0)。`D:\FileHistory` 351.72GB,根因是
+`Config*.xml` 里 `RetentionPolicyType=DISABLED`(永不清理旧版本)+ `fhsvc` 每小时扫一次
+→ 只进不出,单调累积。
+
+**三条我先后尝试、并被实测逐一证伪的手段**:
+
+### ① 只改 `Config*.xml` 的 `<UserFolder>` → 会被服务还原
+- 21:16:46 从两侧配置的 `<UserFolder>`(各 44 项)移除 `.ollama`/`.workbuddy`/`.vscode`/`.codex`/`.cache`。
+- 21:38:40 维护任务跑完后:LOCAL Config1、Config2、TARGET Config1 **全部恢复成 44 项**;
+  只有 TARGET Config2 保留了我的 27 项。
+- **根因**:`<UserFolder>` 清单的真相源是 **catalog(ESE `.edb`)**,不是 XML、也不是注册表
+  (注册表 `HKLM/HKCU\...\FileHistory` 下只有 `Policies` 和 `RestoreUI`,无清单)。
+  保留策略(Retention)服务每次**从磁盘 XML 读**,所以 AGE LIMIT 能生效;
+  但清单会**从 catalog/服务内存状态重建后覆写 XML**。
+- 附带修正:`Config1.xml`/`Config2.xml` 是**配置轮转**,真正生效的是 Config1,
+  Config2 只是上一版存档 —— 这解释了"为什么只有 Config2 保留了我的修改"。
+
+### ② 给源目录加 SYSTEM `Deny ReadAndExecute` ACL → 服务照样全量复制
+- 21:59 应用到 17 个目录,deny ACE 已确认继承到子目录和深层文件;
+  第一轮观察 `.ollama`/`.vscode`/`.codex`/`.cache` 新增 0 → **误判为有效**。
+- 第二轮维护后被推翻:`.ollama` 从 146 → 181 个文件、存储 39.08 → **67.81GB**(+28.73GB),
+  `.cache` 32,421 → 46,815,`.vscode` +6,634,`.codex` +4,886。
+- **根因**:File History 以 `SeBackupPrivilege` + `FILE_FLAG_BACKUP_SEMANTICS` 打开源文件,
+  **按设计绕过 DACL**(备份语义)。ACL 无法阻止它读取。
+- **教训**:ACL deny 对备份类服务(Windows VSS/Windows Backup/File History)无效;
+  "第一轮没增长"不等于方案成立,必须**跨两轮**验证才能排除间歇性假象。
+
+### ③ 手工删除 store 里的版本文件 → 触发 catalog 失配后的全量重播种
+- 20:40 剪掉 Wechat_WZP 113,960 个版本文件(释放 209.50GB);21:01 删掉 `Data\$OF` 788,834 个文件(66GB)。
+- 之后服务把**每个源文件当"待补传"重新上传**:
+  `.cache` 源目录自 2026-06-15 起 0 改动却被整目录重拷(+14,394 文件);
+  `.ollama` 源目录自 10-01 起 0 改动,35 个文件 28.73GB **整份重传**。
+  Wechat_WZP 21:16 被剪到 7,141,现在回到 8,581 —— **手动删的被传回来了**。
+- **根因**:`RetentionPolicyType=DISABLED` 时 catalog 期望保留**全部历史版本**,
+  手工删掉的文件被视为"缺失待补" → 全量重播种。这不是变更检测,是 catalog 一致性修复。
+
+**综合结论**:
+- D 盘增长的真实机制 = `DISABLED` 保留策略 + 高频写小文件源目录(Wechat_WZP 6.41GB → 213.22GB,33 倍膨胀)。
+- **唯一正确的止血手段是改保留策略(AGE LIMIT),让 Windows 自己按策略删**;
+  手工删 store 文件与 ACL 排除都属于"绕过 catalog",只会让情况更糟。
+- 排除目录的**唯一可靠入口是 catalog**,命令行不可达
+  (`fhmanagew.exe` 无 CLI 参数,注册表无清单)→ 若必须排除,得走 GUI(控制面板 File History)或接受现状。
+- 当前生效状态:`fhsvc=Running/Automatic`,维护任务 `Ready`,
+  四份配置 `Retention=AGE LIMIT / MinimumRetentionAge=7`,D 盘 215.3GB 空闲且恢复后 6 分钟零增长。
+- 已彻底回滚无效的 ACL 改动(17 个目录 `denySYSTEM=0`,SYSTEM allow=1),不留副作用。
+- **可逆操作记录**:`fh-halt.ps1`(停服务+禁用任务) / `fh-resume.ps1`(恢复);
+  钩子挂在 `C:\Scripts\CheckAPNetwork.ps1` 的 `ResetAPNetwork` 计划任务(已是管理员上下文)。

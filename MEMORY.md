@@ -44,6 +44,8 @@ _Curated insights from sessions past. Updated periodically from daily notes._
 
 - **本地工具 REA (Reverse Engineer Anything)**: `rea-agents@6.8.0`（官方 `morluto/rea`, MIT）装在 nvm **v26.12.1** 树；CLI shim `~/.local/bin/rea`；MCP 已注册 codex / claude_code / opencode（配置带 `*.rea.backup` 备份）。nvm default alias 已钉回 26.10.0 防劫持（npmmirror 来源的 v26.13.0 校验失败→隔离 ~/.nvm/.nvm-quarantine，可取回）；npm audit 6 项（2 high: zod 内存 DoS，上游暂无修复版）；原生分析引擎（Ghidra/IDA/Hopper/JADX/Kuna）未配置——JS/Electron/网页分析开箱即用
 
+- **REA 四路逆向引擎 (2026-11-01 配齐)**: Ghidra 12.1.4 (/opt/engines/ghidra/ghidra_12.1.4_PUBLIC, 配 JDK21 /usr/lib/jvm/java-21-openjdk-amd64)、Kuna 1.986 (/opt/engines/kuna/kuna, Apache-2.0)、Hopper 6.6.1 demo (/opt/hopper/bin/Hopper, dpkg)、IDA 上游 ida-pro-mcp 1.4.0 (~/.local/share/rea/ida-pro-mcp, 缺 licensed IDA Pro 本体)。env 写 ~/.profile + ~/.bashrc + gateway.systemd.env + openclaw.json mcp.servers.rea.env。**不设 REA_ANALYSIS_PROVIDER**——多引擎并存时 auto 报 ambiguous，须显式 --provider。上游 ida-pro-mcp main 已是 2.0.0，REA 不认(工具改名)，必须 checkout tag 1.4.0 <!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
+
 ## MiniMax Token Plan 配额机制（2026-10-24 22:00 官方文档 + 受控实测） <!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
 
 **⚠️ 核心结论：429 的根因是 Token Plan 5 小时窗口耗尽，不是认证问题。** 认证（API Key）全程有效；配额打满时 MiniMax 返回
@@ -148,25 +150,13 @@ M3.1-Flash 1/4/0.1 ✅ 与 CN 价一致；M3 记 0.5/2 ❌ 官方 2.1/8.4（≤5
 **踩坑**:`du`/`find` 在 `/mnt/c` 上极慢(单个目录可 >45s),会让 exec 超时丢结果 —— 统计 Windows 盘必须**逐目录限时**(`timeout 25 du -sh <dir>`),不要递归全盘扫。
 
 
-## Windows D 盘空间治理（2026-11-01 22:30 实测） <!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
+## Windows D 盘空间治理（2026-11-01 22:40 更新） <!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
 
-**症状**：`/mnt/d` 100% 满（`df` 显示 477G/477G, Avail 0；PowerShell `SizeRemaining=0`）。**已查明根因，未删任何文件。**
+**症状**：`/mnt/d` 100% 满（477G，Avail 0）。**根因已查明，清理已执行，D 盘现空闲 215.3 GB。**
 
-### 占用排序（D 盘总计 476.73 GiB）
+### 根因：File History 保留策略被禁用 + 高频写小文件源目录
 
-| 目录 | 占用 | 性质 | 是否还在长 |
-|---|---:|---|---|
-| **`D:\FileHistory`** | **351.72 GB** | **Windows 文件历史记录备份**（`fhsvc` 服务 Running/Automatic，备份 `C:\Users\Zhiping Wu`） | ⚠️ **是**（见下） |
-| `D:\BKP X1 20240619` | 146.55 GB | 2024-06-19 整盘镜像备份（c: 61.79 + d: 84.76） | ❌ 静态 |
-| `D:\wzp` | 18.90 GB | AMAT 11.38 + OutlookMailExport 4.37 + .7z 3.16 | ❌ 静态 |
-| `D:\Antigravity` / `EdgeGo` / `VS Code` / `ima.copilot` / `ChromeGo` | 各 0.5–2.3 GB | 应用数据 | 部分增长 |
-| `D:\$RECYCLE.BIN` | 2.3 MB | 回收站 | — |
-
-> 逐目录 `du` 在 9p 挂载上极慢（单目录可 >25s），**必须用 Windows 侧 PowerShell `Get-ChildItem -Recurse | Measure-Object Length`** 统计，否则会超时丢结果。MEMORY 原有「/mnt/c 治理」经验同样适用。
-
-### 根因：文件历史记录的保留策略被禁用
-
-`D:\FileHistory\Zhiping Wu\AMD-AI9-X1-HX37\Configuration\Config1.xml` 与 `Config2.xml` 均含：
+`D:\FileHistory\Zhiping Wu\AMD-AI9-X1-HX37\Configuration\Config1.xml` 原为：
 
 ```xml
 <RetentionPolicies>
@@ -175,39 +165,95 @@ M3.1-Flash 1/4/0.1 ✅ 与 CN 价一致；M3 记 0.5/2 ❌ 官方 2.1/8.4（≤5
 </RetentionPolicies>
 ```
 
-**`RetentionPolicyType=DISABLED` = Windows 永不清理旧版本**，而 `fhsvc` 每小时（`DPFrequency=3600`）扫一遍源目录，把每个改动过的文件存成一份新副本 `原名 (YYYY_MM_DD HH_MM_SS UTC)`。两者叠加 → **只进不出，单调累积**。这是「为什么这么快就没了空间」的全部答案。
+**`DISABLED` = Windows 永不清理旧版本**，而 `fhsvc` 每小时（`DPFrequency=3600`）扫一遍源目录，
+把每个改动过的文件存成一份新副本 `原名 (YYYY_MM_DD HH_MM_SS UTC)`。两者叠加 → **只进不出**。
+放大源：`Documents\Wechat_WZP` 源目录仅 6.41 GB，却备份出 **213.22 GB**（33 倍膨胀）——
+微信的 `apm_record/process_duration/*.ts` 等高频写小文件，每小时全量新副本。
 
-放大它的两个源（都在 `Config1.xml` 的 `<UserFolder>` 列表里）：
-- `C:\Users\Zhiping Wu\Documents\Wechat_WZP` —— 源目录仅 **6.41 GB**，但备份出 **213.22 GB**（**33 倍膨胀**）。版本按月分布：2026-04 起每月 1.1 万–8.4 万个副本，**2026-08 单月 84,185 副本 / 118.65 GB**。源目录含微信的 `apm_record/process_duration/*.ts` 等高频写小文件 → 每小时全量新副本。
-- `C:\Users\Zhiping Wu\.ollama`（18.38 GB）、`.workbuddy`（23.02 GB）、`.vscode`（6.06 GB）、`.codex`（0.81 GB）、`.cache`（0.80 GB）—— 缓存与依赖目录，**备份价值极低、增量极大**。
+### 已执行（P0 → P1 范围内，均已实测验证）
 
-另：`Data\$OF`（旧格式区）**65.96 GB / 15,103 个版本目录**，最后写入 2026-04-15 —— 是 File History 早期格式的历史包袱，同样无人清理。
+| # | 动作 | 结果 | 状态 |
+|:--:|---|---|:--:|
+| P0 | 四份配置（LOCAL Config1/2 + TARGET Config1/2）`RetentionPolicyType` → `AGE LIMIT`，`MinimumRetentionAge` → 7 | 服务重写配置时**保留**该字段（已两轮验证） | ✅ |
+| P0 | `Wechat_WZP` 剪枝：121,101 份 → keep-2（`C:\Scripts\FileHistoryCleanup.ps1` + `fh-pruner.cs`） | 删 113,960 份，**释放 209.50 GB**，耗时 16s，err=0 | ✅ |
+| P0 | 删旧格式区 `Data\$OF`（`fh-of-remove.ps1`，`robocopy /MIR` 788,834 个只读文件） | 释放 ≈ 66 GB，205s | ✅ |
+| P1 | 从两侧 `<UserFolder>` 移除 `.ollama`/`.workbuddy`/`.vscode`/`.codex`/`.cache` | **无效 —— 被服务还原**（见下） | ❌ |
+| P1 | 17 个源目录加 SYSTEM `Deny ReadAndExecute` | **无效 —— 服务照拷**（见下）；**已彻底回滚**（`denySYSTEM=0`） | ↩️ |
+| — | 止血开关：`fh-halt.ps1`（停服务+禁用维护任务）/ `fh-resume.ps1`（恢复） | 现为 `fhsvc=Running/Automatic`、维护任务 `Ready` | ✅ |
 
-### 清理方案（**待 ZP 拍板，助手未执行任何删除**）
+**当前状态**：`D` 空闲 **215.3 GB**（起始 0）；`fhsvc=Running/Automatic`；维护任务 `Ready`；
+恢复后 6 分钟**零增长**（964,080 文件 / 136.47 GB 恒定）→ catalog 已自洽，不再重播种。
 
-| 优先级 | 动作 | 可释放 | 风险 | 说明 |
-|:--:|---|---:|---|---|
-| **P0** | 改 File History 保留策略：`RetentionPolicyType` 由 `DISABLED` 改为有限保留（如 30/90 天），或改用「磁盘空间不足时清理」 | **不立刻释放，但止血** | 低 | **必须先做**，否则清完还会长回来 |
-| **P0** | 删 `Data\C\Users\Zhiping Wu\Documents\Wechat_WZP` 下的历史版本（保留最近 1–2 个） | ≈ 210 GB | 低 | 源文件在 C 盘完好，删的只是 D 盘副本 |
-| **P1** | 从 `Config1.xml` 的 `<UserFolder>` 列表移除 `.ollama` / `.workbuddy` / `.vscode` / `.codex` / `.cache` | 不释放但**长期止血** | 低 | 这些是缓存/依赖，重装即可恢复 |
-| **P1** | 删 `Data\$OF`（65.96 GB / 15,103 目录，2026-04-15 后未再写入） | ≈ 66 GB | 低 | 旧格式历史包袱 |
-| **P2** | `D:\BKP X1 20240619`（146.55 GB）迁移到 NAS `/mnt/h` 或删除 | ≈ 146 GB | 中 | **NAS 也只剩 148 GB 且 98%**，建议先删或外移，不要往 NAS 塞 |
-| **P2** | `D:\wzp\OutlookMailExport.7z`（3.16 GB）与其解压目录（4.37 GB）二选一 | ≈ 3–4 GB | 低 | 重复数据 |
-| **P3** | `D:\$RECYCLE.BIN`、各类应用 cache | ≈ 1–3 GB | 低 | 收益小 |
+### 三条被实测证伪的手段（详见 `.learnings/ERRORS.md` ERR-20261101-002）
 
-**注意事项**：
-1. ⚠️ **不要手动删 `FileHistory` 里除 `Wechat_WZP` 以外的东西再指望服务自愈** —— `Configuration\Catalog1.edb` / `Catalog2.edb`（各 424 MB）是**目录索引**，与 `Data` 内容一一对应；索引与数据不一致会导致 File History 备份状态损坏、无法恢复。**正确做法是先用 `Config1.xml` 改策略让 Windows 自己清**，而不是手删 Data 下的文件。
-2. ⚠️ `fhsvc` 在跑，**任何删除前先 `Stop-Service fhsvc`**，删完再起；否则服务可能在删除过程中写 Catalog 造成损坏。
-3. ⚠️ 我统计的目录合计（约 517 GB）**大于** `df` 的 476.73 GB —— 存在 NTFS 压缩/稀疏文件，**实际释放量会低于账面数**，别按账面预期验收。
-4. `D:\APNetwork`（74 MB，含 `WinDivert64.sys`）在 D 盘上 —— **删 D 盘任何东西前确认别碰 APNetwork**，那是当前代理隧道的依赖（已实测代理 `wx.qq.com` HTTP 200 / 0.21s 正常）。
+1. **只改 `Config*.xml` 的 `<UserFolder>`** → 服务在维护任务运行时从 **catalog（ESE `.edb`）**
+   重建清单并覆写 XML。注册表 `HKLM/HKCU\...\FileHistory` 下只有 `Policies` 与 `RestoreUI`，**无清单**。
+   修正：`Config1.xml`/`Config2.xml` 是**配置轮转**，生效的是 Config1，Config2 只是上一版存档
+   —— 这解释了"为什么只有 TARGET Config2 保留了我的修改"。
+2. **SYSTEM `Deny ReadAndExecute` ACL** → File History 以 `SeBackupPrivilege` +
+   `FILE_FLAG_BACKUP_SEMANTICS` 打开源文件，**按设计绕过 DACL**。
+   第一轮"零增长"是假象，第二轮 `.ollama` +28.73 GB（整份重传）推翻了它。
+   **ACL deny 对备份类服务（VSS/Windows Backup/File History）一律无效。**
+3. **手工删 store 里的版本文件** → `DISABLED` 策略下 catalog 期望保留全部历史版本，
+   缺失文件被视为"待补传" → **全量重播种**。实测：`.cache` 源目录自 6-15 起 0 改动仍被整目录重拷；
+   `.ollama` 35 个文件 28.73 GB 整份重传；Wechat_WZP 剪到 7,141 又回到 8,581。
+   **手工删 = 绕过 catalog，只会让情况更糟。**
+
+→ **唯一正确止血手段是改保留策略，让 Windows 自己按策略删。**
+→ **排除目录的唯一可靠入口是 catalog，命令行不可达**（`fhmanagew.exe` 无 CLI 参数、注册表无清单）
+→ 若必须排除，只能走 GUI（控制面板 File History）或接受现状。
+
+### Store 现状（`C:\Scripts\fh-scan-run.ps1`，C# 加速，全量 964,080 文件 / 136.47 GB）
+
+| 目录 | 文件数 | 占用 | 超 7 天版本 | 7 天内版本 |
+|---|---:|---:|---:|---:|
+| `.ollama` | 181 | **67.81 GB**（源仅 28.73 GB） | 108 | 73 |
+| `.workbuddy` | 669,866 | 25.29 GB | 601,981 | 67,885 |
+| `Downloads` | 195 | 19.24 GB | 146 | 49 |
+| `Documents` | 13,813 | 8.17 GB | 11,653 | 2,160 |
+| `.vscode` | 25,597 | 6.89 GB | 18,959 | 6,638 |
+| `$OF` | 112,512 | 3.00 GB | 0 | 112,512 |
+| `.chromium-browser-snapshots` | 522 | 1.47 GB | 261 | 261 |
+| `.cache` | 52,083 | 1.27 GB | 32,421 | 19,662 |
+| `.codex` | 19,447 | 0.87 GB | 14,561 | 4,886 |
+| `.antigravity` | 2,678 | 0.68 GB | 1,804 | 874 |
+| `scoop` | 4,749 | 0.53 GB | 4,749 | 0 |
+| `node_modules` | 44,542 | 0.44 GB | 43,959 | 583 |
+
+**待观察**：全局 741,600 个版本文件名内时间戳 > 7 天。AGE LIMIT 是否真能让服务自行回收，
+需等下一次维护轮（`fhsvc` 每小时）后比对 `fh-scan` 的 `verOld` 计数。
+**在 `verOld` 明显下降前，不要再手工删 store 文件**（会触发重播种，见上）。
+
+### 工具与钩子（全部在 `C:\Scripts\`）
+
+- `fh-scan.cs` / `fh-scan-run.ps1` — C# 全量存储扫描（秒级）
+- `fh-analyze.ps1` — 版本分组统计（按 `Dir|Identity` + 文件名内时间戳配对，`.crc` 不能按扩展名分组）
+- `FileHistoryCleanup.ps1` + `fh-pruner.cs` — keep-N 剪枝（外部 C#，避免 PS 与参数名冲突）
+- `fh-of-remove.ps1` — 删 `Data\$OF`（`robocopy /MIR` 清只读属性）
+- `fh-halt.ps1` / `fh-resume.ps1` — 止血开关，输出含**回滚命令**
+- `fh-monitor.ps1` — 60 分钟监测（每 5 分钟扫一次，输出 D 盘空闲 + 关键目录）
+- `fh-acl-revert.ps1` — 回滚无效的 ACL 改动
+- 钩子挂在 `C:\Scripts\CheckAPNetwork.ps1` 的 `ResetAPNetwork` 计划任务（管理员上下文），**按退出码写 marker**
+
+### 注意事项（给未来的自己）
+
+1. ⚠️ **`fhsvc` 以 LocalSystem 运行**，用 `SeBackupPrivilege` 绕过 DACL —— 不要试图用权限排除目录。
+2. ⚠️ **版本文件的 `LastWriteTime` 保留源文件 mtime**，判断"是否新写入"必须看**文件名内的时间戳**；
+   用 `LastWriteTime` 判断曾得出"90 秒未产生新版本"的错误结论。
+3. ⚠️ **`.crc` 伴生文件只对部分文件存在**，必须按 `Dir|Identity` + 时间戳配对，不能仅按扩展名分组。
+4. ⚠️ **PowerShell 5.1 读无 BOM `.ps1` 会按 ANSI/GBK 解释中文** → 新脚本保持纯 ASCII，或显式 UTF-8 BOM。
+5. ⚠️ **`/mnt/c`、`/mnt/d` 上 `du`/`find` 极慢**（单目录可 >25s）→ 统计必须用 Windows 侧 PowerShell/C#。
+6. ⚠️ `D:\APNetwork`（含 `WinDivert64.sys`）是代理隧道依赖 —— **删 D 盘任何东西前确认别碰它**。
+7. ⚠️ **P2 未获授权，未执行**：`D:\BKP X1 20240619`（146.55 GB 整盘镜像）、`D:\wzp`（18.90 GB）。
+8. **NAS `/mnt/h` 也只剩 148 GB / 98%** —— 这是下一个会爆的地方，不要往 NAS 塞清理出来的东西。
+9. **回滚命令**：`Start-Service fhsvc; Set-Service fhsvc -StartupType Automatic` +
+   `Enable-ScheduledTask -TaskPath '\Microsoft\Windows\FileHistory\' -TaskName 'File History (maintenance mode)'`
 
 **连带影响检查（已做，均正常）**：
-- 代理隧道 `http://172.18.160.1:25017` → `wx.qq.com` HTTP 200 / 0.209s ✅（APNetwork 在 D 盘但未受影响）
-- WSL 写 `/mnt/d` ✅ 正常（9p 写入未因满盘失败）
-- 备份脚本目标 `/mnt/h`（NAS）✅ 正常，但 **NAS 也 98% / 仅剩 148 GB** ⚠️ —— 这是下一个会爆的地方
-- 微信通道代理 `172.18.160.1:25017` ✅ 正常
+- 代理隧道 `http://172.18.160.1:25017` → `wx.qq.com` HTTP 200 / 0.209s ✅
+- WSL 写 `/mnt/d` ✅ 正常；备份脚本目标 `/mnt/h` ✅ 正常（NAS 空间紧张）
+- `Wechat_WZP` **源目录完好**：32,713 文件 / 6.411 GB（删的只是 D 盘副本）
 
-**建议改掉的高频备份源**：`C:\Users\Zhiping Wu\Downloads` 里每天一个新版本 `MiniMax Code Setup 3.0.68 (…UTC).exe`（102 MB/份，已见 10-26/27/29/30 各一份）—— 下载目录被纳入 File History 是纯粹的浪费。
 ## 持续性风险
 
 | 优先级 | 问题 | 首次发现 | 状态 |
