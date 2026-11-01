@@ -1,0 +1,57 @@
+[
+ {
+  "date": "2026-10-31T20:57:46Z",
+  "msg": "Handle removed chart budgets in staging capacity updates",
+  "sha": "01e5c936"
+ },
+ {
+  "date": "2026-10-31T20:30:54Z",
+  "msg": "Reduce staging idle capacity",
+  "sha": "06a0d8f3"
+ },
+ {
+  "date": "2026-10-31T13:03:15Z",
+  "msg": "feat(deploy): activate bounded production app autoscaling (#1779)",
+  "sha": "c712d8e1"
+ },
+ {
+  "date": "2026-10-31T12:45:44Z",
+  "msg": "fix(deploy): use explicit CRD dependencies for backup chart (#1777)",
+  "sha": "921ba5ec"
+ },
+ {
+  "date": "2026-10-31T12:28:51Z",
+  "msg": "fix(deploy): preserve saved-plan checks across targeted dependency metadata (#1776)",
+  "sha": "f3f817d0"
+ },
+ {
+  "date": "2026-10-31T11:51:16Z",
+  "msg": "Filter deployment diagnostics to actual error events (#1775)",
+  "sha": "a589c10c"
+ },
+ {
+  "date": "2026-10-31T11:32:43Z",
+  "msg": "Add sanitized apply diagnostics and a guarded retry path (#1774)",
+  "sha": "41aff301"
+ },
+ {
+  "date": "2026-10-31T11:13:58Z",
+  "msg": "Prepare bounded app autoscaling with worker headroom (#1772)",
+  "sha": "002fa4d3"
+ },
+ {
+  "date": "2026-10-30T12:08:12Z",
+  "msg": "Enable prepared listing JSON after production backfill (#1770)",
+  "sha": "2fedeb3a"
+ },
+ {
+  "date": "2026-10-30T11:38:01Z",
+  "msg": "Stage v1.8.7 in production with prepared reads disabled (#1769)",
+  "sha": "1f16af27"
+ },
+ {
+  "date": "2026-10-30T11:23:50Z",
+  "msg": "Gate prepared listing responses for backfill and rollback (#1767)",
+  "sha": "741d575f"
+ }
+]

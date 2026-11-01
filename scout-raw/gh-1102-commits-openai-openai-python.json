@@ -1,0 +1,37 @@
+[
+ {
+  "date": "2026-10-31T00:20:22Z",
+  "msg": "release: 3.42.0 (#4206)",
+  "sha": "0dcd904b"
+ },
+ {
+  "date": "2026-10-30T23:58:30Z",
+  "msg": "feat(api): add agent session review and tool settings (#4217)",
+  "sha": "a63c4cdb"
+ },
+ {
+  "date": "2026-10-30T22:38:11Z",
+  "msg": "feat(api): support WebSocket warmup and preserve cleanup cancellation (#4215)",
+  "sha": "9abd6569"
+ },
+ {
+  "date": "2026-10-30T21:24:40Z",
+  "msg": "feat(api): keep callable API keys scoped to each request (#4216)",
+  "sha": "85bb536a"
+ },
+ {
+  "date": "2026-10-30T19:07:29Z",
+  "msg": "feat(api): support response format updates and local output types (#4212)",
+  "sha": "bd61e84c"
+ },
+ {
+  "date": "2026-10-30T16:02:29Z",
+  "msg": "feat(api): improve WebSocket recovery and delivery reporting (#4213)",
+  "sha": "68b962c7"
+ },
+ {
+  "date": "2026-10-30T06:34:02Z",
+  "msg": "fix: preserve refusal output and authentication in WebSocket helpers (#4214)",
+  "sha": "05992039"
+ }
+]

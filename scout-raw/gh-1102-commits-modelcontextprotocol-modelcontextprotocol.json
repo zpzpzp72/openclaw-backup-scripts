@@ -1,0 +1,77 @@
+[
+ {
+  "date": "2026-10-31T15:43:32Z",
+  "msg": "Restructure Security IG as a routing group (#3331)",
+  "sha": "d0e246ea"
+ },
+ {
+  "date": "2026-10-31T15:31:10Z",
+  "msg": "docs: fix Java and Kotlin tutorial samples that fail as printed (#3481)",
+  "sha": "6a6c3d42"
+ },
+ {
+  "date": "2026-10-31T08:10:43Z",
+  "msg": "docs: update the Rust client tutorial to rmcp 3 (#3484)",
+  "sha": "0aab7058"
+ },
+ {
+  "date": "2026-10-31T07:38:00Z",
+  "msg": "docs: bring the Inspector pages up to 2.13.0 (#3483)",
+  "sha": "c1c81072"
+ },
+ {
+  "date": "2026-10-31T07:36:04Z",
+  "msg": "docs: small fixes and released/draft sync (#3478)",
+  "sha": "89153404"
+ },
+ {
+  "date": "2026-10-30T18:13:47Z",
+  "msg": "docs: handle non-text and multiple tool-use blocks in the client tutorial (#3476)",
+  "sha": "68619e4e"
+ },
+ {
+  "date": "2026-10-30T18:13:14Z",
+  "msg": "docs: fix stale one-liners in the build tutorials (#3474)",
+  "sha": "d62b9412"
+ },
+ {
+  "date": "2026-10-30T18:12:49Z",
+  "msg": "docs: fix client-credentials samples and pin the issuer (#3472)",
+  "sha": "da72d8e7"
+ },
+ {
+  "date": "2026-10-30T18:12:14Z",
+  "msg": "docs: fix dead anchors and links, and add Linux paths (#3473)",
+  "sha": "c713a548"
+ },
+ {
+  "date": "2026-10-30T18:11:28Z",
+  "msg": "docs: correct the Apps Node version and a Skills example, and remove an unused snippet (#3475)",
+  "sha": "fe1ce63b"
+ },
+ {
+  "date": "2026-10-30T13:55:46Z",
+  "msg": "Merge pull request #3400 from koic/add_ruby_sdk_tier_1_blog_post",
+  "sha": "1aca59bd"
+ },
+ {
+  "date": "2026-10-30T08:05:43Z",
+  "msg": "Update Filesystems WG Charter (#3447)",
+  "sha": "82d60be1"
+ },
+ {
+  "date": "2026-10-30T08:05:08Z",
+  "msg": "docs: mark Skills support for MCPJam in the extension matrix (#3467)",
+  "sha": "05456131"
+ },
+ {
+  "date": "2026-10-30T08:04:34Z",
+  "msg": "docs: fix dead links to the ext-auth specifications (#3470)",
+  "sha": "0b5e9de2"
+ },
+ {
+  "date": "2026-10-30T08:03:57Z",
+  "msg": "Document identity provider support for enterprise managed auth (#3306)",
+  "sha": "710a132f"
+ }
+]
