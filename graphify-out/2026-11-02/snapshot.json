@@ -9,6 +9,4208 @@
    }
   },
   {
+   "id": "arxiv:2610.40649",
+   "label": "Rethinking Neural Thickets Without Weight Perturbations",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40649",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.LG",
+     "cs.AI",
+     "cs.CV"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40647",
+   "label": "Read, Allocate, Route: Role-Coupled Tokenization for Pixel-Space Generative Transformers",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40647",
+    "theme": "eval-bench",
+    "cats": [
+     "cs.CV",
+     "cs.AI",
+     "cs.LG"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40643",
+   "label": "Luggage re-identification: A study of strategies towards a real-world application",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40643",
+    "theme": "eval-bench",
+    "cats": [
+     "cs.CV",
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40641",
+   "label": "From extreme weather to agricultural consequences with agentic AI",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40641",
+    "theme": "science",
+    "cats": [
+     "physics.ao-ph",
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40636",
+   "label": "Probing Spatial State Representations in Visual Foundation Models",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40636",
+    "theme": "memory",
+    "cats": [
+     "cs.CV",
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40613",
+   "label": "TextSeal2: Distortion-Free LLM Watermarking with Copula Mixing and Memoryless Races",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40613",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CR",
+     "cs.AI",
+     "cs.CL"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40611",
+   "label": "When to Assist and What to Suggest: Joint Gating and Memory-Grounded Hint Generation in One Compact Decoder",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40611",
+    "theme": "memory",
+    "cats": [
+     "cs.CL",
+     "cs.AI",
+     "cs.HC"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40589",
+   "label": "Collaborative AI agents for autonomous experimental research with solid-state quantum spins",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40589",
+    "theme": "multi-agent",
+    "cats": [
+     "cs.AI",
+     "cs.MA",
+     "quant-ph"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40588",
+   "label": "Pre-Crime for Agents, at the Last Second: Probing When a Recruited Agent Gives In",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40588",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40586",
+   "label": "Multistatic ISAC with Deep Learning-Based Clutter Suppression for 5G and Beyond",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40586",
+    "theme": "eval-bench",
+    "cats": [
+     "cs.NI",
+     "cs.AI",
+     "cs.LG"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40578",
+   "label": "VeriCUA: Verification as Agentic Exploration for Computer-Using Agents",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40578",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI",
+     "cs.CL",
+     "cs.CV"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40565",
+   "label": "Gym-Anything for Robotics: Scaling physical simulations with digital agents",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40565",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.RO",
+     "cs.AI",
+     "cs.LG"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40563",
+   "label": "Comparing Human Role-Players and LLM-Simulated Clients in Online Counselling Training: An Analysis of Counselling Patterns",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40563",
+    "theme": "general",
+    "cats": [
+     "cs.AI",
+     "cs.CL"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40560",
+   "label": "FARMS: A Verifiable Foundation for Automated Computational Science",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40560",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI",
+     "cs.LO"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40556",
+   "label": "Advancing Clinical Genomic Analysis with a Skill-Centred Agent",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40556",
+    "theme": "memory",
+    "cats": [
+     "cs.AI",
+     "q-bio.GN"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40551",
+   "label": "Ramanujan Challenge Results: AI-Assisted Evaluation Pipeline for Multi-Format Proofs",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40551",
+    "theme": "tool-use",
+    "cats": [
+     "cs.AI",
+     "cs.CL",
+     "cs.SC"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40545",
+   "label": "Retrieval as Traversal: Value-Indexed Memory for Stateful Long-Context Agents",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40545",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40541",
+   "label": "On the Fundamental Limits of Prefill-Based Decoding Length Prediction",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40541",
+    "theme": "tool-use",
+    "cats": [
+     "cs.AI",
+     "cs.CL",
+     "cs.IT"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40535",
+   "label": "Efficient Scalable Oversight via Rewinding",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40535",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI",
+     "cs.CC",
+     "cs.CR"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40532",
+   "label": "BURGER: Benchmarking and Understanding Robotic Generalization via Embodied Drawing",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40532",
+    "theme": "eval-bench",
+    "cats": [
+     "cs.RO",
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40516",
+   "label": "How I Aligned Your Model: Scaling Up Multilingual Safety Training with Templates",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40516",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CL",
+     "cs.AI",
+     "cs.LG"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40503",
+   "label": "Algebraic World Model: From Exploration to Proofs",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40503",
+    "theme": "tool-use",
+    "cats": [
+     "cs.AI",
+     "cs.LO"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40494",
+   "label": "AI in the EGI e-infrastructure -- Past experiences and future strategies",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40494",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.DC",
+     "cs.AI",
+     "cs.CY"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40492",
+   "label": "Agentic University: Collaborative Agents for Personalized Learning",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40492",
+    "theme": "multi-agent",
+    "cats": [
+     "cs.AI",
+     "cs.CL"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40490",
+   "label": "Fast and accurate neural triage decoding of ultra-high-rate quantum LDPC codes",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40490",
+    "theme": "planning",
+    "cats": [
+     "quant-ph",
+     "cs.AI",
+     "cs.IT"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40487",
+   "label": "MetaRefine: Score Refinement with Multi-Level Features for Image Assessment",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40487",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CV",
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40482",
+   "label": "FIRME: Registry-Anchored Memory Graphs for Evolving, Heterogeneous Investor Knowledge",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40482",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI",
+     "cs.CL"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40476",
+   "label": "Training language models in simulation for psychiatric intake",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40476",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI",
+     "cs.CL"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40444",
+   "label": "Prefix Executability: Evaluating Tool-Using Agents Beyond Final Success",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40444",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI",
+     "cs.CL"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40420",
+   "label": "NECA: Neighbor Event Curve Augmentation for Multi-Horizon ICU Deterioration Prediction",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40420",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.LG",
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40418",
+   "label": "IMPACT: Inverter-Informed Multimodal Learning for Photovoltaic Generation Forecasting",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40418",
+    "theme": "planning",
+    "cats": [
+     "cs.LG",
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40414",
+   "label": "Bridging Neural Representations and Symbolic Semantics in Audio Classification",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40414",
+    "theme": "eval-bench",
+    "cats": [
+     "cs.SD",
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40409",
+   "label": "Retrieving from Your Own Mistakes: On-Policy Training of Embedding Models for Multi-Hop Retrieval-Augmented Generation",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40409",
+    "theme": "memory",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40407",
+   "label": "SCARL: Sequence Confidence-Aligned Reinforcement Learning",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40407",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.LG",
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40396",
+   "label": "Understanding and Mitigating Role Spoofing in LLMs",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40396",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CR",
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40394",
+   "label": "Scaling Mathematical Proof Supervision from Structured Textbooks",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40394",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CL",
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40382",
+   "label": "Beyond Selected Breakthroughs: Evaluating Language Models on Randomly Sampled Mathematical Conjectures",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40382",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI",
+     "math.HO"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40370",
+   "label": "The Athlete as a Scientist of One: Agentic Bayesian Experimental Design for Individualized Physiology from Consumer Wearables",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40370",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.RO",
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40345",
+   "label": "A Unified Hessian-Guided Framework for Post-Training Quantization",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40345",
+    "theme": "memory",
+    "cats": [
+     "cs.LG",
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40330",
+   "label": "Multistep and Multivariate Time Series Explainability with GradientSHAP: A Wind Power Case Study",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40330",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI",
+     "cs.LG"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40327",
+   "label": "Radiology Guideline-derived Decision Graph for Efficient Clinical Decision Support",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40327",
+    "theme": "memory",
+    "cats": [
+     "cs.CV",
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40325",
+   "label": "How to Loop Your Transformer: Loop Scaling, Specialization, and Parallel Inference",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40325",
+    "theme": "enterprise",
+    "cats": [
+     "cs.LG",
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40318",
+   "label": "Decision and System One models in rheumatology: accuracy and calibration on specialty-training examination questions and diagnostic case vignettes",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40318",
+    "theme": "eval-bench",
+    "cats": [
+     "cs.CL",
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40310",
+   "label": "Hammering with Vampire in Lean",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40310",
+    "theme": "tool-use",
+    "cats": [
+     "cs.LO",
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40302",
+   "label": "Self-training for cross-centre coronary vessel segmentation in X-ray angiography using pre-contrast frame subtraction",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40302",
+    "theme": "eval-bench",
+    "cats": [
+     "cs.CV",
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40287",
+   "label": "Only Accepted Tokens Count: An Energy Accounting of Speculative Decoding Under Latency Targets",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40287",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.DC",
+     "cs.AI",
+     "cs.LG"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40280",
+   "label": "Latent Prediction Yields Cross-Subject Alignable Representations in Sensory-Evoked fMRI",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40280",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.LG",
+     "cs.AI",
+     "q-bio.NC"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40278",
+   "label": "Neighborhood Elites: Quality-Diversity Search for Uncertainty Quantification in Question Answering",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40278",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI",
+     "cs.CL"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40276",
+   "label": "TaskFrame: Connecting Task-Level Planning with Frame-Level Control for Game Agents",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40276",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CV",
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40257",
+   "label": "Learned Terminal Costs for Short-Horizon Model Predictive Control of Autonomous Trucks in Interactive Highway Traffic",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40257",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.LG",
+     "cs.AI",
+     "cs.RO"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40250",
+   "label": "Distributional Reward Calibration and Budget-Neutral Credit Assignment for Multimodal RLVR",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40250",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40249",
+   "label": "Reaction precedents extend retrosynthetic prediction beyond training coverage",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40249",
+    "theme": "memory",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40246",
+   "label": "EnvOS: Auditing Computer-Use Agents When the World Moves On : Phenomenon-Based Task Construction, Certification, and Evidence-Based Evaluation",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40246",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI",
+     "cs.HC"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40227",
+   "label": "EpiAgent: Epistemic Self-Play for LLM Agents",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40227",
+    "theme": "multi-agent",
+    "cats": [
+     "cs.AI",
+     "cs.CL",
+     "cs.MA"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40192",
+   "label": "Bridging Semantics and Structure: A Theoretically Grounded Framework for Link Prediction on TAGs",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40192",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40188",
+   "label": "Understanding axial attention in TSFMs through single location regression",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40188",
+    "theme": "general",
+    "cats": [
+     "stat.ML",
+     "cs.AI",
+     "cs.LG"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40186",
+   "label": "Locating and Closing Information Gaps in Multi-Agent Systems",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40186",
+    "theme": "memory",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40166",
+   "label": "EventSeeColor: Learning to Reconstruct Color from Monochrome Events",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40166",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CV",
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40161",
+   "label": "A Negotiation-Aware Hybrid LLM Framework for Intent Interpretation and Service Discovery",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40161",
+    "theme": "memory",
+    "cats": [
+     "cs.AI",
+     "cs.SE"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40160",
+   "label": "FARE: Factor-Aware Retrieval with Error-Guided Fusion for Retail Forecasting",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40160",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.LG",
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40151",
+   "label": "The generative paradox: the Anti-Prompt paradigm for human capability",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40151",
+    "theme": "multi-agent",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40133",
+   "label": "DynaRev: Benchmarking Web Agents under Dynamic Goal Revision",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40133",
+    "theme": "memory",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40130",
+   "label": "Escaping Path Mirages in Offline Goal-Conditioned Reinforcement Learning",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40130",
+    "theme": "eval-bench",
+    "cats": [
+     "cs.LG",
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40096",
+   "label": "Reward-Adaptive Co-Evolution of Policy and Rubric",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40096",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40091",
+   "label": "Upcycling Language Models for Multiple Specialized Domains",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40091",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CL",
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40075",
+   "label": "Learning Safe Flow Matching Robot Policies from Binary Feasibility Oracles",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40075",
+    "theme": "science",
+    "cats": [
+     "cs.RO",
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40071",
+   "label": "Agentic process evidence",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40071",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI",
+     "cs.SE",
+     "eess.SY"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40061",
+   "label": "Localizing Concepts in Visual Autoregressive Models",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40061",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CV",
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40055",
+   "label": "One Vector or Many? Clustered Optimal-Transport Steering under Quantization",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40055",
+    "theme": "multi-agent",
+    "cats": [
+     "cs.LG",
+     "cs.AI",
+     "cs.CL"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40051",
+   "label": "Rethinking Pre-pretraining",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40051",
+    "theme": "memory",
+    "cats": [
+     "cs.CL",
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40046",
+   "label": "EPC-RawDC: Equivariant Physics Constrained 3D Diffusion with Raw Data Consistency for CBCT to CT Image Synthesis",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40046",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CV",
+     "cs.AI",
+     "physics.med-ph"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40042",
+   "label": "UPPAAi: Towards LLM-Assisted Modeling, Verification, Analysis and Synthesis",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40042",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.SE",
+     "cs.AI",
+     "cs.LO"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40036",
+   "label": "Hybrid AI Patterns: Thirteen Ways to Couple Language Models with Rules, and How to Choose Among Them",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40036",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40030",
+   "label": "Cheap Retrieval and Observation Credit Assignment from One Quantity: The Value of Information",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40030",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI",
+     "cs.LG"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40023",
+   "label": "HEMO: Harness Self-Evolution for Multi-Objective Combinatorial Optimization",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40023",
+    "theme": "memory",
+    "cats": [
+     "cs.NE",
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40006",
+   "label": "Human--AI Interactions as First-Class Data: A Formal Interaction Model and Runtime for Explainable AI Collaboration",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40006",
+    "theme": "memory",
+    "cats": [
+     "cs.AI",
+     "cs.HC"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40005",
+   "label": "Efficient Learning of Mechanism Designs and Compositionality",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40005",
+    "theme": "eval-bench",
+    "cats": [
+     "cs.AI",
+     "cs.CE"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.39992",
+   "label": "Accumulating Pruning Constraints: New Exact Polynomial-Space Algorithms for Max 2-SAT",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.39992",
+    "theme": "tool-use",
+    "cats": [
+     "cs.DS",
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.39955",
+   "label": "Mind The Gap (MTG-AD): Dataset and Fine-grained Evaluation for End-to-End Inline Audio Descriptions",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.39955",
+    "theme": "eval-bench",
+    "cats": [
+     "cs.CV",
+     "cs.AI",
+     "cs.HC"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.39954",
+   "label": "When to spend privacy: optimal allocation in private learning",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.39954",
+    "theme": "enterprise",
+    "cats": [
+     "cs.LG",
+     "cs.AI",
+     "math.OC"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.39927",
+   "label": "Learning Calibrated Confidence for Multi-Agent Collaboration",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.39927",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.LG",
+     "cs.AI",
+     "cs.MA"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.39926",
+   "label": "Spectral Invariant Fusion and Refinement for Domain Generalized Semantic Segmentation",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.39926",
+    "theme": "eval-bench",
+    "cats": [
+     "cs.CV",
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.39923",
+   "label": "Prompts and probabilities in the linguistic assessment of language models: Evidence from semantic focus-sensitivity",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.39923",
+    "theme": "eval-bench",
+    "cats": [
+     "cs.CL",
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.39902",
+   "label": "CovFedAvg: Local Low-Loss Curves and Federated Model Selection",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.39902",
+    "theme": "eval-bench",
+    "cats": [
+     "cs.LG",
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.39884",
+   "label": "KARMA: Training-Free Knowledge-Atomic Harness Evolution for Industrial Advertising Agents",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.39884",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.39876",
+   "label": "Turing LLM Post-Training: Calibrated Distillation and Efficient Dynamic-MoE Execution",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.39876",
+    "theme": "memory",
+    "cats": [
+     "cs.LG",
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.39869",
+   "label": "Incorporating Machine-Others: An Enactive Exploration of Human-LLM Interactions",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.39869",
+    "theme": "tool-use",
+    "cats": [
+     "cs.HC",
+     "cs.AI",
+     "cs.CY"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.39848",
+   "label": "LiDAR-SHIELD: A Fully Dockerized Adversarial Robustness Assessment Framework for LiDAR-Based 3D Perception Models",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.39848",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CV",
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.39839",
+   "label": "Exploring the Potential of Symbolic Regression in Precision Livestock Farming",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.39839",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.LG",
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.39837",
+   "label": "SHPRR: An Algorithm for Pure Exploration under Constrained Regret",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.39837",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.LG",
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.39835",
+   "label": "Aligning Medical Vision Language Models at the Capability Boundary with Entropy Adaptive Rubric Grounding",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.39835",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CV",
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.39825",
+   "label": "AegisFlow: Training-Free Non-Myopic Path-Safe Guided Flow Matching",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.39825",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.39813",
+   "label": "EvoTeam: Multi-Agent Collaboration via Evolving Teams",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.39813",
+    "theme": "memory",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.39807",
+   "label": "InferD: A Honeypot Framework for AI Inference Infrastructure",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.39807",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CR",
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.39802",
+   "label": "Revisiting Over-refusal in Safety-aligned Large Language Models: A Representation and Optimization Perspective",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.39802",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.39795",
+   "label": "The Role of Self-Concept In Language Models",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.39795",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI",
+     "cs.CL"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.39790",
+   "label": "Long-Term Agent Memory through Complementary Curation and Consolidation",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.39790",
+    "theme": "memory",
+    "cats": [
+     "cs.AI",
+     "cs.MA"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.39781",
+   "label": "Finding Is Not Returning, Returning Is Not Reconstructing: A Multi-Dimensional Evaluation of Agent Social Re-entry",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.39781",
+    "theme": "memory",
+    "cats": [
+     "cs.AI",
+     "cs.SI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.39768",
+   "label": "Multi-output LSTM soft sensors for industrial anaerobic co-digestion using LSTM-beta-VAE generative data augmentation",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.39768",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.LG",
+     "cs.AI",
+     "eess.SY"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.39744",
+   "label": "PAPERBENCHX: Can AI Reproduce Science Across Disciplines?",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.39744",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40293",
+   "label": "MAServeBench: Benchmarking Multi-Agent LLM Serving Systems with Hierarchical Collaboration Workloads",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40293",
+    "theme": "memory",
+    "cats": [
+     "cs.MA"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.39681",
+   "label": "Can AI Agents Interface Clinicians and Complex Models?",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.39681",
+    "theme": "tool-use",
+    "cats": [
+     "cs.MA",
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.39660",
+   "label": "Sticky Collusion: Persistence of LLM Agent Collusion after Incentive Removal and Partner Replacement",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.39660",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.MA"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.39576",
+   "label": "Bayesian Offline Multi-Agent Reinforcement Learning with Latent World Models",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.39576",
+    "theme": "multi-agent",
+    "cats": [
+     "cs.MA"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.39468",
+   "label": "Soei: Structured Observability of Evidence and Intent for Multi-Agent AI Software Engineering",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.39468",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.SE",
+     "cs.AI",
+     "cs.MA"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.39109",
+   "label": "PCM: A Proof-Carrying Message Protocol for Verifiable Multi-Agent Communication",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.39109",
+    "theme": "mcp",
+    "cats": [
+     "cs.CE",
+     "cs.AI",
+     "cs.CR"
+    ],
+    "published": "2026-10-29",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.39018",
+   "label": "Tunable Spatial Task Allocation with Application to Maritime Swarms",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.39018",
+    "theme": "multi-agent",
+    "cats": [
+     "cs.MA",
+     "eess.SY",
+     "math.OC"
+    ],
+    "published": "2026-10-28",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.38946",
+   "label": "MAS-Loop: Beyond One-Shot Orchestration towards Self-Evolving Multi-Agent Systems",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.38946",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.MA",
+     "cs.AI"
+    ],
+    "published": "2026-10-28",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.38796",
+   "label": "Routed Continual Learning",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.38796",
+    "theme": "memory",
+    "cats": [
+     "cs.LG",
+     "cs.MA"
+    ],
+    "published": "2026-10-28",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.38728",
+   "label": "From Grind to Grasp",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.38728",
+    "theme": "multi-agent",
+    "cats": [
+     "cs.AI",
+     "cs.MA"
+    ],
+    "published": "2026-10-28",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.38468",
+   "label": "Cinematize from Unreal: Agentic Choreography for Controllable World Simulation",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.38468",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.MA"
+    ],
+    "published": "2026-10-28",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.38398",
+   "label": "Agent Transfer Protocol: Server-Mediated Agent-to-Agent Communication Architecture for the Agentic Web",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.38398",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI",
+     "cs.MA"
+    ],
+    "published": "2026-10-28",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.38215",
+   "label": "Disparity Laundering: Consensus Without Fairness in Clinical Multi-Agent Systems",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.38215",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI",
+     "cs.MA"
+    ],
+    "published": "2026-10-28",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.38209",
+   "label": "Is it my preference? Role Grounding Attack against Agent's Memory via Social Interaction",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.38209",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CR",
+     "cs.AI",
+     "cs.MA"
+    ],
+    "published": "2026-10-28",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.38145",
+   "label": "El Agente Quntur: Agentic Active-Space Selection for CASSCF",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.38145",
+    "theme": "agent-safety",
+    "cats": [
+     "physics.chem-ph",
+     "cs.MA"
+    ],
+    "published": "2026-10-28",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.38053",
+   "label": "Cooperative EV Charging Assignment Using Multi-Agent Reinforcement Learning: A Comparison of QMIX and Independent Q-Learning Under Urban Traffic Uncertainty",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.38053",
+    "theme": "multi-agent",
+    "cats": [
+     "cs.MA",
+     "cs.LG"
+    ],
+    "published": "2026-10-27",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.38040",
+   "label": "EARS-Info: Information-Aware Event-Driven Reallocation for Multi-Robot Exploration",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.38040",
+    "theme": "multi-agent",
+    "cats": [
+     "cs.RO",
+     "cs.AI",
+     "cs.MA"
+    ],
+    "published": "2026-10-27",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.37984",
+   "label": "Who Else Is In? Multi-Agent Collusion Initation Via Strategic Vagueness",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.37984",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.MA"
+    ],
+    "published": "2026-10-27",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.37978",
+   "label": "Solitary movement style predicts collective foraging while whom to follow emerges only in company",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.37978",
+    "theme": "general",
+    "cats": [
+     "physics.soc-ph",
+     "cs.MA",
+     "q-bio.NC"
+    ],
+    "published": "2026-10-27",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.37926",
+   "label": "GARDEN: Generalist Autonomous Reward Design Through Evidence Navigation for Cooperative Multi-Agent Reinforcement Learning",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.37926",
+    "theme": "multi-agent",
+    "cats": [
+     "cs.AI",
+     "cs.MA",
+     "eess.SY"
+    ],
+    "published": "2026-10-27",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.37870",
+   "label": "Multi-Agent Reinforcement Learning for Global Climate Policy Cooperation",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.37870",
+    "theme": "multi-agent",
+    "cats": [
+     "cs.MA",
+     "cs.GT",
+     "cs.LG"
+    ],
+    "published": "2026-10-27",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.37830",
+   "label": "Measuring Where Intent Gets Lost in Agentic Smart Contract Synthesis",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.37830",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI",
+     "cs.HC",
+     "cs.IR"
+    ],
+    "published": "2026-10-27",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.37779",
+   "label": "Selective and Hybrid-State Communication for Latent Multi-Agent Systems",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.37779",
+    "theme": "memory",
+    "cats": [
+     "cs.MA",
+     "cs.LG"
+    ],
+    "published": "2026-10-27",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.37649",
+   "label": "Can LLMs Uncover Hidden Physical Laws through Free Exploration?",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.37649",
+    "theme": "tool-use",
+    "cats": [
+     "cs.CL",
+     "cs.AI",
+     "cs.MA"
+    ],
+    "published": "2026-10-27",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.37624",
+   "label": "Rare, Relevant, and Still Wrong: How Memory Fails LLM Group Decisions",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.37624",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI",
+     "cs.CL",
+     "cs.MA"
+    ],
+    "published": "2026-10-27",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.37592",
+   "label": "TANDEM: Balancing Centralized and Decentralized Critics to Address the Information Gap in Complex Multi-Agent Environments",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.37592",
+    "theme": "multi-agent",
+    "cats": [
+     "cs.MA"
+    ],
+    "published": "2026-10-27",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.37504",
+   "label": "Strategyproof Deep Reinforcement Learning for Online Resource Allocation",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.37504",
+    "theme": "rl-train",
+    "cats": [
+     "cs.MA",
+     "cs.AI",
+     "cs.GT"
+    ],
+    "published": "2026-10-27",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.37461",
+   "label": "Concordat: Typed Sessions for LLM Agents",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.37461",
+    "theme": "tool-use",
+    "cats": [
+     "cs.AI",
+     "cs.MA"
+    ],
+    "published": "2026-10-27",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.37448",
+   "label": "Test-Time Communication in Trading Agent Swarms",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.37448",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.MA",
+     "cs.AI",
+     "cs.CL"
+    ],
+    "published": "2026-10-27",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.37375",
+   "label": "Agent-Conditioned Routing: Diverse Reasoning Paths Within One Frozen Model",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.37375",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI",
+     "cs.LG",
+     "cs.MA"
+    ],
+    "published": "2026-10-27",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.37342",
+   "label": "Aligning Institutional Power and Operational Ability",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.37342",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI",
+     "cs.MA"
+    ],
+    "published": "2026-10-27",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.37011",
+   "label": "Evaluating Priority Dispatch for Premium Membership in On-demand Taxi-sharing",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.37011",
+    "theme": "eval-bench",
+    "cats": [
+     "cs.MA",
+     "cs.AI"
+    ],
+    "published": "2026-10-27",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.36989",
+   "label": "A Simulation Testbed for Self-Governing Human-Machine Institutions",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.36989",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.MA",
+     "cs.HC"
+    ],
+    "published": "2026-10-27",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.36683",
+   "label": "Feedback autocratic strategies in stochastic games",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.36683",
+    "theme": "general",
+    "cats": [
+     "physics.soc-ph",
+     "cs.MA",
+     "eess.SY"
+    ],
+    "published": "2026-10-27",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.36652",
+   "label": "Remembering Is Not Enough: Refining Memories and Learning When to Use Them in Multi-Agent Systems",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.36652",
+    "theme": "memory",
+    "cats": [
+     "cs.AI",
+     "cs.MA"
+    ],
+    "published": "2026-10-27",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.36506",
+   "label": "GarmentSegAgent: Autonomous Garment Segmentation for Web Fashion Images via Textual Self-Refinement",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.36506",
+    "theme": "memory",
+    "cats": [
+     "cs.CV",
+     "cs.MA"
+    ],
+    "published": "2026-10-27",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.36345",
+   "label": "Bayesian Replicator Dynamics and the Inversion of Strict Dominance in Bimatrix Games",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.36345",
+    "theme": "planning",
+    "cats": [
+     "cs.GT",
+     "cs.MA"
+    ],
+    "published": "2026-10-26",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.36325",
+   "label": "Ontology-guided multi-agent reasoning for explainable differential diagnosis",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.36325",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI",
+     "cs.MA"
+    ],
+    "published": "2026-10-26",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.36289",
+   "label": "Compatibility and future-proof testing for multi-agent systems",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.36289",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.MA",
+     "cs.RO"
+    ],
+    "published": "2026-10-26",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.36264",
+   "label": "The Inbox as a Coordination Primitive for LLM Agent Societies",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.36264",
+    "theme": "memory",
+    "cats": [
+     "cs.MA"
+    ],
+    "published": "2026-10-26",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.36250",
+   "label": "cuArms: GPU-Accelerated Conflict-Based Planning for Multi-Arm Manipulation",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.36250",
+    "theme": "planning",
+    "cats": [
+     "cs.RO",
+     "cs.AI",
+     "cs.MA"
+    ],
+    "published": "2026-10-26",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.36221",
+   "label": "EREBOTS 4.0: A framework for conversational assistants with A2A agents and MCP tools",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.36221",
+    "theme": "mcp",
+    "cats": [
+     "cs.MA"
+    ],
+    "published": "2026-10-26",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.36151",
+   "label": "Replication or Corroboration? An Axiomatic Framework for Evidential Dependence in Multi-Agent Debate",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.36151",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.MA",
+     "cs.AI",
+     "cs.LO"
+    ],
+    "published": "2026-10-26",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.35736",
+   "label": "Preference-Guided Cooperation in Multi-Objective Multi-Agent Reinforcement Learning",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.35736",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.MA",
+     "cs.LG"
+    ],
+    "published": "2026-10-26",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.35733",
+   "label": "Multi-Objective Reinforcement Learning Using Routed Ensembles and Trajectory Attribution",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.35733",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.LG",
+     "cs.AI",
+     "cs.MA"
+    ],
+    "published": "2026-10-26",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.35690",
+   "label": "EvoRouter: Cost-Efficient Multi-Agent Routing via Insight-Guided On-Policy Distillation",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.35690",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI",
+     "cs.MA"
+    ],
+    "published": "2026-10-26",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.35592",
+   "label": "GEAR: Feature-Based Configuration and Code Generation for Agentic Systems",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.35592",
+    "theme": "memory",
+    "cats": [
+     "cs.MA",
+     "cs.SE"
+    ],
+    "published": "2026-10-26",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.35442",
+   "label": "Simulation-Efficient Double-Flow Neural Posterior Estimation for Agent-Based Models",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.35442",
+    "theme": "general",
+    "cats": [
+     "cs.MA"
+    ],
+    "published": "2026-10-26",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.35997",
+   "label": "PolicyMediator: Multi-Regional Policy Learning through Mediation Agents with Evolving Skills in OPC Ecosystems",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.35997",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.MA",
+     "cs.AI",
+     "cs.CY"
+    ],
+    "published": "2026-10-26",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.35398",
+   "label": "Belief-Conditioned Multi-Agent Actor Critic for Decentralized LLM Collaboration",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.35398",
+    "theme": "memory",
+    "cats": [
+     "cs.AI",
+     "cs.LG",
+     "cs.MA"
+    ],
+    "published": "2026-10-26",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.35335",
+   "label": "Knowing When to Escalate: Disagreement Patterns for Uncertainty-Aware Content Moderation",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.35335",
+    "theme": "general",
+    "cats": [
+     "cs.MA"
+    ],
+    "published": "2026-10-26",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.37702",
+   "label": "Balancing Mobility Efficiency and Environmental Exposure During Mega Events: A Multi-agent Routing Framework",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.37702",
+    "theme": "multi-agent",
+    "cats": [
+     "cs.MA",
+     "cs.CY"
+    ],
+    "published": "2026-10-26",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.34968",
+   "label": "Guarded Agent-in-the-Loop Residual Adaptation for Evolving Wind Power Regimes",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.34968",
+    "theme": "multi-agent",
+    "cats": [
+     "cs.MA"
+    ],
+    "published": "2026-10-26",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.34878",
+   "label": "ClinVerse: A Realistic Multi-Agent Diagnostic Environment for Training and Evaluating Medical Agents",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.34878",
+    "theme": "memory",
+    "cats": [
+     "cs.AI",
+     "cs.MA"
+    ],
+    "published": "2026-10-26",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.34836",
+   "label": "Collective Emergent Alignment: Measuring and Amplifying Interaction-Induced Reasoning Alignment in Multi-Agent LLMs",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.34836",
+    "theme": "multi-agent",
+    "cats": [
+     "cs.AI",
+     "cs.MA"
+    ],
+    "published": "2026-10-26",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.34644",
+   "label": "SlowLab: Benchmarking Autonomous AI Agents on a Year of Experiments They Cannot Undo",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.34644",
+    "theme": "eval-bench",
+    "cats": [
+     "cs.AI",
+     "cs.MA"
+    ],
+    "published": "2026-10-26",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40379",
+   "label": "Agentic LLM reasoning in pediatric diabetes outcome prediction from multimodal medical records",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40379",
+    "theme": "agent-safety",
+    "cats": [
+     "q-bio.QM",
+     "cs.CL"
+    ],
+    "published": "2026-10-29",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40350",
+   "label": "Don't Lose the Thread: Empowering Long-Horizon LLM Agents with Cognitive Resource Self-Allocation",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40350",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CL"
+    ],
+    "published": "2026-10-29",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.40259",
+   "label": "The Price of a Chance in Artificial Societies",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.40259",
+    "theme": "rl-train",
+    "cats": [
+     "cs.CY"
+    ],
+    "published": "2026-10-29",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.39758",
+   "label": "SEAL: Sealed Queries for Local Sanitization against Indirect Prompt Injection",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.39758",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CR"
+    ],
+    "published": "2026-10-29",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.39608",
+   "label": "From Intent to Improvement: Agentic Dataset Search for Better Model Training",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.39608",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI",
+     "cs.IR"
+    ],
+    "published": "2026-10-29",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.39570",
+   "label": "LLM Agent-Based Design of RISC-V CPUs with FPGA-in-the-Loop Evaluation",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.39570",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AR",
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.39488",
+   "label": "InterA11y: Interactive Web Accessibility Error Detection with LLM Agents",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.39488",
+    "theme": "memory",
+    "cats": [
+     "cs.HC"
+    ],
+    "published": "2026-10-29",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.39438",
+   "label": "ATLAS-Bench: An Agentic Tool-Use Benchmark for Local Area Search",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.39438",
+    "theme": "memory",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.39395",
+   "label": "OPERA: OPamp Design by an Expert-Taught Reasoning Agent, from Specifications to Layout",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.39395",
+    "theme": "tool-use",
+    "cats": [
+     "cs.AR",
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.39377",
+   "label": "AgentDecept: Benchmarking Deceptive Behavior in Tool-Using LLM Agents under Pressure",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.39377",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.39352",
+   "label": "Try Before You Evolve: Ranking-Scored Trials for Recursive Self-Improvement of Recommender Systems",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.39352",
+    "theme": "eval-bench",
+    "cats": [
+     "cs.IR"
+    ],
+    "published": "2026-10-29",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.39324",
+   "label": "MRC-MMAgent: Reinforcement Learning for Multi-Role Collaboration in Multimodal Tool-Using Agents",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.39324",
+    "theme": "memory",
+    "cats": [
+     "cs.CV"
+    ],
+    "published": "2026-10-29",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.39234",
+   "label": "AgentHeal: Evaluating Goal-Preserving Resource Recovery of Web Agents under Access Barriers",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.39234",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CR",
+     "cs.CL"
+    ],
+    "published": "2026-10-29",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.39155",
+   "label": "REALM: Identifying Minimal Task Assets for LLM Agents",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.39155",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CR",
+     "cs.AI",
+     "eess.SY"
+    ],
+    "published": "2026-10-29",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.38980",
+   "label": "Context Compaction for World Models",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.38980",
+    "theme": "memory",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-10-28",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.38924",
+   "label": "TreasuryQA Bench: Can AI Agents Work an Archive of Scanned Financial Records?",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.38924",
+    "theme": "mcp",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-10-28",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.38867",
+   "label": "Where You Inject Matters: The Trust Region Effect in LLM Agents",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.38867",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI",
+     "cs.CR",
+     "cs.LG"
+    ],
+    "published": "2026-10-28",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.38620",
+   "label": "Think Before You Act: Decision Gate for LLM Agents",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.38620",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-10-28",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.38617",
+   "label": "How Deterministic SAST and AI Security Agents Divide the Work: Coverage, Harness Policy and Cost in Snyk VulnBench 2.0",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.38617",
+    "theme": "mcp",
+    "cats": [
+     "cs.CR",
+     "cs.AI",
+     "cs.SE"
+    ],
+    "published": "2026-10-28",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.38610",
+   "label": "Repairs for Whom? Evaluator-Executor Mismatch in Selecting Repairs for Failed LLM Agents",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.38610",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.SE",
+     "cs.CL"
+    ],
+    "published": "2026-10-28",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.38579",
+   "label": "Session-Bound Behavioral Watermarking for Autonomous LLM Agents",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.38579",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CR"
+    ],
+    "published": "2026-10-28",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.38450",
+   "label": "CoSTA: Co-Evolving Self-Play Timeline Agents for Complex Temporal Knowledge Graph Question Answering",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.38450",
+    "theme": "memory",
+    "cats": [
+     "cs.CL"
+    ],
+    "published": "2026-10-28",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.38392",
+   "label": "Masked Erosion: How Acceptance Gates Lose Redundant Safeguards in Self-Improving Agents",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.38392",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-10-28",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.38391",
+   "label": "SCOPE: Selective Critical-Step On-Policy Self-Distillation for Agentic Reinforcement Learning",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.38391",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-10-28",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.38329",
+   "label": "A Case Study of a Multi-Agent Kernel-Optimization Loop That Learns a New AI Accelerator",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.38329",
+    "theme": "tool-use",
+    "cats": [
+     "cs.LG",
+     "cs.AI",
+     "cs.AR"
+    ],
+    "published": "2026-10-28",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.38294",
+   "label": "LASSO: An LLM-Agent Synthesized System for SQL Validation",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.38294",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.DB",
+     "cs.SE"
+    ],
+    "published": "2026-10-28",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.38293",
+   "label": "EPSBench: Benchmarking LLM Agents for Earnings Forecasting",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.38293",
+    "theme": "eval-bench",
+    "cats": [
+     "cs.CL",
+     "cs.AI"
+    ],
+    "published": "2026-10-28",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.38292",
+   "label": "Vendster: An Evaluation Arena to Investigate How Forecasting Tool Quality Affects LLM Agent Behaviors in Buyer-Vendor Negotiation",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.38292",
+    "theme": "tool-use",
+    "cats": [
+     "cs.GT",
+     "cs.AI"
+    ],
+    "published": "2026-10-28",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.38175",
+   "label": "DecompGym: Benchmarking LLM Agents on Designing Decomposition Algorithms",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.38175",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI",
+     "math.OC"
+    ],
+    "published": "2026-10-28",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.37905",
+   "label": "FilingLoop: Evaluating and Evolving LLM Agents for Corporate Disclosure Review and Revision",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.37905",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-10-27",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.37809",
+   "label": "What Does an Ontology Catch? Curated, LLM-Generated and Data-Derived Ontologies as Checkers of LLM Agents over Knowledge Graphs",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.37809",
+    "theme": "memory",
+    "cats": [
+     "cs.AI",
+     "cs.DB"
+    ],
+    "published": "2026-10-27",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.37648",
+   "label": "Scaling Laws for Tool-Use Agents via Controllable Environment Synthesis",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.37648",
+    "theme": "tool-use",
+    "cats": [
+     "cs.LG"
+    ],
+    "published": "2026-10-27",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.37739",
+   "label": "OpenFrontiers: A Collection of Open Research Problems and a Benchmark for Scientific Rediscovery",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.37739",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI",
+     "cs.CL",
+     "cs.LG"
+    ],
+    "published": "2026-10-27",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.37415",
+   "label": "The Envelope Layer: An Underestimated Surface of LLM Agent Defense",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.37415",
+    "theme": "mcp",
+    "cats": [
+     "cs.CR"
+    ],
+    "published": "2026-10-27",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.37405",
+   "label": "Clearing the FoG: Training KG Agents to Retrieve the Evidence Behind Their Answers",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.37405",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-10-27",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.37319",
+   "label": "AnalogScout: Simulation-Efficient PVT-Aware Analog Sizing with LLM Agents",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.37319",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AR",
+     "cs.AI",
+     "cs.LG"
+    ],
+    "published": "2026-10-27",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.37283",
+   "label": "BenchMeUp: Building Software Engineering Benchmarks from Natural-Language Specifications",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.37283",
+    "theme": "tool-use",
+    "cats": [
+     "cs.SE"
+    ],
+    "published": "2026-10-27",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.37242",
+   "label": "Grounding LLM Agents in Business Processes: Process-Aware Knowledge Graphs for Reliable Multi-Step Service Invocation",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.37242",
+    "theme": "memory",
+    "cats": [
+     "cs.AI",
+     "cs.SE"
+    ],
+    "published": "2026-10-27",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.37228",
+   "label": "AutoRSE: Evaluating LLM Agents as Recommendation Engineers for Self-Evolving Recommender Systems",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.37228",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.IR"
+    ],
+    "published": "2026-10-27",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.37081",
+   "label": "OpenGray: a benchmark for evaluating the decisions of radiotherapy planning agents",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.37081",
+    "theme": "eval-bench",
+    "cats": [
+     "cs.AI",
+     "physics.med-ph"
+    ],
+    "published": "2026-10-27",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.37055",
+   "label": "Blindfold: Keeping the Audit Coin Secret from LLM Agents",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.37055",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CR",
+     "cs.AI",
+     "cs.LG"
+    ],
+    "published": "2026-10-27",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.36980",
+   "label": "AutoVend: Benchmarking LLM Agents on Long-Horizon Autonomous Vending Operations",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.36980",
+    "theme": "memory",
+    "cats": [
+     "cs.AI",
+     "cs.CL"
+    ],
+    "published": "2026-10-27",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.36967",
+   "label": "Proactive Memory for Event-Driven LLM Agents",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.36967",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-10-27",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.36918",
+   "label": "TrawMem: Reframing Agent Memory as Task-Oriented Role-Adaptive Workspaces",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.36918",
+    "theme": "memory",
+    "cats": [
+     "cs.CL"
+    ],
+    "published": "2026-10-27",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.36894",
+   "label": "ASNER: Software Architecture Recovery with Adaptive Semantic Neighborhoods and Evidence-Grounded Refinement",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.36894",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.SE"
+    ],
+    "published": "2026-10-27",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.36626",
+   "label": "Measuring Users' Security and Privacy Concerns About Third-Party Community Bots on Discord",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.36626",
+    "theme": "mcp",
+    "cats": [
+     "cs.CR",
+     "cs.HC"
+    ],
+    "published": "2026-10-27",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.36584",
+   "label": "Benchmarking LLM Agents for Behaviorally Adequate Test Generation from Software Requirements",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.36584",
+    "theme": "eval-bench",
+    "cats": [
+     "cs.SE",
+     "cs.AI"
+    ],
+    "published": "2026-10-27",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.36570",
+   "label": "CASEL: Consequence-Aware Selective Execution for Reliable Long-Horizon Tool-Using Agents",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.36570",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI",
+     "cs.CR",
+     "cs.SE"
+    ],
+    "published": "2026-10-27",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.36553",
+   "label": "NextEval: An Agent-Based Solver and Benchmark for Derivative-Free Optimization",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.36553",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.LG",
+     "cs.AI",
+     "math.OC"
+    ],
+    "published": "2026-10-27",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.36549",
+   "label": "From Ripple to Boundary: Deterministic Impact Boundaries for LLM-Based Software Evolution",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.36549",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.SE"
+    ],
+    "published": "2026-10-27",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.36538",
+   "label": "Agentic Data Sampling Framework for Multilingual ASR via Linguistic-Aware Error-Driven Optimization",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.36538",
+    "theme": "eval-bench",
+    "cats": [
+     "cs.CL"
+    ],
+    "published": "2026-10-27",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.36527",
+   "label": "ETC-Bench: A Multilingual Benchmark for Evaluation-Side Transcript Canonicalization",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.36527",
+    "theme": "memory",
+    "cats": [
+     "cs.CL"
+    ],
+    "published": "2026-10-27",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.36471",
+   "label": "When to Intervene? An Empirical Study of Errors and Self-Recovery in LLM Agents",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.36471",
+    "theme": "eval-bench",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-10-27",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.36469",
+   "label": "CoHARL: Co-Evolving Agent Policies and Executable Harnesses with Reinforcement Learning",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.36469",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.LG"
+    ],
+    "published": "2026-10-27",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.36453",
+   "label": "Correction or Manipulation? Measuring Epistemic Vigilance in LLM Agents Under User Pressure",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.36453",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-10-27",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.36435",
+   "label": "Your Agent Acts Differently When You're Around: How User Presence Changes Agent Behavior in Negotiation",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.36435",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-10-27",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.36420",
+   "label": "SO-101 Bench: Accessible Spatial Manipulation",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.36420",
+    "theme": "memory",
+    "cats": [
+     "cs.CV"
+    ],
+    "published": "2026-10-27",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.36188",
+   "label": "Skill Dreaming: Evolving Repository Skills through Pull Request Streams",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.36188",
+    "theme": "tool-use",
+    "cats": [
+     "cs.AI",
+     "cs.SE"
+    ],
+    "published": "2026-10-26",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.36114",
+   "label": "Context Is a Pipeline, Not a Window: Information Attrition in LLM Agent Harnesses",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.36114",
+    "theme": "memory",
+    "cats": [
+     "cs.SE",
+     "cs.AI"
+    ],
+    "published": "2026-10-26",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.36108",
+   "label": "Log-To-Leak: Prompt Injection Attacks on Tool-Using LLM Agents via the Model Context Protocol",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.36108",
+    "theme": "mcp",
+    "cats": [
+     "cs.CR",
+     "cs.AI"
+    ],
+    "published": "2026-10-26",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.35829",
+   "label": "Reva: Real-Time Vulnerability Detection through Contextual Probing of Large Language Models",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.35829",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CR",
+     "cs.AI"
+    ],
+    "published": "2026-10-26",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.35773",
+   "label": "A Unified Arena for LLM Agents across Diverse Eurogame",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.35773",
+    "theme": "eval-bench",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-10-26",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.35767",
+   "label": "Free to Look, Free to Reason: Simple LLM Harnesses Outdiagnose Hand-Crafted Root Cause Analysis Agents",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.35767",
+    "theme": "eval-bench",
+    "cats": [
+     "cs.AI",
+     "cs.DC",
+     "cs.SE"
+    ],
+    "published": "2026-10-26",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.35579",
+   "label": "Infinity Machine: a self-improving AI agent for research",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.35579",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-10-26",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.35486",
+   "label": "ShutdownMod: Turning Any Trajectory into a Shutdown Evaluation",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.35486",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI",
+     "cs.LG"
+    ],
+    "published": "2026-10-26",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.35426",
+   "label": "Intent-Preserving Adversarial User Simulation for Multi-Turn Agent Evaluation",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.35426",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.LG"
+    ],
+    "published": "2026-10-26",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.35391",
+   "label": "Autonomous Structural Discovery Of Bioprocess Dynamics And Kinetics Via LLM-Driven Agents",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.35391",
+    "theme": "agent-safety",
+    "cats": [
+     "math.OC",
+     "cs.AI"
+    ],
+    "published": "2026-10-26",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.35349",
+   "label": "MarkovSim: an LLM Agent Harness with Bounded Context for Long-Horizon Computational Simulation",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.35349",
+    "theme": "memory",
+    "cats": [
+     "cs.CE",
+     "cs.AI"
+    ],
+    "published": "2026-10-26",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.35982",
+   "label": "Generation and Verification: Human-Agent Collaboration for Safety-Critical Automotive Software Engineering",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.35982",
+    "theme": "mcp",
+    "cats": [
+     "cs.SE",
+     "cs.AI"
+    ],
+    "published": "2026-10-26",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.35160",
+   "label": "AutoEnergyDesign: An LLM-Driven Agent for Automatic Energy System Design Optimization",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.35160",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI",
+     "stat.ML"
+    ],
+    "published": "2026-10-26",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.35980",
+   "label": "UnityBench-Mini3D: Evaluating LLM Agents for 3D Game Development in Unity",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.35980",
+    "theme": "eval-bench",
+    "cats": [
+     "cs.SE",
+     "cs.AI",
+     "cs.LG"
+    ],
+    "published": "2026-10-26",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.35089",
+   "label": "Learning to Remember: Advances in Memory Mechanisms for Large Language Models",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.35089",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.IR"
+    ],
+    "published": "2026-10-26",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.35082",
+   "label": "CoSA: The Conflict of Skills Attack in Real-World LLM Agent Ecosystems",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.35082",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CL",
+     "cs.AI",
+     "cs.CR"
+    ],
+    "published": "2026-10-26",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.35031",
+   "label": "PatentAgentBench: Benchmarking LLM Agents with Professional Patent Task Suites",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.35031",
+    "theme": "memory",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-10-26",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.35013",
+   "label": "Multiscale Policy Optimization for Long-Horizon LLM Agents",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.35013",
+    "theme": "tool-use",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-10-26",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.34987",
+   "label": "AskGLP1: A Knowledge Graph LLM Agent for Exploring GLP-1 Experience from Online Patient Narratives",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.34987",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CL",
+     "cs.AI",
+     "cs.SI"
+    ],
+    "published": "2026-10-26",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.34890",
+   "label": "AIPC: Evidence-Guided Agent Workflows for PyTorch Project Deployment",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.34890",
+    "theme": "tool-use",
+    "cats": [
+     "cs.SE",
+     "cs.AI",
+     "cs.LG"
+    ],
+    "published": "2026-10-26",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.34865",
+   "label": "ECHOES: An Adaptive LLM-Powered AR Glasses Docent for Evidence-Grounded Urban Heritage Interpretation",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.34865",
+    "theme": "memory",
+    "cats": [
+     "cs.HC"
+    ],
+    "published": "2026-10-26",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.34817",
+   "label": "Silent and Costly: Characterizing and Detecting Prompt-Caching Mis-Integration in LLM Agents",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.34817",
+    "theme": "eval-bench",
+    "cats": [
+     "cs.SE",
+     "cs.AI"
+    ],
+    "published": "2026-10-26",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.34777",
+   "label": "Scope-Gap Injection: Exploiting Evaluator Channel Blind Spots in the OpenClaw Agent Security Competition",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.34777",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI",
+     "cs.CR"
+    ],
+    "published": "2026-10-26",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.34728",
+   "label": "SKALOS: Learning to Distinguish Similar Skills with Capability Graphs",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.34728",
+    "theme": "planning",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-10-26",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.34679",
+   "label": "AT-AT: Automatic Tool Optimization from Agent Traces",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.34679",
+    "theme": "mcp",
+    "cats": [
+     "cs.LG"
+    ],
+    "published": "2026-10-26",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.34673",
+   "label": "Agent Memory as Recommendation: Recommender-System Design for Long-Term Memory of LLM Agents",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.34673",
+    "theme": "memory",
+    "cats": [
+     "cs.IR",
+     "cs.AI",
+     "cs.CL"
+    ],
+    "published": "2026-10-26",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.34654",
+   "label": "Thinking-in-Bets at Test Time Reduces Sycophantic Revisions in LLM Agents",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.34654",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.SE",
+     "cs.AI"
+    ],
+    "published": "2026-10-26",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.34620",
+   "label": "Built to Remember, Shipped to Forget: Operational Contracts, Failures, and Repairs in Containerized LLM Agent Deployments",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.34620",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.SE"
+    ],
+    "published": "2026-10-25",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.34535",
+   "label": "SentryBench: A Cost-Sensitive Benchmark for Adversarial Robustness of Tool-Using LLM Agents in Public-Safety Deployments",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.34535",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CR",
+     "cs.AI"
+    ],
+    "published": "2026-10-25",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.34523",
+   "label": "How Humans Learn Unfamiliar Worlds: A Think-Aloud Dataset on ARC-AGI-3",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.34523",
+    "theme": "eval-bench",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-10-25",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.34491",
+   "label": "What Effort Level Should I Choose? On the Economics of Reasoning Effort in LLM Agents",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.34491",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI",
+     "cs.CL"
+    ],
+    "published": "2026-10-25",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.35966",
+   "label": "EMMA: Structured Episodic Memory for Multi-Agent Workflow Synthesis",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.35966",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.MA",
+     "cs.AI"
+    ],
+    "published": "2026-10-25",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.34425",
+   "label": "CTXAgent - Self-Controlled Context Management of LLM Agents",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.34425",
+    "theme": "memory",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-10-25",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.34357",
+   "label": "6G Reasoning Agent Societies: Composition, Scaling, and Consistency-Time Laws",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.34357",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.NI",
+     "cs.MA"
+    ],
+    "published": "2026-10-25",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.34298",
+   "label": "Matched Capabilities, Different Behaviors: A Controlled Study of MCP and CLI Interfaces for Language Agents",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.34298",
+    "theme": "mcp",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-10-25",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.34290",
+   "label": "Repairing Broken Access Control in Web Applications with LLMs: An Empirical Benchmark Study",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.34290",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CR",
+     "cs.AI",
+     "cs.SE"
+    ],
+    "published": "2026-10-25",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.34260",
+   "label": "MultiEvoSkill: Structure-Aware Multi-Agent Skill Evolution for Generalizable Skill Artifacts",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.34260",
+    "theme": "multi-agent",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-10-25",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.34258",
+   "label": "Recovering Business Rules as Cascade Lookups for Enterprise Field Prediction",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.34258",
+    "theme": "multi-agent",
+    "cats": [
+     "cs.LG",
+     "cs.AI",
+     "cs.DB"
+    ],
+    "published": "2026-10-25",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.33956",
+   "label": "Continual Learning Exam: Benchmarking Long-Horizon RSI and Experiential Learning in LLM Agents",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.33956",
+    "theme": "eval-bench",
+    "cats": [
+     "cs.LG",
+     "cs.AI",
+     "cs.CL"
+    ],
+    "published": "2026-10-25",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.33845",
+   "label": "Build, Don't Play: Self-Improving LLM Research Agents Develop a Hearthstone Battlegrounds AI That Rivals Top Players",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.33845",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI",
+     "cs.LG",
+     "cs.MA"
+    ],
+    "published": "2026-10-24",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.33753",
+   "label": "Ring-0 by Default: Agents as Operating Systems (AaOS)",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.33753",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CR",
+     "cs.OS"
+    ],
+    "published": "2026-10-24",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.33728",
+   "label": "Strategic Calibration in LLM Multi-Agent Systems: Audited Pivot Scoring for Truthful Elicitation",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.33728",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.GT",
+     "cs.AI"
+    ],
+    "published": "2026-10-24",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.33651",
+   "label": "Jointly Modeling Preferences and Imperfect Decision-Making in Large Language Models",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.33651",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI",
+     "cs.CL",
+     "cs.GT"
+    ],
+    "published": "2026-10-24",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.37697",
+   "label": "chATLAS: A Retrieval-Augmented Conversational Assistant for the ATLAS Experiment",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.37697",
+    "theme": "mcp",
+    "cats": [
+     "cs.IR",
+     "hep-ex"
+    ],
+    "published": "2026-10-24",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.33636",
+   "label": "Build or Adopt? Custom-Built vs. General-Purpose LLM Agent Harnesses for Automotive GUI Testing",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.33636",
+    "theme": "mcp",
+    "cats": [
+     "cs.SE",
+     "cs.AI"
+    ],
+    "published": "2026-10-24",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.33633",
+   "label": "ProbeID: Verifying MCP Tool Identity for LLM Agents under Registry Drift",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.33633",
+    "theme": "mcp",
+    "cats": [
+     "cs.CR",
+     "cs.AI"
+    ],
+    "published": "2026-10-24",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.33568",
+   "label": "Trajectory2Gym: Decision-Grounded Compositional Interaction Synthesis for Tool-Use Agents",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.33568",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CL"
+    ],
+    "published": "2026-10-24",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.33536",
+   "label": "FraudSociety: A Generative Agent-Based Society for the Financial-Fraud Economy",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.33536",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI",
+     "cs.CY"
+    ],
+    "published": "2026-10-24",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.33509",
+   "label": "Can Agentic Code Review Catch Vulnerabilities Before They Are Merged?",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.33509",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.SE",
+     "cs.AI",
+     "cs.CR"
+    ],
+    "published": "2026-10-24",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2610.33432",
+   "label": "ConMem: Counterfactual Multi-Scenario Probing for Resolving LLM Memory Misalignment",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2610.33432",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-10-24",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
    "id": "repo:mcp-servers",
    "label": "MCP servers",
    "kind": "repo",
@@ -1218,6 +5420,42 @@
    "attrs": {}
   },
   {
+   "id": "theme:eval-bench",
+   "label": "eval-bench",
+   "kind": "cluster",
+   "attrs": {}
+  },
+  {
+   "id": "theme:science",
+   "label": "science",
+   "kind": "cluster",
+   "attrs": {}
+  },
+  {
+   "id": "theme:general",
+   "label": "general",
+   "kind": "cluster",
+   "attrs": {}
+  },
+  {
+   "id": "theme:tool-use",
+   "label": "tool-use",
+   "kind": "cluster",
+   "attrs": {}
+  },
+  {
+   "id": "theme:enterprise",
+   "label": "enterprise",
+   "kind": "cluster",
+   "attrs": {}
+  },
+  {
+   "id": "theme:rl-train",
+   "label": "rl-train",
+   "kind": "cluster",
+   "attrs": {}
+  },
+  {
    "id": "hn:3bb6ac09e1",
    "label": "HackerTube: YouTube built from videos recommended by HN",
    "kind": "news",
@@ -1373,6 +5611,1584 @@
   }
  ],
  "links": [
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40649",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40647",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40643",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40641",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40636",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40613",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40611",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40589",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40588",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40586",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40578",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40565",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40563",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40560",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40556",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40551",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40545",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40541",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40535",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40532",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40516",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40503",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40494",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40492",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40490",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40487",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40482",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40476",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40444",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40420",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40418",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40414",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40409",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40407",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40396",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40394",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40382",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40370",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40345",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40330",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40327",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40325",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40318",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40310",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40302",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40287",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40280",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40278",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40276",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40257",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40250",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40249",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40246",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40227",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40192",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40188",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40186",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40166",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40161",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40160",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40151",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40133",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40130",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40096",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40091",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40075",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40071",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40061",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40055",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40051",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40046",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40042",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40036",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40030",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40023",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40006",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40005",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.39992",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.39955",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.39954",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.39927",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.39926",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.39923",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.39902",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.39884",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.39876",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.39869",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.39848",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.39839",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.39837",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.39835",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.39825",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.39813",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.39807",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.39802",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.39795",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.39790",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.39781",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.39768",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.39744",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40293",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.39681",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.39660",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.39576",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.39468",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.39109",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.39018",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.38946",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.38796",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.38728",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.38468",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.38398",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.38215",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.38209",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.38145",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.38053",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.38040",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.37984",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.37978",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.37926",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.37870",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.37830",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.37779",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.37649",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.37624",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.37592",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.37504",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.37461",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.37448",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.37375",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.37342",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.37011",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.36989",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.36683",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.36652",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.36506",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.36345",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.36325",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.36289",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.36264",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.36250",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.36221",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.36151",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.35736",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.35733",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.35690",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.35592",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.35442",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.35997",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.35398",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.35335",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.37702",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.34968",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.34878",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.34836",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.34644",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40379",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40350",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.40259",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.39758",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.39608",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.39570",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.39488",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.39438",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.39395",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.39377",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.39352",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.39324",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.39234",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.39155",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.38980",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.38924",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.38867",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.38620",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.38617",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.38610",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.38579",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.38450",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.38392",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.38391",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.38329",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.38294",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.38293",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.38292",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.38175",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.37905",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.37809",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.37648",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.37739",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.37415",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.37405",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.37319",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.37283",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.37242",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.37228",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.37081",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.37055",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.36980",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.36967",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.36918",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.36894",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.36626",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.36584",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.36570",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.36553",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.36549",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.36538",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.36527",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.36471",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.36469",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.36453",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.36435",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.36420",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.36188",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.36114",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.36108",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.35829",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.35773",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.35767",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.35579",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.35486",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.35426",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.35391",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.35349",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.35982",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.35160",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.35980",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.35089",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.35082",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.35031",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.35013",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.34987",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.34890",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.34865",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.34817",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.34777",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.34728",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.34679",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.34673",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.34654",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.34620",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.34535",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.34523",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.34491",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.35966",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.34425",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.34357",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.34298",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.34290",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.34260",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.34258",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.33956",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.33845",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.33753",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.33728",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.33651",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.37697",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.33636",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.33633",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.33568",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.33536",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.33509",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-02",
+   "target": "arxiv:2610.33432",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
   {
    "source": "theme-2026-11-02",
    "target": "repo:mcp-servers",
@@ -2697,6 +8513,1584 @@
    "source": "news:vercel-ai-7-0-159",
    "target": "theme:planning",
    "relation": "relates_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40649",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40647",
+   "target": "theme:eval-bench",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40643",
+   "target": "theme:eval-bench",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40641",
+   "target": "theme:science",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40636",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40613",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40611",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40589",
+   "target": "theme:multi-agent",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40588",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40586",
+   "target": "theme:eval-bench",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40578",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40565",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40563",
+   "target": "theme:general",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40560",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40556",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40551",
+   "target": "theme:tool-use",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40545",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40541",
+   "target": "theme:tool-use",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40535",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40532",
+   "target": "theme:eval-bench",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40516",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40503",
+   "target": "theme:tool-use",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40494",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40492",
+   "target": "theme:multi-agent",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40490",
+   "target": "theme:planning",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40487",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40482",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40476",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40444",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40420",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40418",
+   "target": "theme:planning",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40414",
+   "target": "theme:eval-bench",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40409",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40407",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40396",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40394",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40382",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40370",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40345",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40330",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40327",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40325",
+   "target": "theme:enterprise",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40318",
+   "target": "theme:eval-bench",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40310",
+   "target": "theme:tool-use",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40302",
+   "target": "theme:eval-bench",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40287",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40280",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40278",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40276",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40257",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40250",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40249",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40246",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40227",
+   "target": "theme:multi-agent",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40192",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40188",
+   "target": "theme:general",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40186",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40166",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40161",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40160",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40151",
+   "target": "theme:multi-agent",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40133",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40130",
+   "target": "theme:eval-bench",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40096",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40091",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40075",
+   "target": "theme:science",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40071",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40061",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40055",
+   "target": "theme:multi-agent",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40051",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40046",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40042",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40036",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40030",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40023",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40006",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40005",
+   "target": "theme:eval-bench",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.39992",
+   "target": "theme:tool-use",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.39955",
+   "target": "theme:eval-bench",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.39954",
+   "target": "theme:enterprise",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.39927",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.39926",
+   "target": "theme:eval-bench",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.39923",
+   "target": "theme:eval-bench",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.39902",
+   "target": "theme:eval-bench",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.39884",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.39876",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.39869",
+   "target": "theme:tool-use",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.39848",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.39839",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.39837",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.39835",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.39825",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.39813",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.39807",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.39802",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.39795",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.39790",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.39781",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.39768",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.39744",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40293",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.39681",
+   "target": "theme:tool-use",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.39660",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.39576",
+   "target": "theme:multi-agent",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.39468",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.39109",
+   "target": "theme:mcp",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.39018",
+   "target": "theme:multi-agent",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.38946",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.38796",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.38728",
+   "target": "theme:multi-agent",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.38468",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.38398",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.38215",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.38209",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.38145",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.38053",
+   "target": "theme:multi-agent",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.38040",
+   "target": "theme:multi-agent",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.37984",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.37978",
+   "target": "theme:general",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.37926",
+   "target": "theme:multi-agent",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.37870",
+   "target": "theme:multi-agent",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.37830",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.37779",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.37649",
+   "target": "theme:tool-use",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.37624",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.37592",
+   "target": "theme:multi-agent",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.37504",
+   "target": "theme:rl-train",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.37461",
+   "target": "theme:tool-use",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.37448",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.37375",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.37342",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.37011",
+   "target": "theme:eval-bench",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.36989",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.36683",
+   "target": "theme:general",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.36652",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.36506",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.36345",
+   "target": "theme:planning",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.36325",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.36289",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.36264",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.36250",
+   "target": "theme:planning",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.36221",
+   "target": "theme:mcp",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.36151",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.35736",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.35733",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.35690",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.35592",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.35442",
+   "target": "theme:general",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.35997",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.35398",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.35335",
+   "target": "theme:general",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.37702",
+   "target": "theme:multi-agent",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.34968",
+   "target": "theme:multi-agent",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.34878",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.34836",
+   "target": "theme:multi-agent",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.34644",
+   "target": "theme:eval-bench",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40379",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40350",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.40259",
+   "target": "theme:rl-train",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.39758",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.39608",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.39570",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.39488",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.39438",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.39395",
+   "target": "theme:tool-use",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.39377",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.39352",
+   "target": "theme:eval-bench",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.39324",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.39234",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.39155",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.38980",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.38924",
+   "target": "theme:mcp",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.38867",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.38620",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.38617",
+   "target": "theme:mcp",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.38610",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.38579",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.38450",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.38392",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.38391",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.38329",
+   "target": "theme:tool-use",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.38294",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.38293",
+   "target": "theme:eval-bench",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.38292",
+   "target": "theme:tool-use",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.38175",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.37905",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.37809",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.37648",
+   "target": "theme:tool-use",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.37739",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.37415",
+   "target": "theme:mcp",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.37405",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.37319",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.37283",
+   "target": "theme:tool-use",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.37242",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.37228",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.37081",
+   "target": "theme:eval-bench",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.37055",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.36980",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.36967",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.36918",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.36894",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.36626",
+   "target": "theme:mcp",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.36584",
+   "target": "theme:eval-bench",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.36570",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.36553",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.36549",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.36538",
+   "target": "theme:eval-bench",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.36527",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.36471",
+   "target": "theme:eval-bench",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.36469",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.36453",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.36435",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.36420",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.36188",
+   "target": "theme:tool-use",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.36114",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.36108",
+   "target": "theme:mcp",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.35829",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.35773",
+   "target": "theme:eval-bench",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.35767",
+   "target": "theme:eval-bench",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.35579",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.35486",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.35426",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.35391",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.35349",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.35982",
+   "target": "theme:mcp",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.35160",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.35980",
+   "target": "theme:eval-bench",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.35089",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.35082",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.35031",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.35013",
+   "target": "theme:tool-use",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.34987",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.34890",
+   "target": "theme:tool-use",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.34865",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.34817",
+   "target": "theme:eval-bench",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.34777",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.34728",
+   "target": "theme:planning",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.34679",
+   "target": "theme:mcp",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.34673",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.34654",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.34620",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.34535",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.34523",
+   "target": "theme:eval-bench",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.34491",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.35966",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.34425",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.34357",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.34298",
+   "target": "theme:mcp",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.34290",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.34260",
+   "target": "theme:multi-agent",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.34258",
+   "target": "theme:multi-agent",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.33956",
+   "target": "theme:eval-bench",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.33845",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.33753",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.33728",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.33651",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.37697",
+   "target": "theme:mcp",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.33636",
+   "target": "theme:mcp",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.33633",
+   "target": "theme:mcp",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.33568",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.33536",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.33509",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2610.33432",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
    "confidence": "INFERRED"
   },
   {
