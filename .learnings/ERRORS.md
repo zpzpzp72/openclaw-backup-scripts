@@ -457,3 +457,16 @@ Validation failed for tool "exec":
 - 遇到「实例化成功但方法全 NRE」,先查 typelib 注册(`oleview`/注册表 TypeLib),不要继续换方法名盲调。
 - 无 typelib 的自定义 COM 需要 vtable 顺序 + Marshal 显式调用,工程量与收益不成比例 → 判定为「不可行」并记录,不反复尝试。
 - 同类教训:fhmanagew.exe CLI 动词(提权 `-checktarget`/`-backupnow`)依旧 exit=1 无输出且留 180 秒孤儿进程(53932/91040) → **fhmanagew 无可用 CLI**,每次尝试后必须 taskkill 清孤儿。
+
+## ERR-20261102-006 手打 sessionId 而不复制工具返回值 → poll 必报 No session found
+
+**现象**(本轮 07:53–07:56 连续两条真错误)：
+1. `process poll` 传 `sessionId: "lucky-orback"` → `No session found for lucky-orback`。实际会话是 `lucky-orbit` —— **是我自己给 id 臆造了一个后缀**，该 id 从未存在。
+2. 随后 `process poll` 传 `glow-mist` → `No session found for glow-mist`。该会话早已 `Process exited (code 0)` 被回收，我又去 poll 一个已结束对象。
+
+**根因**：两个 poll 都凭**记忆/推断**手写 handle，而不是复制 exec 返回值里的 `sessionId`；且没有先 `process list` 确认会话是否仍在。
+**判据**：exec 返回 "Command still running (session <id>, pid <n>)" 时，**该 id 只能原样复制**，一个字符都不能改。已退出的会话 poll 会给 `No session found`（与 runtime 陈旧快照情形 ERR-20261030-003 现象同源，但成因是"我引用了不存在的 id"）。
+**教训**:
+- **handle 只允许 copy-paste,不允许手打**；`sessionId` / `runId` / `pid` 三者不可混用,也不可臆造变体。
+- poll 前若不确定,先 `process list` 看一眼;已经 "Process exited" 的会话不要重复 poll(那是无效轮次)。
+- 这是本项目「Code Mode 工具调用误用」家族的第 5 次复发(前 4 次见 2026-10-25 条目),**属高复发类,应固化**:凡是 `await process({action:"poll", sessionId})`,sessionId 一律从上一次工具返回里整段复制。
