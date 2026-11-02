@@ -108,10 +108,36 @@ send_mail() {
 # 自动清理旧备份（新增）
 ##############################################
 cleanup_old() {
-    find "$BACKUP_DIR" -name "openclaw-*.tgz" -mtime +$RETAIN_DAYS \
-        -exec rm -f {} \;
+    # ⚠️ NAS(SMB 共享)上 `rm` 是「移入 #recycle 回收站」,不是真删 → 空间不释放。
+    #    本函数此前只 log「清理完成」,与事实不符,导致 NAS 被回收站静默吃满
+    #    (2026-11-02 实测: 回收站累积 27 份 / 123GB,Avail 仅剩 21G / 100%)。
+    #    这里如实描述行为,并额外检测回收站存量并告警。
+    #    ★ 不自动清空回收站:那是不可逆操作,需 ZP 明确授权。
+    local removed=0
+    while IFS= read -r f; do
+        [ -n "$f" ] || continue
+        rm -f "$f" && removed=$((removed+1))
+    done < <(find "$BACKUP_DIR" -name "openclaw-*.tgz" -mtime +$RETAIN_DAYS 2>/dev/null)
 
-    log "清理超过 $RETAIN_DAYS 天的旧备份完成"
+    log "已移出 $removed 份超过 $RETAIN_DAYS 天的旧备份(NAS 上为移入回收站,非真删)"
+
+    # 检测 NAS 回收站存量(只读,不删除)
+    # 回收站路径 = NAS_ROOT + /#recycle + BACKUP_DIR 相对 NAS_ROOT 的路径
+    # (例: BACKUP_DIR=/mnt/h/AI/openclaw.zone/WSL → /mnt/h/#recycle/AI/openclaw.zone/WSL)
+    local nas_root recycle_dir rel
+    nas_root="$(df "$BACKUP_DIR" 2>/dev/null | tail -1 | awk '{print $6}')"
+    [ -z "$nas_root" ] && nas_root="/mnt/h"
+    rel="${BACKUP_DIR#$nas_root}"
+    recycle_dir="$nas_root/#recycle$rel"
+    if [ -d "$recycle_dir" ]; then
+        local rcount rsize
+        rcount=$(find "$recycle_dir" -maxdepth 1 -name 'openclaw-*.tgz' 2>/dev/null | wc -l)
+        rsize=$(find "$recycle_dir" -maxdepth 1 -name 'openclaw-*.tgz' -printf '%s\n' 2>/dev/null | awk '{s+=$1} END {printf "%d", int(s/1073741824)}')
+        if [ "${rcount:-0}" -gt 0 ]; then
+            log "⚠️ NAS 回收站仍有 ${rcount} 份旧备份(约 ${rsize:-0}GB)未释放空间: $recycle_dir"
+            log "   回收站不随 NAS 删除自动清空,需人工确认后清空;否则空间持续被占用"
+        fi
+    fi
 }
 
 ##############################################
@@ -211,6 +237,21 @@ if [ "$NEED_BACKUP" = true ]; then
         log "[HOT] STOP_GATEWAY=0，跳过停服，执行热备份"
     fi
 
+    # ★ 修复 (2026-11-03,恢复自 .bak-20261029-153331): NAS 空间预检
+    #   该检查曾于 2026-10-29 加入并实测生效(日志:「NAS 空间检查通过: 可用 171G,需要约 7G」),
+    #   但在此后数轮独立编辑中丢失(每次都基于「当前版本」改,无人核对上一版功能是否还在)。
+    #   丢失后果:NAS 写满时 gzip 抛 "Input/output error",tar 中断(exit 1)但归档不完整,
+    #   脚本却仍报「备份成功」。10-05 与 10-28 均如此。
+    #   阈值: 源目录估算的压缩体积 × 2(留余量) + 1G 余量
+    NEED_GB=$(du -sm --exclude="$HOME/.openclaw/memory/lancedb-pro" "$HOME/.openclaw" 2>/dev/null | awk '{print int($1/1024*0.4)+1}')
+    AVAIL_GB=$(df -BG "$BACKUP_DIR" 2>/dev/null | tail -1 | awk '{gsub("G","",$4); print $4}')
+    if [ -n "$AVAIL_GB" ] && [ "$AVAIL_GB" -lt "$NEED_GB" ]; then
+        log "❌ NAS 空间不足: 可用 ${AVAIL_GB}G < 需要约 ${NEED_GB}G —— 跳过备份(避免产出损坏归档)"
+        log "   建议: 清理旧备份 / 清空 /mnt/h/#recycle 回收站 / 调整 RETAIN_DAYS"
+        write_heartbeat "error" "NAS 空间不足: 可用 ${AVAIL_GB}G < 需要 ${NEED_GB}G"
+        exit 1
+    fi
+    log "NAS 空间检查通过: 可用 ${AVAIL_GB}G,需要约 ${NEED_GB}G"
     # 执行备份
     log "执行 tar 备份..."
     ARCHIVE="$BACKUP_DIR/openclaw-$NOW.tgz"
