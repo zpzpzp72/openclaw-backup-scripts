@@ -528,3 +528,80 @@ cleanup_old() {
   「保留 30 天」是**意图**,「rm 在 SMB 上不释放空间」是**前提**;
   缺前提的 wiki 会产出「看起来在执行策略、实际不生效」的系统。
 - **日志不能说谎**:「清理完成」应改为「已移入回收站(NAS 上不释放空间),需手工清空回收站」。
+
+---
+
+## ERR-20261103-004 watchdog 把注释行当数据行 → 每小时报一次算术错误
+
+**现象**: `scripts/cron-watchdog.sh:48`
+```bash
+FIRST=$(head -1 "$TREND" | awk '{print $1" "$2}')
+```
+`logs/gateway-rss-trend.txt` 的**第一行是中文注释**（`# gateway-rss-trend.txt …`），
+`head -1` 取到的不是数据行 → `F_TS="#"`、`F_KB="gateway-rss-trend.txt"` →
+第 50 行 `DT=$(( NOW_TS - F_TS ))` 报 `syntax error: operand expected (error token is "#")`。
+
+**影响**: 该错误在 `if (( ... ))` 之前的**裸算术展开**处，`set -e` 之外不会中断脚本，
+但每小时的 RSS 趋势/ETA 打印全部丢失 → 「RSS 增速预测」这条链路实际已静默失效多日，
+而日志里每天都在刷错误行，反倒掩盖了「趋势没打印」这一事实。
+
+**修复**: `FIRST=$(grep -v '^#' "$TREND" | head -1 | awk '{print $1" "$2}')`，`bash -n` 通过。
+
+**教训**:
+- **趋势/状态文件的第一行不保证是数据行**——带表头/注释的日志文件必须先 `grep -v '^#'`。
+- 错误行出现在日志里 ≠ 只影响那一行；**同一个 if 块里的后续语句（ETA 预测）被静默吞掉**，
+  「有报错但功能看起来还在」是最危险的失效形态。
+- 修 shell 时先 `bash -n`，再实跑一次取 FIRST/F_TS/F_KB 三个值确认非空。
+
+## ERR-20261103-005 Life NightOps 连败两次：apply_patch 沙箱越界 + litellm 余额不足（跨 agent 汇总）
+
+**现象**：cron `a6c108aa`（Life NightOps, 01:50）连续两次 error：
+- 11-02 场（session 04c806da）：`Provider returned an incomplete or malformed tool call`
+- 11-03 场（session 9c873b71，01:50→02:21）：`Apply Patch failed`，尾因 `402 litellm.APIError: Sorry, your account balance is insufficient`（model group GLM-5.3-Flash，no fallback attempted）→ run failed、delivered=false，飞书未收到
+
+**根因链**：
+1. apply_patch 的 sandbox root = `~/.openclaw/workspace/agents/life`，无法写 `workspace/heartbeat/` → 连续 4 次报错，末两条为 `Path escapes sandbox root` 与 `Cannot create ... file already exists`
+2. 模型 tool call 结构损坏时，原始标记 `</tool_call><arg_key>…` 会漏进落盘正文（本次涉及 6 个文件：nightly-life-2026-11-03.md、nightly-orchestrator-2026-11-02.md 及 memory/daily 副本、memory/2026-10-28.md、agents/scout/memory/2026-10-25.md、agents/scout/memory/dreaming/light/2026-10-26.md）
+3. litellm 账户余额不足且无 fallback —— 外部额度约束
+
+**已修复**：清洗 6 个文件的工具标记泄漏与 U+FFFD 乱码，补全被截断的表格行；报告 §7 内容本体完好，三个目标文件（heartbeat/、memory/、agents/life/memory/）均已落盘。
+
+**预防**：
+- 跨 workspace 目录写文件**禁用 apply_patch**，统一 `exec` + heredoc 或 write
+- 写完报告立即 `grep -n "arg_key\|tool_call\|</think>" <file>` 校验残留
+- 额度类报错（2056 / 402）只写异常清单并告知 owner，不自行反复重试
+
+<!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
+
+## ERR-20261103-006 NightOps 作业 sessionKey 绑错 agent 域 → 失败通知无法投递
+
+**现象**：`Life NightOps`（cron `a6c108aa`）的 `lastFailureNotificationDeliveryError` 为
+`Multiple agents are configured, but session agent resolution has no explicit owner. The agent-scoped session key belongs to "main", not "life".`
+→ 连败两次时**连失败告警都发不出**（not-delivered），owner 完全看不到异常。
+
+**根因**：该作业 `agentId=life`，但 `sessionKey` 被写成 `agent:main:main`（`ownership: explicit` 下 agent 与 session 域不匹配）。同类作业 `NightOps-Life`/`NightOps-Scout`/`NightOps-Coder` 用 `agentId=main` + `agent:main:main` 是自洽的，因此问题只在 `Life NightOps`（以及 Coder/Orchestrator NightOps）这三个 agent-scoped 作业上暴露。
+
+**已修复**：
+- `Life NightOps` → `sessionKey: agent:life:main`
+- `Coder NightOps` → `sessionKey: agent:coder:main`
+- `Orchestrator NightOps` → **改不动**：其 agent SQLite 报 `SQLite session reclamation commit checkpoint expired`，CLI 直接拒绝任何 edit（需停 Gateway 跑 `openclaw doctor --fix` 再重启，属 owner 决策）
+
+**预防**：新建 agent-scoped 作业时，`agentId` 与 `sessionKey` 的 agent 段必须一致；改完用 `openclaw automations get <id>` 复核。
+
+## ERR-20261103-007 litellm 全线不可用 + minimax 大面积 429
+
+**现象**（`openclaw logs` 近 2000 行统计）：
+| provider/model | status | 次数 |
+|---|---|---|
+| minimax/MiniMax-M2.7 | 429 | 57 |
+| minimax/MiniMax-M2.7 | 200 | 7 |
+| litellm/GLM-5.3-Flash | 402 | 12 |
+| ollama/qwen3:4b-instruct | 400 | 5（另有 200 × 3） |
+
+**根因**：litellm 账户余额不足（402）；minimax 侧 Token Plan 额度触顶（429）；litellm 其余模型 400（apiKey 占位符未解析，见 ERR-20261103-005）。→ 三个默认 fallback 全断，只剩 ollama 本地 4B 能跑。
+
+**已缓解**：`Life NightOps` 作业级改绑 `model=minimax/MiniMax-M2.7`，fallbacks 设为 `minimax/MiniMax-M3.1-Flash → minimax/MiniMax-M3 → ollama/qwen3.6:27b → litellm/deepseek-flash`（把 minimax 系放在最前，避开 litellm 402 通道）。
+
+**预防**：作业级 model/fallback 覆盖优先于 agent 默认链；litellm 系在余额恢复前应从关键作业 fallback 链末尾移除。
+
+<!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->

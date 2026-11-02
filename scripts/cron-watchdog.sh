@@ -45,8 +45,30 @@ if [ -n "$GW_PID" ]; then
   TREND=/home/zhiping/.openclaw/workspace/logs/gateway-rss-trend.txt
   echo "$(date +%s) ${GW_RSS_KB}" >> "$TREND"
   if [ -s "$TREND" ]; then
-    FIRST=$(head -1 "$TREND" | awk '{print $1" "$2}')
-    F_TS=${FIRST%% *}; F_KB=${FIRST##* }
+    # ★ 修复 (2026-11-03): 原来用 `grep -v '^#' | head -1`,但趋势文件注释段之后有【空行】,
+    #   head -1 取到空行 → FIRST 为空 → 算术报「operand expected」,RSS 趋势与 ETA 被静默吞掉。
+    #   且趋势文件有两种历史格式,必须分别解析:
+    #     早期: "MM-DD HH:MM  KB"  (如 10-27 01:13  2782208)
+    #     后期: "epoch  KB"         (如 1793654101  10912904)
+    #   统一转成 epoch,否则会把 "10-27" 当时间戳 → 速率完全错误。
+    # ★ 关键(2026-11-03): 本脚本开头是 `set -euo pipefail`,
+    #   grep 无匹配时返回 1 → set -e 会让脚本【整体提前退出】,
+    #   后面的 RSS 趋势与 ETA 打印根本不执行(每小时静默失败)。
+    #   因此这里所有可能返回非 0 的命令都必须显式 `|| true` 兜底。
+    FIRST_LINE=$(grep -E '^[0-9]' "$TREND" | head -1 || true)
+    F_KB=$(echo "$FIRST_LINE" | awk '{print $NF}' || true)
+    F_TS_RAW=$(echo "$FIRST_LINE" | awk '{if (NF>=3) print $1" "$2; else print $1}' || true)
+    if [ "$(echo "$F_TS_RAW" | wc -w || true)" -ge 2 ]; then
+        # 早期格式 "MM-DD HH:MM" 缺年份 → 补当前年份;若补出来的时间在未来(跨年),退回一年
+        F_TS=$(date -d "$(date +%Y)-$F_TS_RAW" +%s 2>/dev/null || echo 0)
+        if [ "$F_TS" -gt "$(date +%s)" ] 2>/dev/null; then
+            F_TS=$(( F_TS - 31536000 ))
+        fi
+    else
+        F_TS=$(echo "$F_TS_RAW" | tr -d ' ' || true)
+    fi
+    [ -n "$F_TS" ] || F_TS=0
+    [ -n "$F_KB" ] || F_KB=0
     NOW_TS=$(date +%s); DT=$(( NOW_TS - F_TS ))
     if (( DT >= 1800 && F_KB > 0 )); then
       RATE_KB_H=$(( (GW_RSS_KB - F_KB) * 3600 / DT ))
