@@ -20,7 +20,7 @@
 - 根因: 非泄漏，是每会话固定开销 × 会话数,不是泄漏,是**每会话固定开销 × 会话数** (转录/归档的内存副本)
 - Heap 496MB → max-old-space-size 无效; **真杠杆 = 会话转录保留策略**
 - 隐藏坑: **modelOverride 会禁用 fallback 链会禁用 fallback 链（configured fallbacks disabled by user model override）** → 无兜底
-- 保守口诀: minimax 429 + `Auth=no` → 先查 Token Plan �he window (mmx quota),不要去查 key
+- 保守口诀: minimax 429 + `Auth=no` → 先查 Token Plan / the window (mmx quota),不要去查 key
 
 ## 🟡 P1/P2
 - Coder nightly 落盘断点
@@ -37,7 +37,7 @@
 
 ## 📌 经验
 - NightOps 期间报告收集层可 100% 白天队列
-- 报告存活 vs 落盘路径断点严格区分,避免误判 agent 失联 (10-24 � corrupted
+- 报告存活 vs 落盘路径断点严格区分,避免误判 agent 失联 (10-24 报告 corrupted
 
 ## 明日(10-27)跟进优先级
 1. P0-1/ZP: Gateway 重启已由用户执行 → 保留策略 ZP 授权

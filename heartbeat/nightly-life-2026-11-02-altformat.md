@@ -41,7 +41,7 @@
 - 🟡 微博 hot_band 403 回归（补 cookie 或固化 tophub 镜像）
 - 🟡 news_digest 中文源中位龄 231 天（根因未修）→ 知乎直采已验证可用
 - 🟡 OpenRouter 402 余额 0；BILIBILI_COOK secrs未配置；web_search 连续 13 天 provider_error
-- � garbled line — discard, rewrite clean
+- （历史乱码行，已废弃）
 - 🟢 本场零 npm 安装、零配置/调度器变更、零重启、零外发
 
 <!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->

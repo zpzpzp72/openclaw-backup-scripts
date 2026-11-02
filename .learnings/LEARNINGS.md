@@ -100,3 +100,10 @@ anon Private_Dirty 9.88GB / file 0.15GB
 - 经过: 装 rea-agents 需 node>=26.12.1；nodejs.org tarball sha256 检验通过, 但 ~/.npmrc 的 prefix 钉死 v26.10.0 使 nvm install/use 流程整体非零退出; npmmirror 镜像 SHASUMS256.txt 返回空无法校验。
 - 处理: 不动用户 ~/.npmrc; 手动 tar -xJf 解包 nvm 已验证的缓存 tarball 到 ~/.nvm/versions/node/; npm 加 --userconfig=<空文件> 绕过 prefix + --prefix 指向目标 node 树; CLI 用 shim 钉到特定 node 版本; nvm default alias 钉回用户默认版本防劫持。
 - 补充：npmmirror 兜底装 node 时镜像 SHASUMS 返回空 → 已解包目录视为不可信，移入 .nvm-quarantine，防止 nvm use 26 解析到未验证版本；确需该版本用 nodejs.org 官方 tarball 重装。
+
+## 2026-11-03 · NightOps 报告落盘纪律（Life/Orchestrator/Scout 通用）
+
+- **跨 workspace 目录写文件禁用 apply_patch**：apply_patch 的 sandbox root 是 `~/.openclaw/workspace/agents/life`，写 `workspace/heartbeat/` 会报 `Path escapes sandbox root`。正确做法：`exec` + heredoc（`cat >> f << 'EOF'`）或 write 工具。
+- **写完必校验残留**：模型 tool call 结构损坏时，原始标记 `</tool_call><arg_key>…` 会漏进落盘正文。收工前一律 `grep -n "arg_key\|tool_call\|</think>" <file>`，并顺带扫 U+FFFD 乱码和被截断的表格行（`...` 结尾）。
+- **判 run 成败 ≠ 判产物有无**：NightOps run 报 failed 时，落盘产物可能完好。以文件实际内容为准，再单独判断投递（delivered）状态。
+- 额度类报错（Token Plan 2056 / litellm 402 余额不足）属外部约束 → 写异常清单 + 告知 owner，不自行反复重试。
