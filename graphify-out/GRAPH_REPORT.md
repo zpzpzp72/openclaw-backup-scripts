@@ -258,11 +258,11 @@ Nodes (1): Recurrent-State Write-Back
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `AI/Agent/MCP 2026-11-02` connect `unknown` to `MCP Registries, SDKs & Multi-Window Scout Snapshots`, `Agent Memory, Tool Use & Claude Code Ecosystem`, `Nightly Scout Snapshot 2026-10-30 (Release & Advisory Stream)`, `MCP Servers, Inspector & Spec Toolchain Security`, `Domain Benchmarks, Continual Learning & Data Curation`, `Multi-Agent Alignment, Theory of Mind & Delegation`, `OpenAI, Vercel & Agent Skill Planning`, `RL Training, Credit Assignment & Post-Training`?**
-  _High betweenness centrality (0.233) - this node is a cross-community bridge._
-- **Why does `AI/Agent/MCP 2026-10-27` connect `Scout Corpus 2026-10-24 & General Agent Engineering` to `MCP Registries, SDKs & Multi-Window Scout Snapshots`, `Agent Memory, Tool Use & Claude Code Ecosystem`, `Nightly Scout Snapshot 2026-10-30 (Release & Advisory Stream)`, `MCP Servers, Inspector & Spec Toolchain Security`, `Multi-Agent Alignment, Theory of Mind & Delegation`, `OpenAI, Vercel & Agent Skill Planning`, `RL Training, Credit Assignment & Post-Training`?**
-  _High betweenness centrality (0.223) - this node is a cross-community bridge._
+  _High betweenness centrality (0.227) - this node is a cross-community bridge._
 - **Why does `AI/Agent/MCP 2026-10-28` connect `MCP Registries, SDKs & Multi-Window Scout Snapshots` to `Agent Memory, Tool Use & Claude Code Ecosystem`, `Nightly Scout Snapshot 2026-10-30 (Release & Advisory Stream)`, `MCP Servers, Inspector & Spec Toolchain Security`, `Domain Benchmarks, Continual Learning & Data Curation`, `Multi-Agent Alignment, Theory of Mind & Delegation`, `OpenAI, Vercel & Agent Skill Planning`, `RL Training, Credit Assignment & Post-Training`?**
-  _High betweenness centrality (0.199) - this node is a cross-community bridge._
+  _High betweenness centrality (0.226) - this node is a cross-community bridge._
+- **Why does `AI/Agent/MCP 2026-10-27` connect `Scout Corpus 2026-10-24 & General Agent Engineering` to `MCP Registries, SDKs & Multi-Window Scout Snapshots`, `Agent Memory, Tool Use & Claude Code Ecosystem`, `Nightly Scout Snapshot 2026-10-30 (Release & Advisory Stream)`, `MCP Servers, Inspector & Spec Toolchain Security`, `Multi-Agent Alignment, Theory of Mind & Delegation`, `OpenAI, Vercel & Agent Skill Planning`, `RL Training, Credit Assignment & Post-Training`?**
+  _High betweenness centrality (0.219) - this node is a cross-community bridge._
 - **Are the 282 inferred relationships involving `general` (e.g. with `Direct Pass@$k$ Optimization for Thought Pruning: Balancing Quality and Diversity in Test-Time Reasoning` and `Would an LLM Match into a Residency? Uncertainty, Reasoning and Image Use of Open Language Models on the Spanish MIR Examination`) actually correct?**
   _`general` has 282 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `Thinking Machines Lab`, `Scale AI`, `Meta` to the rest of the system?**
