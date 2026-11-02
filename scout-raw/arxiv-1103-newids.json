@@ -1,0 +1,770 @@
+[
+ {
+  "id": "2610.42147",
+  "set": "cs.AI",
+  "title": "Latent Sparse Attention: Towards Subquadratic Ultra-Long Context Attention",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.42146",
+  "set": "cs.AI",
+  "title": "Hierarchical World Models with Implicit Dynamics",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.42141",
+  "set": "cs.AI",
+  "title": "RoboArchitect: Automating the Design of Robotic Agents with Persistent Memory",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.42116",
+  "set": "cs.AI",
+  "title": "ACCT: Asymmetric Cross-LLM Context Transfer",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.42112",
+  "set": "cs.AI",
+  "title": "Subquadratic Attention with a Hierarchical Tree-Structured Indexer",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.42096",
+  "set": "cs.AI",
+  "title": "CausalWAM: Learning the Causes of Actions in World Action Models",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.42066",
+  "set": "cs.AI",
+  "title": "The Knowledge Layer Model (KLM): Evidence-Visible AI Output, Routing Diagnostics, and Negative Results",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.42054",
+  "set": "cs.AI",
+  "title": "CRoS: Causality Reward on Scrambled CoTs Improves Accuracy and Reasoning Faithfulness",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.42040",
+  "set": "cs.AI",
+  "title": "Near-Optimal Second-Order Convex Finite-Sum Optimization under Individual Smoothness",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.42039",
+  "set": "cs.AI",
+  "title": "Same Question, Different Answers: Auditing Persona-Dependent Variation in Six LLMs on Smoking-Cessation Advice",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.42036",
+  "set": "cs.AI",
+  "title": "Learning Clean Generative Processes from Noisy Measurements",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.42030",
+  "set": "cs.AI",
+  "title": "There Is No Free Loop: When Does Looping a Trained Model Pay for Its Inference Compute?",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.42024",
+  "set": "cs.AI",
+  "title": "Know When the Equation Is Wrong: Structural Uncertainty for LLM-Guided Symbolic Regression under Extrapolation",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.42004",
+  "set": "cs.AI",
+  "title": "TradeWar: A Benchmark for Execution-Grounded Trade Negotiation with Adaptive LLM Agents",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.42001",
+  "set": "cs.AI",
+  "title": "AutoAnalysis: An automated, self-updating meta-analysis of human-AI collaboration",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41998",
+  "set": "cs.AI",
+  "title": "SecPO: Principled Adversarial Training for Prompt Injection Security",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41994",
+  "set": "cs.AI",
+  "title": "DAMI: Dual-Axis Memory Initialization for Enhanced Long-Context Retrieval in Gated Linear Attention",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41988",
+  "set": "cs.AI",
+  "title": "ID2Pattern: Pretraining Generalizable Identity Behavior Patterns for Transaction Risk Foundation Models",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41970",
+  "set": "cs.AI",
+  "title": "When Does Test-Time Search Help World Action Models? An Empirical Audit of Candidate Selection and Simulator Integrity",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41968",
+  "set": "cs.AI",
+  "title": "Prune Gradually, Adapt Sparsely: Efficient Pruning of Large Language Models at Extreme Sparsity",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41956",
+  "set": "cs.AI",
+  "title": "Chronos-2: A foundation model for multivariate time series forecasting",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41951",
+  "set": "cs.AI",
+  "title": "Aligning MLLMs with the Latent Structure of Human Cognition via Behavior-Derived Semantic Dimensions",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41949",
+  "set": "cs.AI",
+  "title": "Optimizing Stochastic Policy Geometry for Few-Step Flow Reinforcement Learning",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41946",
+  "set": "cs.AI",
+  "title": "Sensorium: An Open-Source Multimodal Data Collection and Curation Library for Embodied Surgical AI",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41939",
+  "set": "cs.AI",
+  "title": "Observable-Specific Validity Tests for Scientific AI: Controlled Approximations and Intervention Response",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41909",
+  "set": "cs.AI",
+  "title": "Structure-Aware Skill Retrieval and Arbitration for Optimization Modeling",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41901",
+  "set": "cs.AI",
+  "title": "ReX-GG: a LLM Ensemble Pipeline for Relation-extraction and Graph Generation",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41900",
+  "set": "cs.AI",
+  "title": "Using Machine Learning to Measure Self-Efficacy Belief Through Learners' Interaction Traces in Technology-Enhanced Learning",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41899",
+  "set": "cs.AI",
+  "title": "General-purpose foundation models surpass specialized ones on chemical property prediction tasks",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41893",
+  "set": "cs.AI",
+  "title": "Automated Keyword Generation Using LLMs in a High-Volume Data Virtualization Service",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41879",
+  "set": "cs.AI",
+  "title": "Fuzzy selective state model for forecasting the dynamics of consumer preferences",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41866",
+  "set": "cs.AI",
+  "title": "AI evaluators favor job applications written by certain AI models, independent of candidate quality",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41865",
+  "set": "cs.AI",
+  "title": "Learning to Interact and Direct: Co-Evolving Video Director Agents",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41856",
+  "set": "cs.AI",
+  "title": "SimXAI: A Simple Drop-in Layer Increases Interaction Quality and Understanding in Conversational XAI",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41850",
+  "set": "cs.AI",
+  "title": "Dynamical Memory Transformer: Selective Recurrent Memories with Constant Cost Attention",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41835",
+  "set": "cs.AI",
+  "title": "ReuScope: Auditing Data Reuse and Evaluation Sensitivity in Capsule Vision 2024",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41813",
+  "set": "cs.AI",
+  "title": "RECAST: REconstruction of Chain-of-Thought via Auditable Structured Traces",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41805",
+  "set": "cs.AI",
+  "title": "Backpropagation-free Deep Learning for Time-Series Classification",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41795",
+  "set": "cs.AI",
+  "title": "Accurate and Auditable ECG Classification via Visibility Graph Neural Networks",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41793",
+  "set": "cs.AI",
+  "title": "Whose Values, Which Contexts, and What Signals? Grounding Cultural Value Alignment with Re3Culture",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41792",
+  "set": "cs.AI",
+  "title": "Implicit Assumptions About Tasks in Continual Learning",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41790",
+  "set": "cs.AI",
+  "title": "Different Models, Shared Failures: Auditing Frozen-Encoder Pools for Medical Segmentation",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41784",
+  "set": "cs.AI",
+  "title": "Clinical-Protocol-Aware Cyber Resilience for Connected Clinical Technologies Under AI-Enabled Adversarial Conditions",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41754",
+  "set": "cs.AI",
+  "title": "Multimodal In-Context Learning with Explicit Rule Induction",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41751",
+  "set": "cs.AI",
+  "title": "Latent-Lens: Visual Perception in Small Language Models Through Latent Communication",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41713",
+  "set": "cs.AI",
+  "title": "Simple Features Beat Most AI Control Monitors",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41710",
+  "set": "cs.AI",
+  "title": "Advancing Clinical Trial Outcome Prediction with Domain-Specific Large Language Models",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41697",
+  "set": "cs.AI",
+  "title": "TSBPO: Tree-Structured Branching for Policy Optimization in Interactive Language Agents",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41688",
+  "set": "cs.AI",
+  "title": "When the Past Shapes Action: Understanding Embodied Memory",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41677",
+  "set": "cs.AI",
+  "title": "OT-CAL: Optimal-Transport-Guided Adaptive Sample Selection for Efficient Visual Learning",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41675",
+  "set": "cs.AI",
+  "title": "Radial Kernel Attention for Long-Range Modeling in Polymer Machine Learning Force Fields",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41665",
+  "set": "cs.AI",
+  "title": "Breaking Information Islands in Sparse Tuning via Small-World Connectivity",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41661",
+  "set": "cs.AI",
+  "title": "When Steering Shifts Discourse: Identifying and Intervening on Discourse-Level Changes due to Activation Steering in LLMs",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41647",
+  "set": "cs.AI",
+  "title": "Risk-Sensitive Mission Planning for Multi-Target On-Orbit Inspection via Distributional Reinforcement Learning",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41639",
+  "set": "cs.AI",
+  "title": "Chance-Constrained Inspection Viewpoint Sequencing for On-Orbit Servicing via Safe Reinforcement Learning",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41629",
+  "set": "cs.AI",
+  "title": "GRIT: Gradient Masking for Visually Misgrounded Tokens in Text-Rich Reasoning",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41618",
+  "set": "cs.AI",
+  "title": "Attention Maps Know When to Think: Training-Free Difficulty-Aware Chain-of-Thought for Reasoning Segmentation",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41616",
+  "set": "cs.AI",
+  "title": "What Should LLMs Forget: Reinforcement Unlearning of Knowledge Associations",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41609",
+  "set": "cs.AI",
+  "title": "VLA Policies Do Not Know When Not to Act: Unintended Task Execution and Start Suppression",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41604",
+  "set": "cs.AI",
+  "title": "Real Computation or Merely Naming? A Pre-Registered Mechanism Audit of 25 Cognitive-Architecture Modules in an LLM-Based Agent System",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41596",
+  "set": "cs.AI",
+  "title": "Patch-Based Deep Kernel Learning for Data Assimilation and Bias Correction with Extremely Sparse Observations",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41570",
+  "set": "cs.AI",
+  "title": "Connectivity-Aware Client Selection in Decentralized Federated Learning",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41564",
+  "set": "cs.AI",
+  "title": "Verify--Backtrack Loop: Structured Precondition Recovery for Long-Horizon Language Agents",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41563",
+  "set": "cs.AI",
+  "title": "ORION: An Outcome-Driven LLM Advisor for RL-Based Multi-Domain 6G Slice Placement",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41511",
+  "set": "cs.AI",
+  "title": "Specification-Guided Generation for Large Language Models",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41487",
+  "set": "cs.AI",
+  "title": "Sparse Text Diffusion under Dual Budgets: Context Connectivity and Expert Activation",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41486",
+  "set": "cs.AI",
+  "title": "Multi-Test Nation Bias Benchmarking of LLMs with Explicit Unbiased Baselines",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41482",
+  "set": "cs.AI",
+  "title": "KEEPER: Learning Control-Sufficient Textual Memory for Long-Horizon LLM Agents",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41479",
+  "set": "cs.AI",
+  "title": "EvoMCP: Co-evolving MCP agents and training data",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41453",
+  "set": "cs.AI",
+  "title": "Evidence-Guided Recovery for AI Agents with Ambiguous Tool Outcomes and Partial Execution",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41445",
+  "set": "cs.AI",
+  "title": "From Representation to Readout: Mechanistic Analysis of Membership Signals in Language Models",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41435",
+  "set": "cs.AI",
+  "title": "BlindToChange: AI Agents Can Find Changes When Asked But Do They Look When Needed?",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41420",
+  "set": "cs.AI",
+  "title": "SparseGDN: Chunk Sparse in Linear Attention",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41411",
+  "set": "cs.AI",
+  "title": "CryoAtlas: A Large Curated Dataset and Unified Benchmark for Cryo-EM Atomic Model Building",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41401",
+  "set": "cs.AI",
+  "title": "When Safety Checks Become Privacy Risks: A Privacy-Preserving Paradigm for LLM Agent Safety Auditing",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41399",
+  "set": "cs.AI",
+  "title": "scAnyOmics: Foundation-Model Distillation for Any-to-Any Completion of Multi-omics Virtual Cells",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41398",
+  "set": "cs.AI",
+  "title": "Distilling Knowledge from Search: Decoder Model Factory for Quantum LDPC Codes",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41397",
+  "set": "cs.AI",
+  "title": "Cross-Interface Authorization for AI Computer-Use Agents",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41396",
+  "set": "cs.AI",
+  "title": "ProSearch: Benchmarking Multi-Constraint Protocol Retrieval in Experimental Science",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41384",
+  "set": "cs.AI",
+  "title": "Online Evidence-Containment Prediction over Text Spans under Distinct Queries",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41381",
+  "set": "cs.AI",
+  "title": "From prediction error to sparse events: Biologically inspired signed-dyadic coding for Mandarin keyword spotting",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41380",
+  "set": "cs.AI",
+  "title": "Pinching Antennas for ISAC: Waveguide Architectures, Solutions, and Future Directions",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41378",
+  "set": "cs.AI",
+  "title": "Ask on Demand: Targeted Peer Communication for Parallel Agentic Systems",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41375",
+  "set": "cs.AI",
+  "title": "From the Zoo to the BULLPEN: Sample-Efficient LLM Profiling via Multi-Channel Model Embeddings",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41368",
+  "set": "cs.AI",
+  "title": "RECITE: Revising Eligibility Criteria Incorporating Textual Evidence",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41359",
+  "set": "cs.AI",
+  "title": "LEAP: Efficient LLM Inference Scheduling with Generalizable Length Prediction",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41358",
+  "set": "cs.AI",
+  "title": "Do Transaction Prices Reflect Visual Preference? A Diagnostic Study with Multimodal Language Models",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41350",
+  "set": "cs.AI",
+  "title": "Operon-S1: a fast decision controller for long-horizon biomedical agents",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41328",
+  "set": "cs.AI",
+  "title": "With foundation-model features, aggregator complexity does not improve cross-hospital discrimination in gastric whole-slide image classification",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41322",
+  "set": "cs.AI",
+  "title": "Transferring Peptide-Target Interaction Patterns to Small Molecules by Joint Guidance for Diffusion and Flow Matching",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41314",
+  "set": "cs.AI",
+  "title": "GenDSR: Transferring Representations from Video Generation Models for Dynamic Spatial Reasoning",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41308",
+  "set": "cs.AI",
+  "title": "SERIAL-7: Deriving, Realizing, and Preserving Machine-Verifiable Outputs Across Representations",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41307",
+  "set": "cs.AI",
+  "title": "Erase the Injected Region: Multimodal Prompt-Injection Defense with On-Policy Self-Distillation",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41304",
+  "set": "cs.AI",
+  "title": "ART of PIV: Agentic Real-Time Particle Image Velocimetry for Active Flow Control",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41301",
+  "set": "cs.AI",
+  "title": "Subliminal Reinforcement Learning: traits travel through a judge's scores",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41296",
+  "set": "cs.AI",
+  "title": "Self-Improvement with Auxiliary Rewards: Learning from Verified Traces and Evaluating Transfer",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41291",
+  "set": "cs.AI",
+  "title": "In-Model Context Compression with Agentic Soft Tokens for Long-Horizon LLM Agents",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41290",
+  "set": "cs.AI",
+  "title": "SAT-ACT: Learning CDCL Branching from Outcome-Derived Action Preferences",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41280",
+  "set": "cs.AI",
+  "title": "SciGraphSelect: Auditable Scientific Data Selection through Knowledge--Reasoning Graphs",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41272",
+  "set": "cs.AI",
+  "title": "ANGLER: Verifier-Grounded Benchmarking with an Adaptive Attacker for Web Agents",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.42105",
+  "set": "cs.MA",
+  "title": "Strategic Tanking in Stable Matching Markets",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41936",
+  "set": "cs.MA",
+  "title": "Adaptive Coverage Algorithms for Mobile Ad Hoc Networks in Dynamic Worlds",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41537",
+  "set": "cs.MA",
+  "title": "Distributed Grid Search for Hyperparameter Tuning",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41239",
+  "set": "cs.MA",
+  "title": "Understanding LLM-Based Bargaining of Driving Agents in Mixed-Autonomy Traffic",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41132",
+  "set": "cs.MA",
+  "title": "When Disclosure Is Compulsory: Evaluating Ride-Hailing Rebalancing Policies with Self-Interested LLM Driver Agents",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.40999",
+  "set": "cs.MA",
+  "title": "A Robust Approach to Belief Mismatch in Non-cooperative Dynamic Games",
+  "published": "2026-10-29"
+ },
+ {
+  "id": "2610.40961",
+  "set": "cs.MA",
+  "title": "Renegotiable Options Fail to Prevent Hold-Up Between Two Profit-Maximizing Frontier LLM Agents",
+  "published": "2026-10-29"
+ },
+ {
+  "id": "2610.40927",
+  "set": "cs.MA",
+  "title": "Agentic World Modeling for Agent Test-time Scaling without Environment Replica",
+  "published": "2026-10-29"
+ },
+ {
+  "id": "2610.40835",
+  "set": "cs.MA",
+  "title": "How a group that cannot communicate knows itself by its enemy",
+  "published": "2026-10-29"
+ },
+ {
+  "id": "2610.42148",
+  "set": "MCP",
+  "title": "Flide: Accelerating Decision Inference with Exact State Forking",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41905",
+  "set": "MCP",
+  "title": "Completeness and Cost of Retrieval Structures for Multi-Tool Requests in LLM Agents",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41885",
+  "set": "MCP",
+  "title": "How Much Can Tool Calls Reveal About You? Privacy Leakage from Tool-Call Traces",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41803",
+  "set": "MCP",
+  "title": "What Standard Evaluations Hide About Detectors of Hijacked LLM Agents: Rare Attacks, Unseen Tools and Benchmark Transfer",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41717",
+  "set": "MCP",
+  "title": "Evaluating Instrument-Centered AI Agents for Table-Top Science Experiments",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41521",
+  "set": "MCP",
+  "title": "KITE: Retrieval as a Decision Procedure for Long-Term Conversational Memory",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41245",
+  "set": "MCP",
+  "title": "MEMIG: Self-evolving Memory Construction for Antibody Optimization",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41216",
+  "set": "MCP",
+  "title": "TinyAstral: Transferring Self-Evolving Harnesses to Tiny Generalist Manipulation Agents",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41191",
+  "set": "MCP",
+  "title": "When AI Investigators Cannot Trust Their Tools: Conflict-Aware Evidence Verification for Cyber Threat Investigation",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41177",
+  "set": "MCP",
+  "title": "TraceSpec: Understanding and Improving Speculative Decoding for LLM Agents",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41143",
+  "set": "MCP",
+  "title": "TalentRL: Strategy-Guided Reinforcement Learning for Hierarchical Skill Routing",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41129",
+  "set": "MCP",
+  "title": "When Should AI Agents Ask? Clarification Requests Under Limited Human Attention",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41076",
+  "set": "MCP",
+  "title": "BABA-Bench: Evaluating Long-Horizon Patient-Advocacy Agents",
+  "published": "2026-10-29"
+ },
+ {
+  "id": "2610.41056",
+  "set": "MCP",
+  "title": "Accept Changes, Reject Attacks: Robust Memory Management for LLM Agents",
+  "published": "2026-10-29"
+ },
+ {
+  "id": "2610.41044",
+  "set": "MCP",
+  "title": "Consensus Within, Competition Between: Decentralized LLM Teams for Perimeter Defense",
+  "published": "2026-10-29"
+ },
+ {
+  "id": "2610.41040",
+  "set": "MCP",
+  "title": "Capability-Grounded Agentic Planning",
+  "published": "2026-10-29"
+ },
+ {
+  "id": "2610.40721",
+  "set": "MCP",
+  "title": "MetaVul: Agentic Harness Discovery for Vulnerability Detection",
+  "published": "2026-10-29"
+ },
+ {
+  "id": "2610.40716",
+  "set": "MCP",
+  "title": "Characterizing LLM Agent Behaviors in Module Shadowing Environments",
+  "published": "2026-10-29"
+ },
+ {
+  "id": "2610.40714",
+  "set": "MCP",
+  "title": "PrivacyFlow: Privacy in AI Agents through Information Flow Analysis and Consequence-Aware Risk Management",
+  "published": "2026-10-29"
+ }
+]
