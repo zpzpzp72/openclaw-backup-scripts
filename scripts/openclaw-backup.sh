@@ -243,7 +243,11 @@ if [ "$NEED_BACKUP" = true ]; then
     #   丢失后果:NAS 写满时 gzip 抛 "Input/output error",tar 中断(exit 1)但归档不完整,
     #   脚本却仍报「备份成功」。10-05 与 10-28 均如此。
     #   阈值: 源目录估算的压缩体积 × 2(留余量) + 1G 余量
-    NEED_GB=$(du -sm --exclude="$HOME/.openclaw/memory/lancedb-pro" "$HOME/.openclaw" 2>/dev/null | awk '{print int($1/1024*0.4)+1}')
+    #   给 du 加 timeout 兜底:NAS 抖动时 du 可能长时间挂起,
+    #   而预检本身没有时限 → 会把整次备份拖住(实测本地 du 仅需 2s,超时属异常)。
+    #   du 失败时 NEED_GB 取不到 → 用保守下限 8G(宁可误拦也不产出损坏归档)。
+    NEED_GB=$(timeout 120 du -sm --exclude="$HOME/.openclaw/memory/lancedb-pro" "$HOME/.openclaw" 2>/dev/null | awk '{print int($1/1024*0.4)+1}' || true)
+    [ -n "$NEED_GB" ] || NEED_GB=8
     AVAIL_GB=$(df -BG "$BACKUP_DIR" 2>/dev/null | tail -1 | awk '{gsub("G","",$4); print $4}')
     if [ -n "$AVAIL_GB" ] && [ "$AVAIL_GB" -lt "$NEED_GB" ]; then
         log "❌ NAS 空间不足: 可用 ${AVAIL_GB}G < 需要约 ${NEED_GB}G —— 跳过备份(避免产出损坏归档)"

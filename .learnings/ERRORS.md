@@ -668,3 +668,32 @@ npm 还在做依赖树收尾、脚本、清理等后续工作。
 - **用真实工具行为裁决**,而不是用「我理解的规则」推演 —— 这与 v33 的
   「连工具输出的数字也要二次采样验证」同源:**二手解读不可靠,一手行为才可信**。
 - 推演与实测冲突时,**以实测为准**,并回头检查自己的解读错在哪。
+
+## ERR-20261104-003 对已结束 session 调 kill/clear 会产生 error-detected 噪声(非真错误)
+
+**现象**:清理僵留 session 时,`process kill/clear` 对**已结束**的 session 返回:
+```
+No active session found for <id>        ← kill
+No finished session found for <id>     ← clear
+```
+这些会被 error-detected 捕获,看起来像「工具调用失败」。
+
+**判据(必须逐条核实,不能默认都是真错误)**:
+| 返回 | 含义 |
+|------|------|
+| `No active session found` | 该 session **早已结束**,无需再 kill → **不是错误** |
+| `No finished session found` | 同上,只是该 action 要求 finished 态 → **不是错误** |
+| `No session found` | 已从注册表摘除 → **不是错误** |
+
+**权威判定方法**(本轮已用):
+```
+process list  → 看该 session 的 status 与实时 running 数
+/proc/<pid>   → 进程真身是否还在
+```
+本例:`process list` 显示 nova-orbit status=`failed`、实时 running=0,`/proc/859989` 不存在,
+而 runtime 上下文仍写它「running」→ **runtime 上下文是陈旧快照**(同 ERR-20261030-003)。
+
+**教训**:
+- **error-detected 是「可疑信号」不是「错误清单」**。每条都要用权威源核实。
+- 误报的代价不只是噪音:本轮若据此回头「修」一个没坏的 session,
+  就是纯粹的无效轮次;更糟的是可能把真实故障混进噪音里而漏掉。
