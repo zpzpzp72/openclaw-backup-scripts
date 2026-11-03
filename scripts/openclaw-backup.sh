@@ -323,6 +323,14 @@ if [ "$NEED_BACKUP" = true ]; then
 
     else
         log "备份失败"
+        # ★ 修复 (2026-11-04): tar 退出码 >=2 时会留下半成品归档,
+        #   而它会被下一次的 `ls -t` 当成「最新备份」→ 污染 LATEST_BACKUP、
+        #   使 need_backup 判定失真,且半成品会占用 NAS 空间(加剧 11-07 写满)。
+        #   10-05 / 10-28 的「归档不完整但报成功」正是这条路径的产物。
+        if [ -f "$ARCHIVE" ]; then
+            BAD_SIZE=$(du -h "$ARCHIVE" 2>/dev/null | cut -f1)
+            rm -f "$ARCHIVE" 2>/dev/null && log "已删除半成品归档: $ARCHIVE ($BAD_SIZE)" || log "⚠️ 半成品归档删除失败: $ARCHIVE"
+        fi
         write_heartbeat "error" "tar 退出码: $BACKUP_STATUS"   # ★ ERR-20260826-001
         send_mail "OpenClaw 备份失败 - $NOW" "tar 出错，请检查日志：$LOG_FILE"
     fi
