@@ -1,0 +1,1244 @@
+[
+ {
+  "id": "2611.03647",
+  "set": "cs.AI",
+  "title": "Pixel-UMI: Learning Environment-Aware Whole-Body Manipulation from Sensorized Human Demonstrations",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03648",
+  "set": "cs.AI",
+  "title": "Pixel: A Co-Designed Full-Stack Robot System for Learning General-Purpose Mobile Manipulation",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03641",
+  "set": "cs.AI",
+  "title": "From Natural Language to Exact Cover: A Neuro-Symbolic Approach to Zebra Puzzles",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03634",
+  "set": "cs.AI",
+  "title": "WebHarbor: Docking Real Websites for Evolving GUI Agent Environments",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03622",
+  "set": "cs.AI",
+  "title": "D&A: Decoupling Description and Assessment Enables VLMs as Zero-Shot Robotic Reward Models",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03618",
+  "set": "cs.AI",
+  "title": "Strategist: Evolving Reasoning with Agents",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03617",
+  "set": "cs.AI",
+  "title": "Tracing the Scientific Discovery Capacity of LLMs to Their Training Data",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03601",
+  "set": "cs.AI",
+  "title": "DiabAgent: Toward Agentic Physiological Control",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03600",
+  "set": "cs.AI",
+  "title": "Four Bridges: Measuring Deception Propensity in a Multi-Agent Game",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03596",
+  "set": "cs.AI",
+  "title": "Spacetime Emergence in the Memory of a Learning Agent",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03592",
+  "set": "cs.AI",
+  "title": "Evaluating Uncertainty Calibration in Probabilistic Time Series Foundation Models",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03586",
+  "set": "cs.AI",
+  "title": "FedReady: Bounded Agents for Federation Formation",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03577",
+  "set": "cs.AI",
+  "title": "Sonar-MoE: In-Backward Expert Updates for Memory-Efficient Mixture-of-Experts Training",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03557",
+  "set": "cs.AI",
+  "title": "PlantVLM-Edge: Quantized Vision-Language Models for On-Device Crop Health Diagnosis",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03555",
+  "set": "cs.AI",
+  "title": "MCP Tool Poisoning in Agentic AI Frameworks: A Cross-Framework Measurement Study",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03551",
+  "set": "cs.AI",
+  "title": "Can LLM Agents Be Forward-Deployed Engineers? Requirement Discovery and Delivery for Enterprise Text-to-SQL",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03534",
+  "set": "cs.AI",
+  "title": "An Agentic Framework for Automated Power System Studies and Grid Connection Assessment",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03528",
+  "set": "cs.AI",
+  "title": "Contrastive Adapter Training and Consensus Knowledge Distillation for Multi-Source-Free Domain Adaptation in Skin Cancer Diagnosis",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03526",
+  "set": "cs.AI",
+  "title": "Library of Layers (LoL): Adaptively Ordering Transformer Layers at Runtime",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03525",
+  "set": "cs.AI",
+  "title": "Grading the Unannotated: Insights from the WorkRB Skill Extraction Challenge at RecSys-HR 2026",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03520",
+  "set": "cs.AI",
+  "title": "PanoTac: A Dense Three-Axis Tactile Sensor for Robust Touch-Centric Manipulation",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03518",
+  "set": "cs.AI",
+  "title": "VIAS: Value-Isolating Activation Steering for Multi-Value Alignment and Compliance for Organisations",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03503",
+  "set": "cs.AI",
+  "title": "A Cross-Domain Matrix Engine for Signal Processing and Deep Neural Net Inference",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03500",
+  "set": "cs.AI",
+  "title": "Can AI Do Formal Demography? Why Vaccinating the Oldest Saves Both the Most Lives and the Most Years of Life",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03496",
+  "set": "cs.AI",
+  "title": "Online Label-Free Gradient Matching for Continual Language Model Training",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03494",
+  "set": "cs.AI",
+  "title": "Harder Than the Task: From Technical to Organizational Difficulty in AI Benchmarking",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03439",
+  "set": "cs.AI",
+  "title": "Playing Dumb: How a Chess Transformer Simulates Users Across Skill Levels",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03434",
+  "set": "cs.AI",
+  "title": "Optimize the Harness, Not the Model: Fitting a Minimal Agent to a Self-Hostable LLM for Investigative Analysis",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03412",
+  "set": "cs.AI",
+  "title": "DeliverBench: Benchmarking AI Agents on Delivering Realistic Multi-Stage Professional Projects",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03406",
+  "set": "cs.AI",
+  "title": "From Reactive to Agentic Resilience: Multi-Timescale AI-RAN Orchestration Under Signaling Storms",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03389",
+  "set": "cs.AI",
+  "title": "CrowdForge: Effects of Audio and Visual Audience Participation Modalities on Agency, Collaboration, and Engagement in AI-Mediated MR Performances",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03388",
+  "set": "cs.AI",
+  "title": "LAND: Learning an Adaptive Number of Draws for Bayesian Best-of-N Selection",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03384",
+  "set": "cs.AI",
+  "title": "Can We Stop the Backtest Yet? Anytime-Valid Promotion Tests for Adaptive Financial Research Agents",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03377",
+  "set": "cs.AI",
+  "title": "Same Outputs, Different Scores: Auditing the Unchecked Graders of Multimodal LLM Benchmarks",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03376",
+  "set": "cs.AI",
+  "title": "Mixed-Methods Exploration of Sociotechnical Factors to Improve Adoption of Crime-Reporting Apps in Urban Communities",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03374",
+  "set": "cs.AI",
+  "title": "Characterizing When Language Models Take Harmful Actions to Protect Their Assigned Goals",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03330",
+  "set": "cs.AI",
+  "title": "The SIMPLE Law for Energy Cost of LLM Inference",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03327",
+  "set": "cs.AI",
+  "title": "From FAIR to AI-FAIR Metadata-First Infrastructure for AI-Enabled Science",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03319",
+  "set": "cs.AI",
+  "title": "TrafficInstruct: A Multi-Task Network Traffic Dataset and Benchmark for Instruction Tuning",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03308",
+  "set": "cs.AI",
+  "title": "LLMs Depend on Specialist Tools for Out-of-Distribution Generalization in MS/MS Structural Elucidation",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03301",
+  "set": "cs.AI",
+  "title": "An Axiomatic Framework for Reinforcement Learning in Open Multi-Agent Systems",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03298",
+  "set": "cs.AI",
+  "title": "SQLoom: Set-Contrastive Learning of Syntactic, Semantic, and Logical Dependencies for Text-to-SQL",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03289",
+  "set": "cs.AI",
+  "title": "Top-$k$ Retrieval Leaves Memory Value Undetermined",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03257",
+  "set": "cs.AI",
+  "title": "Rethinking Fairness Metrics for Multi-Class and Multi-Group Assessment: Not Everything is Binary",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03238",
+  "set": "cs.AI",
+  "title": "ScienceCUA: Resource-to-Skill Construction and Execution-Guided Skill Evolution for Scientific Computer Use Agents",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03233",
+  "set": "cs.AI",
+  "title": "Axion 1.0: Open Agent Foundation Models, Simplified",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03223",
+  "set": "cs.AI",
+  "title": "Do Agents Still Follow the Rules? Benchmarking Rule Compliance under Agent Context Compaction",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03222",
+  "set": "cs.AI",
+  "title": "CERBO: Certified Recourse at a Requested Rate for Gradient-Boosted Trees",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03219",
+  "set": "cs.AI",
+  "title": "Can Coding Agents Sustain Continual Evolution without Forgetting?",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03213",
+  "set": "cs.AI",
+  "title": "Reducing SNAP Payment Errors at Lower Cost With AI: A Simulation Study",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03198",
+  "set": "cs.AI",
+  "title": "Written Once, Read Differently How Language Models Own Answers Steer Their Next Ones",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03183",
+  "set": "cs.AI",
+  "title": "Auto-Research Agent on MSA Organization to Improve Protein-Protein Complex Structure Prediction",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03178",
+  "set": "cs.AI",
+  "title": "CoworkOS:Scaling Agent Coworkers for Real-world Automation",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03165",
+  "set": "cs.AI",
+  "title": "LaBraM at Scale: Scaling Data and Models for EEG Pretraining",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03162",
+  "set": "cs.AI",
+  "title": "Beyond Surface Metrics: Multi-Condition Requirements in Enterprise Maintenance and AI Coding Benchmarks",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03157",
+  "set": "cs.AI",
+  "title": "Toward Knowledge-Centric AI: Discovering, Internalizing, and Using Explicit Knowledge Across Agents and Generations",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03143",
+  "set": "cs.AI",
+  "title": "Visual-to-Executable Procedural Reconstruction of Buildings",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03126",
+  "set": "cs.AI",
+  "title": "CUA-Master: Scaling Computer-use Agents through Open-World Recursive Improvements",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03121",
+  "set": "cs.AI",
+  "title": "ComplianceAtlas: A Taxonomy-Driven Agentic AI Framework for Automated AI Act Gap Analysis and Remediation",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03116",
+  "set": "cs.AI",
+  "title": "From Local Skills to Long-Horizon Web Tasks: Progressive Skill Exploration for LLM Web Agents",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03109",
+  "set": "cs.AI",
+  "title": "Multimodal Prompt Learning with Dual-Granularity Contrastive Alignment for Preoperative Prediction of Lung Adenocarcinoma Invasiveness Using 3D CT",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03100",
+  "set": "cs.AI",
+  "title": "LUCA: A Synthetic World for Experimental Reasoning",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03094",
+  "set": "cs.AI",
+  "title": "A Fine-Grained Hierarchy and Benchmark for State Tracking in Language Models",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03093",
+  "set": "cs.AI",
+  "title": "An Experimental Study of Hybrid Retrieval, NLI and Open-source LLMs for Scientific Claim Verification",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03092",
+  "set": "cs.AI",
+  "title": "Avatar Intelligence: Amplifying Human Agency Through Persistent Personal Agents",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03087",
+  "set": "cs.AI",
+  "title": "MIRA: Reinforcing Multimodal Reasoning via Deceptive Contextual Augmentation",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03068",
+  "set": "cs.AI",
+  "title": "PACERec: Progressive Adaptation of LLM Item Embeddings with Collaborative Evidence for Recommendation",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03066",
+  "set": "cs.AI",
+  "title": "Towards a Trustworthy and Governable Internet of Agentics: An Architectural Perspective on Protocols, Systems, and Services",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03063",
+  "set": "cs.AI",
+  "title": "Networked AI: Architecture, Theory, and Applications",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03055",
+  "set": "cs.AI",
+  "title": "PRIME: Predictive Routing of Interventions by Modeling Effects for Scientific Ideation",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03051",
+  "set": "cs.AI",
+  "title": "Unlocking Criminal Court Decisions: Flexible Information Extraction for Empirical Legal Research",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03043",
+  "set": "cs.AI",
+  "title": "VideoEditor-MoE: Scaling Complex Video Editing with Mixture of Experts",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03015",
+  "set": "cs.AI",
+  "title": "Comparative study of global pooling for pre-departure ship fuel consumption prediction: Advantages over per-ship and adaptation-based approaches",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03007",
+  "set": "cs.AI",
+  "title": "Q-CamTuning: A Multimodal Large Language Model for Fine-Grained Quality Reasoning in Livestreaming Camera Tuning",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03005",
+  "set": "cs.AI",
+  "title": "BLPO: Beyond-Local Policy Optimization for Long-Horizon LLM Agents",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02978",
+  "set": "cs.AI",
+  "title": "CAREFUL-Bench: Effect-Aware, Judge-Free Evaluation of Multi-Turn LLM Function Calling",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02956",
+  "set": "cs.AI",
+  "title": "Specification-Aware Predictive Uncertainty Decomposition",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02952",
+  "set": "cs.AI",
+  "title": "Balancing Representations by Identifying and Generating Under-represented Data",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02950",
+  "set": "cs.AI",
+  "title": "Action Verification through Conjecture and Refutation for Language Model Agents",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02940",
+  "set": "cs.AI",
+  "title": "PlagiaCorpus: A Bilingual, Adversarial, and Cross-Lingual Dataset for Forensic Plagiarism Detection",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02936",
+  "set": "cs.AI",
+  "title": "Why Tabular Foundation Models Excel on Relational Data They Have Never Seen",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02931",
+  "set": "cs.AI",
+  "title": "Training-Time Domain Transfer for Generator-Free Diagnostics on Novel Modalities in Computational Pathology",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02916",
+  "set": "cs.AI",
+  "title": "Defining Autonomous Weapon Systems: A schematic framework for refined purpose-driven definitions",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02908",
+  "set": "cs.AI",
+  "title": "User Attributes and Political Ideology Shape LLM Receptiveness in Online Political Debates",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02905",
+  "set": "cs.AI",
+  "title": "What makes a theorem interesting? Operationalizing interestingness for open-ended exploration",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02903",
+  "set": "cs.AI",
+  "title": "Maswao: An automatically collected, prepared, and benchmarked dataset for the South African Sign language",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02896",
+  "set": "cs.AI",
+  "title": "Bridging Low-Level Image Fusion and High-Level Semantic Understanding",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02893",
+  "set": "cs.AI",
+  "title": "Voice-Native LLMs Hear Frustration but Do Not Listen to It",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02892",
+  "set": "cs.AI",
+  "title": "JABER: Sequential Quality Control for Human-AI Data Annotation under Shared Bias",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02889",
+  "set": "cs.AI",
+  "title": "Tug of Watts: A study on the Energy - Accuracy Trade-off of Large Language Models on Medical Question Answering Tasks",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02883",
+  "set": "cs.AI",
+  "title": "Integrating Domain Adaptation and Retrieval-Augmented Generation for Saline-Alkali Land Reclamation Planning",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02856",
+  "set": "cs.AI",
+  "title": "Kolmogorov-Arnold Networks vs. Multi-Layer Perceptrons: A Rigorous Statistical Benchmark on Clinical Tabular Data",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02852",
+  "set": "cs.AI",
+  "title": "Value-Conditioned Proposal Acquisition for Test-Time Reasoning",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02849",
+  "set": "cs.AI",
+  "title": "TLAPS-Bench: Formally Proving Correctness of Real-World System Specifications with TLA+ Proof System",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02846",
+  "set": "cs.AI",
+  "title": "SpecOPD: Branch-Parallel On-Policy Distillation for Speculative Decoding",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02843",
+  "set": "cs.AI",
+  "title": "Math Foundation Formalization Agent: A General-Purpose Approach to Formalizing Mathematical Foundations",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02839",
+  "set": "cs.AI",
+  "title": "CARE: Grounded Recursive Self-Improvement for Production Customer-Service Agents",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02833",
+  "set": "cs.AI",
+  "title": "Reimagining computational quantum research with AI scientists",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02830",
+  "set": "cs.AI",
+  "title": "Think with Skills: Pseudocode Planning Before Execution for Advanced Reasoners",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02826",
+  "set": "cs.AI",
+  "title": "RxnMiner: A Multimodal Agent for Structured Reaction Data Extraction from Chemistry Figures",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03138",
+  "set": "cs.MA",
+  "title": "KlaskTron: An Open-Source Platform for Physical Adversarial Multi-Agent RL",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03020",
+  "set": "cs.MA",
+  "title": "The Tower of Babel in artificial intelligence: who should speak, and when it pays to listen",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02984",
+  "set": "cs.MA",
+  "title": "Classification Aggregation with Multiple Memberships",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02909",
+  "set": "cs.MA",
+  "title": "Cloudra: Geometric Reasoning and Scientific Validation for Autonomous Reaction Mechanism Exploration",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02875",
+  "set": "cs.MA",
+  "title": "AGiR: Mitigating Gift Over-Reliance in Mixed-Motive Games",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02797",
+  "set": "cs.MA",
+  "title": "SelfImprove-Bench: Evaluating Generalization in Self-Improving Agents",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02738",
+  "set": "cs.MA",
+  "title": "Multi-Modal Multi-Agent System for Bridge Operation and Maintenance based on Large Language Model",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02693",
+  "set": "cs.MA",
+  "title": "Source-Resolved Collective Cognition in Robotics: Mathematical Foundations for Multimodal and Collective Estimation, and Their Reach across the Cognition Loop",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02644",
+  "set": "cs.MA",
+  "title": "Coati: Host-Grounded Execution for Installable Mobile GUI Agents",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02571",
+  "set": "cs.MA",
+  "title": "Organizational Learning in Materials Discovery Campaigns: Which Databases, Calculations, and Agent Teams Pay Off",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02539",
+  "set": "cs.MA",
+  "title": "Scientific Liquidity Agents: An Agent-Based Model of Knowledge Arbitrage in Scientific Communities",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02300",
+  "set": "cs.MA",
+  "title": "Trustworthy Execution of Industrial Agents",
+  "published": "2026-11-01"
+ },
+ {
+  "id": "2611.02260",
+  "set": "cs.MA",
+  "title": "Towards a Theory for the Design of Rules in Multi-Agent Systems: the case of Homogeneous Fleets",
+  "published": "2026-11-01"
+ },
+ {
+  "id": "2611.02090",
+  "set": "cs.MA",
+  "title": "Local Solution Repair for Multi-Agent Pickup and Delivery",
+  "published": "2026-11-01"
+ },
+ {
+  "id": "2611.02079",
+  "set": "cs.MA",
+  "title": "ParetoSaddler: Pareto-Guided Optimization of Agent Harnesses for Quality and Cost",
+  "published": "2026-11-01"
+ },
+ {
+  "id": "2611.02047",
+  "set": "cs.MA",
+  "title": "Beliefs in feedback: Factored representations of interacting agents in transformers",
+  "published": "2026-11-01"
+ },
+ {
+  "id": "2611.01918",
+  "set": "cs.MA",
+  "title": "AgenticMobility: An Open-Source Platform for Multi-AI-Agent Mobility Dynamics",
+  "published": "2026-11-01"
+ },
+ {
+  "id": "2611.01870",
+  "set": "cs.MA",
+  "title": "Automated Stateful Specialization for Adaptive Agent Systems",
+  "published": "2026-11-01"
+ },
+ {
+  "id": "2611.01840",
+  "set": "cs.MA",
+  "title": "Self-Evolving Agentic Workflows via Semantic Decomposition of Complex Tasks",
+  "published": "2026-11-01"
+ },
+ {
+  "id": "2611.01742",
+  "set": "cs.MA",
+  "title": "From Single-Agent Self-Discovery to Multi-Agent Adaptation: Scaling Laws of Partner Feedback and Convention Rigidity in Meta Reinforcement Learning Algorithms",
+  "published": "2026-11-01"
+ },
+ {
+  "id": "2611.01728",
+  "set": "cs.MA",
+  "title": "MAC-Bench: Benchmarking Multi-Agent Collaboration via Interconnected Tasks",
+  "published": "2026-11-01"
+ },
+ {
+  "id": "2611.01449",
+  "set": "cs.MA",
+  "title": "CONFIRM: Governing Scientific Reporting for Trustworthy Agentic Neuroimaging",
+  "published": "2026-11-01"
+ },
+ {
+  "id": "2611.01441",
+  "set": "cs.MA",
+  "title": "Renormalized Cellular Intelligence: When Does Model Reduction Preserve Collective Capability?",
+  "published": "2026-11-01"
+ },
+ {
+  "id": "2611.01351",
+  "set": "cs.MA",
+  "title": "MAPLE: A Multimodal Mobile Agent with Playbook-Learned Experience",
+  "published": "2026-10-31"
+ },
+ {
+  "id": "2611.01125",
+  "set": "cs.MA",
+  "title": "What Does a Safety Label Measure? Auditing Situational-Safety Benchmarks for Multimodal LLMs",
+  "published": "2026-10-31"
+ },
+ {
+  "id": "2611.01081",
+  "set": "cs.MA",
+  "title": "Robust Safety Assurance for Robotic Swarms Using Decentralized Collision Verification",
+  "published": "2026-10-31"
+ },
+ {
+  "id": "2611.01001",
+  "set": "cs.MA",
+  "title": "GURU: A Hierarchical Neuro-Symbolic Multi-Agent System for Verification-Aware Automation of Mission-Critical Digital Engineering and Operations",
+  "published": "2026-10-31"
+ },
+ {
+  "id": "2611.00712",
+  "set": "cs.MA",
+  "title": "Personalized Rollout Allocation for Federated LQR Policy Optimization under Heterogeneous Process Noise",
+  "published": "2026-10-31"
+ },
+ {
+  "id": "2611.00627",
+  "set": "cs.MA",
+  "title": "Autonomous Analysis of Thermoelectric Materials Big Data by Multi-Agentic AI and Construction of a Knowledge Base and Specialized AI",
+  "published": "2026-10-31"
+ },
+ {
+  "id": "2611.00314",
+  "set": "cs.MA",
+  "title": "Decentralized Multi-Agent Coordination and Communication in Shared Codebases",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2611.03523",
+  "set": "MCP",
+  "title": "DistDebug-Bench: Can LLM Agents Diagnose Bugs in Distributed Systems?",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03400",
+  "set": "MCP",
+  "title": "In-depth data movement characterization of DNA read mapping algorithms",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03227",
+  "set": "MCP",
+  "title": "What Structurally Breaks an Agent? Auditing Difficulty in Stateful Tool-Use Workflows",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02912",
+  "set": "MCP",
+  "title": "A State Change Is Local, Its Consequences Are Not: Dependency-Aware State Revision for Long-Term Agent Memory",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02758",
+  "set": "MCP",
+  "title": "Learning to Adjudicate: Verifier-Guided Multi-Agent Reasoning for E-Commerce Relevance",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02725",
+  "set": "MCP",
+  "title": "AffToM: Benchmarking Recursive Affective Theory of Mind in Dynamic Multi-Party Interactions",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02698",
+  "set": "MCP",
+  "title": "GeoGuesser Bench: Benchmarking Vision-Language Agents on Interactive Geolocation",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02611",
+  "set": "MCP",
+  "title": "Where Does MCP Security End? A Three-Tier Mitigation Mapping Framework for the OWASP MCP Top 10",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02581",
+  "set": "MCP",
+  "title": "SMILE: A Structured Multi-Agent Clinical Reasoning for Liver Ultrasound Understanding",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02527",
+  "set": "MCP",
+  "title": "When Neither Side Confirms: Destructive Tool Approval Across MCP Servers and Hosts",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02525",
+  "set": "MCP",
+  "title": "Touching Projected Agents through the DAT Screen -System Design and Questions of Interaction Boundaries-",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02517",
+  "set": "MCP",
+  "title": "A Study on the Effects of Finger Movements on a Humanoid Hugging Robot",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02511",
+  "set": "MCP",
+  "title": "When Prediction Shapes the Future: A BlueSky Agenda for Reflexive Time Series Analysis",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02391",
+  "set": "MCP",
+  "title": "Late Autumn: LLM Agents Specialize a General Multi-Robot Planner for One Warehouse",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02368",
+  "set": "MCP",
+  "title": "Beyond Accuracy: How Quantization Affects Coding Agents",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02361",
+  "set": "MCP",
+  "title": "Agent Memory as Rate-Limited Filtering: Explicit State Outlasts Long Context Beyond a Reader-Dependent Horizon",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02332",
+  "set": "MCP",
+  "title": "LEANGUARD: Lean-Verified Guardrails for Tool-Using Agents",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02322",
+  "set": "MCP",
+  "title": "Fast Fuel-Optimal Constrained Impulsive Control with Application to Distributed Spacecraft",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02310",
+  "set": "MCP",
+  "title": "Detect, Repair and Audit: A Hierarchical Multi-Agent Defense Against Adversarial Attacks in Energy Forecasting",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.02286",
+  "set": "MCP",
+  "title": "Toward Agentic AI-Ready Workflows in Built Environment Organizations: Knowledge Structures and Interoperability Challenges",
+  "published": "2026-11-01"
+ },
+ {
+  "id": "2611.02269",
+  "set": "MCP",
+  "title": "Qubrio: High-Performance Quantum Compilation via Multi-Agent LLM Collaboration",
+  "published": "2026-11-01"
+ },
+ {
+  "id": "2611.02240",
+  "set": "MCP",
+  "title": "When to Probe and When to Act: Clarity-Aware Risk-Adaptive Control for Interactive Driving",
+  "published": "2026-11-01"
+ },
+ {
+  "id": "2611.02153",
+  "set": "MCP",
+  "title": "Multi-Agent Collusion and the J-Space",
+  "published": "2026-11-01"
+ },
+ {
+  "id": "2611.02104",
+  "set": "MCP",
+  "title": "Consolidating Reasoning with Test-Time Training",
+  "published": "2026-11-01"
+ },
+ {
+  "id": "2611.02049",
+  "set": "MCP",
+  "title": "Reinforcement Learning in High-Energy Physics: A Survey from Accelerator Control to Theory Exploration",
+  "published": "2026-11-01"
+ },
+ {
+  "id": "2611.01977",
+  "set": "MCP",
+  "title": "EvoRec: A Unified Self-Evolving Agentic Recommender with Dynamic Reflection Trees",
+  "published": "2026-11-01"
+ },
+ {
+  "id": "2611.01934",
+  "set": "MCP",
+  "title": "TriPhysBench: Evaluating Physical Intelligence for Embodied Agents",
+  "published": "2026-11-01"
+ },
+ {
+  "id": "2611.01926",
+  "set": "MCP",
+  "title": "TAC-CoT: Tool-Empowered Implicit Chain-of-Thought via Interleaving Explicit Tokens",
+  "published": "2026-11-01"
+ },
+ {
+  "id": "2611.01831",
+  "set": "MCP",
+  "title": "MATE: Multi-Agent Traffic Engineering for Topology-Aware Distributed SRv6 Scheduling under Bursty Traffic",
+  "published": "2026-11-01"
+ },
+ {
+  "id": "2611.01718",
+  "set": "MCP",
+  "title": "Delivered, Not Used: Evaluating Agent Memory at Its Point of Use",
+  "published": "2026-11-01"
+ },
+ {
+  "id": "2611.01700",
+  "set": "MCP",
+  "title": "MemHarmBench: Evaluating Cross-Session Prompt Injection in Memory-Persistent AI Agents",
+  "published": "2026-11-01"
+ },
+ {
+  "id": "2611.01563",
+  "set": "MCP",
+  "title": "\\textsc{ChatDify}: Automating End-to-End Dify Workflow Synthesis from Natural Language via Multi-Agent Collaboration",
+  "published": "2026-11-01"
+ },
+ {
+  "id": "2611.01552",
+  "set": "MCP",
+  "title": "Can Large Language Models Extend Their Agentic Capabilities to Goal Pursuit in Open-Ended Multi-Turn Interaction?",
+  "published": "2026-11-01"
+ },
+ {
+  "id": "2611.01446",
+  "set": "MCP",
+  "title": "I-PTC: Interactive Programmatic Tool Calling for Stateful Tool-Augmented Agents",
+  "published": "2026-11-01"
+ },
+ {
+  "id": "2611.01404",
+  "set": "MCP",
+  "title": "Serving Agentic Robot Fleets: Workload Characterization, KV-Cache Thrashing, and Admission Control",
+  "published": "2026-11-01"
+ },
+ {
+  "id": "2611.01394",
+  "set": "MCP",
+  "title": "ERIA: An Instruction-Optimized Agent for Clinical EEG Reporting",
+  "published": "2026-11-01"
+ },
+ {
+  "id": "2611.01301",
+  "set": "MCP",
+  "title": "CuriousTogether: Implications of Curiosity and Cultural Grounding in Multi-Agent LLM Interactions",
+  "published": "2026-10-31"
+ },
+ {
+  "id": "2611.01276",
+  "set": "MCP",
+  "title": "OntoDoc: Automatically Generating Ontology Resource Descriptions",
+  "published": "2026-10-31"
+ },
+ {
+  "id": "2611.01145",
+  "set": "MCP",
+  "title": "CivicBench: A Benchmark and Memory Framework for Web-Based Civic Data Analytics",
+  "published": "2026-10-31"
+ },
+ {
+  "id": "2611.01132",
+  "set": "MCP",
+  "title": "Acceptance and Responsibility Attribution Toward Autonomous Ambulances Across Driving Conditions: A Preliminary Survey of Fire Service Personnel",
+  "published": "2026-10-31"
+ },
+ {
+  "id": "2611.01054",
+  "set": "MCP",
+  "title": "Finite-Time Tracking Success or Failure in the Pursuer--Evader Model",
+  "published": "2026-10-31"
+ },
+ {
+  "id": "2611.00923",
+  "set": "MCP",
+  "title": "Illusion: Safeguarding Topology Confidentiality in LLM Multi-Agent Systems via Behavior-Preserving Obfuscation",
+  "published": "2026-10-31"
+ },
+ {
+  "id": "2611.00779",
+  "set": "MCP",
+  "title": "Who Schedules Agent Memory? A Sidecar Approach to Long-Horizon Tasks",
+  "published": "2026-10-31"
+ },
+ {
+  "id": "2611.00723",
+  "set": "MCP",
+  "title": "Architecting Fairness-Aware LLM Interactions",
+  "published": "2026-10-31"
+ },
+ {
+  "id": "2611.00546",
+  "set": "MCP",
+  "title": "Low-Margin Branch Points in Deterministic LLM Deliberatio",
+  "published": "2026-10-31"
+ },
+ {
+  "id": "2611.00518",
+  "set": "MCP",
+  "title": "Agentic Context Management for Multi-Turn Human-AI Conversations",
+  "published": "2026-10-31"
+ },
+ {
+  "id": "2611.00492",
+  "set": "MCP",
+  "title": "Spotting the Artificial: Dialogic Humor Improvisation in Humans and LLMs",
+  "published": "2026-10-31"
+ },
+ {
+  "id": "2611.00442",
+  "set": "MCP",
+  "title": "Fidelity Collapses with Table Size, Not Turn Count: Delivery Architecture in a Deployed Tool-Using Agent",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2611.00420",
+  "set": "MCP",
+  "title": "Circuit Oracle: Automating Attribution Graph Analysis via Natural-Language Queries",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2611.00290",
+  "set": "MCP",
+  "title": "Quantifying Local and Global Fidelity of Nonlinear Embeddings",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2611.00243",
+  "set": "MCP",
+  "title": "OmniPiano: Diverse Dexterous Piano-Playing Challenges for Standard, Robust, Safe, and Multi-Agent RL",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.42144",
+  "set": "MCP",
+  "title": "Dittany: Contribution-Guided Repair Framework for MAS Applications",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.42068",
+  "set": "MCP",
+  "title": "RAMA: Retrieval-Augmented Multi-Agent Routing with Episodic Memory for LEO Satellite Networks",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41903",
+  "set": "MCP",
+  "title": "Statistical Foundations of Reinforcement Learning: A Non-Asymptotic Perspective",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2611.00169",
+  "set": "MCP",
+  "title": "PatchScout: Thematic Web Data Collection via Information Foraging",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41682",
+  "set": "MCP",
+  "title": "The Ineliminable Anchor: Human Judgment as a Structural Requirement of Autonomous Artificial Intelligence Systems",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41558",
+  "set": "MCP",
+  "title": "A complete analytical characterization of optimal collision-free motion for two robots",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41548",
+  "set": "MCP",
+  "title": "Contact-based optimization for collision-free motion planning for a million robots",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41235",
+  "set": "MCP",
+  "title": "CONSORT: Uncertainty-Constrained Multi-Robot Planning for Cooperative Localization in GPS-Denied Environments",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41210",
+  "set": "MCP",
+  "title": "From Evaluation to Evolution: Benchmarking Image Editing and Evolving Image Models",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.41159",
+  "set": "MCP",
+  "title": "MATS: A Multi-Agent Framework for Controllable and Reflective Tumor Synthesis",
+  "published": "2026-10-30"
+ },
+ {
+  "id": "2610.40991",
+  "set": "MCP",
+  "title": "A Temporal Cellular Sheaf Framework for Multi-Agent Systems with Switching Communication Topologies",
+  "published": "2026-10-29"
+ },
+ {
+  "id": "2610.40826",
+  "set": "MCP",
+  "title": "Joint Estimation and Network Configuration in Multi-Agent Systems",
+  "published": "2026-10-29"
+ },
+ {
+  "id": "2610.40799",
+  "set": "MCP",
+  "title": "CaPtain: A Pipeline for Post-Training Code-as-Policy Robot Agents",
+  "published": "2026-10-29"
+ },
+ {
+  "id": "2610.40588",
+  "set": "MCP",
+  "title": "Pre-Crime for Agents, at the Last Second: Probing When a Recruited Agent Gives In",
+  "published": "2026-10-29"
+ },
+ {
+  "id": "2610.40492",
+  "set": "MCP",
+  "title": "Agentic University: Collaborative Agents for Personalized Learning",
+  "published": "2026-10-29"
+ },
+ {
+  "id": "2610.40449",
+  "set": "MCP",
+  "title": "Reinforcement learning for control of partial differential equations",
+  "published": "2026-10-29"
+ },
+ {
+  "id": "2610.40738",
+  "set": "MCP",
+  "title": "Apriel Voice 27B Preview: An Open Model for Speech, Reasoning, and Tool Use",
+  "published": "2026-10-29"
+ },
+ {
+  "id": "2610.40191",
+  "set": "MCP",
+  "title": "Video Generation Meets Agent Harness: Agentic Video Generation, Agentic World Modeling and Recursive Self-Improvement",
+  "published": "2026-10-29"
+ },
+ {
+  "id": "2610.40190",
+  "set": "MCP",
+  "title": "AdMuse: Skill-Guided Creative Advertising Image Generation",
+  "published": "2026-10-29"
+ },
+ {
+  "id": "2610.40010",
+  "set": "MCP",
+  "title": "Measuring the Value of Communication in Multi-Agent Tracking Under Finite-Rate Belief Sharing",
+  "published": "2026-10-29"
+ },
+ {
+  "id": "2610.40000",
+  "set": "MCP",
+  "title": "NORmal: Architecting 3D Ferroelectric NOR Flash as Main Memory -- From Co-Fabricated BEOL Arrays to 200B-Class Multi-Agent LLMs in a Smartphone",
+  "published": "2026-10-29"
+ },
+ {
+  "id": "2610.39924",
+  "set": "MCP",
+  "title": "PhysAg3D: Bridging 3D Generative and Agentic Models for High-Fidelity and Physically-Interactive Assets",
+  "published": "2026-10-29"
+ },
+ {
+  "id": "2610.39813",
+  "set": "MCP",
+  "title": "EvoTeam: Multi-Agent Collaboration via Evolving Teams",
+  "published": "2026-10-29"
+ },
+ {
+  "id": "2610.39680",
+  "set": "MCP",
+  "title": "Federated Agentic AI for Interference-Aware Adaptive Spectrum Coordination",
+  "published": "2026-10-29"
+ },
+ {
+  "id": "2610.39532",
+  "set": "MCP",
+  "title": "Judging Before Propagation: Task-Graph Contextual Integrity for Multi-Agent Privacy",
+  "published": "2026-10-29"
+ },
+ {
+  "id": "2610.39497",
+  "set": "MCP",
+  "title": "Does Scaling Toward AGI Depend on What System-1 Lets System-2 Execute?",
+  "published": "2026-10-29"
+ }
+]

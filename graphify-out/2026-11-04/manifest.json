@@ -1,0 +1,28 @@
+{
+ "date": "2026-11-04",
+ "kind": "nightly-scout-snapshot",
+ "sources": [
+  "arxiv:cs.AI",
+  "arxiv:cs.MA",
+  "arxiv:mcp",
+  "github:mcp-org+anthropic+openai+vercel releases",
+  "github:5repos-commits",
+  "github:security-advisories-servers+registry",
+  "hn:firebaseio-top30",
+  "rss:openai/decoder",
+  "anthropic:news-html-table+5articles",
+  "web:the-decoder-13articles",
+  "hn:astra-weight-editing-analysis"
+ ],
+ "raw_dir": "scout-raw",
+ "corpus": "graphify-out/raw/scout-2026-11-04-corpus.md",
+ "node_count": 344,
+ "edge_count": 660,
+ "arxiv_count": 233,
+ "release_count": 33,
+ "commit_count": 24,
+ "advisory_count": 20,
+ "news_count": 30,
+ "previous_snapshot": "graphify-out/2026-11-03",
+ "next_window": "2026-11-05T00:30+08:00"
+}
