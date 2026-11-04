@@ -40,6 +40,15 @@ fi
 # 用途:区分「IP 没变」与「cron 任务失败/未执行」——
 #      11-01 曾因该 cron 连续失败,导致 IP 实际已换(10-31 18:17)却 11 小时无人察觉。
 LAST_RUN_FILE="/home/zhiping/.openclaw/workspace/cron-scripts/.last_public_ip_run"
-date '+%Y-%m-%d %H:%M:%S' > "$LAST_RUN_FILE"
+# ★ 修复 (2026-11-05): 记【排程时刻】而非【执行时刻】。
+#   排程时刻由调用方通过 SCHEDULED_AT 传入(= 消息里的 [System: ...] 时间戳);
+#   执行时刻在手动触发时与排程时刻不同,用它会让护栏永远判「不一致」→ 每轮重复检查。
+#   两者语义不同:排程时刻标识「哪一轮排程」,执行时刻只是「何时跑的」。
+if [ -n "${SCHEDULED_AT:-}" ]; then
+    printf '%s
+' "$SCHEDULED_AT" > "$LAST_RUN_FILE"
+else
+    date '+%Y-%m-%d %H:%M:%S' > "$LAST_RUN_FILE"
+fi
 
 echo "=== 检查完成 ==="
