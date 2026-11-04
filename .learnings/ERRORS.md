@@ -723,3 +723,22 @@ process list  → 看该 session 的 status 与实时 running 数
   2. `npm_config_engine_strict=true npm install` 让 npm 真正拦截
 - 与 v33「连工具输出的数字也要二次采样验证」同源:
   **二手证据(装上了)不可信,一手规则(engines)才可信。**
+
+## ERR-20261105-001 三处工具调用失误:JS 模板串含 shell 反引号 / read 读目录
+
+**现象(同一轮内三次)**:
+1. `exec` 报 `SyntaxError at openclaw-code-mode:user.js:1:971: Unexpected token`
+   → 原因:code-mode 的 JS 里我用模板字符串包了含 **shell 反引号**(`\`\``)的命令,
+     JS 模板串把反引号当成结束符 → 整段解析失败,**工具根本没派发**。
+2. `read` 报 `Read requires a file path, but <dir> is a directory`
+   → 原因:对目录调 `read`(想列 nvm 版本),应该用 `ls`。
+3. 同一错误在 exec 内的 shell 里重演一次。
+
+**教训**:
+- **code-mode 的 JS 模板串不能直接包含反引号的 shell 命令**。
+  两种可靠做法:
+  - 用 `write` 工具先把脚本落成文件,再 `exec` 执行它(本轮验证有效,完全绕开引号层);
+  - 或把 shell 里的反引号换成 `$(...)` / `\$()` 等不含反引号的写法。
+- **`read` 只吃文件,目录要用 `ls`**。
+- 这三条与 ERR-20261104-006(shell 引号吃掉 f-string)同源:
+  **凡是「内容里含有特殊字符的代码」,一律走「写文件 → 执行」两步,不要内联。**
