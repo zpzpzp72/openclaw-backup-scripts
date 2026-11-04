@@ -89,6 +89,11 @@ need_backup=$NEED_BACKUP
 force_tar_reason=$FORCE_TAR_REASON
 status=$status
 detail=$detail
+# 修复 (2026-11-05): 回收站告警此前只进日志,Windows 侧健康检查
+#   (C:/Scripts/OpenClawHealthCheck.ps1,每 6h 跑,读的就是这个心跳文件)
+#   永远看不到 -> 每日告警送不到该去的地方。
+recycle_backups=${RECYCLE_BACKUPS:-0}
+recycle_gb=${RECYCLE_GB:-0}
 EOF
 }
 
@@ -133,6 +138,8 @@ cleanup_old() {
         local rcount rsize
         rcount=$(find "$recycle_dir" -maxdepth 1 -name 'openclaw-*.tgz' 2>/dev/null | wc -l)
         rsize=$(find "$recycle_dir" -maxdepth 1 -name 'openclaw-*.tgz' -printf '%s\n' 2>/dev/null | awk '{s+=$1} END {printf "%d", int(s/1073741824)}')
+        RECYCLE_BACKUPS="${rcount:-0}"
+        RECYCLE_GB="${rsize:-0}"
         if [ "${rcount:-0}" -gt 0 ]; then
             log "⚠️ NAS 回收站仍有 ${rcount} 份旧备份(约 ${rsize:-0}GB)未释放空间: $recycle_dir"
             log "   回收站不随 NAS 删除自动清空,需人工确认后清空;否则空间持续被占用"
@@ -314,6 +321,10 @@ if [ "$NEED_BACKUP" = true ]; then
         # ★ 修复 (2026-10-27): 移到邮件之前 —— 邮件失败曾中断整个脚本(set -e),
         #   导致旧备份自 2026-07-31 起再未清理,堆积 40 份、NAS 98%
         cleanup_old
+        # cleanup_old 探测到回收站存量 -> 重写心跳,让 Windows 侧健康检查能看到
+        if [ -n "${RECYCLE_BACKUPS:-}" ] && [ "${RECYCLE_BACKUPS:-0}" -gt 0 ]; then
+            write_heartbeat "ok" "备份成功: $ARCHIVE ($FILE_SIZE); NAS回收站仍有 ${RECYCLE_BACKUPS} 份旧备份(${RECYCLE_GB}GB)未释放空间"
+        fi
 
         # ★ 修复 (2026-10-27): 邮件失败不得中断脚本(set -e),否则清理与最终心跳都不执行
         send_mail "OpenClaw 备份完成 - $NOW" \
