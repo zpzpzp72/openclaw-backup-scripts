@@ -89,12 +89,13 @@ need_backup=$NEED_BACKUP
 force_tar_reason=$FORCE_TAR_REASON
 status=$status
 detail=$detail
-# 修复 (2026-11-05): 回收站告警此前只进日志,Windows 侧健康检查
-#   (C:/Scripts/OpenClawHealthCheck.ps1,每 6h 跑,读的就是这个心跳文件)
-#   永远看不到 -> 每日告警送不到该去的地方。
 recycle_backups=${RECYCLE_BACKUPS:-0}
 recycle_gb=${RECYCLE_GB:-0}
 EOF
+
+# ★ 修复 (2026-11-05): 回收站告警写入心跳,让 Windows 侧健康检查可见
+#   (C:/Scripts/OpenClawHealthCheck.ps1 每 6h 读这个心跳文件)
+#   注意:心跳是 KEY=VALUE 格式,注释必须放在 heredoc 之外
 }
 
 # 邮件通知
