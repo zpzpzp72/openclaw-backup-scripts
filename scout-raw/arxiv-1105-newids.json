@@ -1,0 +1,920 @@
+[
+ {
+  "id": "2611.05377",
+  "set": "cs.AI",
+  "title": "DreamX: Video Diffusion Model is a Universal Latent Action Learner",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05376",
+  "set": "cs.AI",
+  "title": "From Autonomous Agents to Cognitive Symbionts: Toward AI-Augmented Human Intelligence",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05373",
+  "set": "cs.AI",
+  "title": "Aligning Language Models with General Preferences: An Empirical Study of Direct Nash Optimization",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05358",
+  "set": "cs.AI",
+  "title": "Suppressing Misaligned Behaviors in Language Models, Durably",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05345",
+  "set": "cs.AI",
+  "title": "Adversarial Speculative Reasoning Improves Long Horizon Agents",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05341",
+  "set": "cs.AI",
+  "title": "Weight-space programming for auditing clinical decision networks",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05340",
+  "set": "cs.AI",
+  "title": "MedPhysBench: A Benchmark for Evaluating Language Models on Medical Physics Calculations and Error Detection",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05334",
+  "set": "cs.AI",
+  "title": "A simple adaptive accelerated optimistic dual averaging method for unconstrained convex optimization in $p$-norm geometry",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05320",
+  "set": "cs.AI",
+  "title": "PyRUA-DataFarm: LLM Agent as a Cost-Efficient Teleoperator for Real-Ready Robot Data",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05319",
+  "set": "cs.AI",
+  "title": "HARP: Training-Free Dual-Profile Agentic Communication for LLM-Based Recommendation",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05306",
+  "set": "cs.AI",
+  "title": "You don't need long context",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05304",
+  "set": "cs.AI",
+  "title": "LoopVQ: Sub 1-bit KV Cache Quantization for Looped Transformers",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05292",
+  "set": "cs.AI",
+  "title": "Personas Are Not People: Identity as State, Not Attribute",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05290",
+  "set": "cs.AI",
+  "title": "False Reassurance in LLM Severe-Weather Guidance: A Replayable Evaluation Against Real NWS Alerts",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05287",
+  "set": "cs.AI",
+  "title": "Knowingly Wrong: Training LLMs Against Their Own Beliefs can Induce Misalignment",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05278",
+  "set": "cs.AI",
+  "title": "Beyond Accuracy: What Language-Subspace Interventions Capture, Remove, and Improve",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05272",
+  "set": "cs.AI",
+  "title": "The Geometry of Ignorance: Detecting Suppressed Knowledge in LLMs through Activation Fragmentation",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05263",
+  "set": "cs.AI",
+  "title": "JHiMA-WebRL: A Joint Hierarchical Multi-Agent Reinforcement Learning Framework for Long-Horizon Web Tasks",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05255",
+  "set": "cs.AI",
+  "title": "Going Deeper With Memories",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05222",
+  "set": "cs.AI",
+  "title": "Fairness Metrics based on the AUC in Clinical Predictive AI",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05179",
+  "set": "cs.AI",
+  "title": "OperAItor: An Agentic Framework for Fault-Tolerant Operation of Chemical Processes",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05171",
+  "set": "cs.AI",
+  "title": "AgentAM: An AI Agent for Spatter- and Defect-Aware Process Optimization in Laser Powder Bed Fusion",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05167",
+  "set": "cs.AI",
+  "title": "Learning Behaviorally Relevant Dynamics in Multimodal Neural Recordings",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05164",
+  "set": "cs.AI",
+  "title": "Basin2Vec: Learning Basin-Centric Embeddings for Scalable Hydrological Modeling",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05163",
+  "set": "cs.AI",
+  "title": "RoboTryOn: Synthesizing Dexterous Robot Demonstrations from Human Videos via Virtual Try-On",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05155",
+  "set": "cs.AI",
+  "title": "Asynchronous Robot Policies",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05151",
+  "set": "cs.AI",
+  "title": "Catalyzing Interactive HTML Generation Capabilities via High-Fidelity Reinforcement Learning",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05148",
+  "set": "cs.AI",
+  "title": "Creating Power Flexibility in Datacenters via Query Routing",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05139",
+  "set": "cs.AI",
+  "title": "Meta$^2$: Precomputing Reusable Knowledge for Online Harness Evolution in Long-Horizon Agents",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05135",
+  "set": "cs.AI",
+  "title": "From Opinions to Commitments: Unstable Assignments and Silent Choices in AI-Mediated Proposals",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05124",
+  "set": "cs.AI",
+  "title": "The Right Source Is Not Enough: Understanding History Interference in Speech-LLM Memory",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05108",
+  "set": "cs.AI",
+  "title": "From AutoResearch to Continual AutoResearch: Do Agents Learn Across Tasks?",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05104",
+  "set": "cs.AI",
+  "title": "Workload-Static Optical Circuit Switching For Scalable LLM Inference Decode",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05103",
+  "set": "cs.AI",
+  "title": "Molecular Prior Networks",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05097",
+  "set": "cs.AI",
+  "title": "The Platonic Brain: Representational Convergence in EEG Foundation Models",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05088",
+  "set": "cs.AI",
+  "title": "LatentTriad: Pre-Action Risk Representations for Malicious Agent Skill Detection",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05072",
+  "set": "cs.AI",
+  "title": "Trajectory Evaluation via Rollout-Free World Model for End-to-end Autonomous Driving",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05066",
+  "set": "cs.AI",
+  "title": "VIGOR: Visual Gain Ordering for Hallucination Mitigation in Multimodal Discrete Diffusion Language Models",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05062",
+  "set": "cs.AI",
+  "title": "FloMo: 3D Scene Flow as a World Action Model Intermediate for Learning from Human Video",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05058",
+  "set": "cs.AI",
+  "title": "Do Agentic Policies Need to Look at Every Step? Geometric Abstraction for Reasoning and Action",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05039",
+  "set": "cs.AI",
+  "title": "ALBI: LLM-Guided Inductive Logic Programming via Iterative Generate-Test-Constrain Refineme",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05024",
+  "set": "cs.AI",
+  "title": "RGB Photo Enhancement with Deep Learning on Smartphone GPUs: Mobile AI 2026 Challenge Report",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05012",
+  "set": "cs.AI",
+  "title": "Rethinking GA2Ms: performance and out-of-distribution generalisation",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05008",
+  "set": "cs.AI",
+  "title": "Learned Smartphone ISP on Mobile GPUs: Mobile AI 2026 Challenge Report",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04977",
+  "set": "cs.AI",
+  "title": "GeoFaham: Domain-Specialized Multi-Agent Geospatial Analytics for Disaster Response",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04974",
+  "set": "cs.AI",
+  "title": "LLMs as MDP Designers: A Dependency-Aware Agentic Framework for Automated Robot Policy Generation",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04968",
+  "set": "cs.AI",
+  "title": "Who is the Pronoun Pro? Comparing LLMs and Humans at Number-Disambiguation of 'they'",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04958",
+  "set": "cs.AI",
+  "title": "Shuffled OPSD: When Semantic Consistency Hurts On-Policy Self-Distillation?",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04952",
+  "set": "cs.AI",
+  "title": "Artifact-to-Capability: Diagnosing Breaks in Capability Formation of Self-Evolving Agents in a Controlled Environment",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04894",
+  "set": "cs.AI",
+  "title": "VisSearch-Bench: Evaluating Long Horizon Visual Search in Multimodal Agents",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04893",
+  "set": "cs.AI",
+  "title": "Fault-tolerant shallow recurrent decoders for sparse sensing with missing sensor measurements",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04887",
+  "set": "cs.AI",
+  "title": "FourSight: Stable FP4 RL Post-Training via Sequence Filtering and Sparse Channel Compensation",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04886",
+  "set": "cs.AI",
+  "title": "Modelling lock-in of AI adoption through skill erosion",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04879",
+  "set": "cs.AI",
+  "title": "ScamWorld: An Interactive Environment for Evaluating Web Agents Against Online Fraud",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04867",
+  "set": "cs.AI",
+  "title": "One Assistant, Many Memories: Benchmarking Real-World Group Assistance When Recall Is Not Enough",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04848",
+  "set": "cs.AI",
+  "title": "Amortized Nonlinear Variable Selection with Prior-Data Fitted Networks",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04841",
+  "set": "cs.AI",
+  "title": "DGC-Net: Cross-Modal Dynamic Routing with Global-Guided Compensation in Multimodal Sentiment Analysis",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04838",
+  "set": "cs.AI",
+  "title": "Found by Search, Broken by a Shortcut: Transfer and Tampering of Searched Intrinsic Rewards",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04836",
+  "set": "cs.AI",
+  "title": "HTCE: Homeomorphism-inspired Topological Cross-Scene Experience Canonicalization and Reuse for Object Navigation",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04834",
+  "set": "cs.AI",
+  "title": "Feeling of Knowing in Large Language Models",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04825",
+  "set": "cs.AI",
+  "title": "UniFlow: Unified Multi-Scale Flow Matching for Time Series Generation",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04819",
+  "set": "cs.AI",
+  "title": "Reconstructing Fraudulent Strategies in Online Payments via Interpretable Inverse Reinforcement Learning",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04817",
+  "set": "cs.AI",
+  "title": "The Pen is Mightier than the Pixel: Natural Textual Unlearnable Example for Large Vision Language Models",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04814",
+  "set": "cs.AI",
+  "title": "Think Less, Locally: Local Preference Learning for Reasoning Compression",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04813",
+  "set": "cs.AI",
+  "title": "AgenticFinBench: Benchmarking Financial Agents on Diverse Tasks from Real-World Requests",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04809",
+  "set": "cs.AI",
+  "title": "RAHC: Rule-Augmented Hyper-Relational Knowledge Graph Completion for Materials Synthesis",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04807",
+  "set": "cs.AI",
+  "title": "Asymptotic Optimality of $cμ$-Rule for LLM Inference Scheduling under Memory Constraint",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04805",
+  "set": "cs.AI",
+  "title": "Where Is the Truth When AI Agents Disagree? Dependence-Aware Belief Propagation for Unsupervised Truth Discovery (Extended Version)",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04792",
+  "set": "cs.AI",
+  "title": "Density-Aware Reward Scaling: A Reinforcement Learning Framework for Reward-Proportional Sampling",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04787",
+  "set": "cs.AI",
+  "title": "ReSI-Math: Exploring Recoverable Capability Frontiers for Efficient Reasoning Improvement",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04785",
+  "set": "cs.AI",
+  "title": "Kierston & KierstonBench: Simulation of Allentown, PA and Evaluation of Language Models in Crime Investigation and Surveillance Tasks",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04782",
+  "set": "cs.AI",
+  "title": "Reducing Logprob Without Causal Verification: Diagnosing SAE-Based PII Suppression in LLMs",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04779",
+  "set": "cs.AI",
+  "title": "Replica-Aware Split Inference for Edge IoT Systems",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04772",
+  "set": "cs.AI",
+  "title": "TactiNavi: Serving and Revising an LLM Game Coach with Explicit Strategy Conditions",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04757",
+  "set": "cs.AI",
+  "title": "When Should an LLM Steering Edit Depend on the Input?",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04747",
+  "set": "cs.AI",
+  "title": "TAPES: Task-Aligned Joint Predictive Pretraining for Transaction Event Sequences",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04711",
+  "set": "cs.AI",
+  "title": "Cycle WAM: Coupling Action and Video through Cycle Consistency",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04710",
+  "set": "cs.AI",
+  "title": "DenseTwins: Dense Modality Decoupling for Multimodal Self-Supervision",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04708",
+  "set": "cs.AI",
+  "title": "CLARA: A Cognitively-Driven Clarification Framework for Grounding Ambiguous Requests",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04697",
+  "set": "cs.AI",
+  "title": "When Ground Truth Is Not Ground Truth: Automatic Labeling for Hallucination Detection",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04689",
+  "set": "cs.AI",
+  "title": "Uncertainty-Aware Prototype Learning for Open-Set Test-Time Adaptation",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04663",
+  "set": "cs.AI",
+  "title": "Best-of-Depth: Learning Exploratory Dynamics in Looped Transformers",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04645",
+  "set": "cs.AI",
+  "title": "Therapy-FIS: A Dataset for Assessing Facilitative Interpersonal Skills in Psychotherapeutic Setting",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04641",
+  "set": "cs.AI",
+  "title": "Does LinUCB Need Valid Confidence Sets?",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04637",
+  "set": "cs.AI",
+  "title": "SAT Encoding for Set of At-Most-K Cardinality Constraints with Ladder Shape",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04625",
+  "set": "cs.AI",
+  "title": "QueryFlow: Multi-Hop Graph Retrieval with Adaptive Query Evolution",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04624",
+  "set": "cs.AI",
+  "title": "Polyp Matching Using Deep Learning",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04590",
+  "set": "cs.AI",
+  "title": "Can Network Models of Science Do Without Pluralist Agents?",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04576",
+  "set": "cs.AI",
+  "title": "ValQID: Learning the Net Value of Semantic Query Groups for Web Device Identification",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04574",
+  "set": "cs.AI",
+  "title": "Spectral Quantum Memory for Implicit Neural Representations",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04566",
+  "set": "cs.AI",
+  "title": "A research world model of power engineering learns its dynamics and reveals what-ifs",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04556",
+  "set": "cs.AI",
+  "title": "Inter-Agent Influence: Evaluating Persuasion, Deception, and Coercion in Multi-Agent Systems",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04555",
+  "set": "cs.AI",
+  "title": "CosmosAlpha: Multi-Relational Graph Search with Pareto-Guided Exploration for LLM-Driven Alpha Mining",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04546",
+  "set": "cs.AI",
+  "title": "Are LLM Assistants Regulatory Ready? Answers from regenold's 2026 EU AI Act Q&A Challenge",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04543",
+  "set": "cs.AI",
+  "title": "CANDO: Conservative Action-Noise Directional Optimization for Residual Reinforcement Learning",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04537",
+  "set": "cs.AI",
+  "title": "BtsPruner: Role-Aware Visual Token Pruning for Large Vision-Language Models",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04515",
+  "set": "cs.AI",
+  "title": "Learnings and Pitfalls from AI-Assisted A/B Experimentation at Scale",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04510",
+  "set": "cs.AI",
+  "title": "Fast, Cheap, and Fair? Evaluating Decision Models",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04507",
+  "set": "cs.AI",
+  "title": "Signals: Continuous Diagnostics of AI Agents",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04494",
+  "set": "cs.AI",
+  "title": "Spatial Memory for AR Glasses: Hierarchical Visual Acquisition and Source-Linked Recall",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05027",
+  "set": "cs.MA",
+  "title": "Haptic Shared Control for Multi-Robot Systems",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04977",
+  "set": "cs.MA",
+  "title": "GeoFaham: Domain-Specialized Multi-Agent Geospatial Analytics for Disaster Response",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04944",
+  "set": "cs.MA",
+  "title": "Local Visibility Roadmaps in Continous Multi-agent Path Finding",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04774",
+  "set": "cs.MA",
+  "title": "Cooperative Multi-Agent Reinforcement Learning with Submodular Trajectory Rewards",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04590",
+  "set": "cs.MA",
+  "title": "Can Network Models of Science Do Without Pluralist Agents?",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04556",
+  "set": "cs.MA",
+  "title": "Inter-Agent Influence: Evaluating Persuasion, Deception, and Coercion in Multi-Agent Systems",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04546",
+  "set": "cs.MA",
+  "title": "Are LLM Assistants Regulatory Ready? Answers from regenold's 2026 EU AI Act Q&A Challenge",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04504",
+  "set": "cs.MA",
+  "title": "AttriSwarm: Orchestrating Agent Swarms for Cross-Page Visual Attribution",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04481",
+  "set": "cs.MA",
+  "title": "Goal-Driven Autonomous Optical Experimentation via a Self-Recursive Hardware-Software Harness",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04370",
+  "set": "cs.MA",
+  "title": "Distributed Marginal Return: A Communication-Efficient Algorithm for Multi-Agent Weapon Target Assignment",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04348",
+  "set": "cs.MA",
+  "title": "When Is Fresh AI Stock Analysis Worth It? Allocating a Limited Research Budget Across Price Updates, Deep Forecast Refreshes, and Editorial Reviews of Top Stock Picks",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04321",
+  "set": "cs.MA",
+  "title": "ATC: Agent Trajectory Control for Role-Contract Enforcement in Black-Box Multi-Agent Systems",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04315",
+  "set": "cs.MA",
+  "title": "Drift No More: Spectral Locking for Long-Horizon Open-Weight Multi-Agent AI",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04142",
+  "set": "cs.MA",
+  "title": "Interpretable Early Termination of Web Navigation Agents via Closed Sequential Pattern Mining",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04072",
+  "set": "cs.MA",
+  "title": "Finite-Sample Convergence in Networked Average Reward MARL: Decentralization Pitfalls and Entropy Remedies",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03983",
+  "set": "cs.MA",
+  "title": "A Guideline-Grounded Multi-Agent Framework for Personalized Exercise Prescription from Clinical and Wearable Data",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03935",
+  "set": "cs.MA",
+  "title": "Labtune: Treating Lab Organization and Information Sharing as Experimental Variables in LLM-Agent Discovery",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03931",
+  "set": "cs.MA",
+  "title": "Beyond Division of Labor: How Roles Shape Feedback and Recovery in Multi-Agent Systems",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03832",
+  "set": "cs.MA",
+  "title": "El Agente Fármaco: A Scalable AI Scientist for Drug Discovery",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.05269",
+  "set": "MCP",
+  "title": "ToolSched: Resource-Efficient Tool Scheduling for Shared-Host LLM Agents",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05263",
+  "set": "MCP",
+  "title": "JHiMA-WebRL: A Joint Hierarchical Multi-Agent Reinforcement Learning Framework for Long-Horizon Web Tasks",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05257",
+  "set": "MCP",
+  "title": "Computational Aspects of Distortion",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05251",
+  "set": "MCP",
+  "title": "A semi-autonomous multi-agent pipeline for high-energy astrophysics research with enforced provenance and verifiable self-extension",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05171",
+  "set": "MCP",
+  "title": "AgentAM: An AI Agent for Spatter- and Defect-Aware Process Optimization in Laser Powder Bed Fusion",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05036",
+  "set": "MCP",
+  "title": "ToolSpace: Scaling Tool-Centric Environment Synthesis for Long-Horizon Agents",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.05027",
+  "set": "MCP",
+  "title": "Haptic Shared Control for Multi-Robot Systems",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04977",
+  "set": "MCP",
+  "title": "GeoFaham: Domain-Specialized Multi-Agent Geospatial Analytics for Disaster Response",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04960",
+  "set": "MCP",
+  "title": "An Agentic Framework for Quality-Aware and Scenario-Adaptive Image Compression",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04957",
+  "set": "MCP",
+  "title": "Safeguarding Multi-Agent Reinforcement Learning for Connected and Automated Vehicles with Recursively Feasible Control Barrier Functions",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04944",
+  "set": "MCP",
+  "title": "Local Visibility Roadmaps in Continous Multi-agent Path Finding",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04774",
+  "set": "MCP",
+  "title": "Cooperative Multi-Agent Reinforcement Learning with Submodular Trajectory Rewards",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04590",
+  "set": "MCP",
+  "title": "Can Network Models of Science Do Without Pluralist Agents?",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04556",
+  "set": "MCP",
+  "title": "Inter-Agent Influence: Evaluating Persuasion, Deception, and Coercion in Multi-Agent Systems",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04434",
+  "set": "MCP",
+  "title": "Sketchpad: certified exact arithmetic with a small vision-language model",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04370",
+  "set": "MCP",
+  "title": "Distributed Marginal Return: A Communication-Efficient Algorithm for Multi-Agent Weapon Target Assignment",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04348",
+  "set": "MCP",
+  "title": "When Is Fresh AI Stock Analysis Worth It? Allocating a Limited Research Budget Across Price Updates, Deep Forecast Refreshes, and Editorial Reviews of Top Stock Picks",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04321",
+  "set": "MCP",
+  "title": "ATC: Agent Trajectory Control for Role-Contract Enforcement in Black-Box Multi-Agent Systems",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04315",
+  "set": "MCP",
+  "title": "Drift No More: Spectral Locking for Long-Horizon Open-Weight Multi-Agent AI",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04289",
+  "set": "MCP",
+  "title": "When Debate Amplifies Risk: Social-Bias Vulnerabilities in Multi-Agent Safety Deliberation",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04196",
+  "set": "MCP",
+  "title": "DoGNAVY-Exploit: Harnessing Parallel Open-Weight Agents for Stage-Aware Vulnerability Exploitation",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04114",
+  "set": "MCP",
+  "title": "SciPhi-Chat: Training a Spatial Audio Agent for Question Answering, Dialogue, and Tool Use",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04096",
+  "set": "MCP",
+  "title": "Online Hamilton-Jacobi Reachability Onboard the Robot Control Loop: A Real-Time GPU Solver for Safety-Critical Autonomy",
+  "published": "2026-11-03"
+ },
+ {
+  "id": "2611.04087",
+  "set": "MCP",
+  "title": "ScienceVision: Can AI Observe and Reason Like a Scientist?",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.04086",
+  "set": "MCP",
+  "title": "Permitted but Unauthorized: Affordance-Induced Delegated-Scope Violations in Multi-Agent LLM Systems",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.04072",
+  "set": "MCP",
+  "title": "Finite-Sample Convergence in Networked Average Reward MARL: Decentralization Pitfalls and Entropy Remedies",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.04005",
+  "set": "MCP",
+  "title": "Characterizing Adversarial GEO via Implicit Brand Injection",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03983",
+  "set": "MCP",
+  "title": "A Guideline-Grounded Multi-Agent Framework for Personalized Exercise Prescription from Clinical and Wearable Data",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03982",
+  "set": "MCP",
+  "title": "SLATE: A Large-Scale Benchmark for Long-Horizon API Selection in E-commerce Tool Use",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03981",
+  "set": "MCP",
+  "title": "Rapid Mean-Field Formation Transport with a Shared-Representation Neural Fokker-Planck Controller",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03931",
+  "set": "MCP",
+  "title": "Beyond Division of Labor: How Roles Shape Feedback and Recovery in Multi-Agent Systems",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03930",
+  "set": "MCP",
+  "title": "What Is This Memory Useful For? Measuring Task-Conditioned Utility in Long-Term Agent Memory",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03868",
+  "set": "MCP",
+  "title": "EvoGroup: A Self-Evolving Harness for Group Agents in Shared Contexts",
+  "published": "2026-11-02"
+ },
+ {
+  "id": "2611.03826",
+  "set": "MCP",
+  "title": "Rethinking Next-Visit Diagnosis Prediction Beyond Aggregate Metrics: Retrieval--Memory Multi-Agent Adjudication",
+  "published": "2026-11-02"
+ }
+]
