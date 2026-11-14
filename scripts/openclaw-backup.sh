@@ -102,12 +102,20 @@ EOF
 send_mail() {
     local subject="$1"
     local body="$2"
-    cd ~/.openclaw/workspace/agents/finance && \
+    # ★ 修复 (2026-11-08): 原先只把 stderr 重定向进 $LOG_FILE,而 send_email.py 的
+    #   成败详情是 print() 到 stdout → 详情全漏出日志。canonical 日志里只能看到上层写的
+    #   「邮件已发送」,看不到「❌ 发送失败」→ 断链 3 天无人察觉。
+    #   改为整体捕获 stdout+stderr 并逐行写入日志;同时保留 python 的退出码供调用方判断。
+    local out rc
+    out=$(cd ~/.openclaw/workspace/agents/finance && \
     python3 send_email.py \
         --provider qq \
         --to "9892890@qq.com" \
         --subject "$subject" \
-        --body "$body" 2>> "$LOG_FILE"
+        --body "$body" 2>&1)
+    rc=$?
+    [ -n "$out" ] && printf '%s\n' "$out" | sed "s|^|[$(date '+%Y-%m-%d %H:%M:%S')] mail: |" >> "$LOG_FILE"
+    return $rc
 }
 
 ##############################################
@@ -227,8 +235,14 @@ if [ "$NEED_BACKUP" = true ]; then
 
     send_mail "OpenClaw 备份开始 - $NOW" \
               "备份开始于 $TIMESTAMP，源目录自 $LAST_MOD_TIME 后已修改。日志：$LOG_FILE"
+    MAIL_RC=$?
 
-    log "备份开始邮件已发送"
+    # ★ 修复 (2026-11-08): 原先无论邮件成败都写「已发送」→ 11-08 canonical 日志谎报成功
+    if [ "$MAIL_RC" = "0" ]; then
+        log "备份开始邮件已发送"
+    else
+        log "⚠️ 备份开始邮件发送失败(已忽略,不影响备份)"
+    fi
 
     if [ "$STOP_GATEWAY" = "1" ]; then
         if ! stop_gateway; then
@@ -254,13 +268,41 @@ if [ "$NEED_BACKUP" = true ]; then
     #   给 du 加 timeout 兜底:NAS 抖动时 du 可能长时间挂起,
     #   而预检本身没有时限 → 会把整次备份拖住(实测本地 du 仅需 2s,超时属异常)。
     #   du 失败时 NEED_GB 取不到 → 用保守下限 8G(宁可误拦也不产出损坏归档)。
+    # ── 回收站存量探测(只读,必须早于空间预检)──
+    #   ★ 修复 (2026-11-14): 原先该探测在 cleanup_old 里,而空间预检失败时会先 exit 1,
+    #   导致「空间不足」这个最该告警的场景反而报 recycle_backups=0。
+    #   这里提前做只读探测,不改变任何数据。
+    local recycle_dir nas_root rel
+    nas_root="$(df "$BACKUP_DIR" 2>/dev/null | tail -1 | awk '{print $6}')"
+    [ -z "$nas_root" ] && nas_root="/mnt/h"
+    rel="${BACKUP_DIR#$nas_root}"
+    recycle_dir="$nas_root/#recycle$rel"
+    RECYCLE_BACKUPS=0
+    RECYCLE_GB=0
+    if [ -d "$recycle_dir" ]; then
+        RECYCLE_BACKUPS=$(find "$recycle_dir" -maxdepth 1 -name 'openclaw-*.tgz' 2>/dev/null | wc -l)
+        RECYCLE_GB=$(find "$recycle_dir" -maxdepth 1 -name 'openclaw-*.tgz' -printf '%s\n' 2>/dev/null | awk '{s+=$1} END {printf "%d", int(s/1073741824)}')
+    fi
+
     NEED_GB=$(timeout 120 du -sm --exclude="$HOME/.openclaw/memory/lancedb-pro" "$HOME/.openclaw" 2>/dev/null | awk '{print int($1/1024*0.4)+1}' || true)
     [ -n "$NEED_GB" ] || NEED_GB=8
     AVAIL_GB=$(df -BG "$BACKUP_DIR" 2>/dev/null | tail -1 | awk '{gsub("G","",$4); print $4}')
     if [ -n "$AVAIL_GB" ] && [ "$AVAIL_GB" -lt "$NEED_GB" ]; then
         log "❌ NAS 空间不足: 可用 ${AVAIL_GB}G < 需要约 ${NEED_GB}G —— 跳过备份(避免产出损坏归档)"
         log "   建议: 清理旧备份 / 清空 /mnt/h/#recycle 回收站 / 调整 RETAIN_DAYS"
-        write_heartbeat "error" "NAS 空间不足: 可用 ${AVAIL_GB}G < 需要 ${NEED_GB}G"
+        write_heartbeat "error" "NAS 空间不足: 可用 ${AVAIL_GB}G < 需要 ${NEED_GB}G; NAS回收站仍有 ${RECYCLE_BACKUPS} 份旧备份(${RECYCLE_GB}GB)未释放空间"
+        # ★ 修复 (2026-11-08): 预检失败分支原先不发任何邮件 → 断链 3 天无人察觉
+        #   (11-06/07/08 连续三轮「空间不足」静默失败)
+        #   邮件失败不得中断脚本(沿用 2026-10-27 既有约定: 邮件失败不影响退出码与心跳)
+        send_mail "OpenClaw 备份失败 - $NOW - NAS 空间不足" \
+                  "NAS 空间不足，本轮备份已跳过(未产出损坏归档)。
+可用: ${AVAIL_GB}G   需要: 约 ${NEED_GB}G
+NAS 目录: $BACKUP_DIR
+建议: 清理旧备份 / 清空 /mnt/h/#recycle 回收站 / 调整 RETAIN_DAYS
+时间: $TIMESTAMP
+日志: $LOG_FILE" \
+                  && log "❌ 空间不足告警邮件已发送" \
+                  || log "⚠️ 空间不足告警邮件发送失败(已忽略,不影响退出码)"
         exit 1
     fi
     log "NAS 空间检查通过: 可用 ${AVAIL_GB}G,需要约 ${NEED_GB}G"

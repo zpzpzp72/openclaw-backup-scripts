@@ -1,0 +1,6772 @@
+{
+ "nodes": [
+  {
+   "id": "theme-2026-11-07",
+   "label": "AI/Agent/MCP 2026-11-07",
+   "kind": "theme",
+   "attrs": {
+    "date": "2026-11-07"
+   }
+  },
+  {
+   "id": "arxiv:2611.08483",
+   "label": "SwarmEvolve: Latent Agent Swarms for Evolutionary Discovery and Optimization",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08483",
+    "theme": "memory",
+    "cats": [
+     "cs.AI",
+     "cs.NE"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08478",
+   "label": "Scientist World: Grow a Research World for AI-Scientists",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08478",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI",
+     "cs.CL",
+     "cs.LG"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08472",
+   "label": "XStack: A Benchmark for ML Repo Migration",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08472",
+    "theme": "eval-bench",
+    "cats": [
+     "cs.LG",
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08469",
+   "label": "Same Behavior, Different Mechanism: What Finite Experiments Can Certify About Integrated Information",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08469",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.LG",
+     "cs.AI",
+     "q-bio.NC"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08465",
+   "label": "Towards interpreting any residual stream direction by scaling activation inversion",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08465",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.LG",
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08452",
+   "label": "ReproBridge: Building Reproducibility into ML Research Artifacts",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08452",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08439",
+   "label": "Label-Wording Augmentation in a Typed-Decision Encoder: Gains on Unfamiliar Words, Not on Abbreviations or Codes",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08439",
+    "theme": "multi-agent",
+    "cats": [
+     "cs.CL",
+     "cs.AI",
+     "cs.LG"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08438",
+   "label": "Understanding AI from the Inside: The State of Mechanistic Interpretability for AI Safety",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08438",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CL",
+     "cs.AI",
+     "cs.LG"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08433",
+   "label": "MedGraph: Maintaining Patient State with Graph Memory for Long-Term Medical Dialogue",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08433",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CL",
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08428",
+   "label": "The Power of Meta Access in the Software of the Future --- Demonstrated on LLM Chat UIs and Chat AI",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08428",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08425",
+   "label": "Failure Prediction and Classification in Vision-Language-Action Models Via Calibrated Latent Probing",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08425",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.RO",
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08417",
+   "label": "Benchmarks as Software: Terminal-Bench and the Case for Continuous Benchmarks",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08417",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08412",
+   "label": "The Gold Rush in AI4Math, II: What are signatures of AI-assisted Proofs?",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08412",
+    "theme": "planning",
+    "cats": [
+     "cs.AI",
+     "stat.AP"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08403",
+   "label": "StepBack: Step-Level Error-Localized Resampling for Efficient Test-Time Reasoning",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08403",
+    "theme": "memory",
+    "cats": [
+     "cs.AI",
+     "cs.CL",
+     "cs.LG"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08392",
+   "label": "Learning a patient world model for health system simulation in intensive care",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08392",
+    "theme": "eval-bench",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08386",
+   "label": "Hybrid Machine Learning for Imbalanced Landing-Phase Safety Event Prediction from Flight Data",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08386",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.LG",
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08383",
+   "label": "FedReason: Large Language Models as Weight-Space Meta-Aggregators for Heterogeneous Federated Learning",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08383",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CR",
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08372",
+   "label": "MOMASPLAT: Dynamic Novel-View Demonstration Augmentation for Mobile Manipulation",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08372",
+    "theme": "eval-bench",
+    "cats": [
+     "cs.RO",
+     "cs.AI",
+     "cs.CV"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08369",
+   "label": "NPCBench: A Clinical Apprenticeship Benchmark for Multimodal Care-Pathway Reasoning in Nasopharyngeal Carcinoma",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08369",
+    "theme": "eval-bench",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08368",
+   "label": "VisionSIM: Beyond Idealized Sensors - A Multi-Modal Simulator for Robot Perception",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08368",
+    "theme": "enterprise",
+    "cats": [
+     "cs.RO",
+     "cs.AI",
+     "cs.CV"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08341",
+   "label": "Enhancing Local and Global Structure in Compressed AI Agent Memory",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08341",
+    "theme": "memory",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08318",
+   "label": "Learning the Task or Learning the Verifier? Rethinking Criteria Exposure in Embodied Self-Improvement",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08318",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI",
+     "cs.RO"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08315",
+   "label": "Benchmarking Large Language Models on Heterogeneous Cognitive and Biomedical Knowledge Graphs: The Role of Graph Grounding in Multi-Hop Reasoning and Hallucination Mitigation",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08315",
+    "theme": "eval-bench",
+    "cats": [
+     "cs.AI",
+     "cs.CL",
+     "cs.LG"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08308",
+   "label": "RM-VLM: From Natural-Language Task Descriptions to Vision-Grounded Reward Machines",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08308",
+    "theme": "eval-bench",
+    "cats": [
+     "cs.AI",
+     "cs.LG"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08307",
+   "label": "Measured Coupling for Parallel Decoding in Diffusion Language Models",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08307",
+    "theme": "eval-bench",
+    "cats": [
+     "cs.CL",
+     "cs.AI",
+     "cs.DC"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08303",
+   "label": "First-Token Attraction in Mamba Dynamics",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08303",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08290",
+   "label": "AutoCompress: Automated Hardware-Guided Model Compression",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08290",
+    "theme": "memory",
+    "cats": [
+     "cs.LG",
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08284",
+   "label": "A Generative Model of Contextual Integrity: Appropriate vs. Inappropriate Information Sharing",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08284",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08277",
+   "label": "LeanContext: Disentangling Mathematical Resources from Local Formal Context in Lean Whole-Proof Generation",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08277",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08275",
+   "label": "Aligning Policy Encoders with a Shape Teacher",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08275",
+    "theme": "eval-bench",
+    "cats": [
+     "cs.RO",
+     "cs.AI",
+     "cs.CV"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08273",
+   "label": "Accelerating Safe Reinforcement Learning with Massive Parallelism",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08273",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.LG",
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08271",
+   "label": "DART: Domain-Agnostic Residual Transfer for Generalist Anomaly Detection",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08271",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CV",
+     "cs.AI",
+     "cs.LG"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08269",
+   "label": "Accepted but Wrong: Silent Failures of LLM Code Repairs after API Migrations",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08269",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.SE",
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08263",
+   "label": "Scaling Neural Motor Decoding via Decoupled Behavioral Pretraining",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08263",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.LG",
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08262",
+   "label": "The Geometry of Simulated Perspectives: Dissociating Representation and Behaviour in a Multimodal Language Model",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08262",
+    "theme": "general",
+    "cats": [
+     "cs.AI",
+     "cs.CL",
+     "cs.CV"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08245",
+   "label": "Value-oriented policy distillation for interpretable wind farm power control",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08245",
+    "theme": "rl-train",
+    "cats": [
+     "cs.AI",
+     "eess.SY"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08232",
+   "label": "Signals, Evidence, and Context: User Scrutiny in Real-World LLM Conversations",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08232",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08196",
+   "label": "SMART: State-based Multi Agent Reasoning Traces for Verification-oriented Problem-Solving",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08196",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI",
+     "cs.CL"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08179",
+   "label": "Knowing When to Teach: Learning from Teachable Prefixes in Multilingual Reasoning Distillation",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08179",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CL",
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08177",
+   "label": "BabyTheorist: A Benchmark for Learning to Theorize the World from Observation Alone",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08177",
+    "theme": "eval-bench",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08175",
+   "label": "PCBRouteAgent: How Close Are LLM Agents to Becoming PCB Routing Engineers?",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08175",
+    "theme": "tool-use",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08154",
+   "label": "Interpretable Multimodal MRI-Clinical Fusion for Functional Outcome Prediction After Acute Ischemic Stroke",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08154",
+    "theme": "eval-bench",
+    "cats": [
+     "cs.LG",
+     "cs.AI",
+     "cs.CV"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08153",
+   "label": "A Generative Foundation Model for Multimodal Tokamak Tasks",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08153",
+    "theme": "eval-bench",
+    "cats": [
+     "cs.AI",
+     "cs.CE"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08134",
+   "label": "Who Can Evaluate AI Independently? A Framework for Analysing Evaluation Infrastructure",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08134",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CY",
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08116",
+   "label": "Create Your Own Work Stack: Deploying Self-hosted AI and Tooling in a Tech Startup",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08116",
+    "theme": "memory",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08093",
+   "label": "Gradient Boosting for Efficient Rank Discovery in Tensor Network Kernel Machines",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08093",
+    "theme": "memory",
+    "cats": [
+     "cs.LG",
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08088",
+   "label": "Value or Attention: Investigating Layer-wise Relevance Propagation for Graph Attention Networks",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08088",
+    "theme": "multi-agent",
+    "cats": [
+     "cs.LG",
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08086",
+   "label": "MUSS: A Multi-scale and Sequence-based Model for Single-cell Gene Regulation",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08086",
+    "theme": "general",
+    "cats": [
+     "cs.AI",
+     "q-bio.GN"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08082",
+   "label": "DictLLM: Post-training Compression of Large Language Model with Dictionary Kernels",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08082",
+    "theme": "memory",
+    "cats": [
+     "cs.AI",
+     "cs.LG"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08070",
+   "label": "Can an LLM Actually Reason and Program about Neural Network's Weights or is it just memorization on steroids? Exploring \"Weight-Space Programming\"",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08070",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.LG",
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08054",
+   "label": "NutriVisRAG: Multimodal Exemplar Grounding for Nutrient Estimation with Vision-Language Models",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08054",
+    "theme": "memory",
+    "cats": [
+     "cs.CV",
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08053",
+   "label": "When Imperfect Automated Fact-Checking Backfires: Social Learning in the Presence of Misinformation",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08053",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI",
+     "eess.SY"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08042",
+   "label": "Secure Formal Raising: Protecting the Development of AI through Executable Properties",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08042",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07984",
+   "label": "Technohybridism: Recursive Semantic Normalization in AI-Mediated Societies",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07984",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CY",
+     "cs.AI",
+     "cs.HC"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07962",
+   "label": "TCSExam: Evaluating Frontier LLMs on the Full Range of TCS Research",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07962",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI",
+     "cs.CL"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07953",
+   "label": "A Behavioural Framework for Predicting and Understanding Loss of Control in Frontier Artificial Intelligence Systems",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07953",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI",
+     "cs.CL",
+     "cs.LG"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07948",
+   "label": "Circe: Training-Free LLM Self-Evaluation via Component Interaction Consistency",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07948",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07947",
+   "label": "ChemE-as-Code: An Open-Source Platform for Agentic AI in Chemical Engineering",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07947",
+    "theme": "tool-use",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07945",
+   "label": "tok: a textual concrete syntax of BPMN and DMN for humans and AI agents",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07945",
+    "theme": "mcp",
+    "cats": [
+     "cs.CY",
+     "cs.AI",
+     "cs.SE"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07940",
+   "label": "CardioLM: A multilingual suite of small language models for the cardiology domain",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07940",
+    "theme": "eval-bench",
+    "cats": [
+     "cs.CL",
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07935",
+   "label": "Towards Scalable Diagnostic-Driven Whole-Slide Image Retrieval for Pathology Archives",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07935",
+    "theme": "memory",
+    "cats": [
+     "cs.CV",
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07932",
+   "label": "AttnSR: Attention Step Reward for Long-Horizon Agentic RL",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07932",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.LG",
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07928",
+   "label": "ZeroRAG: Adaptive Semantic Peer Routing for Decentralized Retrieval-Augmented Generation",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07928",
+    "theme": "memory",
+    "cats": [
+     "cs.DC",
+     "cs.AI",
+     "cs.IR"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07920",
+   "label": "How Finite Brains Generalize Without Bound: Spatial Memory as a Universal Computer",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07920",
+    "theme": "memory",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07918",
+   "label": "Adaptive Semantic Branching: Disagreement-Localized Cross-Trajectory Regeneration for Reasoning Candidate Expansion",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07918",
+    "theme": "memory",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07912",
+   "label": "GuidedWAM: Training-Free Energy Guidance for World Action Models in Autonomous Driving",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07912",
+    "theme": "rl-train",
+    "cats": [
+     "cs.AI",
+     "cs.RO"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07900",
+   "label": "Structure from Collision via Hypothesis-Space Reasoning",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07900",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CV",
+     "cs.AI",
+     "cs.GR"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07899",
+   "label": "Persistent Retrieval for Conversational Agents: A Study of Retrieval Efficiency",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07899",
+    "theme": "memory",
+    "cats": [
+     "cs.AI",
+     "cs.CL",
+     "cs.IR"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07892",
+   "label": "DISCERN: Distributional Synthetic Replay for Retain-Free Incremental Machine Unlearning",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07892",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.LG",
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07891",
+   "label": "When Bigger Becomes Brittle: Why Compression Hurts More as Language Models Scale",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07891",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07886",
+   "label": "When, Where, How: Active In-Context Learning for Tabular Foundation Models",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07886",
+    "theme": "memory",
+    "cats": [
+     "cs.LG",
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07883",
+   "label": "InnerLogic-Surg: An Open Surgical Foundation Model via Continual Pretraining",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07883",
+    "theme": "eval-bench",
+    "cats": [
+     "cs.CV",
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07879",
+   "label": "Network Effect Decomposition for Causal Effect Estimation under Network Interference",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07879",
+    "theme": "memory",
+    "cats": [
+     "stat.ML",
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07874",
+   "label": "Responsible GenAI Use During Active Armed Conflict: Evidence from Sudan's Emergency Response Rooms",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07874",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI",
+     "cs.HC"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07870",
+   "label": "FARR: Forecast-Aware Residual Refinement with Matched Endpoint Evidence for Long-Horizon Time-Series Forecasting",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07870",
+    "theme": "memory",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07859",
+   "label": "CORE: Coarse-to-Fine Search with Context Management for Deep Research",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07859",
+    "theme": "memory",
+    "cats": [
+     "cs.CL",
+     "cs.AI",
+     "cs.IR"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07847",
+   "label": "Computation, not weight access: large language models as auditors of clinical prediction networks",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07847",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.LG",
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07845",
+   "label": "Masked diffusion as random sequential adsorption: an exactly solvable model for parallel decoding",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07845",
+    "theme": "eval-bench",
+    "cats": [
+     "cond-mat.stat-mech",
+     "cs.AI",
+     "cs.CL"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07836",
+   "label": "THG-Omni: Traceable Human-Centric Graph Supervision for Video Reasoning",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07836",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CV",
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07828",
+   "label": "STAG-Net: Structure-Aware Attention over Landmark Groups for Lightweight Head Pose Estimation",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07828",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CV",
+     "cs.AI",
+     "cs.HC"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07827",
+   "label": "Instantiating the Knowledge Plane",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07827",
+    "theme": "multi-agent",
+    "cats": [
+     "cs.NI",
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07825",
+   "label": "Generate-then-Rank: Learning Symbolic Goal Interpretation for Embodied Agents",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07825",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI",
+     "cs.CL",
+     "cs.RO"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07820",
+   "label": "Axis-LoRA: Probing and Adapting Embedding Models for Personal-Memory Retrieval",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07820",
+    "theme": "memory",
+    "cats": [
+     "cs.CL",
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07780",
+   "label": "Bridging Structure and Semantics: Knowledge Graph Verification via Triple-to-Text Alignment",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07780",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CL",
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07778",
+   "label": "The Intrusion Pathway: How Non-Evidential Context Degrades Language Model Performance",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07778",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07757",
+   "label": "RIVER: Evidence-guided multi-agent retrieval for enzyme--reaction discovery",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07757",
+    "theme": "memory",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07756",
+   "label": "Scaling Laws for SAE Training Data",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07756",
+    "theme": "eval-bench",
+    "cats": [
+     "cs.LG",
+     "cs.AI",
+     "cs.CL"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07736",
+   "label": "Extending Reasoning in Typed Decision Models via Looping",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07736",
+    "theme": "general",
+    "cats": [
+     "cs.CL",
+     "cs.AI",
+     "cs.LG"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07735",
+   "label": "Evaluating Token Probabilities as Confidence Estimators in Human Behavior Simulations: A Case Study in Luxembourgish Next Like Prediction",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07735",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CL",
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07731",
+   "label": "O$^2$PD: Overlap-Gated On-Policy Distillation on Reliable Prefix",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07731",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CL",
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07730",
+   "label": "Seeing Beyond the Next Step: World-Model-Guided Human-Like Navigation in Multi-Agent Scenes",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07730",
+    "theme": "multi-agent",
+    "cats": [
+     "cs.GR",
+     "cs.AI",
+     "cs.CV"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07721",
+   "label": "Continued Training of Continuous Language Flows with Token Identity Squared Supervision",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07721",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CL",
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07720",
+   "label": "Evaluating Language Model Features for Zero-Shot Time-Series Anomaly Detection Under Isolation Assumption",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07720",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.LG",
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07717",
+   "label": "Pediatric ECG foundation model via adult-to-pediatric fine-tuning: downstream tasks and clinical evaluation",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07717",
+    "theme": "eval-bench",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07707",
+   "label": "CAMP: Context-Aware Mapping and Placement for LLMs on 3D-IMC Arrays",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07707",
+    "theme": "memory",
+    "cats": [
+     "cs.AR",
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07706",
+   "label": "Towards Generalist Graph-Level Anomaly Detection",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07706",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07702",
+   "label": "InfMasking: A Unified Variational Framework for Synergistic Multimodal Learning",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07702",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CV",
+     "cs.AI",
+     "cs.LG"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07695",
+   "label": "Equivariant Deep Learning in Direct-Product Space for Electronic-Structure Hamiltonian Prediction",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07695",
+    "theme": "memory",
+    "cats": [
+     "cs.LG",
+     "cond-mat.mtrl-sci",
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07689",
+   "label": "MCPHallu: Benchmarking Reasoning, Execution, and Memory Hallucinations in MCP Agents",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07689",
+    "theme": "mcp",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07683",
+   "label": "ReferClaw: Disambiguating User Intent for Egocentric Assistance",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07683",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CV",
+     "cs.AI",
+     "cs.MA"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.AI",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08390",
+   "label": "SCALE: Real-Time Latent Communication for Cyber-Physical Agents",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08390",
+    "theme": "multi-agent",
+    "cats": [
+     "cs.RO",
+     "cs.MA"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08361",
+   "label": "Radio-to-Pose Information for Gauge-Drift Correction in Cooperative Localization",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08361",
+    "theme": "multi-agent",
+    "cats": [
+     "cs.RO",
+     "cs.MA"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08312",
+   "label": "Trilemma: How Agents choose between Honesty, Confidentiality, and Task Completion",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08312",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.MA"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07996",
+   "label": "SEER: A Scalable Event-Driven Runtime for Parallel Execution of Multi-Agent Reinforcement Learning Environments",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07996",
+    "theme": "multi-agent",
+    "cats": [
+     "cs.DC",
+     "cs.MA"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07618",
+   "label": "A Bilevel Neurodynamic Approach for Distributed SCAD-Regularized Sparse Least Squares",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07618",
+    "theme": "memory",
+    "cats": [
+     "math.OC",
+     "cs.MA"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07483",
+   "label": "Signed but Not Safe: Requirement Integrity in Multi-Agent LLM Handoffs",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07483",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CR",
+     "cs.AI",
+     "cs.MA"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07461",
+   "label": "The Last Mile to the Real World: Agent-Native Primitives as Reusable Building Blocks for Solving Real-World Tasks",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07461",
+    "theme": "mcp",
+    "cats": [
+     "cs.CL",
+     "cs.AI",
+     "cs.LG"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07377",
+   "label": "Designing with Cinematic Language: An Intent-Driven Approach to Human-AI Video Clip Co-Creation",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07377",
+    "theme": "memory",
+    "cats": [
+     "cs.MA"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07374",
+   "label": "Design of Multi-UAV Cooperative Deep Semantic Autoencoders for Communication Networks",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07374",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.MA"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07307",
+   "label": "Take It From Here: Evaluating Coding Agents On Project Takeover",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07307",
+    "theme": "tool-use",
+    "cats": [
+     "cs.SE",
+     "cs.MA"
+    ],
+    "published": "2026-11-05",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07140",
+   "label": "More Agents, More Reliable? System-Level Reliability of Multi-Agent LLMs under Operational-Profile Uncertainty",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07140",
+    "theme": "multi-agent",
+    "cats": [
+     "cs.MA",
+     "cs.AI"
+    ],
+    "published": "2026-11-04",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07122",
+   "label": "Regulating Autonomous Mobility-on-Demand Operators with Fixed and Adaptive Penalties: A Multi-Agent Reinforcement Learning Approach",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07122",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.LG",
+     "cs.MA"
+    ],
+    "published": "2026-11-04",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07089",
+   "label": "Polynomial-Time Computation of Extensive-Form Proper Equilibria in Two-Player Zero-Sum Games",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07089",
+    "theme": "memory",
+    "cats": [
+     "cs.GT",
+     "cs.AI",
+     "cs.MA"
+    ],
+    "published": "2026-11-04",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07066",
+   "label": "Cooperative Multi-Agent Reinforcement Learning via Epigraph-Form Guided Exploration",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07066",
+    "theme": "multi-agent",
+    "cats": [
+     "cs.AI",
+     "cs.MA"
+    ],
+    "published": "2026-11-04",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07050",
+   "label": "Authorization Propagation in Agent2Agent Systems: An Experimental Security Evaluation of Multi-Hop Delegation",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07050",
+    "theme": "mcp",
+    "cats": [
+     "cs.MA"
+    ],
+    "published": "2026-11-04",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.06989",
+   "label": "The Two-Ledger Model: Transaction-Grain Cost Accounting for Multi-Agent AI Systems Across Clouds, Models, and Systems of Record",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.06989",
+    "theme": "mcp",
+    "cats": [
+     "cs.AI",
+     "cs.DC",
+     "cs.MA"
+    ],
+    "published": "2026-11-04",
+    "query_set": "cs.MA",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08431",
+   "label": "Scaffolding GenAI Use in Ethical Essay Writing: A Three-Year Experience Report in Introductory Computing",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08431",
+    "theme": "tool-use",
+    "cats": [
+     "cs.CY"
+    ],
+    "published": "2026-11-05",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08219",
+   "label": "Agent-R$^2$: Scaling Agents for Realistic Productivity Work via Real-Source Data Synthesis",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08219",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CL"
+    ],
+    "published": "2026-11-05",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.08144",
+   "label": "Detecting Silent Faults at the Environment-Trainer Boundary in Reinforcement Learning",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.08144",
+    "theme": "multi-agent",
+    "cats": [
+     "cs.RO",
+     "cs.LG",
+     "cs.SE"
+    ],
+    "published": "2026-11-05",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07754",
+   "label": "Uncovering Systematic Blind Spots in Graph Database Testing through Integration and Process-Level Analysis",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07754",
+    "theme": "multi-agent",
+    "cats": [
+     "cs.SE"
+    ],
+    "published": "2026-11-05",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07703",
+   "label": "Distributed Optimization Involving Non-Lipschitzian, Linear Composite Functions: Unified Algorithm Design and Convergence Analysis",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07703",
+    "theme": "multi-agent",
+    "cats": [
+     "cs.GT"
+    ],
+    "published": "2026-11-05",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07667",
+   "label": "Who Should Know What? Empirical Information Design for Multi-Agent LLM Economies",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07667",
+    "theme": "multi-agent",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07640",
+   "label": "Beyond Instruction Override: Benchmarking Indirect Prompt Injection with Task-Tampering Attacks",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07640",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CR",
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07589",
+   "label": "Learning and Steering in Incomplete-Information Games",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07589",
+    "theme": "memory",
+    "cats": [
+     "cs.GT",
+     "cs.AI",
+     "cs.LG"
+    ],
+    "published": "2026-11-05",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07528",
+   "label": "Goal-Branching LaCAM: Temporary Goals as Search Branches in Dense Multi-Agent Pathfinding",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07528",
+    "theme": "multi-agent",
+    "cats": [
+     "cs.AI"
+    ],
+    "published": "2026-11-05",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07495",
+   "label": "Learning Multi-Agent Orchestration:Higher-Order Interactions in Policy Improvement",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07495",
+    "theme": "multi-agent",
+    "cats": [
+     "cs.LG"
+    ],
+    "published": "2026-11-05",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07494",
+   "label": "Transparency in Team Contracts",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07494",
+    "theme": "tool-use",
+    "cats": [
+     "cs.GT",
+     "econ.TH"
+    ],
+    "published": "2026-11-05",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07222",
+   "label": "SPILLWAY: Separating Target Admission from Sanitization to Defend Tool-Using Agents against Prompt Injection",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07222",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.CR",
+     "cs.AI"
+    ],
+    "published": "2026-11-04",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07203",
+   "label": "τ-bench-LILT: Evaluating Conversational Agents on Realistic Multilingual Tool-Use Tasks",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07203",
+    "theme": "tool-use",
+    "cats": [
+     "cs.CL"
+    ],
+    "published": "2026-11-04",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.07201",
+   "label": "IRIS: Intelligent Random Access with Integrated Shared Learning for Decentralized LEO Direct-to-Satellite Uplinks",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.07201",
+    "theme": "mcp",
+    "cats": [
+     "cs.NI"
+    ],
+    "published": "2026-11-04",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "arxiv:2611.06956",
+   "label": "Octopus: One Brain, Many Branches for Latent-KV Multi-Agent Reinforcement Learning",
+   "kind": "arxiv",
+   "attrs": {
+    "id": "2611.06956",
+    "theme": "agent-safety",
+    "cats": [
+     "cs.LG",
+     "cs.CL"
+    ],
+    "published": "2026-11-03",
+    "query_set": "MCP",
+    "source": "arxiv"
+   }
+  },
+  {
+   "id": "repo:mcp-servers",
+   "label": "MCP servers",
+   "kind": "repo",
+   "attrs": {
+    "tag": "mcp-servers"
+   }
+  },
+  {
+   "id": "release:mcp-servers:v2.3.0",
+   "label": "MCP servers v2.3.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP servers",
+    "tag": "v2.3.0",
+    "published": "2026-11-04T21:28:41Z",
+    "url": "https://github.com/modelcontextprotocol/servers/releases/tag/v2.3.0"
+   }
+  },
+  {
+   "id": "release:mcp-servers:v2.2.0",
+   "label": "MCP servers v2.2.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP servers",
+    "tag": "v2.2.0",
+    "published": "2026-10-28T20:57:13Z",
+    "url": "https://github.com/modelcontextprotocol/servers/releases/tag/v2.2.0"
+   }
+  },
+  {
+   "id": "release:mcp-servers:v2.1.0",
+   "label": "MCP servers v2.1.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP servers",
+    "tag": "v2.1.0",
+    "published": "2026-10-25T00:03:20Z",
+    "url": "https://github.com/modelcontextprotocol/servers/releases/tag/v2.1.0"
+   }
+  },
+  {
+   "id": "repo:mcp-spec",
+   "label": "MCP spec",
+   "kind": "repo",
+   "attrs": {
+    "tag": "mcp-spec"
+   }
+  },
+  {
+   "id": "release:mcp-spec:2026-07-28",
+   "label": "MCP spec 2026-07-28",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP spec",
+    "tag": "2026-07-28",
+    "published": "2026-07-28T16:47:49Z",
+    "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/releases/tag/2026-07-28"
+   }
+  },
+  {
+   "id": "release:mcp-spec:2026-07-28-RC",
+   "label": "MCP spec 2026-07-28-RC",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP spec",
+    "tag": "2026-07-28-RC",
+    "published": "2026-05-29T12:51:22Z",
+    "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/releases/tag/2026-07-28-RC"
+   }
+  },
+  {
+   "id": "release:mcp-spec:2025-11-25",
+   "label": "MCP spec 2025-11-25",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP spec",
+    "tag": "2025-11-25",
+    "published": "2025-11-25T21:17:42Z",
+    "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/releases/tag/2025-11-25"
+   }
+  },
+  {
+   "id": "repo:mcp-registry",
+   "label": "MCP registry",
+   "kind": "repo",
+   "attrs": {
+    "tag": "mcp-registry"
+   }
+  },
+  {
+   "id": "release:mcp-registry:v1.8.8",
+   "label": "MCP registry v1.8.8",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP registry",
+    "tag": "v1.8.8",
+    "published": "2026-11-06T14:07:07Z",
+    "url": "https://github.com/modelcontextprotocol/registry/releases/tag/v1.8.8"
+   }
+  },
+  {
+   "id": "release:mcp-registry:v1.8.7",
+   "label": "MCP registry v1.8.7",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP registry",
+    "tag": "v1.8.7",
+    "published": "2026-10-30T11:24:12Z",
+    "url": "https://github.com/modelcontextprotocol/registry/releases/tag/v1.8.7"
+   }
+  },
+  {
+   "id": "release:mcp-registry:v1.8.6",
+   "label": "MCP registry v1.8.6",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP registry",
+    "tag": "v1.8.6",
+    "published": "2026-10-27T14:42:37Z",
+    "url": "https://github.com/modelcontextprotocol/registry/releases/tag/v1.8.6"
+   }
+  },
+  {
+   "id": "repo:mcp-inspector",
+   "label": "MCP inspector",
+   "kind": "repo",
+   "attrs": {
+    "tag": "mcp-inspector"
+   }
+  },
+  {
+   "id": "release:mcp-inspector:2.14.0",
+   "label": "MCP inspector 2.14.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP inspector",
+    "tag": "2.14.0",
+    "published": "2026-11-04T23:55:33Z",
+    "url": "https://github.com/modelcontextprotocol/inspector/releases/tag/2.14.0"
+   }
+  },
+  {
+   "id": "release:mcp-inspector:1.0.4",
+   "label": "MCP inspector 1.0.4",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP inspector",
+    "tag": "1.0.4",
+    "published": "2026-11-04T23:28:28Z",
+    "url": "https://github.com/modelcontextprotocol/inspector/releases/tag/1.0.4"
+   }
+  },
+  {
+   "id": "release:mcp-inspector:2.13.0",
+   "label": "MCP inspector 2.13.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP inspector",
+    "tag": "2.13.0",
+    "published": "2026-10-28T18:41:38Z",
+    "url": "https://github.com/modelcontextprotocol/inspector/releases/tag/2.13.0"
+   }
+  },
+  {
+   "id": "repo:mcp-sdk-py",
+   "label": "MCP python-sdk",
+   "kind": "repo",
+   "attrs": {
+    "tag": "mcp-sdk-py"
+   }
+  },
+  {
+   "id": "release:mcp-sdk-py:v2.3.0",
+   "label": "MCP python-sdk v2.3.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP python-sdk",
+    "tag": "v2.3.0",
+    "published": "2026-10-02T22:02:27Z",
+    "url": "https://github.com/modelcontextprotocol/python-sdk/releases/tag/v2.3.0"
+   }
+  },
+  {
+   "id": "release:mcp-sdk-py:v2.2.0",
+   "label": "MCP python-sdk v2.2.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP python-sdk",
+    "tag": "v2.2.0",
+    "published": "2026-09-07T15:53:57Z",
+    "url": "https://github.com/modelcontextprotocol/python-sdk/releases/tag/v2.2.0"
+   }
+  },
+  {
+   "id": "release:mcp-sdk-py:v1.30.0",
+   "label": "MCP python-sdk v1.30.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP python-sdk",
+    "tag": "v1.30.0",
+    "published": "2026-09-07T14:03:59Z",
+    "url": "https://github.com/modelcontextprotocol/python-sdk/releases/tag/v1.30.0"
+   }
+  },
+  {
+   "id": "repo:mcp-sdk-ts",
+   "label": "MCP typescript-sdk",
+   "kind": "repo",
+   "attrs": {
+    "tag": "mcp-sdk-ts"
+   }
+  },
+  {
+   "id": "release:mcp-sdk-ts:v2.4.0",
+   "label": "MCP typescript-sdk v2.4.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP typescript-sdk",
+    "tag": "v2.4.0",
+    "published": "2026-10-23T18:32:25Z",
+    "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/v2.4.0"
+   }
+  },
+  {
+   "id": "release:mcp-sdk-ts:1.32.2",
+   "label": "MCP typescript-sdk 1.32.2",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP typescript-sdk",
+    "tag": "1.32.2",
+    "published": "2026-10-23T18:06:24Z",
+    "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/1.32.2"
+   }
+  },
+  {
+   "id": "release:mcp-sdk-ts:@modelcontextprotocol/server@2.4.0",
+   "label": "MCP typescript-sdk @modelcontextprotocol/server@2.4.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP typescript-sdk",
+    "tag": "@modelcontextprotocol/server@2.4.0",
+    "published": "2026-10-23T18:19:14Z",
+    "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol/server%402.4.0"
+   }
+  },
+  {
+   "id": "repo:mcp-sdk-go",
+   "label": "MCP go-sdk",
+   "kind": "repo",
+   "attrs": {
+    "tag": "mcp-sdk-go"
+   }
+  },
+  {
+   "id": "release:mcp-sdk-go:v1.8.0",
+   "label": "MCP go-sdk v1.8.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP go-sdk",
+    "tag": "v1.8.0",
+    "published": "2026-09-14T08:05:46Z",
+    "url": "https://github.com/modelcontextprotocol/go-sdk/releases/tag/v1.8.0"
+   }
+  },
+  {
+   "id": "release:mcp-sdk-go:v1.8.0-pre.2",
+   "label": "MCP go-sdk v1.8.0-pre.2",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP go-sdk",
+    "tag": "v1.8.0-pre.2",
+    "published": "2026-09-04T09:14:41Z",
+    "url": "https://github.com/modelcontextprotocol/go-sdk/releases/tag/v1.8.0-pre.2"
+   }
+  },
+  {
+   "id": "release:mcp-sdk-go:v1.8.0-pre.1",
+   "label": "MCP go-sdk v1.8.0-pre.1",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP go-sdk",
+    "tag": "v1.8.0-pre.1",
+    "published": "2026-09-04T09:01:50Z",
+    "url": "https://github.com/modelcontextprotocol/go-sdk/releases/tag/v1.8.0-pre.1"
+   }
+  },
+  {
+   "id": "repo:sdk-py",
+   "label": "anthropic-sdk-python",
+   "kind": "repo",
+   "attrs": {
+    "tag": "sdk-py"
+   }
+  },
+  {
+   "id": "release:sdk-py:v2.6.0",
+   "label": "anthropic-sdk-python v2.6.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "anthropic-sdk-python",
+    "tag": "v2.6.0",
+    "published": "2026-11-05T18:58:47Z",
+    "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v2.6.0"
+   }
+  },
+  {
+   "id": "release:sdk-py:v2.5.0",
+   "label": "anthropic-sdk-python v2.5.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "anthropic-sdk-python",
+    "tag": "v2.5.0",
+    "published": "2026-11-04T20:27:20Z",
+    "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v2.5.0"
+   }
+  },
+  {
+   "id": "release:sdk-py:v2.4.0",
+   "label": "anthropic-sdk-python v2.4.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "anthropic-sdk-python",
+    "tag": "v2.4.0",
+    "published": "2026-11-02T19:07:19Z",
+    "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v2.4.0"
+   }
+  },
+  {
+   "id": "repo:claude-code",
+   "label": "claude-code",
+   "kind": "repo",
+   "attrs": {
+    "tag": "claude-code"
+   }
+  },
+  {
+   "id": "release:claude-code:v2.1.319",
+   "label": "claude-code v2.1.319",
+   "kind": "release",
+   "attrs": {
+    "repo": "claude-code",
+    "tag": "v2.1.319",
+    "published": "2026-11-06T17:04:01Z",
+    "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.319"
+   }
+  },
+  {
+   "id": "release:claude-code:v2.1.318",
+   "label": "claude-code v2.1.318",
+   "kind": "release",
+   "attrs": {
+    "repo": "claude-code",
+    "tag": "v2.1.318",
+    "published": "2026-11-04T00:01:03Z",
+    "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.318"
+   }
+  },
+  {
+   "id": "release:claude-code:v2.1.317",
+   "label": "claude-code v2.1.317",
+   "kind": "release",
+   "attrs": {
+    "repo": "claude-code",
+    "tag": "v2.1.317",
+    "published": "2026-11-03T01:25:46Z",
+    "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.317"
+   }
+  },
+  {
+   "id": "repo:openai-python",
+   "label": "openai-python",
+   "kind": "repo",
+   "attrs": {
+    "tag": "openai-python"
+   }
+  },
+  {
+   "id": "release:openai-python:v3.47.0",
+   "label": "openai-python v3.47.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "openai-python",
+    "tag": "v3.47.0",
+    "published": "2026-11-05T18:04:10Z",
+    "url": "https://github.com/openai/openai-python/releases/tag/v3.47.0"
+   }
+  },
+  {
+   "id": "release:openai-python:v3.46.0",
+   "label": "openai-python v3.46.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "openai-python",
+    "tag": "v3.46.0",
+    "published": "2026-11-05T00:55:06Z",
+    "url": "https://github.com/openai/openai-python/releases/tag/v3.46.0"
+   }
+  },
+  {
+   "id": "release:openai-python:v3.45.0",
+   "label": "openai-python v3.45.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "openai-python",
+    "tag": "v3.45.0",
+    "published": "2026-11-04T02:23:23Z",
+    "url": "https://github.com/openai/openai-python/releases/tag/v3.45.0"
+   }
+  },
+  {
+   "id": "repo:vercel-ai-sdk",
+   "label": "vercel ai sdk",
+   "kind": "repo",
+   "attrs": {
+    "tag": "vercel-ai-sdk"
+   }
+  },
+  {
+   "id": "release:vercel-ai-sdk:ai@7.0.163",
+   "label": "vercel ai sdk ai@7.0.163",
+   "kind": "release",
+   "attrs": {
+    "repo": "vercel ai sdk",
+    "tag": "ai@7.0.163",
+    "published": "2026-11-05T01:12:23Z",
+    "url": "https://github.com/vercel/ai/releases/tag/ai%407.0.163"
+   }
+  },
+  {
+   "id": "release:vercel-ai-sdk:ai@6.0.323",
+   "label": "vercel ai sdk ai@6.0.323",
+   "kind": "release",
+   "attrs": {
+    "repo": "vercel ai sdk",
+    "tag": "ai@6.0.323",
+    "published": "2026-11-05T01:09:22Z",
+    "url": "https://github.com/vercel/ai/releases/tag/ai%406.0.323"
+   }
+  },
+  {
+   "id": "release:vercel-ai-sdk:@ai-sdk/zai@3.0.47",
+   "label": "vercel ai sdk @ai-sdk/zai@3.0.47",
+   "kind": "release",
+   "attrs": {
+    "repo": "vercel ai sdk",
+    "tag": "@ai-sdk/zai@3.0.47",
+    "published": "2026-11-05T01:16:32Z",
+    "url": "https://github.com/vercel/ai/releases/tag/%40ai-sdk/zai%403.0.47"
+   }
+  },
+  {
+   "id": "repo:anthropics-claude-code",
+   "label": "anthropics claude code",
+   "kind": "repo",
+   "attrs": {
+    "tag": "anthropics-claude-code"
+   }
+  },
+  {
+   "id": "commit:12d14ce49c",
+   "label": "chore: Update CHANGELOG.md and feed.xml",
+   "kind": "commit",
+   "attrs": {
+    "repo": "anthropics claude code",
+    "date": "2026-11-06",
+    "sha": "0ed94698"
+   }
+  },
+  {
+   "id": "commit:1be85623c2",
+   "label": "mods: add the privacy mod (#107768)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "anthropics claude code",
+    "date": "2026-11-06",
+    "sha": "90380efc"
+   }
+  },
+  {
+   "id": "repo:modelcontextprotocol-modelcontextprotocol",
+   "label": "modelcontextprotocol modelcontextprotocol",
+   "kind": "repo",
+   "attrs": {
+    "tag": "modelcontextprotocol-modelcontextprotocol"
+   }
+  },
+  {
+   "id": "commit:3e31a3d81d",
+   "label": "fix(schema): restore optional _meta on input requests and responses (#3469)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "modelcontextprotocol modelcontextprotocol",
+    "date": "2026-11-06",
+    "sha": "c9b51b3a"
+   }
+  },
+  {
+   "id": "commit:f0fa30fa23",
+   "label": "fix(schema): close oneOf type-check bypass and render SEP-2106 Tool examples (#3185)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "modelcontextprotocol modelcontextprotocol",
+    "date": "2026-11-06",
+    "sha": "38353251"
+   }
+  },
+  {
+   "id": "commit:a7540fa7a8",
+   "label": "Merge pull request #3482 from modelcontextprotocol/docs/client-tutorial-tool-loop",
+   "kind": "commit",
+   "attrs": {
+    "repo": "modelcontextprotocol modelcontextprotocol",
+    "date": "2026-11-06",
+    "sha": "22bb5b96"
+   }
+  },
+  {
+   "id": "commit:0ac2eef34d",
+   "label": "Merge pull request #3479 from modelcontextprotocol/docs/rust-server-tutorial-rmcp-3",
+   "kind": "commit",
+   "attrs": {
+    "repo": "modelcontextprotocol modelcontextprotocol",
+    "date": "2026-11-06",
+    "sha": "352c0c9f"
+   }
+  },
+  {
+   "id": "commit:246c57e016",
+   "label": "Merge pull request #3507 from modelcontextprotocol/ci/conventional-pr-titles",
+   "kind": "commit",
+   "attrs": {
+    "repo": "modelcontextprotocol modelcontextprotocol",
+    "date": "2026-11-06",
+    "sha": "1e69fea8"
+   }
+  },
+  {
+   "id": "commit:d9ba912317",
+   "label": "Merge pull request #3506 from modelcontextprotocol/fix/release-pr-metadata",
+   "kind": "commit",
+   "attrs": {
+    "repo": "modelcontextprotocol modelcontextprotocol",
+    "date": "2026-11-06",
+    "sha": "d9d26ddb"
+   }
+  },
+  {
+   "id": "commit:f62065635d",
+   "label": "fix(release): retain existing PR authentication",
+   "kind": "commit",
+   "attrs": {
+    "repo": "modelcontextprotocol modelcontextprotocol",
+    "date": "2026-11-05",
+    "sha": "bfe95025"
+   }
+  },
+  {
+   "id": "repo:modelcontextprotocol-servers",
+   "label": "modelcontextprotocol servers",
+   "kind": "repo",
+   "attrs": {
+    "tag": "modelcontextprotocol-servers"
+   }
+  },
+  {
+   "id": "commit:aa1aaa1be5",
+   "label": "Merge pull request #5430 from modelcontextprotocol/v2/chore/5425-release-v2.3.0",
+   "kind": "commit",
+   "attrs": {
+    "repo": "modelcontextprotocol servers",
+    "date": "2026-11-04",
+    "sha": "36380287"
+   }
+  },
+  {
+   "id": "commit:1ad292f443",
+   "label": "Merge pull request #5437 from modelcontextprotocol/changeset-release/v2/main",
+   "kind": "commit",
+   "attrs": {
+    "repo": "modelcontextprotocol servers",
+    "date": "2026-11-04",
+    "sha": "281b1671"
+   }
+  },
+  {
+   "id": "commit:9f96c413a3",
+   "label": "chore: version packages",
+   "kind": "commit",
+   "attrs": {
+    "repo": "modelcontextprotocol servers",
+    "date": "2026-11-04",
+    "sha": "4c28a7ec"
+   }
+  },
+  {
+   "id": "commit:63fad0ae0f",
+   "label": "Merge pull request #5435 from modelcontextprotocol/v2/fix/5433-sequentialthinking-linear-though",
+   "kind": "commit",
+   "attrs": {
+    "repo": "modelcontextprotocol servers",
+    "date": "2026-11-04",
+    "sha": "3fd94199"
+   }
+  },
+  {
+   "id": "commit:20ce5a9bb0",
+   "label": "docs(sequentialthinking): state the thought box's limits exactly",
+   "kind": "commit",
+   "attrs": {
+    "repo": "modelcontextprotocol servers",
+    "date": "2026-11-04",
+    "sha": "c583da02"
+   }
+  },
+  {
+   "id": "commit:670c3b84fd",
+   "label": "Merge pull request #5436 from modelcontextprotocol/v2/fix/5434-everything-generated-resource-ic",
+   "kind": "commit",
+   "attrs": {
+    "repo": "modelcontextprotocol servers",
+    "date": "2026-11-04",
+    "sha": "f4f99281"
+   }
+  },
+  {
+   "id": "commit:b50d8ade75",
+   "label": "fix(sequentialthinking): size the thought box after its summary row",
+   "kind": "commit",
+   "attrs": {
+    "repo": "modelcontextprotocol servers",
+    "date": "2026-11-04",
+    "sha": "43d93afa"
+   }
+  },
+  {
+   "id": "commit:9973a1c38d",
+   "label": "fix(everything): give gzip-file-as-resource's resource the resource icons",
+   "kind": "commit",
+   "attrs": {
+    "repo": "modelcontextprotocol servers",
+    "date": "2026-11-04",
+    "sha": "ee12fb14"
+   }
+  },
+  {
+   "id": "commit:81607e685f",
+   "label": "fix(sequentialthinking): bound the stderr thought box",
+   "kind": "commit",
+   "attrs": {
+    "repo": "modelcontextprotocol servers",
+    "date": "2026-11-04",
+    "sha": "8da06bc4"
+   }
+  },
+  {
+   "id": "commit:0e11d13406",
+   "label": "Merge pull request #5429 from modelcontextprotocol/v2/chore/5425-python-calver-2026.11.4",
+   "kind": "commit",
+   "attrs": {
+    "repo": "modelcontextprotocol servers",
+    "date": "2026-11-04",
+    "sha": "cc602786"
+   }
+  },
+  {
+   "id": "repo:openai-openai-python",
+   "label": "openai openai python",
+   "kind": "repo",
+   "attrs": {
+    "tag": "openai-openai-python"
+   }
+  },
+  {
+   "id": "commit:8b887d5f1d",
+   "label": "feat(api): add stream options for agent sessions (#4251)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "openai openai python",
+    "date": "2026-11-05",
+    "sha": "c6fc2646"
+   }
+  },
+  {
+   "id": "commit:da600da5af",
+   "label": "release: 3.47.0 (#4250)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "openai openai python",
+    "date": "2026-11-05",
+    "sha": "561ef6b4"
+   }
+  },
+  {
+   "id": "commit:8290890898",
+   "label": "feat(api): add a model option for Responses (#4249)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "openai openai python",
+    "date": "2026-11-05",
+    "sha": "090098fd"
+   }
+  },
+  {
+   "id": "commit:38440a0ebc",
+   "label": "release: 3.46.0 (#4244)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "openai openai python",
+    "date": "2026-11-05",
+    "sha": "ea5d1606"
+   }
+  },
+  {
+   "id": "commit:52650c3333",
+   "label": "feat(api): add image complexity and GIF and SVG output controls (#4247)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "openai openai python",
+    "date": "2026-11-05",
+    "sha": "0152e3ad"
+   }
+  },
+  {
+   "id": "commit:954f93a28f",
+   "label": "feat(api): add Australia, India, and Japan residency options (#4246)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "openai openai python",
+    "date": "2026-11-05",
+    "sha": "2634b87c"
+   }
+  },
+  {
+   "id": "repo:vercel-ai",
+   "label": "vercel ai",
+   "kind": "repo",
+   "attrs": {
+    "tag": "vercel-ai"
+   }
+  },
+  {
+   "id": "commit:de12a27c6c",
+   "label": "chore(tsconfig): centralize `lib` option in base config (#24558)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "vercel ai",
+    "date": "2026-11-06",
+    "sha": "68a5001b"
+   }
+  },
+  {
+   "id": "commit:aa95912655",
+   "label": "fix(baseten): avoid empty DeepSeek structured output with reasoning (#24653)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "vercel ai",
+    "date": "2026-11-06",
+    "sha": "c4a8b80e"
+   }
+  },
+  {
+   "id": "commit:d4c30fc06c",
+   "label": "chore(provider/gateway): update gateway model settings files (#24648)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "vercel ai",
+    "date": "2026-11-06",
+    "sha": "bb4e2d0a"
+   }
+  },
+  {
+   "id": "commit:8a93c93f6b",
+   "label": "fix(openai,openai-compatible): surface refusal logprobs and openai-compatible refusals (#24622)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "vercel ai",
+    "date": "2026-11-06",
+    "sha": "646a7e3c"
+   }
+  },
+  {
+   "id": "commit:c22e6a43d5",
+   "label": "fix(cohere): read response id from v2 chat responses (#24621)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "vercel ai",
+    "date": "2026-11-06",
+    "sha": "73400b29"
+   }
+  },
+  {
+   "id": "commit:9c8156ed0d",
+   "label": "feat(anthropic): support mid-conversation inline tools (#24614)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "vercel ai",
+    "date": "2026-11-06",
+    "sha": "457dc40d"
+   }
+  },
+  {
+   "id": "commit:b98701c053",
+   "label": "fix(provider/gateway): document oidc fallback in types and readme (#24557)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "vercel ai",
+    "date": "2026-11-05",
+    "sha": "6737c772"
+   }
+  },
+  {
+   "id": "commit:35310c6fdf",
+   "label": "fix(harness): abort a running turn when its host disconnects for good (#24611)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "vercel ai",
+    "date": "2026-11-05",
+    "sha": "a54f0fd8"
+   }
+  },
+  {
+   "id": "commit:6f1211526d",
+   "label": "docs(anthropic-aws): regenerate model capability docs for the thread option (#24623)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "vercel ai",
+    "date": "2026-11-05",
+    "sha": "b7d8575f"
+   }
+  },
+  {
+   "id": "commit:41bae020fe",
+   "label": "feat(anthropic): support message threads (#24397)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "vercel ai",
+    "date": "2026-11-05",
+    "sha": "6b101ac0"
+   }
+  },
+  {
+   "id": "advisory:GHSA-w766-5x43-whvw",
+   "label": "mcp-server-git: nested gitdir file bypasses --repository confinement",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-w766-5x43-whvw",
+    "severity": "medium",
+    "published": "2026-10-28T21:13:40Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-3jqg-r5pp-rmp2",
+   "label": "robots.txt enforcement bypass via HTTP redirects in mcp-server-fetch",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-3jqg-r5pp-rmp2",
+    "severity": "low",
+    "published": "2026-10-25T00:15:37Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-4gxg-m5jx-9j57",
+   "label": "Case-variant path bypasses symlink check and allows creating files outside allowed directories in server-files",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-4gxg-m5jx-9j57",
+    "severity": "medium",
+    "published": "2026-10-25T00:18:21Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-7rgq-gccq-qphx",
+   "label": "Path traversal via trailing quote/whitespace in validatePath (Check/Use Mismatch)",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-7rgq-gccq-qphx",
+    "severity": "medium",
+    "published": "2026-10-25T00:18:38Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-66qx-2266-pmj6",
+   "label": "fetch server: SSRF guard treats the well-known NAT64 prefix 64:ff9b::/96 as public, so a metadata address is r",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-66qx-2266-pmj6",
+    "severity": "low",
+    "published": "2026-10-25T00:18:52Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-v38p-wf49-hx2j",
+   "label": "fetch: private-address guard bypass via IDNA hostnames (check and connect resolve different names)",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-v38p-wf49-hx2j",
+    "severity": "medium",
+    "published": "2026-10-25T00:19:06Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-53mr-w429-c597",
+   "label": "Parent-Directory Fallback TOCTOU in @modelcontextprotocol/server-filesystem Permits Arbitrary File Write Outsi",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-53mr-w429-c597",
+    "severity": "low",
+    "published": "2026-10-25T00:19:21Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-hhwq-wxfx-cj7g",
+   "label": "@modelcontextprotocol/server-filesystem list_directory_with_sizes follows symlinks and leaks outside-directory",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-hhwq-wxfx-cj7g",
+    "severity": "low",
+    "published": "2026-10-25T00:19:37Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-mvf5-2qqv-rg3c",
+   "label": " Cross-Origin Environment Variable Exfiltration in @modelcontextprotocol/server-everything",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-mvf5-2qqv-rg3c",
+    "severity": "medium",
+    "published": "2026-10-25T00:19:52Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-vjqx-cfc4-9h6v",
+   "label": "Path traversal in git_add allows staging files outside repository boundaries in mcp-server-git",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-vjqx-cfc4-9h6v",
+    "severity": "medium",
+    "published": "2026-02-25T23:21:57Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-5cgr-j3jf-jw3v",
+   "label": "Unrestricted git_init tool allows repository creation at arbitrary filesystem locations in mcp-server-git",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-5cgr-j3jf-jw3v",
+    "severity": "medium",
+    "published": "2025-12-17T15:55:26Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-9xwc-hfwc-8w59",
+   "label": "Argument injection in git_diff and git_checkout functions for mcp-server-git allows overwriting local files",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-9xwc-hfwc-8w59",
+    "severity": "medium",
+    "published": "2025-12-17T16:01:56Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-j22h-9j4x-23w5",
+   "label": "Missing path validation when using --repository flag in mcp-server-git",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-j22h-9j4x-23w5",
+    "severity": "medium",
+    "published": "2025-12-17T16:04:43Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-hc55-p739-j48w",
+   "label": "Path validation bypass via colliding path prefix",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-hc55-p739-j48w",
+    "severity": "high",
+    "published": "2025-07-01T18:39:04Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-q66q-fx2p-7w4m",
+   "label": "Path validation bypass via symlink handling",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-q66q-fx2p-7w4m",
+    "severity": "high",
+    "published": "2025-07-01T18:38:24Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-2v5f-5r6w-p67r",
+   "label": "OCI validator skips ownership check on upstream rate limits",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-2v5f-5r6w-p67r",
+    "severity": "low",
+    "published": "2026-05-12T21:41:52Z",
+    "repo": "mcp-registry"
+   }
+  },
+  {
+   "id": "advisory:GHSA-r48c-v28r-pf6v",
+   "label": "Unauthenticated SSRF: HTTP namespace verification dials 6to4 / NAT64 / site-local IPv6 addresses, bypassing pr",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-r48c-v28r-pf6v",
+    "severity": "medium",
+    "published": "2026-05-04T14:46:47Z",
+    "repo": "mcp-registry"
+   }
+  },
+  {
+   "id": "advisory:GHSA-rqv2-m695-f8j4",
+   "label": "Stored XSS in catalogue UI via attribute-quote breakout in publisher-controlled `websiteUrl`",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-rqv2-m695-f8j4",
+    "severity": "medium",
+    "published": "2026-05-04T14:34:31Z",
+    "repo": "mcp-registry"
+   }
+  },
+  {
+   "id": "advisory:GHSA-v8vw-gw5j-w7m6",
+   "label": "Open redirect via protocol-relative path in trailing-slash middleware",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-v8vw-gw5j-w7m6",
+    "severity": "low",
+    "published": "2026-05-04T12:25:03Z",
+    "repo": "mcp-registry"
+   }
+  },
+  {
+   "id": "advisory:GHSA-95c3-6vvw-4mrq",
+   "label": "GitHub OIDC tokens replayable across registry deployments due to shared audience",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-95c3-6vvw-4mrq",
+    "severity": "low",
+    "published": "2026-05-04T12:25:24Z",
+    "repo": "mcp-registry"
+   }
+  },
+  {
+   "id": "news:metr-anthropic-acceleration-audit",
+   "label": "METR - Anthropic may have crossed its own AI acceleration warning threshold back in July (2026-11-06)",
+   "kind": "news",
+   "attrs": {
+    "org": "research",
+    "tag": "metr-anthropic-acceleration-audit",
+    "date": "2026-11-07",
+    "summary": "METR got eleven weeks of access to Anthropic internal research data and found that the rate at which Anthropic models improve has roughly doubled, with about 80 percent of that acceleration tracing back to AI being used in the company own research. Anthropic redacted the most important evidence, and whether AI is speeding up development of better AI is a key early warning signal in the safety debate, because a feedback loop could form where models improve their successors faster and faster and lead, per METR, to a sudden emergence of extreme and risky capabilities. Anthropic Responsible Scaling Policy flags exactly this as a risk indicator: if the pace of AI progress doubles because of automated AI research that should trigger a warning level. From August 12 to October 29, 2026, a team of 2.5 full-time staffers received benchmark results from unreleased models, training metrics, employee surveys and internal analyses, plus roughly 15 interviews with Anthropic researchers, and METR took no money from Anthropic while working on Anthropic devices for security reasons. Since October 2025 Anthropic model test scores have climbed about 1.9 times faster than between March 2024 and October 2025 on the AECI composite metric, meaning Anthropic achieved in one year what previously took two, roughly comparable to the jump from Claude 2.1 to Sonnet 4.5. The rate rose from about 15 AECI points per year before October 2025 to 29 after, and three unreleased models trained between July and October 2026 were included. Anthropic had recently committed to bringing external auditors in and announced a METR collaboration involving employee-like access in October, while the audit itself is a separate narrower project."
+   }
+  },
+  {
+   "id": "org:research",
+   "label": "research",
+   "kind": "org",
+   "attrs": {}
+  },
+  {
+   "id": "news:anthropic-ipo-valuation-resistance",
+   "label": "Anthropic - $1.5 trillion IPO hits resistance as investors balk at valuation (2026-11-06)",
+   "kind": "news",
+   "attrs": {
+    "org": "anthropic",
+    "tag": "anthropic-ipo-valuation-resistance",
+    "date": "2026-11-07",
+    "summary": "Anthropic IPO is in trouble as investors push back on the $1.5 trillion valuation and the tech market sells off, according to Reuters, with potential backers doubting the planned roadshow can kick off next week as scheduled. As recently as September the company was eyeing a valuation of up to $2 trillion, and now some investors think even $1.5 trillion is too rich, one reportedly floating a valuation of just $1 trillion. Investors want a steeper discount because Anthropic is still losing money and burning through cash to scale AI infrastructure, and they are waiting on October revenue numbers that are missing from the updated S-1 filing. The midterm elections made things worse as ballot initiatives targeting data center expansion passed in several states, triggering the sharpest tech selloff in a year, and the Wall Street Journal also reports IPO investors are skeptical. If AI stocks stay under pressure Anthropic could delay the offering, which some estimates peg at up to $100 billion in size, and a delay could further shake confidence in the broader AI sector."
+   }
+  },
+  {
+   "id": "org:anthropic",
+   "label": "anthropic",
+   "kind": "org",
+   "attrs": {}
+  },
+  {
+   "id": "news:perplexity-teammates-always-on-agent",
+   "label": "Perplexity - Launches Teammates, an always-on AI agent that works around the clock (2026-11-06)",
+   "kind": "news",
+   "attrs": {
+    "org": "industry",
+    "tag": "perplexity-teammates-always-on-agent",
+    "date": "2026-11-07",
+    "summary": "Perplexity now has its own AI agent that runs around the clock and handles work tasks on its own. While Perplexity Computer executes one-off assignments, the new Teammates stay active and work through ongoing projects independently, with each Teammate running on its own virtual machine with a desktop and browser. Users track progress through dedicated threads in the Perplexity app and can interact with the agents via Slack. Perplexity joins SpaceX, Meta, OpenAI and Anthropic, which already offer similar agents through Grok Bots, Muse, Dots and Duet. Teammates require the Max plan at $200 per month, while Dots start at $100 and Duet is available from $20, and in practice the cheaper options will likely hit their usage limits fast, days after high agent consumption forced SpaceX to impose stricter usage caps on Grok Bots. Perplexity annualized revenue topped $750 million as of August."
+   }
+  },
+  {
+   "id": "org:industry",
+   "label": "industry",
+   "kind": "org",
+   "attrs": {}
+  },
+  {
+   "id": "news:thinking-machines-inkling-2-small",
+   "label": "Thinking Machines - Inkling 2 Small claims top spot among western open-weight models (2026-11-06)",
+   "kind": "news",
+   "attrs": {
+    "org": "industry",
+    "tag": "thinking-machines-inkling-2-small",
+    "date": "2026-11-07",
+    "summary": "Thinking Machines, the startup from former OpenAI CTO Mira Murati, is releasing Inkling 2 Small, a mixture-of-experts model with 594 billion parameters of which 17 billion are active at any given time. On the Artificial Analysis Intelligence Index it scores 31, an 18 point jump over its predecessor Inkling Small which scored 13, and roughly on par with Google Gemini 3.8 Flash, with especially strong gains in agentic tasks. On AutomationBench-AA the score jumps from 5 to 46 percent and on FrontierCode 2.0 from 5 to 25 percent, and on the knowledge work benchmark AA-Briefcase it hits 1,527 Elo, 615 points above its predecessor. The improved performance comes at a price since the model generates more output tokens and costs six times as much per task as its predecessor. It accepts text and images and offers adjustable thinking depth to choose between speed and thoroughness, and Inkling models are designed as base models for fine-tuning. It is initially available as a proprietary offering through the Tinker platform, with weights under an Apache license to follow."
+   }
+  },
+  {
+   "id": "news:anthropic-personal-finance-plaid",
+   "label": "Anthropic - Adds Personal Finance so users can connect bank accounts to Claude (2026-11-06)",
+   "kind": "news",
+   "attrs": {
+    "org": "anthropic",
+    "tag": "anthropic-personal-finance-plaid",
+    "date": "2026-11-07",
+    "summary": "Anthropic lets Claude users connect their bank accounts and ask questions about their money through a new feature called Personal Finance, which gives Claude read-only access and cannot move, manage or invest funds. The connection runs through Plaid so Claude never sees a bank password, and users can break down spending by category, check upcoming payments or ask things like whether they are spending more than they earn. The feature launches as a beta in the US for Pro, Max and Ultra subscribers, with Anthropic saying conversations in the Personal Finance section will not be used for model training, that users can disconnect at any time, and that it will not show ads or sponsored recommendations. Longer term Anthropic wants to connect Claude with licensed financial advisors and regulated firms, while OpenAI already offers a similar US feature called Finances."
+   }
+  },
+  {
+   "id": "news:openai-gpt-6-cyber",
+   "label": "OpenAI - Unveils GPT-6 Cyber, a model trained to find, exploit and patch vulnerabilities (2026-11-05)",
+   "kind": "news",
+   "attrs": {
+    "org": "openai",
+    "tag": "openai-gpt-6-cyber",
+    "date": "2026-11-07",
+    "summary": "OpenAI introduced GPT-6 Cyber, a model trained specifically to hunt for security vulnerabilities, develop working exploits and suggest patches, and trained to stay within its assigned boundaries. Without any special safety instructions GPT-6 Cyber avoided boundary violations in 99.93 percent of cases, up from 94.49 percent for its predecessor, and with safety instructions enabled it stayed within bounds in 100 percent of tests, with a honeypot inspired by the Hugging Face incident used during training. OpenAI rates GPT-6 Cyber as Critical in the cybersecurity category of its own Preparedness Framework, the same rating given to GPT-6 Astra. On ExploitGym, a benchmark testing whether a model can exploit a given vulnerability in a remote system, it scores 48.5 percent versus 32.1 percent for predecessor GPT-5.6 Cyber, and on a new test for finding vulnerabilities in web apps without source code access OpenAI reports 40.3 percent versus 32.0 percent for GPT-6 Astra, with GPT-6 Astra with safeguards enabled scoring 0.0 percent. In targeted tests the model found 81 previously unknown critical vulnerabilities in Firefox which Mozilla has already patched, and in the Linux kernel it reproduced 1,724 vulnerabilities and developed working exploits for 948 of them, more than five times as many as its predecessor. All benchmark numbers come from OpenAI itself with no independent testing of the model."
+   }
+  },
+  {
+   "id": "org:openai",
+   "label": "openai",
+   "kind": "org",
+   "attrs": {}
+  },
+  {
+   "id": "news:google-gemini-omni-1-2-flash",
+   "label": "Google - Gemini Omni 1.2 Flash goes general availability with 15 second clips and 30 percent lower price (2026-11-05)",
+   "kind": "news",
+   "attrs": {
+    "org": "industry",
+    "tag": "google-gemini-omni-1-2-flash",
+    "date": "2026-11-07",
+    "summary": "Google DeepMind is making its Gemini Omni 1.2 Flash video generation model generally available. The updated model creates clips up to 15 seconds long, supports conversational editing and costs 30 percent less than its predecessor, rolling out through the Gemini API, Google AI Studio, Google Cloud Console, Flow, Google Vids, the Gemini app for AI Ultra subscribers and Google Ads. Every generated video carries an imperceptible SynthID watermark, clips now run between three and 15 seconds versus a previous maximum of 10, and pricing drops 30 percent to $0.07 per second for 720p video. Conversational Editing lets users tweak a clip step by step, changing background, lighting or aspect ratio without regenerating, and works across the full 15 second length, paired with a tiered workflow where drafts are made at 360p or 720p, details corrected with a follow-up edit, and only the final result upscaled to 1080p or 4K to cut cost. Google also promises better reference adherence, accepting character images, product photos, motion clips up to three seconds and audio cues as inputs, with faces, clothing, packaging typography and brand colors staying consistent across camera angles, and less visual drift or morphing across motion and transitions."
+   }
+  },
+  {
+   "id": "news:baidu-ernie-5-5-flash-base-280b",
+   "label": "Baidu - Releases ERNIE 5.5 Flash Base, a 280B MoE open foundation model without post-training (2026-11-05)",
+   "kind": "news",
+   "attrs": {
+    "org": "industry",
+    "tag": "baidu-ernie-5-5-flash-base-280b",
+    "date": "2026-11-07",
+    "summary": "Baidu released ERNIE-5.5-Flash-Base, an open foundation model that ships deliberately without fine-tuning or post-training, so developers decide where to take it, with a post-trained version supposed to follow. ERNIE 5.5 uses a mixture-of-experts architecture with 280 billion parameters of which 14 billion are active per input, was pre-trained on 33.5 trillion tokens with a training context up to 128,000 tokens, and is designed to support context up to one million tokens during fine-tuning and inference. Baidu reports the model competes with similarly sized open foundation models like DeepSeek V4 Flash, Hy3-preview-Base and MiMo V2.5 across exam, STEM, reasoning, knowledge, code, multilingual and long context categories using the same evaluation pipeline. Weights are available on Hugging Face in FP8 and BF16."
+   }
+  },
+  {
+   "id": "news:frontier-radar-5-neolabs",
+   "label": "The Decoder - Frontier Radar #5 profiles 27 neolabs betting against the current AI recipe (2026-11-06)",
+   "kind": "news",
+   "attrs": {
+    "org": "research",
+    "tag": "frontier-radar-5-neolabs",
+    "date": "2026-11-07",
+    "summary": "OpenAI is talking about the AGI era and Nvidia CEO Jensen Huang says AGI has arrived, with OpenAI president Greg Brockman calling GPT-6 Astra a turning point, while at the same time co-creators of today models are leaving OpenAI, Google DeepMind and Meta to start their own labs, raising billions with no product to show. The Decoder sorted 45 neolabs by research bets, profiled 27 in detail across six bets plus nearly 20 more in brief, and argues the shared motive is doubt about whether today recipe alone, meaning ever-larger language models trained on internet data refined with reinforcement learning, gets to AGI. Named departures include Ilya Sutskever founding Safe Superintelligence, Jerry Tworek running Core Automation, David Silver founding Ineffable Intelligence after AlphaGo, Yann LeCun leaving Meta after twelve years to found AMI, and Jeff Dean after 27 years at Google founding Discovery Loop. The money follows with Nvidia reportedly investing five billion dollars in SSI in July, Prometheus from Jeff Bezos pulling in twelve billion dollars at a 41 billion valuation in June, and Flapping Airplanes raising one billion dollars in an October Series A. Motives are mixed and not all technical, ranging from paper billionaire status and strategy disputes to wanting to do research without product pressure, and the piece notes established companies struggle with ideas that threaten their business, citing the innovator dilemma, with precedents from Transformer at Google in 2017, AlphaGo at DeepMind, and the Anthropic and OpenAI breakouts."
+   }
+  },
+  {
+   "id": "news:openai-customer-announcements-1105",
+   "label": "OpenAI - Customer and university announcements in the feed (2026-11-05)",
+   "kind": "news",
+   "attrs": {
+    "org": "openai",
+    "tag": "openai-customer-announcements-1105",
+    "date": "2026-11-07",
+    "summary": "The OpenAI news feed added several items in the window: Australian universities are creating AI-native graduates by expanding access to ChatGPT and bringing AI into teaching and learning to prepare students for an AI-enabled workforce; Cult.fit builds operational muscle with Codex to help teams across functions build tools and move faster; Merge uses GPT-6 Astra, ChatGPT and Codex to review product code and support marketing, with teams also using AI to plan executive dinners and prepare sales updates; Flipsnack grew product signups by focusing ChatGPT Ads campaigns on getting people to try its product, lowering cost per signup; and Franklin Templeton is developing AI workflows starting with equity research to help portfolio managers compare research views and examine investment risks."
+   }
+  },
+  {
+   "id": "theme:agent-safety",
+   "label": "agent-safety",
+   "kind": "cluster",
+   "attrs": {}
+  },
+  {
+   "id": "theme:planning",
+   "label": "planning",
+   "kind": "cluster",
+   "attrs": {}
+  },
+  {
+   "id": "theme:multi-agent",
+   "label": "multi-agent",
+   "kind": "cluster",
+   "attrs": {}
+  },
+  {
+   "id": "theme:eval-bench",
+   "label": "eval-bench",
+   "kind": "cluster",
+   "attrs": {}
+  },
+  {
+   "id": "theme:memory",
+   "label": "memory",
+   "kind": "cluster",
+   "attrs": {}
+  },
+  {
+   "id": "theme:rl-train",
+   "label": "rl-train",
+   "kind": "cluster",
+   "attrs": {}
+  },
+  {
+   "id": "theme:tool-use",
+   "label": "tool-use",
+   "kind": "cluster",
+   "attrs": {}
+  },
+  {
+   "id": "theme:enterprise",
+   "label": "enterprise",
+   "kind": "cluster",
+   "attrs": {}
+  },
+  {
+   "id": "theme:general",
+   "label": "general",
+   "kind": "cluster",
+   "attrs": {}
+  },
+  {
+   "id": "theme:mcp",
+   "label": "mcp",
+   "kind": "cluster",
+   "attrs": {}
+  },
+  {
+   "id": "hn:062d8d187c",
+   "label": "Deus Ex",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 182,
+    "comments": 83,
+    "url": "https://www.filfre.net/2026/11/deus-ex/"
+   }
+  },
+  {
+   "id": "hn:60fe3a102f",
+   "label": "Dutch 'idealist' bank ASN blocks non-Google Android, including GrapheneOS",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 542,
+    "comments": 341,
+    "url": "https://github.com/PrivSec-dev/banking-apps-compat-report/issues/105"
+   }
+  },
+  {
+   "id": "hn:482ddbd8d8",
+   "label": "FAA Begins Retiring Decades Old Floppy Disks from Air Traffic Control",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 84,
+    "comments": 52,
+    "url": "https://www.faa.gov/newsroom/trumps-transportation-secretary-sean-p-duffy-begins-retiring-decades-old-floppy-disks-air"
+   }
+  },
+  {
+   "id": "hn:6f8e43f141",
+   "label": "RIP Cybertruck",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 265,
+    "comments": 374,
+    "url": "https://www.wired.com/story/rip-cybertruck-you-were-unloved-unwanted-and-utterly-absurd/"
+   }
+  },
+  {
+   "id": "hn:d59d63b878",
+   "label": "Gemini Omni 1.2 Flash",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 204,
+    "comments": 159,
+    "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/"
+   }
+  },
+  {
+   "id": "hn:2688d57636",
+   "label": "Blender's UI and Runtime: Much Faster Than GPUI",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 535,
+    "comments": 212,
+    "url": "https://github.com/ppmpreetham/BUI"
+   }
+  },
+  {
+   "id": "hn:a6e685b171",
+   "label": "Claude Code sends your email address to websites",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 1486,
+    "comments": 463,
+    "url": "https://github.com/anthropics/claude-code/issues/107757"
+   }
+  },
+  {
+   "id": "hn:01f2619a64",
+   "label": "Living beyond the limits of survival: wood ants trapped in a gigantic pitfall (2016)",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 124,
+    "comments": 42,
+    "url": "https://jhr.pensoft.net/articles.php?id=9096"
+   }
+  },
+  {
+   "id": "hn:dd6562a43c",
+   "label": "Kugelblitz – Mac-Native Google Earth Alternative",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 210,
+    "comments": 54,
+    "url": "https://apps.metaebene.me/en/kugelblitz"
+   }
+  },
+  {
+   "id": "hn:5c08aae009",
+   "label": "MS Paint Remote Code Execution Vulnerability",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 679,
+    "comments": 253,
+    "url": "https://www.cve.org/CVERecord?id=CVE-2026-83844"
+   }
+  },
+  {
+   "id": "hn:bb3829d5fa",
+   "label": "Ask HN: What in the world is taking Ubuntu so long?",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 110,
+    "comments": 55,
+    "url": null
+   }
+  },
+  {
+   "id": "hn:4ea4ffe3bb",
+   "label": "From Linux to Wikipedia: How Volunteers Build the Internet",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 242,
+    "comments": 80,
+    "url": "https://thereader.mitpress.mit.edu/from-linux-to-wikipedia-how-volunteers-build-the-internet/"
+   }
+  },
+  {
+   "id": "hn:f214f66c4f",
+   "label": "We've built an open-source feature flag server for 11 years",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 104,
+    "comments": 66,
+    "url": "https://github.com/Unleash/unleash"
+   }
+  },
+  {
+   "id": "hn:5b144c2ea3",
+   "label": "University libraries are being swarmed by AI bots, putting public access at risk",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 87,
+    "comments": 44,
+    "url": "https://www.cbc.ca/news/world/university-libraries-ai-data-scraping-bots-9.7408287"
+   }
+  },
+  {
+   "id": "hn:c687d9c047",
+   "label": "AI for scientific discovery: How researchers use Claude",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 60,
+    "comments": 21,
+    "url": "https://www.anthropic.com/research/how-researchers-use-claude"
+   }
+  },
+  {
+   "id": "hn:913bebe88b",
+   "label": "Multiplayer tanks that demolish real buildings from OpenStreetMap",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 147,
+    "comments": 95,
+    "url": "https://worldstrike.fun/"
+   }
+  },
+  {
+   "id": "hn:5467170f36",
+   "label": "Pwn.college",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 268,
+    "comments": 43,
+    "url": "https://pwn.college/"
+   }
+  },
+  {
+   "id": "hn:f9e8ccc34f",
+   "label": "sshole",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 2885,
+    "comments": 704,
+    "url": "https://sshhole.com"
+   }
+  },
+  {
+   "id": "hn:ead401b59a",
+   "label": "The Hackintosh Reborn",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 384,
+    "comments": 222,
+    "url": "https://www.naut.ca/blog/2026/11/05/the-hackintosh-reborn-with-ai/"
+   }
+  },
+  {
+   "id": "hn:410a9fd203",
+   "label": "Chomsky and the Two Cultures of Statistical Learning (2011)",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 63,
+    "comments": 36,
+    "url": "https://www.norvig.com/chomsky.html"
+   }
+  },
+  {
+   "id": "hn:487d5ae3ad",
+   "label": "Window Sweaters",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 433,
+    "comments": 126,
+    "url": "https://github.com/saragordic/window-sweaters"
+   }
+  },
+  {
+   "id": "hn:a2f12037b7",
+   "label": "Inkling 2 Small",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 269,
+    "comments": 88,
+    "url": "https://thinkingmachines.ai/news/inkling-2-small/"
+   }
+  }
+ ],
+ "links": [
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08483",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08478",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08472",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08469",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08465",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08452",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08439",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08438",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08433",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08428",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08425",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08417",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08412",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08403",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08392",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08386",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08383",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08372",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08369",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08368",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08341",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08318",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08315",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08308",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08307",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08303",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08290",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08284",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08277",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08275",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08273",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08271",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08269",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08263",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08262",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08245",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08232",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08196",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08179",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08177",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08175",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08154",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08153",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08134",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08116",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08093",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08088",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08086",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08082",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08070",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08054",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08053",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08042",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07984",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07962",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07953",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07948",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07947",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07945",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07940",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07935",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07932",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07928",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07920",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07918",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07912",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07900",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07899",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07892",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07891",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07886",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07883",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07879",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07874",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07870",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07859",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07847",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07845",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07836",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07828",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07827",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07825",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07820",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07780",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07778",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07757",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07756",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07736",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07735",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07731",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07730",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07721",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07720",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07717",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07707",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07706",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07702",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07695",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07689",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07683",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08390",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08361",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08312",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07996",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07618",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07483",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07461",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07377",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07374",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07307",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07140",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07122",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07089",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07066",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07050",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.06989",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08431",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08219",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.08144",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07754",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07703",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07667",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07640",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07589",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07528",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07495",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07494",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07222",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07203",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.07201",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "arxiv:2611.06956",
+   "relation": "contains",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "repo:mcp-servers",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "release:mcp-servers:v2.3.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-servers:v2.3.0",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "release:mcp-servers:v2.2.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-servers:v2.2.0",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "release:mcp-servers:v2.1.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-servers:v2.1.0",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "repo:mcp-spec",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-spec",
+   "target": "release:mcp-spec:2026-07-28",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-spec:2026-07-28",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-spec",
+   "target": "release:mcp-spec:2026-07-28-RC",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-spec:2026-07-28-RC",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-spec",
+   "target": "release:mcp-spec:2025-11-25",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-spec:2025-11-25",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "repo:mcp-registry",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-registry",
+   "target": "release:mcp-registry:v1.8.8",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-registry:v1.8.8",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-registry",
+   "target": "release:mcp-registry:v1.8.7",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-registry:v1.8.7",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-registry",
+   "target": "release:mcp-registry:v1.8.6",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-registry:v1.8.6",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "repo:mcp-inspector",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-inspector",
+   "target": "release:mcp-inspector:2.14.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-inspector:2.14.0",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-inspector",
+   "target": "release:mcp-inspector:1.0.4",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-inspector:1.0.4",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-inspector",
+   "target": "release:mcp-inspector:2.13.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-inspector:2.13.0",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "repo:mcp-sdk-py",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-sdk-py",
+   "target": "release:mcp-sdk-py:v2.3.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-sdk-py:v2.3.0",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-sdk-py",
+   "target": "release:mcp-sdk-py:v2.2.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-sdk-py:v2.2.0",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-sdk-py",
+   "target": "release:mcp-sdk-py:v1.30.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-sdk-py:v1.30.0",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "repo:mcp-sdk-ts",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-sdk-ts",
+   "target": "release:mcp-sdk-ts:v2.4.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-sdk-ts:v2.4.0",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-sdk-ts",
+   "target": "release:mcp-sdk-ts:1.32.2",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-sdk-ts:1.32.2",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-sdk-ts",
+   "target": "release:mcp-sdk-ts:@modelcontextprotocol/server@2.4.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-sdk-ts:@modelcontextprotocol/server@2.4.0",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "repo:mcp-sdk-go",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-sdk-go",
+   "target": "release:mcp-sdk-go:v1.8.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-sdk-go:v1.8.0",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-sdk-go",
+   "target": "release:mcp-sdk-go:v1.8.0-pre.2",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-sdk-go:v1.8.0-pre.2",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-sdk-go",
+   "target": "release:mcp-sdk-go:v1.8.0-pre.1",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-sdk-go:v1.8.0-pre.1",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "repo:sdk-py",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:sdk-py",
+   "target": "release:sdk-py:v2.6.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:sdk-py:v2.6.0",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:sdk-py",
+   "target": "release:sdk-py:v2.5.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:sdk-py:v2.5.0",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:sdk-py",
+   "target": "release:sdk-py:v2.4.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:sdk-py:v2.4.0",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "repo:claude-code",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:claude-code",
+   "target": "release:claude-code:v2.1.319",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:claude-code:v2.1.319",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:claude-code",
+   "target": "release:claude-code:v2.1.318",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:claude-code:v2.1.318",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:claude-code",
+   "target": "release:claude-code:v2.1.317",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:claude-code:v2.1.317",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "repo:openai-python",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:openai-python",
+   "target": "release:openai-python:v3.47.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:openai-python:v3.47.0",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:openai-python",
+   "target": "release:openai-python:v3.46.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:openai-python:v3.46.0",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:openai-python",
+   "target": "release:openai-python:v3.45.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:openai-python:v3.45.0",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "repo:vercel-ai-sdk",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:vercel-ai-sdk",
+   "target": "release:vercel-ai-sdk:ai@7.0.163",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:vercel-ai-sdk:ai@7.0.163",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:vercel-ai-sdk",
+   "target": "release:vercel-ai-sdk:ai@6.0.323",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:vercel-ai-sdk:ai@6.0.323",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:vercel-ai-sdk",
+   "target": "release:vercel-ai-sdk:@ai-sdk/zai@3.0.47",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:vercel-ai-sdk:@ai-sdk/zai@3.0.47",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "repo:anthropics-claude-code",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:anthropics-claude-code",
+   "target": "commit:12d14ce49c",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:12d14ce49c",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:anthropics-claude-code",
+   "target": "commit:1be85623c2",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:1be85623c2",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "repo:modelcontextprotocol-modelcontextprotocol",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:modelcontextprotocol-modelcontextprotocol",
+   "target": "commit:3e31a3d81d",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:3e31a3d81d",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:modelcontextprotocol-modelcontextprotocol",
+   "target": "commit:f0fa30fa23",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:f0fa30fa23",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:modelcontextprotocol-modelcontextprotocol",
+   "target": "commit:a7540fa7a8",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:a7540fa7a8",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:modelcontextprotocol-modelcontextprotocol",
+   "target": "commit:0ac2eef34d",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:0ac2eef34d",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:modelcontextprotocol-modelcontextprotocol",
+   "target": "commit:246c57e016",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:246c57e016",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:modelcontextprotocol-modelcontextprotocol",
+   "target": "commit:d9ba912317",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:d9ba912317",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:modelcontextprotocol-modelcontextprotocol",
+   "target": "commit:f62065635d",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:f62065635d",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "repo:modelcontextprotocol-servers",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:modelcontextprotocol-servers",
+   "target": "commit:aa1aaa1be5",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:aa1aaa1be5",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:modelcontextprotocol-servers",
+   "target": "commit:1ad292f443",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:1ad292f443",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:modelcontextprotocol-servers",
+   "target": "commit:9f96c413a3",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:9f96c413a3",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:modelcontextprotocol-servers",
+   "target": "commit:63fad0ae0f",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:63fad0ae0f",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:modelcontextprotocol-servers",
+   "target": "commit:20ce5a9bb0",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:20ce5a9bb0",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:modelcontextprotocol-servers",
+   "target": "commit:670c3b84fd",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:670c3b84fd",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:modelcontextprotocol-servers",
+   "target": "commit:b50d8ade75",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:b50d8ade75",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:modelcontextprotocol-servers",
+   "target": "commit:9973a1c38d",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:9973a1c38d",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:modelcontextprotocol-servers",
+   "target": "commit:81607e685f",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:81607e685f",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:modelcontextprotocol-servers",
+   "target": "commit:0e11d13406",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:0e11d13406",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "repo:openai-openai-python",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:openai-openai-python",
+   "target": "commit:8b887d5f1d",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:8b887d5f1d",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:openai-openai-python",
+   "target": "commit:da600da5af",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:da600da5af",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:openai-openai-python",
+   "target": "commit:8290890898",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:8290890898",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:openai-openai-python",
+   "target": "commit:38440a0ebc",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:38440a0ebc",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:openai-openai-python",
+   "target": "commit:52650c3333",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:52650c3333",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:openai-openai-python",
+   "target": "commit:954f93a28f",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:954f93a28f",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "repo:vercel-ai",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:vercel-ai",
+   "target": "commit:de12a27c6c",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:de12a27c6c",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:vercel-ai",
+   "target": "commit:aa95912655",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:aa95912655",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:vercel-ai",
+   "target": "commit:d4c30fc06c",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:d4c30fc06c",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:vercel-ai",
+   "target": "commit:8a93c93f6b",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:8a93c93f6b",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:vercel-ai",
+   "target": "commit:c22e6a43d5",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:c22e6a43d5",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:vercel-ai",
+   "target": "commit:9c8156ed0d",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:9c8156ed0d",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:vercel-ai",
+   "target": "commit:b98701c053",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:b98701c053",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:vercel-ai",
+   "target": "commit:35310c6fdf",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:35310c6fdf",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:vercel-ai",
+   "target": "commit:6f1211526d",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:6f1211526d",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:vercel-ai",
+   "target": "commit:41bae020fe",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:41bae020fe",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-w766-5x43-whvw",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-w766-5x43-whvw",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-3jqg-r5pp-rmp2",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-3jqg-r5pp-rmp2",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-4gxg-m5jx-9j57",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-4gxg-m5jx-9j57",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-7rgq-gccq-qphx",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-7rgq-gccq-qphx",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-66qx-2266-pmj6",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-66qx-2266-pmj6",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-v38p-wf49-hx2j",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-v38p-wf49-hx2j",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-53mr-w429-c597",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-53mr-w429-c597",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-hhwq-wxfx-cj7g",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-hhwq-wxfx-cj7g",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-mvf5-2qqv-rg3c",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-mvf5-2qqv-rg3c",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-vjqx-cfc4-9h6v",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-vjqx-cfc4-9h6v",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-5cgr-j3jf-jw3v",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-5cgr-j3jf-jw3v",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-9xwc-hfwc-8w59",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-9xwc-hfwc-8w59",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-j22h-9j4x-23w5",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-j22h-9j4x-23w5",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-hc55-p739-j48w",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-hc55-p739-j48w",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-q66q-fx2p-7w4m",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-q66q-fx2p-7w4m",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-registry",
+   "target": "advisory:GHSA-2v5f-5r6w-p67r",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-2v5f-5r6w-p67r",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-registry",
+   "target": "advisory:GHSA-r48c-v28r-pf6v",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-r48c-v28r-pf6v",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-registry",
+   "target": "advisory:GHSA-rqv2-m695-f8j4",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-rqv2-m695-f8j4",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-registry",
+   "target": "advisory:GHSA-v8vw-gw5j-w7m6",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-v8vw-gw5j-w7m6",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-registry",
+   "target": "advisory:GHSA-95c3-6vvw-4mrq",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-95c3-6vvw-4mrq",
+   "target": "theme-2026-11-07",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "news:metr-anthropic-acceleration-audit",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:research",
+   "target": "news:metr-anthropic-acceleration-audit",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "news:anthropic-ipo-valuation-resistance",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:anthropic",
+   "target": "news:anthropic-ipo-valuation-resistance",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "news:perplexity-teammates-always-on-agent",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:industry",
+   "target": "news:perplexity-teammates-always-on-agent",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "news:thinking-machines-inkling-2-small",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:industry",
+   "target": "news:thinking-machines-inkling-2-small",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "news:anthropic-personal-finance-plaid",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:anthropic",
+   "target": "news:anthropic-personal-finance-plaid",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "news:openai-gpt-6-cyber",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:openai",
+   "target": "news:openai-gpt-6-cyber",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "news:google-gemini-omni-1-2-flash",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:industry",
+   "target": "news:google-gemini-omni-1-2-flash",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "news:baidu-ernie-5-5-flash-base-280b",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:industry",
+   "target": "news:baidu-ernie-5-5-flash-base-280b",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "news:frontier-radar-5-neolabs",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:research",
+   "target": "news:frontier-radar-5-neolabs",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "news:openai-customer-announcements-1105",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:openai",
+   "target": "news:openai-customer-announcements-1105",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "news:metr-anthropic-acceleration-audit",
+   "target": "theme:agent-safety",
+   "relation": "relates_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "news:anthropic-ipo-valuation-resistance",
+   "target": "theme:planning",
+   "relation": "relates_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "news:perplexity-teammates-always-on-agent",
+   "target": "theme:multi-agent",
+   "relation": "relates_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "news:thinking-machines-inkling-2-small",
+   "target": "theme:eval-bench",
+   "relation": "relates_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "news:openai-gpt-6-cyber",
+   "target": "theme:agent-safety",
+   "relation": "relates_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "news:google-gemini-omni-1-2-flash",
+   "target": "theme:agent-safety",
+   "relation": "relates_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "news:baidu-ernie-5-5-flash-base-280b",
+   "target": "theme:memory",
+   "relation": "relates_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "news:frontier-radar-5-neolabs",
+   "target": "theme:rl-train",
+   "relation": "relates_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "news:openai-customer-announcements-1105",
+   "target": "theme:tool-use",
+   "relation": "relates_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08483",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08478",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08472",
+   "target": "theme:eval-bench",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08469",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08465",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08452",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08439",
+   "target": "theme:multi-agent",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08438",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08433",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08428",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08425",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08417",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08412",
+   "target": "theme:planning",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08403",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08392",
+   "target": "theme:eval-bench",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08386",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08383",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08372",
+   "target": "theme:eval-bench",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08369",
+   "target": "theme:eval-bench",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08368",
+   "target": "theme:enterprise",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08341",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08318",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08315",
+   "target": "theme:eval-bench",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08308",
+   "target": "theme:eval-bench",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08307",
+   "target": "theme:eval-bench",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08303",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08290",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08284",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08277",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08275",
+   "target": "theme:eval-bench",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08273",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08271",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08269",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08263",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08262",
+   "target": "theme:general",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08245",
+   "target": "theme:rl-train",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08232",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08196",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08179",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08177",
+   "target": "theme:eval-bench",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08175",
+   "target": "theme:tool-use",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08154",
+   "target": "theme:eval-bench",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08153",
+   "target": "theme:eval-bench",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08134",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08116",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08093",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08088",
+   "target": "theme:multi-agent",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08086",
+   "target": "theme:general",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08082",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08070",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08054",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08053",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08042",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07984",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07962",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07953",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07948",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07947",
+   "target": "theme:tool-use",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07945",
+   "target": "theme:mcp",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07940",
+   "target": "theme:eval-bench",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07935",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07932",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07928",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07920",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07918",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07912",
+   "target": "theme:rl-train",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07900",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07899",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07892",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07891",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07886",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07883",
+   "target": "theme:eval-bench",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07879",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07874",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07870",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07859",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07847",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07845",
+   "target": "theme:eval-bench",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07836",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07828",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07827",
+   "target": "theme:multi-agent",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07825",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07820",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07780",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07778",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07757",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07756",
+   "target": "theme:eval-bench",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07736",
+   "target": "theme:general",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07735",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07731",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07730",
+   "target": "theme:multi-agent",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07721",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07720",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07717",
+   "target": "theme:eval-bench",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07707",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07706",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07702",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07695",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07689",
+   "target": "theme:mcp",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07683",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08390",
+   "target": "theme:multi-agent",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08361",
+   "target": "theme:multi-agent",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08312",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07996",
+   "target": "theme:multi-agent",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07618",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07483",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07461",
+   "target": "theme:mcp",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07377",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07374",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07307",
+   "target": "theme:tool-use",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07140",
+   "target": "theme:multi-agent",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07122",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07089",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07066",
+   "target": "theme:multi-agent",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07050",
+   "target": "theme:mcp",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.06989",
+   "target": "theme:mcp",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08431",
+   "target": "theme:tool-use",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08219",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.08144",
+   "target": "theme:multi-agent",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07754",
+   "target": "theme:multi-agent",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07703",
+   "target": "theme:multi-agent",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07667",
+   "target": "theme:multi-agent",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07640",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07589",
+   "target": "theme:memory",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07528",
+   "target": "theme:multi-agent",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07495",
+   "target": "theme:multi-agent",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07494",
+   "target": "theme:tool-use",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07222",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07203",
+   "target": "theme:tool-use",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.07201",
+   "target": "theme:mcp",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "arxiv:2611.06956",
+   "target": "theme:agent-safety",
+   "relation": "belongs_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "hn:062d8d187c",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:062d8d187c",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "hn:60fe3a102f",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:60fe3a102f",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "hn:482ddbd8d8",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:482ddbd8d8",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "hn:6f8e43f141",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:6f8e43f141",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "hn:d59d63b878",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:d59d63b878",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "hn:2688d57636",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:2688d57636",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "hn:a6e685b171",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:a6e685b171",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "hn:01f2619a64",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:01f2619a64",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "hn:dd6562a43c",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:dd6562a43c",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "hn:5c08aae009",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:5c08aae009",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "hn:bb3829d5fa",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:bb3829d5fa",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "hn:4ea4ffe3bb",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:4ea4ffe3bb",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "hn:f214f66c4f",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:f214f66c4f",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "hn:5b144c2ea3",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:5b144c2ea3",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "hn:c687d9c047",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:c687d9c047",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "hn:913bebe88b",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:913bebe88b",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "hn:5467170f36",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:5467170f36",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "hn:f9e8ccc34f",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:f9e8ccc34f",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "hn:ead401b59a",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:ead401b59a",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "hn:410a9fd203",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:410a9fd203",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "hn:487d5ae3ad",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:487d5ae3ad",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-07",
+   "target": "hn:a2f12037b7",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:a2f12037b7",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme:agent-safety",
+   "target": "repo:mcp-servers",
+   "relation": "governs",
+   "confidence": "INFERRED"
+  }
+ ]
+}

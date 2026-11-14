@@ -784,3 +784,183 @@ Avail=10G ≥ 6G → **放行**,写完剩 4G;要到**下一次**才被拦。真�
 > **幂等键必须选「标识唯一一轮的量」,不能选「顺带记下来的时间戳」。**
 > 手动补跑(补做昨天没做的事)是运维常态,任何依赖「执行时刻 == 排程时刻」的幂等判断都会被它击穿。
 > 这与 v34「机制性结论会过期」同源:**判据要问「什么情况下会不等」。**
+
+## ERR-20261106-001 Life NightOps 11-04/11-05 连败真因：模型 fallback 链耗尽 → stuck session recovery 主动 abort
+
+**现象**：cron `a6c108aa` 11-04、11-05 连续两场 `error | agent run aborted | OPENCLAW_DIRECT_ABORT`，报告未落盘（11-04/11-05 无 `nightly-life-*.md`）。
+
+**根因**（`/tmp/openclaw/openclaw-2026-11-05.log` 逐条还原）：
+1. `embedded_run_failover_decision` 记录 fallback 链逐步耗尽：
+   - attempt 1 `minimax/MiniMax-M2.7` → `reason=rate_limit`（429）
+   - attempt 2 `litellm/GLM-5.3-Flash` → `reason=billing`（402 余额不足）
+   - attempt 3 `litellm/deepseek-flash` → `reason=auth`（apiKey 占位符未解析）
+   - attempt 4 `litellm/LongCat-2.0` → `reason=auth`
+   - attempt 5 `ollama/qwen3:4b-instruct` → 唯一存活，但**上下文极小**，长报告任务必然溢出
+2. 全链耗尽后仍无有效产出 → 触发 `stuck session recovery`：
+   `age=465s action=abort_embedded_run aborted=true drained=true` → 直接 abort 内嵌 run
+3. abort 产生 `OPENCLAW_DIRECT_ABORT`，`model_fallback_chain_stopped reason=agent_run_direct_abort` → run 判 failed、飞书不投递。
+
+**关键阈值**（openclaw dist `diagnostic-CLWcF7XV.mjs`）：`DEFAULT_STUCK_SESSION_WARN_MS=120s`，`MIN_STALLED_EMBEDDED_RUN_ABORT_MS=300s`，abort 阈值 = `max(300s, 120s×3)=360s`。→ **任何模型链卡住超过 6 分钟就会被主动杀掉**，与内容本身无关。
+
+**已修复（11-06 生效）**：11-03 已把该作业改绑 `model=minimax/MiniMax-M2.7` + fallbacks `minimax/MiniMax-M3.1-Flash → minimax/MiniMax-M3 → ollama/qwen3.6:27b → litellm/deepseek-flash`，避开 litellm 402/auth 通道。11-06 01:50 场 → **ok / succeeded / delivered=true / 204.8s**，consecutiveErrors 归零。
+
+**预防**：
+- fallback 链里不能放 402/auth 必失败的 provider，否则真故障时链会被快速耗尽
+- minimax 系排在最前，ollama 27B 放末位（32k/131k 上下文比 4B 宽裕）
+- 报告型 cron 单次运行必须 **< 6 分钟**，否则触发 stuck-session abort
+
+## ERR-20261106-002 兄弟 NightOps 作业的 sessionKey 与 agentId 不同域 + 上下文模型过小
+
+**现象**：
+- `Scout NightOps` / `Orchestrator NightOps` / `Coder NightOps` / `NightOps-Scout` / `NightOps-Life` / `NightOps-Coder` 的 `sessionKey` 全是 `agent:main:main`，而其中 4 个的 `agentId` 是 scout/orchestrator/coder → 与 ERR-20261103-006 同源（失败告警无法投递）
+- `Coder NightOps` 连续 4 场 `Context overflow: prompt too large for the model`，实际跑的是 `ollama/qwen3:4b-instruct`（上下文仅 32k）→ **模型降级后上下文窗口不够用**
+
+**已修复**：
+| 作业 | sessionKey | 作业级 model / fallbacks |
+|---|---|---|
+| Scout NightOps | `agent:scout:main` | minimax/MiniMax-M2.7 → M3.1-Flash → M3 → ollama/qwen3.6:27b |
+| Orchestrator NightOps | `agent:orchestrator:main` | 同上 |
+| Coder NightOps | `agent:coder:main` | 同上 |
+| Life NightOps | `agent:life:main` | 同上 + `litellm/deepseek-flash` 兜底 |
+
+**预防**：agent-scoped 作业必须同时校验 `agentId` 与 `sessionKey` 同域、作业级 `model` 不落在小上下文模型上。
+
+## ERR-20261106-003 SQLite session reclamation commit checkpoint expired → target=main 作业成片失败
+
+**现象**：`Scout NightOps` / `NightOps-Life` / `NightOps-Coder` / `Orchestrator NightOps` 多场在 5–30ms 内秒失败，报 `SQLite session reclamation commit checkpoint expired / Sessions remain unavailable. Stop the Gateway, run "openclaw doctor --fix" ... and restart.`
+
+**根因**：Gateway 内 SQLite 会话库回收 Worker 与主线程的 SharedArrayBuffer 握手 5 秒超时。日志里持续刷 `sessions.describe → errorCode=UNAVAILABLE errorMessage=SQLite session reclamation commit checkpoint expired`，且 `Cron maintenance failed` 反复出现。影响面是 `target=main` / 依赖会话库的作业。
+
+**结论**：这是**运行期基础设施问题，无法在作业层绕过**——必须停 Gateway 跑 `openclaw doctor --fix` 再重启。属 owner 决策（需维护窗口），agent 侧只做记录与规避（11-06 已把四个 agent-scoped NightOps 作业的模型链改成 minimax 优先，减少对该链的依赖）。
+
+<!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
+
+## ERR-20261108-001 Life NightOps 场被中断 + NAS 上 du 挂死导致 exec session 无法收尾
+
+**现象**：
+1. 本场 cron（01:50 CST）在 02:02 被中断一次，工具层报 error-detected（web_search provider_error + 一个 exec 因 `cd /tmp/life1108` 竞态失败 + ddg.html FileNotFoundError）。**采集数据其实已落盘**（`/tmp/life1108/*.json`），中断只打断在分析阶段。
+2. `/mnt/h`（NAS 网络盘）上执行 `du -sh` / `du -sb --apparent-size` 会**长时间挂住不返回**，遗留 exec session `vivid-daisy`（pid 977236）在进程已不存在后仍被 runtime 标记为 running。
+
+**根因**：
+1. `mkdir -p X && cd X && ...` 与并行 exec 存在竞态：另一条命令先建了目录、当前 shell 的 cwd 快照不同步 → `cd` 失败导致后续脚本写错路径。并发写同一 /tmp 目录时更明显。
+2. NAS 上遍历大目录的 `du` 需读全部文件元数据，网络盘延迟叠加（WSL 目录 22 份 6–9 GB 的 tgz + 回收站 28 份）→ 数十秒到数分钟无响应。`process kill` 后 runtime 侧的 session 状态未及时刷新，出现「process 已死但仍报 running」。
+
+**处置**：
+- 恢复时先 `process list` 核对每个 session 的真实状态，**复用已落盘的采集产物，不重跑整轮采集**（本场据此在中断后直接用 `/tmp/life1108/` 的 JSON 完成全部分析）。
+- NAS 容量统计改用 `df -h` + `ls | wc -l` + 逐文件 `ls -la` 的近似值，**不用 `du -sh`**；需要精确体积时限定 `--max-depth` 与目录范围。
+- 对「process 已消失但 session 仍报 running」：以 `/proc/<pid>` 是否存在为准（`ls -d /proc/<pid>`），不存在即视为已结束，可直接 `process poll` 收尾，不需要反复 kill。
+
+**已追加到 `agents/life/HEARTBEAT.md` 落盘纪律补充（2026-11-08）**，下一场沿用。
+
+**复发证据（2026-11-08 02:1x）**：同一天内再次出现 —— runtime context 持续声明 `nova-gulf running pid=982801` / `wild-fjord running pid=982015`，但两条会话在 `process list` 中已标 `failed`，`/proc/982801`、`/proc/982015` 均不存在，`ps` 扫不到任何 `sleep` 进程。
+- **对照实验**：同分钟起一条 `sleep 25` 会话 → pid 983374 在 `/proc/983374` 存在、cmdline 可见、会话结束后消失且 registry 标 `completed`。→ 证明 `/proc` 是可靠判据，runtime context 的 "running pid=" 是**陈旧残留**。
+- **无副作用**：两条会话命令体均为纯 `sleep N`，进程消失即无副作用，无需回滚。
+- **处置**：对 registry 标 `failed` 但 runtime 仍报 running 的会话，**不信 context，查 `/proc`，确认后直接收工，不再重试 kill**。
+
+<!-- project: /home/zhiping/.openclaw/workspace/agents/life -->
+
+## ERR-20261108-003 LLM idle timeout (120s) 打断 NightOps 长跑 → turn aborted 但产物已落盘
+
+**现象**：11-08 场 Life NightOps（cron `a6c108aa`, 01:50）中途一次模型调用挂死：
+`[prompt-error] provider=minimax model=MiniMax-M2.7 api=anthropic-messages error="LLM idle timeout (120s): no response from model"` → 该 turn `stopReason=aborted`，并落 `openclaw:turn-aborted` 事件。
+
+**影响**：本轮后台进程 `vivid-daisy`（NAS tgz 扫描）被 SIGTERM 连带终止（`Termination requested for session vivid-daisy`），ddg.html 未生成 → `FileNotFoundError: 'ddg.html'`。但**三个产物均已正常落盘**（02:05）：
+`heartbeat/nightly-life-2026-11-08.md` 33,039 B / `memory/nightly-life-2026-11-08.md` 5,824 B / `agents/life/memory/2026-11-08.md` 3,691 B，写后校验 0 残留、0 乱码。
+
+**根因**：外部网络出口大面积不通（实测 `html.duckduckgo.com` → HTTP 000 连接失败；bing → 302 跳转；reuters → 000），模型在等检索结果时 120s 无 token 返回 → idle timeout 触发 → turn 被打断。**模型侧超时，不是写盘问题**。
+
+**次生**：`ddg.html` 的 `FileNotFoundError` 与 NAS 扫描的 `SIGTERM` 都是这次中断的**下游症状**，非独立故障。
+
+> 与 ERR-20261108-001（同一场，中断点与 NAS du 挂死）为**同一次事故的两个侧面**：001 记的是 exec/进程侧现象，本条记的是模型侧超时触发源。
+
+**预防**：
+- 检索类外呼必须自带超时与降级路径，失败即走本地直采，不得让模型挂在等结果上
+- 落盘要**分段写**：主报告先落，再补增量，避免整场因单次超时全丢
+- 判成败以产物文件为准（本场产物完好），run 状态需单独看 delivery
+
+## ERR-20261108-004 外网出口大面积不可达（B站/知乎/微博/X 以外全挂）
+
+**现象**：本场实测出口结果：`duckduckgo → 000`、`bing → 302 Object moved`、`reuters → 000`。知乎官方 API `api/v3/feed/topstory/hot-lists/total` 返回 **401**（此前多场为 200 直采）。
+
+**影响**：知乎热榜本场退回 tophub 镜像取 50 条；web_search 连续第 N 次不可用，全场靠 curl 直采 + tophub 镜像兜底。
+
+**判断**：非本地故障，是出口/上游侧问题。**未做任何 DNS/代理/证书改动**（越权风险高、且不可逆）。
+
+**预防**：报告里所有「实时直采」结论必须标注该场是否走了降级路径；知乎 401 视为常态降级而非事故。
+
+<!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
+
+**补充（02:20 复核）**：本场 `vivid-daisy`（pid 977236）在 `/proc` 中已不存在、`process log` 尾部已是 `Process stopped by request (signal SIGTERM)`，但 runtime 的 exec ledger 仍持续将其列为 running，`process kill / clear / remove / poll` 全部返回 `No active session found` / `No finished session found`。→ **这是 runtime 侧的陈旧 ledger 条目，不是真实存活的进程**；判定依据以 `/proc/<pid>` 是否存在为准。不要为此反复重试 kill（已试 6+ 次，纯属噪声）。若要根治需修 OpenClaw 侧的 exec session 回收逻辑，属上游问题。
+
+## ERR-20261108-005 NAS 备份链连续 3 天被空间预检拦截（回收站 123GB 从未被释放）
+
+**现象**（`~/.openclaw-backup.log` 逐条核对，非推测）：
+```
+[2026-11-06 03:00:01] ❌ NAS 空间不足: 可用 4G < 需要约 6G —— 跳过备份(避免产出损坏归档)
+[2026-11-07 03:00:01] ❌ NAS 空间不足: 可用 4G < 需要约 6G —— 跳过备份(避免产出损坏归档)
+```
+→ `last_backup` 停在 `openclaw-20261105-0300.tgz`，**备份链已断 3 天**（11-06、11-07，11-08 03:00 预计同判）。当前 `/mnt/h` 100% 满、剩 3.8G。
+
+**根因（脚本级，非偶发）**：`scripts/openclaw-backup.sh` 的空间预检逻辑正确（宁误拦不产出损坏归档），但**清理逻辑在 NAS 上是无效的**：
+- 脚本 L117-146 已注释此坑：NAS(SMB) 上 `rm` 是「移入 `#recycle` 回收站」而非真删 → 空间不释放。
+- 清理只扫 `$BACKUP_DIR`（`/mnt/h/AI/openclaw.zone/WSL`），**从不清理 `#recycle` 目录** → 回收站只增不减。
+- 脚本末尾仅打印「⚠️ 回收站仍有 N 份未释放空间，需人工确认后清空」—— **告警不等于动作，链就一直断着**。
+- 脚本自己也承认：`RETAIN_DAYS=30`，但回收站里全是 08-27～10-13 的归档（27 份），远超阈值仍占着空间。
+
+**占用实测**（用 `find -printf '%s'` 逐文件求和，**不用 `du`**——NAS 上 du 会挂死，见 ERR-20261108-001）：
+| 位置 | 份数 | 体积 |
+|---|---|---|
+| `/mnt/h/#recycle/AI/openclaw.zone/WSL` | 27 | **123.0 GB** |
+| `/mnt/h/AI/openclaw.zone/WSL` | 22 | 156.5 GB |
+| 合计 | 49 | ~280 GB |
+
+**结论**：只要清空回收站即可回收 **约 123 GB**，远超 6G 预检阈值 → 备份链立即恢复。
+
+**为何未执行**：清空 `#recycle` 是**不可逆删除**（NAS 上无二次回收），且需 owner 授权。
+
+**建议（待 owner 决策，本场未执行）**：
+1. 清空 `/mnt/h/#recycle/AI/openclaw.zone/WSL/` → 回收约 123 GB，备份链立即恢复
+2. 把 `RETAIN_DAYS` 从 30 调到 14，并让清理步骤**绕过回收站**（NAS 侧真删，或先移出 NAS 再删）
+3. 脚本在检测到「回收站 > 阈值」时，除了告警还应写入 heartbeat 异常清单，避免连续 3 天静默断链只留一行日志
+
+<!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
+
+## ERR-20261108-006 备份脚本的邮件通道早于预检失败，且失败原因被静默吞掉
+
+**现象**：`logs/backup-cron.log` 里有 14 条 `❌ 发送失败:`（12 条 `Connection unexpectedly closed`，2 条 `[Errno -3] Temporary failure in name resolution`），但**没有一条出现在 11-06/11-07 的「空间不足」拦截记录旁边** —— 因为预检失败路径**根本没发邮件**。
+
+**根因（脚本级）**：
+- 空间预检失败分支（脚本 L259-265）是 `log` + `write_heartbeat` + `exit 1`，**没有 `send_mail`**；而 tar 失败分支（L346-347）有 `send_mail`。→ **最该通知的「备份没做成」反而是静默的**，owner 只在 `~/.openclaw-backup.log` 和 `~/.openclaw-backup.heartbeat` 里能看见，日志里一片空白。
+- 邮件失败本身也不回写心跳：`send_email.py` 捕获异常后只 `print(f"❌ 发送失败: {e}")` 到 **stdout**（L113），而脚本 `send_mail()` 只把 **stderr** 重定向进 `$LOG_FILE`（L106 `2>>`）→ 失败详情落到 cron 的 stdout（`backup-cron.log`），`~/.openclaw-backup.log` 与心跳文件里**看不到任何失败痕迹**。
+- 症状与连通性其实不匹配：实测 `smtp.qq.com:587` 与 `smtp.gmail.com:587` **TCP 均可达**（`socket.create_connection` 成功）；脚本内 QQ 会切到 `SMTP_SSL:465`（send_email.py L87-91），`Connection unexpectedly closed` 更像是 **587 STARTTLS 路径与 465 SSL 路径混用/对端主动断连**，不是 DNS 或端口不通。
+- 另注：`~/.openclaw-backup.log` 里 11-06/11-07 出现「备份已在运行，退出」+ 后续预检拒绝，是 `flock` 与同一次 cron 内的日志交错，**不是并发备份**。
+
+**结论**：本条**不是新故障**，而是**告警链断路的证据**——正是它解释了为什么「备份断 3 天」这件事直到今天才被追查出来。
+
+**建议（待 owner 决策，本场未改脚本）**：
+1. 空间预检失败分支补 `send_mail`，与 tar 失败分支对齐
+2. `send_email.py` 的失败信息改写 **stderr**，或 `send_mail()` 改成 `>> "$LOG_FILE" 2>&1`，确保失败进 `~/.openclaw-backup.log`
+3. `send_mail` 返回值纳入判断，失败时把结果写进 `write_heartbeat` 的 `detail`
+4. 顺手验证 QQ 邮箱到底走 465 SSL 还是 587 STARTTLS，统一到一个路径
+
+<!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
+
+## ERR-20261108-007 NAS 回收站内容明细：27 份全是 08-27～10-13 的过期归档，缺口仅需 2 份
+
+**补充到 ERR-20261108-005**：实测 `~/.openclaw-backup.heartbeat` 的预检缺口比预估小得多。
+
+**实测数据**（`find -printf '%T@ %s %f'` 逐条）：
+- 回收站 27 份全部为 **2026-08-27 ～ 2026-10-13** 的归档，**最老 2 个半月**，全部远超 `RETAIN_DAYS=30` 阈值 —— 它们本该在清理时被清掉，却因为「NAS rm = 移入回收站」的语义一直赖着不走。
+- 体积分两档：08～09 月档 3.8–4.3 GB/份（16 份）、10 月档 5.8–6.1 GB/份（10 份）。
+- `openclaw-20261005-0300.tgz` 体积 **0 字节** —— 10-05 那次 tar 损坏归档的残骸，**零风险可直接删**。
+
+**关键结论：缺口只有约 2G。** 预检要 `NEED_GB=6`，NAS `AVAIL_GB=4` → 差 2G。**只需清掉回收站里任意 1~2 份归档（4.2–6.5 GB/份）即可让今晚 03:00 的备份通过**，不必全清 123 GB。
+
+**最小动作方案（待 owner 授权，本场未执行）**：
+- 方案 A（最小、立即生效）：删 `openclaw-20261005-0300.tgz`（0 字节残骸）+ 任意 1 份 08～09 月档（4.25 GB）→ 回收 ~4.25 GB，AVAIL 4G → 8G+，预检通过
+- 方案 B（治本、可回滚）：把回收站内容先 `mv` 到本地 `/dev/sdd`（**790G 可用**）→ 再由 NAS 侧删除 → 确认 NAS 空间释放后再删本地副本。中转可回滚，代价是需 I/O 搬运
+- 方案 C（一次性清空）：全清 27 份回收站 → 回收 123 GB，备份链彻底恢复
+
+**为何仍未执行**：NAS 上 `rm` 的语义是「移入回收站」→ 对回收站内的文件再次 `rm` 是否真删，**未经实测不能假设**；且不可逆删除需 owner 授权。
+
+<!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->

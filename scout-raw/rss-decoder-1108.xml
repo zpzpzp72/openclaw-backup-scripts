@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>The Decoder</title>
+	<atom:link href="https://the-decoder.com/feed/" rel="self" type="application/rss+xml" />
+	<link>https://the-decoder.com/</link>
+	<description>AI, Menschen, Wirtschaft</description>
+	<lastBuildDate>Sat, 07 Nov 2026 16:58:30 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=7.0.8</generator>
+	<item>
+		<title>AI auditors catch most agent misbehavior but flood reviewers with false alarms, new study finds</title>
+		<link>https://the-decoder.com/ai-auditors-catch-most-agent-misbehavior-but-flood-reviewers-with-false-alarms-new-study-finds/</link>
+					<comments>https://the-decoder.com/ai-auditors-catch-most-agent-misbehavior-but-flood-reviewers-with-false-alarms-new-study-finds/#respond</comments>
+		
+		<dc:creator><![CDATA[Manuel Uth]]></dc:creator>
+		<pubDate>Sat, 07 Nov 2026 16:56:38 +0000</pubDate>
+				<category><![CDATA[AI research]]></category>
+		<category><![CDATA[Artificial Intelligence]]></category>
+		<guid isPermaLink="false">https://the-decoder.com/?p=42569</guid>
+
+					<description><![CDATA[<p><img width="1376" height="768" src="https://the-decoder.com/wp-content/uploads/2026/11/ai_auditing_reliability.png" class="attachment-full size-full wp-post-image" alt="" style="height: auto; margin-bottom: 10px;" decoding="async" fetchpriority="high" /></p>
+<p>        AI models can often spot problematic behavior by other AI agents in logs, according to a study by Anthropic researcher Andy Hall. GPT-5 found about 98 percent of reward-hacking cases, but the more exhaustively the search is tuned, the more false alarms pile up. That's not yet enough for reliable safety checks.</p>
+<p>The article <a href="https://the-decoder.com/ai-auditors-catch-most-agent-misbehavior-but-flood-reviewers-with-false-alarms-new-study-finds/">AI auditors catch most agent misbehavior but flood reviewers with false alarms, new study finds</a> appeared first on <a href="https://the-decoder.com">The Decoder</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>https://the-decoder.com/ai-auditors-catch-most-agent-misbehavior-but-flood-reviewers-with-false-alarms-new-study-finds/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Thinking Machines&#039; Inkling 2 Small drops 316 F-bombs across benchmark runs</title>
+		<link>https://the-decoder.com/thinking-machines-inkling-2-small-drops-316-f-bombs-across-benchmark-runs/</link>
+					<comments>https://the-decoder.com/thinking-machines-inkling-2-small-drops-316-f-bombs-across-benchmark-runs/#respond</comments>
+		
+		<dc:creator><![CDATA[Matthias Bastian]]></dc:creator>
+		<pubDate>Sat, 07 Nov 2026 16:31:00 +0000</pubDate>
+				<category><![CDATA[AI in practice]]></category>
+		<category><![CDATA[Artificial Intelligence]]></category>
+		<category><![CDATA[Short News]]></category>
+		<category><![CDATA[AI research]]></category>
+		<guid isPermaLink="false">https://the-decoder.com/?p=42561</guid>
+
+					<description><![CDATA[<p><img width="1376" height="768" src="https://the-decoder.com/wp-content/uploads/2026/11/neural_network_black.png" class="attachment-full size-full wp-post-image" alt="" style="height: auto; margin-bottom: 10px;" decoding="async" /></p>
+<p>        Thinking Machines' AI model Inkling 2 Small swears during its internal reasoning, 316 times across 2,655 benchmark runs, according to an analysis by Vals AI. The profanity typically shows up late in long runs that fail anyway. But it doesn't work as a warning signal: 96 percent of failed runs contained no cursing at all.</p>
+<p>The article <a href="https://the-decoder.com/thinking-machines-inkling-2-small-drops-316-f-bombs-across-benchmark-runs/">Thinking Machines&#039; Inkling 2 Small drops 316 F-bombs across benchmark runs</a> appeared first on <a href="https://the-decoder.com">The Decoder</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>https://the-decoder.com/thinking-machines-inkling-2-small-drops-316-f-bombs-across-benchmark-runs/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>The gap between open and closed AI models in cyber capabilities keeps shrinking</title>
+		<link>https://the-decoder.com/the-gap-between-open-and-closed-ai-models-in-cyber-capabilities-keeps-shrinking/</link>
+					<comments>https://the-decoder.com/the-gap-between-open-and-closed-ai-models-in-cyber-capabilities-keeps-shrinking/#respond</comments>
+		
+		<dc:creator><![CDATA[Matthias Bastian]]></dc:creator>
+		<pubDate>Sat, 07 Nov 2026 15:35:50 +0000</pubDate>
+				<category><![CDATA[AI in practice]]></category>
+		<category><![CDATA[Artificial Intelligence]]></category>
+		<category><![CDATA[Short News]]></category>
+		<category><![CDATA[Cybersecurity]]></category>
+		<guid isPermaLink="false">https://the-decoder.com/?p=42554</guid>
+
+					<description><![CDATA[<p><img width="1376" height="768" src="https://the-decoder.com/wp-content/uploads/2026/10/cyber_kraken.png" class="attachment-full size-full wp-post-image" alt="" style="height: auto; margin-bottom: 10px;" decoding="async" /></p>
+<p>        In the Vals AI benchmark, OpenAI's GPT-6 Sol Daybreak hits 80.8 percent of attack objectives in simulated corporate networks. Worse, the open-weight model DeepSeek V4.1 Flash reaches 72.8 percent at a tenth of the cost. Because open models can no longer be restricted, analysts say the window for defenders is shrinking fast.</p>
+<p>The article <a href="https://the-decoder.com/the-gap-between-open-and-closed-ai-models-in-cyber-capabilities-keeps-shrinking/">The gap between open and closed AI models in cyber capabilities keeps shrinking</a> appeared first on <a href="https://the-decoder.com">The Decoder</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>https://the-decoder.com/the-gap-between-open-and-closed-ai-models-in-cyber-capabilities-keeps-shrinking/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>State propaganda in some Chinese AI models is only &quot;a thin layer&quot; that fine-tuning can strip away</title>
+		<link>https://the-decoder.com/state-propaganda-in-some-chinese-ai-models-is-only-a-thin-layer-that-fine-tuning-can-strip-away/</link>
+					<comments>https://the-decoder.com/state-propaganda-in-some-chinese-ai-models-is-only-a-thin-layer-that-fine-tuning-can-strip-away/#respond</comments>
+		
+		<dc:creator><![CDATA[Jonathan Kemper]]></dc:creator>
+		<pubDate>Sat, 07 Nov 2026 12:32:45 +0000</pubDate>
+				<category><![CDATA[AI research]]></category>
+		<category><![CDATA[Artificial Intelligence]]></category>
+		<category><![CDATA[AI and China]]></category>
+		<category><![CDATA[China]]></category>
+		<category><![CDATA[Open Claw]]></category>
+		<category><![CDATA[Open Source]]></category>
+		<guid isPermaLink="false">https://the-decoder.com/?p=42545</guid>
+
+					<description><![CDATA[<p><img width="1800" height="1203" src="https://the-decoder.com/wp-content/uploads/2026/11/arete-27b-01-hero.jpg" class="attachment-full size-full wp-post-image" alt="A snow-covered, pointed rocky ridge against a dark night sky, rendered in a bluish, grainy style, with the text “ARETE-27B” in white serif font above it." style="height: auto; margin-bottom: 10px;" decoding="async" /></p>
+<p>        Nous Research retrained Alibaba's Qwen3.8-27B to produce Arete-27B, largely stripping out its pro-Chinese bias. The propaganda rate dropped from 22 percent to less than one percent, while general capabilities remained intact in tests. The method relied on 53 million tokens of supervised fine-tuning. The political bias is "applied late, it is applied thin," the team writes.</p>
+<p>The article <a href="https://the-decoder.com/state-propaganda-in-some-chinese-ai-models-is-only-a-thin-layer-that-fine-tuning-can-strip-away/">State propaganda in some Chinese AI models is only &quot;a thin layer&quot; that fine-tuning can strip away</a> appeared first on <a href="https://the-decoder.com">The Decoder</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>https://the-decoder.com/state-propaganda-in-some-chinese-ai-models-is-only-a-thin-layer-that-fine-tuning-can-strip-away/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Nine AI agents tried autonomous research on open questions from US national labs and none passed the experts&#039; bar</title>
+		<link>https://the-decoder.com/nine-ai-agents-tried-autonomous-research-on-open-questions-from-us-national-labs-and-none-passed-the-experts-bar/</link>
+					<comments>https://the-decoder.com/nine-ai-agents-tried-autonomous-research-on-open-questions-from-us-national-labs-and-none-passed-the-experts-bar/#respond</comments>
+		
+		<dc:creator><![CDATA[Jonathan Kemper]]></dc:creator>
+		<pubDate>Sat, 07 Nov 2026 11:13:42 +0000</pubDate>
+				<category><![CDATA[AI research]]></category>
+		<category><![CDATA[Artificial Intelligence]]></category>
+		<category><![CDATA[Research]]></category>
+		<guid isPermaLink="false">https://the-decoder.com/?p=42532</guid>
+
+					<description><![CDATA[<p><img width="1920" height="1071" src="https://the-decoder.com/wp-content/uploads/2026/11/into-the-unknown-scientific-papers-benchmark-nano-banana-pro.jpg" class="attachment-full size-full wp-post-image" alt="A hand reaches out from the screen, holding an analysis sheet over the lab table; shadows outline the contours of the lab equipment." style="height: auto; margin-bottom: 10px;" decoding="async" /></p>
+<p>        The "Into the Unknown" benchmark tasks nine AI agents with tackling open research questions from U.S. national laboratories. None of the 135 submissions meets all requirements. A total of 114 papers fail the integrity check, with agents claiming to have conducted experiments that never took place. GPT-6 Astra performs best but still doesn't meet the experts' standards.</p>
+<p>The article <a href="https://the-decoder.com/nine-ai-agents-tried-autonomous-research-on-open-questions-from-us-national-labs-and-none-passed-the-experts-bar/">Nine AI agents tried autonomous research on open questions from US national labs and none passed the experts&#039; bar</a> appeared first on <a href="https://the-decoder.com">The Decoder</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>https://the-decoder.com/nine-ai-agents-tried-autonomous-research-on-open-questions-from-us-national-labs-and-none-passed-the-experts-bar/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Google&#039;s AI detects high blood pressure from a regular smartwatch without a cuff</title>
+		<link>https://the-decoder.com/googles-ai-detects-high-blood-pressure-from-a-regular-smartwatch-without-a-cuff/</link>
+					<comments>https://the-decoder.com/googles-ai-detects-high-blood-pressure-from-a-regular-smartwatch-without-a-cuff/#respond</comments>
+		
+		<dc:creator><![CDATA[Manuel Uth]]></dc:creator>
+		<pubDate>Sat, 07 Nov 2026 09:54:09 +0000</pubDate>
+				<category><![CDATA[AI research]]></category>
+		<category><![CDATA[Artificial Intelligence]]></category>
+		<category><![CDATA[Short News]]></category>
+		<category><![CDATA[AI and medicine]]></category>
+		<category><![CDATA[Google]]></category>
+		<guid isPermaLink="false">https://the-decoder.com/?p=42463</guid>
+
+					<description><![CDATA[<p><img width="1376" height="768" src="https://the-decoder.com/wp-content/uploads/2026/11/googel_hypertension.png" class="attachment-full size-full wp-post-image" alt="" style="height: auto; margin-bottom: 10px;" decoding="async" /></p>
+<p>        Google Research built an AI that spots signs of high blood pressure using only the pulse and motion sensors in a standard smartwatch, no cuff needed. In a 196-person study, its 65.8 percent detection rate beat the traditional in-office measurement. The method is already live in the Google Health app, though it doesn't replace a formal diagnosis.</p>
+<p>The article <a href="https://the-decoder.com/googles-ai-detects-high-blood-pressure-from-a-regular-smartwatch-without-a-cuff/">Google&#039;s AI detects high blood pressure from a regular smartwatch without a cuff</a> appeared first on <a href="https://the-decoder.com">The Decoder</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>https://the-decoder.com/googles-ai-detects-high-blood-pressure-from-a-regular-smartwatch-without-a-cuff/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>OpenAI lands an $11 billion funding round, but has to court dentists for more capital</title>
+		<link>https://the-decoder.com/openai-lands-an-11-billion-funding-round-but-has-to-court-dentists-for-more-capital/</link>
+					<comments>https://the-decoder.com/openai-lands-an-11-billion-funding-round-but-has-to-court-dentists-for-more-capital/#respond</comments>
+		
+		<dc:creator><![CDATA[Matthias Bastian]]></dc:creator>
+		<pubDate>Sat, 07 Nov 2026 09:45:23 +0000</pubDate>
+				<category><![CDATA[AI in practice]]></category>
+		<category><![CDATA[Artificial Intelligence]]></category>
+		<category><![CDATA[Short News]]></category>
+		<category><![CDATA[OpenAI]]></category>
+		<guid isPermaLink="false">https://the-decoder.com/?p=42525</guid>
+
+					<description><![CDATA[<p><img width="1376" height="768" src="https://the-decoder.com/wp-content/uploads/2026/10/openai_misalign-2.png" class="attachment-full size-full wp-post-image" alt="" style="height: auto; margin-bottom: 10px;" decoding="async" /></p>
+<p>        OpenAI has secured $11 billion in fresh capital, the first tranche of a round that values the company at $1.25 trillion. The full round could swell to $20 billion. That OpenAI is already turning to wealthy private investors hints at a saturating AI capital market and growing investor caution.</p>
+<p>The article <a href="https://the-decoder.com/openai-lands-an-11-billion-funding-round-but-has-to-court-dentists-for-more-capital/">OpenAI lands an $11 billion funding round, but has to court dentists for more capital</a> appeared first on <a href="https://the-decoder.com">The Decoder</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>https://the-decoder.com/openai-lands-an-11-billion-funding-round-but-has-to-court-dentists-for-more-capital/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Ripple-65B Preview delivers strong agentic coding results as a fully Apache 2.0 open US model</title>
+		<link>https://the-decoder.com/ripple-65b-preview-delivers-strong-agentic-coding-results-as-a-fully-apache-2-0-open-us-model/</link>
+					<comments>https://the-decoder.com/ripple-65b-preview-delivers-strong-agentic-coding-results-as-a-fully-apache-2-0-open-us-model/#respond</comments>
+		
+		<dc:creator><![CDATA[Matthias Bastian]]></dc:creator>
+		<pubDate>Fri, 06 Nov 2026 19:47:04 +0000</pubDate>
+				<category><![CDATA[AI in practice]]></category>
+		<category><![CDATA[Artificial Intelligence]]></category>
+		<category><![CDATA[Short News]]></category>
+		<category><![CDATA[Open Source]]></category>
+		<category><![CDATA[Open Weight]]></category>
+		<guid isPermaLink="false">https://the-decoder.com/?p=42519</guid>
+
+					<description><![CDATA[<p><img width="1536" height="1024" src="https://the-decoder.com/wp-content/uploads/2026/11/ricurisve_intelligence.png" class="attachment-full size-full wp-post-image" alt="" style="height: auto; margin-bottom: 10px;" decoding="async" /></p>
+<p>        Ricursive Intelligence is releasing Ripple-65B Preview, a 65-billion-parameter open-weight language model that the company says achieves the top score among open-source U.S. models on the TerminalBench 2.1 coding benchmark at a total R&#038;D cost of $32 million. On other benchmarks, however, Ripple falls behind the likewise newly released western open model Inkling 2 Small.</p>
+<p>The article <a href="https://the-decoder.com/ripple-65b-preview-delivers-strong-agentic-coding-results-as-a-fully-apache-2-0-open-us-model/">Ripple-65B Preview delivers strong agentic coding results as a fully Apache 2.0 open US model</a> appeared first on <a href="https://the-decoder.com">The Decoder</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>https://the-decoder.com/ripple-65b-preview-delivers-strong-agentic-coding-results-as-a-fully-apache-2-0-open-us-model/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		<enclosure url="http://the-decoder.com/wp-content/uploads/2026/11/ripple_trailer.mp4" length="65420603" type="video/mp4" />
+
+			</item>
+		<item>
+		<title>Perplexity now has its own always-on AI agent</title>
+		<link>https://the-decoder.com/perplexity-now-has-its-own-always-on-ai-agent/</link>
+					<comments>https://the-decoder.com/perplexity-now-has-its-own-always-on-ai-agent/#respond</comments>
+		
+		<dc:creator><![CDATA[Manuel Uth]]></dc:creator>
+		<pubDate>Fri, 06 Nov 2026 16:47:28 +0000</pubDate>
+				<category><![CDATA[AI in practice]]></category>
+		<category><![CDATA[Artificial Intelligence]]></category>
+		<category><![CDATA[Short News]]></category>
+		<category><![CDATA[Agentic AI]]></category>
+		<category><![CDATA[Perplexity]]></category>
+		<guid isPermaLink="false">https://the-decoder.com/?p=42486</guid>
+
+					<description><![CDATA[<p><img width="1376" height="768" src="https://the-decoder.com/wp-content/uploads/2026/11/perplexity.png" class="attachment-full size-full wp-post-image" alt="" style="height: auto; margin-bottom: 10px;" decoding="async" /></p>
+<p>        Perplexity is launching "Teammates," always-on agents that work through ongoing projects on their own virtual machines. The feature requires the Max plan at $200 per month, well above similar offerings from OpenAI or Anthropic. The market for always-on agents is getting crowded.</p>
+<p>The article <a href="https://the-decoder.com/perplexity-now-has-its-own-always-on-ai-agent/">Perplexity now has its own always-on AI agent</a> appeared first on <a href="https://the-decoder.com">The Decoder</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>https://the-decoder.com/perplexity-now-has-its-own-always-on-ai-agent/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Frontier Radar #5: If AGI is so close, why is everyone leaving? The neolabs and their bets</title>
+		<link>https://the-decoder.com/frontier-radar-5-if-agi-is-so-close-why-is-everyone-leaving-the-neolabs-and-their-bets/</link>
+					<comments>https://the-decoder.com/frontier-radar-5-if-agi-is-so-close-why-is-everyone-leaving-the-neolabs-and-their-bets/#respond</comments>
+		
+		<dc:creator><![CDATA[Maximilian Schreiner]]></dc:creator>
+		<pubDate>Fri, 06 Nov 2026 15:55:23 +0000</pubDate>
+				<category><![CDATA[Artificial Intelligence]]></category>
+		<category><![CDATA[Frontier Radar]]></category>
+		<guid isPermaLink="false">https://the-decoder.com/?p=42507</guid>
+
+					<description><![CDATA[<p><img width="1672" height="941" src="https://the-decoder.com/wp-content/uploads/2026/11/Frontier-Radar-5-Neolabs.png" class="attachment-full size-full wp-post-image" alt="" style="height: auto; margin-bottom: 10px;" decoding="async" /></p>
+<p>        OpenAI is talking about the AGI era, and Nvidia CEO Jensen Huang says AGI has arrived. At the same time, co-creators of today's models are leaving OpenAI, Google DeepMind, and Meta to start their own labs, raising billions with no product to show. Why? They're betting that the current recipe alone won't be enough. We've sorted 45 neolabs by their research bets, mapped the limitations of today's AI they're trying to overcome, looked at what's already visible from their work, and explain why Nvidia always wins.</p>
+<p>The article <a href="https://the-decoder.com/frontier-radar-5-if-agi-is-so-close-why-is-everyone-leaving-the-neolabs-and-their-bets/">Frontier Radar #5: If AGI is so close, why is everyone leaving? The neolabs and their bets</a> appeared first on <a href="https://the-decoder.com">The Decoder</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>https://the-decoder.com/frontier-radar-5-if-agi-is-so-close-why-is-everyone-leaving-the-neolabs-and-their-bets/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

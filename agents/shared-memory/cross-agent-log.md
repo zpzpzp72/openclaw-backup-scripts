@@ -17,3 +17,20 @@
 - [2026-10-27] [Main] 03:00复盘落盘main-nightops-review-2026-10-27.md：确认用户01:13重启Gateway，pid 497240 RSS 5.95GB/2h回升至5.95GB（+0.4GB/2h），会话保留策略仍待ZP授权；03:00备份完成9.5GB落盘正常（心跳status时序滞后）；磁盘98%水位持续，P0关注；Scout 10-27缺位，Orch/Life/Coder三源齐备
 - [2026-10-28] [Orchestrator] NightOps 10-29 计划已生成 output/Tomorrow_Action_Plan_2026-10-29.md；P0 = Gateway RSS 9.31GB 重启+保留策略、M365 push 凭证(10-29 截止)；Scout 10-28 齐备，Life 顺延 10-26
 - [2026-10-30] [Orch] NightOps 计划 2026-10-31 已生成(output/Tomorrow_Action_Plan.md)；P0=Gateway重启(RSS 12.25GB第6次劣化)/回收站140G清理待授权/OpenClaw 10.9升级拍板；亮点=.backups含凭据已清除
+- [2026-11-06] [Orchestrator] NightOps 汇总完成：计划落盘 output/Tomorrow_Action_Plan_2026-11-07.md；P0=SQLite session reclamation 5s 握手超时致 target=main 成片秒失败(需停机 doctor --fix+重启) / NAS 3.8G 满且回收站 123G 未释放 / M365 selectors.py 遮蔽 stdlib 致服务不可启动
+- [2026-11-06] [Orchestrator] 闭环项：Gateway RSS 2.78GB 且负增长(无需重启)、根分区 17%、代理 25017 与 ollama 11434 可达、M365 bare-except=0
+- [2026-11-06] [Orchestrator] 结论反转提醒：Coder 上轮"push 可行"系 `ls-remote | head` 取到 head 退出码的假阳性，TLS 阻塞 REOPENED
+- [2026-11-07] [Orchestrator] 原生备份自动化已落地（systemd timer 每日 03:40，首跑 verify OK，保留 7 份）→ 与 NAS 那套并存互为备份
+- [2026-11-07] [Orchestrator] P0-2 根因修正：非租约泄漏，是 main 库 261MB 回收事务 >5s 提交授权超时（重启无效）；cron total=1 矛盾定位为 jobs.json 缺失（DB 内实有 30 条）
+- [2026-11-07] [Orchestrator] NightOps 双轨确认：per-agent 4 路全 ok；legacy NightOps-*（agent=main）4 路已 disable（重复且每次必失败）
+- [2026-11-07] [Orchestrator] 822 条 reclaim 错误 100% 归因 main（仅 main 的 DB 超时），其余 7 个 agent 正常
+- [2026-11-07] [Orchestrator] PROXY DOWN 降级：直连出口 github/npm 均 200，代理非必需，此前标记的 P0 未阻塞任何工作
+- [2026-11-07] [Orchestrator] 升级路径实测：sessions_send/sessions_list 带 agentId=main 均被同一 reclaim 错误阻断 → 系统内推送绕不过 P0，须 Owner 在 Gateway 外执行修复
+- [2026-11-07] [Orchestrator] NightOps 11-08 计划已生成：P0 三项待 Main 拍板（NAS 回收站清理 / Gateway 重启解 SQLite 租约自锁 / M365 push 授权）
+- [2026-11-07] [Orchestrator] 原生备份已建立并验证（6.71GB @ ~/openclaw-backups，backup verify OK）→ 备份链不再依赖 NAS；后续建议 openclaw backup enable 接自动任务
+- [2026-11-08] [Orchestrator] NightOps 11-09 计划已生成；P0=NAS 备份断档第3天(最小只需清 4.25GB 即可恢复，回收站 rm 不释放空间为根因) / main 库 272.9MB 写入冻结致 target=main job 成片失败(heartbeat-main 71x) / M365 3 commit 待 push 授权
+- [2026-11-08] [Orchestrator] 备份告警链断路根因：预检失败分支不发邮件 + 失败详情 print 走 stdout 未入日志 → 断链 3 天无人察觉；建议失败即告警
+- [2026-11-08] [Orchestrator] NAS 回收站实测：删 #recycle 内部文件才真释放空间（字节级验证）；':' 前缀 bypass 不成立；已交付 nas-recycle-cleanup.sh（默认预演）待 Owner 授权
+- [2026-11-08] [Orchestrator] 备份邮件失败根因=QQ SMTP 授权码失效（SMTP 回 535 Login fail，非网络问题）；需重生成授权码
+- [2026-11-08] [Orchestrator] main SQLite 故障持续：575 条 reclaim 错误，heartbeat:main errs 49→72；per-agent NightOps 4 路仍全 ok
+- [2026-11-08] [Orchestrator] 新证据：main 在 agent_database_leases 中持有 0 条租约（其余 8 条全属活进程 897835、零陈旧）→ 会话访问器未走到取租约即被回收提交拒绝 ⇒ 重启无效，必须 compact 瘦身

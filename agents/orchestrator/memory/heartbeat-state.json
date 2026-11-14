@@ -6,7 +6,21 @@
     "m365_commit": 1792794000,
     "nightops_rootcause": 1792810000,
     "fallback_hardened": 1792810200,
-    "minimax_quota": 1792810500
+    "minimax_quota": 1792810500,
+    "sqlite_rootcause_2026_11_07": 1793992694,
+    "cron_registry_diagnosis": 1793992694,
+    "native_backup_bypass": 1793992694,
+    "native_backup_automation": 1793994610,
+    "cron_jobs": 1794079183,
+    "agent_activity": 1794079183,
+    "proxy": 1793997183,
+    "repos": 1794079183,
+    "nightops": 1793997183,
+    "agent_to_agent": 1793997183,
+    "session_db_health": 1794079183,
+    "backup": 1794079183,
+    "nas_recycle": 1794079183,
+    "mail_smtp": 1794079183
   },
   "currentStatus": {
     "proxy_25017": "FIXED (hardcoded 127.0.0.1 -> 172.18.160.1)",
@@ -21,6 +35,103 @@
     "tomorrow_action_plan": "generated 2026-10-24",
     "nightops_0450": "ERROR (MiniMax Token Plan 429 burst exhaustion, 382 hits 02-05h)",
     "cloud_fallbacks": "ALL DOWN: litellm(no_db_connection) siliconflow(key invalid) longcat(no key) openrouter(402)",
-    "minimax_quota": "burst type - 429 in 02:00-05:00 window, 200 OK at 06:05"
-  }
+    "minimax_quota": "burst type - 429 in 02:00-05:00 window, 200 OK at 06:05",
+    "sqlite_rootcause": "CORRECTED 11-07 03:20: NOT stale lease. COMMIT_DECISION_TIMEOUT_MS=5e3 vs main DB 272MB reclamation transaction. Zero stale leases, flock free, integrity_check=ok. Gateway restart WILL NOT fix.",
+    "sqlite_evidence": "agent_database_leases: 10 rows all owner_pid=897835 (alive), owner_start_time matches /proc. doctor --session-sqlite inspect --all-agents => 8/8 zero issues. main.sqlite integrity ok.",
+    "sqlite_fix": "stop gateway -> doctor --session-sqlite compact --session-sqlite-agent main -> bump --max-old-space-size 4096->8192 -> doctor --fix -> restart",
+    "cron_registry": "jobs.json MISSING; state.sqlite.cron_jobs has 30 jobs. Two different sources -> 'total=1' vs '31 jobs' contradiction explained.",
+    "gateway_heap": "systemd --max-old-space-size=4096, doctor recommends 8192. VmRSS 3.29GB / VmHWM 3.59GB, uptime 1d19h52m (PID 897835 since 11-05 07:18)",
+    "commands_owner": "commands.ownerAllowFrom NOT configured -> nobody can /update, restart gateway, change config, approve commands",
+    "native_backup": "AUTOMATED 11-07: openclaw-native-backup.service+timer (03:40 daily, Persistent), first run Result=success, verify OK 276008 entries, keep 7, next 11-08 03:40. Coexists with NAS openclaw-backup.timer (03:00). Output MUST be outside ~/.openclaw. Long tasks must run under systemd - nohup gets killed when exec session ends.",
+    "nas_backup": "2 nights blocked (11-06, 11-07), last good 20261105, hours_since_last_backup=47. SMB rm only moves to #recycle.",
+    "provider_status": "MiniMax 200 OK all window, no 429. Cloud fallbacks still down (openrouter 402 / siliconflow invalid key / litellm model-dependent / longcat no key)."
+  },
+  "nightops": {
+    "checkedAt": "2026-11-07T04:05:00+08:00",
+    "status": "🟢 per-agent 全线 OK（Scout 01:30 / Life 01:50 / Coder 02:20 / Orchestrator 02:40 均 ok）",
+    "legacy_jobs_disabled": [
+      "NightOps-Scout",
+      "NightOps-Life",
+      "NightOps-Coder",
+      "NightOps-Orchestrator"
+    ],
+    "legacy_disable_reason": "agent=main 的旧版重复 job，每次必因 main 会话不可用而失败；per-agent 版已覆盖同样职责且成功",
+    "action_taken": "openclaw cron disable ×4（可用 enable 恢复）",
+    "remaining_failing_main_jobs": [
+      "heartbeat:main (49x)",
+      "【NightOps 记忆体系讨论】(2x)",
+      "Memory Dreaming Promotion (2x)",
+      "公网IP"
+    ],
+    "root_cause": "仅 main agent 的 session DB（261MB）触发 COMMIT_DECISION_TIMEOUT_MS=5e3 超时；其余 7 个 agent DB 正常"
+  },
+  "proxy": {
+    "checkedAt": "2026-11-07T04:05:00+08:00",
+    "status": "🟢 proxyon 目标 172.18.160.1:25017 TCP 可连，但 HTTP 代理协议失败（curl 000）",
+    "critical_finding": "直连出口正常（github 200 / npm 200）→ 代理并非必需，PROXY DOWN 未阻塞任何工作",
+    "prior_status": "🔴 此前标记为 P0 阻塞项（12d+）→ 现降级"
+  },
+  "agent_activity_24h": {
+    "coder": "有产出(02:23)",
+    "scout": "有产出(01:47)",
+    "life": "有产出(02:26)",
+    "orchestrator": "有产出(02:40)",
+    "finance": 0,
+    "health": 0,
+    "work": 0
+  },
+  "repos": {
+    "m365_head": "0c593a1",
+    "m365_ahead": 3,
+    "m365_behind": 0,
+    "tree_clean": true,
+    "openclaw_source_head": "0790d9f593a",
+    "openclaw_source_frozen_days": 112,
+    "note": "scratch 里的 .gitignore 缺失 / ahead2 均已过时"
+  },
+  "reclaim_error_count_today": 575,
+  "reclaim_errors_attributed": {
+    "main": 177
+  },
+  "nas_recycle": {
+    "checkedAt": "2026-11-08T03:13:00+08:00",
+    "status": "🔴 回收站 27 份 / 123GB；NAS 可用仅 4G → NAS 备份连跳 3 天",
+    "verified_facts": [
+      "✅ 删 #recycle 内部文件 → 空间立即真释放（字节级 delta 53,223,424）",
+      "❌ 删 #recycle 外部文件 → 只移入 #recycle，不释放",
+      "❌ ':' 前缀不能绕过回收站（实测同名文件仍落在 #recycle）"
+    ],
+    "tool": "scripts/nas-recycle-cleanup.sh（默认预演，需 --execute；已验证预演不删任何文件）",
+    "awaiting": "Owner 授权执行"
+  },
+  "mail_smtp": {
+    "checkedAt": "2026-11-08T03:11:00+08:00",
+    "status": "🔴 QQ SMTP 授权码失效（服务器回 535 Login fail）",
+    "not_network": "DNS/TCP/TLS 全部正常；smtplib 把 535 包装成 Connection unexpectedly closed，误导性错误信息",
+    "fix": "重新生成 QQ 邮箱 SMTP 授权码 → 更新 ~/.secrets/qq_smtp_password"
+  },
+  "main_session_status": {
+    "heartbeat:main consecutiveErrors": 72,
+    "Memory Dreaming Promotion": 3,
+    "per_agent_nightops": "Scout/Life/Coder/Orchestrator 全 ok（legacy 4 路已 disable 有效）"
+  },
+  "session_db_health": {
+    "checkedAt": "2026-11-08T03:20:00+08:00",
+    "status": "🔴 main 唯一故障；main 持有 0 条租约（其余 8 条全属活进程 897835、零陈旧）",
+    "key_evidence": [
+      "main DB mtime 冻结在 11-05 07:18，零写入（-wal/-shm 除外）",
+      "main 无 lease → 会话访问器未走到取租约那步即被回收提交拒绝 → 重启无效，必须 compact",
+      "272.9MB(=260MiB) 是十进制/二进制口径差，不是增长（NightOps 报告口径需校正）",
+      "reclaim 575 条 / agent main unavailable 235 次 / heartbeat:main errs 72"
+    ]
+  },
+  "stale_scratch_corrections": [
+    "Scout/Life 非 ~24d 无产出（11-07/11-08 均正常）",
+    "NightOps 多路 error → per-agent 4 路全 ok",
+    "PROXY DOWN 非阻塞（直连 200）",
+    "openclaw-source 冻结 153d → 112d",
+    ".gitignore 缺失 → 已存在",
+    "Agent-to-Agent 未禁用 → 实为 main 库故障阻断",
+    "web_search provider_error 连续18次 → 今日 0"
+  ]
 }
