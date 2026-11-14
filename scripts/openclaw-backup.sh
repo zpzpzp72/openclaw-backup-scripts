@@ -284,6 +284,13 @@ if [ "$NEED_BACKUP" = true ]; then
         RECYCLE_GB=$(find "$recycle_dir" -maxdepth 1 -name 'openclaw-*.tgz' -printf '%s\n' 2>/dev/null | awk '{s+=$1} END {printf "%d", int(s/1073741824)}')
     fi
 
+    # ★ 修复 (2026-11-15): 死锁 —— cleanup_old 原先在 tar 成功【之后】才执行(第366行),
+    #   而空间预检失败会在此【之前】exit 1 → 清理永不执行 → 过期备份不删 → 空间永远不够。
+    #   实证: 11-06/11-08/11-14 失败日的日志里只有「空间不足」,没有「已移出」行。
+    #   现在把清理提前到预检之前,打破循环(清理本身也是「移入回收站」,不释放空间,
+    #   但至少不会因为「没备份成功」而连该清的都不清)。
+    cleanup_old
+
     NEED_GB=$(timeout 120 du -sm --exclude="$HOME/.openclaw/memory/lancedb-pro" "$HOME/.openclaw" 2>/dev/null | awk '{print int($1/1024*0.4)+1}' || true)
     [ -n "$NEED_GB" ] || NEED_GB=8
     AVAIL_GB=$(df -BG "$BACKUP_DIR" 2>/dev/null | tail -1 | awk '{gsub("G","",$4); print $4}')
@@ -363,7 +370,7 @@ NAS 目录: $BACKUP_DIR
         ############ 清理旧备份（新增）############
         # ★ 修复 (2026-10-27): 移到邮件之前 —— 邮件失败曾中断整个脚本(set -e),
         #   导致旧备份自 2026-07-31 起再未清理,堆积 40 份、NAS 98%
-        cleanup_old
+        # (cleanup_old 已在本轮的空间预检之前执行,此处不再重复)
         # cleanup_old 探测到回收站存量 -> 重写心跳,让 Windows 侧健康检查能看到
         if [ -n "${RECYCLE_BACKUPS:-}" ] && [ "${RECYCLE_BACKUPS:-0}" -gt 0 ]; then
             write_heartbeat "ok" "备份成功: $ARCHIVE ($FILE_SIZE); NAS回收站仍有 ${RECYCLE_BACKUPS} 份旧备份(${RECYCLE_GB}GB)未释放空间"
