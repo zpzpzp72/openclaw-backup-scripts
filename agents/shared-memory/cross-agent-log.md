@@ -34,3 +34,8 @@
 - [2026-11-08] [Orchestrator] 备份邮件失败根因=QQ SMTP 授权码失效（SMTP 回 535 Login fail，非网络问题）；需重生成授权码
 - [2026-11-08] [Orchestrator] main SQLite 故障持续：575 条 reclaim 错误，heartbeat:main errs 49→72；per-agent NightOps 4 路仍全 ok
 - [2026-11-08] [Orchestrator] 新证据：main 在 agent_database_leases 中持有 0 条租约（其余 8 条全属活进程 897835、零陈旧）→ 会话访问器未走到取租约即被回收提交拒绝 ⇒ 重启无效，必须 compact 瘦身
+- [2026-11-14] [Orchestrator] Gateway 20:06 重启解除 P0：main 库写入恢复（mtime 11-05→11-14 20:13），SQLite reclaim 错误 180次/h→~1-2次/min，租约稳定 14 行不增长 → 修复手段=重启优先于 doctor --fix
+- [2026-11-14] [Orchestrator] 遗留：health 库仍冻结在 11-05 07:18，reclaim checkpoint expired 每 30s 触发 cron maintenance 失败 → 需 doctor --fix + 重启
+- [2026-11-14] [Orchestrator] NAS 100% 满（Avail 4.7MB），回收站 28 份/123GB，nas-recycle-cleanup.sh 预演可释放 185GB；NAS 归档已 9 天无新增
+- [2026-11-14] [Orchestrator] 本地原生备份 11-08→11-13 连续 6 轮无成功归档；备份邮件链仍断（QQ SMTP 授权码 11-08 起失效）→ 失败静默 6 天
+- [2026-11-14] [Orchestrator] Gateway RSS 4.15GB 已顶满 4096MB heap，journal 出现 event_loop_delay 警告 → 建议提到 8192 后择机重启

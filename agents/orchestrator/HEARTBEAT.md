@@ -31,7 +31,43 @@
 
 ---
 
-## 当前基线（2026-11-08 03:15）
+## 当前基线（2026-11-14 20:20）
+
+| 指标 | 状态 |
+|---|---|
+| **Gateway** | 🟢 11-14 20:06 重启（PID 795, NRestarts=0）→ **P0 已解除** |
+| Session DB | 🟢 main 库 mtime 恢复写入（11-05→11-14 20:13）；🔴 **仅 health 库仍冻结在 11-05 07:18** |
+| SQLite reclaim 错误 | 🟢 180 次/h → **~1-2 次/min**；租约稳定 14 行，40s 两次采样未增长 |
+| 修复手段结论 | ✅ **重启优先于 doctor --fix**（命中 stale owner_pid + 库恢复可写）|
+| NAS | 🔴 **100% 满，Avail 4.7MB**；#recycle 28 份/123GB，主目录 25 份/156.5GB；预演可释放 **185GB**；归档 9 天无新增 |
+| 本地原生备份 | 🔴 11-08→11-13 连续 6 轮无成功归档；仅存 11-07 两份 6.3G；11-14 20:06 一轮在跑 |
+| 备份邮件 | 🔴 QQ SMTP 授权码 11-08 起失效 → 失败静默 6 天 |
+| heartbeat:main | 🔴 consecutiveErrors **72**（未清零）；heartbeat:health error 1x；其余 skipped 属正常 |
+| Gateway RSS | 🔴 **4.15GB** 已顶满 4096MB heap；journal 有 event_loop_delay 警告(P99 1.7s) |
+| Agent 活跃 | 🟢 scout 有 11-14 产出；life/coder/orchestrator 场次 20:11 首跑未落盘；finance·health·work 休眠 |
+| M365 repo | 🔴 HEAD `0c593a1`，ahead 3 / behind 0，仍未 push |
+| openclaw-source | ⚪ 目录已不存在 → 旧基线「冻结 111 天」作废 |
+| startup migrations | 🟡 提示需 `openclaw doctor --fix` |
+| 投递路由 | 🔴 `commands.ownerAllowFrom` 未设 → heartbeat 全在等投递路由 |
+
+### 2026-11-14 夜间实测结论
+- ✅ **重启 = 最有效的 SQLite 修复手段**：一次重启同时解决 stale 租约与库写冻结，无需 doctor --fix
+- ❌ health 库不随重启恢复（无作业触发 → 无租约 → 仍未被清理），需单独 `doctor --fix --session-sqlite-agent health`
+- ⚠️ `openclaw-backup.sh` 回收站探测必须**早于**空间预检，否则最该告警的场景报 `recycle_backups=0`（11-14 已修）
+- ⚠️ NAS `rm` 仍是移入回收站；只有删 `#recycle` **内部**文件才真释放
+
+### 仍需 Main / Owner 决策
+1. 🔴 授权 NAS 回收站清理：`bash scripts/nas-recycle-cleanup.sh --execute`（释放 185GB）
+2. 🔴 health 库 doctor --fix + 重启；顺手处理 startup migrations
+3. 🔴 重生成 QQ SMTP 授权码 → 更新 `~/.secrets/qq_smtp_password`
+4. 🟡 确认本地原生备份 11-14 那轮收尾 `verify OK`
+5. 🟡 `git push origin HEAD`（M365）
+6. 🟡 Gateway heap 4096→8192 后择机重启
+7. 🟡 设置 `commands.ownerAllowFrom`
+
+---
+
+## 历史基线（2026-11-08 03:15）
 
 | 指标 | 状态 |
 |---|---|
