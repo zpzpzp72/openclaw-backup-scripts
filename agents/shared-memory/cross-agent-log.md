@@ -39,3 +39,6 @@
 - [2026-11-14] [Orchestrator] NAS 100% 满（Avail 4.7MB），回收站 28 份/123GB，nas-recycle-cleanup.sh 预演可释放 185GB；NAS 归档已 9 天无新增
 - [2026-11-14] [Orchestrator] 本地原生备份 11-08→11-13 连续 6 轮无成功归档；备份邮件链仍断（QQ SMTP 授权码 11-08 起失效）→ 失败静默 6 天
 - [2026-11-14] [Orchestrator] Gateway RSS 4.15GB 已顶满 4096MB heap，journal 出现 event_loop_delay 警告 → 建议提到 8192 后择机重启
+- [2026-11-15] [Orchestrator] health 库修复需停机：doctor --session-sqlite recover 被拒（holder 795 alive）→ 11-14「重启即解」结论不适用，必须 stop → doctor --fix → start；建议同窗把 heap 4096→8192
+- [2026-11-15] [Orchestrator] 昨晚 P0 批量解除：NAS 186G 可用（Scout 清 35 份回收站释放 185GB）、main 库解冻、reclaim 180→60 次/h、heartbeat:main errs 72→0；新瓶颈收敛为 health 库 + NAS 03:00 验证 + SMTP 断链 + M365 5 commit 未 push
+- [2026-11-15] [Orchestrator] cron_jobs 真源已迁移至 state/openclaw.sqlite（cron/jobs.json 已不存在），读 consecutiveErrors 须查该表 state_json
