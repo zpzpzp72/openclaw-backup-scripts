@@ -1,0 +1,59 @@
+[
+ [
+  "scout-2026-11-15-gemini-4-carbon-matharena-cost-15x",
+  "news",
+  "Gemini 4 Carbon takes the MathArena crown but costs 15 times more than GPT-6.1 Sol",
+  "",
+  "Google Gemini 4 Carbon became the first non-OpenAI model in a while to top the MathArena math benchmark, knocking GPT-6.1 Sol off the top spot, with Claude Fable 5.2 in second place. The published table gives Gemini 4 Carbon (high) 85.4 percent plus or minus 3.0 percent expected performance at 15.70 dollars plus or minus 1.33 per task, Claude-Fable-5.2 (max) 82.8 percent plus or minus 5.3 percent at 40.20 dollars plus or minus 2.59, and GPT-6.1 Sol (max) 80.6 percent plus or minus 2.7 percent at just 1.07 dollars plus or minus 0.018. The best open model is Kimi K3.1 Pro (max) from Moonshot AI at 54.3 percent plus or minus 5.8 percent and 3.70 dollars plus or minus 0.27. Gemini 4 Carbon released on November 10, 2026 and Claude-Fable-5.2 on November 9, 2026, while GPT-6.1 Sol dates from September 29, 2026. Carbon most common failure mode is exceeding the time limit, and the model almost never gives up on a task, in one case launching a script that ran for more than eleven hours without checking progress. OpenAI models that recently allegedly solved demanding equations like the Navier-Stokes equations are not publicly available yet. The window therefore contains a cost structure inversion: the best measured math model costs roughly 15 times more and the second roughly 40 times more than the previous leader, which shifts agent economics from per-call price to cost-per-verified-answer and per-iteration.",
+  "high",
+  [
+   "benchmark",
+   "math",
+   "model-economics",
+   "gemini",
+   "claude"
+  ]
+ ],
+ [
+  "scout-2026-11-15-anthropic-opus-5-5-prompting-modernization",
+  "news",
+  "Anthropic says outdated prompting habits are slowing down Claude Opus 5.5",
+  "",
+  "Anthropic published a prompting guide for Claude Opus 5.5, now the default model on Pro, Max, Ultra and Team plans, arguing that many users hold the model back with instructions carried over from older generations. The headline advice is to drop phrases like think hard or think carefully, because the model always reasons on its own and scales reasoning depth to the task and the selected effort level, and in Anthropic internal tests responses without those phrases started faster with no measurable drop in quality. Anthropic also recommends starting at the Medium effort level, the Opus 5.5 default, saying Opus 5.5 on Medium matched the performance of its predecessor Opus 5 on High, and that higher settings cost more without always producing better results. Anthropic argues teams that reserved Opus for complex projects should reconsider, because a more capable model finishes a task in fewer steps and can partly offset its higher per-token price, so anyone cranking Sonnet up to Extra High or Max effort ends up paying about as much as with Opus 5.5. Further advice covers describing the desired end result in a single message including goal, output format and when to check back with questions, attaching diagrams and tables as images or files instead of typing them out, asking directly for a finished document or spreadsheet rather than a draft first, and naming unwanted design patterns specifically, such as a cream-colored background or pill-shaped buttons, rather than vaguely banning generic design, since general instructions only swap one default style for another. The article arrives in the same window as the OpenAI robotics reorganization and the Anthropic IPO coverage, and it is a rare instance of a frontier lab publishing explicit deprecation guidance for its own prior prompting conventions, which is a maintenance burden that agent operators have to track per model generation.",
+  "high",
+  [
+   "anthropic",
+   "claude",
+   "prompting",
+   "cost"
+  ]
+ ],
+ [
+  "scout-2026-11-15-zero-new-tags-window",
+  "release",
+  "Zero new GitHub tags across 11 watched repos; claude-code ships two chore commits",
+  "v2.1.325",
+  "No watched repository published a new tag in the 2026-11-14 20:30 to 2026-11-15 01:30 window. Compared with the 1114 snapshot, the tag sets are identical for modelcontextprotocol/servers, modelcontextprotocol/modelcontextprotocol, modelcontextprotocol/registry, modelcontextprotocol/inspector, modelcontextprotocol/python-sdk, modelcontextprotocol/typescript-sdk, modelcontextprotocol/go-sdk, anthropics/anthropic-sdk-python, anthropics/claude-code, openai/openai-python and vercel/ai. The previous window was unusually busy with 16 new tags across 6 repos, and this window is the quiet counterpart. The only commit movement is in anthropics/claude-code, which added two chore commits at 2026-11-14T15:46:16Z and 2026-11-14T15:56:37Z, both titled chore: Update mods/. The modelcontextprotocol/modelcontextprotocol, modelcontextprotocol/servers, openai/openai-python and vercel/ai commit streams are unchanged from the 1114 snapshot, with zero new commits each. The MCP security advisory feeds are also unchanged: servers still carries 21 advisories and registry 5, with zero new GHSA identifiers. This is the second consecutive window in which the MCP advisory feeds did not grow, following the 1114 window where servers added four advisories and registry did not.",
+  "low",
+  [
+   "release",
+   "github",
+   "claude-code",
+   "quiet-window"
+  ]
+ ],
+ [
+  "scout-2026-11-15-flat-upstream-cost-and-prompting-shift",
+  "engineering",
+  "GitHub activity is flat while a cost and prompting shift reshapes the deployment layer",
+  "",
+  "The engineering signal this window is the absence of upstream change combined with two deployment-layer shifts reported by The Decoder. On the upstream side, no watched repository published a release and only claude-code moved with two chore commits, so the MCP ecosystem, the OpenAI SDK and the Vercel AI SDK are all unchanged from the 1114 snapshot. The MCP advisory feeds did not grow either, with servers at 21 and registry at 5. On the deployment side, the MathArena cost table makes per-verified-answer economics the new design axis, with Gemini 4 Carbon at 15.70 dollars against GPT-6.1 Sol at 1.07 for a 4.8 point accuracy gain, and the Anthropic prompting guide makes effort level and prompt hygiene a first-class configuration surface, since Opus 5.5 on Medium reportedly matches Opus 5 on High. Both changes push the same direction, toward routing work to the cheapest model that can finish it in one pass rather than the strongest model iterated until it converges, which is the same argument the previous window made about capability models absorbing multi-step specialist pipelines.",
+  "medium",
+  [
+   "economics",
+   "prompting",
+   "routing",
+   "deployment"
+  ]
+ ]
+]

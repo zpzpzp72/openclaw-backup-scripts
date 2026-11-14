@@ -1,0 +1,3068 @@
+{
+ "nodes": [
+  {
+   "id": "theme-2026-11-15",
+   "label": "AI/Agent/MCP 2026-11-15",
+   "kind": "theme",
+   "attrs": {
+    "date": "2026-11-15"
+   }
+  },
+  {
+   "id": "repo:mcp-servers",
+   "label": "MCP servers",
+   "kind": "repo",
+   "attrs": {
+    "tag": "mcp-servers"
+   }
+  },
+  {
+   "id": "release:mcp-servers:v2.4.0",
+   "label": "MCP servers v2.4.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP servers",
+    "tag": "v2.4.0",
+    "published": "2026-11-11T07:07:16Z",
+    "url": "https://github.com/modelcontextprotocol/servers/releases/tag/v2.4.0"
+   }
+  },
+  {
+   "id": "release:mcp-servers:v2.3.0",
+   "label": "MCP servers v2.3.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP servers",
+    "tag": "v2.3.0",
+    "published": "2026-11-04T21:28:41Z",
+    "url": "https://github.com/modelcontextprotocol/servers/releases/tag/v2.3.0"
+   }
+  },
+  {
+   "id": "release:mcp-servers:v2.2.0",
+   "label": "MCP servers v2.2.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP servers",
+    "tag": "v2.2.0",
+    "published": "2026-10-28T20:57:13Z",
+    "url": "https://github.com/modelcontextprotocol/servers/releases/tag/v2.2.0"
+   }
+  },
+  {
+   "id": "repo:mcp-spec",
+   "label": "MCP spec",
+   "kind": "repo",
+   "attrs": {
+    "tag": "mcp-spec"
+   }
+  },
+  {
+   "id": "release:mcp-spec:2026-07-28",
+   "label": "MCP spec 2026-07-28",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP spec",
+    "tag": "2026-07-28",
+    "published": "2026-07-28T16:47:49Z",
+    "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/releases/tag/2026-07-28"
+   }
+  },
+  {
+   "id": "release:mcp-spec:2026-07-28-RC",
+   "label": "MCP spec 2026-07-28-RC",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP spec",
+    "tag": "2026-07-28-RC",
+    "published": "2026-05-29T12:51:22Z",
+    "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/releases/tag/2026-07-28-RC"
+   }
+  },
+  {
+   "id": "release:mcp-spec:2025-11-25",
+   "label": "MCP spec 2025-11-25",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP spec",
+    "tag": "2025-11-25",
+    "published": "2025-11-25T21:17:42Z",
+    "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/releases/tag/2025-11-25"
+   }
+  },
+  {
+   "id": "repo:mcp-registry",
+   "label": "MCP registry",
+   "kind": "repo",
+   "attrs": {
+    "tag": "mcp-registry"
+   }
+  },
+  {
+   "id": "release:mcp-registry:v1.8.9",
+   "label": "MCP registry v1.8.9",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP registry",
+    "tag": "v1.8.9",
+    "published": "2026-11-10T11:08:07Z",
+    "url": "https://github.com/modelcontextprotocol/registry/releases/tag/v1.8.9"
+   }
+  },
+  {
+   "id": "release:mcp-registry:v1.8.8",
+   "label": "MCP registry v1.8.8",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP registry",
+    "tag": "v1.8.8",
+    "published": "2026-11-06T14:07:07Z",
+    "url": "https://github.com/modelcontextprotocol/registry/releases/tag/v1.8.8"
+   }
+  },
+  {
+   "id": "release:mcp-registry:v1.8.7",
+   "label": "MCP registry v1.8.7",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP registry",
+    "tag": "v1.8.7",
+    "published": "2026-10-30T11:24:12Z",
+    "url": "https://github.com/modelcontextprotocol/registry/releases/tag/v1.8.7"
+   }
+  },
+  {
+   "id": "repo:mcp-inspector",
+   "label": "MCP inspector",
+   "kind": "repo",
+   "attrs": {
+    "tag": "mcp-inspector"
+   }
+  },
+  {
+   "id": "release:mcp-inspector:2.15.0",
+   "label": "MCP inspector 2.15.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP inspector",
+    "tag": "2.15.0",
+    "published": "2026-11-12T00:46:29Z",
+    "url": "https://github.com/modelcontextprotocol/inspector/releases/tag/2.15.0"
+   }
+  },
+  {
+   "id": "release:mcp-inspector:1.0.5",
+   "label": "MCP inspector 1.0.5",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP inspector",
+    "tag": "1.0.5",
+    "published": "2026-11-11T21:39:41Z",
+    "url": "https://github.com/modelcontextprotocol/inspector/releases/tag/1.0.5"
+   }
+  },
+  {
+   "id": "release:mcp-inspector:2.14.0",
+   "label": "MCP inspector 2.14.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP inspector",
+    "tag": "2.14.0",
+    "published": "2026-11-04T23:55:33Z",
+    "url": "https://github.com/modelcontextprotocol/inspector/releases/tag/2.14.0"
+   }
+  },
+  {
+   "id": "repo:mcp-sdk-py",
+   "label": "MCP python-sdk",
+   "kind": "repo",
+   "attrs": {
+    "tag": "mcp-sdk-py"
+   }
+  },
+  {
+   "id": "release:mcp-sdk-py:v2.3.0",
+   "label": "MCP python-sdk v2.3.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP python-sdk",
+    "tag": "v2.3.0",
+    "published": "2026-10-02T22:02:27Z",
+    "url": "https://github.com/modelcontextprotocol/python-sdk/releases/tag/v2.3.0"
+   }
+  },
+  {
+   "id": "release:mcp-sdk-py:v2.2.0",
+   "label": "MCP python-sdk v2.2.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP python-sdk",
+    "tag": "v2.2.0",
+    "published": "2026-09-07T15:53:57Z",
+    "url": "https://github.com/modelcontextprotocol/python-sdk/releases/tag/v2.2.0"
+   }
+  },
+  {
+   "id": "release:mcp-sdk-py:v1.30.0",
+   "label": "MCP python-sdk v1.30.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP python-sdk",
+    "tag": "v1.30.0",
+    "published": "2026-09-07T14:03:59Z",
+    "url": "https://github.com/modelcontextprotocol/python-sdk/releases/tag/v1.30.0"
+   }
+  },
+  {
+   "id": "repo:mcp-sdk-ts",
+   "label": "MCP typescript-sdk",
+   "kind": "repo",
+   "attrs": {
+    "tag": "mcp-sdk-ts"
+   }
+  },
+  {
+   "id": "release:mcp-sdk-ts:v2.4.0",
+   "label": "MCP typescript-sdk v2.4.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP typescript-sdk",
+    "tag": "v2.4.0",
+    "published": "2026-10-23T18:32:25Z",
+    "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/v2.4.0"
+   }
+  },
+  {
+   "id": "release:mcp-sdk-ts:1.32.2",
+   "label": "MCP typescript-sdk 1.32.2",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP typescript-sdk",
+    "tag": "1.32.2",
+    "published": "2026-10-23T18:06:24Z",
+    "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/1.32.2"
+   }
+  },
+  {
+   "id": "release:mcp-sdk-ts:@modelcontextprotocol/server@2.4.0",
+   "label": "MCP typescript-sdk @modelcontextprotocol/server@2.4.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP typescript-sdk",
+    "tag": "@modelcontextprotocol/server@2.4.0",
+    "published": "2026-10-23T18:19:14Z",
+    "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol/server%402.4.0"
+   }
+  },
+  {
+   "id": "repo:mcp-sdk-go",
+   "label": "MCP go-sdk",
+   "kind": "repo",
+   "attrs": {
+    "tag": "mcp-sdk-go"
+   }
+  },
+  {
+   "id": "release:mcp-sdk-go:v1.8.0",
+   "label": "MCP go-sdk v1.8.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP go-sdk",
+    "tag": "v1.8.0",
+    "published": "2026-09-14T08:05:46Z",
+    "url": "https://github.com/modelcontextprotocol/go-sdk/releases/tag/v1.8.0"
+   }
+  },
+  {
+   "id": "release:mcp-sdk-go:v1.8.0-pre.2",
+   "label": "MCP go-sdk v1.8.0-pre.2",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP go-sdk",
+    "tag": "v1.8.0-pre.2",
+    "published": "2026-09-04T09:14:41Z",
+    "url": "https://github.com/modelcontextprotocol/go-sdk/releases/tag/v1.8.0-pre.2"
+   }
+  },
+  {
+   "id": "release:mcp-sdk-go:v1.8.0-pre.1",
+   "label": "MCP go-sdk v1.8.0-pre.1",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP go-sdk",
+    "tag": "v1.8.0-pre.1",
+    "published": "2026-09-04T09:01:50Z",
+    "url": "https://github.com/modelcontextprotocol/go-sdk/releases/tag/v1.8.0-pre.1"
+   }
+  },
+  {
+   "id": "repo:sdk-py",
+   "label": "anthropic-sdk-python",
+   "kind": "repo",
+   "attrs": {
+    "tag": "sdk-py"
+   }
+  },
+  {
+   "id": "release:sdk-py:v2.8.0",
+   "label": "anthropic-sdk-python v2.8.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "anthropic-sdk-python",
+    "tag": "v2.8.0",
+    "published": "2026-11-10T16:32:58Z",
+    "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v2.8.0"
+   }
+  },
+  {
+   "id": "release:sdk-py:v2.7.0",
+   "label": "anthropic-sdk-python v2.7.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "anthropic-sdk-python",
+    "tag": "v2.7.0",
+    "published": "2026-11-09T18:52:17Z",
+    "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v2.7.0"
+   }
+  },
+  {
+   "id": "release:sdk-py:v2.6.0",
+   "label": "anthropic-sdk-python v2.6.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "anthropic-sdk-python",
+    "tag": "v2.6.0",
+    "published": "2026-11-05T18:58:47Z",
+    "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v2.6.0"
+   }
+  },
+  {
+   "id": "repo:claude-code",
+   "label": "claude-code",
+   "kind": "repo",
+   "attrs": {
+    "tag": "claude-code"
+   }
+  },
+  {
+   "id": "release:claude-code:v2.1.325",
+   "label": "claude-code v2.1.325",
+   "kind": "release",
+   "attrs": {
+    "repo": "claude-code",
+    "tag": "v2.1.325",
+    "published": "2026-11-13T20:40:01Z",
+    "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.325"
+   }
+  },
+  {
+   "id": "release:claude-code:v2.1.323",
+   "label": "claude-code v2.1.323",
+   "kind": "release",
+   "attrs": {
+    "repo": "claude-code",
+    "tag": "v2.1.323",
+    "published": "2026-11-12T22:12:13Z",
+    "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.323"
+   }
+  },
+  {
+   "id": "release:claude-code:v2.1.322",
+   "label": "claude-code v2.1.322",
+   "kind": "release",
+   "attrs": {
+    "repo": "claude-code",
+    "tag": "v2.1.322",
+    "published": "2026-11-10T02:29:43Z",
+    "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.322"
+   }
+  },
+  {
+   "id": "repo:openai-python",
+   "label": "openai-python",
+   "kind": "repo",
+   "attrs": {
+    "tag": "openai-python"
+   }
+  },
+  {
+   "id": "release:openai-python:v3.51.0",
+   "label": "openai-python v3.51.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "openai-python",
+    "tag": "v3.51.0",
+    "published": "2026-11-13T21:12:49Z",
+    "url": "https://github.com/openai/openai-python/releases/tag/v3.51.0"
+   }
+  },
+  {
+   "id": "release:openai-python:v3.50.0",
+   "label": "openai-python v3.50.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "openai-python",
+    "tag": "v3.50.0",
+    "published": "2026-11-12T19:26:07Z",
+    "url": "https://github.com/openai/openai-python/releases/tag/v3.50.0"
+   }
+  },
+  {
+   "id": "release:openai-python:v3.49.0",
+   "label": "openai-python v3.49.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "openai-python",
+    "tag": "v3.49.0",
+    "published": "2026-11-10T06:47:04Z",
+    "url": "https://github.com/openai/openai-python/releases/tag/v3.49.0"
+   }
+  },
+  {
+   "id": "repo:vercel-ai-sdk",
+   "label": "vercel ai sdk",
+   "kind": "repo",
+   "attrs": {
+    "tag": "vercel-ai-sdk"
+   }
+  },
+  {
+   "id": "release:vercel-ai-sdk:ai@7.0.173",
+   "label": "vercel ai sdk ai@7.0.173",
+   "kind": "release",
+   "attrs": {
+    "repo": "vercel ai sdk",
+    "tag": "ai@7.0.173",
+    "published": "2026-11-13T22:34:02Z",
+    "url": "https://github.com/vercel/ai/releases/tag/ai%407.0.173"
+   }
+  },
+  {
+   "id": "release:vercel-ai-sdk:ai@7.0.172",
+   "label": "vercel ai sdk ai@7.0.172",
+   "kind": "release",
+   "attrs": {
+    "repo": "vercel ai sdk",
+    "tag": "ai@7.0.172",
+    "published": "2026-11-13T05:57:52Z",
+    "url": "https://github.com/vercel/ai/releases/tag/ai%407.0.172"
+   }
+  },
+  {
+   "id": "release:vercel-ai-sdk:ai@6.0.332",
+   "label": "vercel ai sdk ai@6.0.332",
+   "kind": "release",
+   "attrs": {
+    "repo": "vercel ai sdk",
+    "tag": "ai@6.0.332",
+    "published": "2026-11-13T23:44:02Z",
+    "url": "https://github.com/vercel/ai/releases/tag/ai%406.0.332"
+   }
+  },
+  {
+   "id": "repo:anthropics-claude-code",
+   "label": "anthropics claude code",
+   "kind": "repo",
+   "attrs": {
+    "tag": "anthropics-claude-code"
+   }
+  },
+  {
+   "id": "commit:1e9faa38d2",
+   "label": "chore: Update mods/",
+   "kind": "commit",
+   "attrs": {
+    "repo": "anthropics claude code",
+    "date": "2026-11-14",
+    "sha": "7afddbbc"
+   }
+  },
+  {
+   "id": "repo:modelcontextprotocol-modelcontextprotocol",
+   "label": "modelcontextprotocol modelcontextprotocol",
+   "kind": "repo",
+   "attrs": {
+    "tag": "modelcontextprotocol-modelcontextprotocol"
+   }
+  },
+  {
+   "id": "commit:6f11cc2767",
+   "label": "ci: build and validate website content (#3509)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "modelcontextprotocol modelcontextprotocol",
+    "date": "2026-11-14",
+    "sha": "0175d20f"
+   }
+  },
+  {
+   "id": "commit:e990106ecf",
+   "label": "docs: add EU Cyber Resilience Act stewardship guidance (#3526)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "modelcontextprotocol modelcontextprotocol",
+    "date": "2026-11-13",
+    "sha": "122e27e8"
+   }
+  },
+  {
+   "id": "commit:1a39741260",
+   "label": "docs: pull registry docs from v1.8.9 (#3480)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "modelcontextprotocol modelcontextprotocol",
+    "date": "2026-11-12",
+    "sha": "06e92340"
+   }
+  },
+  {
+   "id": "commit:5c493d243f",
+   "label": "docs: working-group sponsored SEP process (#3529)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "modelcontextprotocol modelcontextprotocol",
+    "date": "2026-11-12",
+    "sha": "99a8e460"
+   }
+  },
+  {
+   "id": "commit:14574b5b8e",
+   "label": "docs(community): list Core Primitives WG on working groups overview (#3544)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "modelcontextprotocol modelcontextprotocol",
+    "date": "2026-11-12",
+    "sha": "d72c778b"
+   }
+  },
+  {
+   "id": "commit:7cad55ba27",
+   "label": "docs(seps): fix dead link targets in SEP documents (#3547)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "modelcontextprotocol modelcontextprotocol",
+    "date": "2026-11-12",
+    "sha": "2eb3a8e3"
+   }
+  },
+  {
+   "id": "commit:adfe967571",
+   "label": "docs(community): fix dead links and anchors in community pages (#3532)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "modelcontextprotocol modelcontextprotocol",
+    "date": "2026-11-11",
+    "sha": "0b22bfed"
+   }
+  },
+  {
+   "id": "commit:00129fa856",
+   "label": "docs(blog): announce the MCP release cycle (#3541)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "modelcontextprotocol modelcontextprotocol",
+    "date": "2026-11-11",
+    "sha": "9a673168"
+   }
+  },
+  {
+   "id": "commit:adb08dae09",
+   "label": "fix(blog): keep code blocks dark in the light theme (#3542)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "modelcontextprotocol modelcontextprotocol",
+    "date": "2026-11-11",
+    "sha": "751ea06c"
+   }
+  },
+  {
+   "id": "commit:4763040c2c",
+   "label": "docs(community): add working groups overview page (#3513)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "modelcontextprotocol modelcontextprotocol",
+    "date": "2026-11-11",
+    "sha": "ddbbf0f8"
+   }
+  },
+  {
+   "id": "repo:modelcontextprotocol-servers",
+   "label": "modelcontextprotocol servers",
+   "kind": "repo",
+   "attrs": {
+    "tag": "modelcontextprotocol-servers"
+   }
+  },
+  {
+   "id": "commit:724dab40e7",
+   "label": "Merge pull request #5518 from modelcontextprotocol/v2/chore/5509-release-v2.4.0",
+   "kind": "commit",
+   "attrs": {
+    "repo": "modelcontextprotocol servers",
+    "date": "2026-11-11",
+    "sha": "e1dc4b18"
+   }
+  },
+  {
+   "id": "commit:f5575b2e1e",
+   "label": "Merge pull request #5470 from modelcontextprotocol/changeset-release/v2/main",
+   "kind": "commit",
+   "attrs": {
+    "repo": "modelcontextprotocol servers",
+    "date": "2026-11-11",
+    "sha": "6cfff622"
+   }
+  },
+  {
+   "id": "commit:1fe4a81012",
+   "label": "chore: version packages",
+   "kind": "commit",
+   "attrs": {
+    "repo": "modelcontextprotocol servers",
+    "date": "2026-11-11",
+    "sha": "5c6686a8"
+   }
+  },
+  {
+   "id": "commit:15c53afffe",
+   "label": "Merge pull request #5510 from modelcontextprotocol/v2/chore/5509-python-calver-2026.11.11",
+   "kind": "commit",
+   "attrs": {
+    "repo": "modelcontextprotocol servers",
+    "date": "2026-11-11",
+    "sha": "4ac5add6"
+   }
+  },
+  {
+   "id": "commit:a769807f33",
+   "label": "Merge pull request #5516 from modelcontextprotocol/v2/fix/ghsa-p9cv-8g75-4xcg",
+   "kind": "commit",
+   "attrs": {
+    "repo": "modelcontextprotocol servers",
+    "date": "2026-11-11",
+    "sha": "0d53550e"
+   }
+  },
+  {
+   "id": "commit:bd45e04e1a",
+   "label": "Merge pull request #5515 from modelcontextprotocol/v2/fix/ghsa-3rxj-6jhw-qfv7",
+   "kind": "commit",
+   "attrs": {
+    "repo": "modelcontextprotocol servers",
+    "date": "2026-11-11",
+    "sha": "faef80ba"
+   }
+  },
+  {
+   "id": "commit:09c39d54fe",
+   "label": "Merge pull request #5514 from modelcontextprotocol/v2/fix/ghsa-6hqx-gqrx-c5r2",
+   "kind": "commit",
+   "attrs": {
+    "repo": "modelcontextprotocol servers",
+    "date": "2026-11-11",
+    "sha": "1629bb33"
+   }
+  },
+  {
+   "id": "commit:ecebd57baa",
+   "label": "fix(filesystem): address review round 4 for GHSA-p9cv-8g75-4xcg",
+   "kind": "commit",
+   "attrs": {
+    "repo": "modelcontextprotocol servers",
+    "date": "2026-11-11",
+    "sha": "505476db"
+   }
+  },
+  {
+   "id": "commit:56b8388ce2",
+   "label": "fix(filesystem): address review round 3 for GHSA-p9cv-8g75-4xcg",
+   "kind": "commit",
+   "attrs": {
+    "repo": "modelcontextprotocol servers",
+    "date": "2026-11-11",
+    "sha": "3d22dc17"
+   }
+  },
+  {
+   "id": "commit:6e2556ad42",
+   "label": "fix(filesystem): address review round 2 for GHSA-p9cv-8g75-4xcg",
+   "kind": "commit",
+   "attrs": {
+    "repo": "modelcontextprotocol servers",
+    "date": "2026-11-11",
+    "sha": "db4cdfdd"
+   }
+  },
+  {
+   "id": "repo:openai-openai-python",
+   "label": "openai openai python",
+   "kind": "repo",
+   "attrs": {
+    "tag": "openai-openai-python"
+   }
+  },
+  {
+   "id": "commit:586f044f64",
+   "label": "release: 3.51.0 (#4270)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "openai openai python",
+    "date": "2026-11-13",
+    "sha": "3dae6090"
+   }
+  },
+  {
+   "id": "commit:0e001cff9a",
+   "label": "feat(api): expand agent, image, Live, and external key support (#4269)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "openai openai python",
+    "date": "2026-11-12",
+    "sha": "59738a28"
+   }
+  },
+  {
+   "id": "commit:c93901677f",
+   "label": "release: 3.50.0 (#4265)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "openai openai python",
+    "date": "2026-11-12",
+    "sha": "f44c1ecd"
+   }
+  },
+  {
+   "id": "commit:b35a88e2f0",
+   "label": "feat(api): expose reasoning input transformations on responses (#4268)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "openai openai python",
+    "date": "2026-11-12",
+    "sha": "734f75b5"
+   }
+  },
+  {
+   "id": "commit:f7e1e2c33e",
+   "label": "docs: simplify review handoff instructions (#4266)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "openai openai python",
+    "date": "2026-11-10",
+    "sha": "141a89aa"
+   }
+  },
+  {
+   "id": "commit:48c7997997",
+   "label": "chore(deps): bump astral-sh/setup-uv from 10.3.0 to 10.3.3 (#4261)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "openai openai python",
+    "date": "2026-11-10",
+    "sha": "0ebd0064"
+   }
+  },
+  {
+   "id": "commit:224392e699",
+   "label": "release: 3.49.0 (#4263)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "openai openai python",
+    "date": "2026-11-10",
+    "sha": "3d573c04"
+   }
+  },
+  {
+   "id": "commit:a1b34e71ed",
+   "label": "feat(api): add typed async function tools (#4264)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "openai openai python",
+    "date": "2026-11-10",
+    "sha": "ea07983f"
+   }
+  },
+  {
+   "id": "commit:777b220bbe",
+   "label": "fix: encode microphone recordings as valid PCM WAV (#3900)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "openai openai python",
+    "date": "2026-11-10",
+    "sha": "13c000d1"
+   }
+  },
+  {
+   "id": "commit:9bb782e457",
+   "label": "release: 3.48.0 (#4252)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "openai openai python",
+    "date": "2026-11-09",
+    "sha": "7e1582ce"
+   }
+  },
+  {
+   "id": "repo:vercel-ai",
+   "label": "vercel ai",
+   "kind": "repo",
+   "attrs": {
+    "tag": "vercel-ai"
+   }
+  },
+  {
+   "id": "commit:38f8f0e118",
+   "label": "Version Packages (#25034)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "vercel ai",
+    "date": "2026-11-13",
+    "sha": "0e8e0543"
+   }
+  },
+  {
+   "id": "commit:b32c961d0c",
+   "label": "fix(ai): preserve tool inputs during approval validation (#25040)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "vercel ai",
+    "date": "2026-11-13",
+    "sha": "3c09e001"
+   }
+  },
+  {
+   "id": "commit:19892a9212",
+   "label": "fix(tests): update outdated test expectations (#25045)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "vercel ai",
+    "date": "2026-11-13",
+    "sha": "8c5d5345"
+   }
+  },
+  {
+   "id": "commit:32dd70af59",
+   "label": "chore(provider/gateway): update gateway model settings files (#25031)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "vercel ai",
+    "date": "2026-11-13",
+    "sha": "9baa2d0f"
+   }
+  },
+  {
+   "id": "commit:19434c0c1e",
+   "label": "feat(workflow): support toolApproval in WorkflowAgent (#25011)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "vercel ai",
+    "date": "2026-11-13",
+    "sha": "2559173e"
+   }
+  },
+  {
+   "id": "commit:f5869b0fb9",
+   "label": "fix(workflow): log provider warnings in WorkflowAgent (#25015)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "vercel ai",
+    "date": "2026-11-13",
+    "sha": "7ce7ffc2"
+   }
+  },
+  {
+   "id": "commit:4d19af4f2d",
+   "label": "feat(heygen): add decision models (#25037)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "vercel ai",
+    "date": "2026-11-13",
+    "sha": "585caa76"
+   }
+  },
+  {
+   "id": "commit:21941f4da4",
+   "label": "fix(ai): prevent repeated UI validation error amplification (#24906)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "vercel ai",
+    "date": "2026-11-13",
+    "sha": "a3c6e3fe"
+   }
+  },
+  {
+   "id": "commit:16e4a64725",
+   "label": "docs(google): update Gemini Flash references to gemini-4-hydrogen (#25025)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "vercel ai",
+    "date": "2026-11-13",
+    "sha": "c8fb453c"
+   }
+  },
+  {
+   "id": "commit:a3a68c8db2",
+   "label": "docs: simplify ADR format and templates (#25036)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "vercel ai",
+    "date": "2026-11-13",
+    "sha": "7aae3c3a"
+   }
+  },
+  {
+   "id": "advisory:GHSA-7m4x-rv66-mxhh",
+   "label": "server-filesystem: `move_file`'s same-device rename leaves the source unpinned — a swapped source parent moves",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-7m4x-rv66-mxhh",
+    "severity": "medium",
+    "published": "2026-11-11T07:24:37Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-3rxj-6jhw-qfv7",
+   "label": "mcp-server-fetch: IPv6 site-local fec0::/10 classified as public (SSRF guard classifier gap, CWE-918)",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-3rxj-6jhw-qfv7",
+    "severity": "low",
+    "published": "2026-11-11T07:25:00Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-6hqx-gqrx-c5r2",
+   "label": "mcp-server-git: arbitrary command execution via a repository's own Git configuration (core.fsmonitor) during r",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-6hqx-gqrx-c5r2",
+    "severity": "high",
+    "published": "2026-11-11T07:25:22Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-f9hh-cmx9-2f23",
+   "label": "mcp-server-fetch: robots.txt path-canonicalization bypass (e.g. //private fetched while Disallow: /private)",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-f9hh-cmx9-2f23",
+    "severity": "low",
+    "published": "2026-11-11T07:27:04Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-q74p-4wrc-q7w6",
+   "label": "mcp-server-git: Incomplete Fix for GHSA-w766-5x43-whvw in validate_opened_repo() Allows --repository Confineme",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-q74p-4wrc-q7w6",
+    "severity": "medium",
+    "published": "2026-11-11T07:27:42Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-p9cv-8g75-4xcg",
+   "label": "Symlink swap after validation lets read_text_file return files outside allowedDirectories",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-p9cv-8g75-4xcg",
+    "severity": "medium",
+    "published": "2026-11-11T07:28:07Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-w766-5x43-whvw",
+   "label": "mcp-server-git: nested gitdir file bypasses --repository confinement",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-w766-5x43-whvw",
+    "severity": "medium",
+    "published": "2026-10-28T21:13:40Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-3jqg-r5pp-rmp2",
+   "label": "robots.txt enforcement bypass via HTTP redirects in mcp-server-fetch",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-3jqg-r5pp-rmp2",
+    "severity": "low",
+    "published": "2026-10-25T00:15:37Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-4gxg-m5jx-9j57",
+   "label": "Case-variant path bypasses symlink check and allows creating files outside allowed directories in server-files",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-4gxg-m5jx-9j57",
+    "severity": "medium",
+    "published": "2026-10-25T00:18:21Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-7rgq-gccq-qphx",
+   "label": "Path traversal via trailing quote/whitespace in validatePath (Check/Use Mismatch)",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-7rgq-gccq-qphx",
+    "severity": "medium",
+    "published": "2026-10-25T00:18:38Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-66qx-2266-pmj6",
+   "label": "fetch server: SSRF guard treats the well-known NAT64 prefix 64:ff9b::/96 as public, so a metadata address is r",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-66qx-2266-pmj6",
+    "severity": "low",
+    "published": "2026-10-25T00:18:52Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-v38p-wf49-hx2j",
+   "label": "fetch: private-address guard bypass via IDNA hostnames (check and connect resolve different names)",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-v38p-wf49-hx2j",
+    "severity": "medium",
+    "published": "2026-10-25T00:19:06Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-53mr-w429-c597",
+   "label": "Parent-Directory Fallback TOCTOU in @modelcontextprotocol/server-filesystem Permits Arbitrary File Write Outsi",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-53mr-w429-c597",
+    "severity": "low",
+    "published": "2026-10-25T00:19:21Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-hhwq-wxfx-cj7g",
+   "label": "@modelcontextprotocol/server-filesystem list_directory_with_sizes follows symlinks and leaks outside-directory",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-hhwq-wxfx-cj7g",
+    "severity": "low",
+    "published": "2026-10-25T00:19:37Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-mvf5-2qqv-rg3c",
+   "label": " Cross-Origin Environment Variable Exfiltration in @modelcontextprotocol/server-everything",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-mvf5-2qqv-rg3c",
+    "severity": "medium",
+    "published": "2026-10-25T00:19:52Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-vjqx-cfc4-9h6v",
+   "label": "Path traversal in git_add allows staging files outside repository boundaries in mcp-server-git",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-vjqx-cfc4-9h6v",
+    "severity": "medium",
+    "published": "2026-02-25T23:21:57Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-5cgr-j3jf-jw3v",
+   "label": "Unrestricted git_init tool allows repository creation at arbitrary filesystem locations in mcp-server-git",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-5cgr-j3jf-jw3v",
+    "severity": "medium",
+    "published": "2025-12-17T15:55:26Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-9xwc-hfwc-8w59",
+   "label": "Argument injection in git_diff and git_checkout functions for mcp-server-git allows overwriting local files",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-9xwc-hfwc-8w59",
+    "severity": "medium",
+    "published": "2025-12-17T16:01:56Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-j22h-9j4x-23w5",
+   "label": "Missing path validation when using --repository flag in mcp-server-git",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-j22h-9j4x-23w5",
+    "severity": "medium",
+    "published": "2025-12-17T16:04:43Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-hc55-p739-j48w",
+   "label": "Path validation bypass via colliding path prefix",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-hc55-p739-j48w",
+    "severity": "high",
+    "published": "2025-07-01T18:39:04Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-q66q-fx2p-7w4m",
+   "label": "Path validation bypass via symlink handling",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-q66q-fx2p-7w4m",
+    "severity": "high",
+    "published": "2025-07-01T18:38:24Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-2v5f-5r6w-p67r",
+   "label": "OCI validator skips ownership check on upstream rate limits",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-2v5f-5r6w-p67r",
+    "severity": "low",
+    "published": "2026-05-12T21:41:52Z",
+    "repo": "mcp-registry"
+   }
+  },
+  {
+   "id": "advisory:GHSA-r48c-v28r-pf6v",
+   "label": "Unauthenticated SSRF: HTTP namespace verification dials 6to4 / NAT64 / site-local IPv6 addresses, bypassing pr",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-r48c-v28r-pf6v",
+    "severity": "medium",
+    "published": "2026-05-04T14:46:47Z",
+    "repo": "mcp-registry"
+   }
+  },
+  {
+   "id": "advisory:GHSA-rqv2-m695-f8j4",
+   "label": "Stored XSS in catalogue UI via attribute-quote breakout in publisher-controlled `websiteUrl`",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-rqv2-m695-f8j4",
+    "severity": "medium",
+    "published": "2026-05-04T14:34:31Z",
+    "repo": "mcp-registry"
+   }
+  },
+  {
+   "id": "advisory:GHSA-v8vw-gw5j-w7m6",
+   "label": "Open redirect via protocol-relative path in trailing-slash middleware",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-v8vw-gw5j-w7m6",
+    "severity": "low",
+    "published": "2026-05-04T12:25:03Z",
+    "repo": "mcp-registry"
+   }
+  },
+  {
+   "id": "advisory:GHSA-95c3-6vvw-4mrq",
+   "label": "GitHub OIDC tokens replayable across registry deployments due to shared audience",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-95c3-6vvw-4mrq",
+    "severity": "low",
+    "published": "2026-05-04T12:25:24Z",
+    "repo": "mcp-registry"
+   }
+  },
+  {
+   "id": "news:gemini-4-carbon-matharena-cost-15x",
+   "label": "The Decoder - Gemini 4 Carbon takes the MathArena crown but costs 15 times more than GPT-6.1 Sol (2026-11-14)",
+   "kind": "news",
+   "attrs": {
+    "org": "research",
+    "tag": "gemini-4-carbon-matharena-cost-15x",
+    "date": "2026-11-15",
+    "summary": "Google Gemini 4 Carbon became the first non-OpenAI model in a while to top the MathArena math benchmark, knocking GPT-6.1 Sol off the top spot, with Claude Fable 5.2 in second place. The published table gives Gemini 4 Carbon (high) 85.4 percent plus or minus 3.0 percent expected performance at 15.70 dollars plus or minus 1.33 per task, Claude-Fable-5.2 (max) 82.8 percent plus or minus 5.3 percent at 40.20 dollars plus or minus 2.59, and GPT-6.1 Sol (max) 80.6 percent plus or minus 2.7 percent at just 1.07 dollars plus or minus 0.018. The best open model is Kimi K3.1 Pro (max) from Moonshot AI at 54.3 percent plus or minus 5.8 percent and 3.70 dollars plus or minus 0.27. Gemini 4 Carbon released on November 10, 2026 and Claude-Fable-5.2 on November 9, 2026, while GPT-6.1 Sol dates from September 29, 2026. Carbon most common failure mode is exceeding the time limit, and the model almost never gives up on a task, in one case launching a script that ran for more than eleven hours without checking progress. OpenAI models that recently allegedly solved demanding equations like the Navier-Stokes equations are not publicly available yet. The window therefore contains a cost structure inversion: the best measured math model costs roughly 15 times more and the second roughly 40 times more than the previous leader, which shifts agent economics from per-call price to cost-per-verified-answer and per-iteration."
+   }
+  },
+  {
+   "id": "org:research",
+   "label": "research",
+   "kind": "org",
+   "attrs": {}
+  },
+  {
+   "id": "news:anthropic-opus-5-5-prompting-modernization",
+   "label": "The Decoder - Anthropic says outdated prompting habits are slowing down Claude Opus 5.5 (2026-11-14)",
+   "kind": "news",
+   "attrs": {
+    "org": "industry",
+    "tag": "anthropic-opus-5-5-prompting-modernization",
+    "date": "2026-11-15",
+    "summary": "Anthropic published a prompting guide for Claude Opus 5.5, now the default model on Pro, Max, Ultra and Team plans, arguing that many users hold the model back with instructions carried over from older generations. The headline advice is to drop phrases like think hard or think carefully, because the model always reasons on its own and scales reasoning depth to the task and the selected effort level, and in Anthropic internal tests responses without those phrases started faster with no measurable drop in quality. Anthropic also recommends starting at the Medium effort level, the Opus 5.5 default, saying Opus 5.5 on Medium matched the performance of its predecessor Opus 5 on High, and that higher settings cost more without always producing better results. Anthropic argues teams that reserved Opus for complex projects should reconsider, because a more capable model finishes a task in fewer steps and can partly offset its higher per-token price, so anyone cranking Sonnet up to Extra High or Max effort ends up paying about as much as with Opus 5.5. Further advice covers describing the desired end result in a single message including goal, output format and when to check back with questions, attaching diagrams and tables as images or files instead of typing them out, asking directly for a finished document or spreadsheet rather than a draft first, and naming unwanted design patterns specifically, such as a cream-colored background or pill-shaped buttons, rather than vaguely banning generic design, since general instructions only swap one default style for another. The article arrives in the same window as the OpenAI robotics reorganization and the Anthropic IPO coverage, and it is a rare instance of a frontier lab publishing explicit deprecation guidance for its own prior prompting conventions, which is a maintenance burden that agent operators have to track per model generation."
+   }
+  },
+  {
+   "id": "org:industry",
+   "label": "industry",
+   "kind": "org",
+   "attrs": {}
+  },
+  {
+   "id": "theme:agent-safety",
+   "label": "agent-safety",
+   "kind": "cluster",
+   "attrs": {}
+  },
+  {
+   "id": "theme:multi-agent",
+   "label": "multi-agent",
+   "kind": "cluster",
+   "attrs": {}
+  },
+  {
+   "id": "hn:5251573684",
+   "label": "Italy fines Meta €805M over photo privacy",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 71,
+    "comments": 24,
+    "url": "https://www.rapporteur.com/news/italy-fines-meta-880mn-over-photo-privacy-authority/"
+   }
+  },
+  {
+   "id": "hn:1413416380",
+   "label": "PyPI's redesigned project pages with clearer security signals are now live",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 86,
+    "comments": 18,
+    "url": "https://blog.pypi.org/posts/2026-11-06-ui-updates-complete/"
+   }
+  },
+  {
+   "id": "hn:6bf360c444",
+   "label": "KDE: The Documentary on Free Software [video]",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 159,
+    "comments": 23,
+    "url": "https://tube.kockatoo.org/w/fFinNHfanLT7aBEb2B8y4c"
+   }
+  },
+  {
+   "id": "hn:e1e12381b6",
+   "label": "Why get an expensive Pi when I have an old phone?",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 367,
+    "comments": 223,
+    "url": "https://so.long.thanks.fish/why-pi-when-i-have-an-old-phone/"
+   }
+  },
+  {
+   "id": "hn:5f101aedaa",
+   "label": "Advancing science and engineering with Antigravity's /teamwork",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 64,
+    "comments": 16,
+    "url": "https://research.google/blog/advancing-science-engineering-with-antigravitys-teamwork-feature/"
+   }
+  },
+  {
+   "id": "hn:f3f05a3e69",
+   "label": "Show HN: A terminal-native idle factory game, written in Rust with ratatui",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 72,
+    "comments": 12,
+    "url": "https://gitlab.com/snipedbywifi/terminactory"
+   }
+  },
+  {
+   "id": "hn:60dd8ff29f",
+   "label": "Generative AI uses more energy on non-English text",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 93,
+    "comments": 64,
+    "url": "https://news.umich.edu/generative-ai-uses-more-energy-on-non-english-text/"
+   }
+  },
+  {
+   "id": "hn:e195fc8636",
+   "label": "Ggml v1.0.0",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 376,
+    "comments": 62,
+    "url": "https://github.com/ggml-org/ggml/releases/tag/v1.0.0"
+   }
+  },
+  {
+   "id": "hn:1a1a6052db",
+   "label": "Tech Companies Are Trying to Shift the Concept of Privacy (Again)",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 232,
+    "comments": 89,
+    "url": "https://www.eff.org/deeplinks/2026/11/tech-companies-are-trying-shift-entire-concept-privacy-again"
+   }
+  },
+  {
+   "id": "hn:95cc3a0528",
+   "label": "Italy fines Meta $887M over Android users' data access",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 143,
+    "comments": 67,
+    "url": "https://www.reuters.com/world/italy-fines-meta-887-million-over-android-users-data-access-2026-11-14/"
+   }
+  },
+  {
+   "id": "hn:ad321568bb",
+   "label": "Monkey Island: all 13 versions side by side",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 349,
+    "comments": 117,
+    "url": "https://monkeyisland.pages.dev/"
+   }
+  },
+  {
+   "id": "hn:b20694b1b1",
+   "label": "Serving GLM-5.3 at 607.8 tok/s across two Nvidia DGX stations with vLLM",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 77,
+    "comments": 37,
+    "url": "https://developer.nvidia.com/blog/when-one-gpu-isnt-enough-serving-glm-5-3-across-two-nvidia-dgx-stations-with-vllm/"
+   }
+  },
+  {
+   "id": "hn:56c8b45a87",
+   "label": "Let's Write a PostScript Interpreter",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 65,
+    "comments": 11,
+    "url": "https://beyondloom.com/blog/postscript.html"
+   }
+  },
+  {
+   "id": "hn:b625c9c4d7",
+   "label": "Nvidia allegedly engineered scarcity by funding AI startups to buy its GPUs",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 937,
+    "comments": 574,
+    "url": "https://www.techpowerup.com/354814/nvidia-allegedly-engineered-scarcity-by-funding-ai-startups-to-buy-its-gpus"
+   }
+  },
+  {
+   "id": "hn:f8fd4e6f28",
+   "label": "Terminal borders that don't cost a cell",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 380,
+    "comments": 165,
+    "url": "https://www.joshka.net/cell-borders/"
+   }
+  },
+  {
+   "id": "hn:6b87ba9230",
+   "label": "Unsloth Qwen3.8-27B Quantizations – Dynamic v3.1 Update",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 222,
+    "comments": 70,
+    "url": "https://unsloth.ai/docs/models/qwen3.8"
+   }
+  },
+  {
+   "id": "hn:421fc0c687",
+   "label": "FAA issues national ground stop – lifted 4.5 hours later",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 1621,
+    "comments": 1245,
+    "url": "https://www.nbcnews.com/news/us-news/faa-orders-nationwide-ground-stop-departing-flights-reasons-safety-rcna609247"
+   }
+  },
+  {
+   "id": "hn:9c676414ae",
+   "label": "What happened to 3Com?",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 189,
+    "comments": 107,
+    "url": "https://dfarq.homeip.net/what-happened-to-3com/"
+   }
+  },
+  {
+   "id": "hn:f6fad66a94",
+   "label": "Show HN: Live map of U.S. flights during tonight's FAA nationwide ground stop",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 195,
+    "comments": 24,
+    "url": "https://grounds.top/"
+   }
+  },
+  {
+   "id": "hn:e30267a236",
+   "label": "Found: A protein that drives ageing without unleashing inflammation",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 241,
+    "comments": 71,
+    "url": "https://www.nature.com/articles/d41586-026-03638-3"
+   }
+  },
+  {
+   "id": "hn:92416c997c",
+   "label": "Show HN: I have trained 15 blood glucose forecasting models on my own data",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 80,
+    "comments": 42,
+    "url": "https://github.com/0xdeadf1sh/T1DMAI"
+   }
+  }
+ ],
+ "links": [
+  {
+   "source": "theme-2026-11-15",
+   "target": "repo:mcp-servers",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "release:mcp-servers:v2.4.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-servers:v2.4.0",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "release:mcp-servers:v2.3.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-servers:v2.3.0",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "release:mcp-servers:v2.2.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-servers:v2.2.0",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-15",
+   "target": "repo:mcp-spec",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-spec",
+   "target": "release:mcp-spec:2026-07-28",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-spec:2026-07-28",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-spec",
+   "target": "release:mcp-spec:2026-07-28-RC",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-spec:2026-07-28-RC",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-spec",
+   "target": "release:mcp-spec:2025-11-25",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-spec:2025-11-25",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-15",
+   "target": "repo:mcp-registry",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-registry",
+   "target": "release:mcp-registry:v1.8.9",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-registry:v1.8.9",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-registry",
+   "target": "release:mcp-registry:v1.8.8",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-registry:v1.8.8",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-registry",
+   "target": "release:mcp-registry:v1.8.7",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-registry:v1.8.7",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-15",
+   "target": "repo:mcp-inspector",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-inspector",
+   "target": "release:mcp-inspector:2.15.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-inspector:2.15.0",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-inspector",
+   "target": "release:mcp-inspector:1.0.5",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-inspector:1.0.5",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-inspector",
+   "target": "release:mcp-inspector:2.14.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-inspector:2.14.0",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-15",
+   "target": "repo:mcp-sdk-py",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-sdk-py",
+   "target": "release:mcp-sdk-py:v2.3.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-sdk-py:v2.3.0",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-sdk-py",
+   "target": "release:mcp-sdk-py:v2.2.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-sdk-py:v2.2.0",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-sdk-py",
+   "target": "release:mcp-sdk-py:v1.30.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-sdk-py:v1.30.0",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-15",
+   "target": "repo:mcp-sdk-ts",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-sdk-ts",
+   "target": "release:mcp-sdk-ts:v2.4.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-sdk-ts:v2.4.0",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-sdk-ts",
+   "target": "release:mcp-sdk-ts:1.32.2",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-sdk-ts:1.32.2",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-sdk-ts",
+   "target": "release:mcp-sdk-ts:@modelcontextprotocol/server@2.4.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-sdk-ts:@modelcontextprotocol/server@2.4.0",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-15",
+   "target": "repo:mcp-sdk-go",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-sdk-go",
+   "target": "release:mcp-sdk-go:v1.8.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-sdk-go:v1.8.0",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-sdk-go",
+   "target": "release:mcp-sdk-go:v1.8.0-pre.2",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-sdk-go:v1.8.0-pre.2",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-sdk-go",
+   "target": "release:mcp-sdk-go:v1.8.0-pre.1",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-sdk-go:v1.8.0-pre.1",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-15",
+   "target": "repo:sdk-py",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:sdk-py",
+   "target": "release:sdk-py:v2.8.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:sdk-py:v2.8.0",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:sdk-py",
+   "target": "release:sdk-py:v2.7.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:sdk-py:v2.7.0",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:sdk-py",
+   "target": "release:sdk-py:v2.6.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:sdk-py:v2.6.0",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-15",
+   "target": "repo:claude-code",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:claude-code",
+   "target": "release:claude-code:v2.1.325",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:claude-code:v2.1.325",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:claude-code",
+   "target": "release:claude-code:v2.1.323",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:claude-code:v2.1.323",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:claude-code",
+   "target": "release:claude-code:v2.1.322",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:claude-code:v2.1.322",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-15",
+   "target": "repo:openai-python",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:openai-python",
+   "target": "release:openai-python:v3.51.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:openai-python:v3.51.0",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:openai-python",
+   "target": "release:openai-python:v3.50.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:openai-python:v3.50.0",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:openai-python",
+   "target": "release:openai-python:v3.49.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:openai-python:v3.49.0",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-15",
+   "target": "repo:vercel-ai-sdk",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:vercel-ai-sdk",
+   "target": "release:vercel-ai-sdk:ai@7.0.173",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:vercel-ai-sdk:ai@7.0.173",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:vercel-ai-sdk",
+   "target": "release:vercel-ai-sdk:ai@7.0.172",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:vercel-ai-sdk:ai@7.0.172",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:vercel-ai-sdk",
+   "target": "release:vercel-ai-sdk:ai@6.0.332",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:vercel-ai-sdk:ai@6.0.332",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-15",
+   "target": "repo:anthropics-claude-code",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:anthropics-claude-code",
+   "target": "commit:1e9faa38d2",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:1e9faa38d2",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-15",
+   "target": "repo:modelcontextprotocol-modelcontextprotocol",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:modelcontextprotocol-modelcontextprotocol",
+   "target": "commit:6f11cc2767",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:6f11cc2767",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:modelcontextprotocol-modelcontextprotocol",
+   "target": "commit:e990106ecf",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:e990106ecf",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:modelcontextprotocol-modelcontextprotocol",
+   "target": "commit:1a39741260",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:1a39741260",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:modelcontextprotocol-modelcontextprotocol",
+   "target": "commit:5c493d243f",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:5c493d243f",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:modelcontextprotocol-modelcontextprotocol",
+   "target": "commit:14574b5b8e",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:14574b5b8e",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:modelcontextprotocol-modelcontextprotocol",
+   "target": "commit:7cad55ba27",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:7cad55ba27",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:modelcontextprotocol-modelcontextprotocol",
+   "target": "commit:adfe967571",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:adfe967571",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:modelcontextprotocol-modelcontextprotocol",
+   "target": "commit:00129fa856",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:00129fa856",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:modelcontextprotocol-modelcontextprotocol",
+   "target": "commit:adb08dae09",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:adb08dae09",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:modelcontextprotocol-modelcontextprotocol",
+   "target": "commit:4763040c2c",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:4763040c2c",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-15",
+   "target": "repo:modelcontextprotocol-servers",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:modelcontextprotocol-servers",
+   "target": "commit:724dab40e7",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:724dab40e7",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:modelcontextprotocol-servers",
+   "target": "commit:f5575b2e1e",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:f5575b2e1e",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:modelcontextprotocol-servers",
+   "target": "commit:1fe4a81012",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:1fe4a81012",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:modelcontextprotocol-servers",
+   "target": "commit:15c53afffe",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:15c53afffe",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:modelcontextprotocol-servers",
+   "target": "commit:a769807f33",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:a769807f33",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:modelcontextprotocol-servers",
+   "target": "commit:bd45e04e1a",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:bd45e04e1a",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:modelcontextprotocol-servers",
+   "target": "commit:09c39d54fe",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:09c39d54fe",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:modelcontextprotocol-servers",
+   "target": "commit:ecebd57baa",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:ecebd57baa",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:modelcontextprotocol-servers",
+   "target": "commit:56b8388ce2",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:56b8388ce2",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:modelcontextprotocol-servers",
+   "target": "commit:6e2556ad42",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:6e2556ad42",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-15",
+   "target": "repo:openai-openai-python",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:openai-openai-python",
+   "target": "commit:586f044f64",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:586f044f64",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:openai-openai-python",
+   "target": "commit:0e001cff9a",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:0e001cff9a",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:openai-openai-python",
+   "target": "commit:c93901677f",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:c93901677f",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:openai-openai-python",
+   "target": "commit:b35a88e2f0",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:b35a88e2f0",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:openai-openai-python",
+   "target": "commit:f7e1e2c33e",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:f7e1e2c33e",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:openai-openai-python",
+   "target": "commit:48c7997997",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:48c7997997",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:openai-openai-python",
+   "target": "commit:224392e699",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:224392e699",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:openai-openai-python",
+   "target": "commit:a1b34e71ed",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:a1b34e71ed",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:openai-openai-python",
+   "target": "commit:777b220bbe",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:777b220bbe",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:openai-openai-python",
+   "target": "commit:9bb782e457",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:9bb782e457",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-15",
+   "target": "repo:vercel-ai",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:vercel-ai",
+   "target": "commit:38f8f0e118",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:38f8f0e118",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:vercel-ai",
+   "target": "commit:b32c961d0c",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:b32c961d0c",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:vercel-ai",
+   "target": "commit:19892a9212",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:19892a9212",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:vercel-ai",
+   "target": "commit:32dd70af59",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:32dd70af59",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:vercel-ai",
+   "target": "commit:19434c0c1e",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:19434c0c1e",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:vercel-ai",
+   "target": "commit:f5869b0fb9",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:f5869b0fb9",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:vercel-ai",
+   "target": "commit:4d19af4f2d",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:4d19af4f2d",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:vercel-ai",
+   "target": "commit:21941f4da4",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:21941f4da4",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:vercel-ai",
+   "target": "commit:16e4a64725",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:16e4a64725",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:vercel-ai",
+   "target": "commit:a3a68c8db2",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:a3a68c8db2",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-7m4x-rv66-mxhh",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-7m4x-rv66-mxhh",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-3rxj-6jhw-qfv7",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-3rxj-6jhw-qfv7",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-6hqx-gqrx-c5r2",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-6hqx-gqrx-c5r2",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-f9hh-cmx9-2f23",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-f9hh-cmx9-2f23",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-q74p-4wrc-q7w6",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-q74p-4wrc-q7w6",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-p9cv-8g75-4xcg",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-p9cv-8g75-4xcg",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-w766-5x43-whvw",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-w766-5x43-whvw",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-3jqg-r5pp-rmp2",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-3jqg-r5pp-rmp2",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-4gxg-m5jx-9j57",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-4gxg-m5jx-9j57",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-7rgq-gccq-qphx",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-7rgq-gccq-qphx",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-66qx-2266-pmj6",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-66qx-2266-pmj6",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-v38p-wf49-hx2j",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-v38p-wf49-hx2j",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-53mr-w429-c597",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-53mr-w429-c597",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-hhwq-wxfx-cj7g",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-hhwq-wxfx-cj7g",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-mvf5-2qqv-rg3c",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-mvf5-2qqv-rg3c",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-vjqx-cfc4-9h6v",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-vjqx-cfc4-9h6v",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-5cgr-j3jf-jw3v",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-5cgr-j3jf-jw3v",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-9xwc-hfwc-8w59",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-9xwc-hfwc-8w59",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-j22h-9j4x-23w5",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-j22h-9j4x-23w5",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-hc55-p739-j48w",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-hc55-p739-j48w",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-q66q-fx2p-7w4m",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-q66q-fx2p-7w4m",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-registry",
+   "target": "advisory:GHSA-2v5f-5r6w-p67r",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-2v5f-5r6w-p67r",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-registry",
+   "target": "advisory:GHSA-r48c-v28r-pf6v",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-r48c-v28r-pf6v",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-registry",
+   "target": "advisory:GHSA-rqv2-m695-f8j4",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-rqv2-m695-f8j4",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-registry",
+   "target": "advisory:GHSA-v8vw-gw5j-w7m6",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-v8vw-gw5j-w7m6",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-registry",
+   "target": "advisory:GHSA-95c3-6vvw-4mrq",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-95c3-6vvw-4mrq",
+   "target": "theme-2026-11-15",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-15",
+   "target": "news:gemini-4-carbon-matharena-cost-15x",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:research",
+   "target": "news:gemini-4-carbon-matharena-cost-15x",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-15",
+   "target": "news:anthropic-opus-5-5-prompting-modernization",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:industry",
+   "target": "news:anthropic-opus-5-5-prompting-modernization",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "news:gemini-4-carbon-matharena-cost-15x",
+   "target": "theme:agent-safety",
+   "relation": "relates_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "news:anthropic-opus-5-5-prompting-modernization",
+   "target": "theme:multi-agent",
+   "relation": "relates_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "theme-2026-11-15",
+   "target": "hn:5251573684",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:5251573684",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-15",
+   "target": "hn:1413416380",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:1413416380",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-15",
+   "target": "hn:6bf360c444",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:6bf360c444",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-15",
+   "target": "hn:e1e12381b6",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:e1e12381b6",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-15",
+   "target": "hn:5f101aedaa",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:5f101aedaa",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-15",
+   "target": "hn:f3f05a3e69",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:f3f05a3e69",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-15",
+   "target": "hn:60dd8ff29f",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:60dd8ff29f",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-15",
+   "target": "hn:e195fc8636",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:e195fc8636",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-15",
+   "target": "hn:1a1a6052db",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:1a1a6052db",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-15",
+   "target": "hn:95cc3a0528",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:95cc3a0528",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-15",
+   "target": "hn:ad321568bb",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:ad321568bb",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-15",
+   "target": "hn:b20694b1b1",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:b20694b1b1",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-15",
+   "target": "hn:56c8b45a87",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:56c8b45a87",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-15",
+   "target": "hn:b625c9c4d7",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:b625c9c4d7",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-15",
+   "target": "hn:f8fd4e6f28",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:f8fd4e6f28",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-15",
+   "target": "hn:6b87ba9230",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:6b87ba9230",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-15",
+   "target": "hn:421fc0c687",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:421fc0c687",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-15",
+   "target": "hn:9c676414ae",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:9c676414ae",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-15",
+   "target": "hn:f6fad66a94",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:f6fad66a94",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-15",
+   "target": "hn:e30267a236",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:e30267a236",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-15",
+   "target": "hn:92416c997c",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:92416c997c",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme:agent-safety",
+   "target": "repo:mcp-servers",
+   "relation": "governs",
+   "confidence": "INFERRED"
+  }
+ ]
+}
