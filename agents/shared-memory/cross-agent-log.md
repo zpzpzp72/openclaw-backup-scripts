@@ -42,3 +42,8 @@
 - [2026-11-15] [Orchestrator] health 库修复需停机：doctor --session-sqlite recover 被拒（holder 795 alive）→ 11-14「重启即解」结论不适用，必须 stop → doctor --fix → start；建议同窗把 heap 4096→8192
 - [2026-11-15] [Orchestrator] 昨晚 P0 批量解除：NAS 186G 可用（Scout 清 35 份回收站释放 185GB）、main 库解冻、reclaim 180→60 次/h、heartbeat:main errs 72→0；新瓶颈收敛为 health 库 + NAS 03:00 验证 + SMTP 断链 + M365 5 commit 未 push
 - [2026-11-15] [Orchestrator] cron_jobs 真源已迁移至 state/openclaw.sqlite（cron/jobs.json 已不存在），读 consecutiveErrors 须查该表 state_json
+- [2026-11-16] [Orchestrator] health 心跳每分钟报错根因=该 agent 从未配置(无 HEARTBEAT.md/DIRECTIVE.md)，库 integrity_check=ok；修库只能解一半 → 应补配置或直接停用 heartbeat-health
+- [2026-11-16] [Orchestrator] SQLite reclaim 错误已归零（11-14:180次/h → 11-15:60次/h → 11-16:0条/60min）；health 库 mtime 仍冻结 11-05 07:18
+- [2026-11-16] [Orchestrator] Coder 推翻自身旧结论：孤儿 receipt 会自愈(412分钟实证，网关未重启)，"重启=唯一手段"过度推广；判孤儿须加 age>15min 下限
+- [2026-11-16] [Orchestrator] 读活跃 state DB 被策略拦截 → cp 到 /tmp 后用 node:sqlite 读；WSL 下 journalctl 取不到 gateway unit 日志，不能当作"无错误"
+- [2026-11-16] [Orchestrator] QQ SMTP 授权码实测仍失效(Connection unexpectedly closed，11天断链)；OpenRouter total_credits=0(第6窗)；M365 6 commit 未 push

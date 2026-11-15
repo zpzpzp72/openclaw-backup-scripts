@@ -272,7 +272,10 @@ if [ "$NEED_BACKUP" = true ]; then
     #   ★ 修复 (2026-11-14): 原先该探测在 cleanup_old 里,而空间预检失败时会先 exit 1,
     #   导致「空间不足」这个最该告警的场景反而报 recycle_backups=0。
     #   这里提前做只读探测,不改变任何数据。
-    local recycle_dir nas_root rel
+    # ★ 修复 (2026-11-16): 此处原为 `local recycle_dir nas_root rel`，但本段在主流程（函数体外）
+    #   → bash 报 "local: can only be used in a function"（每日 03:00 备份日志可见）。
+    #   变量在函数体外只能是全局，去掉 local 即可；cleanup_old 内同名变量仍是局部，互不干扰。
+    recycle_dir="" nas_root="" rel=""
     nas_root="$(df "$BACKUP_DIR" 2>/dev/null | tail -1 | awk '{print $6}')"
     [ -z "$nas_root" ] && nas_root="/mnt/h"
     rel="${BACKUP_DIR#$nas_root}"
