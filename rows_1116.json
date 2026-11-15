@@ -1,0 +1,120 @@
+[
+ [
+  "scout-2026-11-16-claude-fable-5-2-code-painting",
+  "news",
+  "Anthropic's Claude Fable 5.2 doesn't generate images, it paints them",
+  "",
+  "Anthropic's new language model Claude Fable 5.2 can create complex and even photorealistic paintings by using code to place hundreds of thousands of individual brushstrokes on a virtual canvas. Current image models like Midjourney typically use diffusion, which gradually refines a noisy image into a clear result. Fable 5.2 takes a different approach by simulating the physical painting process, including bristle texture, how the paint goes on, and mistakes it then has to paint over. Developer Jake Eaton showed on X what the approach can do, asking Fable 5.2 to create a painting as hard to distinguish from a photograph as possible; the model generated an image of a shopping cart in a parking garage using roughly 700,000 simulated brushstrokes. Claude works without an external image model and without pre-rendered or traced source images. Each piece is a Python program of 1,000 to 2,000 lines that drives a simulated paint engine. The approach resembles agentic image editing, where language models pick tools and evaluate results. Earlier attempts with the sibling model Opus 5.5 drew criticism for merely imitating existing art; Eaton responded by having Fable 5.2 develop its own artist personas with fictional backstories and consistent styles. The model needs several thousand brushstrokes per painting and the developer redirects them with comments. On Anthropic internal RoboDojo Sim benchmark Fable 5.2 scored 64.9 percent compared with 29.8 percent for OpenAI GPT-6 Astra, but fell behind its competitor in speed and fine motor control during a real-world test with a physical robot arm. This is the same window in which OpenAI disbanded its robotics team and in which Runway shipped Praxis-1 as an open-weight robot controller, so program-space generation, general-purpose robot control and agentic tool selection all converge on the same theme.",
+  "high",
+  [
+   "image-generation",
+   "anthropic",
+   "code-generation",
+   "robotics",
+   "agentic"
+  ]
+ ],
+ [
+  "scout-2026-11-16-meituan-longcat-2-5-chinese-hardware-agent-model",
+  "news",
+  "Meituan releases a 1.6-trillion-parameter agent model that never touched an Nvidia GPU",
+  "",
+  "Meituan released the weights for LongCat-2.5, a 1.6-trillion-parameter model built for AI agents, one week after the model's official unveiling. It was trained entirely on Chinese hardware and performs at the level US models like Claude Opus 5 reached a few months ago on coding benchmarks. LongCat-2.5 is a mixture-of-experts model that activates only a subset of its specialized subnetworks for each token it processes; out of 1.6 trillion total parameters, roughly 48 billion are active per token. Through the API the model handles up to one million tokens at once and generates responses up to 128,000 tokens long, understands text, images and video, responds in text, and lets users toggle reasoning on and off. Unlike many multimodal models that bolt on a separate image encoder after the fact, LongCat-2.5 converts images into discrete tokens processed alongside text at native resolution, drawing on the research model LongCat-Next to improve visual coding, design and 3D tasks. For reinforcement learning the team used real software tasks from GitHub pull requests along with recreated agent failures; to make sure the model actually solved the tasks during training they blocked internet access in the training environments, removed Git history and cached files, and had a language model check its solutions for tricks, and they distilled capabilities from several specialized teacher models for agent work, reasoning and dialog. Meituan quantizes the experts' weights and activations to 4-bit precision, which Chinese chips can process natively, and in load tests throughput rises 43.3 percent for prompt processing and 42.77 percent for response generation compared with an 8-bit version, with a sample deployment running on 194 Huawei chips. It lands in a window where export-control evasion is itself a headline, with Megaspeed allegedly brokering $12 billion of Nvidia chips for Chinese buyers, making hardware-independent agent training a both technical and geopolitical story.",
+  "high",
+  [
+   "open-weight",
+   "moe",
+   "china",
+   "agents",
+   "export-controls"
+  ]
+ ],
+ [
+  "scout-2026-11-16-anthropic-amodei-compute-dilemma-901b-ipo",
+  "news",
+  "Anthropic CEO Amodei admits \"there's a huge uncertainty in what's going to happen next year\" days before a record IPO",
+  "",
+  "Days before what could be the largest IPO in history, Anthropic CEO Dario Amodei named the central weakness of his business model: nobody knows how the company compute investments will pay off. Speaking at a JPMorgan Chase investor event in New York on Friday, alongside JPMorgan CEO Jamie Dimon, Amodei said compute is the deepest business dilemma the company faces. AI technology is advancing so fast, Amodei said, that no one yet knows how that progress will translate into economic value, but compute has to be bought one to two years ahead before anyone knows whether revenue will justify the cost. If Anthropic buys too little it will not have the resources for customers and new technologies and revenue takes a hit; buying too much carries the opposite risk, since you can financially overextend yourself. Anthropic has already committed nearly $901 billion, most of it to compute and chips according to Bloomberg, with roughly $71 billion coming due by September 2027 alone; Bloomberg notes that figure exceeds the market cap of about two-thirds of S&P 500 companies. Back in February 2026 Amodei warned in much sharper terms that he could buy $1 trillion of compute starting at the end of 2027. The IPO is designed to build a cash buffer large enough to carry the company through a potential mismatch between spending and revenue, with pricing expected Nov. 18 and a Nov. 19 listing. The figure is the concrete cost side of the agent economics story that the previous window framed from the benchmark side, where Gemini 4 Carbon took the MathArena crown at roughly 15 times the cost of GPT-6.1 Sol.",
+  "high",
+  [
+   "anthropic",
+   "ipo",
+   "compute",
+   "economics",
+   "industry"
+  ]
+ ],
+ [
+  "scout-2026-11-16-rba-ai-labor-market-young-workers",
+  "news",
+  "Australia's central bank finds AI hitting young workers first, especially in software and customer service",
+  "",
+  "AI has barely displaced any jobs in Australia so far, but young workers entering highly exposed fields like software development are faring worse. An analysis by Mike Major for Australia central bank, the Reserve Bank of Australia, built a monitoring system that focuses on the areas where effects are likely to appear first, namely entry-level workers and highly AI-exposed occupations such as programming, clerical work and customer service. Job postings have fallen across all groups since ChatGPT launched in late 2022, with the steepest drop in the highest-exposure group, where workers aged 15 to 24 and young college graduates show weaker employment rates and higher unemployment than older workers, while employment among older workers in the same quintile has risen. Major cautions against drawing early conclusions, since the study establishes no direct causation and measures only theoretical exposure rather than actual company use, and post-pandemic business-cycle or remote-work shifts could also be driving the numbers. According to SEEK data, AI is complementing existing work while also creating new demand for AI skills. Other studies paint a similar picture with caveats: an August 2025 Stanford study based on millions of US payroll records found employment among 22- to 25-year-olds in AI-exposed occupations down 13 percent in relative terms since late 2022 and nearly 20 percent among young software developers, while more experienced workers held steady or gained ground; a March 2026 Anthropic study also found declining hiring among 22- to 25-year-olds in exposed occupations with job-finding rates down about 14 percent, though with no systematic rise in overall unemployment. Anthropic offers a company-level example: according to an internal review, the share of junior hires in technical roles has fallen from 27 percent to 9 percent since early 2025, and in August 2026 AI agents across the company were already logging six times as many hours as human staff.",
+  "high",
+  [
+   "labor",
+   "policy",
+   "anthropic",
+   "society",
+   "automation"
+  ]
+ ],
+ [
+  "scout-2026-11-16-megaspeed-nvidia-china-export-controls-12b",
+  "news",
+  "Firm linked to Jensen Huang ex-lover reportedly brokered nearly $12 billion in Nvidia chip orders for China",
+  "",
+  "Megaspeed arranged nearly $12 billion worth of Nvidia high-performance chip orders for Chinese companies between March 2024 and June 2025, according to documents reviewed by the Wall Street Journal. The company is owned by Alice Huang, the former lover of since-ousted Nvidia CEO Jensen Huang, and shipped the chips to buyers in China who maintained long-standing business ties with local tech giants. The orders covered several hundred thousand chips that the US had sought to keep out of China through export controls. Megaspeed reportedly gained preferential access to scarce AI chips as an Nvidia cloud partner, apparently because it counted Chinese cloud and tech company Alibaba as a major client. Nvidia officially reported $12.4 billion in China revenue over six months, accounting for 7 percent of total revenue, but short-selling firm Culper Research estimates more than 20 percent of Nvidia revenue in the last fiscal year came from Chinese customers, so a significant share of that China business may have flowed through indirect channels. An update notes that in a statement to Reuters Megaspeed said Chinese businesswoman Alice Huang officially left the company on August 30, 2025 and has no current role there, that she became the controlling shareholder in March 2023 according to Washington-based research group C4ADS, and that the company said it conducted legitimate and lawful business and had retained external legal counsel for an internal investigation. The New York Times reported in October 2025 that Megaspeed was under investigation over whether it helped Chinese customers obtain export-controlled Nvidia chips, and there has been speculation that Alice Huang may be a Chinese spy, which has not been confirmed. Together with the previous window Blackwell fingerprint forensics and Meituan LongCat-2.5 trained entirely on Chinese hardware, this is now the third consecutive window carrying a serious hardware-access signal.",
+  "high",
+  [
+   "export-controls",
+   "nvidia",
+   "geopolitics",
+   "supply-chain"
+  ]
+ ],
+ [
+  "scout-2026-11-16-github-release-stream-flat-window-2026-11-16",
+  "engineering",
+  "GitHub release stream flat across 11 watched repos; claude-code ships 15 automated mods commits and vercel/ai lands two fixes",
+  "",
+  "The 2026-11-15 to 2026-11-16 window is the quietest release window in the series. All 11 watched repositories published zero new tags: anthropics/claude-code stays at v2.1.325, anthropics/anthropic-sdk-python at v2.8.0, openai/openai-python at v3.51.0, vercel/ai at ai@7.0.173, modelcontextprotocol/registry at v1.8.9, modelcontextprotocol/inspector at 2.15.0, modelcontextprotocol/servers at v2.4.0, modelcontextprotocol/python-sdk at v2.3.0, modelcontextprotocol/typescript-sdk at v2.4.0, modelcontextprotocol/go-sdk at v1.8.0 and modelcontextprotocol/modelcontextprotocol at 2026-07-28. The only commit activity was anthropics/claude-code with 15 new commits, all of them the automated \"chore: Update mods/\" entries between 11-15 00:26 and 16:52 UTC, and vercel/ai with two: test(mcp): increase timeout for Windows npx spawn tests (#25062) and fix(ai): validate JSON values in UI message metadata in a single pass (#25046) on 11-14. MCP spec, MCP servers and openai-python published zero new commits in the window. This confirms the pattern from the previous two windows where the release stream is dominated by a small set of high-cadence SDKs and has been flat on the MCP side since the v2.4.0 GHSA-fix release on 11-11.",
+  "low",
+  [
+   "github",
+   "release",
+   "claude-code",
+   "vercel-ai",
+   "mcp"
+  ]
+ ],
+ [
+  "scout-2026-11-16-mcp-advisory-feeds-flat-third-window",
+  "engineering",
+  "MCP advisory feeds stay flat for a third consecutive window",
+  "",
+  "Both watched GitHub security-advisory feeds were unchanged: modelcontextprotocol/servers still lists 21 advisories and modelcontextprotocol/registry still lists 5, with zero new GHSAs published in the 2026-11-15 to 2026-11-16 window. This is the third consecutive NightOps window with zero advisory growth, following the 11-14 window in which four server GHSAs were fixed and merged as part of the v2.4.0 release on 11-11. In the same window the previous arXiv corpus carried CapLite, which argues the security perimeter cannot be delegated to the model being defended, and two MCP server GHSAs covering a symlink swap and an SSRF classifier gap. The absence of new advisories does not remove those classes of bug; it means the fix-and-publish cycle has not surfaced more instances this window.",
+  "medium",
+  [
+   "mcp-servers",
+   "mcp-registry",
+   "security",
+   "ghsa"
+  ]
+ ],
+ [
+  "scout-2026-11-16-zero-new-signal-window-export-control-and-compute-convergence",
+  "trend",
+  "Zero-new-signal window, but three export-control and hardware-access stories arrive together",
+  "",
+  "This window produced zero new arXiv papers (the 2026-11-12 submission batch remains the latest, with 280 parsed and 0 new against all 1452 historical ids), zero new GitHub release tags, zero new GHSA advisories, an unchanged OpenAI RSS feed (1387 items, no posts since 11-13) and a still-empty Google AI blog RSS feed (299 bytes, ninth consecutive window). What did arrive was news-side and thematically dense: three separate stories concern access to frontier hardware. Meituan released LongCat-2.5, a 1.6T-parameter agent model trained entirely on Chinese chips and quantised to 4-bit for native Chinese hardware execution, which is a direct technical counter to export controls; Megaspeed allegedly brokered nearly $12 billion of Nvidia high-performance chips for Chinese buyers, implying the official 7 percent China revenue figure understates real exposure by a factor of roughly three; and Anthropic disclosed roughly $901 billion in compute commitments, of which $71 billion falls due by September 2027, which is the cost side of the same equation. Two of the three frontier labs in the news are simultaneously preparing for massive capital events (Anthropic IPO Nov. 19) or new model generations (Claude Fable 5.2, Gemini 4 Carbon). The operational implication for agent builders in this window is that model availability is becoming a supply-chain and geopolitics problem rather than a benchmark problem, and that the compute cost per verified answer, not the per-call price, is the number that determines which agent products are viable.",
+  "high",
+  [
+   "trend",
+   "export-controls",
+   "compute-economics",
+   "supply-chain",
+   "agents"
+  ]
+ ]
+]
