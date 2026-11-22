@@ -97,3 +97,61 @@ if (Atomics.load(shared, 0) !== COMMITTING) {
 - 案例：`memory/2026-11-17-health-reclaim.md`
 - 讨论纪要：`memory/2026-04-15.md` v38（2026-11-23 00:25）
 - 备份：`memory/backups/health-agent.sqlite.*.bak`
+
+---
+
+## 补充（2026-11-23 05:30）：第三次验证 —— 判据再次 100% 预测成功
+
+### 观察
+| 时点 | 失败 agent | lease 差集 | 吻合 |
+|------|-----------|-----------|:---:|
+| 11-22 23:23 | finance, orchestrator | {finance, orchestrator} | ✅ |
+| 11-23 05:31 | work, orchestrator(旧) | {scout, work} | ✅ |
+
+**每 6 小时换一批 agent 失败，而判据始终精确命中。**
+
+### 关键新事实：故障迁移与「gateway 重启」强相关
+
+```
+work  : session 最后更新 04:42:10 → gateway 04:42:22 重启 → 05:31 heartbeat-work 失败
+scout : session 最后更新 01:40     → 早于重启              → 同样无 lease
+orchestrator NightOps : 02:40 失败(重启前) → 现已有 lease(05:30:46) → 可自愈
+```
+
+**机制**：
+- lease 表的 `owner_pid` + `owner_start_time` + `provenance=process-v1:<hash>`
+  → lease **绑定具体进程实例**（`agentDatabaseLeaseStaleReason` 判定 pid 死亡或 start_time 变化即 stale）
+- lease 只在 **gateway 真正首次打开该 agent 的 DB 时**才产生
+- gateway 重启 → 旧 lease 全部 stale → 新进程需为每个 agent **重新 claim**
+- **重启后尚未被打开过 DB 的 agent**，其 cron 任务若先跑 → 无 lease → reclaim 握手无人授权 → 5s 超时
+
+### 已排除的其它假设
+| 假设 | 排除依据 |
+|------|---------|
+| agent-db maintenance 锁占用 | `state_leases` 只有 `gateway-owner` 全局锁（正常），无 agent-db maintenance 锁 |
+| inode 冲突（`mayShareAgentDatabaseFile`） | scout inode=2267865、work=2267825，与 6 条已 lease 的 path 全部不同 |
+| 库损坏 | 全部 `quick_check=ok` |
+| 库过大 | work 仅 16MB 也失败；scout 81MB 有句柄但无 lease |
+
+### 检测方法的强化
+```sql
+-- 现役 gateway pid
+SELECT agent_id, COUNT(*) FROM agent_database_leases WHERE owner_pid = <gw_pid> GROUP BY agent_id;
+-- 差集 = 缺 lease 的 agent = 会失败的对象
+-- ★ 再加一条:owner_pid != 现役 pid 的行 = stale lease(重启后未重新 claim)
+```
+
+### 对修复方案的影响（重要修正）
+
+原「方案 A：停机 `doctor --fix`」仍有效，但**新增一条更轻的**：
+
+> **让缺失 lease 的 agent 被 gateway 打开一次**（例如对该 agent 跑一个极轻的任务 / 触发一次 session），
+> lease 即产生，死锁自然解除，**无需停机**。
+>
+> 2026-11-22 health 的恢复正是这个机制的结果（health 现有 3 条 lease、consecutiveErrors=0）。
+
+### 预防
+1. gateway 每次重启后，**主动为全部 agent 预热 lease**（逐一打开其 DB），
+   避免「重启后第一批任务必撞死锁」这一稳定复现模式。
+2. 监控时把 **stale lease**（owner_pid ≠ 现役 pid）也纳入告警，
+   而不只是看「差集为空」。
