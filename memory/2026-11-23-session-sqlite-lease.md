@@ -155,3 +155,48 @@ SELECT agent_id, COUNT(*) FROM agent_database_leases WHERE owner_pid = <gw_pid> 
    避免「重启后第一批任务必撞死锁」这一稳定复现模式。
 2. 监控时把 **stale lease**（owner_pid ≠ 现役 pid）也纳入告警，
    而不只是看「差集为空」。
+
+---
+
+## 分层说明：本文档只放【判据】，不放【快照】（v39 补充）
+
+判据是**不随系统状态变化**的结论；快照是**每次都过期**的观测值。混在一起会让读者
+把「今天的差集」当成「永久结论」。
+
+### 判据层（本文档，长期有效）
+
+1. **无 lease ⇒ 该 agent 的写操作必失败**（reclaim 握手无人授权 → 5s 超时）
+2. **lease 绑定具体进程实例**（owner_pid + owner_start_time + provenance=process-v1:<hash>）
+3. **lease 在 gateway 首次打开该 agent 的 DB 时顺带登记**，不是按需申请
+4. **stale lease**（owner_pid 已死 / owner_start_time 已变）= 重启后未重新 claim，等价于无 lease
+5. 与库大小、完整性、session 数量**全部无关**
+
+### 快照层（每日记录，会过期）
+
+- 当前哪些 agent 缺 lease → 记在 `memory/YYYY-MM-DD.md`，标注「快照时间」
+- 当前 cron error 分布 → 同上
+
+> 2026-11-23 23:20 的快照：差集 = {orchestrator, work}；
+> heartbeat-work consecutiveErrors=21，Orchestrator NightOps=2。
+> **这份快照预计数小时内即失效**（agent 被打开一次就会自愈）。
+
+### 三个集合（监控应同时看）
+
+```sql
+-- 现役 gateway pid
+SELECT agent_id, COUNT(*) FROM agent_database_leases WHERE owner_pid = <gw_pid> GROUP BY agent_id;   -- A 正常
+SELECT DISTINCT agent_id FROM agent_database_leases WHERE owner_pid IS NOT NULL AND owner_pid != <gw_pid>; -- B stale(高危)
+-- C = 完全没有 lease 的 agent(高危)
+-- 差集 = B ∪ C  →  这些 agent 的写操作会失败
+```
+
+### 自愈机制（scout 的实测证据）
+
+```
+scout: lease opened_at = 2026-11-23 08:00:01
+      session updated  = 2026-11-23 08:06:42  ← 它的 cron 首次打开 DB
+      → lease 顺带产生 → 死锁消失
+```
+
+> **自愈不是「修好了」，而是「恰好被用了一次」。**
+> 对真正休眠的 agent（如 11-23 的 orchestrator，6 天无人触碰），自愈**永不发生**。
