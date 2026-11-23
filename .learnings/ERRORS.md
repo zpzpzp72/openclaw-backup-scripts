@@ -982,3 +982,115 @@ SAVED=$(tr -d ' \t\r\n' < ~/.openclaw/.nightops-discussion-last)
   → 自检应**原样读取并与期望字符串直接比较**,中间不做任何字符变换。
 - 讽刺的是:v37 新增的规则正是「写完立刻读回校验」,而我实现这条规则时**第一步就写错了校验**。
   → **规则要落地,先把它自己的实现测一遍。**
+
+## ERR-20261122-001 SQLite 回收 checkpoint 过期问题横跨两周、跨重启仍未自愈（状态复查）
+
+> **【11-24 追补修正】** 本条此前把根因判为「多 agent 库 degraded / 需 `doctor --fix`」，**该归因已被推翻**：库本身完全健康（`integrity_check` 通过、`issues=0`、写锁可立即获取）。真实根因是**启动期并发竞态**——重启时多个 agent 同时做 WAL 恢复与 canonical-validation，两个 5 秒超时（`COMMIT_DECISION_TIMEOUT_MS` 与 `OPENCLAW_SQLITE_BUSY_TIMEOUT_MS`）相等导致互相等锁到点，失败结果被记进**进程内存**的 `refusalsByState`，`doctor` 改不掉（诊断路径遇 startup 来源直接 return）。每次重启换一个受害 agent（finance/orchestrator/main → work）。**详见 ERR-20261124-001。**
+
+
+**背景**：ERR-20261106-003 / ERR-20261103-006 记录的 `SQLite session reclamation commit checkpoint expired` 在 11-16 之后的**全新 Gateway 进程**（pid 695，启动于 11-22 21:38 前）上**依然复现**，说明它不是「跑久了才坏」，而是**可复现的状态残留**。
+
+**本次实测证据**（`/tmp/openclaw/openclaw-2026-11-22.log`）：
+- `session-sqlite` 线程 17 的 `reclamationKind=canonical-validation` worker 操作 `elapsedMs=8692 outcome=rejected`，报错位置固定在 `dist/session-accessor.sqlite-reclamation-commit-BX3N0u2L.mjs:25:88`。
+- 随后 `state/agent-admission` 判 `agent database remains degraded`（agentId=finance / orchestrator），`phaseDurationsMs` 显示 `activation=8689 / readiness=12592 / migration=8871` —— **每个 agent 的准入要花 35s+**。
+- 连锁后果：`Cron maintenance failed` 持续刷屏、`memory-core: dreaming sweep/startup cleanup failed`、`Orchestrator NightOps` 与 `NightOps-Coder`(308d445d) 与 `7df2f5c0` 三类 cron 作业直接 `error`。
+
+**关键判断（与 11-06 结论一致，但补充了「重启无效」）**：11-06 我判断「需停 Gateway + `openclaw doctor --fix` + 重启」；本次验证发现 **11-16~11-22 期间 Gateway 显然已重启过**（新 pid、日志全新），而故障**原样复发** → 单纯重启**不解决问题**，必须跑 `doctor --fix` 做一次实际修复，且很可能需要**逐 agent** 修复（finance / orchestrator / main 都出现了 degraded）。
+
+**影响面扩大**：`Heartbeat (main)` 现为 `skipped`；`【NightOps 记忆体系讨论】`(db2fae49) 报 `Agent main has not completed startup inspection` —— main agent 本身也未通过准入。
+
+## ERR-20261122-002 备份脚本 `local` 报错已由作者修复，但 11-16 那次仍产出了损坏归档
+
+**现象**：`logs/backup-cron.log` 第 69 行 `[2026-11-16 03:00:01]` 有
+`openclaw-backup.sh: line 275: local: can only be used in a function` → 该次备份的回收站探测段执行异常。
+**现状**：脚本 L270-281 已加注释说明「★ 修复 (2026-11-16)：此处原为 `local recycle_dir nas_root rel`… 函数体外只能是全局，去掉 local 即可」，代码现为 `recycle_dir="" nas_root="" rel=""` —— **已修复**，`local` 报错在 11-16 之后未再出现（`grep -c` = 1，仅历史那一条）。
+
+**但 11-17 的归档有残留问题**：`~/.openclaw-backup.log` 显示 `[2026-11-17 03:00:01] tar 退出码: 1`，同时又记「备份成功: openclaw-20261117-0300.tgz (5.8G)」—— **tar 非零退出却仍标记成功**。这是比 `local` 报错更实质的问题：**退出码没被当作失败判据**。
+
+**当前 NAS/备份状态（11-22 21:45 实测）**：
+- `/mnt/h` 可用 **380G**（95% 使用率）→ 空间预检已**不再是瓶颈**（早期 11-08 那次 3.8G 的危机已自行缓解，回收站现只剩 1 份 6.5GB）
+- `~/.openclaw-backup.heartbeat`：`last_backup=openclaw-20261117-0300.tgz` / `hours_since_last_backup=138` / `need_backup=true` / `status=starting` → 11-18～11-22 连续 5 场 03:00 备份**没有产出**
+- 21:38 有一场**手动/被触发**的备份正在跑（`openclaw-backup.sh` pid 309，`native-backup.sh` → `openclaw backup create --verify` pid 394 → tar pid 1834），产出 `openclaw-20261122-2138.tgz`（已 5.15G，仍在写）
+
+**结论**：空间问题已解，但**「tar 退出码非零仍标成功」+「连续 5 天没产出却只有 heartbeat 能看出来」**这两个问题仍在 —— 与 ERR-20261108-006 的告警链断路同源。
+
+<!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
+
+## ERR-20261122-003 OpenRouter 402 余额耗尽触发 error-detected 误报，且 `total_usage=0` 指向 key 绑错账户
+
+**现象**：11-22 21:43–21:46 手动补跑 `news_digest` 时，摘要阶段对每个新条目都打一条
+`WARNING - OpenRouter API 错误: 402 - {"error":{"message":"Insufficient credits. This account never purchased credits..."}}`，
+单次运行 **8 条**。这些 WARNING 出现在 stdout，被 exec 的 error-detected 扫描器捕获 → **连续三条「tool error」信号实际是日志噪声，不是工具失败**。
+
+**根因（本次新增关键线索）**：用 `~/.secrets/openrouter_api_key` 实测 `GET https://openrouter.ai/api/v1/credits` →
+`{"data":{"total_credits":0,"total_usage":0}}`。
+**`total_usage` 也是 0** → 这个 key **从未被真正计费调用过**，说明问题不是「余额用完了」，
+而是 **key 绑到了未关联计费账户 / org 的账户**，或该账户从未购买额度。**先核对 key 归属，再谈充值** —— 充值到错账户无法退回。
+
+**已有处置链是有效的**：`openclaw_news_digest.py` 的 LLM 后端顺序（OpenRouter → OpenAI → Anthropic → DeepSeek → MiniMax）
+在 8 次 402 后**全部由 MiniMax 回退兜住**，30 条摘要无缺失，邮件三收件人 + 飞书 `om_x100b7f1b6f8830a0ddeba5853e5a2c8` 均送达。
+→ **回退链已可写入运维手册作为长期备选路径**，无需为 OpenRouter 中断 news_digest。
+
+**纪律**：
+- 额度类报错**只写入异常清单并告知 owner，不自行反复重试、不自行充值**。
+- 后续遇到 exec 输出里含 `402` / `Insufficient credits` 字样，**不要按工具失败处理**，这是采集脚本的正常降级日志；
+  判断「产物是否落盘 + 推送是否送达」要以文件与 message_id 为准，不要以 stdout 有没有 ERROR 字样为准。
+
+<!-- project: path:/home/zhiping/.openclaw/workspace/agents/life -->
+
+## ERR-20261124-001 SQLite checkpoint 过期：**不是库坏了，是「启动期并发抢锁」的竞态**，每次重启换一个受害 agent
+
+**一句话根因**：Gateway 启动时 6 个 agent 同时做「进程死亡后 WAL 恢复」的完整性闸门，`work` 的 canonical-validation 回收 worker 与另一条 certify 写入互相等锁，**两边的超时都是 5 秒**，必然同时到点 → worker 判定「提交授权过期」→ 把 `work` 判为 degraded → **该 agent 在本次 Gateway 进程生命周期内永久不可写**。
+
+**证据链（本次实测，11-24 02:00–02:20）**：
+
+1. **触发点是重启，不是运行期**。11-23 04:42 新 Gateway（pid 36001）启动时，旧进程（pid 695）**关闭失败**：
+   `shutdown step failed (gateway close): Plugin runtime still owns resources ... Direct shared-state reader requires current integrity admission`
+   → 新进程启动后 6 个 agent 全部走 `agent database integrity gate`，`because=same-boot-dead-owner-wal-recovered` / `integrityGateReason=process-death` / `mode=deferred`。
+2. **竞态发生在启动后 30 秒内**（20:43:07–20:43:15 UTC）。同一时刻：
+   - `slow SQLite transaction hold`：**work 库**，`operation=session.canonical-validation.certify`，`elapsedMs=5001`，`phases={beginMs:1, sqlMs:5001, commitMs:0}` → certify 自己的 `BEGIN IMMEDIATE` 被**卡满 5 秒**（busy_timeout 用尽）。
+   - `slow SQLite session write`：scout 13506ms、**work 13585ms**，`reclamationAdmissionId=1` → 两个 agent 的 certify 并发在抢。
+   - `slow SQLite reclamation Worker operation`：`reclamationKind=canonical-validation`，`elapsedMs=14454`，**`outcome=rejected`**，报错锚点 `session-accessor.sqlite-reclamation-commit-BX3N0u2L.mjs:25:88`。
+3. **两个 5 秒是同一个数字**（源码确认）：
+   - `session-accessor.sqlite-reclamation-commit-BX3N0u2L.mjs:4` → `const COMMIT_DECISION_TIMEOUT_MS = 5e3`，worker 用 `Atomics.wait(shared,0,REQUESTED,5000)` 等主线程授权提交。
+   - `openclaw-state-db-contract-CYdyW5CE.mjs:80` → `OPENCLAW_SQLITE_BUSY_TIMEOUT_MS = 5e3`，certify 的 `BEGIN IMMEDIATE` 等锁上限也是 5 秒。
+   → **等待方与被等待方同时到点**，worker 必然拿不到授权 → `compareExchange(REQUESTED→COMMITTING)` 失败 → 抛 `SQLite session reclamation commit checkpoint expired`。
+4. **失败会「粘住」整个进程生命周期**。源码 `agent-database-admission-BjKNx4ry.mjs`：
+   - 拒绝结论存在**进程内存** `refusalsByState`，只有 `source="startup"` 的新准入批次能覆盖；
+   - 诊断路径 `source==="diagnostic"` 遇 `source==="startup"` **直接 return**（L190）→ **`doctor` 永远改不掉它**；
+   - 全文件**没有任何 `refusalsByState.delete/clear`** → 本次 boot 内不可恢复。
+   → 这解释了「为什么 doctor 报 issues=0 / integrity=ok，但运行时一直拒绝」。
+5. **受害 agent 每次重启都换人**（与「某个 agent 库坏了」无关）：
+   - 11-22 及之前：finance / orchestrator / main
+   - 11-23 04:42 那一脚：**work**
+   → 是**竞态**，谁输谁中招。
+6. **可观测后果**：`work` 库自 **11-23 04:42 起写入全部失败**（主库 mtime 停在 04:42:10，wal 0 字节）；`session-entry.patch` 失败 11-24 全天 **136 次**（占全天 checkpoint 错误 166 条的 82%，**其余 7 个 agent 零命中**）；`Heartbeat (work)` `consecutiveErrors=24`；`Cron maintenance failed` 今日 **129 次**；`state/openclaw.sqlite` 的 `delivery_queue_entries` 里 **1 条 pending 卡死**（`4c89a409…`，`retry_count=131`，`recovery_state=unknown_after_send`）。
+
+**为什么 `doctor --fix` / `inspect` / `validate` 都没用**（本次实测）：
+- `doctor --session-sqlite inspect --session-sqlite-all-agents` → **8 个 agent 全部 `issues=0, integrityCheck=ok`**；
+- `doctor --session-sqlite validate --session-sqlite-agent work` → `targets: []`（空集）；
+- `doctor --session-sqlite inspect --session-sqlite-agent work` → `sqliteEntries=4`、`issues=0`、`integrityCheck=ok`；
+- 手工只读校验：`PRAGMA integrity_check` 正常、`freelist_count=1`、`journal_mode=wal`、`BEGIN IMMEDIATE` 立即拿到写锁（0.0s）→ **库本身完全健康**。
+→ 结论：**这是纯运行期竞态 + 内存态拒绝，不是数据损坏**。任何「修库」动作都是空转。
+
+**对先前结论的修正（重要）**：
+- ❌ 11-06 / 11-22 的「重启无效」——**方向对但归因错**。重启确实没用，但不是因为库坏了，而是因为**每次重启都会重跑同一场竞态**，只是换个人中招。
+- ❌ 11-22 的「必须 `doctor --fix`」——**这条 repairHint 是通用文案，对本故障无效**（doctor 改不了内存态拒绝）。
+- ✅ 正确表述：**降低启动期并发 + 避免脏关闭**，让竞态不发生；发生后**只能靠「一次干净的重启」侥幸不中招**。
+
+**待 owner 决策（本场全程只读，未做任何写操作 / 未重启 / 未改脚本）**：
+1. **主修复方向**：让启动期 canonical-validation 不并发。或等上游把 `COMMIT_DECISION_TIMEOUT_MS` 与 `OPENCLAW_SQLITE_BUSY_TIMEOUT_MS` 拉开（现在**相等**是竞态成立的充要条件）。
+2. **规避**：干净关闭 Gateway（消除 `process-death` / WAL 恢复路径），且**避开有 agent 在跑时重启**；或临时减少同时启动的 agent 数。
+3. **取证给上游**（本故障最有价值的产出）：
+   `openclaw doctor --session-sqlite recover --session-sqlite-agent work --github-issue`
+   —— 会生成脱敏 issue 报告；本次已把上面的证据链整理好，可直接附上。
+4. **解卡死的投递**：那条 pending 的 `4c89a409…` 需要 work agent 恢复可写后才会自然重投；不要手工改 `delivery_queue_entries`（会丢投递语义）。
+5. **恢复优先级**：`work` 目前完全不可写（写入 0 落地），但它只是 8 个 agent 之一，main/life/scout/coder/finance/health 全部正常 → **不影响今晚 Life NightOps 等主流程**，可排在非高峰处理。
+
+**教训**：
+- 「静态检查全绿」≠「运行时可用」。SQLite 这层要把 **`doctor inspect`（静态）+ `integrity_verifications`（关闭态）+ 运行时写入成功率** 三者合看，缺一不可。
+- 遇到「重启后换了个 agent 犯同样的错」，第一反应应是**竞态/共享资源**，而不是「这个 agent 的库坏了」。
+- OpenClaw 的 `repairHint` 是**通用文案**，不要当作已验证结论直接执行；本次它误导了两周（11-06 → 11-22）。
+- 读 `dist/*.mjs` 源码里的**超时常量并两两比对**，比翻日志快得多——本案两个 5 秒一比即中。
+
+<!-- project: path:/home/zhiping/.openclaw/workspace/agents/life -->

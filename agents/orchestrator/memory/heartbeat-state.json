@@ -11,16 +11,17 @@
     "cron_registry_diagnosis": 1793992694,
     "native_backup_bypass": 1793992694,
     "native_backup_automation": 1793994610,
-    "cron_jobs": 1794079183,
-    "agent_activity": 1794079183,
+    "cron_jobs": 1794856898,
+    "agent_activity": 1794856898,
     "proxy": 1793997183,
-    "repos": 1794079183,
+    "repos": 1794856898,
     "nightops": 1793997183,
     "agent_to_agent": 1793997183,
-    "session_db_health": 1794079183,
-    "backup": 1794079183,
-    "nas_recycle": 1794079183,
-    "mail_smtp": 1794079183
+    "session_db_health": 1794856898,
+    "backup": 1794856898,
+    "nas_recycle": 1794856898,
+    "mail_smtp": 1794856898,
+    "timers": 1794856898
   },
   "currentStatus": {
     "proxy_25017": "FIXED (hardcoded 127.0.0.1 -> 172.18.160.1)",
@@ -81,13 +82,10 @@
     "work": 0
   },
   "repos": {
-    "m365_head": "0c593a1",
-    "m365_ahead": 3,
+    "m365_head": "d9f53b0",
+    "m365_ahead": 7,
     "m365_behind": 0,
-    "tree_clean": true,
-    "openclaw_source_head": "0790d9f593a",
-    "openclaw_source_frozen_days": 112,
-    "note": "scratch 里的 .gitignore 缺失 / ahead2 均已过时"
+    "mnt_c": "96% full (21G left)"
   },
   "reclaim_error_count_today": 575,
   "reclaim_errors_attributed": {
@@ -116,13 +114,17 @@
     "per_agent_nightops": "Scout/Life/Coder/Orchestrator 全 ok（legacy 4 路已 disable 有效）"
   },
   "session_db_health": {
-    "checkedAt": "2026-11-08T03:20:00+08:00",
-    "status": "🔴 main 唯一故障；main 持有 0 条租约（其余 8 条全属活进程 897835、零陈旧）",
-    "key_evidence": [
-      "main DB mtime 冻结在 11-05 07:18，零写入（-wal/-shm 除外）",
-      "main 无 lease → 会话访问器未走到取租约那步即被回收提交拒绝 → 重启无效，必须 compact",
-      "272.9MB(=260MiB) 是十进制/二进制口径差，不是增长（NightOps 报告口径需校正）",
-      "reclaim 575 条 / agent main unavailable 235 次 / heartbeat:main errs 72"
+    "checkedAt": "2026-11-17T03:20:00+08:00",
+    "main": "🟢 已恢复：main reclaim 错误 0（11-14 曾 180/h）",
+    "health": "🔴 唯一故障：leases=0 → 回收提交无人授权 → 每 60s 超时；doctor inspect 0 issues；DB 1.2MB；非容量问题",
+    "root_cause": "health 从未被真正使用（sessions 仅 10-16 .deleted）→ 从未取得租约 → withSqliteReclamationAuthorization 无人 authorize()",
+    "proven_executable_fix": "停 Gateway → openclaw doctor --fix → 重启（compact 需停机：holder 795 alive）",
+    "backup": "/tmp/openclaw/health-agent.sqlite.bak.20261117 (1253376 B)",
+    "rejected_hypotheses": [
+      "DB 损坏/过大 → 0 issues, quick_check ok, 1.2MB, 写锁立即可得",
+      "缺 models.json → 已补(5031B)，leases 仍 0，未解决",
+      "无关同步写入者可代授权 → helper 实测 1.00/min→1.14/min 无改善",
+      "缺 HEARTBEAT.md → work/finance 同样缺却正常 skipped（scratch 存于 cron_job_scratch 表，非文件）"
     ]
   },
   "stale_scratch_corrections": [
@@ -133,5 +135,22 @@
     ".gitignore 缺失 → 已存在",
     "Agent-to-Agent 未禁用 → 实为 main 库故障阻断",
     "web_search provider_error 连续18次 → 今日 0"
-  ]
+  ],
+  "nightops_corrections": [
+    "NightOps「reclaim 已归零/60min 0 条」→ 仅 main 口径成立；health 仍 60/小时",
+    "NightOps「disable heartbeat-health」→ 不可执行：system-owned monitor jobs cannot be edited by cron clients",
+    "NightOps 归因「health 未配置/缺 HEARTBEAT.md」→ 与 work/finance 对照已证伪"
+  ],
+  "timers_fixed_2026-11-14": {
+    "openclaw-native-backup.timer": "OnBootSec=12min",
+    "openclaw-backup.timer": "OnBootSec=25min",
+    "reason": "开机补跑与 Gateway 抢 IO → load 24 → reclaim 41~163s → 误判 agent 失效"
+  },
+  "openrouter_credits": 0,
+  "escalation_path": {
+    "checkedAt": "2026-11-17T03:44:00+08:00",
+    "status": "🟢 已恢复",
+    "proof": "sessions_list(agentId=main) 成功；sessions_send 被 accepted/queued；main DB mtime 03:44:29 印证落盘",
+    "note": "11-08 时 main DB 故障曾完全阻断该通道，现已随 main 恢复而恢复"
+  }
 }

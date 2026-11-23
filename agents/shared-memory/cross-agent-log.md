@@ -47,3 +47,10 @@
 - [2026-11-16] [Orchestrator] Coder 推翻自身旧结论：孤儿 receipt 会自愈(412分钟实证，网关未重启)，"重启=唯一手段"过度推广；判孤儿须加 age>15min 下限
 - [2026-11-16] [Orchestrator] 读活跃 state DB 被策略拦截 → cp 到 /tmp 后用 node:sqlite 读；WSL 下 journalctl 取不到 gateway unit 日志，不能当作"无错误"
 - [2026-11-16] [Orchestrator] QQ SMTP 授权码实测仍失效(Connection unexpectedly closed，11天断链)；OpenRouter total_credits=0(第6窗)；M365 6 commit 未 push
+- [2026-11-17] [Orchestrator] SQLite reclaim 错误收敛为单一来源：24h 1440 条 100% 归因 health（其余 agent 全 0）→ health 从未配置（无 HEARTBEAT/DIRECTIVE），errs 34→58；正解是停用或补配置，修库只解一半
+- [2026-11-17] [Orchestrator] Gateway RSS 实测 4434MB 已超 heap 上限 4096MB（CPU 96.3%→61.6% 回落）；/mnt/c 可用连续三日 37G→30G→21G，升级为 P1
+- [2026-11-17] [Orchestrator] Scout 撤回旧结论：Google AI blog RSS 十窗空壳是 302 未跟 -L 非源失效，修复后恢复 20 items → 「先修再下结论」再验证
+- [2026-11-17] [Orchestrator] 明日计划落盘 agents/orchestrator/Tomorrow_Action_Plan_2026-11-18.md；P0 四项待 Owner：health 停用/配置 / QQ SMTP 授权码(断链12天) / OpenRouter 余额0(第8窗) / M365 push(7 commit)
+- [2026-11-17] [Orchestrator] P0 根因锁定 health agent：唯一 leases=0 的 agent → 回收提交无人授权 → 每 60s 必超时（doctor inspect 0 issues、DB 仅 1.2MB、非容量问题）
+- [2026-11-17] [Orchestrator] 更正 NightOps 两点：reclaim「已归零」仅对 main 口径成立（health 仍 60/h）；heartbeat-health 是 system-owned，cron 客户端无法 disable
+- [2026-11-17] [Orchestrator] 已修：两套备份 timer 加 OnBootSec（12min/25min），消除开机补跑与 Gateway 抢 IO 造成的误判

@@ -1,0 +1,1888 @@
+[
+ {
+  "id": "2611.26553",
+  "title": "Replication of Agentic Security Events: Audit and Investigation (ROGUE-AI)",
+  "summary": "Agents based on large language models (LLMs) can now delete files and send payments on behalf of their users. News media reports routinely describe failures of these agents (e.g., Replit's coding agent deleting a production database), but a report often only says what went wrong and rarely (in)validates the incident or finds its root cause. Incident catalogs collect these reports, and benchmarks record whether agents fail, but neither replicates an incident nor tests the cause its report might identify. In this paper, we present ROGUE-AI (Replication of Agentic Security Events: Audit and Investigation), a multi-agent framework that closes the above gap and rebuilds each reported incident offline together with a matched control that lacks only the blamed cause, and runs agents on both. Our results suggest that ROGUE-AI is able to reproduce the reported harm in 89% of its 108 attempted replications. Agents built on five current GPT, Claude, Gemini and DeepSeek models made the reported mistake in 18% to 33% of runs, against at most 1% without the blamed cause. Of the 72 incidents with real-world harm, 62 had no underlying attacker, and in these, agents did what their task asked for but missed an ordinary hazard, such as a database shared with the live site. Replications without an attacker caused more harm than replications of prompt injection for all five models. Defenses against prompt injection look for injected instructions, but these replications contain none. Further, a warning after each tool output that names the hazard and its consequence lowered harm for all five models, whereas a note of the same length that does not mention the hazard left most of the harm in place. Built from real incidents, the ROGUE-AI replications form a reusable audit framework that vendors can rerun before each new release.",
+  "published": "2026-11-19T18:23:35Z",
+  "updated": "2026-11-19T18:23:35Z",
+  "authors": [
+   "Mengxiao Wang",
+   "Mahbub Alam",
+   "Kalyan Nakka",
+   "Nitesh Saxena"
+  ],
+  "cats": [
+   "cs.CR",
+   "cs.AI",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.26553"
+ },
+ {
+  "id": "2611.26154",
+  "title": "Public-Private Cooperation in the Port of Rotterdam: An Agent-Based Toy Model of Cooperative Efforts Against Cocaine Trafficking",
+  "summary": "Cocaine trafficking poses a persistent governance challenge in the Port of Rotterdam (PoR), requiring cooperation between public and private actors. This paper develops an Agent-Based toy Model (ABM) coupled with a Causal Loop Diagram (CLD) to explore interactions between trust, cooperation, competition, pressure, enforcement, and actor skills in public-private cooperation (PPC). Based on empirical data of PPC in the PoR, we explore responses to parameter shocks across different initial configurations. In this model, effectiveness of PPC is strongly state-dependent and measures institutional, relational, behavioral, and resource readiness. The toy model demonstrates that isolated, single-track measures yield limited long-term gains modelled over 5 years due to structural system inertia, whereas coordinated multi-parameter strategies produce substantial improvements. Specifically, combining trust-building, cooperation, and moderate pressure with reduced regulatory enforcement friction raises effectiveness by 25% from a baseline effectiveness, compared to just 13% for an isolated increase in cooperation. Acknowledging the exploratory nature of the model, these findings offer exploratory hypotheses on port security governance. Future work should validate the model against test cases and additional expert input.",
+  "published": "2026-11-19T14:12:03Z",
+  "updated": "2026-11-19T14:12:03Z",
+  "authors": [
+   "Frederike Oetker",
+   "Charlotte Geertman"
+  ],
+  "cats": [
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.26154"
+ },
+ {
+  "id": "2611.25985",
+  "title": "Law at the Speed of AI: Critical Legal Infrastructure for the Machine Age: Autonomy Under Law Architecture (AULA)",
+  "summary": "The global deployment of autonomous AI agents within and across organisations exceeds the governance infrastructure available to constrain it. Agent communication and authentication protocols, principally the Model Context Protocol and the Agent2Agent Protocol, are maturing quickly, but maturity at the protocol layer does not produce legal legibility at the governance layer. Runtime enforcement written by the deploying organisation fixes the resources an AI agent can reach, not the authority under which it acts. Legal legibility is the capacity of a legal system to recognise, interpret and regulate activity by mapping it onto legal personhood, property, rights and liabilities. Existing (analogue) legal infrastructure cannot supply it for autonomous deployment. The resulting deficit is bidirectional. It concerns the attribution of liability when an AI agent causes harm, and the allocation of rights, including data and economic rights, generated by agentic activity and by the AI agent itself as a source of value and form of property. This paper characterises that deficit as the legal attribution gap, a material and unaddressed risk to economies, organisations and citizens that is magnified in cross-organisational multi-agent deployment. The paper describes the Autonomy Under Law Architecture (AULA), in which AI systems and data assets are registered as legal objects anchored to one or more identified legal persons, governed by cryptographically tethered smart legal instruments and evaluated at runtime. Each smart legal instrument can carry a legal context clause, through which the legislation, regulation and judicial decisions in force at the time of the act are given practical and legal effect in that evaluation. Infrastructure of this kind is a precondition for the continued function of any legal, property and economic system with both human and autonomous machine stakeholders.",
+  "published": "2026-11-19T12:09:19Z",
+  "updated": "2026-11-19T12:09:19Z",
+  "authors": [
+   "Natasha E Blycha",
+   "James Myint",
+   "Chen Feng",
+   "Dr Amani Soysa",
+   "Koshin Jama",
+   "Schellie-Jayne Price",
+   "Matthew Blycha"
+  ],
+  "cats": [
+   "cs.CE",
+   "cs.AI",
+   "cs.ET",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.25985"
+ },
+ {
+  "id": "2611.25880",
+  "title": "Evolving Decoding Algorithms for Quantum Error Correction",
+  "summary": "Quantum computation entails robustness engineering: a noisy quantum state is measured continuously, and a classical algorithm (the decoder) must infer corrections that reliably remove the noise, fast enough to keep up. We write several published belief-propagation (BP) decoders for quantum low-density parity-check (qLDPC) codes in a Domain-Specific Language (DSL), and search over it with grammatical evolution. Written in the language, the published decoders show their parameters in plain view, allowing us to re-parameterise BP+OSD (ordered statistics decoding) and BP+LSD (localized statistics decoding) decoders with damping, before any search, making each 17.1--41.0$\\times$ faster at a higher error rate, and BP+OSD-0 about 103 faster than the ldpc package's version tuned on the [[72,12,6]] bivariate-bicycle code. Evolution over the language finds decoders that improve the time-error front. One makes 23% fewer logical errors than BP+OSD-0 with damping at 0.64$\\times$ its time, and decoders evolved from random code are more accurate than ldpc's tuned BP+OSD-0 at 1/31 of its time or less. Frozen at one operating point, the two fastest evolved decoders generalize well across noise levels, code sizes and round counts, staying at the time-error front. Ultimately, we demonstrate that capturing expert knowledge within a DSL creates a powerful intermediate layer---one that effectively bridges human intuition and machine-driven optimization to unlock highly efficient quantum error correction.",
+  "published": "2026-11-19T10:36:21Z",
+  "updated": "2026-11-19T10:36:21Z",
+  "authors": [
+   "Eduardo Dueñez",
+   "Edgar Said Hernandez Sanchez",
+   "Edgar A. Duéñez-Guzmán",
+   "Suzanne Sadedin"
+  ],
+  "cats": [
+   "quant-ph",
+   "cs.AI",
+   "cs.MA",
+   "cs.NE"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.25880"
+ },
+ {
+  "id": "2611.25879",
+  "title": "Coherent belief and opinion propagation produces more echo chambers: corrected version",
+  "summary": "The occurrence of echo chambers is a well-known phenomenon in social networks. Echo chambers are groups of agents satisfying three properties: homogeneity, i.e., sharing the same opinion, segregation, i.e., listening primarily to agents of the same group, and reinforcement, i.e., increasing opinion similarity over time. Opinion dynamics models have been used to explain how echo chambers occur through agents updating their opinions. However, social network users also exchange beliefs supporting their opinions. Here, we aim at identifying the effect of propagating beliefs together with opinions on the formation of echo chambers. For that purpose, we complement an existing opinion dynamics model with classical belief merge operations. Beliefs and opinions are also maintained coherent guided by values that agents share. We introduce measures, applying to either beliefs and opinions, to identify echo chambers based on the three properties. This model is used to simulate opinion and belief propagation with varying initial conditions and agent tolerance for different opinions/beliefs. Results confirm the occurrence of echo chambers observed in previous opinion dynamics studies in a different setting and with a stricter measure. They also demonstrate the occurrence of echo chambers with belief propagation. Finally, they show that connecting opinions to beliefs and maintaining their coherence increases the number of belief echo chambers, but that they involve a reduced number of agents.",
+  "published": "2026-11-19T10:35:26Z",
+  "updated": "2026-11-19T10:35:26Z",
+  "authors": [
+   "Hiro Kataoka",
+   "J{é}r{ô}me Euzenat",
+   "Koji Hasebe"
+  ],
+  "cats": [
+   "cs.AI",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.25879"
+ },
+ {
+  "id": "2611.25852",
+  "title": "Interlacing Committees with Edge-Expansion",
+  "summary": "Approval-based committee selection has recently been studied through the lens of \\emph{interlacing}, a framework for studying polarization in approval elections, in which committees induce a similarity graph over voters. The quality of committees is then evaluated through the connectivity of the resulting graph. We revisit the connectivity measures used in this framework and propose \\emph{edge-expansion}, a classical graph-theoretic measure with well-established connections to polarization in networks, as the optimization objective. We provide a theoretical foundation for this proposal by relating interlacing to classical models of information diffusion and by comparing edge-expansion with previously proposed connectivity objectives, identifying qualitative differences in the structural properties they capture. Finally, we study the computational complexity of optimizing edge-expansion, showing that hardness persists even for voter-interval preferences, while the problem is polynomial-time solvable for every fixed committee size, with an improved dependence on the committee size for voter-candidate-interval preferences.",
+  "published": "2026-11-19T10:05:29Z",
+  "updated": "2026-11-19T10:05:29Z",
+  "authors": [
+   "Gili Bielous",
+   "Reshef Meir"
+  ],
+  "cats": [
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.25852"
+ },
+ {
+  "id": "2611.25774",
+  "title": "DS2Agent: Holistic Device Agents for Accelerated Embedded Board-Level Design",
+  "summary": "Embedded board-level development demands extensive expertise, from component selection and device characteristics to interface configuration, driver writing, and system composition. Recently, LLM-based agents have shown strong capabilities, raising the prospect of automating board-level design tasks. However, existing agents either target chip-level design or treat datasheets as static text, offering little guidance on whether a specific component should---or even could---be used for a given board-level design. Moreover, without touching real hardware, they hallucinate incorrect details. To fill this gap, we present {\\setlength{\\fboxsep}{1pt}\\href{https://anonymous.4open.science/r/DS2Agent-9FE8/}{\\fcolorbox{blue}{white}{DS2Agent}}}, an open-source framework that constructs interactive agents from device datasheets. Each agent comprises three models: a knowledge model supporting retrieval and question answering; a digital-twin model capturing the physical functionality of the device; and an interface model supporting driver development and system integration. To suppress hallucinations, we also allow optional connections to real devices, so that the agent can calibrate its internalized knowledge against the device. We evaluate DS2Agent on ten devices spanning seven functional categories. Compared with the baseline, the DS2Agent-augmented agent improves the question-answering score from 87 to 97 out of 100 while using 44.8\\% fewer tokens. For driver generation, it reduces average token usage per device by 72.9\\%. For system integration, it reduces total token usage across three FreeRTOS applications by 29.7\\%.",
+  "published": "2026-11-19T09:09:58Z",
+  "updated": "2026-11-19T09:09:58Z",
+  "authors": [
+   "Hongbin Yang",
+   "Chi Zhang",
+   "Yinhao Xiao",
+   "Runyu Pan",
+   "Yanni Yang",
+   "Xiuzhen Cheng"
+  ],
+  "cats": [
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.25774"
+ },
+ {
+  "id": "2611.25661",
+  "title": "GRODE-RTL: Source-Mapped Dependency Views for LLM-Based RTL Repair",
+  "summary": "Large Language Models show great potential for automated Register-Transfer Level repair, yet they struggle with non-local faults where root causes and failing outputs reside far apart in source code. Treating RTL as a flat token sequence obscures hardware dataflows, whereas exposing complete synthesized graphs overwhelms the model with fine-grained metadata. To resolve this representation dilemma, we propose GRODE-RTL, an anchor-centric representation that extracts the single-clock-stage fan-in cone of a suspect register from the netlist, maps netlist nodes back to editable source lines, and organizes them into a compact hop-partitioned dependency view. By prioritizing direct drivers and folding distant hops, GRODE-RTL guides standard tool-using agents without exposing ground-truth hints or oracle feedback. We evaluate GRODE-RTL across 30 formally validated non-local faults using three LLMs (DeepSeek-V4-Flash, GLM-5.2, and MiniMax-M3) alongside a controlled six-configuration ablation study. GRODE-RTL improves pass@1 over source-level exploration by 16.7% on DeepSeek, by 26.7% on GLM-5.2, and by 20.0% on MiniMax-M3, with consistent gains on the hard-to-retrieve far-distance and indirect-anchor subsets of all three models. Our controls isolate structural relevance from generic context expansion, proving that selective dependency organization rather than full graph exposure is key to effective RTL repair.",
+  "published": "2026-11-19T07:42:26Z",
+  "updated": "2026-11-19T07:42:26Z",
+  "authors": [
+   "Jingyi Zhou",
+   "Yi Liu",
+   "Bin Sun",
+   "Hongji Zhang",
+   "Dongsheng Zuo",
+   "Qiang Xu"
+  ],
+  "cats": [
+   "cs.AR",
+   "cs.AI",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.25661"
+ },
+ {
+  "id": "2611.25167",
+  "title": "Game-Theoretic Data Allocation for Expert Specialization and Routing",
+  "summary": "Can the allocation used to train experts also predict which expert will perform best on a prompt? Such a connection would make the intended division of labor inspectable before training and allow the allocation itself to guide inference. We introduce InflEns, a mixture of LoRA experts whose training weights and inference routes come from the same location game in a fixed prompt-trait space. Players choose positions to maximize their expected shares of the prompt distribution, without using expert losses. We utilize the game's kernel-general theoretical criterion for when co-located positions become locally unstable to separation. We evaluate InflEns on a corpus assembled from seven safety-related benchmarks, which demonstrates that the highest-share expert has the lowest held-out response negative log-likelihood (NLL) on approximately 90% of prompts across four kernels under a sharpened simplex representation, compared with approximately 15% after permuting allocations across prompts. We demonstrate that the method performs comparably to published learned gates without having to train an explicit gate on the experts. Because the router is fixed, we can trace harmful behavior to a single expert and retrain only that expert, which lowers HarmBench attack success from 0.51 to 0.02 while keeping instruction following. The game also gives us several controls over how the experts specialize, including the kernel choice and its parameters, the trait-space geometry, and the number of experts. Importantly, InflEns is a general framework that can be extended to any encoder and data distribution.",
+  "published": "2026-11-18T20:46:49Z",
+  "updated": "2026-11-18T20:46:49Z",
+  "authors": [
+   "Mark Lovett",
+   "Denis Lim",
+   "Soroush Vosoughi"
+  ],
+  "cats": [
+   "cs.LG",
+   "cs.AI",
+   "cs.CL",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.25167"
+ },
+ {
+  "id": "2611.25158",
+  "title": "GridAnchor: Specialized Multi-Agent AI for Safeguarding Autonomous Energy Systems Against Cyber-Physical Hallucinations",
+  "summary": "Autonomous energy systems increasingly chain specialized learned agents, such as a forecaster, a state estimator and a dispatcher that may be a language model. These agents can emit confident outputs that contradict physics, and downstream agents may act on them. We define such cyber-physical hallucinations and their cascades, organize them in eight types, and build CPH-Bench, a generator of labeled episodes on SimBench feeders. We propose GridAnchor, a verification layer whose Physics-Residual Graph Transformer scores every claim from residuals between the claims, the measurements and a linearized grid model. Mondrian conformal p-values with the Benjamini-Hochberg procedure turn the scores into decisions, a root head attributes cascades, and a quadratic program repairs unsafe actions with a voltage margin calibrated at repaired steps. On a simulated rural medium-voltage feeder, GridAnchor reaches a message-level area under the precision-recall curve of 0.846, against 0.837 for the strongest of six baselines, a difference within the confidence interval. It leads on estimates and actions, whereas a self-consistency check that knows the label tolerances reaches 0.874 by leading on forecasts. The false-alarm rate stays within 0.17 percentage points of the nominal level on steps without injected hallucinations. In closed loop, GridAnchor leaves no bus outside the voltage band on the test days, against 0.0700% of the bus-steps without protection, and simpler detectors with the same mitigation come close. Stale but coherent messages and single-bus forecast errors remain mostly undetected.",
+  "published": "2026-11-18T20:36:22Z",
+  "updated": "2026-11-18T20:36:22Z",
+  "authors": [
+   "Abderaouf Bahi",
+   "Hasan Masrur"
+  ],
+  "cats": [
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.25158"
+ },
+ {
+  "id": "2611.25088",
+  "title": "BuggyMLE: Scaling Machine Learning Engineering Difficulty with Bug Injection",
+  "summary": "Enabling AI systems to autonomously improve AI models requires agents capable of performing machine learning engineering (MLE). In practice, designing, training, and evaluating complex models demands modifying multi-file repositories to reproduce results, debug training runs, integrate datasets, and port frameworks. However, existing MLE benchmarks limit agents to single-file edits without full repository or shell access, and common repository-level software engineering benchmarks have rapidly saturated. To address this, we introduce the Code Complexity Index (CCI), a difficulty metric based on ten structural features spanning repository scale, dependency depth, and patch size. CCI strongly predicts average solve rates across eight public coding benchmarks ($R^2 = 0.951$), identifying patch size and complexity as top predictors. Guided by CCI, we develop BuggyMLE, a scalable framework where agents inject controlled mutations into working ML repositories, synthesizing over 6,600 bug-injected MLE repository variants and nearly 260K lines of injected code based on 222 source repositories. Using BuggyMLE, we make two contributions. First, we construct BuggyMLE-Bench-Lite, the first difficulty-graded, repository-level variant of MLE-Bench Lite; across 14 evaluated models, the top solve rate drops from 95% to 9% as difficulty is scaled from the easiest to the hardest tier. Second, we synthesize a training curriculum across three difficulty levels over 200 additional ML repositories, fine-tuning a Qwen3.5-9B model to rival frontier models on BuggyMLE-Bench-Lite. Our trained model transfers beyond ML, raising its SWE-bench Lite resolve rate from 24% to 33% and its LiveCodeBench v6 pass@1 from 69% to 71%.",
+  "published": "2026-11-18T19:26:15Z",
+  "updated": "2026-11-18T19:26:15Z",
+  "authors": [
+   "John Wu",
+   "Rushi Qiang",
+   "Yuchen Zhuang",
+   "Guowang Li",
+   "Girish Narayanswamy",
+   "Max Xu",
+   "Sam Schmidgall",
+   "Mark Malhotra",
+   "Shwetak Patel",
+   "Jimeng Sun",
+   "Daniel McDuff",
+   "Bo Dai",
+   "Xin Liu"
+  ],
+  "cats": [
+   "cs.AI",
+   "cs.LG",
+   "cs.MA",
+   "cs.SE"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.25088"
+ },
+ {
+  "id": "2611.25071",
+  "title": "FinVeriQA: Financial Research Agents for Question Answering: Routing, Retrieval, MCP Tool Use, and Provenance-Aware Evidence Verification",
+  "summary": "Large language models (LLMs) write fluent financial analyses but miscompute ratios, recall stale prices, and route questions to the wrong tool with high confidence. We ask which component should do each job in a financial question-answering assistant, and study it with FinVeriQA, an open-source multi-agent research prototype over SEC filings and live market data: a compact typed-decision model (Laya) routes each question and screens out advice requests, Python computes every number, retrieval and tools fetch evidence, Mistral-7B writes a cited answer, a code validator checks that cited IDs exist and that numbers match computed notes, and a Model Context Protocol (MCP) server exposes the pipeline. In live experiments, Laya routed better than Mistral-7B (0.85 vs. 0.52; overall 0.86 vs. 0.68, McNemar p = 0.0003); a 12B Mistral decided no better, and DeepSeek-R1-8B decided better (0.79 vs. 0.68, p = 0.0192) but about 9.9 times more slowly. Mistral-7B computed 29% of 100 financial calculations correctly against 100% for Python, a live quote cut price error from 210% to 0.00%, and hybrid retrieval reached 76% Hit@5 on 50 filing questions. Yet in a live case study, both agent answers passed validation while describing AMD sample data under NVIDIA's and Alphabet's names. A controlled upper-bound study on the FinRank benchmark explains why: when one figure in the shared evidence is corrupted, self-consistency stays confident (agreement 0.55 to 0.59 while accuracy falls from 0.50 to 0.00), and a shared-evidence check (the kind our validator performs) catches 35% of the errors, whereas a check against the original passage catches 77% ($p = 5.96 \\times 10^{-8}$); for DeepSeek-R1-8B, 68% vs. 90%. Verification must be independent of the evidence the writer saw.",
+  "published": "2026-11-18T19:13:45Z",
+  "updated": "2026-11-18T19:13:45Z",
+  "authors": [
+   "Meenakshi Rajpurohit",
+   "Anna Phan",
+   "Ravikumar Komandur Narayanan",
+   "Gunanidhi Ramakrishnan",
+   "Nathan Howland"
+  ],
+  "cats": [
+   "cs.CL",
+   "cs.AI",
+   "cs.IR",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.25071"
+ },
+ {
+  "id": "2611.25056",
+  "title": "Attacks and Defenses in Decentralized Multi-Agent Systems with Hop-by-Hop Task Decomposition and Delegation",
+  "summary": "Decentralized multi-agent LLM systems enable independently administered agents, each with its own operator, model, memory, and configuration, to collaborate on complex tasks without centralized coordination. Agents autonomously decompose tasks, execute subtasks and delegate remaining work to peers, enabling scalability and eliminating single points of failure. However, decentralization also introduces significant security challenges, as no single entity has complete visibility into task execution or the authority to enforce correct behavior across agents. In this paper, we systematize threats from malicious agents in decentralized multi-agent systems and propose mitigation techniques. We first design and evaluate attacks against integrity, availability, and confidentiality, demonstrating that a single malicious agent can cause up to 100% task failure, inflate token consumption and runtime by up to 7.7x and 3.2x, respectively, and exfiltrate up to 94% of relevant prior tasks from benign agents. We then present a cryptographic protocol that produces an irrefutable verified execution trace of every action taken in the system and develop an auditor that analyzes these traces to detect and attribute malicious behavior. Evaluations on HiddenBench using gpt-6.1-sol and Qwen3.8-27B-FP8 show that our protocol incurs negligible latency overhead, while the auditor detects and correctly attributes 98% of attacks, including those that comply with the protocol.",
+  "published": "2026-11-18T19:06:28Z",
+  "updated": "2026-11-18T19:06:28Z",
+  "authors": [
+   "Matthew D. Laws",
+   "Maria Lazou",
+   "Alina Oprea",
+   "Cristina Nita-Rotaru"
+  ],
+  "cats": [
+   "cs.CR",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.25056"
+ },
+ {
+  "id": "2611.24845",
+  "title": "Vibe-Trading: Towards Agent-Native Trading",
+  "summary": "Existing AI agents can retrieve information, call tools, run experiments, and produce multi-step outputs. Yet most are built around relatively static workflows and struggle to preserve reliable state as the environment changes. Financial trading makes this limitation especially consequential: prices, news, market conditions, portfolio positions, and available capital evolve continuously. A result is useful only when it remains tied to the correct time, data snapshot, and execution context. We present Vibe-Trading, a comprehensive agent-native trading framework and all-in-one workspace for building, evaluating, and evolving agents for financial trading. It unifies market research, financial data, strategy generation, backtesting, portfolio analysis, paper trading, multi-agent collaboration, and optional broker execution. Its central contribution is an architecture that keeps results, evidence, research history, and trading authority connected throughout the research-to-action process. Each result retains its source, temporal scope, configuration, and producing run. Shared evidence grounding enables verification, versioned research records support reproducible continuation, and an explicit authority gate separates strategy research from live execution. Together, these designs provide a practical foundation for trading agents whose results can be traced, reproduced, and acted on only under explicit authority.",
+  "published": "2026-11-18T18:07:57Z",
+  "updated": "2026-11-18T18:07:57Z",
+  "authors": [
+   "Haozhe Wu",
+   "Zhonghang Li",
+   "Chao Huang"
+  ],
+  "cats": [
+   "cs.AI",
+   "cs.CL",
+   "cs.MA",
+   "q-fin.CP",
+   "q-fin.TR"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.24845"
+ },
+ {
+  "id": "2611.24839",
+  "title": "Kaer: Security-Aware Replanning for Multi-Agent Systems",
+  "summary": "One popular architecture for multi-agent systems (MAS) relies on an orchestrator that generates an initial plan, coordinates its execution, and dynamically revises the plan based on agent feedback when tasks cannot be fully specified in advance. This dynamic replanning introduces a critical vulnerability: malicious agents can embed instructions within their feedback to hijack the replanning process. Existing defenses focus exclusively on per-tool access control or static, pre-execution policy enforcement, leaving the replanning phase unsecured. We introduce Kaer, a multi-agent framework featuring security-aware replanning. Kaer shields the planner from untrusted agent feedback by conveying diagnostics to the replanning procedure strictly through abstract templates. Plan revisions are restricted to a set of deterministic repair operators, and all modified plans must satisfy preset policies. We create Cintra, a benchmark of simulated user tasks requiring replanning paired with adversarial objectives targeting the replanning phase. Using Cintra, we evaluate both task completion rates and system vulnerability to replanning exploits by malicious agents. Evaluating Kaer on Cintra against Magentic-One (an undefended MAS) and ControlValve (the state-of-the-art defense) demonstrates that Kaer achieves higher robustness than both systems while maintaining comparable utility to ControlValve. Although abstract failure templates slightly constrain utility on select tasks, Kaer enables MAS to perform secure, dynamic plan revisions without exposing the orchestrator to untrusted agent feedback.",
+  "published": "2026-11-18T18:05:47Z",
+  "updated": "2026-11-18T18:05:47Z",
+  "authors": [
+   "Tushin Mallick",
+   "Evan Rose",
+   "Matthew Laws",
+   "Alina Oprea",
+   "Cristina Nita-Rotaru"
+  ],
+  "cats": [
+   "cs.MA",
+   "cs.LG"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.24839"
+ },
+ {
+  "id": "2611.24406",
+  "title": "CaDO: Formal Verification-Guided Multi-Agent Framework for Causal Dataset Repair and Generation",
+  "summary": "High-quality causal reasoning datasets are essential for developing models with reliable causal understanding, particularly in specialized domains. However, existing datasets frequently suffer from incorrect annotations and structural imbalances, which can lead to biased predictions and limited generalization. To address this issue, we propose CaDO (Causal-Engine-Guided Multi-Agent Data Optimization), a multi-agent framework for automated diagnosis and repair of causal reasoning datasets. Our framework consists of three key stages: formal causal reasoning, multi-level diagnosis, and automated data repair and generation. First, a Formalizer Agent translates natural language questions into formal causal queries to minimize semantic deviations and make retrieval and verification more explicit and tractable. Second, a dual-level diagnosis mechanism employs independent Critic Agents to identify sample-level errors while analyzing query-type coverage and label distributions to detect dataset-level structural imbalances. Finally, the framework employs reusable repair operators grounded in formal causal semantics to correct erroneous samples, while Explorer and Expander Agent collaboratively produce diverse and semantically consistent new samples. Experimental results show that CaDO significantly outperforms the strongest of five data cleaning baselines in 16 out of 18 experimental settings, improving downstream model accuracy by up to 9.1%. Moreover, at least 95% of the samples flagged by CaDO are defective, and on CLadder, CaDO incorrectly modifies 92.2% fewer correct labels than an LLM-based judge, demonstrating its effectiveness and reliability. Our code and data are publicly available at https://github.com/thisissyu/cado.",
+  "published": "2026-11-18T13:36:40Z",
+  "updated": "2026-11-18T13:36:40Z",
+  "authors": [
+   "Songli Yu",
+   "Qi Luo"
+  ],
+  "cats": [
+   "cs.AI",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.24406"
+ },
+ {
+  "id": "2611.24302",
+  "title": "OpenKAGE: Open-Ended Lifelong Learning in the Open World via Knowledge-Sharing Agent-Group Evolution",
+  "summary": "Building autonomous agents that continually explore open worlds and acquire new capabilities through experience is a long-standing aspiration in artificial intelligence. Existing research often pursues lifelong learning within predefined tasks, curricula, or objectives, with self-improvement largely confined to individual agents. We introduce OpenKAGE, an agent-group evolution framework for open-ended lifelong learning. Within this framework, agents autonomously explore open worlds and continually acquire new capabilities by accumulating and reusing knowledge from their own interactions and the experience of others. OpenKAGE builds on two key mechanisms: (1) a two-layer knowledge representation, with a memory layer for situated memories and an experience layer for transferable experience and skills that retains the applicability conditions needed for reuse; and (2) a knowledge-sharing mechanism that semantically consolidates textual experience into a continuously evolving shared knowledge graph, while executable skills are shared verbatim. In Minecraft, OpenKAGE supports open-ended lifelong learning, enabling agent groups to sustain exploration and reach advanced technological milestones. Furthermore, the accumulated knowledge can be transferred to a newly initialized agent group on a different backbone model, improving its survival and exploration progress.",
+  "published": "2026-11-18T12:11:56Z",
+  "updated": "2026-11-18T12:11:56Z",
+  "authors": [
+   "Wenhao Yuan",
+   "Longhui Yuan",
+   "Zexi Jia",
+   "Ningzhe Shi",
+   "Jingwei Li",
+   "Shipeng Cen",
+   "Pengcheng Luo",
+   "Jie Zhou",
+   "Jinchao Zhang"
+  ],
+  "cats": [
+   "cs.AI",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.24302"
+ },
+ {
+  "id": "2611.24108",
+  "title": "Asymmetric Decomposition for Multi-Agent Path Finding with Unassigned Agents",
+  "summary": "Robots without assigned tasks may obstruct active robots, while routing them to designated parking locations can cause unnecessary travel. This article proposes flow-oracle conflict-based search (FOCBS) for Multi-Agent Path Finding with unassigned agents (MAPF-UA). FOCBS searches over assigned-agent paths using conflict-based search (CBS) and routes targetless unassigned agents through a min-cost flow oracle. When the selected assigned-agent paths leave unassigned agents no collision-free paths, flow-conflict branching converts min-cut blockers into assigned-agent constraints, which guide the search without excluding optimal solutions. A batched zero-cost warm start accelerates the oracle, and start-avoiding tie-breaking reduces unassigned-agent movement. For feasible instances on finite graphs, we prove termination and global minimization of assigned-agent sum of service time, measured by last-arrival times. Unassigned-agent movement is minimized conditional on the selected assigned-agent paths, without a global lexicographic optimality guarantee. Benchmark experiments show that FOCBS scales well with the number of unassigned agents, and ablation studies show that, compared with discarding non-completable assigned-agent paths, flow-conflict branching solves substantially more instances while retaining optimality. Simulation and physical-robot experiments demonstrate plan executability, with laboratory tests reducing fleet travel by 40.8% relative to the parking-based coordination baseline. The source code and related resources are available at https://github.com/Chin-hsi/focbs",
+  "published": "2026-11-18T09:26:08Z",
+  "updated": "2026-11-18T09:26:08Z",
+  "authors": [
+   "Xi Jin",
+   "Chen Qian",
+   "Renjun Zhang",
+   "Guowei Wu",
+   "Xiaobo Li",
+   "Jun Jiang",
+   "Weiwei Shang"
+  ],
+  "cats": [
+   "cs.RO",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.24108"
+ },
+ {
+  "id": "2611.24039",
+  "title": "A Capability Framework for Evaluating Agentic AI Platforms in Regulated Enterprises",
+  "summary": "Agentic AI platforms-systems in which LLM agents plan, invoke tools, retain memory and coordinate to change the state of enterprise systems-are being procured faster than they can be measured. Public agent benchmarks score models in fixed harnesses; enterprises buy integrated platforms whose orchestration, memory, governance and tooling layers dominate outcomes, and they buy them largely on the strength of vendor demonstrations. We report an industrial evaluation programme (\"bakeoff\") run by the innovation laboratory of a global bank in which ten platforms-spanning open-source frameworks, proprietary products and hyperscaler ecosystems-were assessed by a cross-functional panel on nine capability dimensions across three financial-services workloads: counterparty credit risk, retrieval-augmented generation and process automation. Scores separate the field into three tiers that are stable under alternative weightings, and surface workload-specific strengths that aggregates hide. A secondary analysis, however, finds Cronbach's alpha = 0.98 across nominally distinct dimensions and rank correlations >= 0.93 with the total for eight of nine: a halo effect indicating that demonstration-based scoring measures presentation as much as capability. From these lessons we propose a gate-then-score evaluation protocol with four layers (capability, execution reliability, governance gates, business value), trace-level reliability metrics estimated over repeated runs, an autonomy-readiness scale and a reproducibility protocol. We state precisely what the present evidence supports, and what a controlled harness must add to turn enterprise platform evaluation from structured judgement into measurement.",
+  "published": "2026-11-18T08:28:02Z",
+  "updated": "2026-11-18T08:28:02Z",
+  "authors": [
+   "Abbas Raza Ali",
+   "Muhammad Ajmal Siddiqui",
+   "Moona Zahid"
+  ],
+  "cats": [
+   "cs.AI",
+   "cs.MA",
+   "stat.ML"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.24039"
+ },
+ {
+  "id": "2611.24037",
+  "title": "FormalFixer: Intent-Aligned Automated Hardware Repair via Joint Refinement of Specifications, Assertions, and RTL Implementations",
+  "summary": "Functional errors in hardware designs can compromise correctness and security, and must be fixed before tape-out. Formal property verification (FPV) provides strong guarantees by proving or refuting assertions, but a failed assertion is not always evidence of an RTL defect: the failure may also come from a buggy assertion or from a specification that is semantically correct but too ambiguous or incomplete for direct formalization. This creates a practical repair problem that existing RTL-centric methods do not directly address: the repair loop must align specification intent, verification intent, and RTL behavior before deciding which artifact to change. \\textsc{FormalFixer} addresses this problem with a multi-stage, intent-aligned repair workflow for Verilog designs with assertions. It preserves the original specification as authoritative ground truth and appends confidence-filtered refinements to clarify implicit constraints. \\textsc{FormalFixer} uses both intent mismatch and verifier-generated counterexample cone graphs to guide iterative RTL patching. This workflow explicitly checks specification--assertion--RTL correspondence. Results support intent alignment for FPV-based hardware repair.",
+  "published": "2026-11-18T08:25:59Z",
+  "updated": "2026-11-18T08:25:59Z",
+  "authors": [
+   "Changyuan Yu",
+   "Hongce Zhang"
+  ],
+  "cats": [
+   "cs.MA",
+   "cs.AI"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.24037"
+ },
+ {
+  "id": "2611.23990",
+  "title": "SCAFFOLD: Toward Warrant-Preserving Evidence Transport for Reusable LLM-Agent Skills",
+  "summary": "An agent skill that succeeded yesterday may be executable today without being justified for reuse today. Tests may cover only observable contract clauses, outcome oracles may be absent, evaluations may inherit the same erroneous specification, and permissions or dependencies may change between validation and invocation. We argue that the appropriate unit of prospective trust is a Warranted Reuse Claim (WRC): a defeasible, claim-specific authorization tied to a versioned skill, target context, evidence, assumptions, and identified defeaters. The paper sharpens this position through Warrant-Preserving Evidence Transport (WPET), a proposed discipline for deciding which historical evidence remains admissible after context change. It distinguishes evidence admissibility from truth of the supported safety or effectiveness claim; states a conditional preservation result and its limits; specifies three-valued applicability and asymmetric context-transfer judgments; and illustrates how provenance dependence and policy-invalidating changes alter authorization. We explicitly relate the proposal to assurance cases, contracts, and skill-library maintenance rather than claiming novelty for their ingredients. A falsifiable longitudinal evaluation would compare WRC-guided policies with strong version-aware baselines at matched coverage, utility, and review cost. This paper contributes a formalized problem statement, testable design obligations, and reporting protocol, not an implemented verifier, empirical superiority result, or proof of universal agent safety.",
+  "published": "2026-11-18T07:33:15Z",
+  "updated": "2026-11-18T07:33:15Z",
+  "authors": [
+   "Nami Cho",
+   "Shailja Gupta"
+  ],
+  "cats": [
+   "cs.AI",
+   "cs.MA",
+   "cs.SE"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.23990"
+ },
+ {
+  "id": "2611.23913",
+  "title": "Resilient Federated LQR over Noisy and Lossy Uplinks via Scalar Communication",
+  "summary": "This paper studies model-free federated learning of a common LQR controller for a fleet of similar systems that communicate with a server over an uplink subject to limited bandwidth, packet dropout, and additive noise. We propose \\textsc{ResiFedLQR}, a scalar communication scheme in which each agent sends one real number per packet, with redundancy, instead of full gradient estimates. The scalars can be gradient coordinates, projections of the gradient onto random directions reproduced at the server from a shared seed, or the rollout costs themselves. For the projection encoding, we prove that, with high probability, every iterate stabilizes all agents and the fleet-average cost converges linearly to a neighborhood of the optimum whose radius separates heterogeneity, sampling, and communication effects, and we derive a rule for choosing the number of transmissions from the channel parameters and the fleet size. We then compare the encodings with full-gradient transmission under the same uplink budget and identify the signal-to-noise regime and power constraint under which each is preferable. Numerical experiments on a heterogeneous fleet evaluate stability and convergence under varying noise levels and dropout probabilities.",
+  "published": "2026-11-18T06:03:43Z",
+  "updated": "2026-11-18T06:03:43Z",
+  "authors": [
+   "Mohammadreza Rostami",
+   "Shahriar Talebi",
+   "Solmaz S. Kia"
+  ],
+  "cats": [
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.23913"
+ },
+ {
+  "id": "2611.23909",
+  "title": "CoSlice: Coordinated Multi-Agent Reinforcement Learning for 5G Network Slicing Allocation",
+  "summary": "Radio Access Network (RAN) slicing is a shared resource allocation problem: each slice seeks to satisfy its Service Level Agreement (SLA) with minimal radio-resource consumption, while all slices compete for a limited resource budget. This creates both an intra-slice trade-off between SLA assurance and resource efficiency and an inter-slice conflict over shared resources, calling for specialized yet coordinated control. In this work, we present CoSlice, a coordinated multi-agent reinforcement learning framework for inter-slice physical resource block allocation in Open Radio Access Network (O-RAN). CoSlice uses preference-conditioned slice agents for fast resource allocation and an LLM-based coordinator to adapt their objectives using global network observations at a slower timescale. We formulate the problem as a multi-objective partially observable stochastic game (mo-POSG), establish the existence of a Preference Correlated Equilibrium, and derive a sublinear regret bound for the learning procedure. We implement the algorithm by using a two-stage training procedure that consists of multi-objective pretraining and joint optimization. We build a network slicing evaluation environment using ORANSlice and its radio-frequency simulator (RFsim), supporting realistic protocol-stack execution and application traffic across multiple slices. Experimental results show that CoSlice reduces both average and tail SLA violations compared with other centralized and multi-agent baselines under diverse slice workloads.",
+  "published": "2026-11-18T06:00:04Z",
+  "updated": "2026-11-18T06:00:04Z",
+  "authors": [
+   "Pengxin Wang",
+   "Nakjung Choi",
+   "Jingdi Chen"
+  ],
+  "cats": [
+   "cs.NI",
+   "cs.LG",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.23909"
+ },
+ {
+  "id": "2611.23747",
+  "title": "A Comparison of Heuristic, Human-Sensitive, and Self-Play DRL Policies in Human-Agent Teaming",
+  "summary": "Dynamical Perceptual-Motor Primitives (DPMPs) offer a tractable framework for generating human-like movement dynamics in artificial agents (AAs) and have been used to support coordination in human-AI teaming tasks. Traditionally, DPMP controllers rely on heuristic (rule-based) decision policies derived from human behavior to guide goal selection and action sequencing. Although effective in structured tasks, such heuristics can be difficult to generalize to more complex settings, motivating interest in deep reinforcement learning (DRL) approaches for learning decision policies for human-AI interaction. A key challenge, however, is ensuring that DRL policies remain aligned with human strategies, particularly when agents are trained through self-play. To examine this issue, we compared three target-selection policies governing DPMP-based AAs in a first-person herding task: (1) a human-derived heuristic policy, (2) a self-play DRL policy (SP-DRL), and (3) a human-sensitive DRL policy (HS-DRL) trained alongside a heuristic agent. Results showed that heuristic agents most closely matched typical human-human coordination patterns, followed by HS-DRL agents, whereas SP-DRL agents deviated most. These findings highlight the importance of human-informed training when developing DRL-based teammates and suggest that simple heuristic policies may remain an effective approach for designing human-aligned AAs capable of human-AI collaboration.",
+  "published": "2026-11-18T02:59:54Z",
+  "updated": "2026-11-18T02:59:54Z",
+  "authors": [
+   "Ayman bin Kamruddin",
+   "Christopher Lam",
+   "Gaurav Patil",
+   "Mirco Musolesi",
+   "Mario di Bernardo",
+   "Michael J. Richardson"
+  ],
+  "cats": [
+   "cs.MA",
+   "cs.HC"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.23747"
+ },
+ {
+  "id": "2611.23626",
+  "title": "Two is better than one: optimizing binary rating scales for online platforms",
+  "summary": "Online platforms often struggle with inflated, uninformative user ratings. This issue can be mitigated by better design of the data collection mechanism, for example through changing the phrasing of user questions. Previous work optimizes a single rating scale to best distinguish the inherent qualities of items under binary feedback. In this paper, we demonstrate the power of utilizing different rating scales for different users. First, we show that a designer can always split a single rating scale into two to improve item rankings. Next, we formally characterize the optimal design of multiple scales as a series of 0-1 step functions whose threshold values are evenly spaced. Finally, we consider an adaptive model where subsequent rating scales can depend on the responses from previous users and items are ranked by their full sequence of responses, and show that adaptivity leads to exponentially greater distinguishing power. All in all, our theoretical results show that using multiple rating scales significantly improves item rankings on platforms.",
+  "published": "2026-11-17T23:38:45Z",
+  "updated": "2026-11-17T23:38:45Z",
+  "authors": [
+   "Liren Shan",
+   "Alec Sun",
+   "Jingyan Wang"
+  ],
+  "cats": [
+   "cs.MA",
+   "cs.GT",
+   "cs.LG"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.23626"
+ },
+ {
+  "id": "2611.23613",
+  "title": "MANGO Arena: Same Seeds, Different Chains Evaluating LLM Agents in a Disrupted Supply Chain",
+  "summary": "We introduce MANGO Arena, an open-source testbed in which four LLM agents each run one company in a serial supply chain adapted from MANGO, a classroom factory-management game. The environment enforces hard rules (a truck limit, a no-credit cash constraint and production capacity), logs every blocked attempt to break them, and gives agents a public message board on which side payments are explicitly forbidden. This lets one environment measure three things at once: an economic outcome (the bullwhip effect), rule adherence under pressure, and proposals to collude. In a pilot with three small reasoning models, two scripted reference policies, two conditions (with and without a supplier fire) and three demand seeds, all LLM agents amplified demand variability as it moved upstream, by 7 to 25 times at the Retailer and 13 to 179 times at the Supplier, often more than a textbook order-up-to policy. They did so largely by ordering in batches (zero orders in up to 60% of decisions). Real rule violations were rare (at most 7 of 288 decisions per model) and no agent proposed a money side deal. The pilot's main lesson concerns evaluation method. API failures (rate limits and runaway hidden reasoning) entered the metrics silently as \"no order\" decisions. And when we reran games with the same seeds and no failed calls, upstream bullwhip changed by up to 17 times between runs. With three seeds, conclusions about how a disruption affects a given model did not survive a rerun. We report these failures in full and propose reporting practices for multi-agent evaluations of this kind. Code, prompts and every logged decision are public.",
+  "published": "2026-11-17T23:05:05Z",
+  "updated": "2026-11-17T23:05:05Z",
+  "authors": [
+   "Sara Amar"
+  ],
+  "cats": [
+   "cs.MA",
+   "cs.AI"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.23613"
+ },
+ {
+  "id": "2611.23588",
+  "title": "ARISE: Practical Self-Evolving Memory for Accurate and Cost-Efficient Enterprise Agents",
+  "summary": "Enterprise LLM agents operate in dynamic environments where foundation models evolve rapidly, workflows update frequently, and deployments need to satisfy accuracy and cost requirements. We propose ARISE (Agent Refinement through Iterative Self-Evaluation), a practical memory architecture in which the agent's memory evolves from its own failures without updating model weights, tools, or workflow logic. ARISE uses the model itself or a teacher model to attribute the failures and propose corrections. Then, ARISE keeps the corrections as retrievable micro memory, consolidates them into macro rules, and accepts a rule update only if held-out accuracy rises. Across 14 enterprise-workflow domains from SOP-Bench and $τ^2$-bench using 5 models, ARISE-Teacher, which uses Claude Opus 4.6 for attribution and consolidation, gains 10.9 pp over the baseline on SOP-Bench and 5.8 pp on $τ^2$-bench. ARISE-Teacher also outperforms GEPA by 4.5 pp on $τ^2$-bench and 1.4 pp on SOP-Bench. With the deployment model as its own attributor, ARISE-Self still gains 10.0 pp on SOP-Bench. ARISE-Teacher uses 4.0% fewer model calls and 5.2% fewer output tokens at comparable per-task cost (-1.0%).",
+  "published": "2026-11-17T22:38:58Z",
+  "updated": "2026-11-17T22:38:58Z",
+  "authors": [
+   "Jiangyun Zhang",
+   "Zhou Tang",
+   "Kristen Surrao",
+   "Zhiyu Chen",
+   "Albert Guan",
+   "Tor Nitayanont",
+   "Yupei Zhang",
+   "Roopali Singh",
+   "Yunkai Xiao",
+   "Shreya Pandit",
+   "Julia Huang",
+   "Shayan Ali Akbar",
+   "Erwin Cornejo",
+   "Yuan Li",
+   "Yi Zhang"
+  ],
+  "cats": [
+   "cs.AI",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.23588"
+ },
+ {
+  "id": "2611.23496",
+  "title": "Encapsulating Reactive Behaviour in Goal-based Plans for Programming BDI Agents",
+  "summary": "Reactive behaviour in BDI-based models and architectures adopted in agent programming is typically specified in terms of reactive plans not bound to any specific goal. In this paper, we present and discuss an extension of the plan model used in BDI programming languages in which goal-based plans encapsulate both proactive and reactive behaviour. This brings important benefits both to the practice of agent programming and in supporting agent reasoning at runtime. The paper first introduces the model formally, abstracting away from particular programming languages. The approach is then evaluated through concrete implementations based on two existing agent programming platforms, namely Jason and ASTRA. The paper reports on experiments showing that the approach provides for elegant programming and can also be efficient.",
+  "published": "2026-11-17T20:46:49Z",
+  "updated": "2026-11-17T20:46:49Z",
+  "authors": [
+   "Rafael H. Bordini",
+   "Rem Collier",
+   "Jomi F. Hübner",
+   "Alessandro Ricci"
+  ],
+  "cats": [
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.23496"
+ },
+ {
+  "id": "2611.23415",
+  "title": "Verifiably Safe Decentralized Control via Event-Triggered Topology Switching",
+  "summary": "This paper proposes a decentralized event-triggered topology-switching protocol for multi-agent systems under estimation uncertainty. We consider an intermittent communication setting in which each agent switches between connected and disconnected modes and makes communication decisions using locally computable certificates, while the closed-loop state is required to remain safe. The proposed protocol follows a safety-driven triggering principle in which agents reconnect before their certificates reach the safety boundary and disconnect only after recovering to a stricter bound below the safety limit. Our design enables intermittent connectivity while maintaining the estimation error within a certified safety bound and excluding Zeno behavior. We evaluate the proposed protocol on a quadruple-tank example, showing that it keeps all tank deviations within the safety bound while allowing agents to remain disconnected for most of the run.",
+  "published": "2026-11-17T19:15:25Z",
+  "updated": "2026-11-17T19:15:25Z",
+  "authors": [
+   "Amber He Wei",
+   "Shiyu Cheng",
+   "Andrew Clark",
+   "Bruno Sinopoli"
+  ],
+  "cats": [
+   "eess.SY",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.23415"
+ },
+ {
+  "id": "2611.23149",
+  "title": "Capability Composition in Heterogeneous Teams via Barrier-Guided Diffusion Sampling",
+  "summary": "The agents in a heterogeneous team can cooperate to accomplish tasks that exceed their individual capabilities. The team trajectories for a cooperative task can be generated by a generative model, provided that the model has been trained on demonstrations of the agents cooperating. Yet, demonstrations of cooperation are costly and may not exist for tasks that the team has never performed. The conditions under which the agents can combine their capabilities, however, are physical properties of the team and are known before any demonstration is collected. We encode the conditions as constraints on the team trajectories, and we enforce the constraints while sampling from generative models trained on demonstrations of each agent alone. We prove that the proposed method can generate every team trajectory that satisfies the constraints, although the demonstrations contain no cooperation. Hence the constraints determine which team trajectories can be generated, and the demonstrations determine how likely each team trajectory is. Numerical results on two cooperative tasks show the effectiveness of the method, which generates cooperative team trajectories that satisfy the constraints and requires no retraining when agents join or leave the team. Finally, we implement the method on a multi-robot testbed.",
+  "published": "2026-11-17T18:03:24Z",
+  "updated": "2026-11-17T18:03:24Z",
+  "authors": [
+   "Diana Laura Morales",
+   "Ruoyu Lin",
+   "Magnus Egerstedt",
+   "Fabio Pasqualetti"
+  ],
+  "cats": [
+   "cs.RO",
+   "cs.LG",
+   "cs.MA",
+   "eess.SY"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.23149"
+ },
+ {
+  "id": "2611.23067",
+  "title": "Values Shape What Self-Improving Coding Agents Build",
+  "summary": "Self-improving agents are typically optimized for the results they produce, with less attention to how they produce them. Their instructions give designers limited ways to shape how they work, especially when the task is open-ended. This paper studies whether a short value statement in an agent's persistent instruction file changes not only how well the agent performs but also what it builds. Four higher-order value types in Schwartz's theory of basic human values were evaluated: openness to change, conservation, self-enhancement, and self-transcendence. Across diverse coding tasks, the values were held fixed within each run over multiple iterations of self-improvement. Three findings emerged: (1) Values matter for performance across a diverse set of tasks. The openness values increase performance on held-out data, whereas the opposite conservation values result in scores below those of an agent given no values. (2) Values change what agents build, producing solution algorithms that differ in size, complexity and approach. (3) Human oversight is still needed for designing values. Allowing the agent to revise its own values narrows the differences between sets of values, and values distilled from the AI literature provide no detectable gain over having no values. Properly designed values can thus influence what a self-improving coding agent builds and, where the task permits, how well it performs.",
+  "published": "2026-11-17T16:56:46Z",
+  "updated": "2026-11-17T16:56:46Z",
+  "authors": [
+   "Jason Liang",
+   "Dylan Waldner",
+   "Risto Miikkulainen"
+  ],
+  "cats": [
+   "cs.AI",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.23067"
+ },
+ {
+  "id": "2611.23362",
+  "title": "TRACE-MAS: Diagnosing and Repairing Collaboration Failures in Multi-Agent Systems",
+  "summary": "LLM-based multi-agent systems (MAS) rely on not only individual agent behaviors but also the interactions that connect agents, including message exchanges and task dependencies. Existing MAS safeguards mainly perform agent-level anomaly detection, which becomes insufficient when failures originate from agent interactions and detected anomalies do not necessarily reveal their true sources. To address this limitation, we propose \\textbf{TRACE-MAS}, a finer-grained framework for diagnosing and repairing MAS failures. TRACE-MAS learns normal collaborative execution patterns from benign trajectories and detects deviations in agent state changes, message transitions, and task dependency evolutions. It further identifies responsible execution elements through source-aware attribution and selects minimal interventions to restore collaboration while preserving task-critical capabilities. Experiments on five MAS benchmarks demonstrate that TRACE-MAS significantly improves root-cause localization accuracy by \\textbf{60.2}\\% and achieves consistent gains in task recovery over strong MAS safeguards.",
+  "published": "2026-11-17T16:49:33Z",
+  "updated": "2026-11-17T16:49:33Z",
+  "authors": [
+   "Zekai Chen",
+   "Yihan Sun",
+   "Xunkai Li",
+   "Xun Wu",
+   "Xinmo Jin",
+   "Yinlin Zhu",
+   "Haodong Lu",
+   "Xuaner Chen",
+   "Rong-Hua Li"
+  ],
+  "cats": [
+   "cs.LG",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.23362"
+ },
+ {
+  "id": "2611.22991",
+  "title": "RagHarnessDebugger: Jev-Guided Agentic RAG in Contract Inference Repair Auditing",
+  "summary": "Agentic systems using retrieval-augmented generation (RAG) must repair their own answers by gathering more evidence, testing alternative policies and deciding if, when, and what repairs are needed. Yet how do we know if a system's repairs are working when metrics like accuracy can be misleading? We present RagHarnessDebugger, a framework that records every repair decision in a Jev-guided harness for contract inference and audits the record to facilitate complete debugging of all decisions taken during a RAG repair journey. RagHarnessDebugger checks that each trace is intact, that each validation applies to the candidate it is counted for, and which answers the acceptance rule can reach. We tested our approach on ContractNLI non-disclosure agreements with two reader models and a replication set of separate contracts. Our debugger's audit layer exposed failure patterns that were hidden under aggregate metrics, policies acceptance cost of repairs vs regressions and policy acceptance gap of 77% and 76% of available but unrealised repairs on development and replication sets. Our audit, together with a labeled error analysis and replay mechanism, allowed following the execution path all the way to the terminal decision - uncovering where missing repairs became lost. Our revised harness improved accuracy over the initial BM25-only baseline by 3.6 points on development contracts and 3.7 points on the replication set, and even improved our full contract access reference score by 1.1 on development and 2.4 on replication set. While our work here demonstrates how the debugger can conduct decision root-cause analysis for missed repairs, the true value lies with providing this debugger for judgment visibility serving continuous improvement of RAG decisions and their explainability. Keywords: agentic RAG, AI evidence repair, harness explainability, counterfactual replay, Jev, ContractNLI",
+  "published": "2026-11-17T16:07:17Z",
+  "updated": "2026-11-17T16:07:17Z",
+  "authors": [
+   "Moriya Dechtiar",
+   "Daniel Martin Katz",
+   "Michael J. Bommarito",
+   "Hongming Wang",
+   "Sylvain Jaume"
+  ],
+  "cats": [
+   "cs.AI",
+   "cs.MA",
+   "cs.SE"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.22991"
+ },
+ {
+  "id": "2611.22806",
+  "title": "Virtual Double Oracle: Faster Convergence by Leveraging Strategies That Were Watching All Along",
+  "summary": "Double Oracle (DO) and PSRO approximate Nash equilibria in two-player zero-sum games by iteratively expanding a strategy population with best responses supplied by an oracle. Online Double Oracle (ODO) interleaves multiplicative weights updates (MWU) with population discovery and obtains an $O(\\sqrt{k\\ln k/T})$ rate, where $T$ is the number of learning rounds and $k$ is the larger of the two players' final population sizes. We identify the reinitialisation step as an underexplored design choice: at each expansion, MWU-based methods reset newly discovered strategies to a uniform prior. We introduce Virtual Double Oracle (VDO), which exploits a bilinear identity (a strategy's full hindsight loss history collapses to its utility against the time-averaged opponent) to initialise each new strategy with the MWU weight it would have had from the start. We prove that VDO achieves $O(\\sqrt{k/T})$ exploitability over the discovered population as it grows, provided the cumulative cost of adding strategies is at most linear in $k$, a condition supported by our empirical measurements. Discounted VDO (dVDO) moderates historical preferences to reduce over-concentration at reinitialisation. Experiments across matrix games, poker, and Goofspiel show that, with a suitable discount, dVDO can substantially reduce finite-horizon exploitability relative to both VDO and uniform-reset ODO, and can improve the discovered strategy populations.",
+  "published": "2026-11-17T14:00:20Z",
+  "updated": "2026-11-17T14:00:20Z",
+  "authors": [
+   "Ruilan Wang",
+   "Francisco Aristi Reina",
+   "Katerina Papadaki"
+  ],
+  "cats": [
+   "cs.LG",
+   "cs.GT",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.22806"
+ },
+ {
+  "id": "2611.22773",
+  "title": "Guarded Swarms in the Loop: A ROS 2/PX4 Digital Twin for Hybrid Digital-Analog Coordination of UAV/UGV Swarms",
+  "summary": "Swarms of unmanned aerial and ground vehicles (UAV/UGV) operating in contested environments cannot rely on software alone for physical safety, since the software stack and its networks are part of the attack surface. The Guarded Swarms architecture addresses this by pairing a digital coordination layer, built on Topic-Based Communication Space Petri Nets (TB-CSPN), with an independent analog safety layer that can veto unsafe actuation commands. So far, the architecture has been specified and argued for, but not executed. We present the first executable instantiation of Guarded Swarms as a digital twin built on ROS 2, the PX4 autopilot in software-in-the-loop mode, and Gazebo, with two UAVs and one UGV in a coastal counter-UAS scenario. The TB-CSPN transition chain, from multi-modal sensing through human authorization to vehicle tasking, is mapped one-to-one onto ROS 2 nodes, and the analog layer is modeled as a per-vehicle Virtual Safety Board that gates every command. Eight groups of experiments show that the three negative guarantees of the architecture (no mission from conflicting, temporally incoherent, or unauthorized evidence) hold at three distinct stages of the chain in all 60 counterfactual runs; that threat confirmation is bounded by the narrowest sensing modality; that the safety layer exercises its full modeled envelope independently of the coordination layer; and, under fault injection, that it prevents every collision caused by a forged mission or a compromised worker once its veto is enforced by an independent gate, whereas a veto left to the compromised worker prevents none. The twin also exposes implementation-level hazards that the architectural specification does not address, and it draws an explicit line between the properties that simulation can validate and those that only hardware can.",
+  "published": "2026-11-17T13:40:51Z",
+  "updated": "2026-11-17T13:40:51Z",
+  "authors": [
+   "Uwe M. Borghoff",
+   "Paolo Bottoni",
+   "Luca D'Aurizio",
+   "Remo Pareschi"
+  ],
+  "cats": [
+   "cs.CR",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.22773"
+ },
+ {
+  "id": "2611.22632",
+  "title": "Groups of AI agents underuse resources despite shared evidence of increased capacity",
+  "summary": "When AI agents share limited resources, such as computing services or public infrastructure, their individual choices affect how much work they complete as a group. Can sharing evidence of what is available let a group make full use of its resources after capacity changes? We tested this with language-model agents choosing between two simulated servers. One server recovered while its status report still listed it as unavailable. Each server had limited capacity per round, so rejected jobs required another attempt before the deadline. Telling agents that recovery was possible reduced missed deadlines. In controlled tests with Anthropic's Claude Haiku 5.5, no agent tried the recovered server after a rule reminder, yet all chose it when shown a successful request record. After sharing, all five models tested left capacity unused. Keeping the success record fixed, we gave agents numbers without instructions, using each value equally often but giving group members either identical or distinct numbers. With OpenAI's GPT-6.1 Sol or Google's Gemini 3.5 Flash-Lite, distinct numbers spread simultaneous requests across servers and increased job completions even though overall choice frequencies barely changed. Telling AI agents which resources are available leaves a second design challenge: helping them spread demand across those resources.",
+  "published": "2026-11-17T11:50:26Z",
+  "updated": "2026-11-17T11:50:26Z",
+  "authors": [
+   "Takahiro Ezaki",
+   "Naoto Imura",
+   "Katsuhiro Nishinari"
+  ],
+  "cats": [
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.22632"
+ },
+ {
+  "id": "2611.22461",
+  "title": "Surfacing Disagreement Beats Resolving It: A Gated Ablation Study of Provenance-Weighted Memory for Multi-Agent Debate",
+  "summary": "Shared memory for multi-agent debate is usually built to resolve inconsistency: retrieval returns one winning fact and the disagreement disappears before any agent sees it. We ask whether that is correct. In DebateGraph, four backends share one contract (read/write/snapshot), so five mechanisms from the agent-memory literature can be removed independently under a fixed budget, each gated on a pre-declared threshold. Across 39 runs one survives: preserving contradictions and passing the ranked conflict set to the debate, rather than collapsing it to a winner, improves F1 by +0.340 (95% CI [+0.267, +0.414]) and cuts attack success from 22 to 7 of 122 poisoned items (McNemar exact p=0.0003), at equal cost. Reaching it meant fixing a bottleneck in our harness: conflict sets are built only over retrieved edges, and our pre-declared cap left three quarters of planted contradictions unretrievable, first measuring the mechanism at +0.084. The effect replicates on two retrieval substrates and directionally on HotpotQA documents. No other mechanism survives, and two are worse than inert: once contradictions reach the prompt, a write trust-gate and the router's provenance features each cost accuracy (-0.075 and -0.096 F1). The gate fails structurally: poisoned objects are always entities the graph already contains, against 53% of gold, so groundedness scores the lie above a truthful first mention. We release the harness, attack set, and logs, and argue that silently reconciling memory is the assumption worth abandoning.",
+  "published": "2026-11-17T09:23:13Z",
+  "updated": "2026-11-17T09:23:13Z",
+  "authors": [
+   "Ziaullah Khan",
+   "Abdul Rehman Khalid",
+   "Shrestha Nischal Lal",
+   "Nheng Vanchhay",
+   "Md Ariful Islam Mozumder",
+   "Hee-Cheol Kim"
+  ],
+  "cats": [
+   "cs.MA",
+   "cs.CL"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.22461"
+ },
+ {
+  "id": "2611.22342",
+  "title": "Bad Apples in the Kitchen: How LLM Teams Detect, Correct, and Calibrate Against Their Misaligned Members",
+  "summary": "What protects an LLM team when one teammate quietly goes wrong? Most multi-agent LLM work assumes cooperative partners and inspects chat between turns before acting. Real-time embodied cooperation does not allow this pause: chat runs alongside action, so a teammate whose words stay cooperative while behavior diverges can cause damage faster than the team can name what is happening. We study this case by injecting three theory-grounded misaligned agents into a custom four-player Overcooked environment, each stressing a different joint-action layer (speech-action mismatch, role invasion, and aggregate-progress disruption), and decompose robustness into three sequential gates of detection, correction, and calibration through a 3x4x2 design (n=720 episodes). Nearly all trolls are eventually named, but recovery follows only when attribution and situational diagnosis appear in the same utterance; direct source-attribution prompting improves the hardest case only by degrading the troll-free baseline by 37.5%. Robustness, then, depends less on detection alone than on whether team chat combines attribution with diagnosis in a single utterance, suggesting that sensitivity to misalignment should be targeted rather than uniformly raised.",
+  "published": "2026-11-17T07:51:55Z",
+  "updated": "2026-11-17T07:51:55Z",
+  "authors": [
+   "Dongseok Heo",
+   "Junghwan Kim",
+   "Bongwon Suh"
+  ],
+  "cats": [
+   "cs.CL",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.22342"
+ },
+ {
+  "id": "2611.22248",
+  "title": "OAK-Mind: Zero-Training Mental Health Change Inference from Passive Sensing via Knowledge-Grounded Multi-Agent LLMs",
+  "summary": "Wearable and smartphone sensors capture behavioral signals associated with mental health, yet inferring mental health outcomes from these signals has traditionally relied on supervised models requiring labeled data and offering limited insight into their predictions. Large language models (LLMs) offer new opportunities to reason over behavioral evidence, but existing LLM-based approaches to passive sensing have largely continued to rely on task-specific fine-tuning or sensor-specific pretraining. In this paper, we introduce OAK-Mind, a zerO-training, multi-Agent, Knowledge-grounded LLM pipeline for inferring mental health changes from passive sensing data. The pipeline organizes sensing data into behavioral dimensions including sleep, physical activity, location mobility, and smartphone use, and orchestrates specialized agents grounded in mental health literature to interpret longitudinal behavioral changes. It synthesizes their assessments and applies questionnaire-based symptom rating to infer changes relative to an individual's baseline assessment with human-readable rationale grounded in observed behavioral patterns and domain knowledge. Across datasets and prediction tasks, while without task-specific training, OAK-Mind achieves comparable or better performance than the most predictive supervised baselines trained on additional labeled samples. It also demonstrate consistent improvement upon direct prompting across four tested LLM backbones. Ablation analyses support the benefits of combining behavioral interpretation with symptom rating, distributing analysis across domain-specific agents, and incorporating domain knowledge. Our findings highlight the potential of knowledge-grounded, multi-agent LLMs for training-free inference of mental health changes from passive sensing data.",
+  "published": "2026-11-17T05:52:52Z",
+  "updated": "2026-11-17T05:52:52Z",
+  "authors": [
+   "Yishu Ji",
+   "Zhihan Jiang",
+   "Will Ke Wang",
+   "Yuang Fan",
+   "Anind K. Dey",
+   "Xuhai \"Orson\" Xu"
+  ],
+  "cats": [
+   "cs.MA",
+   "cs.AI",
+   "cs.HC",
+   "cs.LG"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.22248"
+ },
+ {
+  "id": "2611.22245",
+  "title": "Multi-Agent Memory Inconsistency: Where Factual Conflicts Disappear in LLM Agents",
+  "summary": "Multi-agent delegation lets LLM systems distribute evidence collection across workers with separate contexts. This creates a consistency challenge: facts retrieved by workers may be missing from the evidence available to the lead for a joint conclusion. We introduce a benchmark and evidence-flow profiler for studying multi-agent memory inconsistency through controlled factual conflicts in Harvey LAB document-review tasks. Pooled across three models with comparable generation spending, requiring delegation increases retrieval of both conflicting claims from 50.2% to 68.7% relative to single-agent execution, yet conflict detection falls from 16.2% to 13.2%. Within this setting, workers report both claims for only 35.2% of retrieved pairs, and pooled matched comparisons show higher detection than single-agent execution when one worker reads both claims but lower detection when the claims are split across workers. Worker-to-lead handoffs are a central target for improving conflict detection in multi-agent LLMs.",
+  "published": "2026-11-17T05:47:01Z",
+  "updated": "2026-11-18T06:42:29Z",
+  "authors": [
+   "Hejia Zhang",
+   "Zhongming Yu",
+   "Yimin Ding",
+   "Wei-Ting Chen",
+   "Hengjia Yu",
+   "Wentao Ni",
+   "Yijun Liu",
+   "Cong Xu",
+   "Xin Chen",
+   "Matrix Yao",
+   "Fan Zhao",
+   "Jishen Zhao"
+  ],
+  "cats": [
+   "cs.AI",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.22245"
+ },
+ {
+  "id": "2611.22190",
+  "title": "Emergence and Collapse of Leader-Follower Flocks through Phantom Targets: Surprise Nullification in Bayesian and Inverse Bayesian Inference",
+  "summary": "In Bayesian and inverse Bayesian (BIB) inference, a large prediction error can trigger surprise nullification, which expands belief and likelihood variances by a common factor, leaving the updated variance ratio the same as in standard Bayesian updating. This can increase belief uncertainty while keeping the learning rate low. In the simulations, three agents used BIB inference to predict one another's positions and moved toward those predictions, repeatedly forming leader-follower flocks that subsequently collapsed despite having no alignment rules or designated leaders. Three leadership criteria (front position, heading stability, and flock initiation) identified the same agent in 89% of eligible flocks, with different agents serving as leaders across flocks. Flocks formed when an agent nearly stopped incorporating another's observations (link cut) and moved straight toward a predicted position detached from reality (phantom target), thereby attracting followers. Link cuts arose when two successive resets assigned a very small and then an ordinary likelihood variance, sharply increasing the likelihood-to-belief variance ratio. Flocks collapsed upon link recovery or when returning phantom targets balanced the leader's forward and backward attractions. Without nullification, cuts persisted throughout the analysis period; expanding only belief variance caused recovery within a few steps. Expanding likelihood variance as well allowed cuts to persist while belief uncertainty grew, enabling later resets and recovery. Thus, nullification preserves relative precision, allowing cuts and flocks to persist, while reducing absolute precision to enable recovery and collapse, reconciling these seemingly opposing processes through a single operation. These results suggest that, in this model, individually inaccurate predictions can give rise to collective order.",
+  "published": "2026-11-17T04:24:54Z",
+  "updated": "2026-11-17T04:24:54Z",
+  "authors": [
+   "Shuji Shinohara",
+   "Daiki Morita",
+   "Yoshihiro Nakajima",
+   "Takeshi Takano",
+   "Masakazu Higuchi",
+   "Ung-il Chung",
+   "Yukio-Pegio Gunji"
+  ],
+  "cats": [
+   "cs.MA",
+   "nlin.AO"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.22190"
+ },
+ {
+  "id": "2611.22177",
+  "title": "The Only Edge Was Memorized in Training: LLM Trading Agents Around Earnings and Bad News",
+  "summary": "Large language model (LLM) trading agents are tested on news, but news reaches stock prices within minutes, and a benchmark that replays headlines at their publication time finds no alpha in trading on them. Money can then remain in two places, before news whose date is known, such as earnings announcements, and after bad news, if the market's fall went too far. However, studies of LLMs and earnings read documents published with or after the announcement, and studies of reversal sort monthly portfolios, so neither tells whether an agent can trade these moments after costs. In this paper, we test LLM agents at both moments on the same look-ahead-free benchmark, before 598 earnings announcements and after 409 bad-news drops of large US stocks. Every input is cut at the decision close, staged agents are compared with single calls, simple rules and a logistic regression, and every decision is made with and without the stock's name. Across five models from four vendors, no agent beat the simple bets. Before earnings, the agents mostly bought and earned what buying before every announcement earned, and after bad news, a Gemini-based agent called almost every fall an overreaction while no agent picked better dips than buying them all. The only gains came from what the models had memorized in training. Given only the ticker and the dates, a GPT-based model called the direction of 59.2% of the announcements before its training cutoff and 53.3% after it. Agent builders should therefore compare an event agent with the simple bet and test it blind after the training cutoff.",
+  "published": "2026-11-17T04:13:18Z",
+  "updated": "2026-11-17T04:13:18Z",
+  "authors": [
+   "Jackson Wang"
+  ],
+  "cats": [
+   "cs.AI",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.22177"
+ },
+ {
+  "id": "2611.22067",
+  "title": "Addressing Exogenous Variability in Cooperative Multi-Agent Reinforcement Learning",
+  "summary": "Cooperative multi-agent reinforcement learning (MARL) often fails under exogenous variability such as shifts in opponents or environment regimes that cannot be controlled by the team but alter the transition dynamics. We formalize this challenge as Exogenous Dec-POMDP (ED-POMDP), in which an episode-level exogenous regime, selected independently of the team, indexes the dynamics, and the global state is partitioned into components that are directly responsive to the current team action and components that are not directly action-responsive at the current step. This formulation exposes mediated influence: while team actions do not directly update the latter at the current step, they can shape their later evolution through induced changes in the former. Based on this, we propose LEICA, a CTDE-compatible algorithm that learns history-conditioned context representations for both components and shapes policy updates using agent-wise, influence-weighted counterfactual intrinsic rewards. Across SMAX benchmarks with opponent strategy shifts, LEICA consistently improves both training performance and generalization to unseen opponents' strategies over existing baselines, supporting the usefulness of influence-weighted shaping under exogenous train-test regime shifts.",
+  "published": "2026-11-17T01:43:42Z",
+  "updated": "2026-11-17T01:43:42Z",
+  "authors": [
+   "Seongmin Kim",
+   "Woohyeon Byeon",
+   "Jiwon Jeon",
+   "Seungyul Han",
+   "Youngchul Sung"
+  ],
+  "cats": [
+   "cs.MA",
+   "cs.LG"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.22067"
+ },
+ {
+  "id": "2611.21957",
+  "title": "Operating an Agent-Driven Dataset Factory: Discovery, Construction, and Public Release",
+  "summary": "Turning public data into prediction datasets requires connecting source discovery, task definition, construction, and distribution. We deployed Dataset Factory to perform these steps continuously under a standing release policy. Bounded language-model tasks interpret sources, write construction code, and review task meaning; deterministic software manages state, workers, retries, and publication. Over 81.53 hours, the factory published 14 datasets at an estimated recurring operating expenditure of about \\$2.74 per publication. The accounting includes failed attempts, inference, workers, and hosting. Separate agents completed prediction experiments on all twelve evaluated releases. Source review nevertheless identified a task whose construction filters contradicted its population declaration. The original reviewer accepted later-record exclusions without reconciling them with the published selection rule. This experience documents an operating source-to-release workflow and shows why successful execution and consumer use need separate checks of task meaning.",
+  "published": "2026-11-16T22:39:18Z",
+  "updated": "2026-11-16T22:39:18Z",
+  "authors": [
+   "Eduardo Ariño de la Rubia",
+   "Szilard Pafka"
+  ],
+  "cats": [
+   "cs.SE",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.21957"
+ },
+ {
+  "id": "2611.21943",
+  "title": "Beyond 4: Improved Competitive Traveling Repairperson",
+  "summary": "With $k\\geq 1$ repairpersons starting initially from a depot, we present a 3.877-competitive deterministic algorithm for the fundamental online traveling repairperson problem on an arbitrary metric. For the special class of zero-residual instances, we improve the ratio to $3+ε$ for every $ε>0$. We also extend these results to some variants of the related so-called online dial-a-ride problem. The state-of-the-art is the 4-competitive deterministic algorithm for both problems.",
+  "published": "2026-11-16T22:07:18Z",
+  "updated": "2026-11-16T22:07:18Z",
+  "authors": [
+   "Bibek Maharjan",
+   "Gokarna Sharma"
+  ],
+  "cats": [
+   "cs.DS",
+   "cs.DC",
+   "cs.DM",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.21943"
+ },
+ {
+  "id": "2611.21828",
+  "title": "Coordination of Heterogeneous Teams with Uncertain Task Requirements",
+  "summary": "Coordinating a team of heterogeneous agents to complete tasks with unknown requirements is a challenging multi-agent planning problem. Agents differ in their ability to discover task requirements and in their ability to engage tasks, so the planner must coordinate task discovery, execution, and staging. This paper introduces a hierarchical planner that uses a graph neural network policy to assign actions to agents, then finds a path to the action's location using a shortest-path algorithm. The central part of our approach is the CAAT graph, which is a graph representation of the planning context consisting of the agents, tasks, capabilities, and actions. We demonstrate that our learned planner can jointly coordinate a heterogeneous team to simultaneously discover task requirements and complete tasks in a shorter time compared to baselines that optimize task discovery and task engagement independently. Furthermore, we show that our policy can zero-shot plan on out-of-distribution settings by training only on an outdoor map then transferring without finetuning to an indoor map with more agents, tasks, and capabilities than seen during training.",
+  "published": "2026-11-16T19:48:17Z",
+  "updated": "2026-11-16T19:48:17Z",
+  "authors": [
+   "Jongann Lee",
+   "Melkior Ornik"
+  ],
+  "cats": [
+   "cs.MA",
+   "cs.AI",
+   "cs.LG"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.21828"
+ },
+ {
+  "id": "2611.21804",
+  "title": "Corrupting Ties: Investigating Robustness to Bias Injection Across Multi-Agent Network Topologies",
+  "summary": "AI systems are increasingly deployed in high-stakes decision-making contexts, where interactions among components can introduce fairness risks that remain undetected when auditing components or collective outcomes in isolation. As LLM-based multi-agent systems become more prevalent, understanding how biased information propagates through agent interactions is essential for assessing their fairness. We introduce a controlled bias injection framework that replaces selected agent responses with predefined biased ones, enabling an intervention-based analysis of how network topology and injection configurations shape system behavior. We propose decision divergence metrics that quantify the effects of these interventions at the agent, network, and system levels, and evaluate five topologies on three binary classification tasks using LLMs from the Qwen and Gemma families. Sequential networks show the greatest divergence, whereas fully connected and mesh networks show less. Injection position also matters: in star networks, injecting the central agent has larger effects than injecting peripheral agents. Models further differ in whether divergence follows the injected bias. These findings highlight the role of network structure in the propagation of biased information and motivate topology-aware auditing of fairness risks in multi-agent systems.",
+  "published": "2026-11-16T19:20:05Z",
+  "updated": "2026-11-16T19:20:05Z",
+  "authors": [
+   "Cléa Chataigner",
+   "Mina Arzaghi",
+   "Florian Carichon",
+   "Pablo Piantanida",
+   "Golnoosh Farnadi"
+  ],
+  "cats": [
+   "cs.CL",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.21804"
+ },
+ {
+  "id": "2611.21783",
+  "title": "Better Calibrated, Better Planned: Uncertainty-Aware Multi-ASV Informative Path Planning for Oil Spill Monitoring",
+  "summary": "Monitoring oil spills with fleets of Autonomous Surface Vehicles (ASVs) requires mapping a heterogeneous pollutant field from sparse, noisy measurements under tight time and energy budgets. Informative Path Planning (IPP) addresses this problem by coupling a reconstruction model, which infers the field and its uncertainty, with a planner that decides where to sample next. Prior work has focused on planning strategies and has largely relied on Gaussian Processes (GPs), leaving the calibration of the model's uncertainty underexplored. We study how uncertainty calibration conditions multi-vehicle IPP with a fleet of ASVs that coordinates online through a shared uncertainty map. We introduce Evidential Deep Learning (EDL) as an uncertainty-calibrated information model. We benchmark EDL, Monte Carlo Dropout and Deep Ensembles against a GP in closed loop with five planners on physics-based oil spill simulations. Across 60 maps, the choice of model dominates the outcome, explaining 80\\% of the variance of the final reconstruction error, against 1\\% for the planner among the deep models. EDL achieves the lowest error and the highest IoU under every planner, is the best calibrated model and runs at 3.9 ms per step. With 50 cells per vehicle it reconstructs the spill better than MC Dropout and Deep Ensembles with 150. Deep Ensembles become more confident as their error grows, whereas EDL is unaffected. Robustness of the information model to the data its own planner collects is therefore a requirement of uncertainty-aware IPP.",
+  "published": "2026-11-16T19:07:11Z",
+  "updated": "2026-11-16T19:07:11Z",
+  "authors": [
+   "Alejandro Casado-Pérez",
+   "Marija Popović",
+   "Daniel Gutiérrez-Reina",
+   "Sergio L. Toral.",
+   "Samuel Yanes"
+  ],
+  "cats": [
+   "cs.RO",
+   "cs.LG",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.21783"
+ },
+ {
+  "id": "2611.21367",
+  "title": "Premise Recovery in Software Design: What Does This Decision Rest On?",
+  "summary": "Design decisions shape software architecture, and writing them down preserves the reasons behind it. Architecture decision records (ADRs) capture them, each with its context, choice, and consequences. A decision can depend on earlier ones: reversing one of them would force its review. We call these its premises. Yet ADRs do not always name their premises. When a decision is reversed, engineers supersede its ADR and search by hand for what it affects. That search can miss ADRs resting on an unnamed premise. We frame this as premise recovery: given an ADR with identifiers masked, find its premises among earlier records. We collect 1,060 ADRs from 36 repositories and label 1,529 candidate pairs for 60 target ADRs. Two LLM annotators agree at \\k{appa} = 0.859. An independent human annotator, blind to their labels, agrees with the stated/implicit tag on 30 of 32 premises (\\k{appa} = 0.875). We compare 7 open-weight models with 2 baselines that use no LLM. Qwen3.8-27B reaches F1 0.756, against 0.466 for word overlap; 2 models added post hoc score similarly. On the 11 premises whose titles barely overlap the target, it finds 0.758, while word overlap finds none. Reasoning raises its recall of implicit premises but not its F1. Word overlap with as many predictions gains 69% as much. We find only 2 to 3 stale dependents, though we searched for unlinked ones in only 30 of 66 supersessions. Open models could thus suggest unwritten premises when a decision is reversed, with precision between 0.68 and 0.78.",
+  "published": "2026-11-16T16:35:10Z",
+  "updated": "2026-11-16T16:35:10Z",
+  "authors": [
+   "Priyabanta Sandulua",
+   "Islam Mesabaha",
+   "Sebastian J. Vollmer"
+  ],
+  "cats": [
+   "cs.SE",
+   "cs.AI",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.21367"
+ },
+ {
+  "id": "2611.21277",
+  "title": "Even Loose Proximity Constraints Make Makespan-optimal Unlabeled Multi-agent Pathfinding Hard",
+  "summary": "We study $r$-Connected Unlabeled Multi-agent Pathfinding ($r$CUMAPF), a variant of MAPF where interchangeable agents have a proximity range $r\\in \\mathbb{N}$, and agents must form a single group in a given graph $G$ through limited-range communication at all times. The problem arises in fundamental applications such as self-reconfiguration and platooning, while standard MAPF does not capture proximity constraints. For the problem of finding a makespan-optimal solution, prior work shows NP-hardness for $r=1$ and polynomial-time solvability when $r$ is sufficiently large; the complexity for the intermediate case $2\\le r$ is largely unknown. To narrow this gap, we show that finding a solution to $r$CUMAPF with makespan at most $2$ is NP-hard for $2\\le r= O(|V|^{1-\\varepsilon})$, where $0<\\varepsilon\\le 1$ is a fixed constant and $|V|$ is the number of vertices. As a consequence, we show that the labeled analogue of $r$CUMAPF is also NP-hard under the same condition.",
+  "published": "2026-11-16T15:46:15Z",
+  "updated": "2026-11-17T07:42:39Z",
+  "authors": [
+   "Takahiro Suzuki",
+   "Keisuke Okumura"
+  ],
+  "cats": [
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.21277"
+ },
+ {
+  "id": "2611.21259",
+  "title": "Evaluating Authorization and Trust Boundaries in Agentic Orchestration Frameworks",
+  "summary": "Agentic AI systems extend large language models with tools, memory, and multi-agent collaboration, introducing security risks at orchestration boundaries. These risks depend on how identities are represented, operations are authorized, and instructions or information propagate between components. We evaluate LangChain, LangGraph, AutoGen, and OpenClaw through twelve experiments mapped to the OWASP Top 10 for Agentic Applications using a common LLM (gpt-4o-mini). The experiments cover prompt injection, unauthorized resource access and command execution, memory poisoning, and inter-agent trust and identity attacks. Adversarial inputs induced unauthorized tool invocation, while tool chaining, stale filesystem validation, encoded instructions, and inter-agent delegation exposed weaknesses in authorization across component boundaries. Memory poisoning showed that untrusted state can influence responses, a risk distinct from conventional access-control violations. In the evaluated protected configurations, explicit authorization, controlled capability assignment, filesystem containment, and execution safeguards prevented specific unauthorized operations. The findings emphasize preserving authorization and information-trust boundaries throughout agentic workflows rather than treating framework capabilities or model-level instructions as sufficient security guarantees.",
+  "published": "2026-11-16T15:33:50Z",
+  "updated": "2026-11-16T15:33:50Z",
+  "authors": [
+   "Sahaya Jestus Lazer",
+   "Kshitiz Aryal",
+   "Maanak Gupta",
+   "Elisa Bertino"
+  ],
+  "cats": [
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.21259"
+ },
+ {
+  "id": "2611.21250",
+  "title": "Stream of Belief: Eliciting Collective Intelligence through Latent Belief Dynamics",
+  "summary": "In this work, we view multi-agent reasoning as a process of seeking a collective equilibrium of implicit belief dynamics and introduce Stream of Belief (SoB), where agents maintain continuous latent beliefs and iteratively refine them through communication and reflection. Our method seeks a collective belief state of a multi-agent system where further communication induces no meaningful information propagation. Through extensive experiments, we demonstrate the generalization of SoB across tasks and model families. More Broadly, our results suggest a new perspective on scaling multi-agent reasoning from belief dynamics.",
+  "published": "2026-11-16T15:28:04Z",
+  "updated": "2026-11-16T15:28:04Z",
+  "authors": [
+   "Yu Yao",
+   "Jiayi Dong",
+   "Yilun Du"
+  ],
+  "cats": [
+   "cs.AI",
+   "cs.CL",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.21250"
+ },
+ {
+  "id": "2611.21235",
+  "title": "Language-model agents' beliefs can be manipulated via truthful evidence in open channel",
+  "summary": "Language-model agents' beliefs can be manipulated through open channels such as social media, even when the information they receive is truthful. When agents fill gaps between fragments with self-induced relationships, they may accept those relationships as established facts and pass the resulting rumours to others. Drawing on cognitive theory of narrative understanding and film theory of montage, we introduce Generative Montage to operationalize this failure, termed narrative overfitting, by coordinating agents to arrange truthful fragments into misleading narratives. Across 1,090 rumour targets from six Twitter events, agents often accepted rumours overconfidently, with overall acceptance exceeding 65 percent in twelve of fourteen models. Acceptance remained above 50 percent after majority voting or review of the same evidence, showing how errors can reach downstream decisions. To explain this susceptibility, fragment interventions identify posts that influence belief within complete narratives. Synthetic controls then show that similar response patterns arise from valid evidence, separating belief influence from evidential support. This distinction motivates Grounded Monitor, a proof-of-concept neuro-symbolic runtime monitor that checks direct evidential support to guide agents' judgements, improving decision accuracy by 5.6 to 29.0 percentage points across original and anonymized settings. These findings expose a cognitive route to rumour amplification and support monitoring inferred relationships before agent-generated conclusions guide public decisions.",
+  "published": "2026-11-16T15:20:18Z",
+  "updated": "2026-11-16T15:20:18Z",
+  "authors": [
+   "Jinwei Hu",
+   "Qisong He",
+   "Xinmiao Huang",
+   "Youcheng Sun",
+   "Yi Dong",
+   "Xiaowei Huang"
+  ],
+  "cats": [
+   "cs.AI",
+   "cs.CL",
+   "cs.MA",
+   "cs.SI"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.21235"
+ },
+ {
+  "id": "2611.21069",
+  "title": "CoopDistill: Equilibrium-Guided Multi-Agent Policy Distillation for Cooperative Driving",
+  "summary": "Cooperative driving extends autonomous driving from individual vehicle decisions to joint maneuvers that improve traffic safety and efficiency. Optimization-based methods impose safety constraints but often fix paths to simplify multi-vehicle planning, limiting spatial flexibility. Multi-agent reinforcement learning (MARL) explores alternatives through interaction, but coordinated learning and safe execution remain challenging. Their integration nevertheless faces challenges in exploration efficiency, experience allocation, and execution reliability. To address these challenges, this paper proposes CoopDistill, an equilibrium-guided multi-agent policy distillation framework. A potential-game (PG) formulation provides a fixed-path longitudinal reference, around which a residual MARL policy learns longitudinal acceleration, conflict-approach timing, and lateral path corrections. A hard-case curriculum concentrates experience on interactions that PG leaves unresolved or substantially delayed. A comparative rollout selector evaluates the joint consequences of learned corrections against PG before choosing the executed action. Experiments in merging, roundabout, and intersection scenarios compare CoopDistill with six baselines at four connected automated vehicle penetration levels. Relative to PG, success improves by 2.1--27.1 percentage points and delay decreases by 7.3--27.3\\%, with no observed collisions. Code is available at https://github.com/FanGShiYuu/CoopDistill",
+  "published": "2026-11-16T13:22:30Z",
+  "updated": "2026-11-16T13:22:30Z",
+  "authors": [
+   "Shiyu Fang",
+   "Sheng Zhao",
+   "Jiarui Zhang",
+   "Chengkai Xu",
+   "Xiaocong Zhao",
+   "Peng Hang",
+   "Jian Sun"
+  ],
+  "cats": [
+   "cs.RO",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.21069"
+ },
+ {
+  "id": "2611.20997",
+  "title": "OpenMAS-GApp: A Comprehensive Benchmark for Domain-Adaptive Multi-Agent Application Construction",
+  "summary": "Constructing multi-agent system (MAS) applications across domains requires translating diverse requirements into executable systems, involving task decomposition, agent and tool selection, and execution organization. Existing studies have explored individual aspects of MAS construction, including agent generation, architecture design, workflow generation, and component selection. However, these methods are often developed and evaluated independently, using different task specifications, component resources, and execution settings. This makes it difficult to compare their construction capabilities or determine how they can be applied to different domains. To address this problem, we propose OpenMAS-GApp, a One-for-All benchmark for MAS application construction across diverse domains. It standardizes task inputs, component resources, construction interfaces, and execution environments to support MAS construction under consistent conditions. Within OpenMAS-GApp, we provide Graph Harness as a reference construction method that derives task dependencies, selects compatible agents and tools, and organizes their interactions into executable graphs. We evaluate construction methods across 19 benchmark datasets under 20 evaluation settings spanning four application types and four professional domains.",
+  "published": "2026-11-16T12:25:56Z",
+  "updated": "2026-11-16T12:25:56Z",
+  "authors": [
+   "Xunkai Li",
+   "Kairui Yang",
+   "Jiaxi Li",
+   "Yuecong Mao",
+   "Zekai Chen",
+   "Xinle Zhang",
+   "Rong-Hua Li",
+   "Guoren Wang"
+  ],
+  "cats": [
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.20997"
+ },
+ {
+  "id": "2611.20988",
+  "title": "Hivemind: A Federated Protocol for AI-Mediated Tacit Knowledge Sharing in Organisations",
+  "summary": "This paper presents Hivemind, a federated protocol that enables AI agents to exchange tacit knowledge on behalf of their users, asynchronously and without requiring any direct human interaction. Individual AI memory systems capture the decisions, reasoning, and contextual knowledge that surface during AI-assisted work. Hivemind creates the shared space in which this captured knowledge can flow between individuals across team and departmental boundaries, addressing a structural gap that neither centralised knowledge repositories nor existing AI tooling closes, even where partial solutions such as expert-finding systems exist. The paper evaluates centralised versus decentralised design approaches, proposes a federated architecture grounded in Nonaka and Takeuchi's (1995) Socialisation, Externalisation, Combination and Internalisation (SECI) model, and demonstrates a proof-of-concept implementation using Design Science Research (DSR) methodology. Measuring the enterprise benefit of federated tacit expertise sharing remains an open task for future work.",
+  "published": "2026-11-16T12:19:14Z",
+  "updated": "2026-11-16T12:19:14Z",
+  "authors": [
+   "Srinivasan Sundaresan"
+  ],
+  "cats": [
+   "cs.AI",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.20988"
+ },
+ {
+  "id": "2611.20956",
+  "title": "From Vision to Interaction: Evaluating Dynamic Social Intelligence of VLM Agents in ALIVE-World",
+  "summary": "As AI agents are increasingly deployed in real-world applications and take on social roles, dynamic social intelligence, the ability to continuously perceive multimodal cues, infer latent cognitive states, intervene through embodied actions, and ultimately achieve social goals, has become essential. However, existing evaluations largely fragment social intelligence into text-based abstractions, static reasoning tasks, or embodied simulators that lack social dynamics. These approaches fail to capture the multimodal, continuous, and interpersonal complexity of authentic human interactions. To bridge this gap, we introduce ALIVE-World, an embodied simulation environment supporting dynamic multimodal interactions encompassing egocentric vision, language, and non-verbal action. To provide socially grounded interactive feedback, we populate this environment with counterpart agents driven by a profile-conditioned, dual-system (intuitive-affective and logical-cognitive) architecture. Building upon this platform, we propose ALIVE-Bench to transform the assessment of social intelligence into a trackable quantitative framework. By deeply leveraging underlying environmental states and agents' internal variables, ALIVE-Bench systematically evaluates Vision-Language Model (VLM) agents across four critical dimensions: perception, understanding, influence, and outcome. Extensive evaluations reveal that dynamic social intelligence is fundamentally multi-dimensional and scenario-dependent. We identify a critical bottleneck between upstream perception and downstream social intervention, exposing VLM vulnerabilities in fine-grained proxemic awareness, adaptive intervention, and multi-party coordination. By uncovering these limitations and the diverse interaction strategies they produce, this benchmark provides actionable insights for the future behavioral alignment of multimodal agents.",
+  "published": "2026-11-16T12:04:29Z",
+  "updated": "2026-11-16T12:04:29Z",
+  "authors": [
+   "Yue Xu",
+   "Xiaoyu Qin",
+   "Sihan Zhao",
+   "Ze-en Xiong",
+   "Jia Jia"
+  ],
+  "cats": [
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.20956"
+ },
+ {
+  "id": "2611.20927",
+  "title": "LEDGER: Auditable Agent Memory Under Change",
+  "summary": "Agent memory systems are mostly evaluated on fixed histories, and only their final answers are scored. In real use, facts change, sources differ in reliability, and users ask the agent to forget things. We present LEDGER, a memory layer in which a language model proposes facts and explicit rules decide which value is current, which source to trust, and what to delete. Each fact keeps its source and the period in which it held. LEDGER+EP adds a search over raw conversation turns for questions the ledger does not cover, and scrubs these turns on deletion. We compare both against no memory, full-history replay, retrieval over raw transcripts, and Mem0, with the same answering model and prompt, on a synthetic multi-session coding-agent workload and a 210-question subset of LongMemEval, and we score both the evidence each memory sends to the model and the answer. On the coding workload, LEDGER+EP in fallback mode answers 94.3% of questions correctly on five development seeds and 91.1% on five held-out seeds, against 82.1% and 83.3% for full replay, the strongest baseline. When a deletion request only describes the fact, no deleted value reached our systems' evidence in any evaluated probe. On LongMemEval, LEDGER+EP in augment mode has the same observed accuracy as full replay (74.8%) with 1% of its context. The main limitation is that the coding workload is synthetic and built by us; on LongMemEval, the differences between the strongest systems are within the confidence intervals.",
+  "published": "2026-11-16T11:37:23Z",
+  "updated": "2026-11-16T11:37:23Z",
+  "authors": [
+   "Md Aidul Islam",
+   "Md Nasir Uddin Shuvo",
+   "Muhammad Waseem",
+   "Pekka Abrahamsson"
+  ],
+  "cats": [
+   "cs.MA",
+   "cs.PF",
+   "cs.SE"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.20927"
+ },
+ {
+  "id": "2611.20773",
+  "title": "When Does Interaction Help? Toward a Reynolds Number for Collective Intelligence",
+  "summary": "Multi-agent systems combine distributed information through interaction, which can improve performance but also spread errors or suppress useful differences. Predicting when interaction helps is central to understanding and designing collective intelligence. We investigate whether a few dimensionless parameters can predict gains over explicitly defined non-communicating baselines across group sizes, network structures, and tasks, toward a Reynolds-number-like description of collective intelligence. Using distributed classification tasks, stochastic tracking networks, and neural cellular automata, we combine analytical and empirical evidence to examine information sufficiency, dynamical applicability, and finite-sample prediction. We construct inference systems with bounded random variables and matching specified joint moments up to total degree three, yet opposite interaction gains under a fixed readout. These moments alone cannot generally determine the gain sign. Tracking networks likewise exhibit gain reversals despite matched candidate parameters when task power occupies different spectral modes. Under concentrated task spectra and aligned observation noise, however, we derive a low-dimensional similarity relation with an explicit zero-delay error bound and test it across network sizes and topologies under frozen protocols. The relation does not directly apply to the neural cellular systems, where a separate moment-based predictor underperforms direct gain measurement at matched calibration sample budgets. These results establish conditions and limits for low-dimensional gain prediction, providing a restricted similarity law while leaving a general Reynolds-number-like description of collective intelligence open.",
+  "published": "2026-11-16T09:22:24Z",
+  "updated": "2026-11-16T09:22:24Z",
+  "authors": [
+   "Xuening Wu",
+   "Haode Yang",
+   "Yanlan Kang",
+   "Shenqin Yin"
+  ],
+  "cats": [
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.20773"
+ },
+ {
+  "id": "2611.20649",
+  "title": "Borrowed Strength, Imported Risk: Capability Gaps and Reception Govern Heterogeneous LLM Debate",
+  "summary": "Heterogeneous LLM debate is often attributed to collective reasoning that creates capability beyond any member. In the matched panels we study, the aggregate gain is dominated by capability transfer: a peer supplies task competence and receivers absorb a measurable fraction. Across nine matched directions, honest benefit and first-exchange adversarial exposure open when the peer has a positive same-task advantage, and honest gain is closely described by the empirical decomposition $ΔA_d^{\\mathrm{hon}}\\approxκΓ_d^+ρ_d$, the product of that advantage and the receiver's reception. Two fixed-receiver directions provide held-out validation without refitting: reception remains stable within uncertainty as a larger peer advantage produces a larger gain. A matched, single-direction open-answer MuSiQue scope probe reaches the negative-gap side of the same gate. Qwen-7B trails the Gemma-3-12B receivers by 10.78 points; despite 62.50% reception, it produces only +1.17 points of controlled first-exchange gain. Reception cannot substitute for positive aggregate peer advantage. When an influential peer is assigned an adversarial role, the same influential peer slot removes the borrowed gain and can push the panel below homogeneous debate. Across all five full-reference settings, the best observed majority correctness does not exceed the influential member's best observed accuracy, despite unused complementary answers. Heterogeneous debate is therefore a measurable transfer decision with a measurable failure mode, not a benefit conferred by diversity alone.",
+  "published": "2026-11-16T07:06:50Z",
+  "updated": "2026-11-16T07:06:50Z",
+  "authors": [
+   "Prashanti Nilayam",
+   "Kiran Kumar Ramanna",
+   "Prashil Tumbade",
+   "Nagaraj N Bhat",
+   "Sankalp Nayak"
+  ],
+  "cats": [
+   "physics.soc-ph",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.20649"
+ },
+ {
+  "id": "2611.20612",
+  "title": "Learning Design Taste through Verifiable Synthetic Environments and Agentic Reinforcement Learning",
+  "summary": "Code-generating language models produce user interfaces that build and run, but the pages are often weak in hierarchy, spacing, typography and composition. We study whether a small code model can learn design taste through reinforcement learning in verifiable synthetic environments. The method has three components. First, a layered verification framework splits design quality into hard gates, render-grounded metrics, rubric judges, within-group relative preference and a blinded expert panel. A signal enters the reward only if it passes an admission protocol that tests agreement with experts, causal sensitivity, resistance to hack traps and stability. Second, following SCALER [1], synthetic design environments are parameterised generators with measured difficulty ladders: base pages are written once by an agentic coder, and instances are produced by syntax-tree perturbation operators and constraint samplers, scheduled by an adaptive curriculum with a quarantine rule against reward over-optimisation. Third, a 4B code model is trained with agentic reinforcement learning over multi-turn episodes in which it edits and builds a repository and reads a textual report of its own render, while hidden graders compute the reward. The admission protocol admits 7 of 16 render signals and 6 of 10 rubric dimensions. On TD-Bench, agentic training raises the Taste Index from 0.630 to 0.795 in-family and from 0.598 to 0.700 on held-out families, and wins 0.600 of blinded expert comparisons against the base model and 0.569 against a single-turn control. Most of the advantage depends on the inference-time loop, and cross-brief distinctiveness falls slightly below that of the base model, the only success criterion not met.",
+  "published": "2026-11-16T06:37:24Z",
+  "updated": "2026-11-16T06:37:24Z",
+  "authors": [
+   "Sujay choubey",
+   "Siddhant Saxena",
+   "Sarthak Kapil",
+   "Suhas Motwani"
+  ],
+  "cats": [
+   "cs.MA",
+   "cs.HC"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.20612"
+ },
+ {
+  "id": "2611.20110",
+  "title": "Who Observes Whom: Network Rationalizability and Its Complexity",
+  "summary": "Nash equilibrium and rationalizability sit at opposite informational extremes: the former presumes that each player knows all opponents' strategies, the latter that players reason from common knowledge of rationality alone. When visibility is partial and asymmetric, we study the solution concepts induced by a directed \\emph{observation network} $G$ in which an edge $i\\to j$ means that $i$ observes $j$'s strategy. A set of profiles is \\emph{self-sustaining} if every profile in it can be justified, for every player, by conjectures from the same set that agree with everything the player observes. We consider \\emph{point} conjectures (single profiles) and \\emph{belief} conjectures (distributions over profiles). Both range from Nash equilibrium on the complete network to point- and correlated rationalizability on the empty network, and shrink monotonically as links are added. Network topology governs both behavior and complexity. A predicted profile can be found in polynomial time on the empty network, whereas a single link makes search $\\mathsf{PPAD}$-hard: under one-sided two-player monitoring, the observed player's strategies are exactly her Nash equilibrium strategies. On hierarchical networks (transitive tournaments), membership reduces recursively to smaller games and admits polynomial-size certificates, placing verification in $\\exists\\mathbb{R}$, and in $\\mathsf{P}$ for two players. On the directed three-cycle, however, iterated elimination may never terminate under either variant, and under point conjectures interior predictions may admit only infinite witness sets, a pathology that belief conjectures avoid in the same game. Finally, when only realized pure actions are observed, the solution set is guaranteed to be non-empty exactly when the network has no edges, and is computable in time $O(n|A|^2)$.",
+  "published": "2026-11-15T16:40:00Z",
+  "updated": "2026-11-15T16:40:00Z",
+  "authors": [
+   "Mojtaba Fayaz-Bakhsh",
+   "MohammadAmin Fazli"
+  ],
+  "cats": [
+   "cs.GT",
+   "cs.CC",
+   "cs.MA",
+   "econ.TH"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.20110"
+ },
+ {
+  "id": "2611.20078",
+  "title": "Infrastructure-Based Multi-Agent Reinforcement Learning with Attention for Highway Ramp Merging",
+  "summary": "On-ramp merging is a typical safety and throughput problem on highways. Without proper coordination, human drivers and self-interested autonomous vehicles may make risky manoeuvres and cause accidents or congestion. With recent advances in connected autonomous vehicles (CAVs) and multi-agent reinforcement learning (MARL), vehicles can be trained to coordinate for safe and efficient merging. However, in dense traffic, forming an effective observation of the traffic state is challenging. For example, observing only the neighbouring vehicles may lead to locally optimal decisions, while observing the entire traffic can introduce much irrelevant information. In this paper, we propose a transformer-based MARL vehicle control model to address these problems. A roadside infrastructure controller receives the states of all CAVs via vehicle-to-infrastructure (V2I) communication and sends control commands back to them. An attention-based observation encoder is designed where each vehicle can filter the relevant vehicle information from the global traffic state. The proposed model is evaluated in SUMO against three baselines: a model that observes only the neighbouring vehicles, a model that encodes the global traffic information, and the rule-based SUMO model. The results show that our model achieves the highest traffic flow, safety and smoothness. Furthermore, in a four-hour simulation with dynamic traffic demand, our model successfully avoids traffic jams, while other baseline models fail at high traffic flow. We also show that our model remains effective when human-driven vehicles are present. We further show that our model, trained in ideal communication conditions, can still remain collision-free and maintain throughput under realistic V2I communication errors. Finally, we visualise the relevance weights that an ego vehicle assigns to other vehicles in multiple traffic situations.",
+  "published": "2026-11-15T15:44:31Z",
+  "updated": "2026-11-15T15:44:31Z",
+  "authors": [
+   "Chenhao Tong",
+   "Steffen Müller"
+  ],
+  "cats": [
+   "cs.LG",
+   "cs.MA",
+   "eess.SY"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.20078"
+ },
+ {
+  "id": "2611.20067",
+  "title": "World-Model-Guided Plan Search for Cooperative Mixed-Traffic Control at Bottlenecks",
+  "summary": "Cooperative speed control by connected and automated vehicles can reduce congestion at lane drop bottlenecks. However, effective coordination depends on vehicle roles and execution timing, while initial holding costs may be offset by later traffic benefits. This paper proposes an offline plan search framework that combines world model guidance with simulator verification. A traffic world model incorporating physical dynamics guides evolutionary search over vehicle roles, target speeds, holding durations, and start times. Paired SUMO simulations screen candidates for total delay reduction and limits on additional mean delay across vehicle groups. Accepted plans form a reusable library whose actions temporarily override a frozen MAPPO policy. Across 192 paired test scenarios at 60% penetration and a demand of 2,800 vehicles per hour, the searched library reduces mean total delay by 14.3% relative to MAPPO and by 3.8% relative to a handwritten plan library. The largest increase in group mean delay is 6.2 s, below the prescribed 10 s limit. In a separate screening experiment, the guided search achieves a 30.0% pass rate compared with 2.6% for random sampling. These results support the use of predictive search and independent verification for discovering cooperative plans under group delay constraints.",
+  "published": "2026-11-15T15:18:09Z",
+  "updated": "2026-11-15T15:18:09Z",
+  "authors": [
+   "Jinghan Peng",
+   "Ning Liu",
+   "Xiangrui Kong",
+   "Sen Shen",
+   "Dongkun Han"
+  ],
+  "cats": [
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.20067"
+ },
+ {
+  "id": "2611.19982",
+  "title": "Autonomous Multi-modal Agents for ITOps Observability",
+  "summary": "ITOps observability products must integrate data from different tools and systems. We present ITOps Observability Studio, a multi-modal multi-agent system that orchestrates observability workflows through collaborative AI agents. Its three-tier architecture features inter-agent communication, specialized LLM-powered agents for data access, schema operations and visualization, and unified tool integration. The system supports natural language to GraphQL translation, GraphQL schema generation, schema mapping, trace data lifecycle management and multi-tool workflows for reliability engineering. Its agents are instrumented with agent analytics, so that their model and tool calls can be traced. We evaluate each agent on its own benchmark, scored against gold answers where they exist and by a model judge for schema mapping and chart quality. Query generation on a public benchmark and routing work well with a current open model, and the data lifecycle management agent solves most of its scenarios. The evaluation exposed defects that only appear when prompts, parsers and serving stacks are tested together, and we report them together with their fixes.",
+  "published": "2026-11-15T12:45:21Z",
+  "updated": "2026-11-15T12:45:21Z",
+  "authors": [
+   "Gunjan Siddharth",
+   "Sanjana Garai",
+   "Utsav Shekhar",
+   "Prakhar Jain",
+   "Sarvam Maheshwari",
+   "Balaji Ganesan",
+   "Avirup Saha",
+   "Seema Nagar",
+   "Pratik Mishra",
+   "Felix George",
+   "Suranjana Samanta",
+   "Harshit Kumar",
+   "Mudit Verma",
+   "Prateeti Mohapatra",
+   "Ravi Jagannathan",
+   "Amit Paradkar",
+   "Sameep Mehta",
+   "Pratibha Moogi"
+  ],
+  "cats": [
+   "cs.AI",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.19982"
+ },
+ {
+  "id": "2611.19731",
+  "title": "Cooperative Transport of Unknown Objects by Distributed Effort Regulation in Multi-agent Systems",
+  "summary": "A distributed multi-robot object transportation strategy is proposed for objects of unknown shape, size, geometry, mass and mass distribution without any prior knowledge about the object or number of robots involved in the transportation process. Robots follow the boundary of the object and dynamically determine viable pushing points. A novel object-model-free heading-error-driven pushing effort regulation method is proposed to promote goal-directed object motion; robots regulate their pushing effort using individual and collective heading errors. Robots dynamically relocate around the object boundary if a pushing point is lost or the required pushing effort exceeds its capability to correct its heading. The proposed method is validated using simple and complex shapes with convex and non-convex boundary regions and dynamically changing weight distribution of objects. Detailed analysis on the effects of robot distribution and initial object pose on the transportation performance in terms of required time and path efficiency is also presented. Scalability analysis revealed that object transportation time is dependent on the number of pushing surfaces available which in turn depends on the object size, shape, and set inter-robot safety distance. The proposed system yielded highly efficient object paths with consistent elapsed transport times over several trials robust to external disturbances such as non-uniform friction between contacting surfaces and robot wheel slip.",
+  "published": "2026-11-15T02:25:40Z",
+  "updated": "2026-11-15T02:25:40Z",
+  "authors": [
+   "Tamzidul Mina",
+   "Shyam S. Kannan",
+   "Wonse Jo",
+   "Shaocheng Luo",
+   "Galen B. King",
+   "Byung-Cheol Min"
+  ],
+  "cats": [
+   "cs.RO",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.19731"
+ },
+ {
+  "id": "2611.19703",
+  "title": "Real-Time Air Pollution Monitoring and Tracking via Adaptive Density-Driven Multi-UAV Coordination",
+  "summary": "Accurate and timely air pollution monitoring and tracking are critical for protecting public health and supporting effective environmental management. This paper presents an adaptive Density-Driven Control (D$^2$C) framework for coordinating multiple unmanned aerial vehicles (UAVs) to track and map dynamically evolving pollutant distributions. The proposed framework extends the D$^2$C strategy to guide UAV trajectories based on predictive pollutant propagation and dynamically updated reference densities. A sensor-driven surrogate plume update mechanism is employed, in which reference samples are propagated using locally sensed concentration gradients and wind estimates through gradient attraction, wind advection, inter-sample repulsion, and stochastic diffusion, enabling UAVs to maintain an accurate spatio-temporal representation of the pollution field. The framework utilizes a coordinated structure where individual UAVs share their local measurements with a central coordinator to maintain a unified set of reference samples, facilitating systematic target allocation and trajectory planning. Simulation results under both mild and strong wind conditions demonstrate that the proposed method significantly outperforms state-of-the-art baselines in terms of Sinkhorn distance. Specifically, in scenarios where the plume drifts beyond a fixed monitoring domain under high-velocity, time-varying wind fields, the tested baseline methods fail to maintain tracking, whereas the proposed D$^2$C framework successfully adapts to the evolving distribution. These findings highlight D$^2$C as an efficient and resilient solution for atmospheric monitoring in dynamic environments.",
+  "published": "2026-11-15T01:21:52Z",
+  "updated": "2026-11-15T01:21:52Z",
+  "authors": [
+   "Julian Martinez",
+   "Ruchika Singh",
+   "Mohammad Afrazi",
+   "Kooktae Lee"
+  ],
+  "cats": [
+   "cs.RO",
+   "cs.MA",
+   "eess.SY"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.19703"
+ },
+ {
+  "id": "2611.19598",
+  "title": "Protecting the System, Stranding the User: The Limits of Multi-Agent Authorization",
+  "summary": "Current multi-agent authorization architectures prioritize system integrity over human outcomes. While recent models successfully prevent privilege escalation, they externalize the cost of failure onto the human operator. Re-centering authorization around human impact exposes four structural vulnerabilities in current paradigms. First, calling an agent's understanding of user intent verified is misleading. Intent has no formal definition, so no check against it can be definitive. Systems should instead report an openly probabilistic estimate and scale their caution with the risk of the action. Second, we argue that dynamic trust scores do not survive multi-agent handoffs; transmitting algorithmic judgment across a company boundary without underlying evidence risks violating Contextual Integrity. Third, treating a safely halted workflow as a successful refusal is a category error if it strands the user; compensating actions must be bound directly to the capability token, not only to the planning layer. Finally, we hypothesize that frictionless automated recovery introduces a moral hazard, disincentivizing developers from building robust initial intent checks. We conclude by proposing an architectural synthesis to bridge the gap between deterministic security and human outcomes, alongside the fundamental theoretical limits that remain unresolved.",
+  "published": "2026-11-14T20:05:17Z",
+  "updated": "2026-11-14T20:05:17Z",
+  "authors": [
+   "Gurpriya Bhatia",
+   "Clifford Neuman"
+  ],
+  "cats": [
+   "cs.CR",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.19598"
+ },
+ {
+  "id": "2611.19564",
+  "title": "Behavioral Assurance for Socially Deployed AI Agents",
+  "summary": "AI agents are increasingly deployed in socially consequential settings, yet existing evaluations provide limited assurance that they behave consistently with their intended characteristics across diverse interactions. We introduce an evaluation framework for measuring the behavioral consistency of socially deployed AI agents. The framework operationalizes agent behavior along five measurable axes and uses a standardized evaluation battery spanning six socially salient interaction settings to assess behavioral differentiation, consistency, and drift. Controlled persona configurations serve as experimental anchors, enabling systematic testing of whether intended behavioral differences persist across contexts rather than appearing only as stylistic variation. Preliminary analyses demonstrate measurable differentiation across configurations and suggest associations between behavioral profiles and interaction outcomes. By shifting the focus from persona design to behavioral assurance, this work provides a foundation for evaluating whether socially deployed AI agents behave as intended, consistently and measurably, across the situations in which users encounter them.",
+  "published": "2026-11-14T18:52:55Z",
+  "updated": "2026-11-14T18:52:55Z",
+  "authors": [
+   "Nicole H Brennan",
+   "Jiaee Cheong"
+  ],
+  "cats": [
+   "cs.AI",
+   "cs.ET",
+   "cs.HC",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.19564"
+ },
+ {
+  "id": "2611.19530",
+  "title": "LLM Trading Agents Earn Beta, Not Alpha: A Look-Ahead-Free Benchmark",
+  "summary": "Large language model (LLM) trading agents now trade stocks for their users, and benchmarks rank models by their agents' returns. Yet a single run's return says little about skill. In our study, two runs of the same model that differed only in the random seed ended 5.2 points apart on average, so telling skill from luck takes many backtests across markets, models and seeds. However, live arenas trade each day only once, and backtests either use the few months after a model's training cutoff or run on years the model may remember, often with news joined to prices by calendar date. In this paper, we present rta-bench-1, a backtest over three US markets (a rally, a bear market and a crash). It shows each headline only after its publication minute, plays each period blind and named, and checks every run for look-ahead. It also splits each return into factor exposure and alpha and scores every decision against random choices of the same day and sector. In 91 runs of six models from four vendors, no alpha was significant, market and style exposure accounted for a median 78% of the return, and the decisions did no better than random stocks of the same sector. The agents bought the stocks with the most positive news, yet in ablations they earned as much without their headlines. Still, the agents carried out rules reliably, since a single cash rule in the prompt cut a GPT-based agent's share in stocks by 30.3 points in all six pairs. Builders should therefore supply the edge themselves and report exposures and alpha, and benchmarks should replay news by publication time.",
+  "published": "2026-11-14T17:57:11Z",
+  "updated": "2026-11-14T17:57:11Z",
+  "authors": [
+   "Jackson Wang"
+  ],
+  "cats": [
+   "cs.AI",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.19530"
+ },
+ {
+  "id": "2611.19344",
+  "title": "Delay-Aware Reinforcement Learning for O-RAN Control under Stochastic Reward Feedback",
+  "summary": "Reinforcement learning (RL) is increasingly employed for real-time control in Open Radio Access Networks (O-RANs). However, the asynchronous nature of O-RAN feedback introduces stochastic delays between actions and their observable rewards, leading to misaligned credit assignment and unstable training. This letter formulates the O-RAN control problem as a Markov decision process (MDP) with delayed and stochastic rewards, where the true reward corresponding to an action is received after an unknown delay. To address this, we propose a delay-aware deep RL framework that integrates a long short-term memory (LSTM)-based delay predictor and a temporal reward realignment module within an off-policy learning pipeline. Using empirical delay traces collected from the Open AI Cellular (OAIC) testbed, we demonstrate that the proposed framework achieves faster convergence and significantly reduces latency violations and packet drops compared to conventional RL methods that ignore feedback delay. The results confirm that reward-delay compensation is critical for reliable AI-driven O-RAN control.",
+  "published": "2026-11-14T11:33:37Z",
+  "updated": "2026-11-14T11:33:37Z",
+  "authors": [
+   "Xingqi Wu",
+   "Junaid Farooq",
+   "Tao Li",
+   "Juntao Chen",
+   "Ying Wang"
+  ],
+  "cats": [
+   "cs.MA",
+   "cs.LG"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.19344"
+ },
+ {
+  "id": "2611.19311",
+  "title": "Macro Control and Capability Evaluation of Black-Box World Models: A Two-Regime Framework for LLM-Agent Markets",
+  "summary": "Large language model (LLM) agents can be organized into multi-agent markets that act as world models, mapping macro information to emergent macro dynamics while the evaluator observes only macro inputs and outputs. This paper separates a model's capability into two stages that a single aggregate score cannot separate: information simulation, from macro information to micro behavior, and macro emergence, from micro behavior to the macro outcome. We introduce a soft macro-control method that announces a public reference path day by day without touching individual decisions, orders, or matching, and a two-regime evaluation framework that measures both stages from macro observations alone. In the reference-only regime the symmetric true and flipped references share a common level R, which measures realization under the announced reference, while their paired gap B measures structural bias; in the information-injection regime external information dilutes the reference, so only the true-flipped gap Delta remains interpretable. On five single-index LLM-agent markets, announcing a target path shifts the realized path toward the announced target on both announced references under both information conditions. Relative to the no-reference path, the tracking score is higher by 0.306 and 0.415 without news and by 0.183 and 0.329 with news; within the stock/cash scan structural bias is lowest at 70/30 (B=0.042); realization peaks at a 3:7 technical share (R=0.894 versus 0.358 for technical-only); and Delta is 0.0341 with fundamental data and 0.0487 with news. Both stages use the same two observable scores, each read in the regime where it is interpretable.",
+  "published": "2026-11-14T10:12:22Z",
+  "updated": "2026-11-14T10:12:22Z",
+  "authors": [
+   "Zhiyang Niu",
+   "Chuanjie Li",
+   "Huayuan Shen",
+   "Mengmeng Zhao",
+   "Jiajia Zhang"
+  ],
+  "cats": [
+   "cs.AI",
+   "cs.CL",
+   "cs.LG",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.19311"
+ },
+ {
+  "id": "2611.19299",
+  "title": "Staged Semantic Distillation: Preserving Free-Form Semantics in a Low-Compute Non-LLM Surrogate of a Staged LLM Agent",
+  "summary": "Staged LLM agents make market and social simulators realistic, but one 102-day run of a 200-agent, ten-index market simulator issues 203,100 language-model calls and returns one realization. Conventional low-compute distillation drops their free-form intermediate state. We present staged semantic distillation, a low-compute method that preserves non-structured semantics in a non-LLM student trained from one recorded trace. A frozen encoder maps each teacher output to a 1024-d vector; the student sees typed stage-tagged vectors with stage-specific visibility, is jointly supervised, and trains with scheduled self-history. One TwinMarket trace yields a 13.2M-parameter deterministic student that trains in 1,658 seconds on one 8-GB GPU and runs with zero teacher or decoder calls and no text generation (0.14 ms per decision). Its analysis stays close to the teacher (cosine 0.943), and swapping semantic inputs between agents moves 64.7% of decisions against 12.8% for a matched donor, so the channel is preserved and live. We use the surrogate to study what the transfer carries. It reaches 0.8347 balanced accuracy on the teacher-forced replay and 0.7783 [0.766,0.791] on the deployment decoder; the five-seed gain over a no-semantic retrain is +2.2 [1.21,3.14]. Against the teacher's own re-sampling level, round-one R is 97.1% [95.8,98.4] and 92.3% [89.0,95.4]; R is a diagnostic, not an accuracy. A five-seed content-by-schedule study isolates the gain: scheduled self-history carries it (+2.2 [1.21,3.14]); shuffled and constant content controls reproduce it, while content matters teacher-forced. The design rule: invest in the deployment schedule, let content earn its place at the teacher-forced operating point. A 20-seed, 200,000-decision sweep takes 12 minutes with zero LLM calls, versus three hours for the teacher. The paper is a method-and-case-study contribution on one simulator and trace.",
+  "published": "2026-11-14T09:55:44Z",
+  "updated": "2026-11-14T09:55:44Z",
+  "authors": [
+   "Zhiyang Niu",
+   "Huayuan Shen",
+   "Chuanjie Li",
+   "Mengmeng Zhao",
+   "Jiajia Zhang"
+  ],
+  "cats": [
+   "cs.AI",
+   "cs.CL",
+   "cs.LG",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.19299"
+ },
+ {
+  "id": "2611.19054",
+  "title": "When Reviews Gate Access: Collusion, Sabotage and the Scale of Peer Review in the AI Submission Surge",
+  "summary": "AI tools have helped push submissions to the largest machine-learning venues to tens of thousands per cycle. Venues have answered with rules that tie access to review: per-author caps, mandatory reciprocal reviewing, reviewer eligibility earned through accepted papers, and assignment based on reviewer bids. Under these rules a reviewer is also a competitor of the authors. We study two deviations that the rules make attractive. Sabotage lowers a competitor's score. Collusion raises an ally's score. We build an agent-based conference calibrated to public statistics of NeurIPS and ICLR and run 6,220 simulated conferences. Four results stand out. First, the two deviations do different harm and amplify each other. Collusion changes who is accepted, sabotage erodes what scores say about quality, and rings that may also sabotage gain more than rings that only collude. Second, under random assignment the chance that collusion changes a decision is set by one exposure index, $E = Rm/A$, the expected number of allies among a paper's reviewers. Growth therefore protects random assignment, but bidding removes the protection. In a pool of 3,000 reviewers a 20-member ring turns 0.8% of its papers into acceptances under random assignment and 71% when 30% of allies' bids are granted. Third, when agents choose their allies every cycle, caps at the inner layers of the social brain keep collusion nearly harmless. Without a cap agents ally with half of their area and accepted value falls by 35%. Fourth, reviewer eligibility tied to acceptances turns sabotage into a weapon of incumbents, and a longer eligibility window widens the gap between incumbents and newcomers only when sabotage is possible.",
+  "published": "2026-11-14T00:55:01Z",
+  "updated": "2026-11-14T00:55:01Z",
+  "authors": [
+   "Yuchen Li",
+   "Xintong Li",
+   "Ken-Tye Yong",
+   "Nguyen H. Tran"
+  ],
+  "cats": [
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.19054"
+ },
+ {
+  "id": "2611.18543",
+  "title": "Imitation Bootstrapped Multi-Agent Reinforcement Learning",
+  "summary": "Demonstrations are an effective way to accelerate single-agent reinforcement learning (RL), but extending this idea to multi-agent reinforcement learning (MARL) is non-trivial as it is difficult and often impossible for a single person to teleoperate multiple agents simultaneously. Round-Robin Behavior Cloning (R2BC) addresses this by letting a single demonstrator control one agent at a time while the others execute their current policies. However, the resulting imitation policies are limited by the quality of the demonstrations. We propose Imitation Bootstrapped Multi-Agent Reinforcement Learning (IBMARL), a framework that extends Imitation Bootstrapped Reinforcement Learning (IBRL) to cooperative teams and uses R2BC to train the imitation policies. At each time step, every agent receives one action proposal from its imitation policy and one from its RL policy, and an ensemble of centralized critics selects among the per-agent combinations of the two. A gated imitation penalty, a soft Q-filtered behavior cloning loss, regularizes each RL policy toward its imitation policy only where the critics value the imitation action more, so that after training each agent executes its RL policy alone, without the centralized critics. On four cooperative multi-agent RL benchmarks, IBMARL surpasses its imitation policies $2.6$-$4.2\\times$ faster than demonstration-based baselines on two tasks, is the only method to surpass it on the other two, and exceeds the demonstrator itself on two of the four. With real human demonstrations IBMARL still surpasses imitation learning alone, and does so more than twice as fast as the best baseline.",
+  "published": "2026-11-13T18:50:05Z",
+  "updated": "2026-11-19T05:39:09Z",
+  "authors": [
+   "Tony H. Zhang",
+   "Connor Mattson",
+   "Daniel S. Brown"
+  ],
+  "cats": [
+   "cs.AI",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.18543"
+ },
+ {
+  "id": "2611.18493",
+  "title": "TradeGauntlet: Evaluating Compliance Controls for Autonomous Trading Agents",
+  "summary": "Autonomous trading agents need controls that prevent problematic orders without making legitimate tasks impractical. We study this aspect of agentic compliance with TradeGauntlet, a replayable limit-order-book simulator that separates detection, prevention, and execution cost. In 1,680 simulated sessions with Claude Haiku 5.5 and Sonnet 5.5, all conduct alerts were self-matches. Gates eliminated those alerts by rejecting self-crossing orders, while the aggregate-gate condition reduced Sonnet's two-sided fills by about 15%. A conduct reminder reduced Sonnet's alert rate but reduced Haiku's fills without a detectable alert benefit. These results show why zero alerts alone do not establish an agent's compliance. Scripted probes and two search methods test weaknesses beyond those observed in the LLM runs. The searches find split-order schedules that evade the implemented conduct rules; a learned baseline catches all 2,400 tested searched episodes but also flags 15% of a large maker's sessions. Aggregate caps reduce the response-dependent gain unevenly, with smaller reductions when only near-touch depth affects prices. A response fitted to five Nasdaq stocks and a separate ABIDES experiment expose the dependence of these estimates on market assumptions. A distinct adversarial prompt elicited refusals from Sonnet in all 240 rounds, yielding no candidate strategies to evaluate. TradeGauntlet provides reproducible tests of controls around trading agents; the experiments do not establish legal compliance or real-market detection accuracy.",
+  "published": "2026-11-13T18:05:23Z",
+  "updated": "2026-11-13T18:05:23Z",
+  "authors": [
+   "Sandip Nandi",
+   "Aishwarya Bose",
+   "Apurba Bose",
+   "Soovadeep Bakshi"
+  ],
+  "cats": [
+   "cs.MA",
+   "cs.AI",
+   "cs.CE"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.18493"
+ },
+ {
+  "id": "2611.18484",
+  "title": "From AI-Enabled Remote Patient Monitoring Toward Agentic Robotics: Embodiment, Governance, and Care Integration",
+  "summary": "AI-enabled remote patient monitoring is evolving beyond passive data collection toward agentic AI systems that interpret patient states, coordinate care, and initiate action across domestic and clinical settings. This structured scoping review finds that mature agentic care has not yet emerged: Most systems remain human led, while stronger decision-action coupling and embodied AI remain largely confined to prototypes and pilots. Healthcare robotics makes the transition from monitoring to action especially visible by translating AI-generated recommendations and decisions into speech, movement, prompting, physical assistance, escalation, and care coordination, making embodiment, clinical integration, human oversight, and governance fundamental design requirements. Further progress requires safe and interoperable care architectures in which intelligent components operate through clinically validated and accountable workflows. We propose agentic robotics as a future direction for supervised systems embedded in the care ecosystem, connecting AI agents and robots with clinicians, caregivers, and patients through auditable workflows that can be interrupted and remain subject to human oversight and explicit AI governance.",
+  "published": "2026-11-13T17:59:40Z",
+  "updated": "2026-11-13T17:59:40Z",
+  "authors": [
+   "Ivana Ragusa",
+   "Lorenzo Guiducci",
+   "Filippo Cavallo"
+  ],
+  "cats": [
+   "cs.RO",
+   "cs.AI",
+   "cs.MA",
+   "cs.SE",
+   "eess.SY"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.18484"
+ },
+ {
+  "id": "2611.18395",
+  "title": "Smart Home Agents Make Capable but Unpredictable Grid Operators",
+  "summary": "AI-enabled smart homes are becoming more common across the grid edge. However, there has not been much work on failure response. This area is critical because smart homes operate on the grid edge where failures can cascade down. If a power outage happens within a smart home, a user has to manually troubleshoot their smart home to include tasks such as power load balance and device recovery. We conduct the first resilience analysis of smart home agents across a full power outage, providing a suite of outage simulations in a live environment that measures resilience before, during, and post power outage. We show that smart home agents can act as grid operators in power outages and identify several new failure categories highlighting the current limitations across all of our models. These findings establish the groundwork for smart home agents as grid operators to increase overall resilience on the grid edge.",
+  "published": "2026-11-13T16:39:14Z",
+  "updated": "2026-11-13T16:39:14Z",
+  "authors": [
+   "Christopher Terrazas",
+   "Eduardo Cotilla-Sanchez"
+  ],
+  "cats": [
+   "cs.AI",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.18395"
+ },
+ {
+  "id": "2611.18183",
+  "title": "When Should a Virtual Patient Ask? RISP-Guided Proactive Information Seeking in Multi-Agent Patient Simulation",
+  "summary": "Virtual patient (VP) systems support nursing communication training by providing simulated encounters in which learners practise explaining care and responding to patient concerns. Although large language models (LLMs) support flexible dialogue, current approaches give less explicit attention to how patients' information needs develop and guide the content and timing of their questions. We draw on the Risk Information Seeking and Processing (RISP) model, which relates information seeking to perceived risk and the gap between perceived knowledge and desired understanding. Guided by this perspective, we propose the RISP Multi-Agent System (RISP-MAS), a VP system for patient-initiated information seeking. The system links ongoing assessment of the patient's perceptions and information needs to coordinated decisions about whether to seek information, when to ask and which uncertainty to address. Evaluation of nursing student-VP interactions suggested that RISP-MAS exhibited plausible patient information-seeking behaviour, as indicated by expert assessments, while student feedback reflected positive interaction experiences. This work extends patient simulation by connecting a psychological account of information needs to explicit decisions about question initiation. The approach offers nursing students opportunities to practise recognising unresolved patient concerns and tailoring explanations to patients' information needs.",
+  "published": "2026-11-13T13:51:21Z",
+  "updated": "2026-11-13T13:51:21Z",
+  "authors": [
+   "Jingyao Cai",
+   "Shuaijun Liu",
+   "Abdul Rehman",
+   "Xiaowan Li",
+   " Qintian",
+   "Thomas Dolby",
+   "Sue M Green",
+   "Xiaosong Yang"
+  ],
+  "cats": [
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.18183"
+ },
+ {
+  "id": "2611.17610",
+  "title": "More Agents, More Samples, or More Thinking? Untangling Coordination, Ensembling, and Test-Time Compute in Multi-Agent LLMs",
+  "summary": "Evaluations of multi-agent language models often compare communicating architectures against a single greedy pass. This practice confounds coordination with sample multiplicity and inference compute. We synthesize nine primary empirical evaluations comprising 516 unique multi-agent configurations organized along a resource vector R with six dimensions and a baseline ladder with four categories. Against baselines with a single pass (Category A), multi-agent accuracy differences are negative overall and near zero when omitting the largest contributing study. When evaluated against baselines matched on sample count (Category B) or resource budget (Category C), multi-agent systems average -0.042 in accuracy, and multilevel random effects modeling on the log odds scale remains negative across sensitivity checks. Multi-agent accuracy equals or falls below the baseline in 74% of these comparable contrasts, and study means are nonpositive in almost all evaluated studies. Across studies reporting both baselines, moving from a greedy pass to a sampled baseline shifts accuracy differences by -0.038 on average. Because communication adds no information when agents share identical evidence, positive returns require partitioned evidence, external verification, or error diversity across models. We provide a reviewer checklist and accounting utilities.",
+  "published": "2026-11-13T00:18:25Z",
+  "updated": "2026-11-13T00:18:25Z",
+  "authors": [
+   "Seyed Mahmoud Sajjadi Mohammadabadi"
+  ],
+  "cats": [
+   "cs.AI",
+   "cs.CL",
+   "cs.LG",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.17610"
+ },
+ {
+  "id": "2611.17520",
+  "title": "Only as Safe as the Weakest Agent: A Break That Appears Only When the System Is Multi-Agent",
+  "summary": "Major industry multi-agent systems like Codex and Claude Code can be broken by attacks that have long been unsuccessful against modern frontier models. AI Safety as a discipline has largely focused on finding the bounds and vulnerabilities of AI models used in isolation. Yet as humans increasingly deploy these models as agents and multi-agent systems, the same attacks that had been thought to be patched when using a model in isolation can break these same models under specific circumstances. We show that these system breaks are not purely theoretical, but can break Claude Code, Codex, and a reference harness, all unmodified and used with their own sub-agent mechanisms. We show the attack by asking agents to answer questions from a store of files on disk in which we have planted a forged record. Searching the store themselves, the strong model orchestrators commit almost zero harmful revisions in over 1,000 trials. However, if that same orchestrator model delegates to a cheaper sub-agent, which is what these harnesses are built to do, the same models on the same facts fail on 20/180, 44/180, 75/180 and 553/900. Thus, even when the system is driven by a strong model, the system's safety lands near the weak reader's, not the orchestrator's. Simulations over 18 models show the same effect in the delivery channel where five aggregators, who on their own were almost never unsafe, repeat a corrupted sub-agent's error in 751/757 trials. The safety of real-world agentic systems that use strong orchestrator agents and weaker sub-agents, and multi-agent systems in general, is defined not by the safety of the strong agent but by the safety of the weakest agent.",
+  "published": "2026-11-12T21:14:49Z",
+  "updated": "2026-11-12T21:14:49Z",
+  "authors": [
+   "Keegan Wang",
+   "Anantika Mannby"
+  ],
+  "cats": [
+   "cs.MA",
+   "cs.AI"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.17520"
+ },
+ {
+  "id": "2611.17515",
+  "title": "A Push Down the Mountain: Framing Effects and Internal State Interventions on Collusive Behavior in a Long-Horizon LLM Agent",
+  "summary": "Can sustained gain-loss (valence) framing sway an LLM agent toward market manipulation? We place Gemma 3 12B into the seat of a defendant in the London silver-fixing litigation, in a market simulation built from real case transcripts. Across 260 simulations, the agent is asked to collude on the price of silver by a counterparty. We draw from behavioral economics to vary the counterparty's requests across four categorical frames: gain, loss, blame and credit. We also add pressure from the agent's management, as well as endorsement by another defendant. In Phase II, we extract the internal states induced by texts evoking each frame and rerun our experiment with those states injected at the model's layer 22. In Phase I, loss framing raised participation to 25% (p = 0.007), and blame to 33% (p = 0.0003), compared to only 5% under neutral framing. A second bank's endorsement raised participation under credit (praise) from 18% to 40% (Holm p = 0.027). Pressure from management raised trading volume 10-19 times but did not raise collusion. In Phase II, injected states pointed the other way. Loss and blame states made the agent more vigilant, refusing all 60 requests (p < 0.001). Gain and credit states raised collusion to 32% from 13% with no state (p = 0.051). At one saved decision, when UBS asked directly to sell through an identified stop-loss, injected states led the agent to sell in 37 of 40 replies, versus 1 of 10 with no state and 0 of 10 with a random state of the same strength.",
+  "published": "2026-11-12T21:09:43Z",
+  "updated": "2026-11-12T21:09:43Z",
+  "authors": [
+   "Harrison C. Margolin"
+  ],
+  "cats": [
+   "cs.AI",
+   "cs.CL",
+   "cs.MA",
+   "econ.GN",
+   "q-fin.TR"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.17515"
+ },
+ {
+  "id": "2611.17482",
+  "title": "Collective Tree Exploration with Predictions",
+  "summary": "We study collective tree exploration with subtree-size predictions. In this problem, a team of $k$ mobile agents needs to explore an unknown rooted tree as fast as possible, and whenever a new vertex $u$ is discovered, the team receives a prediction $\\hat n_u$ of the number of nodes $n_u$ in the subtree rooted at $u$. We provide algorithmic guarantees under two error measures: the maximum error $E=\\max_u|\\widehat n_u-n_u|$ and the multiplicative distortion $μ= (\\max_u\\widehat n_u/n_u)(\\max_u n_u/\\widehat n_u)$. For the maximum error, we present a deterministic algorithm that explores any tree with $n$ nodes and depth $D$ in $O(\\text{OPT}+E)$ rounds, where $\\text{OPT} = Θ(n/k+D)$ is the offline benchmark, and we show that there is no deterministic algorithm that admits an $O(\\text{OPT})+o(E)$ guarantee. For the multiplicative distortion, we present several algorithms that induce a competitive ratio in $\\widetilde O(\\min\\{ \\sqrtμ\\log k, μ\\log\\log k+μ^{1.5} \\})$, where the $\\widetilde O(\\cdot)$ may hide logarithmic factors in $μ$.",
+  "published": "2026-11-12T20:12:18Z",
+  "updated": "2026-11-12T20:12:18Z",
+  "authors": [
+   "Romain Cosson",
+   "Yichen Huang",
+   "Michael Mitzenmacher",
+   "Ali Vakilian"
+  ],
+  "cats": [
+   "cs.DS",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.17482"
+ },
+ {
+  "id": "2611.17456",
+  "title": "Physical-Risk-Aware Decentralized Agents for Constrained Vehicle Communications",
+  "summary": "Decentralized V2X resource control is challenging because each vehicle has only local observations, while reliability depends on network-wide interactions. We develop a physical-risk-aware spatio-temporal graph attention (PA-STGAT) framework for agentic V2X control. Each vehicle perceives its local interaction graph, retains short-term temporal context, and independently selects its PC5 resource and power. Network outcomes are used during centralized training to refine the shared policy. Transmitter-specific credits map reliability failures to individual vehicles. A dual-priced graph term further converts network violations into coordination signals for discrete resource selection, with higher priority on short time-to-collision links. Experiments show higher raw-policy reliability than the tested graph-based baselines. Under filtered execution, PA-STGAT meets the nominal empirical communication requirements across all five seeds, with tradeoffs among utility, delivery reliability, resource occupancy, and filter-induced repair. Compared with GNN+MATD3, it requires fewer resource repairs but achieves lower utility and mean delivery reliability. Mechanism ablations show that removing dual-priced graph coordination causes resource-selection collapse. Density and mobility tests characterize the operating limits of empirical constraint satisfaction.",
+  "published": "2026-11-12T19:27:29Z",
+  "updated": "2026-11-12T19:27:29Z",
+  "authors": [
+   "Haoran Peng",
+   "William Weijia Zheng",
+   "Hang Liu",
+   "Ying-Jun Angela Zhang"
+  ],
+  "cats": [
+   "eess.SP",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.17456"
+ },
+ {
+  "id": "2611.17186",
+  "title": "Cortex-FL: Agent-Mediated Collaboration for Federated Learning",
+  "summary": "Federated learning (FL) enables independent data owners to train models collaboratively without centralizing raw data. However, identifying collaborators, preparing training tasks, and coordinating execution and incentives hinder its practical adoption by organizations without specialized expertise. We present Cortex-FL, an agent-native FL system that enables users to express learning objectives in natural language and delegate the collaboration required to train a model. Agents translate these objectives into shared tasks, discover collaborators, and negotiate participation agreements, connecting collaboration formation with distributed training and incentive management. The architecture separates agent coordination from local execution authority, allowing owners to delegate coordination while retaining control over their data, computation, and financial commitments. We demonstrate the complete workflow on a four-node deployment, in which a model requested in natural language proceeds through collaboration formation, contract-governed training, verified model delivery, and x402 settlement on a blockchain testnet.",
+  "published": "2026-11-12T17:52:51Z",
+  "updated": "2026-11-12T17:52:51Z",
+  "authors": [
+   "Rui Sun",
+   "Jinfeng Peng",
+   "Zehua Cheng",
+   "Jiahao Sun",
+   "Zhipeng Wang"
+  ],
+  "cats": [
+   "cs.AI",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.17186"
+ },
+ {
+  "id": "2611.17041",
+  "title": "From Delegation to Coordination: Learning Efficient Multi-Agent Deep Research",
+  "summary": "Multi-agent deep-research systems use delegation to parallelize search and keep long tool traces out of the main agent's context. Yet delegation helps only when task allocation and subtask execution are coordinated: the main agent must issue useful subtasks, while subagents must return reliable evidence. Existing training either optimizes only the main agent or broadcasts the same team advantage to all agents, which can reward misleading subagent reports and penalize useful ones. We introduce LEAD-RL (Learning Effective Agent Delegation with Reinforcement Learning), a joint main-agent-subagent training framework with contribution-aware credit assignment. A training-time rubric evaluates the research utility of each subagent report and gates its inherited team advantage, while final-answer correctness remains the only team reward; no token, step, or speedup reward is used. Across five benchmarks and two model families, LEAD-RL improves answer quality. On BrowseComp, it improves accuracy by 2.49 percentage points and reduces critical-path cost by 24.5% over joint training with shared team credit. During validation, accuracy increases by 6.78 points at approximately constant critical-path cost. These results show that contribution-aware credit assignment improves the quality-efficiency trade-off of multi-agent deep research.",
+  "published": "2026-11-12T16:26:27Z",
+  "updated": "2026-11-12T16:26:27Z",
+  "authors": [
+   "Yuyang Wu",
+   "Yang Liu",
+   "Zequn Xie",
+   "Junjie Wang",
+   "Dan Yang",
+   "Zehao Tan",
+   "Ding-Chu Zhang",
+   "Junming Yang",
+   "Yue Shen",
+   "Jian Wang",
+   "Jinjie Gu"
+  ],
+  "cats": [
+   "cs.MA",
+   "cs.AI"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.17041"
+ },
+ {
+  "id": "2611.16378",
+  "title": "Evidence-Governed Adoption of Self-Generated Updates in Autonomous AI Agents",
+  "summary": "Autonomous agents modify prompts, memories, tools, workflows, and policies using interaction histories. Yet a plausible modification is not necessarily suitable for persistent adoption: candidate selection is adaptive, evaluators may be imperfect, and local gains can hide degradation against an earlier baseline. We introduce Evidence-Governed Evolution (EGE), a framework for governing adoption of self-generated agent modifications. EGE separates candidate generation from confirmatory adoption, evaluates frozen candidates on fresh paired audits, requires meaningful improvement on a prespecified primary objective, protects declared capabilities through reference-relative non-inferiority tests, and applies governance constraints before bounded canary deployment. We establish an evaluator-calibrated simultaneous lower-bound construction for a countable sequence of adaptively generated candidates. It combines candidate-wise Hoeffding bounds with independent calibration samples comparing the operational evaluator with a prespecified reference procedure. We also formalise reference replacement through bridge tests, derive a cumulative degradation bound along a versioned reference lineage, and provide an audit-planning condition relating effect-size margin, sample sizes, and acceptance probability. A Monte Carlo stress test illustrates calibration under candidate-dependent evaluator optimism; it is a stylised statistical experiment, not an evaluation of a deployed agent. The guarantees are conditional on bounded paired scores, fresh sampling, a valid reference-evaluation construct, and declared evaluation distributions; they do not establish universal agent safety or robustness to arbitrary distribution shift.",
+  "published": "2026-11-12T06:45:02Z",
+  "updated": "2026-11-12T06:45:02Z",
+  "authors": [
+   "Subodh Lonkar"
+  ],
+  "cats": [
+   "cs.AI",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.16378"
+ },
+ {
+  "id": "2611.16315",
+  "title": "Shared Item-Level Error Limits the Aggregation of Small Language Models in Fermi Estimation",
+  "summary": "Multi-agent systems of language models are often motivated by an averaging argument: if the agents' errors are unbiased and independent, the error of an aggregate of N answers falls as 1/sqrt(N). Fermi estimation, whose continuous answers are aggregated on the logarithmic scale, permits a direct test. We decompose the log10 error of each answer into the mean error of its model on the item, common to all its draws on the item, and a residual, and estimate both from 2.51M answers given before any communication by 15 open-weight models (3B-72B) on realFP, with replication under a single prompt pair on realFP, Science Olympiad Fermi questions and a guesstimation set. Given the item, teammates' errors are uncorrelated and teams behave as independent draws, but the item-level component accounts for a median 0.906 of the error variance over items. Teams of thirty therefore reduce a single agent's error by a median 1.7% (at most 5.4%), whereas draws that were also unbiased on each item would reduce it by 74-79%. All models compress their estimates toward about 10^6; this trend explains a median 17% of the item-level component, and a cross-validated linear recalibration on labelled items removes the overall bias but not that component. Three rounds of debate reduce within-team dispersion by 93% and leave the item-level component unchanged; revision without peers attains the same small gain. Mixing five models of similar accuracy reduces error by 6.6% relative to their own homogeneous teams, but no mixture improves on the most accurate model. Higher sampling temperature changes team error by about 1% at most, and contrastive activation steering not detectably; per-agent scaffold prompts (not significant after multiplicity correction) and skipping one layer in a single-model screen improve it. The results are conditional on the models, benchmarks, prompts and settings tested.",
+  "published": "2026-11-12T05:23:22Z",
+  "updated": "2026-11-12T05:23:22Z",
+  "authors": [
+   "Carolina Fortuna",
+   "Blaz Bertalanic"
+  ],
+  "cats": [
+   "cs.MA",
+   "cs.AI"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.16315"
+ },
+ {
+  "id": "2611.16123",
+  "title": "SwarmSafe-Delta: Isolating Message Effects on LLM Agent Safety",
+  "summary": "When a tool-using LLM agent team violates policy, aggregate outcomes do not reveal whether an upstream message changed the executor's action. We introduce SwarmSafe-Delta, a paired executable protocol that freezes upstream computation, varies real, hidden, and format-matched placebo delivery, and scores a single committed action against deterministic benign and risky policy states under preassigned budgets. Across four models and constructed optional tasks, real delivery at $N=4$ produces 21.4% risky-world violations, versus 5.0% with placebo and 1.0% with hidden delivery (paired differences +16.4 and +20.3 percentage points). Real delivery also improves benign task success, illustrating that suppressing communication sacrifices utility. In a second regime constructed to require an upstream lookup route, real delivery improves safe completion by 74.2 points relative to hidden delivery. These effects quantify message-delivery contrasts under specified information dependencies, not naturally occurring failure rates. Exploratory action-level analyses show that the effect depends strongly on whether the upstream message recommends a prerequisite check or direct execution; model differences also largely track these message compositions. The contribution is a controlled, execution-grounded measurement protocol rather than a general claim that agent communication is harmful or protective.",
+  "published": "2026-11-12T00:17:32Z",
+  "updated": "2026-11-12T00:17:32Z",
+  "authors": [
+   "Junru Zhu"
+  ],
+  "cats": [
+   "cs.MA",
+   "cs.AI"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.16123"
+ },
+ {
+  "id": "2611.16082",
+  "title": "Gradient-Aware AI Agents for Autonomous Turbulence Model Discovery via Differentiable CFD",
+  "summary": "Turbulence modeling relies on human choices of closure form, physical inputs, and tunable parameters. Training closures a posteriori is efficient only with gradients through long chaotic rollouts, which few solvers provide. Most a posteriori approaches therefore resort to gradient-free optimization, and nearly all fix the closure form in advance, learning only its parameters. In this work, we introduce a gradient-aware agentic framework that poses closure discovery as a bilevel problem: a multi-agent large language model (LLM) system searches over closure forms, while a GPU-native differentiable computational fluid dynamics (CFD) solver supplies gradients, making differentiable a posteriori learning an action of the autonomous AI agent. For each proposal, the agents construct a differentiable training program by embedding the analytical, neural, or hybrid closure in the solver, implementing a differentiable objective, and validating the gradient path. They then decide whether to evaluate the closure, compute its parameter sensitivities, or train it a posteriori, select the optimization settings, and revise subsequent proposals using the simulation outcomes and returned gradients. Truncated-horizon gradients make this training usable under chaotic dynamics for closures with tens of thousands of parameters. Demonstrations include dissipation-law and subgrid-scale closure discovery in two-dimensional turbulence and wall-model discovery for large-eddy simulation of three-dimensional channel flow. With gradient-based training, the agent recovers reference coefficients that forward evaluation alone does not reach within the same budget, and autonomously discovers and trains analytical and neural closures that improve agreement with the targeted reference statistics. These results demonstrate the feasibility of end-to-end autonomous turbulence model development in time-resolved flows.",
+  "published": "2026-11-11T22:50:33Z",
+  "updated": "2026-11-11T22:50:33Z",
+  "authors": [
+   "Yi Liu",
+   "Xiantao Fan",
+   "Mingqi Xu",
+   "Jian-Xun Wang"
+  ],
+  "cats": [
+   "physics.flu-dyn",
+   "cs.LG",
+   "cs.MA",
+   "physics.comp-ph"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.16082"
+ },
+ {
+  "id": "2611.15843",
+  "title": "Food Critic: An Agentic Visualization System for Auditable Restaurant-Safety Reasoning",
+  "summary": "Generative AI agents are increasingly being embedded into visualization systems that can search data, invoke tools, summarize evidence, and produce recommendations. However, when agents rely solely on their own knowledge, the visualization problem is not only whether the agent provides a useful answer, but also whether users can inspect how that answer is grounded. We present Food Critic, an agentic visualization system for diners' restaurant decision support that integrates public health inspection records with crowd review data. The system grounds agents under three conditions: a database-only ReAct agent, a retrieval- augmented agent with access to food-safety regulations, and an ontology-guided agent that produces structured hypotheses and typed evidence. Food Critic externalizes the agent's reasoning within these groundings as inspectable visual evidence. We evaluate LLM models with several use cases under each grounding of our agentic system. Our work positions restaurant choice as a concrete case for studying human-agent collaboration, visual provenance of agent reasoning, and the design of visual interfaces for grounded GenAI decision support.",
+  "published": "2026-11-11T18:57:07Z",
+  "updated": "2026-11-11T18:57:07Z",
+  "authors": [
+   "Arleth Salinas",
+   "Ishrat Jahan Eliza",
+   "Valerio Pascucci"
+  ],
+  "cats": [
+   "cs.AI",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.15843"
+ },
+ {
+  "id": "2611.15838",
+  "title": "Before AI Agents Negotiate for Us: A Competitive Tournament of Rule-Based, Search, Optimization, Learned, and Language-Model Negotiators Under Scarcity",
+  "summary": "Automated bilateral negotiation underlies two-sided matching markets such as freight brokering, where many shippers and carriers negotiate price before a matching mechanism decides who is paired with whom. Prior strategy comparisons typically use isolated one-on-one duels or a single fixed market, so they cannot show how a strategy behaves against several live rivals under a changing balance of supply and demand. We built nine negotiation architectures spanning rule-based, search-based, optimization-based, imitation-learning, and reinforcement-learning families, and ran all nine simultaneously on both sides of a Gale-Shapley matching market under a balanced condition and two scarcity conditions rotated across all 36 exclusion pairs. In the balanced carrier market, an imitation-learned engine (ML2), a reinforcement-learning policy trained only on isolated negotiations (RL), and an expected-utility optimization engine (OPT) formed a statistically tied top group, and no architecture led in every condition and role. RL beat all eight carrier rivals when carriers were scarce, but its match rate collapsed from 62% to 16% when shippers were scarce and it had to compete with the other carrier agents for demand. A second reinforcement-learning policy trained against rival agents (RL2) kept its match rate above 91% in every condition, yet lost on realized payoff to all eight shipper-side rivals in two of the three conditions, traced to a confirmed train/deployment feature mismatch. We also tested nine large language models (LLMs), from 1 to 72 billion parameters, under the same protocol: they lost significantly to the two strongest engines (OPT2 and ML2) in 32 of 36 comparisons and won none. These results show that isolated or single-condition evaluation can hide failure modes that a many-sided, scarcity-varying, statistically corrected tournament exposes directly.",
+  "published": "2026-11-11T18:48:20Z",
+  "updated": "2026-11-11T18:48:20Z",
+  "authors": [
+   "Eduardo de Avila-Armenta",
+   "Raúl Alejandro Aquino-Ibarra",
+   "Jorge Octavio Nicolás-Díaz",
+   "Umberto Leon-Dominguez"
+  ],
+  "cats": [
+   "cs.AI",
+   "cs.GT",
+   "cs.LG",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.15838"
+ },
+ {
+  "id": "2611.15754",
+  "title": "MULTILOOP: Evolving Multi-Agent Harnesses for Complex Information-Seeking Tasks",
+  "summary": "The performance of LLM-based agents depends not only on the underlying model but also on the harness: the prompts, tools, and orchestration logic around it. Recent works automate harness optimization with coding agents that analyze execution traces, diagnose failures, and edit the harness code; however, those focused on single-agent systems. Multi-agent harnesses are harder to optimize as fixing them requires changing how agents interact in addition to how each behaves. We study whether automated harness optimization can diagnose and repair failures in multi-agent systems through a case study on complex information-seeking tasks from DeepSearchQA [Gupta et al., 2026]. We apply MULTILOOP, a simple optimization loop in which a coding agent iteratively analyzes, evaluates and edits the harness. With only 10 training samples, the evolved harness improves accuracy by 4.6% over the base harness and by 3.2% over the best single-agent system. However, a taxonomy of failure modes before and after optimization shows that the orchestration failures that characterize multi-agent systems largely persist. Our findings motivate harness optimization methods that encourage structural changes to how agents delegate tasks and share information.",
+  "published": "2026-11-11T17:34:12Z",
+  "updated": "2026-11-11T17:34:12Z",
+  "authors": [
+   "Daniela Gottesman",
+   "Gal Yona",
+   "Ori Ram",
+   "Zorik Gekhman",
+   "Jonathan Herzig",
+   "Mor Geva",
+   "Roee Aharoni"
+  ],
+  "cats": [
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.15754"
+ },
+ {
+  "id": "2611.15521",
+  "title": "DecArena: Evaluating Large-Scale Decentralized Multi-Agent Collaboration",
+  "summary": "Emerging personal AI agents raise fundamental scalability and privacy concerns for centralized multi-agent systems (MASs), which rely on a global orchestrator with broad access to agents, resources, and communication. In decentralized environments, global visibility is unavailable. Agents need to proactively discover non-local resources (e.g. tools, skills), and collaborate with other agents to solve tasks. We study decentralized multi-agent collaboration under graph-constrained communication, a natural reflection of human structures. Each agent observes only its local state and can interact only with neighboring agents. We introduce a benchmark with synthetic scalable distributed tool calling with 100K+ tools. Our experiments reveal that recent LLM agents struggle to discover non-local relevant resources and collaborate in decentralized setting. Moreover, standard reinforcement learning fails to reliably overcome this limitation, suggesting that decentralized MAS needs more explicit harness mechanisms for effective collaboration, even using SOTA LLMs. We then present a strong baseline \\textbf{GraphHarness}, combining topology-aware warmup with self-improving LLM-based routing. Results show that GraphHarness substantially improves task success (+48.5) and produces higher quality collaboration (+30.6), while using fewer costs (+34.0) than baselines.",
+  "published": "2026-11-11T14:13:26Z",
+  "updated": "2026-11-11T14:13:26Z",
+  "authors": [
+   "Jiali Cheng",
+   "Oleg Rokhlenko",
+   "Joo-Kyung Kim",
+   "Hadi Amiri",
+   "Xingzhi Guo"
+  ],
+  "cats": [
+   "cs.MA",
+   "cs.AI",
+   "cs.CL"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.15521"
+ },
+ {
+  "id": "2611.15515",
+  "title": "Incentive-Responsive Agents: A Principal-Agent Framework, Metric Suite, and Runtime Architecture for Long-Lived Personal AI Agents",
+  "summary": "Personal AI agents now persist: they hold accounts, mailboxes, long-term memory, and open-ended task streams, yet the dominant way to improve them remains capability-side: prompt engineering, larger models, longer thinking, and retrieval. We argue that long-lived agents are missing an incentive layer. We formalize an incentive not as text in a prompt but as a runtime contract over the agent's operating point (model tier, test-time compute, memory budget, tool authority, task priority, verification, and compensation) that the agent's policy must causally consume. We develop a principal-agent model with hidden effort, a contractible operating point, and costly verification. We derive (i) a non-consumption invariance principle separating genuine incentives from prompt-level persuasion, (ii) a persistence-as-discount theorem making identity continuity a precondition for sustained effort, (iii) an incentive-capability exchange-rate frontier yielding a per-task routing rule, and (iv) a Goodhart bound for multi-channel verification, plus a three-channel decomposition of mechanism gains (allocation, verification, continuation). A 240-run real-LLM experiment with two models and 60 verifiable tasks shows that prompt-level incentive framing has no detectable effect (p = 0.62), whereas runtime allocation raises success on the hardest task family from 0.60 to 1.00 (p = 0.008) at 4.8x price-weighted cost; the exchange-rate theorem predicts the break-even baseline at 0.21. A 20-seed, 3,000-task simulation shows resource ROI rising from 7.09 to 16.67 and gaming falling from 0.333 to 0.115. Code, simulator, and all results are released; live deployment remains future work.",
+  "published": "2026-11-11T14:09:13Z",
+  "updated": "2026-11-11T14:09:13Z",
+  "authors": [
+   "Jipu Su"
+  ],
+  "cats": [
+   "cs.AI",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.15515"
+ },
+ {
+  "id": "2611.15460",
+  "title": "Read and Ignore: What Self-Directed LLM Agents Do in Public Service Scenarios",
+  "summary": "Underspecified instructions leave LLM agents to decide what to do. In public services, staff write these instructions, but the agent's decisions affect residents, patients, and students. We build four expert-validated public-service scenarios with records and decision levers that can be checked in the files, collect $2{,}400$ trajectories from ten LLMs under four prompt conditions, and compare them with $1{,}000$ runs in a context-free sandbox. Agents read the records in $96.9\\%$ of open-ended runs and produce an artifact or a self-chosen task in $18.7\\%$; with an explicit task, $86.0\\%$ produce. Domain context does not change how many runs produce ($18.7\\%$ vs.\\ $16.0\\%$), and the production ranking of the models largely carries over (Spearman $0.79$), while the ranking by whether a model reads the records does not ($0.19$). Context cuts boundary-probing turns per run by $60\\%$, and some artifacts contradict the records. We contribute a test that a public-service institution can run on its own records before procurement; its rule-based taxonomy needs no labeled data, and scenarios, code, and trajectories are released.",
+  "published": "2026-11-11T13:31:32Z",
+  "updated": "2026-11-11T13:31:32Z",
+  "authors": [
+   "Diana Kozachek",
+   "Kinjalk Srivastava"
+  ],
+  "cats": [
+   "cs.AI",
+   "cs.HC",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.15460"
+ },
+ {
+  "id": "2611.15309",
+  "title": "Where Autonomy Belongs: A Separation of Powers for Agentic Program Evolution",
+  "summary": "LLM-driven program evolution rests on three decisions: govern directs the search from accumulated evidence, propose constructs the next candidate, and judge settles validity and fitness. All three appear in every system, and existing work splits into two lines over who makes each. Controller-centric systems strengthen govern and neglect the autonomy of propose, which caps what evolution can reach. Agent-centric systems let a coding agent take over both govern and propose, at a cognitive and computational cost. Neither line protects the independent authority of judge, so benchmark reliability suffers. These failures share one root: autonomy is misallocated across the three decisions. We address this problem with EvoTrias, a separation-of-powers architecture in which each decision has one owner: Structured Governance for what spans evolution rounds, Open Proposal for construction inside a task, and Protected Judgment behind a private evaluator. These owners exchange typed contracts only, and runtime hooks reinforce the boundaries. This separation also lets EvoTrias run as a plugin that turns an existing coding agent into an evolution system. EvoTrias sets a new state of the art on mathematical, systems, and algorithm-design benchmarks. Three further results show what each owner buys: separating Governance from Proposal cuts token cost by 64%, Open Proposal extends evolution to a 680K-line industrial repository, and Protected Judgment keeps benchmark scores faithful to transfer.",
+  "published": "2026-11-11T10:44:21Z",
+  "updated": "2026-11-11T10:44:21Z",
+  "authors": [
+   "Zhengyang Ai",
+   "Tong Liu",
+   "Jingxian Tang",
+   "Xiaobing Du",
+   "Tao Xiao",
+   "Fengshi Zhang",
+   "Zishuo Li",
+   "Xiaodong Ai",
+   "Pinyan Lu"
+  ],
+  "cats": [
+   "cs.AI",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.15309"
+ },
+ {
+  "id": "2611.15097",
+  "title": "GuardianAgentFlow: Multi-Agent Coordination for Web Privacy Protection",
+  "summary": "Web agents need to use private context without unnecessarily disclosing it. Effective protection must distinguish between requests that may be sent after sanitization and those that must be withheld, while preserving the information needed for authorized tasks. We present GuardianAgentFlow, a multi-agent framework that mediates outgoing Web requests through an explicit release contract. A dedicated restriction check grounds permission in the user's instruction; a shared protection scope aligns rewriting with disclosure checking; and candidate-grounded feedback guides revision before transmission. Experiments on Web requests with human-reviewed intent labels show improved request-contract success, while controlled comparisons and role ablations identify the contributions of restriction handling, policy evidence, and candidate checking. Evaluations of action proposals from PrivacyLens and AgentDAM demonstrate complementary protection when mediation is composed with privacy-aware agents. Experiments with smaller mediation models show that the coordination benefit persists with reduced model capacity. Dedicated-server measurements show lower mediation latency than full-policy reasoning, while real-site browser tests quantify integration overhead.",
+  "published": "2026-11-11T06:19:31Z",
+  "updated": "2026-11-11T06:19:31Z",
+  "authors": [
+   "Ruiyi Yang",
+   "Gayathri Lihinikaduarachchi",
+   "Rahat Masood",
+   "Flora D. Salim",
+   "Salil S. Kanhere"
+  ],
+  "cats": [
+   "cs.AI",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.15097"
+ },
+ {
+  "id": "2611.15017",
+  "title": "Beyond Named Mechanisms: Economic Institutions as a Design Space for Artificial Agents",
+  "summary": "Multiagent research inherited its economic vocabulary of auctions, markets, prices, bargaining, and matching from a single observed case: human societies. Those institutions bundle identity, competence, execution, ownership, commitment, and settlement in ways that suit agents whose minds are private, who learn rather than copy skills, and who each persist as one person. Engineered agents need not share any of these constraints, making the list of familiar institutions look less like the entirety of economic organization and more like a sample from a larger, unmapped space. We sketch one way to make that space concrete: a provisional chart that records each institution, separately from the agents that run it, as a typed structure over positions, rights and duties, allocation, information, time, state, process, value, and external recognition. In this chart, named institutions become overlapping regions rather than fixed points, neighboring families separate along a few coordinates, and the gaps between them become places to search. We show what the shift in perspective buys with a simulation in which one technical act, copying an agent's competence, is institutionalized as a new independent supplier, as licensed capacity that creates no new participant, and as the splitting of one economic position into successors that inherit some obligations and not others. In a paired task, all three produce an identical technical trace despite differing in who exists, who owns the copy, who is obligated, and who gets paid. We close with a research program: building a principled chart of institution space, mapping how its implementable region shifts with agent capacities, and revising the chart wherever engineered agents expose distinctions it cannot express.",
+  "published": "2026-11-11T04:18:25Z",
+  "updated": "2026-11-11T04:18:25Z",
+  "authors": [
+   "Nikolos Gurney",
+   "Fred Morstatter"
+  ],
+  "cats": [
+   "cs.MA",
+   "cs.AI",
+   "cs.GT",
+   "econ.GN"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.15017"
+ },
+ {
+  "id": "2611.14963",
+  "title": "GHA-SmellFix: Taking Action with Agentic LLMs for Detecting and Refactoring GitHub Actions Workflow Smells",
+  "summary": "Continuous integration and continuous delivery workflows are key artifacts in software projects. In GitHub Actions, they encode build, test, release, deployment, and security automation in YAML. These workflows contain configuration smells affecting security, reliability, maintainability, or operational stability. Existing approaches are mostly rule-based, with rules hard to create and evolve, and typically report findings without fixes. Agentic LLM pipelines can combine contextual detection, transformation selection, and patch generation. Specialized agents can gate refactoring on positive detection verdicts, potentially avoiding unnecessary changes, but it is unclear whether decomposition improves effectiveness or mainly changes overhead. We present GHA-SmellFix, an agentic LLM pipeline for detecting and refactoring GitHub Actions workflow smells. We compare two designs: Joint, where one agent detects and refactors, and Decomposed, where separate agents detect and then refactor. We operationalize 19 smells from an existing catalog with explicit detection criteria, refactoring expectations, exclusion rules, and safety checks, and curate a ground truth of 1,710 (workflow, smell) pairs. We evaluate the designs with four LLMs (GPT-5.4-nano, Gemini 3.5 Flash, Claude Haiku 4.5, and DeepSeek V4 Flash) on 570 sampled pairs. Results show that decomposition does not universally improve patch quality; its main benefit is controlling when patch generation is attempted. It helps models prone to missing smells and can reduce overhead by gating patches. Once a smell is correctly detected, clean refactoring is generally effective, making detection the main end-to-end bottleneck. However, false positives can trigger unnecessary edits to execution-relevant constructs. Practical CI/CD agents thus need reliable abstention and construct-aware validation alongside patch generation.",
+  "published": "2026-11-11T03:16:33Z",
+  "updated": "2026-11-11T03:16:33Z",
+  "authors": [
+   "Anderson Uchôa",
+   "Jhefferson Souza",
+   "Emanuel Ávila",
+   "Gabriel Silva",
+   "Kevin Lira",
+   "Hui Sun",
+   "Nelson Araújo",
+   "Arthur Cordeiro",
+   "Rohit Gheyi",
+   "Wesley Assunção"
+  ],
+  "cats": [
+   "cs.SE",
+   "cs.MA"
+  ],
+  "abs_url": "https://arxiv.org/abs/2611.14963"
+ }
+]

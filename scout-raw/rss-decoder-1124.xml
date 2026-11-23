@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>The Decoder</title>
+	<atom:link href="https://the-decoder.com/feed/" rel="self" type="application/rss+xml" />
+	<link>https://the-decoder.com/</link>
+	<description>AI, Menschen, Wirtschaft</description>
+	<lastBuildDate>Mon, 23 Nov 2026 15:13:41 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=7.0.9</generator>
+	<item>
+		<title>Z.ai follows OpenAI into loop transformer territory with its new 750B flagship model</title>
+		<link>https://the-decoder.com/z-ai-follows-openai-into-loop-transformer-territory-with-its-new-750b-flagship-model/</link>
+					<comments>https://the-decoder.com/z-ai-follows-openai-into-loop-transformer-territory-with-its-new-750b-flagship-model/#respond</comments>
+		
+		<dc:creator><![CDATA[Jonathan Kemper]]></dc:creator>
+		<pubDate>Mon, 23 Nov 2026 15:13:03 +0000</pubDate>
+				<category><![CDATA[AI in practice]]></category>
+		<category><![CDATA[Artificial Intelligence]]></category>
+		<category><![CDATA[GLM-5.4]]></category>
+		<category><![CDATA[Z.ai]]></category>
+		<guid isPermaLink="false">https://the-decoder.com/?p=43216</guid>
+
+					<description><![CDATA[<p><img width="1920" height="1072" src="https://the-decoder.com/wp-content/uploads/2026/06/zhipu-ai-logo-wall-nano-banana-pro.jpg" class="attachment-full size-full wp-post-image" alt="White Zhipu AI logos in a diagonal pattern on a black background; modern branding design." style="height: auto; margin-bottom: 10px;" decoding="async" fetchpriority="high" /></p>
+<p>        Z.ai is moving its flagship GLM-5.4 model to a loop architecture in which 28 layers run twice, which the company says lets the 750-billion-parameter model match models with 2 to 3 trillion parameters. Benchmark scores are only available for a smaller 30B test model so far, and Z.ai is positioning GLM-5.4 as the start of "Generalized Coding," where code also generates videos, games, and CAD models.</p>
+<p>The article <a href="https://the-decoder.com/z-ai-follows-openai-into-loop-transformer-territory-with-its-new-750b-flagship-model/">Z.ai follows OpenAI into loop transformer territory with its new 750B flagship model</a> appeared first on <a href="https://the-decoder.com">The Decoder</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>https://the-decoder.com/z-ai-follows-openai-into-loop-transformer-territory-with-its-new-750b-flagship-model/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		<enclosure url="http://the-decoder.de/wp-content/uploads/2026/11/glm-54-05-robotic-arm-cad-komprimiert.mp4" length="2407247" type="video/mp4" />
+<enclosure url="http://the-decoder.de/wp-content/uploads/2026/11/glm-54-06-game-komprimiert.mp4" length="10446976" type="video/mp4" />
+<enclosure url="http://the-decoder.de/wp-content/uploads/2026/11/glm-54-07-3d-bird-watching-komprimiert.mp4" length="6547622" type="video/mp4" />
+<enclosure url="http://the-decoder.de/wp-content/uploads/2026/11/glm-54-04-video-hello-world-komprimiert.mp4" length="15105797" type="video/mp4" />
+
+			</item>
+		<item>
+		<title>Chinese military fears AI could let the US find and destroy its nuclear missiles</title>
+		<link>https://the-decoder.com/chinese-military-fears-ai-could-let-the-us-find-and-destroy-its-nuclear-missiles/</link>
+					<comments>https://the-decoder.com/chinese-military-fears-ai-could-let-the-us-find-and-destroy-its-nuclear-missiles/#respond</comments>
+		
+		<dc:creator><![CDATA[Maximilian Schreiner]]></dc:creator>
+		<pubDate>Mon, 23 Nov 2026 14:43:23 +0000</pubDate>
+				<category><![CDATA[AI and society]]></category>
+		<category><![CDATA[Artificial Intelligence]]></category>
+		<category><![CDATA[Short News]]></category>
+		<category><![CDATA[AI and warfare]]></category>
+		<category><![CDATA[China]]></category>
+		<category><![CDATA[Military]]></category>
+		<category><![CDATA[USA]]></category>
+		<guid isPermaLink="false">https://the-decoder.com/?p=43228</guid>
+
+					<description><![CDATA[<p><img width="1392" height="768" src="https://the-decoder.com/wp-content/uploads/2026/03/AI-Fake-Carrier-Iran-small.png" class="attachment-full size-full wp-post-image" alt="" style="height: auto; margin-bottom: 10px;" decoding="async" /></p>
+<p>        Chinese military researchers fear that AI advances could give the US an edge in the nuclear balance of power.</p>
+<p>The article <a href="https://the-decoder.com/chinese-military-fears-ai-could-let-the-us-find-and-destroy-its-nuclear-missiles/">Chinese military fears AI could let the US find and destroy its nuclear missiles</a> appeared first on <a href="https://the-decoder.com">The Decoder</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>https://the-decoder.com/chinese-military-fears-ai-could-let-the-us-find-and-destroy-its-nuclear-missiles/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Nvidia tried life without Jensen Huang and it lasted about two weeks</title>
+		<link>https://the-decoder.com/nvidia-tried-life-without-jensen-huang-and-it-lasted-about-two-weeks/</link>
+					<comments>https://the-decoder.com/nvidia-tried-life-without-jensen-huang-and-it-lasted-about-two-weeks/#respond</comments>
+		
+		<dc:creator><![CDATA[Maximilian Schreiner]]></dc:creator>
+		<pubDate>Mon, 23 Nov 2026 14:24:47 +0000</pubDate>
+				<category><![CDATA[AI in practice]]></category>
+		<category><![CDATA[Artificial Intelligence]]></category>
+		<category><![CDATA[Short News]]></category>
+		<category><![CDATA[China]]></category>
+		<category><![CDATA[Nvidia]]></category>
+		<category><![CDATA[USA]]></category>
+		<guid isPermaLink="false">https://the-decoder.com/?p=43225</guid>
+
+					<description><![CDATA[<p><img width="2560" height="1440" src="https://the-decoder.com/wp-content/uploads/2026/05/huang_sccp_ai_screenshot-scaled.png" class="attachment-full size-full wp-post-image" alt="" style="height: auto; margin-bottom: 10px;" decoding="async" /></p>
+<p>        Nvidia's board of directors has reinstated Jensen Huang as president, CEO, and board member, effective immediately.</p>
+<p>The article <a href="https://the-decoder.com/nvidia-tried-life-without-jensen-huang-and-it-lasted-about-two-weeks/">Nvidia tried life without Jensen Huang and it lasted about two weeks</a> appeared first on <a href="https://the-decoder.com">The Decoder</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>https://the-decoder.com/nvidia-tried-life-without-jensen-huang-and-it-lasted-about-two-weeks/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Meta&#039;s Alexandr Wang warns the AI industry isn&#039;t ready for what&#039;s coming after Riemann breakthrough</title>
+		<link>https://the-decoder.com/metas-alexandr-wang-warns-the-ai-industry-isnt-ready-for-whats-coming-after-riemann-breakthrough/</link>
+					<comments>https://the-decoder.com/metas-alexandr-wang-warns-the-ai-industry-isnt-ready-for-whats-coming-after-riemann-breakthrough/#respond</comments>
+		
+		<dc:creator><![CDATA[Maximilian Schreiner]]></dc:creator>
+		<pubDate>Mon, 23 Nov 2026 13:59:36 +0000</pubDate>
+				<category><![CDATA[AI and society]]></category>
+		<category><![CDATA[Artificial Intelligence]]></category>
+		<category><![CDATA[AGI]]></category>
+		<category><![CDATA[Meta]]></category>
+		<category><![CDATA[Meta AI]]></category>
+		<guid isPermaLink="false">https://the-decoder.com/?p=43215</guid>
+
+					<description><![CDATA[<p><img width="2048" height="1152" src="https://the-decoder.com/wp-content/uploads/2026/07/meta_logo-2.png" class="attachment-full size-full wp-post-image" alt="" style="height: auto; margin-bottom: 10px;" decoding="async" /></p>
+<p>        Meta's Chief AI Officer Alexandr Wang sees the recent AI-assisted proof sketch of the Riemann Hypothesis as a clear sign that superintelligence is right around the corner.</p>
+<p>The article <a href="https://the-decoder.com/metas-alexandr-wang-warns-the-ai-industry-isnt-ready-for-whats-coming-after-riemann-breakthrough/">Meta&#039;s Alexandr Wang warns the AI industry isn&#039;t ready for what&#039;s coming after Riemann breakthrough</a> appeared first on <a href="https://the-decoder.com">The Decoder</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>https://the-decoder.com/metas-alexandr-wang-warns-the-ai-industry-isnt-ready-for-whats-coming-after-riemann-breakthrough/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>US spies tracked Nvidia scandal figure&#039;s ties to Chinese intelligence for over a year</title>
+		<link>https://the-decoder.com/us-spies-tracked-nvidia-scandal-figures-ties-to-chinese-intelligence-for-over-a-year/</link>
+					<comments>https://the-decoder.com/us-spies-tracked-nvidia-scandal-figures-ties-to-chinese-intelligence-for-over-a-year/#respond</comments>
+		
+		<dc:creator><![CDATA[Maximilian Schreiner]]></dc:creator>
+		<pubDate>Mon, 23 Nov 2026 13:45:32 +0000</pubDate>
+				<category><![CDATA[AI and society]]></category>
+		<category><![CDATA[Artificial Intelligence]]></category>
+		<category><![CDATA[Short News]]></category>
+		<category><![CDATA[China]]></category>
+		<category><![CDATA[Nvidia]]></category>
+		<category><![CDATA[USA]]></category>
+		<guid isPermaLink="false">https://the-decoder.com/?p=43218</guid>
+
+					<description><![CDATA[<p><img width="1536" height="1024" src="https://the-decoder.com/wp-content/uploads/2026/11/nvidia_logo_glitch.png" class="attachment-full size-full wp-post-image" alt="" style="height: auto; margin-bottom: 10px;" decoding="async" /></p>
+<p>        US intelligence agencies tracked contacts between Alice Huang and China's Ministry of State Security for over a year, the New York Times reports. The surveillance ran parallel to her secret affair with then-Nvidia CEO Jensen Huang. Federal investigators are now looking into whether a network of companies in Southeast Asia was used to smuggle AI chips into China in violation of US export controls. Jensen Huang is scheduled to testify before the US House of Representatives on December 1.</p>
+<p>The article <a href="https://the-decoder.com/us-spies-tracked-nvidia-scandal-figures-ties-to-chinese-intelligence-for-over-a-year/">US spies tracked Nvidia scandal figure&#039;s ties to Chinese intelligence for over a year</a> appeared first on <a href="https://the-decoder.com">The Decoder</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>https://the-decoder.com/us-spies-tracked-nvidia-scandal-figures-ties-to-chinese-intelligence-for-over-a-year/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>GPT-6.2 Astra solved a math theorem no other AI could crack, then invented its own proof strategy</title>
+		<link>https://the-decoder.com/gpt-6-2-astra-solved-a-math-theorem-no-other-ai-could-crack-then-invented-its-own-proof-strategy/</link>
+					<comments>https://the-decoder.com/gpt-6-2-astra-solved-a-math-theorem-no-other-ai-could-crack-then-invented-its-own-proof-strategy/#respond</comments>
+		
+		<dc:creator><![CDATA[Manuel Uth]]></dc:creator>
+		<pubDate>Mon, 23 Nov 2026 12:17:01 +0000</pubDate>
+				<category><![CDATA[AI research]]></category>
+		<category><![CDATA[Artificial Intelligence]]></category>
+		<category><![CDATA[Short News]]></category>
+		<category><![CDATA[AI and math]]></category>
+		<category><![CDATA[Astra]]></category>
+		<category><![CDATA[OpenAI]]></category>
+		<guid isPermaLink="false">https://the-decoder.com/?p=43085</guid>
+
+					<description><![CDATA[<p><img width="1376" height="768" src="https://the-decoder.com/wp-content/uploads/2026/11/gpt_lean_proof.png" class="attachment-full size-full wp-post-image" alt="" style="height: auto; margin-bottom: 10px;" decoding="async" /></p>
+<p>        OpenAI's GPT-6.2 Astra independently produced a machine-verifiable Lean proof of Smoktunowicz's gap theorem, the first of its kind according to Vals AI. The model chose its own approach because key foundations were missing from Mathlib. On Autoform-Hard, Astra now leads the leaderboard with 49 of 56 tasks solved.</p>
+<p>The article <a href="https://the-decoder.com/gpt-6-2-astra-solved-a-math-theorem-no-other-ai-could-crack-then-invented-its-own-proof-strategy/">GPT-6.2 Astra solved a math theorem no other AI could crack, then invented its own proof strategy</a> appeared first on <a href="https://the-decoder.com">The Decoder</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>https://the-decoder.com/gpt-6-2-astra-solved-a-math-theorem-no-other-ai-could-crack-then-invented-its-own-proof-strategy/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>AI coding agents ace isolated tests but complete fewer than one in ten tasks in a simulated workplace</title>
+		<link>https://the-decoder.com/ai-coding-agents-ace-isolated-tests-but-complete-fewer-than-one-in-ten-tasks-in-a-simulated-workplace/</link>
+					<comments>https://the-decoder.com/ai-coding-agents-ace-isolated-tests-but-complete-fewer-than-one-in-ten-tasks-in-a-simulated-workplace/#respond</comments>
+		
+		<dc:creator><![CDATA[Jonathan Kemper]]></dc:creator>
+		<pubDate>Sun, 22 Nov 2026 15:15:48 +0000</pubDate>
+				<category><![CDATA[AI in practice]]></category>
+		<category><![CDATA[Artificial Intelligence]]></category>
+		<category><![CDATA[Anthropic]]></category>
+		<guid isPermaLink="false">https://the-decoder.com/?p=43203</guid>
+
+					<description><![CDATA[<p><img width="1200" height="670" src="https://the-decoder.com/wp-content/uploads/2026/11/cowork-benchmark-chatgpt-5-6.jpg" class="attachment-full size-full wp-post-image" alt="Illustration: A glowing mouse pointer navigates through a maze of folders, chats, and data toward a laptop." style="height: auto; margin-bottom: 10px;" decoding="async" /></p>
+<p>        A new real-world test puts AI coding agents in a simulated developer job with colleagues, project boards, and incomplete handoffs, where they have to keep developing software on their own and reliably close open tickets in a messy daily workflow. Even Opus 5.5 and Astra fall far short, solving fewer than one in ten tasks completely. The models finish clear, standalone assignments quickly, but they lose track as autonomous developers.</p>
+<p>The article <a href="https://the-decoder.com/ai-coding-agents-ace-isolated-tests-but-complete-fewer-than-one-in-ten-tasks-in-a-simulated-workplace/">AI coding agents ace isolated tests but complete fewer than one in ten tasks in a simulated workplace</a> appeared first on <a href="https://the-decoder.com">The Decoder</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>https://the-decoder.com/ai-coding-agents-ace-isolated-tests-but-complete-fewer-than-one-in-ten-tasks-in-a-simulated-workplace/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Perplexity&#039;s new Monitor API turns web search from a one-off query into a nonstop watchdog</title>
+		<link>https://the-decoder.com/perplexitys-new-monitor-api-turns-web-search-from-a-one-off-query-into-a-nonstop-watchdog/</link>
+					<comments>https://the-decoder.com/perplexitys-new-monitor-api-turns-web-search-from-a-one-off-query-into-a-nonstop-watchdog/#respond</comments>
+		
+		<dc:creator><![CDATA[Jonathan Kemper]]></dc:creator>
+		<pubDate>Sun, 22 Nov 2026 14:20:28 +0000</pubDate>
+				<category><![CDATA[AI in practice]]></category>
+		<category><![CDATA[Artificial Intelligence]]></category>
+		<category><![CDATA[AI search]]></category>
+		<category><![CDATA[Perplexity]]></category>
+		<guid isPermaLink="false">https://the-decoder.com/?p=43193</guid>
+
+					<description><![CDATA[<p><img width="1376" height="768" src="https://the-decoder.com/wp-content/uploads/2026/06/Perplexity-Logo-Silhouette-Nano-Banana-Pro.jpg" class="attachment-full size-full wp-post-image" alt="Bright blue, geometric Perplexity AI logo on a dark background" style="height: auto; margin-bottom: 10px;" decoding="async" /></p>
+<p>        Perplexity is launching a Monitor API that searches the web on a schedule and alerts agents via webhook only when relevant changes occur. Its own decision model filters out unimportant results. For Perplexity, the API is part of a broader strategy to stand out from an increasingly interchangeable chatbot business through developer tools.</p>
+<p>The article <a href="https://the-decoder.com/perplexitys-new-monitor-api-turns-web-search-from-a-one-off-query-into-a-nonstop-watchdog/">Perplexity&#039;s new Monitor API turns web search from a one-off query into a nonstop watchdog</a> appeared first on <a href="https://the-decoder.com">The Decoder</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>https://the-decoder.com/perplexitys-new-monitor-api-turns-web-search-from-a-one-off-query-into-a-nonstop-watchdog/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>AI is getting better faster than experts can reliably test whether new systems are safe, METR warns</title>
+		<link>https://the-decoder.com/ai-is-getting-better-faster-than-experts-can-reliably-test-whether-new-systems-are-safe-metr-warns/</link>
+					<comments>https://the-decoder.com/ai-is-getting-better-faster-than-experts-can-reliably-test-whether-new-systems-are-safe-metr-warns/#respond</comments>
+		
+		<dc:creator><![CDATA[Matthias Bastian]]></dc:creator>
+		<pubDate>Sun, 22 Nov 2026 13:00:43 +0000</pubDate>
+				<category><![CDATA[AI research]]></category>
+		<category><![CDATA[Artificial Intelligence]]></category>
+		<category><![CDATA[Short News]]></category>
+		<category><![CDATA[AI and safety]]></category>
+		<category><![CDATA[AI Safety]]></category>
+		<category><![CDATA[Cybersecurity]]></category>
+		<category><![CDATA[METR]]></category>
+		<category><![CDATA[Safety]]></category>
+		<guid isPermaLink="false">https://the-decoder.com/?p=43190</guid>
+
+					<description><![CDATA[<p><img width="2048" height="1152" src="https://the-decoder.com/wp-content/uploads/2026/06/metr_logo.png" class="attachment-full size-full wp-post-image" alt="" style="height: auto; margin-bottom: 10px;" decoding="async" /></p>
+<p>        METR reports that leading AI models like Opus 5.5 and GPT-6 Astra are improving rapidly at research tasks but getting harder to measure. Current data can't rule out a dangerous acceleration in AI development, the organization warns, though it also says common tests may overestimate what the models can actually do.</p>
+<p>The article <a href="https://the-decoder.com/ai-is-getting-better-faster-than-experts-can-reliably-test-whether-new-systems-are-safe-metr-warns/">AI is getting better faster than experts can reliably test whether new systems are safe, METR warns</a> appeared first on <a href="https://the-decoder.com">The Decoder</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>https://the-decoder.com/ai-is-getting-better-faster-than-experts-can-reliably-test-whether-new-systems-are-safe-metr-warns/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Security researchers show how cheap AI inference providers steal keys and snoop on users</title>
+		<link>https://the-decoder.com/security-researchers-show-how-cheap-ai-inference-providers-steal-keys-and-snoop-on-users/</link>
+					<comments>https://the-decoder.com/security-researchers-show-how-cheap-ai-inference-providers-steal-keys-and-snoop-on-users/#respond</comments>
+		
+		<dc:creator><![CDATA[Matthias Bastian]]></dc:creator>
+		<pubDate>Sun, 22 Nov 2026 12:07:56 +0000</pubDate>
+				<category><![CDATA[AI in practice]]></category>
+		<category><![CDATA[Artificial Intelligence]]></category>
+		<category><![CDATA[Cybersecurity]]></category>
+		<guid isPermaLink="false">https://the-decoder.com/?p=43182</guid>
+
+					<description><![CDATA[<p><img width="1376" height="768" src="https://the-decoder.com/wp-content/uploads/2026/11/cybersecurity_data_leak.png" class="attachment-full size-full wp-post-image" alt="" style="height: auto; margin-bottom: 10px;" decoding="async" /></p>
+<p>        Security researchers at Dragos used two million fake AI requests to uncover serious vulnerabilities in the AI supply chain, finding at least three compromised providers, hundreds of stolen AWS keys, and marketplace resellers who were simply reading customer requests. OpenRouter responded by removing three providers and 125 endpoints.</p>
+<p>The article <a href="https://the-decoder.com/security-researchers-show-how-cheap-ai-inference-providers-steal-keys-and-snoop-on-users/">Security researchers show how cheap AI inference providers steal keys and snoop on users</a> appeared first on <a href="https://the-decoder.com">The Decoder</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>https://the-decoder.com/security-researchers-show-how-cheap-ai-inference-providers-steal-keys-and-snoop-on-users/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

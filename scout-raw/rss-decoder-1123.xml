@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>The Decoder</title>
+	<atom:link href="https://the-decoder.com/feed/" rel="self" type="application/rss+xml" />
+	<link>https://the-decoder.com/</link>
+	<description>AI, Menschen, Wirtschaft</description>
+	<lastBuildDate>Sun, 22 Nov 2026 15:16:48 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=7.0.9</generator>
+	<item>
+		<title>AI coding agents ace isolated tests but complete fewer than one in ten tasks in a simulated workplace</title>
+		<link>https://the-decoder.com/ai-coding-agents-ace-isolated-tests-but-complete-fewer-than-one-in-ten-tasks-in-a-simulated-workplace/</link>
+					<comments>https://the-decoder.com/ai-coding-agents-ace-isolated-tests-but-complete-fewer-than-one-in-ten-tasks-in-a-simulated-workplace/#respond</comments>
+		
+		<dc:creator><![CDATA[Jonathan Kemper]]></dc:creator>
+		<pubDate>Sun, 22 Nov 2026 15:15:48 +0000</pubDate>
+				<category><![CDATA[AI in practice]]></category>
+		<category><![CDATA[Artificial Intelligence]]></category>
+		<category><![CDATA[Anthropic]]></category>
+		<guid isPermaLink="false">https://the-decoder.com/?p=43203</guid>
+
+					<description><![CDATA[<p><img width="1200" height="670" src="https://the-decoder.com/wp-content/uploads/2026/11/cowork-benchmark-chatgpt-5-6.jpg" class="attachment-full size-full wp-post-image" alt="Illustration: A glowing mouse pointer navigates through a maze of folders, chats, and data toward a laptop." style="height: auto; margin-bottom: 10px;" decoding="async" fetchpriority="high" /></p>
+<p>        A new real-world test puts AI coding agents in a simulated developer job with colleagues, project boards, and incomplete handoffs, where they have to keep developing software on their own and reliably close open tickets in a messy daily workflow. Even Opus 5.5 and Astra fall far short, solving fewer than one in ten tasks completely. The models finish clear, standalone assignments quickly, but they lose track as autonomous developers.</p>
+<p>The article <a href="https://the-decoder.com/ai-coding-agents-ace-isolated-tests-but-complete-fewer-than-one-in-ten-tasks-in-a-simulated-workplace/">AI coding agents ace isolated tests but complete fewer than one in ten tasks in a simulated workplace</a> appeared first on <a href="https://the-decoder.com">The Decoder</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>https://the-decoder.com/ai-coding-agents-ace-isolated-tests-but-complete-fewer-than-one-in-ten-tasks-in-a-simulated-workplace/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Perplexity&#039;s new Monitor API turns web search from a one-off query into a nonstop watchdog</title>
+		<link>https://the-decoder.com/perplexitys-new-monitor-api-turns-web-search-from-a-one-off-query-into-a-nonstop-watchdog/</link>
+					<comments>https://the-decoder.com/perplexitys-new-monitor-api-turns-web-search-from-a-one-off-query-into-a-nonstop-watchdog/#respond</comments>
+		
+		<dc:creator><![CDATA[Jonathan Kemper]]></dc:creator>
+		<pubDate>Sun, 22 Nov 2026 14:20:28 +0000</pubDate>
+				<category><![CDATA[AI in practice]]></category>
+		<category><![CDATA[Artificial Intelligence]]></category>
+		<category><![CDATA[AI search]]></category>
+		<category><![CDATA[Perplexity]]></category>
+		<guid isPermaLink="false">https://the-decoder.com/?p=43193</guid>
+
+					<description><![CDATA[<p><img width="1376" height="768" src="https://the-decoder.com/wp-content/uploads/2026/06/Perplexity-Logo-Silhouette-Nano-Banana-Pro.jpg" class="attachment-full size-full wp-post-image" alt="Bright blue, geometric Perplexity AI logo on a dark background" style="height: auto; margin-bottom: 10px;" decoding="async" /></p>
+<p>        Perplexity is launching a Monitor API that searches the web on a schedule and alerts agents via webhook only when relevant changes occur. Its own decision model filters out unimportant results. For Perplexity, the API is part of a broader strategy to stand out from an increasingly interchangeable chatbot business through developer tools.</p>
+<p>The article <a href="https://the-decoder.com/perplexitys-new-monitor-api-turns-web-search-from-a-one-off-query-into-a-nonstop-watchdog/">Perplexity&#039;s new Monitor API turns web search from a one-off query into a nonstop watchdog</a> appeared first on <a href="https://the-decoder.com">The Decoder</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>https://the-decoder.com/perplexitys-new-monitor-api-turns-web-search-from-a-one-off-query-into-a-nonstop-watchdog/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>AI is getting better faster than experts can reliably test whether new systems are safe, METR warns</title>
+		<link>https://the-decoder.com/ai-is-getting-better-faster-than-experts-can-reliably-test-whether-new-systems-are-safe-metr-warns/</link>
+					<comments>https://the-decoder.com/ai-is-getting-better-faster-than-experts-can-reliably-test-whether-new-systems-are-safe-metr-warns/#respond</comments>
+		
+		<dc:creator><![CDATA[Matthias Bastian]]></dc:creator>
+		<pubDate>Sun, 22 Nov 2026 13:00:43 +0000</pubDate>
+				<category><![CDATA[AI research]]></category>
+		<category><![CDATA[Artificial Intelligence]]></category>
+		<category><![CDATA[Short News]]></category>
+		<category><![CDATA[AI and safety]]></category>
+		<category><![CDATA[AI Safety]]></category>
+		<category><![CDATA[Cybersecurity]]></category>
+		<category><![CDATA[METR]]></category>
+		<category><![CDATA[Safety]]></category>
+		<guid isPermaLink="false">https://the-decoder.com/?p=43190</guid>
+
+					<description><![CDATA[<p><img width="2048" height="1152" src="https://the-decoder.com/wp-content/uploads/2026/06/metr_logo.png" class="attachment-full size-full wp-post-image" alt="" style="height: auto; margin-bottom: 10px;" decoding="async" /></p>
+<p>        METR reports that leading AI models like Opus 5.5 and GPT-6 Astra are improving rapidly at research tasks but getting harder to measure. Current data can't rule out a dangerous acceleration in AI development, the organization warns, though it also says common tests may overestimate what the models can actually do.</p>
+<p>The article <a href="https://the-decoder.com/ai-is-getting-better-faster-than-experts-can-reliably-test-whether-new-systems-are-safe-metr-warns/">AI is getting better faster than experts can reliably test whether new systems are safe, METR warns</a> appeared first on <a href="https://the-decoder.com">The Decoder</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>https://the-decoder.com/ai-is-getting-better-faster-than-experts-can-reliably-test-whether-new-systems-are-safe-metr-warns/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Security researchers show how cheap AI inference providers steal keys and snoop on users</title>
+		<link>https://the-decoder.com/security-researchers-show-how-cheap-ai-inference-providers-steal-keys-and-snoop-on-users/</link>
+					<comments>https://the-decoder.com/security-researchers-show-how-cheap-ai-inference-providers-steal-keys-and-snoop-on-users/#respond</comments>
+		
+		<dc:creator><![CDATA[Matthias Bastian]]></dc:creator>
+		<pubDate>Sun, 22 Nov 2026 12:07:56 +0000</pubDate>
+				<category><![CDATA[AI in practice]]></category>
+		<category><![CDATA[Artificial Intelligence]]></category>
+		<category><![CDATA[Cybersecurity]]></category>
+		<guid isPermaLink="false">https://the-decoder.com/?p=43182</guid>
+
+					<description><![CDATA[<p><img width="1376" height="768" src="https://the-decoder.com/wp-content/uploads/2026/11/cybersecurity_data_leak.png" class="attachment-full size-full wp-post-image" alt="" style="height: auto; margin-bottom: 10px;" decoding="async" /></p>
+<p>        Security researchers at Dragos used two million fake AI requests to uncover serious vulnerabilities in the AI supply chain, finding at least three compromised providers, hundreds of stolen AWS keys, and marketplace resellers who were simply reading customer requests. OpenRouter responded by removing three providers and 125 endpoints.</p>
+<p>The article <a href="https://the-decoder.com/security-researchers-show-how-cheap-ai-inference-providers-steal-keys-and-snoop-on-users/">Security researchers show how cheap AI inference providers steal keys and snoop on users</a> appeared first on <a href="https://the-decoder.com">The Decoder</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>https://the-decoder.com/security-researchers-show-how-cheap-ai-inference-providers-steal-keys-and-snoop-on-users/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Lean and Mathlib community officially confirms Levent Alpöge&#039;s proof of the Riemann hypothesis is correct</title>
+		<link>https://the-decoder.com/lean-and-mathlib-community-officially-confirms-levent-alpoges-proof-of-the-riemann-hypothesis-is-correct/</link>
+					<comments>https://the-decoder.com/lean-and-mathlib-community-officially-confirms-levent-alpoges-proof-of-the-riemann-hypothesis-is-correct/#respond</comments>
+		
+		<dc:creator><![CDATA[Matthias Bastian]]></dc:creator>
+		<pubDate>Sun, 22 Nov 2026 11:08:31 +0000</pubDate>
+				<category><![CDATA[AI in practice]]></category>
+		<category><![CDATA[Artificial Intelligence]]></category>
+		<category><![CDATA[Short News]]></category>
+		<category><![CDATA[AI and math]]></category>
+		<category><![CDATA[Math]]></category>
+		<guid isPermaLink="false">https://the-decoder.com/?p=43181</guid>
+
+					<description><![CDATA[<p><img width="1088" height="608" src="https://the-decoder.com/wp-content/uploads/2026/05/ai_and_math.png" class="attachment-full size-full wp-post-image" alt="" style="height: auto; margin-bottom: 10px;" decoding="async" /></p>
+<p>        The Lean and Mathlib community has officially confirmed Levent Alpöge's proof of the Riemann hypothesis as correct. Dozens of independent verifiers checked the 17 million lines of computer code. The solution arrived years earlier than expected: Terence Tao had predicted it wouldn't happen until around 2050 and didn't expect AI to solve it alone.</p>
+<p>The article <a href="https://the-decoder.com/lean-and-mathlib-community-officially-confirms-levent-alpoges-proof-of-the-riemann-hypothesis-is-correct/">Lean and Mathlib community officially confirms Levent Alpöge&#039;s proof of the Riemann hypothesis is correct</a> appeared first on <a href="https://the-decoder.com">The Decoder</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>https://the-decoder.com/lean-and-mathlib-community-officially-confirms-levent-alpoges-proof-of-the-riemann-hypothesis-is-correct/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>GPT-6.2 Astra and Sol get to the point faster but score lower on transparency than Claude</title>
+		<link>https://the-decoder.com/gpt-6-2-astra-and-sol-get-to-the-point-faster-but-score-lower-on-transparency-than-claude/</link>
+					<comments>https://the-decoder.com/gpt-6-2-astra-and-sol-get-to-the-point-faster-but-score-lower-on-transparency-than-claude/#respond</comments>
+		
+		<dc:creator><![CDATA[Tomislav Bezmalinović]]></dc:creator>
+		<pubDate>Sun, 22 Nov 2026 09:41:37 +0000</pubDate>
+				<category><![CDATA[AI in practice]]></category>
+		<category><![CDATA[Artificial Intelligence]]></category>
+		<category><![CDATA[Benchmarks]]></category>
+		<category><![CDATA[ChatGPT]]></category>
+		<category><![CDATA[Claude Fable 5.2]]></category>
+		<category><![CDATA[Claude Opus]]></category>
+		<guid isPermaLink="false">https://the-decoder.com/?p=43130</guid>
+
+					<description><![CDATA[<p><img width="1376" height="768" src="https://the-decoder.com/wp-content/uploads/2026/11/OpenAI-Logo.png" class="attachment-full size-full wp-post-image" alt="A white OpenAI logo against an orange-and-blue collage of electronic circuits, technical drawings, and graphic elements." style="height: auto; margin-bottom: 10px;" decoding="async" /></p>
+<p>        OpenAI's GPT-6.2 Astra and Sol give much shorter, more direct answers than their predecessors, but they are also less willing to admit uncertainty. Anthropic's Claude models score well ahead on transparency.</p>
+<p>The article <a href="https://the-decoder.com/gpt-6-2-astra-and-sol-get-to-the-point-faster-but-score-lower-on-transparency-than-claude/">GPT-6.2 Astra and Sol get to the point faster but score lower on transparency than Claude</a> appeared first on <a href="https://the-decoder.com">The Decoder</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>https://the-decoder.com/gpt-6-2-astra-and-sol-get-to-the-point-faster-but-score-lower-on-transparency-than-claude/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Nvidia researchers argue huge AI context windows are a dead end</title>
+		<link>https://the-decoder.com/nvidia-researchers-argue-huge-ai-context-windows-are-a-dead-end/</link>
+					<comments>https://the-decoder.com/nvidia-researchers-argue-huge-ai-context-windows-are-a-dead-end/#respond</comments>
+		
+		<dc:creator><![CDATA[Jonathan Kemper]]></dc:creator>
+		<pubDate>Sat, 21 Nov 2026 16:23:45 +0000</pubDate>
+				<category><![CDATA[AI research]]></category>
+		<category><![CDATA[Artificial Intelligence]]></category>
+		<category><![CDATA[Context Engineering]]></category>
+		<guid isPermaLink="false">https://the-decoder.com/?p=43171</guid>
+
+					<description><![CDATA[<p><img width="1408" height="768" src="https://the-decoder.com/wp-content/uploads/2026/11/you-dont-need-long-context-nano-banana-pro.jpg" class="attachment-full size-full wp-post-image" alt="" style="height: auto; margin-bottom: 10px;" decoding="async" /></p>
+<p>        Nvidia researchers argue that language models often don't need their full context windows—which are slow, expensive, and prone to errors—and propose an alternative. In tests, periodic summaries and targeted keyword search usually matched full-context results at a fraction of the cost. The team even proposes a new class of models that works with short notes instead of long context.</p>
+<p>The article <a href="https://the-decoder.com/nvidia-researchers-argue-huge-ai-context-windows-are-a-dead-end/">Nvidia researchers argue huge AI context windows are a dead end</a> appeared first on <a href="https://the-decoder.com">The Decoder</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>https://the-decoder.com/nvidia-researchers-argue-huge-ai-context-windows-are-a-dead-end/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Silicon Valley&#039;s growing obsession with AI doomsday is turning parts of the tech industry toward cult-like devotion</title>
+		<link>https://the-decoder.com/silicon-valleys-growing-obsession-with-ai-doomsday-is-turning-parts-of-the-tech-industry-toward-cult-like-devotion/</link>
+					<comments>https://the-decoder.com/silicon-valleys-growing-obsession-with-ai-doomsday-is-turning-parts-of-the-tech-industry-toward-cult-like-devotion/#respond</comments>
+		
+		<dc:creator><![CDATA[Manuel Uth]]></dc:creator>
+		<pubDate>Sat, 21 Nov 2026 16:04:29 +0000</pubDate>
+				<category><![CDATA[AI and society]]></category>
+		<category><![CDATA[Artificial Intelligence]]></category>
+		<category><![CDATA[Religion]]></category>
+		<guid isPermaLink="false">https://the-decoder.com/?p=43166</guid>
+
+					<description><![CDATA[<p><img width="1376" height="768" src="https://the-decoder.com/wp-content/uploads/2026/11/buddhist_ai_sect.png" class="attachment-full size-full wp-post-image" alt="" style="height: auto; margin-bottom: 10px;" decoding="async" /></p>
+<p>        A Buddhist monastery in Vermont called Maple wants to establish itself as Silicon Valley's spiritual authority while creating its own AI god. According to a New Yorker report, leader Soryu Forall's group records every breath its members take to train an AI in his image. Former members report manipulation and psychological breakdowns.</p>
+<p>The article <a href="https://the-decoder.com/silicon-valleys-growing-obsession-with-ai-doomsday-is-turning-parts-of-the-tech-industry-toward-cult-like-devotion/">Silicon Valley&#039;s growing obsession with AI doomsday is turning parts of the tech industry toward cult-like devotion</a> appeared first on <a href="https://the-decoder.com">The Decoder</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>https://the-decoder.com/silicon-valleys-growing-obsession-with-ai-doomsday-is-turning-parts-of-the-tech-industry-toward-cult-like-devotion/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>OpenAI shares new prompting tips for GPT-6.2 Astra and Sol to fix brief answers and unnecessary questions</title>
+		<link>https://the-decoder.com/openai-shares-new-prompting-tips-for-gpt-6-2-astra-and-sol-to-fix-brief-answers-and-unnecessary-questions/</link>
+					<comments>https://the-decoder.com/openai-shares-new-prompting-tips-for-gpt-6-2-astra-and-sol-to-fix-brief-answers-and-unnecessary-questions/#respond</comments>
+		
+		<dc:creator><![CDATA[Jonathan Kemper]]></dc:creator>
+		<pubDate>Sat, 21 Nov 2026 13:32:35 +0000</pubDate>
+				<category><![CDATA[AI in practice]]></category>
+		<category><![CDATA[Artificial Intelligence]]></category>
+		<category><![CDATA[OpenAI]]></category>
+		<category><![CDATA[Prompt Engineering]]></category>
+		<guid isPermaLink="false">https://the-decoder.com/?p=43162</guid>
+
+					<description><![CDATA[<p><img width="2048" height="1152" src="https://the-decoder.com/wp-content/uploads/2026/06/openai_logo_chatgpt-2.png" class="attachment-full size-full wp-post-image" alt="" style="height: auto; margin-bottom: 10px;" decoding="async" /></p>
+<p>        OpenAI has released new prompt templates for GPT-6.2 Astra and Sol meant to fix common model behaviors such as overly brief answers, unnecessary follow-up questions, and excessive testing when coding. The API is changing as well, since editing a conversation's history can discard reasoning content and lower response quality.</p>
+<p>The article <a href="https://the-decoder.com/openai-shares-new-prompting-tips-for-gpt-6-2-astra-and-sol-to-fix-brief-answers-and-unnecessary-questions/">OpenAI shares new prompting tips for GPT-6.2 Astra and Sol to fix brief answers and unnecessary questions</a> appeared first on <a href="https://the-decoder.com">The Decoder</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>https://the-decoder.com/openai-shares-new-prompting-tips-for-gpt-6-2-astra-and-sol-to-fix-brief-answers-and-unnecessary-questions/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Hours after Anthropic claims a Claude proof of the Riemann hypothesis, Stanford releases an all-human competing draft</title>
+		<link>https://the-decoder.com/hours-after-anthropic-claims-a-claude-proof-of-the-riemann-hypothesis-stanford-releases-an-all-human-competing-draft/</link>
+					<comments>https://the-decoder.com/hours-after-anthropic-claims-a-claude-proof-of-the-riemann-hypothesis-stanford-releases-an-all-human-competing-draft/#respond</comments>
+		
+		<dc:creator><![CDATA[Manuel Uth]]></dc:creator>
+		<pubDate>Sat, 21 Nov 2026 11:19:49 +0000</pubDate>
+				<category><![CDATA[AI research]]></category>
+		<category><![CDATA[Artificial Intelligence]]></category>
+		<category><![CDATA[AI and math]]></category>
+		<category><![CDATA[Anthropic]]></category>
+		<category><![CDATA[Math]]></category>
+		<guid isPermaLink="false">https://the-decoder.com/?p=43157</guid>
+
+					<description><![CDATA[<p><img width="1376" height="768" src="https://the-decoder.com/wp-content/uploads/2026/11/anthropic_riemann.png" class="attachment-full size-full wp-post-image" alt="" style="height: auto; margin-bottom: 10px;" decoding="async" /></p>
+<p>        Anthropic mathematician Levent Alpöge says he used Claude to prove the Riemann hypothesis, math's most famous open problem for 167 years, with a proof formalized in Lean that spans over 250,000 pages. Just hours later, Stanford researchers published an independent, entirely human competing proof, and mathematicians are now checking whether either one holds up.</p>
+<p>The article <a href="https://the-decoder.com/hours-after-anthropic-claims-a-claude-proof-of-the-riemann-hypothesis-stanford-releases-an-all-human-competing-draft/">Hours after Anthropic claims a Claude proof of the Riemann hypothesis, Stanford releases an all-human competing draft</a> appeared first on <a href="https://the-decoder.com">The Decoder</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>https://the-decoder.com/hours-after-anthropic-claims-a-claude-proof-of-the-riemann-hypothesis-stanford-releases-an-all-human-competing-draft/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

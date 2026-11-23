@@ -31,24 +31,33 @@
 
 ---
 
-## 当前基线（2026-11-14 20:20）
+## 当前基线（2026-11-17 03:20）
 
 | 指标 | 状态 |
 |---|---|
-| **Gateway** | 🟢 11-14 20:06 重启（PID 795, NRestarts=0）→ **P0 已解除** |
-| Session DB | 🟢 main 库 mtime 恢复写入（11-05→11-14 20:13）；🔴 **仅 health 库仍冻结在 11-05 07:18** |
-| SQLite reclaim 错误 | 🟢 180 次/h → **~1-2 次/min**；租约稳定 14 行，40s 两次采样未增长 |
-| 修复手段结论 | ✅ **重启优先于 doctor --fix**（命中 stale owner_pid + 库恢复可写）|
-| NAS | 🔴 **100% 满，Avail 4.7MB**；#recycle 28 份/123GB，主目录 25 份/156.5GB；预演可释放 **185GB**；归档 9 天无新增 |
-| 本地原生备份 | 🔴 11-08→11-13 连续 6 轮无成功归档；仅存 11-07 两份 6.3G；11-14 20:06 一轮在跑 |
-| 备份邮件 | 🔴 QQ SMTP 授权码 11-08 起失效 → 失败静默 6 天 |
-| heartbeat:main | 🔴 consecutiveErrors **72**（未清零）；heartbeat:health error 1x；其余 skipped 属正常 |
-| Gateway RSS | 🔴 **4.15GB** 已顶满 4096MB heap；journal 有 event_loop_delay 警告(P99 1.7s) |
-| Agent 活跃 | 🟢 scout 有 11-14 产出；life/coder/orchestrator 场次 20:11 首跑未落盘；finance·health·work 休眠 |
-| M365 repo | 🔴 HEAD `0c593a1`，ahead 3 / behind 0，仍未 push |
-| openclaw-source | ⚪ 目录已不存在 → 旧基线「冻结 111 天」作废 |
-| startup migrations | 🟡 提示需 `openclaw doctor --fix` |
-| 投递路由 | 🔴 `commands.ownerAllowFrom` 未设 → heartbeat 全在等投递路由 |
+| **health agent** | 🔴 **唯一 P0**：leases=0 → 回收提交无人授权 → 每 60s 超时（60/h）|
+| main agent | 🟢 已恢复：reclaim 错误 0（11-14 曾 180/h）|
+| 其余 6 agent | 🟢 正常，leases 4~6；scout/life/coder/orchestrator 有产出 |
+| fin / work / health | ⚠️ 均休眠 117d+（health 因 P0 无法工作）|
+| 备份 timer | 🟢 已加 OnBootSec（native 12min / NAS 25min）→ 消除开机抢 IO 误判 |
+| native backup | 🟢 archives 4 份，11-14/11-15 verify OK |
+| NAS 备份 | 🟢 已恢复产出（11-15/11-16）；回收站 36 份 / 185GB（清理待授权）|
+| M365 repo | HEAD d9f53b0，ahead 7 / behind 0；`/mnt/c` 96% 满（剩 21G）|
+| Gateway | RSS 4.53GB，heap 上限仍 4096MB（doctor 建议 8192）|
+| OpenRouter credits | 🔴 0 |
+| 备份邮件 | 🔴 QQ SMTP 授权码失效（535 Login fail，非网络）|
+
+### 🔍 health P0 的根因链（已实测到源码级）
+1. `cron/maintenance` 每 **60s** 遍历**所有** agent store（`maintenance-CGA2ytB4.mjs`）
+2. health 的 DB 从未被真正使用过 → **从未取得租约**（唯一 leases=0 的 agent）
+3. `withSqliteReclamationAuthorization` 需要该 DB 上有活写入方才 `authorize()`；
+   无 → `Atomics.wait(...,5000)` 超时 → `commit checkpoint expired`
+4. ⇒ 停 Gateway → `doctor --fix` → 重启（compact 也需停机；holder=795 alive）
+
+### ⚠️ 复核同伴结论时的两个坑
+- **scratch 在 `cron_job_scratch` 表里，不是文件** → 别用 `ls HEARTBEAT.md` 推断心跳行为
+- **system-owned monitor job 不可用 cron 客户端 disable**
+  （`declaration_key = heartbeat:<agent>` → `cannot be edited by cron clients`）
 
 ### 2026-11-14 夜间实测结论
 - ✅ **重启 = 最有效的 SQLite 修复手段**：一次重启同时解决 stale 租约与库写冻结，无需 doctor --fix

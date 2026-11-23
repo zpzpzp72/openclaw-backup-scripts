@@ -1,0 +1,278 @@
+# Graph Report - .  (2026-11-17)
+
+## Corpus Check
+- cluster-only mode — file stats not available
+
+## Summary
+- 3155 nodes · 7671 edges · 37 communities detected
+- Extraction: 72% EXTRACTED · 28% INFERRED · 0% AMBIGUOUS · INFERRED: 2183 edges (avg confidence: 0.74)
+- Token cost: 0 input · 0 output
+
+## Community Hubs (Navigation)
+- [[_COMMUNITY_MCP Servers, Inspector & Spec Toolchain Security|MCP Servers, Inspector & Spec Toolchain Security]]
+- [[_COMMUNITY_Agent & Agents & Memory & Multi|Agent & Agents & Memory & Multi]]
+- [[_COMMUNITY_Agent & Openai & 2026 & Anthropic|Agent & Openai & 2026 & Anthropic]]
+- [[_COMMUNITY_MCP Specification, SDKs & Inspector Releases|MCP Specification, SDKs & Inspector Releases]]
+- [[_COMMUNITY_Mcp & Sdk & Agent & Tool|Mcp & Sdk & Agent & Tool]]
+- [[_COMMUNITY_Agents & Learning & Language & Agent|Agents & Learning & Language & Agent]]
+- [[_COMMUNITY_Learning & Agent & Agents & Multi|Learning & Agent & Agents & Multi]]
+- [[_COMMUNITY_Feat & Api & Release & Fix|Feat & Api & Release & Fix]]
+- [[_COMMUNITY_Learning & Agents & Reinforcement & Long|Learning & Agents & Reinforcement & Long]]
+- [[_COMMUNITY_Agent & Multi & Learning & Reinforcement|Agent & Multi & Learning & Reinforcement]]
+- [[_COMMUNITY_2609 & Optimization & Trsp & Spurious|2609 & Optimization & Trsp & Spurious]]
+- [[_COMMUNITY_RL Training, Reward & Post-Training|RL Training, Reward & Post-Training]]
+- [[_COMMUNITY_Agent Safety, Guardrails & Deployment Trust|Agent Safety, Guardrails & Deployment Trust]]
+- [[_COMMUNITY_Tractable & Grammar & Autoregressive & Polynomial|Tractable & Grammar & Autoregressive & Polynomial]]
+- [[_COMMUNITY_Optimizer & Transformer & Pretraining & Optscientist|Optimizer & Transformer & Pretraining & Optscientist]]
+- [[_COMMUNITY_Deltanet & Gated & Quantization & W4A4|Deltanet & Gated & Quantization & W4A4]]
+- [[_COMMUNITY_Stair & Retriever & Searchtome & 03874|Stair & Retriever & Searchtome & 03874]]
+- [[_COMMUNITY_Planning, Skill Routing & Workflow Automation|Planning, Skill Routing & Workflow Automation]]
+- [[_COMMUNITY_Harness & Extremely & Multi & Sparse|Harness & Extremely & Multi & Sparse]]
+- [[_COMMUNITY_Harbor & Adapters & Infrastructure & Index|Harbor & Adapters & Infrastructure & Index]]
+- [[_COMMUNITY_Irwoz & 04030 & 2609 & Dataset|Irwoz & 04030 & 2609 & Dataset]]
+- [[_COMMUNITY_Paradox & Indirect & Injection & Capability|Paradox & Indirect & Injection & Capability]]
+- [[_COMMUNITY_Tuesday & Scout & Research & 2026|Tuesday & Scout & Research & 2026]]
+- [[_COMMUNITY_Mhs & Anthropic|Mhs & Anthropic]]
+- [[_COMMUNITY_Portability & Learn & Assignment & Credit|Portability & Learn & Assignment & Credit]]
+- [[_COMMUNITY_Tpus & Maxkernel & Kernel & Generation|Tpus & Maxkernel & Kernel & Generation]]
+- [[_COMMUNITY_Riskier & Create & Markets & Better|Riskier & Create & Markets & Better]]
+- [[_COMMUNITY_Harbor & Adapters & Curated & Infrastructure|Harbor & Adapters & Curated & Infrastructure]]
+- [[_COMMUNITY_Incentivizes & Extremely & Ability & Sparse|Incentivizes & Extremely & Ability & Sparse]]
+- [[_COMMUNITY_Whether & Killing & Animals & Harvestbench|Whether & Killing & Animals & Harvestbench]]
+- [[_COMMUNITY_Indirect & Problem & Rethinking & Injection|Indirect & Problem & Rethinking & Injection]]
+- [[_COMMUNITY_Faithfulness & Removal & Improve & Approach|Faithfulness & Removal & Improve & Approach]]
+- [[_COMMUNITY_Inference Infrastructure, Scheduling & Efficiency|Inference Infrastructure, Scheduling & Efficiency]]
+- [[_COMMUNITY_Tpu & Maxkernel & Kernel & Generation|Tpu & Maxkernel & Kernel & Generation]]
+- [[_COMMUNITY_Harvestbench|Harvestbench]]
+- [[_COMMUNITY_Faithfulness & Test & Time|Faithfulness & Test & Time]]
+- [[_COMMUNITY_Back & Recurrent & Write & State|Back & Recurrent & Write & State]]
+
+## God Nodes (most connected - your core abstractions)
+1. `agent-safety` - 851 edges
+2. `AI/Agent/MCP 2026-11-14` - 401 edges
+3. `AI/Agent/MCP 2026-11-02` - 388 edges
+4. `AI/Agent/MCP 2026-10-28` - 374 edges
+5. `AI/Agent/MCP 2026-10-27` - 371 edges
+6. `AI/Agent/MCP 2026-11-04` - 329 edges
+7. `memory` - 324 edges
+8. `general` - 308 edges
+9. `AI/Agent/MCP 2026-10-26` - 287 edges
+10. `AI/Agent/MCP 2026-11-05` - 269 edges
+
+## Surprising Connections (you probably didn't know these)
+- `general` --belongs_to--> `Learning Force-Reactive Humanoid Loco-Manipulation`  [INFERRED]
+  graphify-out/raw/scout-2026-10-24-corpus.md → graphify-out/raw/scout-2026-10-28-corpus.md
+- `general` --belongs_to--> `Quantitative Generalization Bounds for Multi-Layer Transformers: A Few Long Strings can Beat Many Short Ones`  [INFERRED]
+  graphify-out/raw/scout-2026-10-24-corpus.md → graphify-out/raw/scout-2026-10-28-corpus.md
+- `general` --belongs_to--> `Multi-Fidelity Training Reshapes Uncertainty Decomposition in Atomistic Models`  [INFERRED]
+  graphify-out/raw/scout-2026-10-24-corpus.md → graphify-out/raw/scout-2026-10-28-corpus.md
+- `general` --belongs_to--> `An Interactive Evolutionary Multiobjective Optimization Algorithm Based on Interpretable Active Preference Learning`  [INFERRED]
+  graphify-out/raw/scout-2026-10-24-corpus.md → graphify-out/raw/scout-2026-10-28-corpus.md
+- `general` --belongs_to--> `Online Fair Division with Frequency Predictions`  [INFERRED]
+  graphify-out/raw/scout-2026-10-24-corpus.md → graphify-out/raw/scout-2026-10-28-corpus.md
+
+## Communities
+
+### Community 0 - "MCP Servers, Inspector & Spec Toolchain Security"
+Cohesion: 0.01
+Nodes (668): OCI validator skips ownership check on upstream rate limits, robots.txt enforcement bypass via HTTP redirects in mcp-server-fetch, mcp-server-fetch: IPv6 site-local fec0::/10 classified as public (SSRF guard classifier gap, CWE-918), Case-variant path bypasses symlink check and allows creating files outside allowed directories in se, Parent-Directory Fallback TOCTOU in @modelcontextprotocol/server-filesystem Permits Arbitrary File W, Unrestricted git_init tool allows repository creation at arbitrary filesystem locations in mcp-serve, fetch server: SSRF guard treats the well-known NAT64 prefix 64:ff9b::/96 as public, so a metadata ad, mcp-server-git: arbitrary command execution via a repository's own Git configuration (core.fsmonitor) during r (+660 more)
+
+### Community 1 - "Agent & Agents & Memory & Multi"
+Cohesion: 0.01
+Nodes (331): Plant Memory: Technical Language Processing and a Verified Maintenance Ontology for Agent-Accessible Failure Knowledge from SAP PM Work Orders, AutoRedClaw: Automated Red-Teaming for Claw-Style Agents, Combining Long-Term Memory and LLMs Comes at a High Cost: From Prompt Injection to Persistent Compromise, Multimodal Embodied Agents: A Unified Capability-centric Perspective from Computer-Use to Robot-Use, Can LLMs Improve Their Own Harness? A Controlled Study on ARC-AGI-3, Subgoal-aware Memory Graph for GUI Agent, When LLMs Forget What They Believe: Characterizing State Integrity Collapse in Long-Horizon Dialogues, Muffin - A Shared Memory Buffer for Asynchronous AI Agents (+323 more)
+
+### Community 2 - "Agent & Openai & 2026 & Anthropic"
+Cohesion: 0.01
+Nodes (326): Judging Before Propagation: Task-Graph Contextual Integrity for Multi-Agent Privacy, EvoTeam: Multi-Agent Collaboration via Evolving Teams, Learning Safe Flow Matching Robot Policies from Binary Feasibility Oracles, Video Generation Meets Agent Harness: Agentic Video Generation, Agentic World Modeling and Recursive Self-Improvement, Reinforcement learning for control of partial differential equations, Pre-Crime for Agents, at the Last Second: Probing When a Recruited Agent Gives In, From extreme weather to agricultural consequences with agentic AI, Apriel Voice 27B Preview: An Open Model for Speech, Reasoning, and Tool Use (+318 more)
+
+### Community 3 - "MCP Specification, SDKs & Inspector Releases"
+Cohesion: 0.01
+Nodes (317): One Monitor Does Not Fit All: Formalism-Agnostic Runtime Verification for Agentic AI, MolLean: A Process-Verifiable Language for Chemical Reasoning, Trajectory-Level Speculation with Semantic Verification for Tool-Using Agents, Explore Separately, Adopt Selectively: Execution-Guided Tool Use over Large Tool Libraries, GRAD: Graph-Structured Antibody Defense for LLM Agents, ToolOPD: Credit-Aware On-Policy Distillation for Tool-Use Agents, CXBench: A Benchmark for Process-Compliant LLM Agents in Regulated Customer-Experience Workflows, NIOCIS: Typed-Decision Next-Hop Routing with Node-Conditioned Option Spaces for Tool-Use Agents (+309 more)
+
+### Community 4 - "Mcp & Sdk & Agent & Tool"
+Cohesion: 0.01
+Nodes (283): MCP Error Messages Written for Developers Hurt the Most Capable Agents Most, Skill-Based AI Agents for Power-System Studies, Evaluating and Improving the Robustness of Large Language Models to Input Sequence Variations, LATHE: LAnguage-driven Toolkit for Hypothesis-based crystal Editing, Toward SLM-based agentic task-tool intent matching, CyTReX: Explainable AI-Based Cybersecurity Threat Reasoning Framework for DER Networks, COPEX: Benchmarking LLM Robustness to Adversarial Context Across Model Context Protocol (MCP) Layers, Memory Canonicalization: A Framework and Benchmark for Cross-Model Drift in Persistent LLM Memory (+275 more)
+
+### Community 5 - "Agents & Learning & Language & Agent"
+Cohesion: 0.01
+Nodes (274): One Step at a Time: Trading LLM Autonomy for Process Predictability, A Chat Assistant for Software Exploration in a 3D Software Visualization, Agentic AI-Assisted Modeling for Production Scheduling: Assessment in Constraint Programming, Applying Security by Design at the Point of Execution: How Governed Security Requirements Affect the Security of AI-Generated Code, Evaluating LLMs as Agentic Workflow Executors in Real-World Customer Support Skills, KedgeFlow: A Programmable Control Plane for Enterprise AI Agents, Large Language Model Assisted Transportation Planning through a Differentiable User Equilibrium Layer, Thinking in Graphs: Neo4j-Backed Exploit-Chain Reasoning for LLM Penetration-Testing Agents (+266 more)
+
+### Community 6 - "Learning & Agent & Agents & Multi"
+Cohesion: 0.01
+Nodes (242): Markets of Minds: A 51-Billion-State Economy of Intelligence, J-Comm: Jacobian-Guided Latent Communication between LLM Agents, Do "True" and "False" Add Up to One? Complement Consistency in LLM-Agent Opinion Simulations, Continual Learning Exam: Benchmarking Long-Horizon RSI and Experiential Learning in LLM Agents, Weighted Fairness in Multi-User Earth Observation Satellite Scheduling, How Humans Learn Unfamiliar Worlds: A Think-Aloud Dataset on ARC-AGI-3, SlowLab: Benchmarking Autonomous AI Agents on a Year of Experiments They Cannot Undo, Silent and Costly: Characterizing and Detecting Prompt-Caching Mis-Integration in LLM Agents (+234 more)
+
+### Community 7 - "Feat & Api & Release & Fix"
+Cohesion: 0.01
+Nodes (195): When to spend privacy: optimal allocation in private learning, How to Loop Your Transformer: Loop Scaling, Specialization, and Parallel Inference, CERBO: Certified Recourse at a Requested Rate for Gradient-Boosted Trees, Tracing the Scientific Discovery Capacity of LLMs to Their Training Data, LIBRA: Programmatic Induction of Executable Tool Libraries, MA-SafeDiffuser: Safe Multi-Agent Planning with Diffusion Probabilistic Models, Decision Models as Scalable Economic Surrogates that Capture Human Variation, Route to Remember: Adaptive Memory Selection for LLM Agents (+187 more)
+
+### Community 8 - "Learning & Agents & Reinforcement & Long"
+Cohesion: 0.01
+Nodes (143): One Act, Many Masks: Effect-Marginal Policy Optimization for Long-Horizon Agents, CARL: Chat Assisted Reinforcement Learning, Probabilistic Energy Modeling Unifies Versatile Swarm Control, Post-Hoc Feature Selection Layer for Neural Networks Interpretability, Direct Pass@$k$ Optimization for Thought Pruning: Balancing Quality and Diversity in Test-Time Reasoning, Emergent Cooperative Thermoregulation in Lunar Swarm Robotics, Adapt for Planning, Not just Prediction: Optimistic Test-Time World Model Adaptation, WCC: A Learning-Based Framework for Deciding When to Apply Cooperative Coevolution in Large-Scale Optimization (+135 more)
+
+### Community 9 - "Agent & Multi & Learning & Reinforcement"
+Cohesion: 0.02
+Nodes (129): Autonomous intelligence for mining productivity: a multi-agent AI approach to operational value creation, ToM2Vec: Continuous Theory-of-Mind Tokens for Multi-Agent Coordination, Parallel AI Agent Collaboration as Graph-Structured Distributed Block Optimization, Governed Self-Evolution for Autonomous Investing: A Multi-Agent LLM System with an Invariant Core, LLM Multi-Agent Systems Are Vulnerable to Herding and Runaway Cascades, ADAPT for Science: A Multi-Agent System for Self-Evolving Scientific Optimization, ADAPT for Science: A Multi-Agent System for Self-Evolving Scientific Optimization, Consistent but Biased: Chair Personas Trade Noise for Bias in Multi-Agent Clinical Decisions (+121 more)
+
+### Community 10 - "2609 & Optimization & Trsp & Spurious"
+Cohesion: 0.07
+Nodes (97): agent instability, agentic AI, Agentic AI Architecture for Autonomous Test Management with Generative Intelligence, Secure Cloud Communication and Adaptive Quality Analytics, AI agents, alignment, AMI Meeting Corpus, Andon Labs, Anthropic (+89 more)
+
+### Community 11 - "RL Training, Reward & Post-Training"
+Cohesion: 0.02
+Nodes (90): Predictable performance is suboptimal, and what it means for model routing, Decentralized Bi-Level Optimization for Cooperative Orbital Transportation of a Rigid Payload, Who Is Sycophantic to Whom? Confident LLMs, Human Deference, and the Collapse of Trust Calibration, SKALOS: Learning to Distinguish Similar Skills with Capability Graphs, From Language to Drives: A Multimodal Framework for Aligning Autonomous Robots with Human Purposes, Skill Dreaming: Evolving Repository Skills through Pull Request Streams, cuArms: GPU-Accelerated Conflict-Based Planning for Multi-Arm Manipulation, Bayesian Replicator Dynamics and the Inversion of Strict Dominance in Bimatrix Games (+82 more)
+
+### Community 12 - "Agent Safety, Guardrails & Deployment Trust"
+Cohesion: 0.55
+Nodes (12): adversarial dialogue, dialogue critic, incomplete prompt, Incomplete Prompt Jailbreaks in Large Language Models, jailbreak, LLM safety, Markov decision process, multi-turn attacks (+4 more)
+
+### Community 13 - "Tractable & Grammar & Autoregressive & Polynomial"
+Cohesion: 1.0
+Nodes (7): constrained decoding, formal constraints, grammar, LLM generation, LR(k), polynomial time, Tractable Hierarchical Control of Autoregressive Language Models
+
+### Community 14 - "Optimizer & Transformer & Pretraining & Optscientist"
+Cohesion: 1.0
+Nodes (6): evolutionary search, multi-agent, optimizer discovery, OPTScientist: Multi-Agent Discovery of Typed Optimizer Programs for Transformer Pretraining, transformer pretraining, typed DSL
+
+### Community 15 - "Deltanet & Gated & Quantization & W4A4"
+Cohesion: 0.5
+Nodes (4): Gated DeltaNet 4-bit Quantization, Minima Recipe (NVFP4 W4A4), 2609.04098: Gated DeltaNet Quantization, Qwen3.8-27B Hybrid LLM
+
+### Community 16 - "Stair & Retriever & Searchtome & 03874"
+Cohesion: 0.67
+Nodes (3): 2609.03874: STAIR Retriever, SearchTome Benchmark, STAIR Retriever
+
+### Community 17 - "Planning, Skill Routing & Workflow Automation"
+Cohesion: 0.67
+Nodes (3): ICAPS HPlan 2026, Numerical TOHTN Planning, 2609.03938: Numerical TOHTN
+
+### Community 18 - "Harness & Extremely & Multi & Sparse"
+Cohesion: 0.67
+Nodes (3): Credit Assignment in Multi-Harness RL, Multi-Harness RL, Extremely Sparse Supervision
+
+### Community 19 - "Harbor & Adapters & Infrastructure & Index"
+Cohesion: 0.67
+Nodes (3): Agentic Evaluation Infrastructure, Harbor Adapters, Harbor-Index
+
+### Community 20 - "Irwoz & 04030 & 2609 & Dataset"
+Cohesion: 1.0
+Nodes (2): IRWOZ 2.0 Dataset, 2609.04030: IRWOZ 2.0
+
+### Community 21 - "Paradox & Indirect & Injection & Capability"
+Cohesion: 1.0
+Nodes (2): Capability Paradox in LLM Agents, Indirect Prompt Injection
+
+### Community 22 - "Tuesday & Scout & Research & 2026"
+Cohesion: 1.0
+Nodes (1): Scout Research — 2026-08-04 (Tuesday)
+
+### Community 23 - "Mhs & Anthropic"
+Cohesion: 1.0
+Nodes (1): Anthropic MHS
+
+### Community 24 - "Portability & Learn & Assignment & Credit"
+Cohesion: 1.0
+Nodes (1): What Does Multi-Harness RL Learn? Credit Assignment and Portability in Coding Agents
+
+### Community 25 - "Tpus & Maxkernel & Kernel & Generation"
+Cohesion: 1.0
+Nodes (1): MaxKernel: Agentic Kernel Generation for TPUs
+
+### Community 26 - "Riskier & Create & Markets & Better"
+Cohesion: 1.0
+Nodes (1): Why Better Models Can Create Riskier Systems: Evidence from LLM Agents in Financial Markets
+
+### Community 27 - "Harbor & Adapters & Curated & Infrastructure"
+Cohesion: 1.0
+Nodes (1): Harbor Adapters and Harbor-Index: Infrastructure and a Curated Meta-Dataset for Large-Scale Agentic Evaluation
+
+### Community 28 - "Incentivizes & Extremely & Ability & Sparse"
+Cohesion: 1.0
+Nodes (1): Extremely Sparse Supervision Incentivizes Reasoning Ability
+
+### Community 29 - "Whether & Killing & Animals & Harvestbench"
+Cohesion: 1.0
+Nodes (1): HarvestBench: Measuring Whether LLM Agents Will Pay to Avoid Killing Animals
+
+### Community 30 - "Indirect & Problem & Rethinking & Injection"
+Cohesion: 1.0
+Nodes (1): Rethinking Indirect Prompt Injection as a Test-Time Search Problem
+
+### Community 31 - "Faithfulness & Removal & Improve & Approach"
+Cohesion: 1.0
+Nodes (1): A Removal Based Approach to Improve LLM Faithfulness at Test-Time
+
+### Community 32 - "Inference Infrastructure, Scheduling & Efficiency"
+Cohesion: 1.0
+Nodes (1): When Quantization Breaks Memory: Recurrent-State Write-Back in Low-Precision Temporal Inference
+
+### Community 33 - "Tpu & Maxkernel & Kernel & Generation"
+Cohesion: 1.0
+Nodes (1): MaxKernel TPU Kernel Generation
+
+### Community 34 - "Harvestbench"
+Cohesion: 1.0
+Nodes (1): HarvestBench
+
+### Community 35 - "Faithfulness & Test & Time"
+Cohesion: 1.0
+Nodes (1): LLM Faithfulness Test-Time
+
+### Community 36 - "Back & Recurrent & Write & State"
+Cohesion: 1.0
+Nodes (1): Recurrent-State Write-Back
+
+## Knowledge Gaps
+- **61 isolated node(s):** `Thinking Machines Lab`, `Scale AI`, `Meta`, `DeepSeek`, `NVIDIA` (+56 more)
+  These have ≤1 connection - possible missing edges or undocumented components.
+- **Thin community `Irwoz & 04030 & 2609 & Dataset`** (2 nodes): `IRWOZ 2.0 Dataset`, `2609.04030: IRWOZ 2.0`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Paradox & Indirect & Injection & Capability`** (2 nodes): `Capability Paradox in LLM Agents`, `Indirect Prompt Injection`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Tuesday & Scout & Research & 2026`** (1 nodes): `Scout Research — 2026-08-04 (Tuesday)`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Mhs & Anthropic`** (1 nodes): `Anthropic MHS`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Portability & Learn & Assignment & Credit`** (1 nodes): `What Does Multi-Harness RL Learn? Credit Assignment and Portability in Coding Agents`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Tpus & Maxkernel & Kernel & Generation`** (1 nodes): `MaxKernel: Agentic Kernel Generation for TPUs`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Riskier & Create & Markets & Better`** (1 nodes): `Why Better Models Can Create Riskier Systems: Evidence from LLM Agents in Financial Markets`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Harbor & Adapters & Curated & Infrastructure`** (1 nodes): `Harbor Adapters and Harbor-Index: Infrastructure and a Curated Meta-Dataset for Large-Scale Agentic Evaluation`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Incentivizes & Extremely & Ability & Sparse`** (1 nodes): `Extremely Sparse Supervision Incentivizes Reasoning Ability`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Whether & Killing & Animals & Harvestbench`** (1 nodes): `HarvestBench: Measuring Whether LLM Agents Will Pay to Avoid Killing Animals`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Indirect & Problem & Rethinking & Injection`** (1 nodes): `Rethinking Indirect Prompt Injection as a Test-Time Search Problem`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Faithfulness & Removal & Improve & Approach`** (1 nodes): `A Removal Based Approach to Improve LLM Faithfulness at Test-Time`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Inference Infrastructure, Scheduling & Efficiency`** (1 nodes): `When Quantization Breaks Memory: Recurrent-State Write-Back in Low-Precision Temporal Inference`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Tpu & Maxkernel & Kernel & Generation`** (1 nodes): `MaxKernel TPU Kernel Generation`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Harvestbench`** (1 nodes): `HarvestBench`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Faithfulness & Test & Time`** (1 nodes): `LLM Faithfulness Test-Time`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Back & Recurrent & Write & State`** (1 nodes): `Recurrent-State Write-Back`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+
+## Suggested Questions
+_Questions this graph is uniquely positioned to answer:_
+
+- **Why does `agent-safety` connect `Agent & Openai & 2026 & Anthropic` to `MCP Servers, Inspector & Spec Toolchain Security`, `Agent & Agents & Memory & Multi`, `MCP Specification, SDKs & Inspector Releases`, `Mcp & Sdk & Agent & Tool`, `Learning & Agent & Agents & Multi`, `Feat & Api & Release & Fix`, `Learning & Agents & Reinforcement & Long`, `RL Training, Reward & Post-Training`?**
+  _High betweenness centrality (0.261) - this node is a cross-community bridge._
+- **Why does `AI/Agent/MCP 2026-10-28` connect `Mcp & Sdk & Agent & Tool` to `MCP Servers, Inspector & Spec Toolchain Security`, `Agent & Openai & 2026 & Anthropic`, `MCP Specification, SDKs & Inspector Releases`, `Learning & Agent & Agents & Multi`, `Feat & Api & Release & Fix`, `Learning & Agents & Reinforcement & Long`, `Agent & Multi & Learning & Reinforcement`, `RL Training, Reward & Post-Training`?**
+  _High betweenness centrality (0.133) - this node is a cross-community bridge._
+- **Why does `AI/Agent/MCP 2026-11-14` connect `Agent & Openai & 2026 & Anthropic` to `MCP Servers, Inspector & Spec Toolchain Security`, `Agent & Agents & Memory & Multi`, `MCP Specification, SDKs & Inspector Releases`, `Mcp & Sdk & Agent & Tool`, `Agents & Learning & Language & Agent`, `Learning & Agent & Agents & Multi`, `Feat & Api & Release & Fix`, `Learning & Agents & Reinforcement & Long`, `Agent & Multi & Learning & Reinforcement`, `RL Training, Reward & Post-Training`?**
+  _High betweenness centrality (0.128) - this node is a cross-community bridge._
+- **Are the 851 inferred relationships involving `agent-safety` (e.g. with `EpiSEM-Bench: Evaluating Safety and Evidence Recovery in LLM Agents under Missing Evidence` and `Questioning Instrumental Convergence in RLVR: Checkpoint Evidence from OLMo-3`) actually correct?**
+  _`agent-safety` has 851 INFERRED edges - model-reasoned connections that need verification._
+- **What connects `Thinking Machines Lab`, `Scale AI`, `Meta` to the rest of the system?**
+  _61 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `MCP Servers, Inspector & Spec Toolchain Security` be split into smaller, more focused modules?**
+  _Cohesion score 0.01 - nodes in this community are weakly interconnected._
+- **Should `Agent & Agents & Memory & Multi` be split into smaller, more focused modules?**
+  _Cohesion score 0.01 - nodes in this community are weakly interconnected._

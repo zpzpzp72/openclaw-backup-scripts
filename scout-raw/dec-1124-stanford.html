@@ -1,0 +1,1950 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	
+  <!-- Consentmanager PUR -->
+  <script>
+    window.cmp_pur_enable = false;
+    window.cmp_pur_loggedin = false;
+      </script>
+  <!-- End Consentmanager PUR -->
+
+  <!-- Consentmanager CMP -->
+  <script type="text/javascript" data-cmp-ab="1"
+    src="https://cdn.consentmanager.net/delivery/js/semiautomatic.min.js"
+    data-cmp-cdid="8f56882c9256c"
+    data-cmp-host="c.delivery.consentmanager.net"
+    data-cmp-cdn="cdn.consentmanager.net"
+    data-cmp-codesrc="0"></script>
+  <!-- End Consentmanager CMP -->
+
+      <!-- symplr PPID -->
+    <script>
+      /**
+       * SHA-256, synchron, Rueckgabe lowercase Hex (64 Zeichen).
+       * Wird vom symplr-PPID-Snippet vorausgesetzt, aber nicht
+       * mitgeliefert. crypto.subtle.digest scheidet aus: asynchron und
+       * nur im Secure Context verfuegbar.
+       * Gegen node:crypto verifiziert, inkl. UTF-8-Eingaben.
+       */
+      function sha256(ascii) {
+        function rightRotate(value, amount) {
+          return (value >>> amount) | (value << (32 - amount));
+        }
+        var mathPow = Math.pow;
+        var maxWord = mathPow(2, 32);
+        var result = '';
+        var words = [];
+
+        // Erst nach UTF-8 wandeln, dann die Bitlaenge bestimmen -
+        // sonst stimmt die Laengenangabe im Padding bei Nicht-ASCII nicht.
+        ascii = unescape(encodeURIComponent(ascii));
+        var asciiBitLength = ascii.length * 8;
+
+        var hash = sha256.h = sha256.h || [];
+        var k = sha256.k = sha256.k || [];
+        var primeCounter = k.length;
+
+        var isComposite = {};
+        for (var candidate = 2; primeCounter < 64; candidate++) {
+          if (!isComposite[candidate]) {
+            for (var i = 0; i < 313; i += candidate) {
+              isComposite[i] = candidate;
+            }
+            hash[primeCounter] = (mathPow(candidate, 0.5) * maxWord) | 0;
+            k[primeCounter++] = (mathPow(candidate, 1 / 3) * maxWord) | 0;
+          }
+        }
+
+        ascii += '\x80';
+        while ((ascii.length % 64) - 56) ascii += '\x00';
+        for (i = 0; i < ascii.length; i++) {
+          var j = ascii.charCodeAt(i);
+          if (j >> 8) return;
+          words[i >> 2] |= j << (((3 - i) % 4) * 8);
+        }
+        words[words.length] = (asciiBitLength / maxWord) | 0;
+        words[words.length] = asciiBitLength;
+
+        for (var jj = 0; jj < words.length;) {
+          var w = words.slice(jj, (jj += 16));
+          var oldHash = hash;
+          hash = hash.slice(0, 8);
+
+          for (i = 0; i < 64; i++) {
+            var w15 = w[i - 15],
+              w2 = w[i - 2];
+            var a = hash[0],
+              e = hash[4];
+            var temp1 = hash[7] +
+              (rightRotate(e, 6) ^ rightRotate(e, 11) ^ rightRotate(e, 25)) +
+              ((e & hash[5]) ^ (~e & hash[6])) +
+              k[i] +
+              (w[i] = i < 16 ? w[i] : (
+                w[i - 16] +
+                (rightRotate(w15, 7) ^ rightRotate(w15, 18) ^ (w15 >>> 3)) +
+                w[i - 7] +
+                (rightRotate(w2, 17) ^ rightRotate(w2, 19) ^ (w2 >>> 10))
+              ) | 0);
+            var temp2 = (rightRotate(a, 2) ^ rightRotate(a, 13) ^ rightRotate(a, 22)) +
+              ((a & hash[1]) ^ (a & hash[2]) ^ (hash[1] & hash[2]));
+            hash = [(temp1 + temp2) | 0].concat(hash);
+            hash[4] = (hash[4] + temp1) | 0;
+          }
+
+          for (i = 0; i < 8; i++) {
+            hash[i] = (hash[i] + oldHash[i]) | 0;
+          }
+        }
+
+        for (i = 0; i < 8; i++) {
+          for (j = 3; j + 1; j--) {
+            var b = (hash[i] >> (j * 8)) & 255;
+            result += (b < 16 ? 0 : '') + b.toString(16);
+          }
+        }
+        return result;
+      }
+    </script>
+    <script>
+      /**
+       * symplr PPID. Ausgeschriebene Fassung des gelieferten Snippets.
+       * Drei Abweichungen vom Original, jeweils unten kommentiert -
+       * bei symplr gemeldet, bei korrigierter Fassung hier ersetzen.
+       */
+      (function() {
+        // Serverseitig gerenderte Werte, bewusst im Closure und NICHT als
+        // globale Variablen: das symplr-Bundle deklariert websiteSymplr,
+        // userStatusSymplr und firstPartyId selbst auf Top-Level mit "let".
+        // Ein globales "var" gleichen Namens waere nach ES-Spec ein
+        // SyntaxError bei der Instanziierung des Bundles und wuerde die
+        // komplette Werbeauslieferung verhindern.
+        var SITE = "the-decoder.com";
+        var LOGGED_IN = false;
+        var PPID_ID = "";
+        var ONE_YEAR = 31536000;
+
+        // Abweichung 1: Cookies werden robust gelesen. Das Original
+        // schneidet Werte am ersten "=" ab (bricht bei base64-Werten wie
+        // TCF-Strings) und wirft bei einem einzelnen "%" in irgendeinem
+        // fremden Cookie einen URIError - der killt dann die gesamte PPID.
+        function readCookies() {
+          var out = {};
+          var parts = document.cookie ? document.cookie.split(';') : [];
+          for (var i = 0; i < parts.length; i++) {
+            var eq = parts[i].indexOf('=');
+            if (eq < 0) continue;
+            var name = parts[i].slice(0, eq).trim();
+            var value = parts[i].slice(eq + 1);
+            try {
+              value = decodeURIComponent(value);
+            } catch (e) {}
+            out[name] = value;
+          }
+          return out;
+        }
+
+        /**
+         * Die uebergebenen Argumente werden bewusst IGNORIERT.
+         * symplr ruft die Funktion aus seinem Vendor-Handler mit
+         * createCookieSymplr(userStatusSymplr, firstPartyId) auf - beide
+         * Werte initialisiert das Bundle selbst auf false bzw. null.
+         * Wuerden wir sie verwenden, wuerde jeder Aufruf durch symplr den
+         * Login-Zweig ueberspringen und uniqueUserLi wieder loeschen.
+         * Der Login-Status kommt deshalb vom Server (LOGGED_IN/PPID_ID).
+         *
+         * Mehrfachaufrufe sind unschaedlich: die Cookies werden bei jedem
+         * Aufruf neu eingelesen, das Ergebnis ist idempotent.
+         */
+        window.createCookieSymplr = function() {
+          var cookies = readCookies();
+
+          // Anonyme ID: einmal erzeugen, danach ein Jahr stabil
+          window.uuSymplr = cookies.uniqueUser;
+          if (window.uuSymplr === undefined) {
+            window.uuSymplr = sha256(Date.now() + window.navigator.userAgent + SITE);
+            document.cookie = 'uniqueUser=' + window.uuSymplr +
+              ';max-age=' + ONE_YEAR + ';path=/;SameSite=Strict;Secure';
+          }
+
+          if (LOGGED_IN && PPID_ID) {
+            // Abweichung 2: der Hash wird immer berechnet und bei
+            // Abweichung neu geschrieben. Das Original setzt
+            // uniqueUserLi nur, wenn es noch nicht existiert - nach
+            // einem Account-Wechsel auf demselben Geraet behielte der
+            // neue Nutzer sonst die PPID des Vorgaengers.
+            var li = sha256(PPID_ID);
+            if (cookies.uniqueUserLi !== li) {
+              document.cookie = 'uniqueUserLi=' + li +
+                ';max-age=' + ONE_YEAR + ';path=/;SameSite=Strict;Secure';
+            }
+            window.uuSymplr = li;
+          } else {
+            // Abweichung 3: mit path=/. Das Original loescht ohne
+            // Pfadangabe und trifft damit nur den aktuellen Pfad - das
+            // mit path=/ gesetzte Cookie ueberlebt den Logout ueberall
+            // ausser auf "/".
+            document.cookie = 'uniqueUserLi=;max-age=0;path=/';
+          }
+        };
+      })();
+
+      // Kein eigener Aufruf: das symplr-Bundle ruft createCookieSymplr aus
+      // seinem consent-gegateten Vendor-Handler (755 = Google) selbst auf
+      // und liest direkt danach uuSymplr fuer setPublisherProvidedId().
+      // Wuerden wir hier zusaetzlich aufrufen, entstuenden die Cookies
+      // bereits vor der Entscheidung in der CMP.
+    </script>
+    <!-- End symplr PPID -->
+  
+      <!-- symplr Werbescript -->
+    <script defer src="https://cdns.symplr.de/the-decoder.com/the-decoder.js"></script>
+    <!-- End symplr Werbescript -->
+  
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO Premium plugin v25.0 (Yoast SEO v25.0) - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Hours after Anthropic claims a Claude proof of the Riemann hypothesis, Stanford releases an all-human competing draft</title>
+	<meta name="description" content="Anthropic mathematician Levent Alpöge says he used Claude to prove the Riemann hypothesis, math&#039;s most famous open problem for 167 years, with a proof formalized in Lean that spans over 250,000 pages. Just hours later, Stanford researchers published an independent, entirely human competing proof, and mathematicians are now checking whether either one holds up." />
+	<link rel="canonical" href="https://the-decoder.com/hours-after-anthropic-claims-a-claude-proof-of-the-riemann-hypothesis-stanford-releases-an-all-human-competing-draft/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Hours after Anthropic claims a Claude proof of the Riemann hypothesis, Stanford releases an all-human competing draft" />
+	<meta property="og:description" content="Anthropic mathematician Levent Alpöge says he used Claude to prove the Riemann hypothesis, math&#039;s most famous open problem for 167 years, with a proof formalized in Lean that spans over 250,000 pages. Just hours later, Stanford researchers published an independent, entirely human competing proof, and mathematicians are now checking whether either one holds up." />
+	<meta property="og:url" content="https://the-decoder.com/hours-after-anthropic-claims-a-claude-proof-of-the-riemann-hypothesis-stanford-releases-an-all-human-competing-draft/" />
+	<meta property="og:site_name" content="The Decoder" />
+	<meta property="article:publisher" content="https://www.facebook.com/TheDecoderDE/" />
+	<meta property="article:published_time" content="2026-11-21T11:19:49+00:00" />
+	<meta property="article:modified_time" content="2026-11-21T11:20:25+00:00" />
+	<meta property="og:image" content="https://the-decoder.com/wp-content/uploads/2026/11/anthropic_riemann.png" />
+	<meta property="og:image:width" content="1376" />
+	<meta property="og:image:height" content="768" />
+	<meta property="og:image:type" content="image/png" />
+	<meta name="author" content="Manuel Uth" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:creator" content="@TheDecoderEN" />
+	<meta name="twitter:site" content="@TheDecoderEN" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"NewsArticle","@id":"https://the-decoder.com/hours-after-anthropic-claims-a-claude-proof-of-the-riemann-hypothesis-stanford-releases-an-all-human-competing-draft/#article","isPartOf":{"@id":"https://the-decoder.com/hours-after-anthropic-claims-a-claude-proof-of-the-riemann-hypothesis-stanford-releases-an-all-human-competing-draft/"},"author":{"name":"Manuel Uth","@id":"https://the-decoder.com/#/schema/person/aa9aa2f76e2969764e88b382b87d3a47"},"headline":"Hours after Anthropic claims a Claude proof of the Riemann hypothesis, Stanford releases an all-human competing draft","datePublished":"2026-11-21T11:19:49+00:00","dateModified":"2026-11-21T11:20:25+00:00","mainEntityOfPage":{"@id":"https://the-decoder.com/hours-after-anthropic-claims-a-claude-proof-of-the-riemann-hypothesis-stanford-releases-an-all-human-competing-draft/"},"wordCount":1705,"commentCount":0,"publisher":{"@id":"https://the-decoder.com/#organization"},"image":{"@id":"https://the-decoder.com/hours-after-anthropic-claims-a-claude-proof-of-the-riemann-hypothesis-stanford-releases-an-all-human-competing-draft/#primaryimage"},"thumbnailUrl":"https://the-decoder.com/wp-content/uploads/2026/11/anthropic_riemann.png","keywords":["AI and math","Anthropic","Math"],"articleSection":["AI research","Artificial Intelligence"],"inLanguage":"en-US","potentialAction":[{"@type":"CommentAction","name":"Comment","target":["https://the-decoder.com/hours-after-anthropic-claims-a-claude-proof-of-the-riemann-hypothesis-stanford-releases-an-all-human-competing-draft/#respond"]}],"copyrightYear":"2026","copyrightHolder":{"@id":"https://the-decoder.com/#organization"}},{"@type":"WebPage","@id":"https://the-decoder.com/hours-after-anthropic-claims-a-claude-proof-of-the-riemann-hypothesis-stanford-releases-an-all-human-competing-draft/","url":"https://the-decoder.com/hours-after-anthropic-claims-a-claude-proof-of-the-riemann-hypothesis-stanford-releases-an-all-human-competing-draft/","name":"Hours after Anthropic claims a Claude proof of the Riemann hypothesis, Stanford releases an all-human competing draft","isPartOf":{"@id":"https://the-decoder.com/#website"},"primaryImageOfPage":{"@id":"https://the-decoder.com/hours-after-anthropic-claims-a-claude-proof-of-the-riemann-hypothesis-stanford-releases-an-all-human-competing-draft/#primaryimage"},"image":{"@id":"https://the-decoder.com/hours-after-anthropic-claims-a-claude-proof-of-the-riemann-hypothesis-stanford-releases-an-all-human-competing-draft/#primaryimage"},"thumbnailUrl":"https://the-decoder.com/wp-content/uploads/2026/11/anthropic_riemann.png","datePublished":"2026-11-21T11:19:49+00:00","dateModified":"2026-11-21T11:20:25+00:00","description":"Anthropic mathematician Levent Alpöge says he used Claude to prove the Riemann hypothesis, math's most famous open problem for 167 years, with a proof formalized in Lean that spans over 250,000 pages. Just hours later, Stanford researchers published an independent, entirely human competing proof, and mathematicians are now checking whether either one holds up.","breadcrumb":{"@id":"https://the-decoder.com/hours-after-anthropic-claims-a-claude-proof-of-the-riemann-hypothesis-stanford-releases-an-all-human-competing-draft/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://the-decoder.com/hours-after-anthropic-claims-a-claude-proof-of-the-riemann-hypothesis-stanford-releases-an-all-human-competing-draft/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https://the-decoder.com/hours-after-anthropic-claims-a-claude-proof-of-the-riemann-hypothesis-stanford-releases-an-all-human-competing-draft/#primaryimage","url":"https://the-decoder.com/wp-content/uploads/2026/11/anthropic_riemann.png","contentUrl":"https://the-decoder.com/wp-content/uploads/2026/11/anthropic_riemann.png","width":1376,"height":768,"caption":"Anthropic mathematician Levent Alpöge claims to have used Claude to prove the Riemann Hypothesis, the most famous unsolved problem in mathematics for the past 167 years. The proof, formalized in Lean, spans over 250,000 pages. Just hours later, Stanford researchers published an independent, entirely human alternative proof. Experts are now reviewing both proofs to determine which, if either, holds up."},{"@type":"BreadcrumbList","@id":"https://the-decoder.com/hours-after-anthropic-claims-a-claude-proof-of-the-riemann-hypothesis-stanford-releases-an-all-human-competing-draft/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Startseite","item":"https://the-decoder.com/"},{"@type":"ListItem","position":2,"name":"Hours after Anthropic claims a Claude proof of the Riemann hypothesis, Stanford releases an all-human competing draft"}]},{"@type":"WebSite","@id":"https://the-decoder.com/#website","url":"https://the-decoder.com/","name":"The Decoder","description":"AI, Menschen, Wirtschaft","publisher":{"@id":"https://the-decoder.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://the-decoder.com/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https://the-decoder.com/#organization","name":"THE-DECODER.com","url":"https://the-decoder.com/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://the-decoder.com/#/schema/logo/image/","url":"https://the-decoder.com/wp-content/uploads/2022/09/The-Decoder_Schema_Logo.png","contentUrl":"https://the-decoder.com/wp-content/uploads/2022/09/The-Decoder_Schema_Logo.png","width":600,"height":180,"caption":"THE-DECODER.com"},"image":{"@id":"https://the-decoder.com/#/schema/logo/image/"},"sameAs":["https://www.facebook.com/TheDecoderDE/","https://x.com/TheDecoderEN","https://www.reddit.com/r/TheDecoder/","https://discord.gg/8VKkHAacn8","https://www.linkedin.com/company/the-decoder-en/"]},{"@type":"Person","@id":"https://the-decoder.com/#/schema/person/aa9aa2f76e2969764e88b382b87d3a47","name":"Manuel Uth","image":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://the-decoder.com/#/schema/person/image/","url":"https://the-decoder.com/wp-content/uploads/2026/08/Manuel-Uth-Portrait-375x375.png","contentUrl":"https://the-decoder.com/wp-content/uploads/2026/08/Manuel-Uth-Portrait-375x375.png","caption":"Manuel Uth"},"description":"Manuel Uth studied philosophy and law before working in the public sector. He covers how AI is reshaping society, the law, and the ethical gray areas in between.","url":"https://the-decoder.com/author/manuel-uth/"}]}</script>
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+<link rel="alternate" type="application/rss+xml" title="The Decoder &raquo; Feed" href="https://the-decoder.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="The Decoder &raquo; Comments Feed" href="https://the-decoder.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="The Decoder &raquo; Hours after Anthropic claims a Claude proof of the Riemann hypothesis, Stanford releases an all-human competing draft Comments Feed" href="https://the-decoder.com/hours-after-anthropic-claims-a-claude-proof-of-the-riemann-hypothesis-stanford-releases-an-all-human-competing-draft/feed/" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://the-decoder.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fthe-decoder.com%2Fhours-after-anthropic-claims-a-claude-proof-of-the-riemann-hypothesis-stanford-releases-an-all-human-competing-draft%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://the-decoder.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fthe-decoder.com%2Fhours-after-anthropic-claims-a-claude-proof-of-the-riemann-hypothesis-stanford-releases-an-all-human-competing-draft%2F&#038;format=xml" />
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<link data-optimized="2" rel="stylesheet" href="https://the-decoder.com/wp-content/litespeed/css/0552ece6a7dc37a100dbf76f5e1ae99c.css?ver=b7c57" />
+<style id="wp-block-library-inline-css">
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-color]){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+</style>
+
+
+
+
+
+
+
+<style id="wpdiscuz-frontend-css-inline-css">
+ #wpdcom .wpd-blog-administrator .wpd-comment-label{color:#ffffff;background-color:#00B38F;border:none}#wpdcom .wpd-blog-administrator .wpd-comment-author, #wpdcom .wpd-blog-administrator .wpd-comment-author a{color:#00B38F}#wpdcom.wpd-layout-1 .wpd-comment .wpd-blog-administrator .wpd-avatar img{border-color:#00B38F}#wpdcom.wpd-layout-2 .wpd-comment.wpd-reply .wpd-comment-wrap.wpd-blog-administrator{border-left:3px solid #00B38F}#wpdcom.wpd-layout-2 .wpd-comment .wpd-blog-administrator .wpd-avatar img{border-bottom-color:#00B38F}#wpdcom.wpd-layout-3 .wpd-blog-administrator .wpd-comment-subheader{border-top:1px dashed #00B38F}#wpdcom.wpd-layout-3 .wpd-reply .wpd-blog-administrator .wpd-comment-right{border-left:1px solid #00B38F}#wpdcom .wpd-blog-editor .wpd-comment-label{color:#ffffff;background-color:#00B38F;border:none}#wpdcom .wpd-blog-editor .wpd-comment-author, #wpdcom .wpd-blog-editor .wpd-comment-author a{color:#00B38F}#wpdcom.wpd-layout-1 .wpd-comment .wpd-blog-editor .wpd-avatar img{border-color:#00B38F}#wpdcom.wpd-layout-2 .wpd-comment.wpd-reply .wpd-comment-wrap.wpd-blog-editor{border-left:3px solid #00B38F}#wpdcom.wpd-layout-2 .wpd-comment .wpd-blog-editor .wpd-avatar img{border-bottom-color:#00B38F}#wpdcom.wpd-layout-3 .wpd-blog-editor .wpd-comment-subheader{border-top:1px dashed #00B38F}#wpdcom.wpd-layout-3 .wpd-reply .wpd-blog-editor .wpd-comment-right{border-left:1px solid #00B38F}#wpdcom .wpd-blog-author .wpd-comment-label{color:#ffffff;background-color:#00B38F;border:none}#wpdcom .wpd-blog-author .wpd-comment-author, #wpdcom .wpd-blog-author .wpd-comment-author a{color:#00B38F}#wpdcom.wpd-layout-1 .wpd-comment .wpd-blog-author .wpd-avatar img{border-color:#00B38F}#wpdcom.wpd-layout-2 .wpd-comment .wpd-blog-author .wpd-avatar img{border-bottom-color:#00B38F}#wpdcom.wpd-layout-3 .wpd-blog-author .wpd-comment-subheader{border-top:1px dashed #00B38F}#wpdcom.wpd-layout-3 .wpd-reply .wpd-blog-author .wpd-comment-right{border-left:1px solid #00B38F}#wpdcom .wpd-blog-contributor .wpd-comment-label{color:#ffffff;background-color:#00B38F;border:none}#wpdcom .wpd-blog-contributor .wpd-comment-author, #wpdcom .wpd-blog-contributor .wpd-comment-author a{color:#00B38F}#wpdcom.wpd-layout-1 .wpd-comment .wpd-blog-contributor .wpd-avatar img{border-color:#00B38F}#wpdcom.wpd-layout-2 .wpd-comment .wpd-blog-contributor .wpd-avatar img{border-bottom-color:#00B38F}#wpdcom.wpd-layout-3 .wpd-blog-contributor .wpd-comment-subheader{border-top:1px dashed #00B38F}#wpdcom.wpd-layout-3 .wpd-reply .wpd-blog-contributor .wpd-comment-right{border-left:1px solid #00B38F}#wpdcom .wpd-blog-subscriber .wpd-comment-label{color:#ffffff;background-color:#00B38F;border:none}#wpdcom .wpd-blog-subscriber .wpd-comment-author, #wpdcom .wpd-blog-subscriber .wpd-comment-author a{color:#00B38F}#wpdcom.wpd-layout-2 .wpd-comment .wpd-blog-subscriber .wpd-avatar img{border-bottom-color:#00B38F}#wpdcom.wpd-layout-3 .wpd-blog-subscriber .wpd-comment-subheader{border-top:1px dashed #00B38F}#wpdcom .wpd-blog-wpseo_manager .wpd-comment-label{color:#ffffff;background-color:#00B38F;border:none}#wpdcom .wpd-blog-wpseo_manager .wpd-comment-author, #wpdcom .wpd-blog-wpseo_manager .wpd-comment-author a{color:#00B38F}#wpdcom.wpd-layout-1 .wpd-comment .wpd-blog-wpseo_manager .wpd-avatar img{border-color:#00B38F}#wpdcom.wpd-layout-2 .wpd-comment .wpd-blog-wpseo_manager .wpd-avatar img{border-bottom-color:#00B38F}#wpdcom.wpd-layout-3 .wpd-blog-wpseo_manager .wpd-comment-subheader{border-top:1px dashed #00B38F}#wpdcom.wpd-layout-3 .wpd-reply .wpd-blog-wpseo_manager .wpd-comment-right{border-left:1px solid #00B38F}#wpdcom .wpd-blog-wpseo_editor .wpd-comment-label{color:#ffffff;background-color:#00B38F;border:none}#wpdcom .wpd-blog-wpseo_editor .wpd-comment-author, #wpdcom .wpd-blog-wpseo_editor .wpd-comment-author a{color:#00B38F}#wpdcom.wpd-layout-1 .wpd-comment .wpd-blog-wpseo_editor .wpd-avatar img{border-color:#00B38F}#wpdcom.wpd-layout-2 .wpd-comment .wpd-blog-wpseo_editor .wpd-avatar img{border-bottom-color:#00B38F}#wpdcom.wpd-layout-3 .wpd-blog-wpseo_editor .wpd-comment-subheader{border-top:1px dashed #00B38F}#wpdcom.wpd-layout-3 .wpd-reply .wpd-blog-wpseo_editor .wpd-comment-right{border-left:1px solid #00B38F}#wpdcom .wpd-blog-decoder_subscriber .wpd-comment-label{color:#ffffff;background-color:#00B38F;border:none}#wpdcom .wpd-blog-decoder_subscriber .wpd-comment-author, #wpdcom .wpd-blog-decoder_subscriber .wpd-comment-author a{color:#00B38F}#wpdcom.wpd-layout-1 .wpd-comment .wpd-blog-decoder_subscriber .wpd-avatar img{border-color:#00B38F}#wpdcom.wpd-layout-2 .wpd-comment .wpd-blog-decoder_subscriber .wpd-avatar img{border-bottom-color:#00B38F}#wpdcom.wpd-layout-3 .wpd-blog-decoder_subscriber .wpd-comment-subheader{border-top:1px dashed #00B38F}#wpdcom.wpd-layout-3 .wpd-reply .wpd-blog-decoder_subscriber .wpd-comment-right{border-left:1px solid #00B38F}#wpdcom .wpd-blog-post_author .wpd-comment-label{color:#ffffff;background-color:#00B38F;border:none}#wpdcom .wpd-blog-post_author .wpd-comment-author, #wpdcom .wpd-blog-post_author .wpd-comment-author a{color:#00B38F}#wpdcom .wpd-blog-post_author .wpd-avatar img{border-color:#00B38F}#wpdcom.wpd-layout-1 .wpd-comment .wpd-blog-post_author .wpd-avatar img{border-color:#00B38F}#wpdcom.wpd-layout-2 .wpd-comment.wpd-reply .wpd-comment-wrap.wpd-blog-post_author{border-left:3px solid #00B38F}#wpdcom.wpd-layout-2 .wpd-comment .wpd-blog-post_author .wpd-avatar img{border-bottom-color:#00B38F}#wpdcom.wpd-layout-3 .wpd-blog-post_author .wpd-comment-subheader{border-top:1px dashed #00B38F}#wpdcom.wpd-layout-3 .wpd-reply .wpd-blog-post_author .wpd-comment-right{border-left:1px solid #00B38F}#wpdcom .wpd-blog-guest .wpd-comment-label{color:#ffffff;background-color:#00B38F;border:none}#wpdcom .wpd-blog-guest .wpd-comment-author, #wpdcom .wpd-blog-guest .wpd-comment-author a{color:#00B38F}#wpdcom.wpd-layout-3 .wpd-blog-guest .wpd-comment-subheader{border-top:1px dashed #00B38F}#comments, #respond, .comments-area, #wpdcom{}#wpdcom .ql-editor > *{color:#777777}#wpdcom .ql-editor::before{}#wpdcom .ql-toolbar{border:1px solid #DDDDDD;border-top:none}#wpdcom .ql-container{border:1px solid #DDDDDD;border-bottom:none}#wpdcom .wpd-form-row .wpdiscuz-item input[type="text"], #wpdcom .wpd-form-row .wpdiscuz-item input[type="email"], #wpdcom .wpd-form-row .wpdiscuz-item input[type="url"], #wpdcom .wpd-form-row .wpdiscuz-item input[type="color"], #wpdcom .wpd-form-row .wpdiscuz-item input[type="date"], #wpdcom .wpd-form-row .wpdiscuz-item input[type="datetime"], #wpdcom .wpd-form-row .wpdiscuz-item input[type="datetime-local"], #wpdcom .wpd-form-row .wpdiscuz-item input[type="month"], #wpdcom .wpd-form-row .wpdiscuz-item input[type="number"], #wpdcom .wpd-form-row .wpdiscuz-item input[type="time"], #wpdcom textarea, #wpdcom select{border:1px solid #DDDDDD;color:#777777}#wpdcom .wpd-form-row .wpdiscuz-item textarea{border:1px solid #DDDDDD}#wpdcom input::placeholder, #wpdcom textarea::placeholder, #wpdcom input::-moz-placeholder, #wpdcom textarea::-webkit-input-placeholder{}#wpdcom .wpd-comment-text{color:#777777}#wpdcom .wpd-thread-head .wpd-thread-info{border-bottom:2px solid #00B38F}#wpdcom .wpd-thread-head .wpd-thread-info.wpd-reviews-tab svg{fill:#00B38F}#wpdcom .wpd-thread-head .wpdiscuz-user-settings{border-bottom:2px solid #00B38F}#wpdcom .wpd-thread-head .wpdiscuz-user-settings:hover{color:#00B38F}#wpdcom .wpd-comment .wpd-follow-link:hover{color:#00B38F}#wpdcom .wpd-comment-status .wpd-sticky{color:#00B38F}#wpdcom .wpd-thread-filter .wpdf-active{color:#00B38F;border-bottom-color:#00B38F}#wpdcom .wpd-comment-info-bar{border:1px dashed #33c3a6;background:#e6f8f4}#wpdcom .wpd-comment-info-bar .wpd-current-view i{color:#00B38F}#wpdcom .wpd-filter-view-all:hover{background:#00B38F}#wpdcom .wpdiscuz-item .wpdiscuz-rating > label{color:#DDDDDD}#wpdcom .wpdiscuz-item .wpdiscuz-rating:not(:checked) > label:hover, .wpdiscuz-rating:not(:checked) > label:hover ~ label{}#wpdcom .wpdiscuz-item .wpdiscuz-rating > input ~ label:hover, #wpdcom .wpdiscuz-item .wpdiscuz-rating > input:not(:checked) ~ label:hover ~ label, #wpdcom .wpdiscuz-item .wpdiscuz-rating > input:not(:checked) ~ label:hover ~ label{color:#FFED85}#wpdcom .wpdiscuz-item .wpdiscuz-rating > input:checked ~ label:hover, #wpdcom .wpdiscuz-item .wpdiscuz-rating > input:checked ~ label:hover, #wpdcom .wpdiscuz-item .wpdiscuz-rating > label:hover ~ input:checked ~ label, #wpdcom .wpdiscuz-item .wpdiscuz-rating > input:checked + label:hover ~ label, #wpdcom .wpdiscuz-item .wpdiscuz-rating > input:checked ~ label:hover ~ label, .wpd-custom-field .wcf-active-star, #wpdcom .wpdiscuz-item .wpdiscuz-rating > input:checked ~ label{color:#FFD700}#wpd-post-rating .wpd-rating-wrap .wpd-rating-stars svg .wpd-star{fill:#DDDDDD}#wpd-post-rating .wpd-rating-wrap .wpd-rating-stars svg .wpd-active{fill:#FFD700}#wpd-post-rating .wpd-rating-wrap .wpd-rate-starts svg .wpd-star{fill:#DDDDDD}#wpd-post-rating .wpd-rating-wrap .wpd-rate-starts:hover svg .wpd-star{fill:#FFED85}#wpd-post-rating.wpd-not-rated .wpd-rating-wrap .wpd-rate-starts svg:hover ~ svg .wpd-star{fill:#DDDDDD}.wpdiscuz-post-rating-wrap .wpd-rating .wpd-rating-wrap .wpd-rating-stars svg .wpd-star{fill:#DDDDDD}.wpdiscuz-post-rating-wrap .wpd-rating .wpd-rating-wrap .wpd-rating-stars svg .wpd-active{fill:#FFD700}#wpdcom .wpd-comment .wpd-follow-active{color:#ff7a00}#wpdcom .page-numbers{color:#555;border:#555 1px solid}#wpdcom span.current{background:#555}#wpdcom.wpd-layout-1 .wpd-new-loaded-comment > .wpd-comment-wrap > .wpd-comment-right{background:#FFFAD6}#wpdcom.wpd-layout-2 .wpd-new-loaded-comment.wpd-comment > .wpd-comment-wrap > .wpd-comment-right{background:#FFFAD6}#wpdcom.wpd-layout-2 .wpd-new-loaded-comment.wpd-comment.wpd-reply > .wpd-comment-wrap > .wpd-comment-right{background:transparent}#wpdcom.wpd-layout-2 .wpd-new-loaded-comment.wpd-comment.wpd-reply > .wpd-comment-wrap{background:#FFFAD6}#wpdcom.wpd-layout-3 .wpd-new-loaded-comment.wpd-comment > .wpd-comment-wrap > .wpd-comment-right{background:#FFFAD6}#wpdcom .wpd-follow:hover i, #wpdcom .wpd-unfollow:hover i, #wpdcom .wpd-comment .wpd-follow-active:hover i{color:#00B38F}#wpdcom .wpdiscuz-readmore{cursor:pointer;color:#00B38F}.wpd-custom-field .wcf-pasiv-star, #wpcomm .wpdiscuz-item .wpdiscuz-rating > label{color:#DDDDDD}.wpd-wrapper .wpd-list-item.wpd-active{border-top:3px solid #00B38F}#wpdcom.wpd-layout-2 .wpd-comment.wpd-reply.wpd-unapproved-comment .wpd-comment-wrap{border-left:3px solid #FFFAD6}#wpdcom.wpd-layout-3 .wpd-comment.wpd-reply.wpd-unapproved-comment .wpd-comment-right{border-left:1px solid #FFFAD6}#wpdcom .wpd-prim-button{background-color:#07B290;color:#FFFFFF}#wpdcom .wpd_label__check i.wpdicon-on{color:#07B290;border:1px solid #83d9c8}#wpd-bubble-wrapper #wpd-bubble-all-comments-count{color:#1DB99A}#wpd-bubble-wrapper > div{background-color:#1DB99A}#wpd-bubble-wrapper > #wpd-bubble #wpd-bubble-add-message{background-color:#1DB99A}#wpd-bubble-wrapper > #wpd-bubble #wpd-bubble-add-message::before{border-left-color:#1DB99A;border-right-color:#1DB99A}#wpd-bubble-wrapper.wpd-right-corner > #wpd-bubble #wpd-bubble-add-message::before{border-left-color:#1DB99A;border-right-color:#1DB99A}.wpd-inline-icon-wrapper path.wpd-inline-icon-first{fill:#1DB99A}.wpd-inline-icon-count{background-color:#1DB99A}.wpd-inline-icon-count::before{border-right-color:#1DB99A}.wpd-inline-form-wrapper::before{border-bottom-color:#1DB99A}.wpd-inline-form-question{background-color:#1DB99A}.wpd-inline-form{background-color:#1DB99A}.wpd-last-inline-comments-wrapper{border-color:#1DB99A}.wpd-last-inline-comments-wrapper::before{border-bottom-color:#1DB99A}.wpd-last-inline-comments-wrapper .wpd-view-all-inline-comments{background:#1DB99A}.wpd-last-inline-comments-wrapper .wpd-view-all-inline-comments:hover,.wpd-last-inline-comments-wrapper .wpd-view-all-inline-comments:active,.wpd-last-inline-comments-wrapper .wpd-view-all-inline-comments:focus{background-color:#1DB99A}#wpdcom .ql-snow .ql-tooltip[data-mode="link"]::before{content:"Enter link:"}#wpdcom .ql-snow .ql-tooltip.ql-editing a.ql-action::after{content:"Save"}.comments-area{width:auto}
+/*# sourceURL=wpdiscuz-frontend-css-inline-css */
+</style>
+
+
+<script id="jquery-core-js-extra">
+var deep_content_ajax = {"ajax_url":"https://the-decoder.com/wp-admin/admin-ajax.php","nonce":"c82156b388"};
+//# sourceURL=jquery-core-js-extra
+</script>
+<script id="jquery-core-js" src="https://the-decoder.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"></script>
+<script data-optimized="1" id="jquery-migrate-js" src="https://the-decoder.com/wp-content/litespeed/js/455d76ecbc189b7a3e4d570989955e4e.js?ver=af59b"></script>
+<link rel='shortlink' href='https://the-decoder.com/?p=43157' />
+    <style type="text/css">
+        #wpadminbar {
+            z-index: 9999999999;
+        }
+        /* Plus any other styles you may need to add for the menu */
+    </style>
+
+  <!-- Favicons/Manifest -->
+  <link rel="apple-touch-icon" sizes="60x60" href="/resources/favicons/apple-touch-icon-60x60.png?v=3">
+  <link rel="apple-touch-icon" sizes="76x76" href="/resources/favicons/apple-touch-icon-76x76.png?v=3">
+  <link rel="apple-touch-icon" sizes="120x120" href="/resources/favicons/apple-touch-icon-120x120.png?v=3">
+  <link rel="apple-touch-icon" sizes="152x152" href="/resources/favicons/apple-touch-icon-152x152.png?v=3">
+  <link rel="apple-touch-icon" sizes="180x180" href="/resources/favicons/apple-touch-icon-180x180.png?v=3">
+  <link rel="icon" type="image/png" sizes="32x32" href="/resources/favicons/favicon-32x32.png?v=3">
+  <link rel="icon" type="image/png" sizes="194x194" href="/resources/favicons/favicon-194x194.png?v=3">
+  <link rel="icon" type="image/png" sizes="192x192" href="/resources/favicons/android-chrome-192x192.png?v=3">
+  <link rel="icon" type="image/png" sizes="256x256" href="/resources/favicons/android-chrome-256x256.png?v=3">
+  <link rel="icon" type="image/png" sizes="16x16" href="/resources/favicons/favicon-16x16.png?v=3">
+  <link rel="icon" type="image/png" sizes="96x96" href="/resources/favicons/favicon-96x96.png?v=3">
+  <link rel="manifest" href="site.webmanifest?v=3">
+  <link rel="mask-icon" href="/resources/favicons/safari-pinned-tab.svg?v=3" color="#28293d">
+  <link rel="shortcut icon" href="favicon.ico?v=3">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/resources/favicons/mstile-144x144.png?v=3">
+  <meta name="msapplication-config" content="browserconfig.xml?v=3">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- DC Data Tag Manager -->
+  <script>
+    var _mtm = window._mtm = window._mtm || [];
+    _mtm.push({
+      'mtm.startTime': (new Date().getTime()),
+      'event': 'mtm.Start'
+    });
+    var d = document,
+      g = d.createElement('script');
+    g.async = true;
+    g.src = 'https://data.deep-content.io/js/container_gD7TEUvg.js';
+    // Abweichend vom bisherigen Code: appendChild statt
+    // insertBefore(getElementsByTagName('script')[0]). insertBefore
+    // haette den Container VOR die Consentmanager-CMP gehaengt, die als
+    // erstes Script im Head steht - deren Auto-Blocking greift dann
+    // nicht zuverlaessig.
+    (d.head || d.getElementsByTagName('head')[0]).appendChild(g);
+  </script>
+  <!-- End DC Data Tag Manager -->
+
+<link rel="pingback" href="https://the-decoder.com/xmlrpc.php"><style id="wp-custom-css">
+
+
+</style>
+</head>
+
+<body class="wp-singular post-template-default single single-post postid-43157 single-format-standard wp-embed-responsive wp-theme-deep-content the-decoder decoder-narrow">
+
+<div class="decoder-top-ad-wrapper"><div style="max-width: 1080px; width: 100%; position: relative;"><div class="ad-notice" style="font-size: 11px; color: #ffffff; text-transform: uppercase; letter-spacing: 1px; font-weight: 500;">Ad</div><div class="ad-container ad" style="min-height: 250px; background: #ffffff; border: 1px solid #e9ecef; display: flex; align-items: center; justify-content: center;"><div id="the-decoder.com_dynamic_ad" class="ad"></div></div></div></div><div class="ad-right-wrapper"><div class="ad-right-container"><div class="ad-container ad"><div id="the-decoder.com_sky_1" class="ad"></div></div></div></div><div class="ad-left-wrapper"><div class="ad-left-container"><div class="ad-container ad"><div id="the-decoder.com_sky_2" class="ad"></div></div></div></div>
+<div id="page" class="flex flex-col mx-auto w-full max-w-decoder lg:px-2 xl:px-0">
+	<a href="#content" class="sr-only">Skip to content</a>
+
+	
+<header id="masthead" class="relative py-8 px-2 lg:px-0">
+
+	<!-- Mobile/Tablet: Switch zentriert wie main content (ohne Sidebar) -->
+	<div class="flex lg:hidden justify-center">
+		<div class="w-full max-w-2xl flex flex-row justify-between items-center">
+			
+<div>
+	<label class="switch bg-white rounded-xl p-1 switch--decoder-only">
+
+		<!-- background -->
+		<input class="switch__input" type="checkbox" role="switch" />
+
+		<!-- decoder -->
+		<a href="https://the-decoder.com/" class="switch__theDecoder" id="theDecoder">
+			<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 106 31">
+				<g>
+					<path class="switch__letters" d="M48.1 7.6c-.4 0-.7-.1-.9-.3-.3-.2-.4-.5-.4-1V3.1h-.9v-.7h.9V1h.8v1.4H49v.7h-1.4V6c0 .3 0 .5.1.6 0 .1.3.2.6.2h.7v.7h-.8Zm2-.1V.2h.8V3v-.2c.2-.1.5-.3.8-.3.3 0 .6-.1.8-.1.4 0 .8 0 1.1.2.3.2.5.4.7.7.2.3.2.7.2 1.2v3h-.8v-3c0-.5-.1-.8-.3-1.1s-.6-.4-1-.4-.5 0-.7.1c-.3 0-.5.2-.8.3v4.1h-.8Zm8.1.1c-.5 0-.9 0-1.3-.3-.4-.2-.6-.5-.8-.9-.2-.4-.3-.9-.3-1.5 0-.9.2-1.5.6-2 .4-.4 1-.7 1.7-.7s1 .1 1.4.4c.3.2.6.6.7 1 .1.4.2.9.2 1.4h-4.2v-.7h3.7-.3c0-.4-.2-.8-.4-1-.2-.2-.6-.4-1.1-.4s-.6 0-.9.2c-.2.1-.4.3-.5.6-.1.3-.2.7-.2 1.3s.1 1.1.4 1.4.7.5 1.3.5h.7c.2 0 .4 0 .6-.2.2 0 .3-.1.5-.2v.7c-.3.1-.5.2-.8.3h-1Z" class="st0"/>
+				</g>
+				<g>
+					<path class="switch__letters" d="M43.3 27c.4 0 .8.1 1 .4.3.3.4.6.4 1s-.1.7-.4 1c-.3.3-.6.4-1 .4h-2.6c-1 0-1.9-.2-2.8-.5-.8-.3-1.6-.8-2.3-1.4-.7-.6-1.2-1.3-1.6-2-.4-.8-.6-1.6-.7-2.5 0-.4.1-.8.4-1 .3-.3.7-.4 1.1-.4s.9.1 1.2.4c.3.3.4.6.4 1s.1 1 .4 1.4c.2.4.6.8.9 1.1.4.3.8.6 1.3.8.5.2 1 .3 1.5.3h2.6ZM43.2 13.2c.4 0 .8.1 1 .4.3.3.4.6.4 1s-.1.7-.4 1c-.3.3-.6.4-1 .4h-2.4c-.5 0-1.1 0-1.5.3-.5.2-.9.4-1.3.8-.4.3-.7.7-.9 1.1-.2.4-.4.9-.4 1.4s-.1.8-.4 1c-.3.3-.7.4-1.2.4s-.9-.1-1.1-.4c-.3-.3-.4-.6-.4-1 0-.9.2-1.8.6-2.5.4-.8.9-1.5 1.6-2 .7-.6 1.4-1 2.3-1.4.9-.3 1.8-.5 2.8-.5h2.4Z" class="st0"/>
+				</g>
+				<g>
+					<path class="switch__letters" d="M60.3 19.6c0 .4-.1.8-.4 1-.3.3-.7.4-1.1.4s-.9-.1-1.1-.4c-.3-.3-.4-.6-.4-1s-.1-1-.3-1.5c-.2-.5-.5-.9-.9-1.3s-.8-.6-1.3-.8c-.5-.2-1.1-.3-1.6-.3-.6 0-1.1.1-1.6.3-.5.2-1 .5-1.3.8-.4.4-.6.8-.8 1.2-.2.5-.3 1-.3 1.5s-.1.8-.4 1c-.3.3-.7.4-1.2.4s-.8-.1-1.1-.4c-.3-.3-.4-.6-.4-1 0-.9.2-1.8.6-2.6.4-.8 1-1.5 1.6-2.1s1.4-1.1 2.2-1.4c.8-.4 1.7-.5 2.8-.5s1.9.2 2.8.5c.8.4 1.6.8 2.2 1.5.7.6 1.2 1.3 1.6 2.2.4.8.6 1.7.6 2.6ZM60.3 23.4c0 .9-.2 1.8-.6 2.6-.4.8-.9 1.5-1.6 2.2-.7.6-1.4 1.1-2.2 1.5-.8.4-1.8.5-2.8.5s-2-.2-2.8-.5c-.8-.4-1.6-.8-2.3-1.5-.7-.6-1.2-1.3-1.6-2.1-.4-.8-.6-1.7-.6-2.6s0-.4.1-.6c0-.2.2-.3.3-.5.1-.1.3-.2.5-.3.2 0 .4-.1.7-.1.5 0 .9.1 1.2.4s.4.6.4 1 .1 1.1.3 1.6.5.9.8 1.2c.4.3.8.6 1.3.8.5.2 1.1.3 1.6.3s1.1-.1 1.6-.3c.5-.2 1-.5 1.3-.8.4-.4.6-.8.8-1.2.2-.5.3-1 .3-1.5s.1-.8.4-1c.3-.3.7-.4 1.1-.4s.9.1 1.1.4c.3.3.4.6.4 1Z" class="st0"/>
+				</g>
+				<g>
+					<path class="switch__letters" d="M76.3 28.4c0 .4-.1.7-.4 1-.2.3-.6.4-1 .4l-5 .2h-.6c-1 0-2-.2-2.9-.6-.9-.4-1.6-.9-2.3-1.6-.7-.7-1.2-1.4-1.6-2.2s-.6-1.7-.6-2.7v-3.2c0-.9.2-1.8.5-2.6.4-.8.8-1.5 1.4-2.1.6-.6 1.3-1.1 2.1-1.5.8-.4 1.7-.6 2.7-.6h1.7c.4 0 .8.2 1 .5.3.3.4.6.4 1s-.1.8-.4 1c-.3.2-.6.4-1 .4h-1.5c-.5 0-1 .1-1.5.3-.5.2-.9.5-1.2.8-.3.4-.6.8-.8 1.3-.2.5-.3 1-.3 1.5v3.2c0 .6 0 1.1.3 1.6.2.5.5 1 .9 1.3.4.4.9.7 1.4.9.5.2 1.1.3 1.6.3l5.5-.2h.6c.2 0 .3.2.5.3.1.1.2.3.3.5 0 .2.1.4.1.6Z" class="st0"/>
+					<path class="switch__letters" d="M73 9.1c0-.4.1-.7.4-1 .3-.3.7-.4 1.1-.4s.9.1 1.1.4c.3.3.4.6.4 1v15.6c0 .4-.1.7-.4 1-.3.3-.7.4-1.1.4s-.9-.1-1.1-.4c-.3-.3-.4-.6-.4-1V9.1Z" class="st0"/>
+				</g>
+				<g>
+					<path class="switch__letters" d="M82.8 21.5c0-.4.1-.7.4-1 .2-.3.6-.4 1-.4h6.5v-.3c0-.6 0-1.1-.3-1.6-.2-.5-.5-.9-.8-1.3-.4-.4-.8-.7-1.3-.9-.5-.2-1.1-.3-1.8-.3s-1.1.1-1.6.3c-.5.2-1 .5-1.4.8-.4.3-.7.8-.9 1.2-.2.5-.3 1-.3 1.5s-.1.8-.4 1c-.3.3-.7.4-1.2.4s-.8-.1-1.1-.4c-.3-.3-.4-.6-.4-1 0-.9.2-1.8.6-2.6.4-.8.9-1.5 1.6-2.1.7-.6 1.4-1.1 2.3-1.4.9-.4 1.8-.5 2.9-.5s2.1.2 3 .6c.9.4 1.6.9 2.3 1.5.6.6 1.2 1.4 1.5 2.2.4.8.6 1.7.6 2.7v1.8c0 .2 0 .4-.1.6 0 .2-.2.3-.3.4-.1.1-.3.2-.5.3-.2 0-.4.1-.6.1h-8.1c-.4 0-.8-.1-1-.4-.2-.3-.4-.6-.4-1ZM90 27c.4 0 .7.1 1 .4.3.3.4.6.4 1s-.1.7-.4 1c-.3.3-.6.4-1 .4h-3.8c-1 0-2-.2-2.8-.5-.8-.3-1.6-.8-2.2-1.3-.6-.6-1.1-1.2-1.5-2-.4-.8-.5-1.6-.5-2.6s.1-.7.4-1c.3-.3.7-.4 1.1-.4s.9.1 1.2.4c.3.3.4.6.4 1s0 1 .3 1.5c.2.4.4.8.8 1.1.4.3.8.6 1.3.7.5.2 1 .3 1.6.3h3.8Z" class="st0"/>
+				</g>
+				<g>
+					<path class="switch__letters" d="M96.7 17.6c0-.6.1-1.2.4-1.7s.6-1 1-1.4c.4-.4.9-.7 1.5-1 .6-.2 1.2-.3 1.9-.3h3c.5 0 .8.2 1 .5.2.3.4.6.4 1s0 .4-.1.6-.2.3-.3.5c-.1.1-.3.2-.5.3-.2 0-.4.1-.6 0h-3.7c-.2 0-.4.2-.5.3-.2.1-.3.3-.3.5v11.8c0 .4-.1.7-.4 1-.3.3-.7.4-1.1.4s-.9-.1-1.1-.4c-.3-.3-.4-.6-.4-1V17.5ZM14.3 28.4c0 .4-.1.7-.4 1-.2.3-.6.4-1 .4l-5 .2h-.6c-1 0-2-.2-2.9-.6-.9-.4-1.6-.9-2.3-1.6-.7-.7-1.2-1.4-1.6-2.2-.4-.8-.6-1.7-.6-2.7v-3.2c0-.9.2-1.8.5-2.6.4-.8.8-1.5 1.4-2.1s1.3-1.1 2.1-1.5c.8-.4 1.7-.6 2.7-.6h1.7c.4 0 .8.2 1 .5.3.3.4.6.4 1s-.1.8-.4 1c-.3.2-.6.4-1 .4H6.8c-.5 0-1 .1-1.5.3-.5.2-.9.5-1.2.8-.3.4-.6.8-.8 1.3-.2.5-.3 1-.3 1.5v3.2c0 .6 0 1.1.3 1.6.2.5.5 1 .9 1.3.4.4.9.7 1.4.9.5.2 1.1.3 1.6.3l5.5-.2h.6c.2 0 .3.2.5.3.1.1.2.3.3.5 0 .2.1.4.1.6ZM10.9 9.1c0-.4.1-.7.4-1 .3-.3.7-.4 1.1-.4s.9.1 1.1.4c.3.3.4.6.4 1v15.6c0 .4-.1.7-.4 1-.3.3-.7.4-1.1.4s-.9-.1-1.1-.4c-.3-.3-.4-.6-.4-1V9.1ZM20.8 21.5c0-.4.1-.7.4-1 .2-.3.6-.4 1-.4h6.5v-.3c0-.6 0-1.1-.3-1.6-.2-.5-.5-.9-.8-1.3-.4-.4-.8-.7-1.3-.9-.5-.2-1.1-.3-1.8-.3s-1.1.1-1.6.3c-.5.2-1 .5-1.4.8-.4.3-.7.8-.9 1.2-.2.5-.3 1-.3 1.5s-.1.8-.4 1c-.3.3-.7.4-1.2.4s-.8-.1-1.1-.4c-.3-.3-.4-.6-.4-1 0-.9.2-1.8.6-2.6.4-.8.9-1.5 1.6-2.1.7-.6 1.4-1.1 2.3-1.4.9-.4 1.8-.5 2.9-.5s2.1.2 3 .6c.9.4 1.6.9 2.3 1.5.6.6 1.2 1.4 1.5 2.2s.6 1.7.6 2.7v1.8c0 .2 0 .4-.1.6 0 .2-.2.3-.3.4-.1.1-.3.2-.5.3-.2 0-.4.1-.6.1h-8.1c-.4 0-.8-.1-1-.4-.2-.3-.4-.6-.4-1ZM28 27c.4 0 .7.1 1 .4.3.3.4.6.4 1s-.1.7-.4 1-.6.4-1 .4h-3.8c-1 0-2-.2-2.8-.5s-1.6-.8-2.2-1.3c-.6-.6-1.1-1.2-1.5-2-.4-.8-.5-1.6-.5-2.6s.1-.7.4-1c.3-.3.7-.4 1.1-.4s.9.1 1.2.4c.3.3.4.6.4 1s0 1 .3 1.5c.2.4.4.8.8 1.1.4.3.8.6 1.3.7.5.2 1 .3 1.6.3h3.8Z" class="st0"/>
+				</g>
+			</svg>
+		</a>
+
+
+		<!-- KI Pro: always show as link -->
+		
+	</label>
+
+
+
+	<!-- <div class="d-flex">
+					<p><a href="https://the-decoder.com/" rel="home">The Decoder</a></p>
+						<p>AI, Menschen, Wirtschaft</p>
+			</div> -->
+
+</div>
+			<nav id="site-navigation-mobile" class="nav flex items-center gap-4 px-4 py-2.25 rounded-xl" aria-label="Main Navigation">
+									<a href="https://the-decoder.com/sign-in/" class="hidden sm:block bg-white hover:bg-(--heise-primary) hover:*:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-regular rounded-sm sm:w-auto px-3 py-0.5 text-center">
+						<span class="text-(--heise-primary)">
+							Log In						</span>
+					</a>
+													<a href="https://the-decoder.com/subscription/" class="button hidden sm:block text-white bg-(--heise-primary) hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-regular rounded-sm sm:w-auto px-3 py-0.5 text-center no-underline">
+						<i class="icon-ai mr-2 text-sm icon-bold"></i>
+						Subscribe					</a>
+													<a href="https://the-decoder.com/subscription/" class="header-plans-link sm:hidden">See plans</a>
+													<a href="https://the-decoder.de/?p=65380" class="hidden sm:block text-white" alt="Switch Language">DE<span class="sr-only">Switch to German</span></a>
+								<button aria-controls="primary-menu" aria-expanded="false" class="menu-toggle">
+					<i class="icon-hamburger-nav icon-bold text-white text-2xl"></i>
+					<span class="sr-only">Open menu</span>
+				</button>
+			</nav>
+		</div>
+	</div>
+
+	<!-- Desktop: volle Breite (mit Sidebar) -->
+	<div class="hidden lg:flex flex-row justify-between items-center">
+		
+<div>
+	<label class="switch bg-white rounded-xl p-1 switch--decoder-only">
+
+		<!-- background -->
+		<input class="switch__input" type="checkbox" role="switch" />
+
+		<!-- decoder -->
+		<a href="https://the-decoder.com/" class="switch__theDecoder" id="theDecoder">
+			<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 106 31">
+				<g>
+					<path class="switch__letters" d="M48.1 7.6c-.4 0-.7-.1-.9-.3-.3-.2-.4-.5-.4-1V3.1h-.9v-.7h.9V1h.8v1.4H49v.7h-1.4V6c0 .3 0 .5.1.6 0 .1.3.2.6.2h.7v.7h-.8Zm2-.1V.2h.8V3v-.2c.2-.1.5-.3.8-.3.3 0 .6-.1.8-.1.4 0 .8 0 1.1.2.3.2.5.4.7.7.2.3.2.7.2 1.2v3h-.8v-3c0-.5-.1-.8-.3-1.1s-.6-.4-1-.4-.5 0-.7.1c-.3 0-.5.2-.8.3v4.1h-.8Zm8.1.1c-.5 0-.9 0-1.3-.3-.4-.2-.6-.5-.8-.9-.2-.4-.3-.9-.3-1.5 0-.9.2-1.5.6-2 .4-.4 1-.7 1.7-.7s1 .1 1.4.4c.3.2.6.6.7 1 .1.4.2.9.2 1.4h-4.2v-.7h3.7-.3c0-.4-.2-.8-.4-1-.2-.2-.6-.4-1.1-.4s-.6 0-.9.2c-.2.1-.4.3-.5.6-.1.3-.2.7-.2 1.3s.1 1.1.4 1.4.7.5 1.3.5h.7c.2 0 .4 0 .6-.2.2 0 .3-.1.5-.2v.7c-.3.1-.5.2-.8.3h-1Z" class="st0"/>
+				</g>
+				<g>
+					<path class="switch__letters" d="M43.3 27c.4 0 .8.1 1 .4.3.3.4.6.4 1s-.1.7-.4 1c-.3.3-.6.4-1 .4h-2.6c-1 0-1.9-.2-2.8-.5-.8-.3-1.6-.8-2.3-1.4-.7-.6-1.2-1.3-1.6-2-.4-.8-.6-1.6-.7-2.5 0-.4.1-.8.4-1 .3-.3.7-.4 1.1-.4s.9.1 1.2.4c.3.3.4.6.4 1s.1 1 .4 1.4c.2.4.6.8.9 1.1.4.3.8.6 1.3.8.5.2 1 .3 1.5.3h2.6ZM43.2 13.2c.4 0 .8.1 1 .4.3.3.4.6.4 1s-.1.7-.4 1c-.3.3-.6.4-1 .4h-2.4c-.5 0-1.1 0-1.5.3-.5.2-.9.4-1.3.8-.4.3-.7.7-.9 1.1-.2.4-.4.9-.4 1.4s-.1.8-.4 1c-.3.3-.7.4-1.2.4s-.9-.1-1.1-.4c-.3-.3-.4-.6-.4-1 0-.9.2-1.8.6-2.5.4-.8.9-1.5 1.6-2 .7-.6 1.4-1 2.3-1.4.9-.3 1.8-.5 2.8-.5h2.4Z" class="st0"/>
+				</g>
+				<g>
+					<path class="switch__letters" d="M60.3 19.6c0 .4-.1.8-.4 1-.3.3-.7.4-1.1.4s-.9-.1-1.1-.4c-.3-.3-.4-.6-.4-1s-.1-1-.3-1.5c-.2-.5-.5-.9-.9-1.3s-.8-.6-1.3-.8c-.5-.2-1.1-.3-1.6-.3-.6 0-1.1.1-1.6.3-.5.2-1 .5-1.3.8-.4.4-.6.8-.8 1.2-.2.5-.3 1-.3 1.5s-.1.8-.4 1c-.3.3-.7.4-1.2.4s-.8-.1-1.1-.4c-.3-.3-.4-.6-.4-1 0-.9.2-1.8.6-2.6.4-.8 1-1.5 1.6-2.1s1.4-1.1 2.2-1.4c.8-.4 1.7-.5 2.8-.5s1.9.2 2.8.5c.8.4 1.6.8 2.2 1.5.7.6 1.2 1.3 1.6 2.2.4.8.6 1.7.6 2.6ZM60.3 23.4c0 .9-.2 1.8-.6 2.6-.4.8-.9 1.5-1.6 2.2-.7.6-1.4 1.1-2.2 1.5-.8.4-1.8.5-2.8.5s-2-.2-2.8-.5c-.8-.4-1.6-.8-2.3-1.5-.7-.6-1.2-1.3-1.6-2.1-.4-.8-.6-1.7-.6-2.6s0-.4.1-.6c0-.2.2-.3.3-.5.1-.1.3-.2.5-.3.2 0 .4-.1.7-.1.5 0 .9.1 1.2.4s.4.6.4 1 .1 1.1.3 1.6.5.9.8 1.2c.4.3.8.6 1.3.8.5.2 1.1.3 1.6.3s1.1-.1 1.6-.3c.5-.2 1-.5 1.3-.8.4-.4.6-.8.8-1.2.2-.5.3-1 .3-1.5s.1-.8.4-1c.3-.3.7-.4 1.1-.4s.9.1 1.1.4c.3.3.4.6.4 1Z" class="st0"/>
+				</g>
+				<g>
+					<path class="switch__letters" d="M76.3 28.4c0 .4-.1.7-.4 1-.2.3-.6.4-1 .4l-5 .2h-.6c-1 0-2-.2-2.9-.6-.9-.4-1.6-.9-2.3-1.6-.7-.7-1.2-1.4-1.6-2.2s-.6-1.7-.6-2.7v-3.2c0-.9.2-1.8.5-2.6.4-.8.8-1.5 1.4-2.1.6-.6 1.3-1.1 2.1-1.5.8-.4 1.7-.6 2.7-.6h1.7c.4 0 .8.2 1 .5.3.3.4.6.4 1s-.1.8-.4 1c-.3.2-.6.4-1 .4h-1.5c-.5 0-1 .1-1.5.3-.5.2-.9.5-1.2.8-.3.4-.6.8-.8 1.3-.2.5-.3 1-.3 1.5v3.2c0 .6 0 1.1.3 1.6.2.5.5 1 .9 1.3.4.4.9.7 1.4.9.5.2 1.1.3 1.6.3l5.5-.2h.6c.2 0 .3.2.5.3.1.1.2.3.3.5 0 .2.1.4.1.6Z" class="st0"/>
+					<path class="switch__letters" d="M73 9.1c0-.4.1-.7.4-1 .3-.3.7-.4 1.1-.4s.9.1 1.1.4c.3.3.4.6.4 1v15.6c0 .4-.1.7-.4 1-.3.3-.7.4-1.1.4s-.9-.1-1.1-.4c-.3-.3-.4-.6-.4-1V9.1Z" class="st0"/>
+				</g>
+				<g>
+					<path class="switch__letters" d="M82.8 21.5c0-.4.1-.7.4-1 .2-.3.6-.4 1-.4h6.5v-.3c0-.6 0-1.1-.3-1.6-.2-.5-.5-.9-.8-1.3-.4-.4-.8-.7-1.3-.9-.5-.2-1.1-.3-1.8-.3s-1.1.1-1.6.3c-.5.2-1 .5-1.4.8-.4.3-.7.8-.9 1.2-.2.5-.3 1-.3 1.5s-.1.8-.4 1c-.3.3-.7.4-1.2.4s-.8-.1-1.1-.4c-.3-.3-.4-.6-.4-1 0-.9.2-1.8.6-2.6.4-.8.9-1.5 1.6-2.1.7-.6 1.4-1.1 2.3-1.4.9-.4 1.8-.5 2.9-.5s2.1.2 3 .6c.9.4 1.6.9 2.3 1.5.6.6 1.2 1.4 1.5 2.2.4.8.6 1.7.6 2.7v1.8c0 .2 0 .4-.1.6 0 .2-.2.3-.3.4-.1.1-.3.2-.5.3-.2 0-.4.1-.6.1h-8.1c-.4 0-.8-.1-1-.4-.2-.3-.4-.6-.4-1ZM90 27c.4 0 .7.1 1 .4.3.3.4.6.4 1s-.1.7-.4 1c-.3.3-.6.4-1 .4h-3.8c-1 0-2-.2-2.8-.5-.8-.3-1.6-.8-2.2-1.3-.6-.6-1.1-1.2-1.5-2-.4-.8-.5-1.6-.5-2.6s.1-.7.4-1c.3-.3.7-.4 1.1-.4s.9.1 1.2.4c.3.3.4.6.4 1s0 1 .3 1.5c.2.4.4.8.8 1.1.4.3.8.6 1.3.7.5.2 1 .3 1.6.3h3.8Z" class="st0"/>
+				</g>
+				<g>
+					<path class="switch__letters" d="M96.7 17.6c0-.6.1-1.2.4-1.7s.6-1 1-1.4c.4-.4.9-.7 1.5-1 .6-.2 1.2-.3 1.9-.3h3c.5 0 .8.2 1 .5.2.3.4.6.4 1s0 .4-.1.6-.2.3-.3.5c-.1.1-.3.2-.5.3-.2 0-.4.1-.6 0h-3.7c-.2 0-.4.2-.5.3-.2.1-.3.3-.3.5v11.8c0 .4-.1.7-.4 1-.3.3-.7.4-1.1.4s-.9-.1-1.1-.4c-.3-.3-.4-.6-.4-1V17.5ZM14.3 28.4c0 .4-.1.7-.4 1-.2.3-.6.4-1 .4l-5 .2h-.6c-1 0-2-.2-2.9-.6-.9-.4-1.6-.9-2.3-1.6-.7-.7-1.2-1.4-1.6-2.2-.4-.8-.6-1.7-.6-2.7v-3.2c0-.9.2-1.8.5-2.6.4-.8.8-1.5 1.4-2.1s1.3-1.1 2.1-1.5c.8-.4 1.7-.6 2.7-.6h1.7c.4 0 .8.2 1 .5.3.3.4.6.4 1s-.1.8-.4 1c-.3.2-.6.4-1 .4H6.8c-.5 0-1 .1-1.5.3-.5.2-.9.5-1.2.8-.3.4-.6.8-.8 1.3-.2.5-.3 1-.3 1.5v3.2c0 .6 0 1.1.3 1.6.2.5.5 1 .9 1.3.4.4.9.7 1.4.9.5.2 1.1.3 1.6.3l5.5-.2h.6c.2 0 .3.2.5.3.1.1.2.3.3.5 0 .2.1.4.1.6ZM10.9 9.1c0-.4.1-.7.4-1 .3-.3.7-.4 1.1-.4s.9.1 1.1.4c.3.3.4.6.4 1v15.6c0 .4-.1.7-.4 1-.3.3-.7.4-1.1.4s-.9-.1-1.1-.4c-.3-.3-.4-.6-.4-1V9.1ZM20.8 21.5c0-.4.1-.7.4-1 .2-.3.6-.4 1-.4h6.5v-.3c0-.6 0-1.1-.3-1.6-.2-.5-.5-.9-.8-1.3-.4-.4-.8-.7-1.3-.9-.5-.2-1.1-.3-1.8-.3s-1.1.1-1.6.3c-.5.2-1 .5-1.4.8-.4.3-.7.8-.9 1.2-.2.5-.3 1-.3 1.5s-.1.8-.4 1c-.3.3-.7.4-1.2.4s-.8-.1-1.1-.4c-.3-.3-.4-.6-.4-1 0-.9.2-1.8.6-2.6.4-.8.9-1.5 1.6-2.1.7-.6 1.4-1.1 2.3-1.4.9-.4 1.8-.5 2.9-.5s2.1.2 3 .6c.9.4 1.6.9 2.3 1.5.6.6 1.2 1.4 1.5 2.2s.6 1.7.6 2.7v1.8c0 .2 0 .4-.1.6 0 .2-.2.3-.3.4-.1.1-.3.2-.5.3-.2 0-.4.1-.6.1h-8.1c-.4 0-.8-.1-1-.4-.2-.3-.4-.6-.4-1ZM28 27c.4 0 .7.1 1 .4.3.3.4.6.4 1s-.1.7-.4 1-.6.4-1 .4h-3.8c-1 0-2-.2-2.8-.5s-1.6-.8-2.2-1.3c-.6-.6-1.1-1.2-1.5-2-.4-.8-.5-1.6-.5-2.6s.1-.7.4-1c.3-.3.7-.4 1.1-.4s.9.1 1.2.4c.3.3.4.6.4 1s0 1 .3 1.5c.2.4.4.8.8 1.1.4.3.8.6 1.3.7.5.2 1 .3 1.6.3h3.8Z" class="st0"/>
+				</g>
+			</svg>
+		</a>
+
+
+		<!-- KI Pro: always show as link -->
+		
+	</label>
+
+
+
+	<!-- <div class="d-flex">
+					<p><a href="https://the-decoder.com/" rel="home">The Decoder</a></p>
+						<p>AI, Menschen, Wirtschaft</p>
+			</div> -->
+
+</div>
+		<nav id="site-navigation" class="nav flex items-center gap-4 px-4 py-2.25 rounded-xl" aria-label="Main Navigation">
+							<a href="https://the-decoder.com/sign-in/" class="hidden sm:block bg-white hover:bg-(--heise-primary) hover:*:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-regular rounded-sm sm:w-auto px-3 py-0.5 text-center">
+					<span class="text-(--heise-primary)">
+						Log In					</span>
+				</a>
+										<a href="https://the-decoder.com/subscription/" class="button hidden sm:block text-white bg-(--heise-primary) hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-regular rounded-sm sm:w-auto px-3 py-0.5 text-center no-underline">
+					<i class="icon-ai mr-2 text-sm icon-bold"></i>
+					Subscribe				</a>
+										<a href="https://the-decoder.de/?p=65380" class="hidden sm:block text-white" alt="Switch Language">DE<span class="sr-only">Switch to German</span></a>
+						<button aria-controls="primary-menu" aria-expanded="false" class="menu-toggle">
+				<i class="icon-hamburger-nav icon-bold text-white text-2xl"></i>
+				<span class="sr-only">Open menu</span>
+			</button>
+		</nav>
+	</div>
+
+	
+<div id="primary-menu" class="fixed inset-y-0 right-0 w-full md:max-w-sm bg-(--heise-primary) text-white transform translate-x-full transition-transform duration-300 ease-in-out z-[99999]">
+	<div class="flex flex-col justify-between h-full p-4">
+
+		<div class="primary-menu-main">
+
+			<div class="primay-menu-header flex justify-between items-center mb-4">
+									<div class="flex justify-start items-center gap-2.5">
+						<!-- Leer für nicht-eingeloggte User -->
+					</div>
+								<button class="close-menu text-white text-2xl p-2 rounded-xl" aria-label="Close Menu">
+					<i class="icon-close icon-bold"></i>
+				</button>
+			</div>
+
+			<!-- Dynamic WP Nav - Updated 2026-11-23 17:27:39 -->
+							<!-- Login/Register Links for non-logged-in users -->
+				<ul class="space-y-4 mt-16 text-2xl font-bold">
+					<li class="menu-item">
+						<a href="https://the-decoder.com/subscription/">
+							<span class="flex justify-between text-white hover:text-gray-300">
+								See plans								<i class="icon-chevron-right icon-bold"></i>
+							</span>
+						</a>
+					</li>
+					<li class="menu-item">
+						<a href="https://the-decoder.com/sign-in/">
+							<span class="flex justify-between text-white hover:text-gray-300">
+								Sign In								<i class="icon-chevron-right icon-bold"></i>
+							</span>
+						</a>
+					</li>
+				</ul>
+			
+			<div class="divider bg-white-20 w-[30px] h-[2px] my-4"></div><!-- Divider -->
+
+			<!-- Static WP Nav elements -->
+			
+		</div>
+
+		<div class="primary-menu-footer">
+							<a href="https://the-decoder.com/subscription/" class="block text-(--heise-primary) bg-white mt-3 hover:bg-[#64A4FF] focus:ring-4 focus:outline-none focus:ring-blue-300 hover:text-white font-medium rounded-sm w-full pl-3 pr-5 py-2.5 text-center mt-8">
+					Subscribe Now				</a>
+			
+			<div class="social-icons flex justify-around items-center gap-2.5 my-4">
+				<div class="flex flex-col gap-1  items-center">
+					<h3>The Decoder</h3>
+					<div class="flex gap-1">
+						<a href="https://discord.gg/8VKkHAacn8" class="bg-white text-(--heise-primary) rounded-full flex items-center justify-center" alt="Discord Icon"><i class="icon-discord icon-bold"></i><span class="sr-only">Discord</span></a>
+						<a href="https://www.linkedin.com/company/the-decoder-en/" class="bg-white text-(--heise-primary) rounded-full flex items-center justify-center" alt="LinkedIn Icon"><i class="icon-linkedin-1 icon-bold"></i><span class="sr-only">LinkedIn</span></a>
+					</div>
+				</div>
+		
+
+
+			
+
+			</div>
+		</div>
+
+	</div>
+
+
+	<div class="bg-(--heise-primary) blend-mode-difference"><!-- Start SVG Background -->
+		<svg class="bg-pattern--the-decoder" width="100%" height="100%">
+			<filter id="roughpaper-25641-7895" class="filter-roughpaper" x="0%" y="0%" width="100%" height="100%">
+				<feTurbulence baseFrequency="0.004" seed="5" result="noise"></feTurbulence>
+				<feDiffuseLighting in="noise" lighting-color="white" surfaceScale="3.5">
+					<feDistantLight azimuth="140" elevation="8"></feDistantLight>
+				</feDiffuseLighting>
+			</filter>
+			<rect x="0" y="0" width="100%" height="100%" filter="url(#roughpaper-25641-7895)" fill="none"></rect>
+		</svg>
+	</div><!-- End SVG Background -->
+
+</div>
+
+<div id="menu-overlay" class="fixed inset-0 bg-black/30 hidden z-999 overflow-hidden"></div><!-- Overlay when menu is active -->
+
+</header><!-- #masthead -->
+
+	<div id="content">
+
+	<svg class="bg-pattern--the-decoder" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+		<filter id="roughpaper-25641-7895" class="filter-roughpaper" x="0%" y="0%" width="100%" height="100%">
+			<feTurbulence baseFrequency="0.004" seed="5" result="noise"></feTurbulence>
+			<feDiffuseLighting in="noise" lighting-color="white" surfaceScale="3.5">
+				<feDistantLight azimuth="140" elevation="8"></feDistantLight>
+			</feDiffuseLighting>
+		</filter>
+		<rect x="0" y="0" width="100%" height="100%" filter="url(#roughpaper-25641-7895)" fill="none"></rect>
+	</svg>
+
+	<section id="primary" class="flex justify-center lg:justify-between sticky-container min-h-fit mb-20">
+		<main id="main" class="w-full flex flex-col gap-0.5 flex-grow h-fit relative max-w-2xl rounded-xl z-40">
+
+			
+<!-- START Single Article -->
+<article id="post-43157" class="bg-white pb-4 rounded-lg overflow-hidden relative post-43157 post type-post status-publish format-standard has-post-thumbnail hentry category-ai-research category-artificial-intelligence-news tag-ai-and-math tag-anthropic tag-math">
+
+
+	<!-- Header: same row as a feed post (avatar, author · date, badges) -->
+	<header class="entry-header feed-post__header feed-post__header--single px-5 pt-4">
+				<a href="https://the-decoder.com/author/manuel-uth/" class="feed-post__avatar exclude-from-pdf" title="View all posts by Manuel Uth">
+			<img alt='Manuel Uth' src='https://the-decoder.com/wp-content/uploads/2026/08/Manuel-Uth-Portrait-375x375.png' srcset='https://the-decoder.com/wp-content/uploads/2026/08/Manuel-Uth-Portrait-375x375.png 2x' class='avatar avatar-80 photo feed-post__avatar-img' height='80' width='80' decoding='async'/>		</a>
+		<div class="feed-post__byline" data-name="author">
+			<span class="feed-post__author">
+				<a href="https://the-decoder.com/author/manuel-uth/" class="text-(--decoder-highlight) font-semibold no-underline author-selector">Manuel Uth</a>
+											</span>
+			<span class="feed-post__date">
+				<time datetime="2026-11-21T12:19:49+01:00" data-feed-date data-today="Today" data-yesterday="Yesterday" data-minutes="{count} min" data-hours="{count} h" data-days="{count} days ago">Nov 21, 2026</time>
+			</span>
+		</div>
+	
+			<div class="feed-post__badges">
+				<!-- Update Label -->
+				
+				<!-- Sponsored Label -->
+				
+				<!-- Paywall Label (only for non-subscribers) -->
+				
+										<a href="https://the-decoder.com/artificial-intelligence-news/ai-research/" class="bg-gray-100 hover:bg-gray-200 border border-gray-100 text-(--heise-primary) text-xs font-semibold px-2 py-1 rounded whitespace-nowrap no-underline hover:!no-underline  transition-all">
+							AI research						</a>
+							</div>
+	</header><!-- .entry-header -->
+
+	
+	<div class="entry-content px-5 py-1 prose prose-neutral max-w-none prose-a:text-primary">
+
+		
+
+		<!-- H1 Heading ~ same to H2 in feed -->
+		<span class="text-[28px] lg:text-3xl"></span><h1 class="inline text-[28px] lg:text-3xl text-(--heise-primary) mt-0 mb-0">Hours after Anthropic claims a Claude proof of the Riemann hypothesis, Stanford releases an all-human competing draft</h1>
+
+
+
+		
+
+
+		<!-- Image -->
+					<div style="position: relative; width: 100%; margin-top: 1rem; margin-bottom: 0; display: block;">
+				<img class="w-full" style="display: block; width: 100%;" src="https://the-decoder.com/wp-content/uploads/2026/11/anthropic_riemann.png" alt="Image description" />
+
+									<!-- Copyright overlay -->
+					<div class="absolute bottom-2 right-2 bg-black/60 px-2 rounded">
+						<span class="font-roboto-mono font-normal text-[10px] lg:text-[11px] text-white">Nano Banana Pro prompted by THE DECODER</span>
+					</div>
+							</div>
+		
+
+				
+		<!-- Ask AI: action row directly under the image -->
+			<div class="ki-row not-prose" role="group" aria-label="Ask AI" data-ki-inline data-ki-row>
+		<span class="ki-row__label"><i class="icon-ai-search" aria-hidden="true"></i>Ask AI</span>
+		<div class="ki-row__actions">		<button type="button" data-ki-mode="easy">Easy</button>
+				<button type="button" data-ki-mode="perspectives">Perspectives</button>
+				<button type="button" data-ki-mode="terms">Terms</button>
+			<button type="button" data-ki-own data-label-new="Own question" data-label-continue="Continue chat">Own question</button>
+	</div>
+	</div>
+	
+		<!-- Summary -->
+					<section class="card card-summary mt-4 bg-(--gray-background) not-prose">
+				<div class="card-body px-5 py-5">
+					<h2 class="card-header text-(--heise-primary) text-3xl/6 font-bold mt-2 mb-5">Key Points</h2>
+					<ul>
+ 	<li>Anthropic mathematician Levent Alpöge and the AI model Claude presented a proof of the Generalized Riemann Hypothesis, publishing it in the Lean programming language for computer verification.</li>
+ 	<li>Just hours later, Stanford University researchers published an independent, entirely human approach to the same problem by mathematician Alessandro Masullo.</li>
+ 	<li>Open since 1859, the hypothesis is central to understanding prime numbers, and confirming it would validate hundreds of dependent mathematical theories while underscoring AI's role in research.</li>
+</ul>				</div>
+			</section>
+		
+		<!-- Update -->
+		
+		<!-- Topics section will be dynamically generated by JavaScript -->
+
+		<!-- Content -->
+		<div class="content-wrapper text-lg lg:text-base/7 text-(--heise-primary)">
+			<p><strong>Levent Alpöge, a mathematician at Anthropic, said Friday he used a large language model to solve math's most famous open problem.</strong></p><p>Alpöge posted a paper and the accompanying computer code on his website, according to <a href="https://www.scientificamerican.com/article/anthropic-mathematician-claims-to-prove-riemann-hypothesis-most-famous-problem-in-all-of-math/" target="_blank" rel="noopener noreferrer">Scientific American</a> and other US outlets. "I believe I have, working with Claude, discovered a proof of the Riemann Hypothesis," <a href="https://alpo.ge/remark.pdf" target="_blank" rel="noopener noreferrer">he wrote in his announcement</a>.</p><p>According to Alpöge, his method goes beyond the original prime-number problem and also resolves the Generalized Riemann Hypothesis (GRH), which extends that ordering principle to a large family of related equations. Given a bit more time, he expects to solve the even broader Extended Riemann Hypothesis as well.</p><div class="mobile-view" style="display:none"><div class="ad-padding-wrapper"><div class="ad-notice" style="font-size: 11px; color: #666; text-transform: uppercase; letter-spacing: 1px; font-weight: 500;">Ad</div><div class="ad-sticky-container" style="position: relative; height: 600px; overflow: hidden;"><div class="ad-container" style="min-height: 600px;"><div id="the-decoder.com_incontent_1_m" class="ad ad-feed-mobile" style="position: sticky; top: 20px; z-index: 10;"><div style="text-align: center; min-height: 600px; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></div></div></div></div></div></div><p>Alpöge had treated the problem as a secret lifelong goal since college, expecting it to take decades. Over the past few months, he worked closely with Anthropic's AI model, setting the direction and combining two approaches on a simplified toy model. Once they moved to the actual problem, the AI took over and left him far behind near the finish line.</p><div class="desktop-view decoder-ad-wrapper" style="display:block"><div class="ad-notice">Ad</div><div class="ad-row"><div class="ad-container ad ad-feed" style="min-height: 280px;"><div id="the-decoder.com_incontent_1" class="ad ad-feed" style="width: 100% !important; height: auto !important;"><div class="decoder-ad-placeholder-content" style="padding: 60px 20px; text-align: center; min-height: 280px; display: flex; align-items: center; justify-content: center;"></div></div></div></div></div><p>To crack the puzzle, the pair extended an idea from mathematician Stepanov, who had solved a similar question in another mathematical system. That method relies on a tool similar to taking derivatives of smooth curves in high school calculus, a trick that normally fails on whole numbers because individual values cannot be differentiated like a continuous line.</p><p>Alpöge and Claude got around that obstacle by chaining special mathematical transformations together like links to mimic the effect of a derivative. The language model supplied the key insight, finding that for a number sequence of length X, you need to chain exactly as many transformations as the square root of X. Ideas like that alone should leave fellow mathematicians stunned, Alpöge says.</p><div class="mobile-view" style="display:none"><div class="ad-padding-wrapper"><div class="ad-notice" style="font-size: 11px; color: #666; text-transform: uppercase; letter-spacing: 1px; font-weight: 500;">Ad</div><div class="ad-sticky-container" style="position: relative; height: 600px; overflow: hidden;"><div class="ad-container" style="min-height: 600px;"><div id="the-decoder.com_incontent_2_m" class="ad ad-feed-mobile" style="position: sticky; top: 20px; z-index: 10;"><div style="text-align: center; min-height: 600px; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></div></div></div></div></div></div><h2>Stanford mathematicians rush out an all-human competing proof</h2><p>Hours after Alpöge's announcement, the story took a dramatic turn. Just before a board meeting, Stanford math professor and American Mathematical Society (AMS) president Ravi Vakil posted a <a href="https://math216.wordpress.com/2026/11/20/hurried-announcement-alessandro-masullo-grh/" target="_blank" rel="noopener noreferrer">"hurried announcement"</a> on his blog, sharing an independent draft proof of the Generalized Riemann Hypothesis written by mathematician Alessandro Masullo.</p><p>"It is all human, with no AI," Vakil wrote. Renowned Stanford number theorist Brian Conrad had quietly reviewed Masullo's work for months, offering extensive feedback that is now being incorporated, Vakil said.</p><div class="desktop-view decoder-ad-wrapper" style="display:block"><div class="ad-notice">Ad</div><div class="ad-row"><div class="ad-container ad ad-feed" style="min-height: 280px;"><div id="the-decoder.com_incontent_2" class="ad ad-feed" style="width: 100% !important; height: auto !important;"><div class="decoder-ad-placeholder-content" style="padding: 60px 20px; text-align: center; min-height: 280px; display: flex; align-items: center; justify-content: center;"></div></div></div></div></div><p>Masullo was originally supposed to spend a year at Stanford refining the draft before going public, but Anthropic's sudden AI announcement forced the researchers to release their current version right away.</p><div class="mobile-view" style="display:none"><div class="ad-padding-wrapper"><div class="ad-notice" style="font-size: 11px; color: #666; text-transform: uppercase; letter-spacing: 1px; font-weight: 500;">Ad</div><div class="ad-sticky-container" style="position: relative; height: 600px; overflow: hidden;"><div class="ad-container" style="min-height: 600px;"><div id="the-decoder.com_incontent_3_m" class="ad ad-feed-mobile" style="position: sticky; top: 20px; z-index: 10;"><div style="text-align: center; min-height: 600px; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></div></div></div></div></div></div><p>About eight hours after his initial announcement, Vakil updated his post, saying several people had contacted him to report problems in the proposed proof, identified with the assistance of different AI models. Several mathematicians in particular were first to flag the issues, he said. "As is usual, all issues need to be resolved to the satisfaction of the community before this proof would be accepted as true. (I make no claim as to the correctness of the proof strategy.)," Vakil wrote.</p><h2>Why both proofs could hold up and what happens next</h2><p>Mathematicians are taking both claims seriously right away because of the groundwork behind them. Masullo's traditional proof comes with months of vetting by Brian Conrad, while Alpöge backs his AI proof with full computer verification.</p><p>Printed out, Claude's argument would run over 250,000 pages, Alpöge says, because the AI spells out even basic rules, such as a number other than one-half being either larger or smaller than one-half. To spare mathematicians that wall of text, Alpöge released the proof only in the Lean programming language, split into <a href="https://alpo.ge/remark.pdf" target="_blank" rel="noopener noreferrer">14 data packages</a>.</p><p>Lean acts like a digital referee, checking step by step whether every logical deduction follows from math's basic rules without errors or unproven assumptions. Human error is still possible if the original question was translated into code incorrectly at the start, though checking whether Alpöge coded the starting problem correctly should not take experts long, according to Scientific American. Vakil, meanwhile, urged mathematicians to quickly review Masullo's draft, translate it into systems like Lean, and close any small gaps.</p><p>Alpöge admits Claude was so far ahead of him in some complex subfields that he is presenting a result whose surrounding math he has not fully mastered yet. He expects the massive AI proof can be shortened quickly and plans to write a human-readable version over the coming months.</p><p>Anthropic's announcement also lands in a high-stakes business week, just a day after the company's <a href="https://the-decoder.com/anthropic-ceo-amodei-admits-theres-a-huge-uncertainty-in-whats-going-to-happen-next-year-days-before-a-record-ipo/" target="_blank" rel="noopener noreferrer">major IPO</a> on Thursday. Alpöge says he made the breakthrough late Sunday night and then contacted Anthropic CEO Dario Amodei for clearance. He calls the timing right after the public debut extremely unfortunate, but rejects any suggestion of a PR stunt, saying waiting any longer to publish simply was not an option.</p><p>This caps a fast-moving 2026 in which <a href="https://the-decoder.com/claude-mythos-reportedly-solves-openais-landmark-erdos-problem-with-a-cute-simple-proof/" target="_blank" rel="noopener noreferrer">Claude has already solved several open math problems</a>. In July, Alpöge published a Claude-generated solution to the well-known Jacobian conjecture. September brought a <a href="https://the-decoder.com/openais-millennium-proof-dispute-raises-the-question-of-whether-researchers-can-trust-ai-labs/" target="_blank" rel="noopener noreferrer">fierce dispute over the Navier-Stokes equations</a>, which describe how fluids and gases flow, when NYU mathematician Tristan Buckmaster suggested that OpenAI had used prior work by him and Alpöge. In October, OpenAI took an important first step on prime numbers with a <a href="https://the-decoder.com/openai-says-its-internal-model-solved-over-100-long-standing-math-problems-after-just-a-month-of-training/" target="_blank" rel="noopener noreferrer">major release of results</a>. Alpöge explicitly praised the OpenAI researchers' problem selection, saying it gave him key ideas for his own proof.</p><h2>Riemann's 1859 hypothesis seeks hidden order in prime numbers</h2><p>Journalist <a href="https://www.scientificamerican.com/article/the-riemann-hypothesis-is-a-million-dollar-math-problem-hardly-anyone-is-trying-to-solve/" target="_blank" rel="noopener noreferrer">Joseph Howlett</a> traced the core of the problem in a detailed Scientific American analysis. Since Bernhard Riemann proposed his hypothesis in 1859, it has served as number theory's north star. David Hilbert placed it on his 1900 list of math's most important problems, and since 2000 it has carried a $1 million prize as one of the Clay Mathematics Institute's seven "Millennium Problems."</p>	<aside class="nl-box nl-box--slim not-prose exclude-from-pdf" data-nl-box aria-label="The Decoder newsletter">
+		<div class="nl-box__text">
+							<p class="nl-box__kicker"><i class="icon-paper-plane icon-bold" aria-hidden="true"></i>The Decoder newsletter</p>
+						<p class="nl-box__title">The AI week in five minutes</p>
+			<p class="nl-box__desc">Every week, our editors pick the AI news that matters and explain what it means. No hype, no spam.</p>
+					</div>
+
+		<div class="mailpoet-newsletter-form-container nl-box__form-wrap" data-form-id="1" data-source="in-article">
+			<form action="#" method="post" class="newsletter-fallback-form nl-box__form" novalidate>
+				<label for="nl-email-1" class="sr-only">Enter your email</label>
+				<input type="email" id="nl-email-1" name="email" class="nl-box__input" autocomplete="email" inputmode="email" placeholder="Enter your email">
+				<button type="submit" class="newsletter-submit-button nl-box__btn"><span class="nl-box__btn-label">Sign up free</span></button>
+				<p class="mailpoet_validate_error" style="display: none;"></p>
+				<p class="mailpoet_validate_success" style="display: none;"></p>
+			</form>
+			<p class="nl-box__fine">
+				<span>Free and weekly. Unsubscribe any time.</span>
+							</p>
+		</div>
+	</aside>
+	<p>At the center are prime numbers like 2, 3, 5, 7, and 17, which divide evenly only by one and themselves. They act as the indivisible atoms of math because every other whole number is a unique product of primes, like 15 from 3 times 5. Stanford mathematician Brian Conrad compares their role in number theory to forces in physics.</p><p>Around 300 BC, Euclid proved there are infinitely many primes, though their exact positions on the number line look random. They do grow rarer as numbers get larger, dropping from 25 primes between 0 and 100 to just 16 between 1,000 and 1,100. As a teenager in the late 18th century, Carl Friedrich Gauss used long tables to find a formula that roughly estimates how many primes appear in a given range, yet real primes keep drifting unpredictably from that estimate.</p><p>Riemann, a student of Gauss in Göttingen, looked for a way to calculate that error exactly and pinpoint every single prime. His tool is the Riemann zeta function, which works like a calculating machine over a two-dimensional map with horizontal and vertical axes. Feed the machine a point's coordinates, and it outputs a new value. At certain points the result is exactly zero. Mathematicians call these points zeros.</p><p>Riemann saw that these zeros explain the apparent chaos of primes. Much like breaking a musical note into individual sound waves or overtones, the zeros correct Gauss's estimation error. Each zero acts like an instrument in an orchestra, with its vertical position setting the pitch and its horizontal position setting the volume.</p><p>Because calculating infinitely many points one by one was impossible, Riemann conjectured in 1859 that all the key zeros, known as non-trivial zeros, lie on a single vertical line at the horizontal value of one-half. "The Riemann hypothesis says all these different instruments in the orchestra of the primes play at exactly the same volume," Rutgers University's Alex Kontorovich explains. Apparent randomness turns into strict harmony.</p><h2>A confirmed proof would validate hundreds of math theories and reshape AI's role</h2><p>If at least one of the two proofs holds up, number theorists would gain perfect control over how primes are distributed across the entire number line. Because a proof seemed unreachable for so long, mathematicians worked ahead for decades. Hundreds of papers assume the Riemann hypothesis is true, according to Kontorovich, and all of those theories would become established theorems overnight. Since both Alpöge's AI method and Masullo's work cover the Generalized Riemann Hypothesis, the breakthrough would also extend to fields ranging from simple equations to high-dimensional geometry.</p><p>The links also reach into computer science and physics. Prime numbers form the foundation of modern digital encryption. In 1972, physicist Freeman Dyson accidentally discovered over tea with a mathematician that the spacing of Riemann's zeros matches the energy levels inside atomic nuclei. That same formula keeps showing up in random particle motion, chaos theory, and black hole calculations.</p><p>Before this sudden double breakthrough, the field had hit a wall. Aside from quiet efforts like Masullo and Conrad's, almost no top mathematicians worked directly on the problem because they lacked a starting point. Two years ago, Oxford's James Maynard and MIT's Larry Guth showed that not too many points can stray far from Riemann's line. Though the biggest advance in decades, it struck Maynard himself and colleagues like Andrew Granville of the University of Montreal as only a minor improvement and stopgap.</p><p>That made the prospect of an AI cracking the puzzle all the more daunting. At a Harvard University workshop in October 2024, MIT number theorist Andrew Sutherland summed up the stakes. "An AI that can prove the Riemann hypothesis is not one I'd want to meet. If that happens, mathematicians having jobs will be the least of our problems."</p><p>Even if Masullo's work saves human pride in this head-to-head race, models like Claude have changed fast. In just a year, they have gone from unreliable tools to systems that break through deep roadblocks and <a href="https://the-decoder.com/leading-mathematicians-fear-ai-is-making-their-field-dumber-and-warn-the-rest-of-us-is-next/" target="_blank" rel="noopener noreferrer">push the math community into an identity crisis</a>. Alpöge still feels a mix of sadness at losing a 150-year-old guiding star and optimism about what comes next. "But what I saw during the course of progress so amazed me that I believe it is one dawn across science of something far greater."</p>		</div>
+
+					<!-- Subscription promo below free articles: the paywall offer (inc/paywall-offer.php). Behind the paywall it would be a second offer. -->
+			<div class="mt-8 mb-4">
+					<div class="pw-offer pw-offer--promo not-prose">
+		<p class="pw-offer__kicker">
+			<svg class="pw-offer__mark" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><defs><linearGradient id="pwMark43157-g" x1="3" y1="17" x2="17" y2="3" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4F31DF"/><stop offset="1" stop-color="#00C6FF"/></linearGradient></defs><circle cx="10" cy="10" r="9" fill="url(#pwMark43157-g)"/><circle cx="10" cy="10" r="7.25" fill="#323346"/><path d="M10 5.95v8.1M5.95 10h8.1" fill="none" stroke="#FFFFFF" stroke-width="1.85" stroke-linecap="round"/></svg>			<span>THE DECODER+</span>
+		</p>
+
+		<h2 class="pw-offer__title">AI News Without the Hype – Curated by Humans</h2>
+
+		<div class="pw-offer__benefit-row">
+			<ul class="pw-offer__benefits">
+									<li><i class="icon-check icon-bold" aria-hidden="true"></i><span>Every Plus article and the full archive</span></li>
+									<li><i class="icon-check icon-bold" aria-hidden="true"></i><span>No ad banners</span></li>
+									<li><i class="icon-check icon-bold" aria-hidden="true"></i><span>Frontier Radar: 6 deep dives a year</span></li>
+							</ul>
+			<a href="https://the-decoder.com/subscription/" class="pw-offer__more">What is included <span aria-hidden="true">→</span></a>
+		</div>
+
+					<!-- Two plans, each with its own button: the choice is made here, the button goes straight to Stripe. -->
+			<div class="pw-offer__plans">
+				<a href="https://the-decoder.com/subscription/checkout/?plan=monthly&#038;from=https%3A%2F%2Fthe-decoder.com%2Fhours-after-anthropic-claims-a-claude-proof-of-the-riemann-hypothesis-stanford-releases-an-all-human-competing-draft%2F" class="pw-plan has-offer" rel="nofollow">
+											<span class="pw-plan__badge pw-plan__badge--offer">First month −50%</span>
+										<span class="pw-plan__name">Monthly</span>
+											<span class="pw-plan__price">$4.99 <span class="pw-plan__unit">for the first month</span></span>
+						<span class="pw-plan__note">Then $9.99 a month. Cancel any time.</span>
+										<span class="pw-plan__cta">Subscribe monthly</span>
+				</a>
+				<a href="https://the-decoder.com/subscription/checkout/?plan=yearly&#038;from=https%3A%2F%2Fthe-decoder.com%2Fhours-after-anthropic-claims-a-claude-proof-of-the-riemann-hypothesis-stanford-releases-an-all-human-competing-draft%2F" class="pw-plan is-featured" rel="nofollow">
+					<span class="pw-plan__badge">Best value</span>
+					<span class="pw-plan__name">Yearly</span>
+					<span class="pw-plan__price">$8.25 a month</span>
+					<span class="pw-plan__note">$99 once a year.</span>
+					<span class="pw-plan__cta">Subscribe yearly</span>
+				</a>
+			</div>
+		
+		
+		<p class="pw-offer__links">
+			<span class="pw-offer__subscriber">Already a subscriber? <a href="https://the-decoder.com/sign-in/?redirect_to=https%3A%2F%2Fthe-decoder.com%2Fhours-after-anthropic-claims-a-claude-proof-of-the-riemann-hypothesis-stanford-releases-an-all-human-competing-draft%2F" class="pw-offer__signin">Sign in</a></span>
+					</p>
+	</div>
+				</div>
+		
+				
+		<!-- Source -->
+					<div class="flex justify-end mt-2">
+				<span class="font-roboto-mono font-normal text-[11px]/4 text-(--heise-primary-70)">Source: <a href="https://www.scientificamerican.com/article/anthropic-mathematician-claims-to-prove-riemann-hypothesis-most-famous-problem-in-all-of-math/" target="_blank" rel="noopener noreferrer">Scientific American / Riemann Hypothesis</a> | <a href="https://math216.wordpress.com/2026/11/20/hurried-announcement-alessandro-masullo-grh/" target="_blank" rel="noopener noreferrer">Math216 / Masullo GRH</a> | <a href="https://alpo.ge/remark.pdf" target="_blank" rel="noopener noreferrer">Alpöge / Lean Proof</a> | <a href="https://www.scientificamerican.com/article/the-riemann-hypothesis-is-a-million-dollar-math-problem-hardly-anyone-is-trying-to-solve/" target="_blank" rel="noopener noreferrer">Joseph Howlett / Riemann Hypothesis</a></span>
+			</div>
+		
+		<!-- Actions: same row as under the feed posts (behind the paywall the box follows the text instead, as on KI PRO) -->
+			<div class="feed-actions not-prose">
+		<div class="feed-actions__row">
+			<a href="/subscription" class="feed-actions__btn" title="View or add a comment to this article">
+				<i class="icon-comment-add icon-bold"></i>
+								<span class="feed-actions__label">Comment</span>
+			</a>
+			<a href="https://the-decoder.com/hours-after-anthropic-claims-a-claude-proof-of-the-riemann-hypothesis-stanford-releases-an-all-human-competing-draft/" class="feed-actions__btn copy-url-link" title="Copy the url to clipboard" data-action="copy-url">
+				<i class="icon-link icon-bold"></i>
+				<span class="feed-actions__label">Copy link</span>
+			</a>
+			<a href="https://the-decoder.com/hours-after-anthropic-claims-a-claude-proof-of-the-riemann-hypothesis-stanford-releases-an-all-human-competing-draft/" class="feed-actions__btn" title="Share this article" data-action="share-article">
+				<i class="icon-share-2 icon-bold"></i>
+				<span class="feed-actions__label">Share</span>
+			</a>
+					</div>
+	</div>
+	
+					<!-- Newsletter: the reader just finished the article -->
+				<aside class="nl-box nl-box--card not-prose exclude-from-pdf" data-nl-box aria-label="The Decoder newsletter">
+		<div class="nl-box__text">
+							<p class="nl-box__kicker"><i class="icon-paper-plane icon-bold" aria-hidden="true"></i>The Decoder newsletter</p>
+						<p class="nl-box__title">The AI week in five minutes</p>
+			<p class="nl-box__desc">Every week, our editors pick the AI news that matters and explain what it means. No hype, no spam.</p>
+					</div>
+
+		<div class="mailpoet-newsletter-form-container nl-box__form-wrap" data-form-id="1" data-source="article-end">
+			<form action="#" method="post" class="newsletter-fallback-form nl-box__form" novalidate>
+				<label for="nl-email-2" class="sr-only">Enter your email</label>
+				<input type="email" id="nl-email-2" name="email" class="nl-box__input" autocomplete="email" inputmode="email" placeholder="Enter your email">
+				<button type="submit" class="newsletter-submit-button nl-box__btn"><span class="nl-box__btn-label">Sign up free</span></button>
+				<p class="mailpoet_validate_error" style="display: none;"></p>
+				<p class="mailpoet_validate_success" style="display: none;"></p>
+			</form>
+			<p class="nl-box__fine">
+				<span>Free and weekly. Unsubscribe any time.</span>
+							</p>
+		</div>
+	</aside>
+			
+					<!-- Earlier on this topic: same thread as under the feed posts -->
+				<div class="feed-thread feed-thread--single not-prose">
+		<div class="feed-thread__item">
+			<span></span>
+			<span class="feed-thread__label">Earlier coverage</span>
+		</div>
+					<a href="https://the-decoder.com/anthropic-ceo-amodei-admits-theres-a-huge-uncertainty-in-whats-going-to-happen-next-year-days-before-a-record-ipo/" class="feed-thread__item">
+				<span class="feed-thread__dot" aria-hidden="true"></span>
+				<span class="feed-thread__text">
+					<time class="feed-thread__meta" datetime="2026-11-14T20:05:17+01:00">Nov 14, 2026</time>
+					<strong>Anthropic CEO Amodei admits &quot;there&#039;s a huge uncertainty in what&#039;s going to happen next year&quot; days before a record IPO</strong>
+				</span>
+			</a>
+					<a href="https://the-decoder.com/leading-mathematicians-fear-ai-is-making-their-field-dumber-and-warn-the-rest-of-us-is-next/" class="feed-thread__item">
+				<span class="feed-thread__dot" aria-hidden="true"></span>
+				<span class="feed-thread__text">
+					<time class="feed-thread__meta" datetime="2026-09-12T10:28:53+02:00">Sep 12, 2026</time>
+					<strong>Leading mathematicians fear AI is making their field dumber, and warn the rest of us is next</strong>
+				</span>
+			</a>
+					<a href="https://the-decoder.com/openais-millennium-proof-dispute-raises-the-question-of-whether-researchers-can-trust-ai-labs/" class="feed-thread__item">
+				<span class="feed-thread__dot" aria-hidden="true"></span>
+				<span class="feed-thread__text">
+					<time class="feed-thread__meta" datetime="2026-09-09T12:27:37+02:00">Sep 9, 2026</time>
+					<strong>OpenAI&#039;s millennium proof dispute raises the question of whether researchers can trust AI labs</strong>
+				</span>
+			</a>
+			</div>
+			
+
+				
+
+		
+
+
+	</div><!-- .entry-content -->
+
+</article><!-- #post-${ID} -->
+<!-- END single Article -->
+
+		</main><!-- #main -->
+
+		<!-- Sticky Logo -->
+		
+		<!-- Sidebar -->
+		
+<aside class="hidden lg:flex flex-col gap-y-12 w-xs min-h-fit mt-6 mb-30"><!-- Start Sidebar -->
+
+	<div class="decoder-sidebar-ad decoder-sidebar-ad--top decoder-sidebar-ad--post"><div class="decoder-sidebar-ad__inner"><div class="ad-notice">Ad</div><div class="decoder-sidebar-ad__slot" style="height: 280px;"><div id="the-decoder.com_sitebar_1" class="ad"></div></div></div></div>
+	<section class="card relative">
+		<h2 class="card-header relative text-decoder-gradient-2 text-3xl/6 uppercase font-bold mx-4">
+			Top<br>Stories		</h2>
+		<div class="card-body relative rounded-2xl border border-white/20 bg-white/50 backdrop-blur-[1px] p-6 shadow-[0_8px_20px_rgba(0,0,0,0.05)]">
+			<ul class="list-decimal pl-5 marker:font-bold marker:text-(--decoder-highlight) leading-5 text-(--heise-primary))">
+										<li>
+							<a href="https://the-decoder.com/nvidia-researchers-argue-huge-ai-context-windows-are-a-dead-end/">
+								Nvidia researchers argue huge AI context windows are a dead end							</a>
+						</li>
+										<li>
+							<a href="https://the-decoder.com/ai-coding-agents-ace-isolated-tests-but-complete-fewer-than-one-in-ten-tasks-in-a-simulated-workplace/">
+								AI coding agents ace isolated tests but complete fewer than one in ten tasks in a simulated workplace							</a>
+						</li>
+										<li>
+							<a href="https://the-decoder.com/openais-own-researchers-now-say-they-value-their-ai-tools-more-than-nearly-half-their-colleagues/">
+								OpenAI's own researchers now say they value their AI tools more than nearly half their colleagues							</a>
+						</li>
+										<li>
+							<a href="https://the-decoder.com/ai-industry-growth-remains-strong-but-the-pace-is-slowing/">
+								AI industry growth remains strong, but the pace is slowing							</a>
+						</li>
+										<li>
+							<a href="https://the-decoder.com/anthropic-openai-and-google-models-readily-marked-medics-journalists-and-surrendering-soldiers-as-kamikaze-drone-targets/">
+								Anthropic, OpenAI, and Google models readily marked medics, journalists, and surrendering soldiers as kamikaze drone targets							</a>
+						</li>
+							</ul>
+		</div>
+	</section>
+
+	<section class="card relative">
+	<h2 class="card-header relative text-decoder-gradient-2 text-3xl/6 uppercase font-bold mx-4">The AI week<br>in five minutes</h2>
+			<div class="card-body relative rounded-2xl border border-white/20 bg-(--color-white-20) backdrop-blur-[1px] p-6 shadow-[0_8px_20px_rgba(0,0,0,0.05)]   text-(--heise-primary)">
+		<p>Every week, our editors pick the AI news that matters and explain what it means. No hype, no spam.</p>
+		<!-- MailPoet Form Container -->
+		<div class="mailpoet-newsletter-form-container mt-4" data-form-id="1" data-source="sidebar">
+			<!-- Fallback form that looks exactly like the original -->
+			<form action="#" method="post" class="newsletter-fallback-form" novalidate>
+				<label for="email" class="sr-only">Your email address</label>
+				<input type="text" id="email" name="email" class="bg-white text-(--heise-primary) text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+					placeholder="Enter your email">
+				<button type="submit" class="text-white bg-(--heise-primary) mt-3 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-sm w-full sm:w-auto  pl-3 pr-5 py-2.5 text-center newsletter-submit-button">
+					<i class="icon-paper-plane mr-2 text-lg icon-bold"></i><span class="button-text">Subscribe to our Newsletter</span>
+				</button>
+				<p class="mailpoet_validate_error" style="display: none;"></p>
+				<p class="mailpoet_validate_success" style="display: none;"></p>
+			</form>
+		</div>
+	</div>
+</section>
+
+	<section class="card relative">
+		<h2 class="card-header relative text-decoder-gradient-2 text-3xl/6 uppercase font-bold mx-4">
+			Most<br>Popular		</h2>
+		<div class="card-body relative rounded-2xl border border-white/20 bg-(--color-white-20) backdrop-blur-[1px] p-6 shadow-[0_8px_20px_rgba(0,0,0,0.05)]">
+			<ul class="list-square pl-5 marker:text-(--decoder-highlight) leading-5 text-(--heise-primary)">
+										<li>
+							<a href="https://the-decoder.com/anthropic-says-one-ai-agent-beats-many-subagents-now-that-models-can-handle-complexity-alone/">
+								Anthropic says one AI agent beats many subagents now that models can handle complexity alone							</a>
+						</li>
+										<li>
+							<a href="https://the-decoder.com/openais-data-suggests-that-frontier-models-are-hiding-their-thoughts-because-developers-optimize-for-capability-and-compute/">
+								OpenAI’s data suggests that frontier models are hiding their thoughts because developers optimize for capability and compute							</a>
+						</li>
+										<li>
+							<a href="https://the-decoder.com/anthropics-claude-fable-5-2-doesnt-generate-images-it-paints-them/">
+								Anthropic's Claude Fable 5.2 doesn't generate images, it paints them							</a>
+						</li>
+										<li>
+							<a href="https://the-decoder.com/anthropic-wants-you-to-know-claude-leads-a-quarter-of-its-research-but-lead-doesnt-mean-what-you-think/">
+								Anthropic wants you to know Claude leads a quarter of its research, but "lead" doesn't mean what you think							</a>
+						</li>
+										<li>
+							<a href="https://the-decoder.com/frontier-radar-5-if-agi-is-so-close-why-is-everyone-leaving-the-neolabs-and-their-bets/">
+								Frontier Radar #5: If AGI is so close, why is everyone leaving? The neolabs and their bets							</a>
+						</li>
+										<li>
+							<a href="https://the-decoder.com/metas-new-frontier-model-muse-wonder-full-breaks-into-the-ai-top-tier/">
+								Meta's new frontier model Muse Wonder Full breaks into the AI top tier							</a>
+						</li>
+							</ul>
+		</div>
+	</section>
+
+
+	<!-- Social Media -->
+
+	<section class="card relative">
+		<h2 class="card-header relative text-decoder-gradient-2 text-3xl/6 uppercase font-bold mx-4">
+			AI Community <br>& Insights		</h2>
+
+		<div class="card-body relative rounded-2xl border border-white/20 bg-(--color-white-20) backdrop-blur-[1px] p-6 shadow-[0_8px_20px_rgba(0,0,0,0.05)]">
+
+
+			<div>
+				<h3 class="text-lg font-semibold mb-2 text-(--heise-primary)">The Decoder</h3>
+				<p class="text-sm mb-4 opacity-90 text-(--heise-primary)">
+					Follow The Decoder for AI news, background stories and expert analyses.				</p>
+
+				<div class="social-icons flex flex-row items-center gap-4 border-t border-(--decoder-highlight) pt-4 ">
+
+
+					<a href="https://www.linkedin.com/company/the-decoder-de/"
+						target="_blank" rel="noopener noreferrer"
+						class="flex items-center justify-center w-10 h-10 rounded-full p-2 text-white bg-white-50 hover:bg-white/70 transition"
+						style="background-color: var(--decoder-highlight);"
+						aria-label="Opens LinkedIn in a new tab">
+						<i class="icon-linkedin-1 icon-bold text-xl"></i>
+						<span class="sr-only">
+							Opens LinkedIn in a new tab						</span>
+					</a>
+					<a href="https://discord.gg/8VKkHAacn8"
+						target="_blank" rel="noopener noreferrer"
+						class="flex items-center justify-center w-10 h-10 rounded-full p-2 text-white hover:bg-white/70 transition"
+						style="background-color: var(--decoder-highlight);"
+						aria-label="Opens Discord in a new tab">
+						<i class="icon-discord icon-bold text-xl"></i>
+						<span class="sr-only">
+							Opens Discord in a new tab						</span>
+					</a>
+				</div>
+			</div>
+
+
+					</div>
+	</section>
+
+	<div class="decoder-sidebar-ad decoder-sidebar-ad--sticky decoder-sidebar-ad--post"><div class="decoder-sidebar-ad__inner"><div class="ad-notice">Ad</div><div class="decoder-sidebar-ad__slot" style="height: 600px;"><div id="the-decoder.com_sitebar_2" class="ad"></div></div></div></div>
+</aside><!-- End Sidebar -->
+
+	</section><!-- #primary -->
+
+
+	</div><!-- #content -->
+
+</div><!-- #page -->
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/deep-content/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+		<div class="ki-pop" data-ki-pop data-access="0" data-logged-in="0" hidden>
+		<div class="ki-pop__backdrop" data-ki-close></div>
+		<section class="ki-pop__panel" role="dialog" aria-label="Ask AI" data-ki-panel>
+			<header class="ki-pop__head">
+				<div class="ki-pop__chips" role="tablist" data-ki-tabs></div>
+				<button type="button" class="ki-pop__close" data-ki-close aria-label="Close">
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+				</button>
+			</header>
+
+			<div class="ki-pop__body" data-ki-body></div>
+			<p class="ki-pop__status" data-ki-status hidden></p>
+
+			<footer class="ki-pop__foot" data-ki-foot>
+				<span class="ki-pop__note">AI-generated from this article</span>
+				<button type="button" class="ki-pop__ask" data-ki-ask>
+					<span data-ki-ask-label data-label-new="Own question" data-label-continue="Continue chat">Own question</span>
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+				</button>
+			</footer>
+
+			<div class="ki-pop__convert" data-ki-convert hidden>
+				<h2 class="ki-pop__title">&quot;Ask AI&quot; with your Decoder subscription</h2>
+				<ul class="ki-pop__benefits">
+					<li>AI perspectives on the topic</li>
+					<li>More context from the archive</li>
+					<li>Get technical terms explained</li>
+					<li>Ask your own questions</li>
+				</ul>
+				<a class="ki-pop__cta" href="https://the-decoder.com/subscription/">Subscribe now</a>
+				<a class="ki-pop__login" href="https://the-decoder.com/sign-in/" data-ki-login>Already subscribed? Sign in</a>
+			</div>
+		</section>
+	</div>
+	<script>
+	( function () {
+		var pop = document.querySelector( '[data-ki-pop]' );
+		if ( ! pop ) { return; }
+		var endpoint = "https:\/\/the-decoder.com\/wp-json\/deep-content\/v1\/ki-ask";
+		var modes = [{"mode":"easy","label":"Easy"},{"mode":"perspectives","label":"Perspectives"},{"mode":"terms","label":"Terms"}];
+		var loadingText = "Writing the answer \u2026";
+		var thinkLines = {"easy":["Removing jargon, it is putting up a fight","Explaining it to my grandma in my head","Translating corporate into human","Looking for an analogy without cars","Throwing \"paradigm shift\" out the window","Cutting sentences down to size","Would a ten-year-old buy this?","Counting the technical terms. Too many. Again.","Replacing \"synergy\" with absolutely nothing","Drawing it in my head with crayons","Explaining it to the dog. He wagged, that counts.","Taking away three subordinate clauses","Looking for the simple word for \"complex\"","Imagining this conversation at the kitchen table","Deleting \"holistic\" for the third time","Testing the explanation on an imaginary uncle","Folding the topic down to napkin size","Giving up my footnotes with a heavy heart","Rebuilding the whole thing out of toy bricks","Removing anything that sounds like consulting","Would the neighbor get this?","Peeling the onion down to the core","Swapping noun piles for actual verbs","Making it fit one elevator ride","Taking a deep breath and starting simpler","Loosening the tie on these sentences","Removing \"essentially\", essentially","Turning tech talk into plain talk","Checking whether this works without a chart","Mashing the topic into something digestible","Looking for the point between the numbers","Explaining it so nobody has to fake a nod","Fitting the idea on a postcard","Sending the passive voice to the bench","Asking my inner child for feedback","Taking the lab coat off this topic","Turning three paragraphs into three thoughts","Rehearsing in front of the bathroom mirror","Asking the acronyms to wait outside","Finding the sentence that works at dinner"],"perspectives":["Trying on different hats","Having a brief argument with myself","Consulting the lawyer in my head","Looking at the topic from behind","Letting the skeptic finish","Moving to the other side of the table","And who pays for this in the end?","Politely disagreeing with myself","Calling a meeting of my personalities","Standing on a chair for a better view","Lying on the floor to see it from below","Asking accounting where the catch is","Letting the optimist and the pessimist box","Hosting a talk show in my head","Briefly playing devil's advocate","Looking through the competition's glasses","What would the regulator say?","Turning the topic around 180 degrees","Pulling the ethics board out of its coffee break","Looking for the elephant in the room","Giving my gut feeling three minutes to speak","Asking engineering what marketing left out","Asking marketing what engineering never explained","Seeing it all through the intern's eyes","Jumping five years ahead and back again","Letting both sides finish, this may take a while","Settling a dispute between my theories","Looking for the but behind the but","Climbing to the meta level, it is drafty up here","Who wins when everyone loses?","Taking off the rose-colored glasses","Taking off the doom-colored ones as well","Holding a vote among my neurons","Briefly swapping seats with the other side","Checking who benefits from this view","Inviting a historian to think along","Hearing out the guy at the end of the bar, sadly","Sorting opinions from loud to well-argued","Passing the microphone to the quiet arguments","Walking around the topic and noting the view"],"terms":["Flipping through a dictionary I do not own","Chasing acronyms through the undergrowth","Catching technical terms with a net","Sorting buzzwords by danger level","Translating Nerd into English","Exposing three pieces of jargon","Defining it without using the word","What did that acronym stand for again?","Putting technical terms under the microscope","Fingerprinting an acronym","Interrogating a buzzword, it is not talking yet","Dusting off the glossary","Putting labels on unwieldy terms","Spelling the compound noun very slowly","Taking the jargon for a walk on a leash","Checking whether \"agentic\" is really a word","Cutting a monster word into handy pieces","Opening a case file for the difficult ones","Looking for the off switch on this term","Asking the acronym for some ID","Separating real terms from marketing inventions","Feeding the dictionary, it is growling","Getting three acronyms to talk","Sorting terms alphabetically, then thinking better of it","Reading the fine print inside the word","Translating Silicon Valley dialect","Tracing where this abbreviation came from","Polishing a definition until it shines","Shortening a definition longer than the article","Introducing a technical term to its meaning","Picking the fattest jargon out of the text","Turning tech Latin into everyday language","Checking that everyone means the same thing by it","Unmasking an old word in a new suit","Weighing terms on a precision scale","Looking up where to look things up","Making flashcards for myself","Taming a compound noun that got loose","Asking the abbreviation to introduce itself properly","Handing every term a name tag"],"chat":["Searching the archive with a flashlight","Blowing dust off old articles","Sorting sources by freshness, like the fridge","Checking the expiry date on the facts","Resisting the urge to hallucinate","Reading everything, claiming only what is sourced","Asking the newsroom without disturbing it","Taking the buzzwords back out","Reading your question again, just to be safe","Crawling through the archive shelves","Knocking on the door of the newest articles","Lining up sources and giving them a stern look","Throwing expired facts in the compost","Checking in with my vectors","Looking for the needle in the data haystack","Frantically shuffling index cards","Suppressing a very confident guess","Deleting \"it is important to note\"","Comparing dates with an eagle eye","Sorting the card box by urgency","Checking whether that actually happened","Collecting evidence like other people collect stamps","Talking my language model out of its imagination","Pulling the latest stories out of the oven","Making sure 2023 is no longer considered current","Questioning witnesses in the article archive","Following a hot lead through the database","Letting the sources fact-check each other","Cutting the sentence that only sounds smart","Keeping it short. Or at least trying.","Separating good answers from confident ones","Having a virtual coffee and reading on","Connecting facts with red string on the corkboard","Not committing until the source does","Checking the archive, aisle 42","Wondering whether I actually know this","Removing three exclamation marks from my tone","Putting the sources in a sensible order","Numbering the evidence so you can check it","Polishing the answer, almost there"]};
+		var emptyText = "That did not work right now. You can ask your own question.";
+		var panel = pop.querySelector( '[data-ki-panel]' );
+		var tabs = pop.querySelector( '[data-ki-tabs]' );
+		var body = pop.querySelector( '[data-ki-body]' );
+		var status = pop.querySelector( '[data-ki-status]' );
+		var foot = pop.querySelector( '[data-ki-foot]' );
+		var convert = pop.querySelector( '[data-ki-convert]' );
+		var login = pop.querySelector( '[data-ki-login]' );
+		var current = null; // Element, an dem das Overlay hängt
+		var currentPost = null;
+		var hideTimer = 0;
+		var openedAtY = 0;
+		var run = 0; // Nur die letzte Anfrage darf das Overlay füllen
+		var bypass = false;
+		var accessCache = null;
+		var answers = {};
+
+		function brand() {
+			return document.body.classList.contains( 'ki-pro' ) ? 'kipro_post' : 'post';
+		}
+
+		function request( params, useNonce, signal ) {
+			var url = endpoint + ( endpoint.indexOf( '?' ) === -1 ? '?' : '&' ) + 'brand=' + brand();
+			Object.keys( params || {} ).forEach( function ( key ) {
+				url += '&' + key + '=' + encodeURIComponent( params[ key ] );
+			} );
+			var headers = {};
+			var nonce = window.heiseIoChatData && window.heiseIoChatData.nonce;
+			if ( useNonce && nonce ) { headers[ 'X-WP-Nonce' ] = nonce; }
+			return fetch( url, { headers: headers, credentials: 'same-origin', cache: 'no-store', signal: signal } ).then( function ( r ) {
+				// Abgelaufene Nonce auf einer gecachten Gastseite: als Gast fragen.
+				if ( 403 === r.status && useNonce ) { return request( params, false, signal ); }
+				if ( ! r.ok ) { throw new Error( 'ki-ask ' + r.status ); }
+				return r.json();
+			} );
+		}
+
+		function access() {
+			if ( ! accessCache ) {
+				accessCache = request( null, true ).catch( function () {
+					accessCache = null;
+					return { allowed: false, error: true };
+				} );
+			}
+			return accessCache;
+		}
+
+		// Eigene Frage: neueste passende Artikel. Ohne Treffer oder bei Fehler
+		// läuft die Frage normal über das Archiv.
+		function fresh( question, postId ) {
+			var controller = new AbortController();
+			var timer = setTimeout( function () { controller.abort(); }, 12000 );
+			var params = { q: question };
+			if ( postId ) { params.post_id = postId; }
+			return request( params, true, controller.signal ).then( function ( data ) {
+				clearTimeout( timer );
+				return data.fresh || null;
+			} ).catch( function () {
+				clearTimeout( timer );
+				return null;
+			} );
+		}
+
+		// Am Element verankern: darüber, wenn dort Platz ist, sonst darunter.
+		// Ohne sichtbares Element mittig.
+		function place() {
+			var vw = document.documentElement.clientWidth;
+			var vh = window.innerHeight;
+			var gap = 8;
+			// Die WordPress-Leiste liegt über allem: das Overlay bleibt darunter.
+			var adminBar = document.getElementById( 'wpadminbar' );
+			var inset = adminBar ? Math.max( 0, Math.round( adminBar.getBoundingClientRect().bottom ) ) : 0;
+			var width = Math.min( 420, vw - 2 * gap );
+			var r = current && current.getClientRects().length ? current.getBoundingClientRect() : null;
+			panel.style.width = width + 'px';
+
+			if ( ! r || r.bottom < 0 || r.top > vh ) {
+				panel.style.left = Math.round( ( vw - width ) / 2 ) + 'px';
+				panel.style.maxHeight = ( vh - inset - 2 * gap ) + 'px';
+				panel.style.bottom = 'auto';
+				panel.style.top = Math.max( inset + gap, Math.round( ( vh + inset - panel.offsetHeight ) / 2 ) ) + 'px';
+				panel.style.transformOrigin = 'center';
+				return;
+			}
+
+			var above = r.top - inset - 2 * gap;
+			var below = vh - r.bottom - 2 * gap;
+			var useAbove = above >= 300 || above > below;
+			panel.style.left = Math.max( gap, Math.min( r.right - width, vw - width - gap ) ) + 'px';
+			panel.style.maxHeight = Math.min( 480, useAbove ? above : below ) + 'px';
+			panel.style.top = useAbove ? 'auto' : ( r.bottom + gap ) + 'px';
+			panel.style.bottom = useAbove ? ( vh - r.top + gap ) + 'px' : 'auto';
+			panel.style.transformOrigin = ( useAbove ? 'bottom' : 'top' ) + ' right';
+		}
+
+		// Sprüche wie ein gemischter Kartenstapel: Jeder kommt erst wieder, wenn alle
+		// anderen dran waren, auch über mehrere Fragen und Seiten im selben Tab.
+		var thinkDecks = {};
+		var thinkLast = {};
+		function nextThinkLine( kind ) {
+			var name = thinkLines[ kind ] ? kind : 'chat';
+			var all = thinkLines[ name ];
+			var key = 'dcKiThink:' + name;
+			var deck = thinkDecks[ key ];
+			if ( ! deck ) {
+				try { deck = JSON.parse( sessionStorage.getItem( key ) || '[]' ); } catch ( e ) { deck = []; }
+				deck = Array.isArray( deck ) ? deck.filter( function ( n ) { return all[ n ] !== undefined; } ) : [];
+			}
+			if ( ! deck.length ) {
+				deck = all.map( function ( line, n ) { return n; } );
+				for ( var i = deck.length - 1; i > 0; i-- ) {
+					var j = Math.floor( Math.random() * ( i + 1 ) );
+					var swap = deck[ i ];
+					deck[ i ] = deck[ j ];
+					deck[ j ] = swap;
+				}
+				// Beim neuen Mischen nie zweimal derselbe Spruch hintereinander.
+				if ( deck.length > 1 && deck[ deck.length - 1 ] === thinkLast[ key ] ) {
+					deck.unshift( deck.pop() );
+				}
+			}
+			var index = deck.pop();
+			thinkDecks[ key ] = deck;
+			thinkLast[ key ] = index;
+			try { sessionStorage.setItem( key, JSON.stringify( deck ) ); } catch ( e ) {}
+			return all[ index ];
+		}
+
+		// Wartezeit: wechselnde Sprüche zur Aufgabe. Endet von selbst, sobald der
+		// Inhalt von el ersetzt wird (erste Antwort, Fehler, Schließen).
+		function thinking( el, kind ) {
+			var box = document.createElement( 'span' );
+			box.className = 'ki-think';
+			box.innerHTML = '<span class="ki-think__dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="ki-think__line" aria-hidden="true"></span><span class="sr-only"></span>';
+			box.querySelector( '.sr-only' ).textContent = loadingText;
+			var line = box.querySelector( '.ki-think__line' );
+			line.textContent = nextThinkLine( kind );
+			el.innerHTML = '';
+			el.appendChild( box );
+			var timer = setInterval( function () {
+				if ( ! box.isConnected ) {
+					clearInterval( timer );
+					return;
+				}
+				line.classList.add( 'is-swapping' );
+				setTimeout( function () {
+					line.textContent = nextThinkLine( kind );
+					line.classList.remove( 'is-swapping' );
+				}, 180 );
+			}, 2400 );
+		}
+
+		function setMode( mode, text, kind ) {
+			var isConvert = 'convert' === mode;
+			convert.hidden = ! isConvert;
+			// Während der Wartezeit nur die Animation, ohne Fußzeile.
+			foot.hidden = isConvert || 'loading' === mode;
+			tabs.hidden = isConvert;
+			body.hidden = 'answer' !== mode;
+			status.hidden = ! text;
+			status.textContent = text || '';
+			if ( 'loading' === mode ) { thinking( status, kind ); }
+			panel.classList.toggle( 'is-convert', isConvert );
+			if ( 'answer' !== mode ) { body.innerHTML = ''; }
+			if ( ! pop.hidden ) { place(); }
+		}
+
+		function reveal( anchor ) {
+			clearTimeout( hideTimer );
+			current = anchor || null;
+			pop.hidden = false;
+			place();
+			openedAtY = window.scrollY;
+			void panel.offsetWidth; // Startzustand festhalten, damit die Animation läuft
+			pop.classList.add( 'is-open' );
+		}
+
+		function close( keepFocus ) {
+			if ( pop.hidden ) { return; }
+			run++;
+			pop.classList.remove( 'is-open' );
+			clearTimeout( hideTimer );
+			hideTimer = setTimeout( function () { pop.hidden = true; }, 160 );
+			if ( current && ! keepFocus && document.contains( current ) ) {
+				current.focus( { preventScroll: true } );
+			}
+		}
+
+		function conversion( anchor, loggedIn ) {
+			run++;
+			setMode( 'convert' );
+			login.hidden = !! loggedIn;
+			reveal( anchor );
+			place();
+			var cta = pop.querySelector( '.ki-pop__cta' );
+			if ( cta ) { cta.focus( { preventScroll: true } ); }
+		}
+
+		function renderTabs( active ) {
+			tabs.innerHTML = '';
+			modes.forEach( function ( item ) {
+				var b = document.createElement( 'button' );
+				b.type = 'button';
+				b.setAttribute( 'role', 'tab' );
+				b.setAttribute( 'aria-selected', item.mode === active ? 'true' : 'false' );
+				b.textContent = item.label;
+				b.addEventListener( 'click', function () { showAnswer( item.mode ); } );
+				tabs.appendChild( b );
+			} );
+		}
+
+		function load( postId, mode, mine, attempt ) {
+			request( { post_id: postId, mode: mode }, true ).then( function ( data ) {
+				if ( mine !== run ) { return; }
+				accessCache = Promise.resolve( { allowed: data.allowed, logged_in: data.logged_in } );
+				if ( ! data.allowed ) {
+					conversion( current, data.logged_in );
+				} else if ( data.answer ) {
+					answers[ postId + ':' + mode ] = data.answer;
+					setMode( 'answer' );
+					body.innerHTML = data.answer; // serverseitig mit wp_kses bereinigt
+					body.scrollTop = 0;
+					place();
+				} else if ( data.pending && attempt < 15 ) {
+					setTimeout( function () {
+						if ( mine === run ) { load( postId, mode, mine, attempt + 1 ); }
+					}, 3000 );
+				} else {
+					setMode( 'status', emptyText );
+				}
+			} ).catch( function () {
+				if ( mine === run ) { setMode( 'status', emptyText ); }
+			} );
+		}
+
+		function showAnswer( mode ) {
+			var mine = ++run;
+			var askLabel = pop.querySelector( '[data-ki-ask-label]' );
+			askLabel.textContent = window.dcHasChat && window.dcHasChat( currentPost ) ? askLabel.dataset.labelContinue : askLabel.dataset.labelNew;
+			renderTabs( mode );
+			var cached = answers[ currentPost + ':' + mode ];
+			if ( cached ) {
+				setMode( 'answer' );
+				body.innerHTML = cached;
+				body.scrollTop = 0;
+				place();
+				return;
+			}
+			setMode( 'loading', loadingText, mode );
+			load( currentPost, mode, mine, 0 );
+		}
+
+		function looksDenied() {
+			return '0' === pop.dataset.access;
+		}
+
+		// Für den Chat: onAllowed läuft nur mit Zugang, sonst kommt das Angebot.
+		function guard( anchor, onAllowed ) {
+			if ( looksDenied() ) {
+				conversion( anchor, '1' === pop.dataset.loggedIn );
+				var mine = run;
+				access().then( function ( result ) {
+					if ( result.allowed && mine === run ) {
+						close( true );
+						onAllowed();
+					}
+				} );
+				return;
+			}
+			// Laut Seite Abonnent: sofort öffnen. Der Server prüft jede Frage, ohne
+			// Zugang zeigt chat.js danach das Angebot.
+			onAllowed();
+		}
+
+		function postIdOf( el ) {
+			var article = el.closest( 'article[id^="post-"]' );
+			var match = article && article.id.match( /post-(\d+)/ );
+			return match ? parseInt( match[ 1 ], 10 ) : null;
+		}
+
+		document.addEventListener( 'click', function ( e ) {
+			// "KI fragen": mit Zugang rollt script.js die Leiste aus, ohne Zugang
+			// kommt das Angebot. Die Prüfung läuft trotzdem, falls die Seite aus
+			// einem Cache stammt.
+			var btn = e.target.closest( '.feed-actions__ask[data-feed-ask]' );
+			if ( btn && ! bypass && looksDenied() ) {
+				e.preventDefault();
+				e.stopImmediatePropagation();
+				conversion( btn, '1' === pop.dataset.loggedIn );
+				var mine = run;
+				access().then( function ( result ) {
+					if ( result.allowed && mine === run ) {
+						close( true );
+						bypass = true;
+						btn.click();
+						bypass = false;
+					}
+				} );
+				return;
+			}
+
+			var choice = e.target.closest( '[data-ki-mode]' );
+			if ( choice ) {
+				var row = choice.closest( '[data-ask-row]' );
+				var openChoice = function () {
+					currentPost = postIdOf( choice );
+					renderTabs( choice.getAttribute( 'data-ki-mode' ) );
+					setMode( 'loading', loadingText, choice.getAttribute( 'data-ki-mode' ) );
+					reveal( row ? row.querySelector( '[data-feed-ask]' ) : choice );
+					showAnswer( choice.getAttribute( 'data-ki-mode' ) );
+				};
+				// Artikelseite: Ohne Abo kommt sofort das Angebot.
+				if ( choice.closest( '[data-ki-inline]' ) ) {
+					guard( choice, openChoice );
+				} else {
+					openChoice();
+				}
+				return;
+			}
+
+			var own = e.target.closest( '[data-ki-own]' );
+			if ( own && window.dcOpenChat ) {
+				window.dcOpenChat( own );
+			}
+		}, true );
+
+		pop.addEventListener( 'click', function ( e ) {
+			if ( e.target.closest( '[data-ki-close]' ) ) { close(); return; }
+			if ( e.target.closest( '[data-ki-ask]' ) && current ) {
+				var anchor = current;
+				close( true );
+				if ( window.dcOpenChat ) { window.dcOpenChat( anchor ); }
+			}
+		} );
+
+		document.addEventListener( 'keydown', function ( e ) {
+			if ( 'Escape' === e.key ) { close(); }
+		} );
+		window.addEventListener( 'resize', function () {
+			if ( ! pop.hidden ) { place(); }
+		} );
+		// Beim Weiterscrollen verschwindet das Overlay wie ein Popover.
+		window.addEventListener( 'scroll', function () {
+			if ( ! pop.hidden && Math.abs( window.scrollY - openedAtY ) > 40 ) { close( true ); }
+		}, { passive: true } );
+
+		// Für den Chat (javascript/chat.js): Zugang, Angebot, frische Artikel.
+		window.dcKiAsk = { access: access, conversion: conversion, guard: guard, fresh: fresh, thinking: thinking, looksAllowed: function () { return ! looksDenied(); } };
+	}() );
+	</script>
+	<span id='wpdUserContentInfoAnchor' style='display:none;' rel='#wpdUserContentInfo' data-wpd-lity>wpDiscuz</span><div id='wpdUserContentInfo' style='overflow:auto;background:#FDFDF6;padding:20px;width:600px;max-width:100%;border-radius:6px;' class='lity-hide'></div><div id='wpd-editor-source-code-wrapper-bg'></div><div id='wpd-editor-source-code-wrapper'><textarea id='wpd-editor-source-code'></textarea><button id='wpd-insert-source-code'>Insert</button><input type='hidden' id='wpd-editor-uid' /></div><div id="heise-io-chat-modal" class="heise-io-chat-modal" role="dialog" aria-modal="true" aria-labelledby="heise-io-chat-title" hidden>
+    <div class="heise-io-chat-modal-overlay" data-chat-close></div>
+    <div class="heise-io-chat-modal-content">
+        <header class="heise-io-chat-modal-header">
+            <div class="heise-io-chat-head-text">
+                <p class="heise-io-chat-kicker">
+                    <i class="icon-ai-search" aria-hidden="true"></i>
+                    <span id="heise-io-chat-title">Ask AI</span>
+                    <span class="heise-io-chat-beta-badge">Beta</span>
+                </p>
+                <p class="heise-io-chat-context" id="heise-io-chat-context" hidden></p>
+            </div>
+            <div class="heise-io-chat-head-actions">
+                <button type="button" class="heise-io-chat-head-btn" id="heise-io-chat-reset" hidden>
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.3-5.6M4 4v4h4" /></svg>
+                    <span>New</span>
+                </button>
+                <button type="button" class="heise-io-chat-modal-close" data-chat-close aria-label="Close chat">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
+                </button>
+            </div>
+        </header>
+
+        <div class="heise-io-chat-modal-body" id="heise-io-chat-scroll">
+            <div class="heise-io-chat-empty" id="heise-io-chat-empty">
+                <p>Ask a question about the article or an AI topic. You can ask follow-up questions.</p>
+            </div>
+            <ol class="heise-io-chat-thread" id="heise-io-chat-messages" aria-live="polite"></ol>
+        </div>
+
+        <footer class="heise-io-chat-modal-footer">
+            <form action="#" method="post" class="heise-io-chat-composer" id="heise-io-chat-form">
+                <label for="heise-io-chat-input" class="sr-only">Your question</label>
+                <textarea id="heise-io-chat-input" name="message" rows="1" required
+                    placeholder="Ask a follow-up …"
+                    data-placeholder-first="Your question …"
+                    data-placeholder-next="Ask a follow-up …"></textarea>
+                <button type="submit" class="heise-io-chat-send" id="heise-io-chat-send" aria-label="Send">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+                </button>
+            </form>
+            <p class="heise-io-chat-disclaimer">AI answers can contain errors. The sources are linked.</p>
+        </footer>
+    </div>
+</div>
+<script data-optimized="1" id="wp-hooks-js" src="https://the-decoder.com/wp-content/litespeed/js/057b4a5b619d2992b73170e4fce10815.js?ver=eaf6d"></script>
+<script data-optimized="1" id="wp-i18n-js" src="https://the-decoder.com/wp-content/litespeed/js/4c9a0435eb2ebff4a3e9d001c7a46ca2.js?ver=698e2"></script>
+<script id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+//# sourceURL=wp-i18n-js-after
+</script>
+<script data-optimized="1" id="swv-js" src="https://the-decoder.com/wp-content/litespeed/js/79cabfb9d4f79736c9443d86644a3312.js?ver=52e24"></script>
+<script id="contact-form-7-js-before">
+var wpcf7 = {
+    "api": {
+        "root": "https:\/\/the-decoder.com\/wp-json\/",
+        "namespace": "contact-form-7\/v1"
+    },
+    "cached": 1
+};
+//# sourceURL=contact-form-7-js-before
+</script>
+<script data-optimized="1" id="contact-form-7-js" src="https://the-decoder.com/wp-content/litespeed/js/a02f3718d74b97f4e6e3c69623d570ed.js?ver=cdc81"></script>
+<script data-optimized="1" id="heise-io-chat-sse-js" src="https://the-decoder.com/wp-content/litespeed/js/b39253a8a702ce77a6d6842eb621755e.js?ver=3f40c"></script>
+<script data-optimized="1" id="heise-io-chat-marked-js" src="https://the-decoder.com/wp-content/litespeed/js/ff56180e7cd2bfa35687cdb1b06cfa26.js?ver=e8716"></script>
+<script id="heise-io-chat-js-extra">
+var heiseIoChatData = {"apiEndpoint":"https://the-decoder.com/wp-json/heise-io-chat/v1/stream","regenerateEndpoint":"https://the-decoder.com/wp-json/heise-io-chat/v1/regenerate-questions","postContentEndpoint":"https://the-decoder.com/wp-json/heise-io-chat/v1/post-content","nonce":"a4fd9cf06c","locale":"en_US","i18n":{"article_singular":"article","article_plural":"articles","was_used":"was","were_used":"were","sources_text":"used to create this answer.","disclaimer_text":"AI responses may contain errors or outdated information. We are continuously improving performance."}};
+//# sourceURL=heise-io-chat-js-extra
+</script>
+<script data-optimized="1" id="heise-io-chat-js" src="https://the-decoder.com/wp-content/litespeed/js/9622ad7129017bbca7ab6abd750d69bd.js?ver=e8327"></script>
+<script id="deep-content-script-js-extra">
+var deepContent = {"ajaxUrl":"https://the-decoder.com/wp-admin/admin-ajax.php","nonce":"37f26b06ae","i18n":{"loadMore":"Load more","loading":"Loading...","article":{"topics_title":"Topics"}}};
+var contactForm = {"ajaxUrl":"https://the-decoder.com/wp-admin/admin-ajax.php","nonce":"76707c36e8","i18n":{"submitting":"Sending...","submit":"Send Request","errorGeneral":"There was a problem sending your message. Please try again later.","successMessage":"Thank you! Your message has been sent successfully. We will contact you shortly."}};
+//# sourceURL=deep-content-script-js-extra
+</script>
+<script data-optimized="1" id="deep-content-script-js" src="https://the-decoder.com/wp-content/litespeed/js/54a4baaffe284acedc0458a2e838b285.js?ver=7f3ca"></script>
+<script id="deep-content-newsletter-js-extra">
+var deepContentNewsletter = {"translations":{"emailRequired":"\u26a0\ufe0f Email address is required","invalidFormat":"\u26a0\ufe0f Invalid email format","subscribing":"Subscribing...","checkInbox":"\u2713 Almost done: click the link in the email we just sent you.","alreadySubscribed":"This email is already subscribed","somethingWrong":"Something went wrong","networkError":"Network error","subscriptionSent":"Subscription request sent","processingSubscription":"Processing subscription...","subscribeButton":"Subscribe to our Newsletter"}};
+//# sourceURL=deep-content-newsletter-js-extra
+</script>
+<script data-optimized="1" id="deep-content-newsletter-js" src="https://the-decoder.com/wp-content/litespeed/js/88465ccd118de3cecdec1dda47c67654.js?ver=dcf24"></script>
+<script data-optimized="1" async data-wp-strategy="async" fetchpriority="low" id="comment-reply-js" src="https://the-decoder.com/wp-content/litespeed/js/c206e9148c60387b2209bf7ae617a6b8.js?ver=a60ad"></script>
+<script id="wpdiscuz-combo-js-js-extra">
+var wpdiscuzAjaxObj = {"wc_hide_replies_text":"Hide Replies","wc_show_replies_text":"View Replies","wc_msg_required_fields":"Please fill out required fields","wc_invalid_field":"Some of field value is invalid","wc_error_empty_text":"please fill out this field to comment","wc_error_url_text":"url is invalid","wc_error_email_text":"email address is invalid","wc_invalid_captcha":"Invalid Captcha Code","wc_login_to_vote":"You Must Be Logged In To Vote","wc_deny_voting_from_same_ip":"You are not allowed to vote for this comment","wc_self_vote":"You cannot vote for your comment","wc_vote_only_one_time":"You've already voted for this comment","wc_voting_error":"Voting Error","wc_banned_user":"You are banned","wc_comment_edit_not_possible":"Sorry, this comment is no longer possible to edit","wc_comment_not_updated":"Sorry, the comment was not updated","wc_comment_not_edited":"You've not made any changes","wc_msg_input_min_length":"Input is too short","wc_msg_input_max_length":"Input is too long","wc_spoiler_title":"Spoiler Title","wc_cannot_rate_again":"You cannot rate again","wc_not_allowed_to_rate":"You're not allowed to rate here","wc_confirm_rate_edit":"Are you sure you want to edit your rate?","wc_follow_user":"Follow this user","wc_unfollow_user":"Unfollow this user","wc_follow_success":"You started following this comment author","wc_follow_canceled":"You stopped following this comment author.","wc_follow_email_confirm":"Please check your email and confirm the user following request.","wc_follow_email_confirm_fail":"Sorry, we couldn't send confirmation email.","wc_follow_login_to_follow":"Please login to follow users.","wc_follow_impossible":"We are sorry, but you can't follow this user.","wc_follow_not_added":"Following failed. Please try again later.","is_user_logged_in":"","commentListLoadType":"0","commentListUpdateType":"0","commentListUpdateTimer":"60","liveUpdateGuests":"0","wordpressThreadCommentsDepth":"5","wordpressIsPaginate":"","commentTextMaxLength":"0","replyTextMaxLength":"0","commentTextMinLength":"1","replyTextMinLength":"1","storeCommenterData":"100000","socialLoginAgreementCheckbox":"1","enableFbLogin":"0","fbUseOAuth2":"0","enableFbShare":"0","facebookAppID":"","facebookUseOAuth2":"0","enableGoogleLogin":"0","googleClientID":"","googleClientSecret":"","cookiehash":"167a8911787c4981a34f4a48b9c611aa","isLoadOnlyParentComments":"0","scrollToComment":"1","commentFormView":"collapsed","enableDropAnimation":"1","isNativeAjaxEnabled":"1","userInteractionCheck":"1","enableBubble":"0","bubbleLiveUpdate":"0","bubbleHintTimeout":"45","bubbleHintHideTimeout":"10","cookieHideBubbleHint":"wpdiscuz_hide_bubble_hint","bubbleHintShowOnce":"1","bubbleHintCookieExpires":"7","bubbleShowNewCommentMessage":"1","bubbleLocation":"content_left","firstLoadWithAjax":"0","wc_copied_to_clipboard":"Copied to clipboard!","inlineFeedbackAttractionType":"blink","loadRichEditor":"1","wpDiscuzReCaptchaSK":"","wpDiscuzReCaptchaTheme":"light","wpDiscuzReCaptchaVersion":"2.0","wc_captcha_show_for_guest":"0","wc_captcha_show_for_members":"0","wpDiscuzIsShowOnSubscribeForm":"0","wmuEnabled":"1","wmuInput":"wmu_files","wmuMaxFileCount":"1","wmuMaxFileSize":"2097152","wmuPostMaxSize":"134217728","wmuIsLightbox":"1","wmuMimeTypes":{"jpg":"image/jpeg","jpeg":"image/jpeg","jpe":"image/jpeg","gif":"image/gif","png":"image/png","bmp":"image/bmp","tiff":"image/tiff","tif":"image/tiff","ico":"image/x-icon"},"wmuPhraseConfirmDelete":"Are you sure you want to delete this attachment?","wmuPhraseNotAllowedFile":"Not allowed file type","wmuPhraseMaxFileCount":"Maximum number of uploaded files is 1","wmuPhraseMaxFileSize":"Maximum upload file size is 2MB","wmuPhrasePostMaxSize":"Maximum post size is 128MB","wmuPhraseDoingUpload":"Uploading in progress! Please wait.","msgEmptyFile":"File is empty. Please upload something more substantial. This error could also be caused by uploads being disabled in your php.ini or by post_max_size being defined as smaller than upload_max_filesize in php.ini.","msgPostIdNotExists":"Post ID not exists","msgUploadingNotAllowed":"Sorry, uploading not allowed for this post","msgPermissionDenied":"You do not have sufficient permissions to perform this action","wmuKeyImages":"images","wmuSingleImageWidth":"auto","wmuSingleImageHeight":"200","previewTemplate":"\u003Cdiv class=\"wmu-preview [PREVIEW_TYPE_CLASS]\" title=\"[PREVIEW_TITLE]\" data-wmu-type=\"[PREVIEW_TYPE]\" data-wmu-attachment=\"[PREVIEW_ID]\"\u003E\r\n    \u003Cdiv class=\"wmu-preview-remove\"\u003E\r\n        \u003Cimg class=\"wmu-preview-img\" src=\"[PREVIEW_ICON]\"\u003E\r\n        \u003Cdiv class=\"wmu-file-name\"\u003E[PREVIEW_FILENAME]\u003C/div\u003E\r\n        \u003C!--        \u003Cdiv class=\"wmu-delete\"\u003E\u00a0\u003C/div\u003E--\u003E\r\n    \u003C/div\u003E\r\n\u003C/div\u003E\r\n","isUserRated":"0","version":"7.6.40","wc_post_id":"43157","isCookiesEnabled":"1","loadLastCommentId":"0","dataFilterCallbacks":[],"phraseFilters":[],"scrollSize":"32","url":"https://the-decoder.com/wp-admin/admin-ajax.php","customAjaxUrl":"https://the-decoder.com/wp-content/plugins/wpdiscuz/utils/ajax/wpdiscuz-ajax.php","bubbleUpdateUrl":"https://the-decoder.com/wp-json/wpdiscuz/v1/update","restNonce":"a4fd9cf06c","is_rate_editable":"0","menu_icon":"https://the-decoder.com/wp-content/plugins/wpdiscuz/assets/img/plugin-icon/wpdiscuz-svg.svg","menu_icon_hover":"https://the-decoder.com/wp-content/plugins/wpdiscuz/assets/img/plugin-icon/wpdiscuz-svg_hover.svg","is_email_field_required":"1"};
+var wpdiscuzUCObj = {"msgConfirmDeleteComment":"Are you sure you want to delete this comment?","msgConfirmCancelSubscription":"Are you sure you want to cancel this subscription?","msgConfirmCancelFollow":"Are you sure you want to cancel this follow?","additionalTab":"0"};
+//# sourceURL=wpdiscuz-combo-js-js-extra
+</script>
+<script id="wpdiscuz-combo-js-js-before">
+var wpdiscuzEditorOptions = {
+        modules: {
+        toolbar: "",
+        counter: {
+        uniqueID: "",
+        commentmaxcount : 0,
+        replymaxcount : 0,
+        commentmincount : 1,
+        replymincount : 1,
+        },
+                },
+        wc_be_the_first_text: "Be the First to Comment!",
+        wc_comment_join_text: "Join the discussion",
+        theme: 'snow',
+        debug: 'error'
+        };
+        
+//# sourceURL=wpdiscuz-combo-js-js-before
+</script>
+<script data-optimized="1" id="wpdiscuz-combo-js-js" src="https://the-decoder.com/wp-content/litespeed/js/fcbb4fd51f6ec7549b549d250b5596bc.js?ver=37c61"></script>
+	<script>
+	(function () {
+		var article = 43157;
+		var ajax = "\/wp-admin\/admin-ajax.php";
+
+		if ( ! article ) {
+			var match = /(?:^#|&)article=(\d+)/.exec( location.hash );
+			if ( ! match ) {
+				return;
+			}
+			document.querySelectorAll( 'a[href*="/subscription/checkout/"]' ).forEach( function ( link ) {
+				var url = new URL( link.href );
+				url.searchParams.set( 'article', match[ 1 ] );
+				link.href = url.toString();
+			} );
+			document.querySelectorAll( 'button.subscription-button' ).forEach( function ( button ) {
+				button.dataset.article = match[ 1 ];
+			} );
+			return;
+		}
+
+		var sent = {};
+		function send( event ) {
+			if ( sent[ event ] || ! navigator.sendBeacon ) {
+				return;
+			}
+			sent[ event ] = true;
+			var data = new FormData();
+			data.append( 'action', 'dc_article_funnel' );
+			data.append( 'event', event );
+			data.append( 'post_id', article );
+			navigator.sendBeacon( ajax, data );
+		}
+
+		var offer = document.querySelector( '.pw-offer' );
+		if ( offer && 'IntersectionObserver' in window ) {
+			var observer = new IntersectionObserver( function ( entries ) {
+				if ( entries.some( function ( entry ) { return entry.isIntersecting; } ) ) {
+					send( 'view' );
+					observer.disconnect();
+				}
+			}, { threshold: 0.25 } );
+			observer.observe( offer );
+		}
+
+		function onLink( e ) {
+			var link = e.target.closest ? e.target.closest( 'a[href]' ) : null;
+			if ( ! link || link.host !== location.host ) {
+				return;
+			}
+			var linkPath = link.pathname.replace( /\/+$/, '' );
+			if ( '/subscription' === linkPath ) {
+				send( 'click' );
+				link.hash = 'article=' + article;
+			} else if ( '/subscription/checkout' === linkPath ) {
+				send( 'click' );
+			}
+		}
+		document.addEventListener( 'click', onLink, true );
+		document.addEventListener( 'auxclick', onLink, true );
+	})();
+	</script>
+		<script>
+	( function () {
+		var row = document.querySelector( '[data-ki-row]' );
+		var article = row && row.closest( 'article' );
+		var text = {"label":"Ask AI","close":"Hide this bar for good","gone":"Bar hidden.","undo":"Undo"};
+		var key = 'dc_ki_bar_hidden';
+		if ( ! article ) { return; }
+		try { if ( '1' === localStorage.getItem( key ) ) { return; } } catch ( e ) {}
+
+		var end = article.querySelector( '.content-wrapper' ) || article;
+		var pop = document.querySelector( '[data-ki-pop]' );
+		var bar = document.createElement( 'div' );
+		var label = document.createElement( 'span' );
+		var close = document.createElement( 'button' );
+		var actions = row.querySelector( '.ki-row__actions' ).cloneNode( true );
+		var lastY = window.scrollY, up = 0, down = 0, queued = false, done = false, undoTimer;
+
+		bar.className = 'ki-bar not-prose';
+		bar.setAttribute( 'role', 'group' );
+		bar.setAttribute( 'aria-label', text.label );
+		bar.setAttribute( 'data-ki-inline', '' );
+		bar.inert = true;
+		label.className = 'ki-row__label ki-bar__label';
+		label.innerHTML = '<i class="icon-ai-search" aria-hidden="true"></i>';
+		label.appendChild( document.createTextNode( text.label ) );
+		close.type = 'button';
+		close.className = 'ki-bar__close';
+		close.title = text.close;
+		close.setAttribute( 'aria-label', text.close );
+		close.innerHTML = '<span aria-hidden="true">&times;</span>';
+		bar.appendChild( label );
+		bar.appendChild( actions );
+		bar.appendChild( close );
+		article.appendChild( bar );
+
+		function fit() {
+			var box = article.getBoundingClientRect();
+			var left = Math.max( 8, box.left );
+			bar.style.left = left + 'px';
+			bar.style.width = Math.min( box.right, document.documentElement.clientWidth - 8 ) - left + 'px';
+		}
+		function show( on ) {
+			if ( on ) { fit(); }
+			bar.classList.toggle( 'is-visible', on );
+			bar.inert = ! on;
+		}
+		function update() {
+			queued = false;
+			if ( done ) { return; }
+			var y = window.scrollY, delta = y - lastY;
+			lastY = y;
+			if ( pop && ! pop.hidden ) { return; }
+			if ( row.getBoundingClientRect().bottom > 0 || end.getBoundingClientRect().bottom < 140 ) {
+				up = down = 0;
+				show( false );
+				return;
+			}
+			if ( delta < 0 ) { up -= delta; down = 0; }
+			if ( delta > 0 ) { down += delta; up = 0; }
+			if ( up >= 28 ) { show( true ); }
+			if ( down >= 12 && ! bar.querySelector( ':focus-visible' ) ) { show( false ); }
+		}
+		close.addEventListener( 'click', function () {
+			var note = document.createElement( 'span' );
+			var undo = document.createElement( 'button' );
+			var parts = [ label, actions, close ];
+			done = true;
+			try { localStorage.setItem( key, '1' ); } catch ( e ) {}
+			parts.forEach( function ( part ) { part.hidden = true; } );
+			note.className = 'ki-bar__note';
+			note.textContent = text.gone;
+			undo.type = 'button';
+			undo.className = 'ki-bar__undo';
+			undo.textContent = text.undo;
+			note.appendChild( undo );
+			bar.appendChild( note );
+			undo.addEventListener( 'click', function () {
+				clearTimeout( undoTimer );
+				try { localStorage.removeItem( key ); } catch ( e ) {}
+				note.remove();
+				parts.forEach( function ( part ) { part.hidden = false; } );
+				done = false;
+			} );
+			undoTimer = setTimeout( function () { show( false ); }, 5000 );
+		} );
+		window.addEventListener( 'scroll', function () {
+			if ( ! queued ) { queued = true; requestAnimationFrame( update ); }
+		}, { passive: true } );
+		window.addEventListener( 'resize', function () {
+			if ( bar.classList.contains( 'is-visible' ) ) { fit(); }
+		} );
+	}() );
+	</script>
+	
+</body>
+</html>
+
+</div><!-- #content -->
+</div><!-- #page -->
+
+<footer id="colophon" class="the-decoder w-full">
+	<div class="grid-item-wrapper grid gap-8 lg:gap-4 mx-auto w-full max-w-decoder py-8 px-2 text-white">
+
+		<div class="grid-item-1">
+			
+<div>
+	<label class="switch bg-white rounded-xl p-1 switch--decoder-only">
+
+		<!-- background -->
+		<input class="switch__input" type="checkbox" role="switch" />
+
+		<!-- decoder -->
+		<a href="https://the-decoder.com/" class="switch__theDecoder" id="theDecoder">
+			<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 106 31">
+				<g>
+					<path class="switch__letters" d="M48.1 7.6c-.4 0-.7-.1-.9-.3-.3-.2-.4-.5-.4-1V3.1h-.9v-.7h.9V1h.8v1.4H49v.7h-1.4V6c0 .3 0 .5.1.6 0 .1.3.2.6.2h.7v.7h-.8Zm2-.1V.2h.8V3v-.2c.2-.1.5-.3.8-.3.3 0 .6-.1.8-.1.4 0 .8 0 1.1.2.3.2.5.4.7.7.2.3.2.7.2 1.2v3h-.8v-3c0-.5-.1-.8-.3-1.1s-.6-.4-1-.4-.5 0-.7.1c-.3 0-.5.2-.8.3v4.1h-.8Zm8.1.1c-.5 0-.9 0-1.3-.3-.4-.2-.6-.5-.8-.9-.2-.4-.3-.9-.3-1.5 0-.9.2-1.5.6-2 .4-.4 1-.7 1.7-.7s1 .1 1.4.4c.3.2.6.6.7 1 .1.4.2.9.2 1.4h-4.2v-.7h3.7-.3c0-.4-.2-.8-.4-1-.2-.2-.6-.4-1.1-.4s-.6 0-.9.2c-.2.1-.4.3-.5.6-.1.3-.2.7-.2 1.3s.1 1.1.4 1.4.7.5 1.3.5h.7c.2 0 .4 0 .6-.2.2 0 .3-.1.5-.2v.7c-.3.1-.5.2-.8.3h-1Z" class="st0"/>
+				</g>
+				<g>
+					<path class="switch__letters" d="M43.3 27c.4 0 .8.1 1 .4.3.3.4.6.4 1s-.1.7-.4 1c-.3.3-.6.4-1 .4h-2.6c-1 0-1.9-.2-2.8-.5-.8-.3-1.6-.8-2.3-1.4-.7-.6-1.2-1.3-1.6-2-.4-.8-.6-1.6-.7-2.5 0-.4.1-.8.4-1 .3-.3.7-.4 1.1-.4s.9.1 1.2.4c.3.3.4.6.4 1s.1 1 .4 1.4c.2.4.6.8.9 1.1.4.3.8.6 1.3.8.5.2 1 .3 1.5.3h2.6ZM43.2 13.2c.4 0 .8.1 1 .4.3.3.4.6.4 1s-.1.7-.4 1c-.3.3-.6.4-1 .4h-2.4c-.5 0-1.1 0-1.5.3-.5.2-.9.4-1.3.8-.4.3-.7.7-.9 1.1-.2.4-.4.9-.4 1.4s-.1.8-.4 1c-.3.3-.7.4-1.2.4s-.9-.1-1.1-.4c-.3-.3-.4-.6-.4-1 0-.9.2-1.8.6-2.5.4-.8.9-1.5 1.6-2 .7-.6 1.4-1 2.3-1.4.9-.3 1.8-.5 2.8-.5h2.4Z" class="st0"/>
+				</g>
+				<g>
+					<path class="switch__letters" d="M60.3 19.6c0 .4-.1.8-.4 1-.3.3-.7.4-1.1.4s-.9-.1-1.1-.4c-.3-.3-.4-.6-.4-1s-.1-1-.3-1.5c-.2-.5-.5-.9-.9-1.3s-.8-.6-1.3-.8c-.5-.2-1.1-.3-1.6-.3-.6 0-1.1.1-1.6.3-.5.2-1 .5-1.3.8-.4.4-.6.8-.8 1.2-.2.5-.3 1-.3 1.5s-.1.8-.4 1c-.3.3-.7.4-1.2.4s-.8-.1-1.1-.4c-.3-.3-.4-.6-.4-1 0-.9.2-1.8.6-2.6.4-.8 1-1.5 1.6-2.1s1.4-1.1 2.2-1.4c.8-.4 1.7-.5 2.8-.5s1.9.2 2.8.5c.8.4 1.6.8 2.2 1.5.7.6 1.2 1.3 1.6 2.2.4.8.6 1.7.6 2.6ZM60.3 23.4c0 .9-.2 1.8-.6 2.6-.4.8-.9 1.5-1.6 2.2-.7.6-1.4 1.1-2.2 1.5-.8.4-1.8.5-2.8.5s-2-.2-2.8-.5c-.8-.4-1.6-.8-2.3-1.5-.7-.6-1.2-1.3-1.6-2.1-.4-.8-.6-1.7-.6-2.6s0-.4.1-.6c0-.2.2-.3.3-.5.1-.1.3-.2.5-.3.2 0 .4-.1.7-.1.5 0 .9.1 1.2.4s.4.6.4 1 .1 1.1.3 1.6.5.9.8 1.2c.4.3.8.6 1.3.8.5.2 1.1.3 1.6.3s1.1-.1 1.6-.3c.5-.2 1-.5 1.3-.8.4-.4.6-.8.8-1.2.2-.5.3-1 .3-1.5s.1-.8.4-1c.3-.3.7-.4 1.1-.4s.9.1 1.1.4c.3.3.4.6.4 1Z" class="st0"/>
+				</g>
+				<g>
+					<path class="switch__letters" d="M76.3 28.4c0 .4-.1.7-.4 1-.2.3-.6.4-1 .4l-5 .2h-.6c-1 0-2-.2-2.9-.6-.9-.4-1.6-.9-2.3-1.6-.7-.7-1.2-1.4-1.6-2.2s-.6-1.7-.6-2.7v-3.2c0-.9.2-1.8.5-2.6.4-.8.8-1.5 1.4-2.1.6-.6 1.3-1.1 2.1-1.5.8-.4 1.7-.6 2.7-.6h1.7c.4 0 .8.2 1 .5.3.3.4.6.4 1s-.1.8-.4 1c-.3.2-.6.4-1 .4h-1.5c-.5 0-1 .1-1.5.3-.5.2-.9.5-1.2.8-.3.4-.6.8-.8 1.3-.2.5-.3 1-.3 1.5v3.2c0 .6 0 1.1.3 1.6.2.5.5 1 .9 1.3.4.4.9.7 1.4.9.5.2 1.1.3 1.6.3l5.5-.2h.6c.2 0 .3.2.5.3.1.1.2.3.3.5 0 .2.1.4.1.6Z" class="st0"/>
+					<path class="switch__letters" d="M73 9.1c0-.4.1-.7.4-1 .3-.3.7-.4 1.1-.4s.9.1 1.1.4c.3.3.4.6.4 1v15.6c0 .4-.1.7-.4 1-.3.3-.7.4-1.1.4s-.9-.1-1.1-.4c-.3-.3-.4-.6-.4-1V9.1Z" class="st0"/>
+				</g>
+				<g>
+					<path class="switch__letters" d="M82.8 21.5c0-.4.1-.7.4-1 .2-.3.6-.4 1-.4h6.5v-.3c0-.6 0-1.1-.3-1.6-.2-.5-.5-.9-.8-1.3-.4-.4-.8-.7-1.3-.9-.5-.2-1.1-.3-1.8-.3s-1.1.1-1.6.3c-.5.2-1 .5-1.4.8-.4.3-.7.8-.9 1.2-.2.5-.3 1-.3 1.5s-.1.8-.4 1c-.3.3-.7.4-1.2.4s-.8-.1-1.1-.4c-.3-.3-.4-.6-.4-1 0-.9.2-1.8.6-2.6.4-.8.9-1.5 1.6-2.1.7-.6 1.4-1.1 2.3-1.4.9-.4 1.8-.5 2.9-.5s2.1.2 3 .6c.9.4 1.6.9 2.3 1.5.6.6 1.2 1.4 1.5 2.2.4.8.6 1.7.6 2.7v1.8c0 .2 0 .4-.1.6 0 .2-.2.3-.3.4-.1.1-.3.2-.5.3-.2 0-.4.1-.6.1h-8.1c-.4 0-.8-.1-1-.4-.2-.3-.4-.6-.4-1ZM90 27c.4 0 .7.1 1 .4.3.3.4.6.4 1s-.1.7-.4 1c-.3.3-.6.4-1 .4h-3.8c-1 0-2-.2-2.8-.5-.8-.3-1.6-.8-2.2-1.3-.6-.6-1.1-1.2-1.5-2-.4-.8-.5-1.6-.5-2.6s.1-.7.4-1c.3-.3.7-.4 1.1-.4s.9.1 1.2.4c.3.3.4.6.4 1s0 1 .3 1.5c.2.4.4.8.8 1.1.4.3.8.6 1.3.7.5.2 1 .3 1.6.3h3.8Z" class="st0"/>
+				</g>
+				<g>
+					<path class="switch__letters" d="M96.7 17.6c0-.6.1-1.2.4-1.7s.6-1 1-1.4c.4-.4.9-.7 1.5-1 .6-.2 1.2-.3 1.9-.3h3c.5 0 .8.2 1 .5.2.3.4.6.4 1s0 .4-.1.6-.2.3-.3.5c-.1.1-.3.2-.5.3-.2 0-.4.1-.6 0h-3.7c-.2 0-.4.2-.5.3-.2.1-.3.3-.3.5v11.8c0 .4-.1.7-.4 1-.3.3-.7.4-1.1.4s-.9-.1-1.1-.4c-.3-.3-.4-.6-.4-1V17.5ZM14.3 28.4c0 .4-.1.7-.4 1-.2.3-.6.4-1 .4l-5 .2h-.6c-1 0-2-.2-2.9-.6-.9-.4-1.6-.9-2.3-1.6-.7-.7-1.2-1.4-1.6-2.2-.4-.8-.6-1.7-.6-2.7v-3.2c0-.9.2-1.8.5-2.6.4-.8.8-1.5 1.4-2.1s1.3-1.1 2.1-1.5c.8-.4 1.7-.6 2.7-.6h1.7c.4 0 .8.2 1 .5.3.3.4.6.4 1s-.1.8-.4 1c-.3.2-.6.4-1 .4H6.8c-.5 0-1 .1-1.5.3-.5.2-.9.5-1.2.8-.3.4-.6.8-.8 1.3-.2.5-.3 1-.3 1.5v3.2c0 .6 0 1.1.3 1.6.2.5.5 1 .9 1.3.4.4.9.7 1.4.9.5.2 1.1.3 1.6.3l5.5-.2h.6c.2 0 .3.2.5.3.1.1.2.3.3.5 0 .2.1.4.1.6ZM10.9 9.1c0-.4.1-.7.4-1 .3-.3.7-.4 1.1-.4s.9.1 1.1.4c.3.3.4.6.4 1v15.6c0 .4-.1.7-.4 1-.3.3-.7.4-1.1.4s-.9-.1-1.1-.4c-.3-.3-.4-.6-.4-1V9.1ZM20.8 21.5c0-.4.1-.7.4-1 .2-.3.6-.4 1-.4h6.5v-.3c0-.6 0-1.1-.3-1.6-.2-.5-.5-.9-.8-1.3-.4-.4-.8-.7-1.3-.9-.5-.2-1.1-.3-1.8-.3s-1.1.1-1.6.3c-.5.2-1 .5-1.4.8-.4.3-.7.8-.9 1.2-.2.5-.3 1-.3 1.5s-.1.8-.4 1c-.3.3-.7.4-1.2.4s-.8-.1-1.1-.4c-.3-.3-.4-.6-.4-1 0-.9.2-1.8.6-2.6.4-.8.9-1.5 1.6-2.1.7-.6 1.4-1.1 2.3-1.4.9-.4 1.8-.5 2.9-.5s2.1.2 3 .6c.9.4 1.6.9 2.3 1.5.6.6 1.2 1.4 1.5 2.2s.6 1.7.6 2.7v1.8c0 .2 0 .4-.1.6 0 .2-.2.3-.3.4-.1.1-.3.2-.5.3-.2 0-.4.1-.6.1h-8.1c-.4 0-.8-.1-1-.4-.2-.3-.4-.6-.4-1ZM28 27c.4 0 .7.1 1 .4.3.3.4.6.4 1s-.1.7-.4 1-.6.4-1 .4h-3.8c-1 0-2-.2-2.8-.5s-1.6-.8-2.2-1.3c-.6-.6-1.1-1.2-1.5-2-.4-.8-.5-1.6-.5-2.6s.1-.7.4-1c.3-.3.7-.4 1.1-.4s.9.1 1.2.4c.3.3.4.6.4 1s0 1 .3 1.5c.2.4.4.8.8 1.1.4.3.8.6 1.3.7.5.2 1 .3 1.6.3h3.8Z" class="st0"/>
+				</g>
+			</svg>
+		</a>
+
+
+		<!-- KI Pro: always show as link -->
+		
+	</label>
+
+
+
+	<!-- <div class="d-flex">
+					<p><a href="https://the-decoder.com/" rel="home">The Decoder</a></p>
+						<p>AI, Menschen, Wirtschaft</p>
+			</div> -->
+
+</div>
+
+			<h5 class="text-sm uppercase white text-white-70 mb-2 mt-5">Newsletter - THE DECODER</h5>
+			<p>Every week, our editors pick the AI news that matters and explain what it means. No hype, no spam.</p>
+
+<!-- MailPoet Form Container for Footer -->
+<div class="mailpoet-newsletter-form-container-footer mt-4" data-form-id="1">
+	<!-- Fallback form that looks exactly like the footer design -->
+	<form action="#" method="post" class="newsletter-footer-form" novalidate>
+		<label for="email-footer" class="sr-only">Your email address</label>
+		<input type="text" id="email-footer" name="email" class="bg-white text-(--heise-primary-70) text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+			placeholder="Enter your email">
+		<button type="submit" class="text-white bg-white-20 mt-3 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-sm w-full sm:w-auto pl-3 pr-5 py-2.5 text-center newsletter-submit-button">
+			<i class="icon-paper-plane mr-2 text-lg icon-bold"></i><span class="button-text">Subscribe to our Newsletter</span>
+		</button>
+		<p class="mailpoet_validate_error" style="display: none;"></p>
+		<p class="mailpoet_validate_success" style="display: none;"></p>
+	</form>
+</div>
+
+<style>
+/* Style messages for footer newsletter - white background with colored text for visibility on dark background */
+.mailpoet-newsletter-form-container-footer .mailpoet_validate_success {
+	color: #16a34a !important; /* Dark green text */
+	background-color: rgba(255, 255, 255, 0.95) !important; /* Almost opaque white background */
+	padding: 0.75rem !important;
+	border-radius: 0.25rem !important;
+	border-left: 4px solid #16a34a !important;
+	font-size: 0.875rem !important;
+	font-weight: 500 !important;
+	margin-top: 0.75rem !important;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+.mailpoet-newsletter-form-container-footer .mailpoet_validate_error {
+	color: #dc2626 !important; /* Dark red text */
+	background-color: rgba(255, 255, 255, 0.95) !important; /* Almost opaque white background */
+	padding: 0.75rem !important;
+	border-radius: 0.25rem !important;
+	border-left: 4px solid #dc2626 !important;
+	font-size: 0.875rem !important;
+	font-weight: 500 !important;
+	margin-top: 0.75rem !important;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+</style>
+
+<script>
+(function() {
+	// Translation strings for footer
+	const messages = {
+		emailRequired: '⚠️ Email address is required',
+		invalidFormat: '⚠️ Invalid email format',
+		subscribing: 'Subscribing...',
+		checkInbox: '✓ Almost done: click the link in the email we just sent you.',
+		alreadySubscribed: 'This email is already subscribed',
+		somethingWrong: 'Something went wrong',
+		networkError: 'Network error',
+		subscribeButton: 'Subscribe to our Newsletter'
+	};
+
+	// Function to add validation to footer forms
+	function addFooterFormValidation(form, container) {
+		form.addEventListener('submit', function(e) {
+			e.preventDefault(); // Prevent page reload
+
+			// Get email input value
+			const emailInput = form.querySelector('input[name="email"]');
+			const emailValue = emailInput ? emailInput.value.trim() : '';
+
+			// Get or create message elements
+			let errorMessage = container.querySelector('.mailpoet_validate_error');
+			let successMessage = container.querySelector('.mailpoet_validate_success');
+
+			// Hide all messages initially
+			if (errorMessage) errorMessage.style.display = 'none';
+			if (successMessage) successMessage.style.display = 'none';
+
+			// Validate email
+			if (!emailValue || emailValue === '') {
+				if (errorMessage) {
+					errorMessage.style.display = 'block';
+					errorMessage.textContent = messages.emailRequired;
+				}
+				return false;
+			}
+
+			// Basic email format validation
+			const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+			if (!emailRegex.test(emailValue)) {
+				if (errorMessage) {
+					errorMessage.style.display = 'block';
+					errorMessage.textContent = messages.invalidFormat;
+				}
+				return false;
+			}
+
+			// Submit to MailPoet
+			submitToMailPoet(container, emailValue);
+		});
+	}
+
+	// Function to submit email to MailPoet
+	function submitToMailPoet(container, emailValue) {
+		const formId = container.getAttribute('data-form-id');
+		if (!formId) return;
+
+		// Show loading state
+		const submitBtn = container.querySelector('button[type="submit"]');
+		const originalContent = submitBtn ? submitBtn.innerHTML : '';
+		if (submitBtn) {
+			submitBtn.disabled = true;
+			submitBtn.innerHTML = '<i class="icon-spinner2 animate-spin mr-2"></i>' + messages.subscribing;
+		}
+
+		// Get AJAX URL
+		const ajaxUrl = (typeof deep_content_ajax !== 'undefined' && deep_content_ajax.ajax_url)
+			? deep_content_ajax.ajax_url
+			: '/wp-admin/admin-ajax.php';
+
+		// Submit email through our custom handler
+		const formData = new FormData();
+		formData.append('action', 'deep_content_mailpoet_subscribe');
+		formData.append('form_id', formId);
+		formData.append('email', emailValue);
+		formData.append('source', 'footer');
+
+		fetch(ajaxUrl, {
+			method: 'POST',
+			body: formData,
+			credentials: 'same-origin'
+		})
+		.then(response => response.json())
+		.then(data => {
+			// Get message elements
+			const successMessage = container.querySelector('.mailpoet_validate_success');
+			const errorMessage = container.querySelector('.mailpoet_validate_error');
+
+			if (data.success) {
+				// Show success
+				if (successMessage) {
+					successMessage.style.display = 'block';
+					if (data.data && data.data.message) {
+						successMessage.textContent = '✓ ' + data.data.message;
+					} else {
+						successMessage.textContent = messages.checkInbox;
+					}
+				}
+				// Hide error
+				if (errorMessage) errorMessage.style.display = 'none';
+
+				// Clear form
+				const emailInput = container.querySelector('input[name="email"]');
+				if (emailInput) emailInput.value = '';
+			} else {
+				// Show error
+				if (errorMessage) {
+					errorMessage.style.display = 'block';
+					if (data.data && data.data.message) {
+						if (data.data.message.includes('already subscribed')) {
+							errorMessage.textContent = messages.alreadySubscribed;
+						} else {
+							errorMessage.textContent = data.data.message;
+						}
+					} else {
+						errorMessage.textContent = messages.somethingWrong;
+					}
+				}
+				// Hide success
+				if (successMessage) successMessage.style.display = 'none';
+			}
+		})
+		.catch(error => {
+			// Show error
+			const errorMessage = container.querySelector('.mailpoet_validate_error');
+			if (errorMessage) {
+				errorMessage.style.display = 'block';
+				errorMessage.textContent = messages.networkError;
+			}
+		})
+		.finally(() => {
+			// Restore button
+			if (submitBtn) {
+				submitBtn.disabled = false;
+				submitBtn.innerHTML = originalContent;
+			}
+		});
+	}
+
+	// Initialize when DOM is ready
+	function initFooterNewsletterForms() {
+		const containers = document.querySelectorAll('.mailpoet-newsletter-form-container-footer');
+
+		containers.forEach(container => {
+			const form = container.querySelector('.newsletter-footer-form');
+			if (form) {
+				addFooterFormValidation(form, container);
+			}
+		});
+	}
+
+	// Run on DOM ready
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', initFooterNewsletterForms);
+	} else {
+		// DOM is already ready
+		initFooterNewsletterForms();
+	}
+})();
+</script>
+			<div class="social-icons flex items-center gap-2.5 mt-6">
+				<a href="https://discord.gg/8VKkHAacn8" class="bg-white text-(--decoder-highlight) rounded-full flex items-center justify-center" alt="Discord Icon"><i class="icon-discord icon-bold"></i><span class="sr-only">Discord</span></a>
+				<a href="https://www.linkedin.com/company/the-decoder-en/" class="bg-white text-(--decoder-highlight) rounded-full flex items-center justify-center" alt="LinkedIn Icon"><i class="icon-linkedin-1 icon-bold"></i><span class="sr-only">LinkedIn</span></a>
+			</div>
+		</div>
+
+		<div class="grid-item-2"><!-- Spacer --></div>
+
+		<!-- Datei: footer.php -->
+
+		<div class="grid-item-3">
+			<h5 class="text-sm uppercase text-white-70 mb-2">
+				Information			</h5>
+
+			<ul class="list-none">
+				
+				<li>
+					<a href="https://the-decoder.com/about">
+						About					</a>
+				</li>
+				<li>
+					<a href="#">
+						Advertise					</a>
+				</li>
+				<li>
+					<a href="/publish-with-us">
+						Publish with us					</a>
+				</li>
+
+									<li>
+						<a href="/login">
+							Login						</a>
+					</li>
+							</ul>
+		</div>
+
+		<div class="grid-item-4">
+			<h5 class="text-sm uppercase white text-white-70 mb-2">
+				Topics			</h5>
+			<ul class="list-none">
+									<li><a href="https://the-decoder.com/artificial-intelligence-news/ai-and-society/">AI and society</a></li>
+									<li><a href="https://the-decoder.com/artificial-intelligence-news/ai-practice/">AI in practice</a></li>
+									<li><a href="https://the-decoder.com/artificial-intelligence-news/ai-research/">AI research</a></li>
+									<li><a href="https://the-decoder.com/artificial-intelligence-news/frontier-radar/">Frontier Radar</a></li>
+									<li><a href="https://the-decoder.com/artificial-intelligence-news/short-news/">Short News</a></li>
+															</ul>
+		</div>
+
+		<div class="grid-item-5">
+			<h5 class="text-sm uppercase white text-white-70 mb-2">
+				Legal			</h5>
+			<ul class="list-none">
+								<li><a href="https://the-decoder.com/privacy-policy">Privacy Policy</a></li>
+								<li class="privacy-manager-item"><a href="/hours-after-anthropic-claims-a-claude-proof-of-the-riemann-hypothesis-stanford-releases-an-all-human-competing-draft/?cmpscreencustom=1" data-privacy-settings>Privacy Manager</a></li>
+				<li><a href="https://the-decoder.com/legal-notice">Imprint</a></li>
+				<li><a href="/tos">Terms and Conditions</a></li>
+				<li><a href="https://the-decoder.com/rueckerstattungsrichtlinien">Cancellation &amp; Refund</a></li>
+			</ul>
+		</div>
+
+	</div>
+
+	<!-- START Footer Widgets -->
+			<aside role="complementary" aria-label="Footer">
+			<section id="block-2" class="widget widget_block"><!-- Yieldlove AdTag - the-decoder.com_d_300x600_1 -->
+<div id='div-gpt-ad-1407836217769-0'>
+    <script type='text/javascript'>
+        if (window.innerWidth >= 1590) {
+            googletag.cmd.push(function () {
+                googletag.defineSlot('/22934659576/the-decoder.com/the-decoder.com_d_300x600_1', [[300, 600], [300, 250], [160, 600]], 'div-gpt-ad-1407836217769-0').addService(googletag.pubads());
+                googletag.display('div-gpt-ad-1407836217769-0');
+            });
+        }
+    </script>
+</div></section>		</aside>
+	
+		<!-- END Footer Widgets -->
+
+	<div class="flex mx-auto w-full max-w-decoder h-0.5 bg-white-20 rounded-sm"></div>
+
+	<div class="flex flex-col gap-4 mx-auto w-full max-w-decoder py-8">
+		<div class="text-white text-sm text-white-70">
+			THE DECODER by <a href="https://deep-content.io/" target="_blank" rel="noopener noreferrer" class="underline hover:text-white">DEEP CONTENT by heise</a> | All rights reserved 2026		</div>
+	</div>
+
+</footer><!-- #colophon -->
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/deep-content/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<span id='wpdUserContentInfoAnchor' style='display:none;' rel='#wpdUserContentInfo' data-wpd-lity>wpDiscuz</span><div id='wpdUserContentInfo' style='overflow:auto;background:#FDFDF6;padding:20px;width:600px;max-width:100%;border-radius:6px;' class='lity-hide'></div><div id='wpd-editor-source-code-wrapper-bg'></div><div id='wpd-editor-source-code-wrapper'><textarea id='wpd-editor-source-code'></textarea><button id='wpd-insert-source-code'>Insert</button><input type='hidden' id='wpd-editor-uid' /></div>
+</body>
+
+</html>

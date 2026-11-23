@@ -1,0 +1,327 @@
+{
+  "traceSchema": "openclaw-trajectory",
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-23T21:34:01.260Z",
+  "traceId": "cf96859b-f0de-494c-ab7b-99ddec71aef4",
+  "sessionId": "cf96859b-f0de-494c-ab7b-99ddec71aef4",
+  "sessionKey": "agent:work:main",
+  "harness": {
+    "type": "openclaw",
+    "name": "OpenClaw",
+    "version": "2026.10.5",
+    "os": {
+      "platform": "linux",
+      "arch": "x64",
+      "release": "6.6.87.2-microsoft-standard-WSL2",
+      "label": "linux 6.6.87.2-microsoft-standard-WSL2 (x64)"
+    },
+    "runtime": {
+      "node": "v26.10.0"
+    },
+    "invocation": [
+      "/usr/local/lib/nodejs/node-v26.10.0/bin/node",
+      "~/.nvm/versions/node/v26.10.0/lib/node_modules/openclaw/dist/index.js",
+      "gateway",
+      "--port",
+      "18789"
+    ],
+    "entrypoint": "~/.nvm/versions/node/v26.10.0/lib/node_modules/openclaw/dist/index.js",
+    "workspaceDir": "$OPENCLAW_STATE_DIR/workspace/agents/work",
+    "sessionFile": "~/agent:work:main"
+  },
+  "model": {
+    "provider": "minimax",
+    "name": "MiniMax-M2.7",
+    "api": "anthropic-messages",
+    "fastMode": false,
+    "thinkLevel": "off",
+    "reasoningLevel": "off"
+  },
+  "config": {
+    "redacted": {
+      "meta": {
+        "lastTouchedVersion": "2026.10.5",
+        "migrations": {
+          "modelPolicyAllowlist": true,
+          "utilityModelSeparation": true,
+          "webhookListeners": {
+            "telegram": {
+              "truncated": true,
+              "reason": "trajectory-depth-limit",
+              "limitDepth": 6
+            },
+            "feishu": {
+              "truncated": true,
+              "reason": "trajectory-depth-limit",
+              "limitDepth": 6
+            },
+            "msteams": {
+              "truncated": true,
+              "reason": "trajectory-depth-limit",
+              "limitDepth": 6
+            },
+            "nextcloud-talk": {
+              "truncated": true,
+              "reason": "trajectory-depth-limit",
+              "limitDepth": 6
+            }
+          }
+        }
+      },
+      "wizard": {
+        "lastRunAt": "2026-10-18T17:53:50.624Z",
+        "lastRunVersion": "2026.10.4",
+        "lastRunCommand": "doctor",
+        "lastRunMode": "local"
+      },
+      "auth": {
+        "profiles": {
+          "minimax:cn": {
+            "provider": "minimax",
+            "mode": "api_key"
+          }
+        }
+      },
+      "models": {
+        "mode": "merge",
+        "providers": {
+          "minimax": {
+            "baseUrl": "https://api.minimaxi.com/anthropic",
+            "api": "anthropic-messages",
+            "authHeader": true,
+            "models": {
+              "truncated": true,
+              "reason": "trajectory-depth-limit",
+              "limitDepth": 6
+            }
+          },
+          "openrouter": {
+            "baseUrl": "https://openrouter.ai/api/v1",
+            "api": "openai-completions",
+            "authHeader": true,
+            "models": {
+              "truncated": true,
+              "reason": "trajectory-depth-limit",
+              "limitDepth": 6
+            }
+          },
+          "longcat": {
+            "baseUrl": "https://api.longcat.chat/openai",
+            "api": "openai-completions",
+            "authHeader": true,
+            "models": {
+              "truncated": true,
+              "reason": "trajectory-depth-limit",
+              "limitDepth": 6
+            }
+          },
+          "siliconflow": {
+            "baseUrl": "https://api.siliconflow.cn/v1",
+            "api": "openai-completions",
+            "authHeader": true,
+            "models": {
+              "truncated": true,
+              "reason": "trajectory-depth-limit",
+              "limitDepth": 6
+            }
+          },
+          "litellm": {
+            "baseUrl": "http://192.168.31.231:4000/v1",
+            "api": "openai-completions",
+            "authHeader": true,
+            "models": {
+              "truncated": true,
+              "reason": "trajectory-depth-limit",
+              "limitDepth": 6
+            }
+          },
+          "ollama": {
+            "baseUrl": "http://172.18.160.1:11434/v1",
+            "api": "openai-completions",
+            "timeoutSeconds": 60,
+            "models": {
+              "truncated": true,
+              "reason": "trajectory-depth-limit",
+              "limitDepth": 6
+            }
+          }
+        }
+      },
+      "agents": {
+        "ownership": "explicit",
+        "defaults": {
+          "model": {
+            "primary": "minimax/MiniMax-M2.7",
+            "fallbacks": {
+              "truncated": true,
+              "reason": "trajectory-depth-limit",
+              "limitDepth": 6
+            }
+          },
+          "models": {
+            "siliconflow/stepfun-ai/Step-3.5-Flash": {
+              "truncated": true,
+              "reason": "trajectory-depth-limit",
+              "limitDepth": 6
+            },
+            "siliconflow/deepseek-ai/DeepSeek-V4.1-Flash": {
+              "truncated": true,
+              "reason": "trajectory-depth-limit",
+              "limitDepth": 6
+            },
+            "siliconflow/Qwen3.5-397B-A17B": {
+              "truncated": true,
+              "reason": "trajectory-depth-limit",
+              "limitDepth": 6
+            },
+            "siliconflow/moonshotai/Kimi-K2.7-Code": {
+              "truncated": true,
+              "reason": "trajectory-depth-limit",
+              "limitDepth": 6
+            },
+            "siliconflow/Qwen/Qwen2.5-7B-Instruct": {
+              "truncated": true,
+              "reason": "trajectory-depth-limit",
+              "limitDepth": 6
+            },
+            "siliconflow/zai-org/GLM-5.3-Flash": {
+              "truncated": true,
+              "reason": "trajectory-depth-limit",
+              "limitDepth": 6
+            },
+            "longcat/LongCat-2.0": {
+              "truncated": true,
+              "reason": "trajectory-depth-limit",
+              "limitDepth": 6
+            },
+            "litellm/deepseek-flash": {
+              "truncated": true,
+              "reason": "trajectory-depth-limit",
+              "limitDepth": 6
+            },
+            "litellm/deepseek-pro": {
+              "truncated": true,
+              "reason": "trajectory-depth-limit",
+              "limitDepth": 6
+            },
+            "litellm/MiniMax-M3": {
+              "truncated": true,
+              "reason": "trajectory-depth-limit",
+              "limitDepth": 6
+            },
+            "litellm/MiniMax-M2.7": {
+              "truncated": true,
+              "reason": "trajectory-depth-limit",
+              "limitDepth": 6
+            },
+            "litellm/MiniMax-M3.1-Flash": {
+              "truncated": true,
+              "reason": "trajectory-depth-limit",
+              "limitDepth": 6
+            },
+            "litellm/DeepSeek-V4.1-Flash": {
+              "truncated": true,
+              "reason": "trajectory-depth-limit",
+              "limitDepth": 6
+            },
+            "litellm/GLM-5.3-Flash": {
+              "truncated": true,
+              "reason": "trajectory-depth-limit",
+              "limitDepth": 6
+            },
+            "litellm/Kimi-K2.7": {
+              "truncated": true,
+              "reason": "trajectory-depth-limit",
+              "limitDepth": 6
+            },
+            "litellm/Qwen2.5-7B": {
+              "truncated": true,
+              "reason": "trajectory-depth-limit",
+              "limitDepth": 6
+            },
+            "litellm/Step-3.5-Flash": {
+              "truncated": true,
+              "reason": "trajectory-depth-limit",
+              "limitDepth": 6
+            },
+            "litellm/qwen3.6-plus": {
+              "truncated": true,
+              "reason": "trajectory-depth-limit",
+              "limitDepth": 6
+            },
+            "openrouter/qwen/qwen3.6-plus": {
+              "truncated": true,
+              "reason": "trajectory-depth-limit",
+              "limitDepth": 6
+            },
+            "openrouter/stepfun/step-3.5-flash": {
+              "truncated": true,
+              "reason": "trajectory-depth-limit",
+              "limitDepth": 6
+            },
+            "google/gemini-3.1-pro-preview": {
+              "truncated": true,
+              "reason": "trajectory-depth-limit",
+              "limitDepth": 6
+            },
+            "deepseek/DeepSeek-V4.1-Flash": {
+              "truncated": true,
+              "reason": "trajectory-depth-limit",
+              "limitDepth": 6
+            },
+            "deepseek/deepseek-v4-pro": {
+              "truncated": true,
+              "reason": "trajectory-depth-limit",
+              "limitDepth": 6
+            },
+            "ollama/qwen3.6:27b": {
+              "truncated": true,
+              "reason": "trajectory-depth-limit",
+              "limitDepth": 6
+            },
+            "minimax/MiniMax-M3": {
+              "truncated": true,
+              "reason": "trajectory-depth-limit",
+              "limitDepth": 6
+            },
+            "minimax/MiniMax-M2.7": {
+              "truncated": true,
+              "reason": "trajectory-depth-limit",
+              "limitDepth": 6
+            },
+            "minimax/MiniMax-M2.7-highspeed": "[Truncated]",
+            "litellm/LongCat-2.0": "[Truncated]",
+            "minimax/MiniMax-M3.1-Flash": "[Truncated]"
+          },
+          "modelPolicy": "[Truncated]",
+          "workspace": "$WORKSPACE_DIR",
+          "contextPruning": "[Truncated]",
+          "compaction": "[Truncated]",
+          "thinkingDefault": "off",
+          "systemAgent": "[Truncated]",
+          "maxConcurrent": 4,
+          "subagents": "[Truncated]",
+          "heartbeat": "[Truncated]"
+        },
+        "entries": "[Truncated]"
+      },
+      "tools": "[Truncated]",
+      "messages": "[Truncated]",
+      "commands": "[Truncated]",
+      "session": "***",
+      "hooks": "[Truncated]",
+      "channels": "[Truncated]",
+      "talk": "[Truncated]",
+      "gateway": "[Truncated]",
+      "mcp": "[Truncated]",
+      "skills": "[Truncated]",
+      "plugins": "[Truncated]"
+    },
+    "runtime": "[Truncated]"
+  },
+  "plugins": "[Truncated]",
+  "skills": "[Truncated]",
+  "prompting": "[Truncated]",
+  "redaction": "[Truncated]",
+  "metadata": "[Truncated]"
+}

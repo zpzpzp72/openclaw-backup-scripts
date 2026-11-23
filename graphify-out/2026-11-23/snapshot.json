@@ -1,0 +1,2566 @@
+{
+ "nodes": [
+  {
+   "id": "theme-2026-11-23",
+   "label": "AI/Agent/MCP 2026-11-23",
+   "kind": "theme",
+   "attrs": {
+    "date": "2026-11-23"
+   }
+  },
+  {
+   "id": "repo:mcp-servers",
+   "label": "MCP servers",
+   "kind": "repo",
+   "attrs": {
+    "tag": "mcp-servers"
+   }
+  },
+  {
+   "id": "release:mcp-servers:v2.5.0",
+   "label": "MCP servers v2.5.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP servers",
+    "tag": "v2.5.0",
+    "published": "2026-11-18T09:13:14Z",
+    "url": "https://github.com/modelcontextprotocol/servers/releases/tag/v2.5.0"
+   }
+  },
+  {
+   "id": "release:mcp-servers:v2.4.0",
+   "label": "MCP servers v2.4.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP servers",
+    "tag": "v2.4.0",
+    "published": "2026-11-11T07:07:16Z",
+    "url": "https://github.com/modelcontextprotocol/servers/releases/tag/v2.4.0"
+   }
+  },
+  {
+   "id": "release:mcp-servers:v2.3.0",
+   "label": "MCP servers v2.3.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP servers",
+    "tag": "v2.3.0",
+    "published": "2026-11-04T21:28:41Z",
+    "url": "https://github.com/modelcontextprotocol/servers/releases/tag/v2.3.0"
+   }
+  },
+  {
+   "id": "repo:mcp-spec",
+   "label": "MCP spec",
+   "kind": "repo",
+   "attrs": {
+    "tag": "mcp-spec"
+   }
+  },
+  {
+   "id": "release:mcp-spec:2026-07-28",
+   "label": "MCP spec 2026-07-28",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP spec",
+    "tag": "2026-07-28",
+    "published": "2026-07-28T16:47:49Z",
+    "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/releases/tag/2026-07-28"
+   }
+  },
+  {
+   "id": "release:mcp-spec:2026-07-28-RC",
+   "label": "MCP spec 2026-07-28-RC",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP spec",
+    "tag": "2026-07-28-RC",
+    "published": "2026-05-29T12:51:22Z",
+    "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/releases/tag/2026-07-28-RC"
+   }
+  },
+  {
+   "id": "release:mcp-spec:2025-11-25",
+   "label": "MCP spec 2025-11-25",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP spec",
+    "tag": "2025-11-25",
+    "published": "2025-11-25T21:17:42Z",
+    "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/releases/tag/2025-11-25"
+   }
+  },
+  {
+   "id": "repo:mcp-registry",
+   "label": "MCP registry",
+   "kind": "repo",
+   "attrs": {
+    "tag": "mcp-registry"
+   }
+  },
+  {
+   "id": "release:mcp-registry:v1.8.13",
+   "label": "MCP registry v1.8.13",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP registry",
+    "tag": "v1.8.13",
+    "published": "2026-11-22T16:29:50Z",
+    "url": "https://github.com/modelcontextprotocol/registry/releases/tag/v1.8.13"
+   }
+  },
+  {
+   "id": "release:mcp-registry:v1.8.12",
+   "label": "MCP registry v1.8.12",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP registry",
+    "tag": "v1.8.12",
+    "published": "2026-11-22T08:38:33Z",
+    "url": "https://github.com/modelcontextprotocol/registry/releases/tag/v1.8.12"
+   }
+  },
+  {
+   "id": "release:mcp-registry:v1.8.11",
+   "label": "MCP registry v1.8.11",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP registry",
+    "tag": "v1.8.11",
+    "published": "2026-11-21T14:21:29Z",
+    "url": "https://github.com/modelcontextprotocol/registry/releases/tag/v1.8.11"
+   }
+  },
+  {
+   "id": "repo:mcp-inspector",
+   "label": "MCP inspector",
+   "kind": "repo",
+   "attrs": {
+    "tag": "mcp-inspector"
+   }
+  },
+  {
+   "id": "release:mcp-inspector:2.16.0",
+   "label": "MCP inspector 2.16.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP inspector",
+    "tag": "2.16.0",
+    "published": "2026-11-18T09:08:03Z",
+    "url": "https://github.com/modelcontextprotocol/inspector/releases/tag/2.16.0"
+   }
+  },
+  {
+   "id": "release:mcp-inspector:1.0.6",
+   "label": "MCP inspector 1.0.6",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP inspector",
+    "tag": "1.0.6",
+    "published": "2026-11-18T08:06:30Z",
+    "url": "https://github.com/modelcontextprotocol/inspector/releases/tag/1.0.6"
+   }
+  },
+  {
+   "id": "release:mcp-inspector:2.15.0",
+   "label": "MCP inspector 2.15.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP inspector",
+    "tag": "2.15.0",
+    "published": "2026-11-12T00:46:29Z",
+    "url": "https://github.com/modelcontextprotocol/inspector/releases/tag/2.15.0"
+   }
+  },
+  {
+   "id": "repo:mcp-sdk-py",
+   "label": "MCP python-sdk",
+   "kind": "repo",
+   "attrs": {
+    "tag": "mcp-sdk-py"
+   }
+  },
+  {
+   "id": "release:mcp-sdk-py:v2.3.0",
+   "label": "MCP python-sdk v2.3.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP python-sdk",
+    "tag": "v2.3.0",
+    "published": "2026-10-02T22:02:27Z",
+    "url": "https://github.com/modelcontextprotocol/python-sdk/releases/tag/v2.3.0"
+   }
+  },
+  {
+   "id": "release:mcp-sdk-py:v2.2.0",
+   "label": "MCP python-sdk v2.2.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP python-sdk",
+    "tag": "v2.2.0",
+    "published": "2026-09-07T15:53:57Z",
+    "url": "https://github.com/modelcontextprotocol/python-sdk/releases/tag/v2.2.0"
+   }
+  },
+  {
+   "id": "release:mcp-sdk-py:v1.30.0",
+   "label": "MCP python-sdk v1.30.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP python-sdk",
+    "tag": "v1.30.0",
+    "published": "2026-09-07T14:03:59Z",
+    "url": "https://github.com/modelcontextprotocol/python-sdk/releases/tag/v1.30.0"
+   }
+  },
+  {
+   "id": "repo:mcp-sdk-ts",
+   "label": "MCP typescript-sdk",
+   "kind": "repo",
+   "attrs": {
+    "tag": "mcp-sdk-ts"
+   }
+  },
+  {
+   "id": "release:mcp-sdk-ts:v2.4.0",
+   "label": "MCP typescript-sdk v2.4.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP typescript-sdk",
+    "tag": "v2.4.0",
+    "published": "2026-10-23T18:32:25Z",
+    "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/v2.4.0"
+   }
+  },
+  {
+   "id": "release:mcp-sdk-ts:1.32.2",
+   "label": "MCP typescript-sdk 1.32.2",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP typescript-sdk",
+    "tag": "1.32.2",
+    "published": "2026-10-23T18:06:24Z",
+    "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/1.32.2"
+   }
+  },
+  {
+   "id": "release:mcp-sdk-ts:@modelcontextprotocol/server@2.4.0",
+   "label": "MCP typescript-sdk @modelcontextprotocol/server@2.4.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP typescript-sdk",
+    "tag": "@modelcontextprotocol/server@2.4.0",
+    "published": "2026-10-23T18:19:14Z",
+    "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol/server%402.4.0"
+   }
+  },
+  {
+   "id": "repo:mcp-sdk-go",
+   "label": "MCP go-sdk",
+   "kind": "repo",
+   "attrs": {
+    "tag": "mcp-sdk-go"
+   }
+  },
+  {
+   "id": "release:mcp-sdk-go:v1.9.0-pre.1",
+   "label": "MCP go-sdk v1.9.0-pre.1",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP go-sdk",
+    "tag": "v1.9.0-pre.1",
+    "published": "2026-11-17T10:02:09Z",
+    "url": "https://github.com/modelcontextprotocol/go-sdk/releases/tag/v1.9.0-pre.1"
+   }
+  },
+  {
+   "id": "release:mcp-sdk-go:v1.8.0",
+   "label": "MCP go-sdk v1.8.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP go-sdk",
+    "tag": "v1.8.0",
+    "published": "2026-09-14T08:05:46Z",
+    "url": "https://github.com/modelcontextprotocol/go-sdk/releases/tag/v1.8.0"
+   }
+  },
+  {
+   "id": "release:mcp-sdk-go:v1.8.0-pre.2",
+   "label": "MCP go-sdk v1.8.0-pre.2",
+   "kind": "release",
+   "attrs": {
+    "repo": "MCP go-sdk",
+    "tag": "v1.8.0-pre.2",
+    "published": "2026-09-04T09:14:41Z",
+    "url": "https://github.com/modelcontextprotocol/go-sdk/releases/tag/v1.8.0-pre.2"
+   }
+  },
+  {
+   "id": "repo:sdk-py",
+   "label": "anthropic-sdk-python",
+   "kind": "repo",
+   "attrs": {
+    "tag": "sdk-py"
+   }
+  },
+  {
+   "id": "release:sdk-py:v2.12.0",
+   "label": "anthropic-sdk-python v2.12.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "anthropic-sdk-python",
+    "tag": "v2.12.0",
+    "published": "2026-11-20T15:56:21Z",
+    "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v2.12.0"
+   }
+  },
+  {
+   "id": "release:sdk-py:v2.11.0",
+   "label": "anthropic-sdk-python v2.11.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "anthropic-sdk-python",
+    "tag": "v2.11.0",
+    "published": "2026-11-19T19:14:21Z",
+    "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v2.11.0"
+   }
+  },
+  {
+   "id": "release:sdk-py:v2.10.0",
+   "label": "anthropic-sdk-python v2.10.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "anthropic-sdk-python",
+    "tag": "v2.10.0",
+    "published": "2026-11-17T18:28:13Z",
+    "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v2.10.0"
+   }
+  },
+  {
+   "id": "repo:claude-code",
+   "label": "claude-code",
+   "kind": "repo",
+   "attrs": {
+    "tag": "claude-code"
+   }
+  },
+  {
+   "id": "release:claude-code:v2.1.330",
+   "label": "claude-code v2.1.330",
+   "kind": "release",
+   "attrs": {
+    "repo": "claude-code",
+    "tag": "v2.1.330",
+    "published": "2026-11-20T22:32:56Z",
+    "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.330"
+   }
+  },
+  {
+   "id": "release:claude-code:v2.1.329",
+   "label": "claude-code v2.1.329",
+   "kind": "release",
+   "attrs": {
+    "repo": "claude-code",
+    "tag": "v2.1.329",
+    "published": "2026-11-19T22:14:41Z",
+    "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.329"
+   }
+  },
+  {
+   "id": "release:claude-code:v2.1.328",
+   "label": "claude-code v2.1.328",
+   "kind": "release",
+   "attrs": {
+    "repo": "claude-code",
+    "tag": "v2.1.328",
+    "published": "2026-11-19T01:14:04Z",
+    "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.328"
+   }
+  },
+  {
+   "id": "repo:openai-python",
+   "label": "openai-python",
+   "kind": "repo",
+   "attrs": {
+    "tag": "openai-python"
+   }
+  },
+  {
+   "id": "release:openai-python:v3.57.0",
+   "label": "openai-python v3.57.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "openai-python",
+    "tag": "v3.57.0",
+    "published": "2026-11-20T01:27:57Z",
+    "url": "https://github.com/openai/openai-python/releases/tag/v3.57.0"
+   }
+  },
+  {
+   "id": "release:openai-python:v3.56.0",
+   "label": "openai-python v3.56.0",
+   "kind": "release",
+   "attrs": {
+    "repo": "openai-python",
+    "tag": "v3.56.0",
+    "published": "2026-11-19T20:56:27Z",
+    "url": "https://github.com/openai/openai-python/releases/tag/v3.56.0"
+   }
+  },
+  {
+   "id": "release:openai-python:v3.55.1",
+   "label": "openai-python v3.55.1",
+   "kind": "release",
+   "attrs": {
+    "repo": "openai-python",
+    "tag": "v3.55.1",
+    "published": "2026-11-18T16:04:26Z",
+    "url": "https://github.com/openai/openai-python/releases/tag/v3.55.1"
+   }
+  },
+  {
+   "id": "repo:vercel-ai-sdk",
+   "label": "vercel ai sdk",
+   "kind": "repo",
+   "attrs": {
+    "tag": "vercel-ai-sdk"
+   }
+  },
+  {
+   "id": "release:vercel-ai-sdk:ai@7.0.179",
+   "label": "vercel ai sdk ai@7.0.179",
+   "kind": "release",
+   "attrs": {
+    "repo": "vercel ai sdk",
+    "tag": "ai@7.0.179",
+    "published": "2026-11-20T23:17:40Z",
+    "url": "https://github.com/vercel/ai/releases/tag/ai%407.0.179"
+   }
+  },
+  {
+   "id": "release:vercel-ai-sdk:ai@7.0.178",
+   "label": "vercel ai sdk ai@7.0.178",
+   "kind": "release",
+   "attrs": {
+    "repo": "vercel ai sdk",
+    "tag": "ai@7.0.178",
+    "published": "2026-11-20T16:51:22Z",
+    "url": "https://github.com/vercel/ai/releases/tag/ai%407.0.178"
+   }
+  },
+  {
+   "id": "release:vercel-ai-sdk:ai@5.0.292",
+   "label": "vercel ai sdk ai@5.0.292",
+   "kind": "release",
+   "attrs": {
+    "repo": "vercel ai sdk",
+    "tag": "ai@5.0.292",
+    "published": "2026-11-20T16:50:49Z",
+    "url": "https://github.com/vercel/ai/releases/tag/ai%405.0.292"
+   }
+  },
+  {
+   "id": "repo:anthropics-claude-code",
+   "label": "anthropics claude code",
+   "kind": "repo",
+   "attrs": {
+    "tag": "anthropics-claude-code"
+   }
+  },
+  {
+   "id": "commit:139d9aad4c",
+   "label": "chore: Update mods/",
+   "kind": "commit",
+   "attrs": {
+    "repo": "anthropics claude code",
+    "date": "2026-11-22",
+    "sha": "1006c2e4"
+   }
+  },
+  {
+   "id": "repo:modelcontextprotocol-modelcontextprotocol",
+   "label": "modelcontextprotocol modelcontextprotocol",
+   "kind": "repo",
+   "attrs": {
+    "tag": "modelcontextprotocol-modelcontextprotocol"
+   }
+  },
+  {
+   "id": "commit:a2635e50f7",
+   "label": "docs: add Archestra.AI and mcp-use to the extension client matrix (#3574)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "modelcontextprotocol modelcontextprotocol",
+    "date": "2026-11-22",
+    "sha": "862397ce"
+   }
+  },
+  {
+   "id": "commit:fa6d3c09d6",
+   "label": "docs: update Discord invite link (#3577)",
+   "kind": "commit",
+   "attrs": {
+    "repo": "modelcontextprotocol modelcontextprotocol",
+    "date": "2026-11-22",
+    "sha": "af66e6fd"
+   }
+  },
+  {
+   "id": "advisory:GHSA-rq2p-q7c4-6g27",
+   "label": "Symlink swap after validation lets the directory-listing tools return entry names from outside allowedDirector",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-rq2p-q7c4-6g27",
+    "severity": "low",
+    "published": "2026-11-18T09:21:45Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-h2g3-rwxm-xfm3",
+   "label": "mcp-server-git 2026.11.11: git_merge runs gc.recentObjectsHook from the repository's own config",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-h2g3-rwxm-xfm3",
+    "severity": "high",
+    "published": "2026-11-18T09:22:16Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-87qg-cmw8-jc5m",
+   "label": "mcp-server-git: a repository's promisor configuration runs a program during a lazy fetch",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-87qg-cmw8-jc5m",
+    "severity": "high",
+    "published": "2026-11-18T09:22:44Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-9vjp-x34c-xg6v",
+   "label": "mcp-server-git: a config include created by the merged branch runs a command during git_merge",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-9vjp-x34c-xg6v",
+    "severity": "high",
+    "published": "2026-11-18T09:23:38Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-pm7p-vphh-2cg7",
+   "label": "mcp-server-git: a repository's own config runs a command, because the hardening misses an empty driver name",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-pm7p-vphh-2cg7",
+    "severity": "high",
+    "published": "2026-11-18T09:24:02Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-r2q8-f657-4r56",
+   "label": "mcp-server-git 2026.11.11: a crafted `.git/index` makes read-only tools return files outside the `--repository",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-r2q8-f657-4r56",
+    "severity": "medium",
+    "published": "2026-11-18T09:24:32Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-8wv7-r664-7594",
+   "label": "mcp-server-git: a submodule's own configuration still runs programs on `git_diff` (with `diff.submodule=diff`)",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-8wv7-r664-7594",
+    "severity": "high",
+    "published": "2026-11-18T09:24:57Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-38j4-j742-j7r3",
+   "label": "server-everything: gzip fetch SSRF guard still treats the NAT64 well-known prefix (64:ff9b::/96) as public — t",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-38j4-j742-j7r3",
+    "severity": "low",
+    "published": "2026-11-18T09:26:31Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-7m4x-rv66-mxhh",
+   "label": "server-filesystem: `move_file`'s same-device rename leaves the source unpinned — a swapped source parent moves",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-7m4x-rv66-mxhh",
+    "severity": "medium",
+    "published": "2026-11-11T07:24:37Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-3rxj-6jhw-qfv7",
+   "label": "mcp-server-fetch: IPv6 site-local fec0::/10 classified as public (SSRF guard classifier gap, CWE-918)",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-3rxj-6jhw-qfv7",
+    "severity": "low",
+    "published": "2026-11-11T07:25:00Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-6hqx-gqrx-c5r2",
+   "label": "mcp-server-git: arbitrary command execution via a repository's own Git configuration (core.fsmonitor) during r",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-6hqx-gqrx-c5r2",
+    "severity": "high",
+    "published": "2026-11-11T07:25:22Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-f9hh-cmx9-2f23",
+   "label": "mcp-server-fetch: robots.txt path-canonicalization bypass (e.g. //private fetched while Disallow: /private)",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-f9hh-cmx9-2f23",
+    "severity": "low",
+    "published": "2026-11-11T07:27:04Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-q74p-4wrc-q7w6",
+   "label": "mcp-server-git: Incomplete Fix for GHSA-w766-5x43-whvw in validate_opened_repo() Allows --repository Confineme",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-q74p-4wrc-q7w6",
+    "severity": "medium",
+    "published": "2026-11-11T07:27:42Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-p9cv-8g75-4xcg",
+   "label": "Symlink swap after validation lets read_text_file return files outside allowedDirectories",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-p9cv-8g75-4xcg",
+    "severity": "medium",
+    "published": "2026-11-11T07:28:07Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-w766-5x43-whvw",
+   "label": "mcp-server-git: nested gitdir file bypasses --repository confinement",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-w766-5x43-whvw",
+    "severity": "medium",
+    "published": "2026-10-28T21:13:40Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-3jqg-r5pp-rmp2",
+   "label": "robots.txt enforcement bypass via HTTP redirects in mcp-server-fetch",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-3jqg-r5pp-rmp2",
+    "severity": "low",
+    "published": "2026-10-25T00:15:37Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-4gxg-m5jx-9j57",
+   "label": "Case-variant path bypasses symlink check and allows creating files outside allowed directories in server-files",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-4gxg-m5jx-9j57",
+    "severity": "medium",
+    "published": "2026-10-25T00:18:21Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-7rgq-gccq-qphx",
+   "label": "Path traversal via trailing quote/whitespace in validatePath (Check/Use Mismatch)",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-7rgq-gccq-qphx",
+    "severity": "medium",
+    "published": "2026-10-25T00:18:38Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-66qx-2266-pmj6",
+   "label": "fetch server: SSRF guard treats the well-known NAT64 prefix 64:ff9b::/96 as public, so a metadata address is r",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-66qx-2266-pmj6",
+    "severity": "low",
+    "published": "2026-10-25T00:18:52Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-v38p-wf49-hx2j",
+   "label": "fetch: private-address guard bypass via IDNA hostnames (check and connect resolve different names)",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-v38p-wf49-hx2j",
+    "severity": "medium",
+    "published": "2026-10-25T00:19:06Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-53mr-w429-c597",
+   "label": "Parent-Directory Fallback TOCTOU in @modelcontextprotocol/server-filesystem Permits Arbitrary File Write Outsi",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-53mr-w429-c597",
+    "severity": "low",
+    "published": "2026-10-25T00:19:21Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-hhwq-wxfx-cj7g",
+   "label": "@modelcontextprotocol/server-filesystem list_directory_with_sizes follows symlinks and leaks outside-directory",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-hhwq-wxfx-cj7g",
+    "severity": "low",
+    "published": "2026-10-25T00:19:37Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-mvf5-2qqv-rg3c",
+   "label": " Cross-Origin Environment Variable Exfiltration in @modelcontextprotocol/server-everything",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-mvf5-2qqv-rg3c",
+    "severity": "medium",
+    "published": "2026-10-25T00:19:52Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-vjqx-cfc4-9h6v",
+   "label": "Path traversal in git_add allows staging files outside repository boundaries in mcp-server-git",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-vjqx-cfc4-9h6v",
+    "severity": "medium",
+    "published": "2026-02-25T23:21:57Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-5cgr-j3jf-jw3v",
+   "label": "Unrestricted git_init tool allows repository creation at arbitrary filesystem locations in mcp-server-git",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-5cgr-j3jf-jw3v",
+    "severity": "medium",
+    "published": "2025-12-17T15:55:26Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-9xwc-hfwc-8w59",
+   "label": "Argument injection in git_diff and git_checkout functions for mcp-server-git allows overwriting local files",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-9xwc-hfwc-8w59",
+    "severity": "medium",
+    "published": "2025-12-17T16:01:56Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-j22h-9j4x-23w5",
+   "label": "Missing path validation when using --repository flag in mcp-server-git",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-j22h-9j4x-23w5",
+    "severity": "medium",
+    "published": "2025-12-17T16:04:43Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-hc55-p739-j48w",
+   "label": "Path validation bypass via colliding path prefix",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-hc55-p739-j48w",
+    "severity": "high",
+    "published": "2025-07-01T18:39:04Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-q66q-fx2p-7w4m",
+   "label": "Path validation bypass via symlink handling",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-q66q-fx2p-7w4m",
+    "severity": "high",
+    "published": "2025-07-01T18:38:24Z",
+    "repo": "mcp-servers"
+   }
+  },
+  {
+   "id": "advisory:GHSA-2v5f-5r6w-p67r",
+   "label": "OCI validator skips ownership check on upstream rate limits",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-2v5f-5r6w-p67r",
+    "severity": "low",
+    "published": "2026-05-12T21:41:52Z",
+    "repo": "mcp-registry"
+   }
+  },
+  {
+   "id": "advisory:GHSA-r48c-v28r-pf6v",
+   "label": "Unauthenticated SSRF: HTTP namespace verification dials 6to4 / NAT64 / site-local IPv6 addresses, bypassing pr",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-r48c-v28r-pf6v",
+    "severity": "medium",
+    "published": "2026-05-04T14:46:47Z",
+    "repo": "mcp-registry"
+   }
+  },
+  {
+   "id": "advisory:GHSA-rqv2-m695-f8j4",
+   "label": "Stored XSS in catalogue UI via attribute-quote breakout in publisher-controlled `websiteUrl`",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-rqv2-m695-f8j4",
+    "severity": "medium",
+    "published": "2026-05-04T14:34:31Z",
+    "repo": "mcp-registry"
+   }
+  },
+  {
+   "id": "advisory:GHSA-v8vw-gw5j-w7m6",
+   "label": "Open redirect via protocol-relative path in trailing-slash middleware",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-v8vw-gw5j-w7m6",
+    "severity": "low",
+    "published": "2026-05-04T12:25:03Z",
+    "repo": "mcp-registry"
+   }
+  },
+  {
+   "id": "advisory:GHSA-95c3-6vvw-4mrq",
+   "label": "GitHub OIDC tokens replayable across registry deployments due to shared audience",
+   "kind": "advisory",
+   "attrs": {
+    "ghsa": "GHSA-95c3-6vvw-4mrq",
+    "severity": "low",
+    "published": "2026-05-04T12:25:24Z",
+    "repo": "mcp-registry"
+   }
+  },
+  {
+   "id": "news:ai-coding-agents-fewer-than-one-in-ten-tasks-simulated-company",
+   "label": "The Decoder - AI coding agents ace isolated tests but complete fewer than one in ten tasks in a simulated workplace (2026-11-22)",
+   "kind": "news",
+   "attrs": {
+    "org": "research",
+    "tag": "ai-coding-agents-fewer-than-one-in-ten-tasks-simulated-company",
+    "date": "2026-11-23",
+    "summary": "A new real-world test puts AI coding agents in a simulated developer job with colleagues, project boards, and incomplete handoffs, where they have to keep developing software on their own and reliably close open tickets in a messy daily workflow. Even Opus 5.5 and Astra fall far short, solving fewer than one in ten tasks completely. The models finish clear, standalone assignments quickly, but they lose track as autonomous developers. The framing matters for this series because SWE-bench is nearly saturated and Anthropic claims Claude writes more than 80 percent of production code, while this benchmark shows that isolated test-passing does not transfer to closing open tickets in a messy workflow. The measurement gap between a benchmark task and a workplace task is where agent evaluation has actually moved."
+   }
+  },
+  {
+   "id": "org:research",
+   "label": "research",
+   "kind": "org",
+   "attrs": {}
+  },
+  {
+   "id": "news:perplexity-monitor-api-scheduled-search-webhook-agents",
+   "label": "The Decoder - Perplexity Monitor API turns web search from a one-off query into a nonstop watchdog (2026-11-22)",
+   "kind": "news",
+   "attrs": {
+    "org": "industry",
+    "tag": "perplexity-monitor-api-scheduled-search-webhook-agents",
+    "date": "2026-11-23",
+    "summary": "Perplexity launched a Monitor API that searches the web on a schedule and alerts agents via webhook only when relevant changes occur. Its own decision model filters out unimportant results. Two modes: web monitors run a search query on a schedule against a developer-defined goal, and page monitors track up to ten pages such as pricing pages, changelogs, or policies, storing a baseline on first run and returning a text diff of changes. Results are scored on relevance, source credibility, novelty, and timeliness, and an update with a confidence score is only sent when every threshold is met; thresholds and the goal can be changed without recreating the monitor. Schedules run from every 15 minutes to weekly or on a custom cron. Webhooks are signed and delivery is retried after temporary errors. Pricing is 1 dollar per 1000 requests, and Perplexity says internal tests put it ahead of Firecrawl and Exa. For Perplexity the API is a way to stand out from an increasingly interchangeable chatbot business through developer tools."
+   }
+  },
+  {
+   "id": "org:industry",
+   "label": "industry",
+   "kind": "org",
+   "attrs": {}
+  },
+  {
+   "id": "news:openai-perplexity-shared-metric-pacing-0-68-0-70-window",
+   "label": "OpenAI - Perplexity and Intelligence, by Jakub Pachocki, Chief Scientist (2026-11-22)",
+   "kind": "news",
+   "attrs": {
+    "org": "research",
+    "tag": "openai-perplexity-shared-metric-pacing-0-68-0-70-window",
+    "date": "2026-11-23",
+    "summary": "OpenAI chief scientist Jakub Pachocki argues for establishing perplexity, equivalently cross-entropy loss, as a metric to compare model developers and to inform shared safety standards, and publishes OpenAI internal perplexity measurements as a first step. The reported log-perplexity trajectory is given as about 0.99 for GPT-3.5, about 0.91 for GPT-4, below 0.8 as transformative capabilities in cybersecurity and mathematics emerged, and about 0.76 when the models started producing groundbreaking mathematical results. Pachocki argues the emergence of those capabilities was not clear in advance and should be seen as latent capabilities emerging from progress on one metric, and he contrasts the usual recursive-self-improvement framing with a specific step change in algorithmic research on pretraining, estimating that as early as 2027 an avalanche of fundamental pretraining advancements is conceivable. He expects further transformative capabilities in the roughly 0.68 to 0.7 log-perplexity window, and expects further degradation in dominant forms of alignment auditing plus more evaluation and training awareness. He proposes common limits based on perplexity that frontier developers commit not to cross until understanding and monitoring reach a concrete milestone such as a successor to chain-of-thought monitors. Named challenges: difficulty of comparison across labs, detachment from actionable evaluations, not accounting for advances outside pretraining such as chain-of-thought reasoning, and an unknown loss floor set by the entropy of the data."
+   }
+  },
+  {
+   "id": "news:anthropic-single-agent-beats-multi-agent-subagents-migration-kit",
+   "label": "The Decoder - Anthropic says one AI agent beats many subagents now that models can handle complexity alone (2026-10-25)",
+   "kind": "news",
+   "attrs": {
+    "org": "research",
+    "tag": "anthropic-single-agent-beats-multi-agent-subagents-migration-kit",
+    "date": "2026-11-23",
+    "summary": "Anthropic found that a single agent with on-demand context often outperforms multi-agent setups in quality, cost, and latency, and is releasing a migration kit to help teams evaluate and make the switch. The company recommends that companies evaluate whether they can consolidate sub-agents, because a single primary agent that loads context as needed often delivers better results than a fleet of specialized ones. Newer models starting with Opus 4.5, along with Opus 5.5 and Fable 5.1, can manage complex plans directly in a single loop, which also reduces cost and wait time, and in one architecture comparison the single-agent setup ran about twice as fast as the multi-agent setup. This directly qualifies the subagent-heavy orchestration pattern tracked in earlier windows of this series."
+   }
+  },
+  {
+   "id": "news:anthropic-memory-selective-notes-dreaming-forget-pokemon",
+   "label": "The Decoder - Anthropic says the key to agent memory is knowing what to forget, not how much to store (2026-11-16)",
+   "kind": "news",
+   "attrs": {
+    "org": "research",
+    "tag": "anthropic-memory-selective-notes-dreaming-forget-pokemon",
+    "date": "2026-11-23",
+    "summary": "Anthropic studied how Claude retains knowledge across sessions with the model unchanged: Claude writes notes to a folder it can read back later, and the core problem is selection, because before it knows what comes next the agent must decide in the moment what might matter later, so every note is a bet on the future. In a Pokemon Red test the older Claude Sonnet 3.7 treated everything as potentially important and, across roughly 10,000 game steps, created 413 files in 225 folders, often one per battle and item; because the game state keeps changing the archive went stale fast, and at times the model did nothing but reorganize its notes instead of playing, finishing with a single badge. The newer Claude Fable 5 limited its memory to a few files and earned four badges, not recording information already visible on screen and instead writing down plans, strategies, and rules it had tested. A post-session process called Dreaming analyzes earlier session transcripts during idle periods to independently correct faulty notes and build structured knowledge collections. Anthropic notes the comparison covers only a single playthrough per model."
+   }
+  },
+  {
+   "id": "news:ramp-ai-index-token-prices-down-21pct-six-weeks-volume-record",
+   "label": "The Decoder - AI industry growth remains strong, but the pace is slowing (2026-11-19)",
+   "kind": "news",
+   "attrs": {
+    "org": "industry",
+    "tag": "ramp-ai-index-token-prices-down-21pct-six-weeks-volume-record",
+    "date": "2026-11-23",
+    "summary": "The latest update of the Ramp AI Index, drawing on transaction data from more than 85,000 US companies, shows token prices fell 21.2 percent in six weeks while token volume rose 1.5 percent to a record high. Anthropic dominates with nearly 59 percent of token spending. Data from Ramp, Stripe, and OpenRouter independently show the same pattern: the AI industry is still growing, but revenue momentum is cooling. This is the third quantitative sample in this series of the cost-per-computed-unit curve, and it sits alongside the previous window finding of a 62 percent drop in cost per verified task for Qwen4-Max."
+   }
+  },
+  {
+   "id": "news:claude-fable-5-2-paints-with-code-700k-strokes",
+   "label": "The Decoder - Anthropic Claude Fable 5.2 paints images with code instead of generating them (2026-11-15)",
+   "kind": "news",
+   "attrs": {
+    "org": "research",
+    "tag": "claude-fable-5-2-paints-with-code-700k-strokes",
+    "date": "2026-11-23",
+    "summary": "Anthropic Claude Fable 5.2 does not generate images the way other AI models do. Instead of computing pixels, the language model writes Python code that places hundreds of thousands of simulated brushstrokes on a virtual canvas, complete with bristle texture and how the paint goes on, including mistakes it then has to paint over. Current image models like Midjourney typically use diffusion, which gradually refines a noisy image into a clear result, while Fable 5.2 simulates the physical painting process. A single photorealistic parking garage scene took roughly 700,000 strokes, according to Anthropic employee Jake Eaton. The architectural point for agents is that generation is delegated to a program the model writes, which is the same delegation pattern used for tool use and for the looped-transformer inference axis tracked in the previous window."
+   }
+  },
+  {
+   "id": "news:open-social-web-alliance-activitypub-open-protocol",
+   "label": "Open Social Web Alliance - an ActivityPub-style open social protocol policy page (2026-11-22)",
+   "kind": "news",
+   "attrs": {
+    "org": "industry",
+    "tag": "open-social-web-alliance-activitypub-open-protocol",
+    "date": "2026-11-23",
+    "summary": "The Open Social Web Alliance publishes a policy paper for a shared, standardised communication protocol on the model of email: one account, own posts and content, own choices, and freedom to connect across networks regardless of host. The stated vision is a year in which more than 100 million people connect through open social networks with no platform economy, built on ActivityPub and related open standards, with users deciding which content, algorithms, and applications to use. The alliance frames the goal as building social media that strengthens democratic discourse while being resilient and appealing. It surfaced on HackerNews with 108 points and 95 comments, and its presence in this window is a second instance of the same pattern seen with MCP: an incumbent closed protocol facing an open-protocol alternative that claims the same capability set with a federated identity layer."
+   }
+  },
+  {
+   "id": "news:show-hn-game-where-you-are-an-llm-subagent",
+   "label": "GitHub - gulivan/worker755: a game where you are an LLM subagent (2026-11-22)",
+   "kind": "news",
+   "attrs": {
+    "org": "research",
+    "tag": "show-hn-game-where-you-are-an-llm-subagent",
+    "date": "2026-11-23",
+    "summary": "A Show HN project that turns the agent subagent concept into a game: the player operates as a subagent of an LLM, receiving instructions from a parent agent and executing delegated tasks. It reached 135 points and 34 comments on HackerNews in this window. The signal is cultural rather than technical, but it is consistent with Anthropic guidance in the same window that a single agent with on-demand context often beats a fleet of specialized subagents: the multi-agent shape has become a mainstream metaphor, which usually precedes its simplification."
+   }
+  },
+  {
+   "id": "news:anthropic-power-87pct-gas-11pct-coal-32mt-co2-2028-byop",
+   "label": "Better Data Center Project - Anthropic power footprint 87 percent gas, 11 percent coal in 2028 (2026-11-16)",
+   "kind": "news",
+   "attrs": {
+    "org": "industry",
+    "tag": "anthropic-power-87pct-gas-11pct-coal-32mt-co2-2028-byop",
+    "date": "2026-11-23",
+    "summary": "The Better Data Center Project analyzed Anthropic compute commitments as a case study of how the AI buildout drives both new bring-your-own-power and grid fossil infrastructure. Across the industry they identified 177 GW of planned BYOP gas capacity, enough to power 65 percent of all US homes, with less than 20 percent of generation from renewables by 2032, and another 200 GW of new fossil plants on the grid largely to meet AI data center demand. Anthropic has made no direct US renewable energy commitments as of November 2026, its only publicly disclosed renewable commitments being in Norway and Canada, while it directly procured 1.7 gigawatts of heavy-duty gas generators for 3.4 billion dollars. They estimate about 87 percent of Anthropic power will come from gas and 11 percent from coal in 2028, with the company potentially emitting 32 million metric tons of carbon dioxide in 2028. The compute constraint that dominates agent economics is therefore not token price but electrons and gas turbines, and this window confirms the token-price side of the curve by showing a 21 percent six-week drop."
+   }
+  },
+  {
+   "id": "theme:eval-bench",
+   "label": "eval-bench",
+   "kind": "cluster",
+   "attrs": {}
+  },
+  {
+   "id": "theme:agent-safety",
+   "label": "agent-safety",
+   "kind": "cluster",
+   "attrs": {}
+  },
+  {
+   "id": "theme:memory",
+   "label": "memory",
+   "kind": "cluster",
+   "attrs": {}
+  },
+  {
+   "id": "theme:tool-use",
+   "label": "tool-use",
+   "kind": "cluster",
+   "attrs": {}
+  },
+  {
+   "id": "hn:a974e3127b",
+   "label": "Open Social Web Alliance",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 108,
+    "comments": 95,
+    "url": "https://osw-alliance.net/en/"
+   }
+  },
+  {
+   "id": "hn:be767796ac",
+   "label": "Show HN: I built a game where you are an LLM's subagent",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 135,
+    "comments": 34,
+    "url": "https://github.com/gulivan/worker755"
+   }
+  },
+  {
+   "id": "hn:5e412d1391",
+   "label": "Toyota, Nissan, and Honda to standardize parts to lower costs",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 960,
+    "comments": 568,
+    "url": "https://www.caranddriver.com/news/a74490092/toyota-nissan-honda-standardize-parts-lower-costs/"
+   }
+  },
+  {
+   "id": "hn:3b52e89ed3",
+   "label": "Pill to treat pancreatic cancer hailed as 'biggest breakthrough in decades'",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 1255,
+    "comments": 272,
+    "url": "https://www.theguardian.com/society/2026/nov/20/pill-pancreatic-cancer-breakthrough-daraxonrasib"
+   }
+  },
+  {
+   "id": "hn:46364158b3",
+   "label": "Europe weakens chemical rules as science links them to 'lifestyle diseases'",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 66,
+    "comments": 32,
+    "url": "https://www.lemonde.fr/en/opinion/article/2026/11/22/as-science-increasingly-shows-the-role-chemical-substances-play-in-lifestyle-diseases-europe-weakens-its-regulations_6786595_23.html"
+   }
+  },
+  {
+   "id": "hn:becc986832",
+   "label": "Lean verification of the Riemann Hypothesis",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 1164,
+    "comments": 964,
+    "url": "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/"
+   }
+  },
+  {
+   "id": "hn:d7feb85612",
+   "label": "Sandwich Simulator",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 456,
+    "comments": 158,
+    "url": "https://stulle.app/"
+   }
+  },
+  {
+   "id": "hn:e09025b4fa",
+   "label": "Self-hosted library branch over public web OPDS",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 85,
+    "comments": 25,
+    "url": "https://joinmayberry.com/"
+   }
+  },
+  {
+   "id": "hn:4deeeff502",
+   "label": "87% of the Anthropic power will come from gas and 11% from coal in 2028",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 522,
+    "comments": 595,
+    "url": "https://betterdatacenterproject.com/2026/11/16/how-ai-is-powered-a-breakdown-of-byop-and-grid-power/"
+   }
+  },
+  {
+   "id": "hn:335204e950",
+   "label": "Inkling-2-Mini in 5.4 GB Memory",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 539,
+    "comments": 129,
+    "url": "https://github.com/ShinMegamiBoson/lookatmyquant"
+   }
+  },
+  {
+   "id": "hn:030a9cad0d",
+   "label": "Fast-Anything: Don't rewrite it in Rust. Rewrite the 5% that's slow",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 132,
+    "comments": 95,
+    "url": "https://github.com/EL4CTEO/fast-anything"
+   }
+  },
+  {
+   "id": "hn:4893309bf1",
+   "label": "Detonating a pile of lead azide",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 676,
+    "comments": 409,
+    "url": "https://www.science.org/content/blog-post/detonating-huge-pile-lead-azide-really"
+   }
+  },
+  {
+   "id": "hn:4c99478250",
+   "label": "Data Processing Incidents on Inference Providers",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 250,
+    "comments": 87,
+    "url": "https://openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers/"
+   }
+  },
+  {
+   "id": "hn:c5f746deff",
+   "label": "Notes on the discrete Fourier transform (DFT)",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 76,
+    "comments": 9,
+    "url": "https://eli.thegreenplace.net/2026/notes-on-the-discrete-fourier-transform-dft/"
+   }
+  },
+  {
+   "id": "hn:8015225897",
+   "label": "Getting the mind to steer the body to steer you",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 366,
+    "comments": 136,
+    "url": "https://notnottalmud.substack.com/p/getting-the-mind-to-steer-the-body"
+   }
+  },
+  {
+   "id": "hn:859b49ab9d",
+   "label": "My monitor was cutting my download speed by 75%",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 661,
+    "comments": 305,
+    "url": "https://blog.tymscar.com/posts/studiodisplayethernet/"
+   }
+  },
+  {
+   "id": "hn:ff83239363",
+   "label": "PcapAnalyzer – self-hosted pcap analyzer with 27 problem detectors",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 151,
+    "comments": 19,
+    "url": "https://github.com/sebaandrada-cell/PcapAnalyzer"
+   }
+  },
+  {
+   "id": "hn:984dca12b3",
+   "label": "The Mythology of Conscious AI",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 131,
+    "comments": 351,
+    "url": "https://www.noemamag.com/the-mythology-of-conscious-ai/"
+   }
+  },
+  {
+   "id": "hn:fff5cb93fb",
+   "label": "Advice for the next 100 Rust GUIs",
+   "kind": "news",
+   "attrs": {
+    "org": "hackernews",
+    "score": 239,
+    "comments": 128,
+    "url": "https://linebender.org/blog/next-100-guis/"
+   }
+  }
+ ],
+ "links": [
+  {
+   "source": "theme-2026-11-23",
+   "target": "repo:mcp-servers",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "release:mcp-servers:v2.5.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-servers:v2.5.0",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "release:mcp-servers:v2.4.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-servers:v2.4.0",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "release:mcp-servers:v2.3.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-servers:v2.3.0",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-23",
+   "target": "repo:mcp-spec",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-spec",
+   "target": "release:mcp-spec:2026-07-28",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-spec:2026-07-28",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-spec",
+   "target": "release:mcp-spec:2026-07-28-RC",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-spec:2026-07-28-RC",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-spec",
+   "target": "release:mcp-spec:2025-11-25",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-spec:2025-11-25",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-23",
+   "target": "repo:mcp-registry",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-registry",
+   "target": "release:mcp-registry:v1.8.13",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-registry:v1.8.13",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-registry",
+   "target": "release:mcp-registry:v1.8.12",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-registry:v1.8.12",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-registry",
+   "target": "release:mcp-registry:v1.8.11",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-registry:v1.8.11",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-23",
+   "target": "repo:mcp-inspector",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-inspector",
+   "target": "release:mcp-inspector:2.16.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-inspector:2.16.0",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-inspector",
+   "target": "release:mcp-inspector:1.0.6",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-inspector:1.0.6",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-inspector",
+   "target": "release:mcp-inspector:2.15.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-inspector:2.15.0",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-23",
+   "target": "repo:mcp-sdk-py",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-sdk-py",
+   "target": "release:mcp-sdk-py:v2.3.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-sdk-py:v2.3.0",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-sdk-py",
+   "target": "release:mcp-sdk-py:v2.2.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-sdk-py:v2.2.0",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-sdk-py",
+   "target": "release:mcp-sdk-py:v1.30.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-sdk-py:v1.30.0",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-23",
+   "target": "repo:mcp-sdk-ts",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-sdk-ts",
+   "target": "release:mcp-sdk-ts:v2.4.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-sdk-ts:v2.4.0",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-sdk-ts",
+   "target": "release:mcp-sdk-ts:1.32.2",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-sdk-ts:1.32.2",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-sdk-ts",
+   "target": "release:mcp-sdk-ts:@modelcontextprotocol/server@2.4.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-sdk-ts:@modelcontextprotocol/server@2.4.0",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-23",
+   "target": "repo:mcp-sdk-go",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-sdk-go",
+   "target": "release:mcp-sdk-go:v1.9.0-pre.1",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-sdk-go:v1.9.0-pre.1",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-sdk-go",
+   "target": "release:mcp-sdk-go:v1.8.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-sdk-go:v1.8.0",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-sdk-go",
+   "target": "release:mcp-sdk-go:v1.8.0-pre.2",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:mcp-sdk-go:v1.8.0-pre.2",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-23",
+   "target": "repo:sdk-py",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:sdk-py",
+   "target": "release:sdk-py:v2.12.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:sdk-py:v2.12.0",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:sdk-py",
+   "target": "release:sdk-py:v2.11.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:sdk-py:v2.11.0",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:sdk-py",
+   "target": "release:sdk-py:v2.10.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:sdk-py:v2.10.0",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-23",
+   "target": "repo:claude-code",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:claude-code",
+   "target": "release:claude-code:v2.1.330",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:claude-code:v2.1.330",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:claude-code",
+   "target": "release:claude-code:v2.1.329",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:claude-code:v2.1.329",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:claude-code",
+   "target": "release:claude-code:v2.1.328",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:claude-code:v2.1.328",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-23",
+   "target": "repo:openai-python",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:openai-python",
+   "target": "release:openai-python:v3.57.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:openai-python:v3.57.0",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:openai-python",
+   "target": "release:openai-python:v3.56.0",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:openai-python:v3.56.0",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:openai-python",
+   "target": "release:openai-python:v3.55.1",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:openai-python:v3.55.1",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-23",
+   "target": "repo:vercel-ai-sdk",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:vercel-ai-sdk",
+   "target": "release:vercel-ai-sdk:ai@7.0.179",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:vercel-ai-sdk:ai@7.0.179",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:vercel-ai-sdk",
+   "target": "release:vercel-ai-sdk:ai@7.0.178",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:vercel-ai-sdk:ai@7.0.178",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:vercel-ai-sdk",
+   "target": "release:vercel-ai-sdk:ai@5.0.292",
+   "relation": "released",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "release:vercel-ai-sdk:ai@5.0.292",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-23",
+   "target": "repo:anthropics-claude-code",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:anthropics-claude-code",
+   "target": "commit:139d9aad4c",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:139d9aad4c",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-23",
+   "target": "repo:modelcontextprotocol-modelcontextprotocol",
+   "relation": "tracks",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:modelcontextprotocol-modelcontextprotocol",
+   "target": "commit:a2635e50f7",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:a2635e50f7",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:modelcontextprotocol-modelcontextprotocol",
+   "target": "commit:fa6d3c09d6",
+   "relation": "committed",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "commit:fa6d3c09d6",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-rq2p-q7c4-6g27",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-rq2p-q7c4-6g27",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-h2g3-rwxm-xfm3",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-h2g3-rwxm-xfm3",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-87qg-cmw8-jc5m",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-87qg-cmw8-jc5m",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-9vjp-x34c-xg6v",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-9vjp-x34c-xg6v",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-pm7p-vphh-2cg7",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-pm7p-vphh-2cg7",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-r2q8-f657-4r56",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-r2q8-f657-4r56",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-8wv7-r664-7594",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-8wv7-r664-7594",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-38j4-j742-j7r3",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-38j4-j742-j7r3",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-7m4x-rv66-mxhh",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-7m4x-rv66-mxhh",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-3rxj-6jhw-qfv7",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-3rxj-6jhw-qfv7",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-6hqx-gqrx-c5r2",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-6hqx-gqrx-c5r2",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-f9hh-cmx9-2f23",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-f9hh-cmx9-2f23",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-q74p-4wrc-q7w6",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-q74p-4wrc-q7w6",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-p9cv-8g75-4xcg",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-p9cv-8g75-4xcg",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-w766-5x43-whvw",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-w766-5x43-whvw",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-3jqg-r5pp-rmp2",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-3jqg-r5pp-rmp2",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-4gxg-m5jx-9j57",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-4gxg-m5jx-9j57",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-7rgq-gccq-qphx",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-7rgq-gccq-qphx",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-66qx-2266-pmj6",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-66qx-2266-pmj6",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-v38p-wf49-hx2j",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-v38p-wf49-hx2j",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-53mr-w429-c597",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-53mr-w429-c597",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-hhwq-wxfx-cj7g",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-hhwq-wxfx-cj7g",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-mvf5-2qqv-rg3c",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-mvf5-2qqv-rg3c",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-vjqx-cfc4-9h6v",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-vjqx-cfc4-9h6v",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-5cgr-j3jf-jw3v",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-5cgr-j3jf-jw3v",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-9xwc-hfwc-8w59",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-9xwc-hfwc-8w59",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-j22h-9j4x-23w5",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-j22h-9j4x-23w5",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-hc55-p739-j48w",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-hc55-p739-j48w",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-servers",
+   "target": "advisory:GHSA-q66q-fx2p-7w4m",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-q66q-fx2p-7w4m",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-registry",
+   "target": "advisory:GHSA-2v5f-5r6w-p67r",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-2v5f-5r6w-p67r",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-registry",
+   "target": "advisory:GHSA-r48c-v28r-pf6v",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-r48c-v28r-pf6v",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-registry",
+   "target": "advisory:GHSA-rqv2-m695-f8j4",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-rqv2-m695-f8j4",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-registry",
+   "target": "advisory:GHSA-v8vw-gw5j-w7m6",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-v8vw-gw5j-w7m6",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "repo:mcp-registry",
+   "target": "advisory:GHSA-95c3-6vvw-4mrq",
+   "relation": "advisory",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "advisory:GHSA-95c3-6vvw-4mrq",
+   "target": "theme-2026-11-23",
+   "relation": "observed_in",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-23",
+   "target": "news:ai-coding-agents-fewer-than-one-in-ten-tasks-simulated-company",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:research",
+   "target": "news:ai-coding-agents-fewer-than-one-in-ten-tasks-simulated-company",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-23",
+   "target": "news:perplexity-monitor-api-scheduled-search-webhook-agents",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:industry",
+   "target": "news:perplexity-monitor-api-scheduled-search-webhook-agents",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-23",
+   "target": "news:openai-perplexity-shared-metric-pacing-0-68-0-70-window",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:research",
+   "target": "news:openai-perplexity-shared-metric-pacing-0-68-0-70-window",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-23",
+   "target": "news:anthropic-single-agent-beats-multi-agent-subagents-migration-kit",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:research",
+   "target": "news:anthropic-single-agent-beats-multi-agent-subagents-migration-kit",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-23",
+   "target": "news:anthropic-memory-selective-notes-dreaming-forget-pokemon",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:research",
+   "target": "news:anthropic-memory-selective-notes-dreaming-forget-pokemon",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-23",
+   "target": "news:ramp-ai-index-token-prices-down-21pct-six-weeks-volume-record",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:industry",
+   "target": "news:ramp-ai-index-token-prices-down-21pct-six-weeks-volume-record",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-23",
+   "target": "news:claude-fable-5-2-paints-with-code-700k-strokes",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:research",
+   "target": "news:claude-fable-5-2-paints-with-code-700k-strokes",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-23",
+   "target": "news:open-social-web-alliance-activitypub-open-protocol",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:industry",
+   "target": "news:open-social-web-alliance-activitypub-open-protocol",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-23",
+   "target": "news:show-hn-game-where-you-are-an-llm-subagent",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:research",
+   "target": "news:show-hn-game-where-you-are-an-llm-subagent",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-23",
+   "target": "news:anthropic-power-87pct-gas-11pct-coal-32mt-co2-2028-byop",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:industry",
+   "target": "news:anthropic-power-87pct-gas-11pct-coal-32mt-co2-2028-byop",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "news:ai-coding-agents-fewer-than-one-in-ten-tasks-simulated-company",
+   "target": "theme:eval-bench",
+   "relation": "relates_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "news:perplexity-monitor-api-scheduled-search-webhook-agents",
+   "target": "theme:agent-safety",
+   "relation": "relates_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "news:openai-perplexity-shared-metric-pacing-0-68-0-70-window",
+   "target": "theme:agent-safety",
+   "relation": "relates_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "news:anthropic-single-agent-beats-multi-agent-subagents-migration-kit",
+   "target": "theme:memory",
+   "relation": "relates_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "news:anthropic-memory-selective-notes-dreaming-forget-pokemon",
+   "target": "theme:memory",
+   "relation": "relates_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "news:ramp-ai-index-token-prices-down-21pct-six-weeks-volume-record",
+   "target": "theme:agent-safety",
+   "relation": "relates_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "news:claude-fable-5-2-paints-with-code-700k-strokes",
+   "target": "theme:tool-use",
+   "relation": "relates_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "news:show-hn-game-where-you-are-an-llm-subagent",
+   "target": "theme:memory",
+   "relation": "relates_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "news:anthropic-power-87pct-gas-11pct-coal-32mt-co2-2028-byop",
+   "target": "theme:eval-bench",
+   "relation": "relates_to",
+   "confidence": "INFERRED"
+  },
+  {
+   "source": "theme-2026-11-23",
+   "target": "hn:a974e3127b",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:a974e3127b",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-23",
+   "target": "hn:be767796ac",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:be767796ac",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-23",
+   "target": "hn:5e412d1391",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:5e412d1391",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-23",
+   "target": "hn:3b52e89ed3",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:3b52e89ed3",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-23",
+   "target": "hn:46364158b3",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:46364158b3",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-23",
+   "target": "hn:becc986832",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:becc986832",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-23",
+   "target": "hn:d7feb85612",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:d7feb85612",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-23",
+   "target": "hn:e09025b4fa",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:e09025b4fa",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-23",
+   "target": "hn:4deeeff502",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:4deeeff502",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-23",
+   "target": "hn:335204e950",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:335204e950",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-23",
+   "target": "hn:030a9cad0d",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:030a9cad0d",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-23",
+   "target": "hn:4893309bf1",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:4893309bf1",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-23",
+   "target": "hn:4c99478250",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:4c99478250",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-23",
+   "target": "hn:c5f746deff",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:c5f746deff",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-23",
+   "target": "hn:8015225897",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:8015225897",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-23",
+   "target": "hn:859b49ab9d",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:859b49ab9d",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-23",
+   "target": "hn:ff83239363",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:ff83239363",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-23",
+   "target": "hn:984dca12b3",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:984dca12b3",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme-2026-11-23",
+   "target": "hn:fff5cb93fb",
+   "relation": "covers",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "org:hackernews",
+   "target": "hn:fff5cb93fb",
+   "relation": "published",
+   "confidence": "EXTRACTED"
+  },
+  {
+   "source": "theme:agent-safety",
+   "target": "repo:mcp-servers",
+   "relation": "governs",
+   "confidence": "INFERRED"
+  }
+ ]
+}

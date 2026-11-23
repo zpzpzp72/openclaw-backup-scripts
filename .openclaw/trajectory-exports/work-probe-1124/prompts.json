@@ -1,0 +1,15 @@
+{
+  "traceSchema": "openclaw-trajectory",
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-23T21:34:01.260Z",
+  "traceId": "cf96859b-f0de-494c-ab7b-99ddec71aef4",
+  "sessionId": "cf96859b-f0de-494c-ab7b-99ddec71aef4",
+  "sessionKey": "agent:work:main",
+  "system": "[Oversized diagnostic JSON redacted]",
+  "submittedPrompts": [
+    "Exec completed (lucky-re, code 0) :: .openclaw/workspace/plugins/memory-lancedb-pro/test/memory-upgrader-diagnostics.test.mjs $WORKSPACE_DIR/plugins/memory-lancedb-pro/test/memory-reflection-issue6…",
+    "Exec completed (mild-cre, code 0) :: deep promotions without writing reset Clear the derived memory index and embedding cache without deleting sessions search Search memory files session-backfill Distill retained ses…",
+    "[Malformed diagnostic JSON redacted]"
+  ],
+  "latestSubmittedPrompt": "[Malformed diagnostic JSON redacted]"
+}

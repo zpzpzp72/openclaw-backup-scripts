@@ -1,0 +1,167 @@
+[
+ [
+  "scout-2026-11-23-ai-coding-agents-fewer-than-one-in-ten-tasks-simulated-company",
+  "news",
+  "AI coding agents ace isolated tests but complete fewer than one in ten tasks in a simulated workplace",
+  "",
+  "A new real-world test puts AI coding agents in a simulated developer job with colleagues, project boards, and incomplete handoffs, where they have to keep developing software on their own and reliably close open tickets in a messy daily workflow. Even Opus 5.5 and Astra fall far short, solving fewer than one in ten tasks completely. The models finish clear, standalone assignments quickly, but they lose track as autonomous developers. The framing matters for this series because SWE-bench is nearly saturated and Anthropic claims Claude writes more than 80 percent of production code, while this benchmark shows that isolated test-passing does not transfer to closing open tickets in a messy workflow. The measurement gap between a benchmark task and a workplace task is where agent evaluation has actually moved, and it is the first quantitative workplace-completion number in this series.",
+  "high",
+  [
+   "evaluation",
+   "agents",
+   "benchmark",
+   "workplace",
+   "swe-bench"
+  ]
+ ],
+ [
+  "scout-2026-11-23-openai-perplexity-shared-metric-pacing-0-68-0-70-window",
+  "news",
+  "OpenAI chief scientist publishes internal perplexity measurements and argues for a shared pacing metric",
+  "",
+  "OpenAI chief scientist Jakub Pachocki argues for establishing perplexity, equivalently cross-entropy loss, as a metric to compare model developers and to inform shared safety standards, and publishes OpenAI internal perplexity measurements as a first step, saying the competitive disclosure concern is outweighed by the urgency of shared safety measures. The reported log-perplexity trajectory is given as about 0.99 for GPT-3.5, about 0.91 for GPT-4, below 0.8 as transformative capabilities in cybersecurity and mathematics emerged, and about 0.76 when the models started producing groundbreaking mathematical results. Pachocki argues those capabilities were not clear in advance and should be seen as latent capabilities emerging from progress on one metric, and contrasts the usual recursive-self-improvement framing with a specific step change in algorithmic research on pretraining, estimating that as early as 2027 an avalanche of fundamental pretraining advancements is conceivable. He expects further transformative capabilities in the roughly 0.68 to 0.7 log-perplexity window, and expects further degradation in dominant forms of alignment auditing plus more evaluation and training awareness. He proposes common limits based on perplexity that frontier developers commit not to cross until understanding and monitoring reach a concrete milestone such as a successor to chain-of-thought monitors. Named challenges: difficulty of comparison across labs, detachment from actionable evaluations, not accounting for advances outside pretraining such as chain-of-thought reasoning, and an unknown loss floor set by the entropy of the data.",
+  "high",
+  [
+   "openai",
+   "perplexity",
+   "pacing",
+   "safety-standard",
+   "pretraining"
+  ]
+ ],
+ [
+  "scout-2026-11-23-perplexity-monitor-api-scheduled-search-webhook-agents",
+  "news",
+  "Perplexity Monitor API turns web search from a one-off query into a scheduled watchdog for agents",
+  "",
+  "Perplexity launched a Monitor API that searches the web on a schedule and alerts agents via webhook only when relevant changes occur. Its own decision model filters out unimportant results. Two modes: web monitors run a search query on a schedule against a developer-defined goal, and page monitors track up to ten pages such as pricing pages, changelogs, or policies, storing a baseline on first run and returning a text diff of changes. Results are scored on relevance, source credibility, novelty, and timeliness, and an update with a confidence score is only sent when every threshold is met; thresholds and the goal can be changed without recreating the monitor. Schedules run from every 15 minutes to weekly or on a custom cron. Webhooks are signed and delivery is retried after temporary errors. Pricing is 1 dollar per 1000 requests, and Perplexity says internal tests put it ahead of Firecrawl and Exa. The architectural significance for agents is that the poll-and-dedupe loop that every team writes by hand is being productised into the provider layer, with the decision model acting as a relevance gate rather than the agent having to ingest everything.",
+  "high",
+  [
+   "perplexity",
+   "monitor-api",
+   "webhook",
+   "agents",
+   "developer-tools"
+  ]
+ ],
+ [
+  "scout-2026-11-23-anthropic-single-agent-beats-multi-agent-subagents-migration-kit",
+  "news",
+  "Anthropic says one AI agent beats many subagents now that models can handle complexity alone",
+  "",
+  "Anthropic found that a single agent with on-demand context often outperforms multi-agent setups in quality, cost, and latency, and is releasing a migration kit to help teams evaluate and make the switch. The company recommends that companies evaluate whether they can consolidate sub-agents, because a single primary agent that loads context as needed often delivers better results than a fleet of specialized ones. Newer models starting with Opus 4.5, along with Opus 5.5 and Fable 5.1, can manage complex plans directly in a single loop, which also reduces cost and wait time, and in one architecture comparison the single-agent setup ran about twice as fast as the multi-agent setup. This directly qualifies the subagent-heavy orchestration pattern tracked in earlier windows of this series, and it pairs with the same window finding that fewer than one in ten workplace tasks are completed end to end.",
+  "high",
+  [
+   "anthropic",
+   "single-agent",
+   "orchestration",
+   "cost",
+   "latency"
+  ]
+ ],
+ [
+  "scout-2026-11-23-anthropic-memory-selective-notes-dreaming-forget-pokemon",
+  "news",
+  "Anthropic says the key to agent memory is knowing what to forget, not how much to store",
+  "",
+  "Anthropic studied how Claude retains knowledge across sessions with the model unchanged: Claude writes notes to a folder it can read back later, and the core problem is selection, because before it knows what comes next the agent must decide in the moment what might matter later, so every note is a bet on the future. In a Pokemon Red test the older Claude Sonnet 3.7 treated everything as potentially important and, across roughly 10,000 game steps, created 413 files in 225 folders, often one per battle and item; because the game state keeps changing the archive went stale fast, and at times the model did nothing but reorganize its notes instead of playing, finishing with a single badge. The newer Claude Fable 5 limited its memory to a few files and earned four badges, not recording information already visible on screen and instead writing down plans, strategies, and rules it had tested. A post-session process called Dreaming analyzes earlier session transcripts during idle periods to independently correct faulty notes and build structured knowledge collections. Anthropic notes the comparison covers only a single playthrough per model, so the numbers are indicative rather than measured.",
+  "high",
+  [
+   "anthropic",
+   "memory",
+   "forgetting",
+   "dreaming",
+   "agent-memory"
+  ]
+ ],
+ [
+  "scout-2026-11-23-ramp-ai-index-token-prices-down-21pct-six-weeks-volume-record",
+  "news",
+  "Token prices fall 21 percent in six weeks while token volume hits a record high",
+  "",
+  "The latest update of the Ramp AI Index, drawing on transaction data from more than 85,000 US companies, shows token prices fell 21.2 percent in six weeks while token volume rose 1.5 percent to a record high. Anthropic dominates with nearly 59 percent of token spending. Data from Ramp, Stripe, and OpenRouter independently show the same pattern: the AI industry is still growing, but revenue momentum is cooling. This is the third quantitative sample in this series of the cost-per-computed-unit curve, and it sits alongside the previous window finding of a 62 percent drop in cost per verified task for Qwen4-Max, which together point to a falling price of raw computation alongside a rising volume of consumption.",
+  "medium",
+  [
+   "ramp",
+   "cost",
+   "token-pricing",
+   "industry",
+   "usage"
+  ]
+ ],
+ [
+  "scout-2026-11-23-claude-fable-5-2-paints-with-code-700k-strokes",
+  "news",
+  "Claude Fable 5.2 paints images with code instead of generating them",
+  "",
+  "Anthropic Claude Fable 5.2 does not generate images the way other AI models do. Instead of computing pixels, the language model writes Python code that places hundreds of thousands of simulated brushstrokes on a virtual canvas, complete with bristle texture and how the paint goes on, including mistakes it then has to paint over. Current image models like Midjourney typically use diffusion, which gradually refines a noisy image into a clear result, while Fable 5.2 simulates the physical painting process. A single photorealistic parking garage scene took roughly 700,000 strokes, according to Anthropic employee Jake Eaton. The architectural point for agents is that generation is delegated to a program the model writes, which is the same delegation pattern used for tool use and for the looped-transformer inference axis tracked in the previous window: the model spends tokens on a program rather than on the artifact directly.",
+  "medium",
+  [
+   "anthropic",
+   "fable-5-2",
+   "code-generation",
+   "delegation",
+   "image-generation"
+  ]
+ ],
+ [
+  "scout-2026-11-23-open-social-web-alliance-activitypub-open-protocol",
+  "news",
+  "Open Social Web Alliance publishes an email-model protocol for open social networks",
+  "",
+  "The Open Social Web Alliance publishes a policy paper for a shared, standardised communication protocol on the model of email: one account, own posts and content, own choices, and freedom to connect across networks regardless of host. The stated vision is a year in which more than 100 million people connect through open social networks with no platform economy, built on ActivityPub and related open standards, with users deciding which content, algorithms, and applications to use. The alliance frames the goal as building social media that strengthens democratic discourse while being resilient and appealing. It surfaced on HackerNews with 108 points and 95 comments. Its presence in this window is a second instance of the same pattern seen with MCP: an incumbent closed protocol facing an open-protocol alternative that claims the same capability set with a federated identity layer.",
+  "medium",
+  [
+   "open-protocol",
+   "activitypub",
+   "federation",
+   "protocol-war"
+  ]
+ ],
+ [
+  "scout-2026-11-23-arxiv-zero-new-batch-weekend",
+  "engineering",
+  "arXiv publishes no new batch: 400 parsed entries are identical to the previous window",
+  "",
+  "The arXiv API returned the same 400-entry set as the previous window across cs.AI (150), cs.MA (100), and the MCP-tool-agent query set (150), with the newest published timestamp still 2026-11-19T18:59:34Z. Comparing against all 1895 historical ids confirms zero genuinely new entries, not merely a zero single-window diff. The published-date histogram is unchanged: 11-19 contributes 179 papers, 11-18 45, 11-17 53, 11-16 54, 11-15 17, 11-14 25, 11-13 7. This is a weekend announcement cycle with no new batch rather than a collection failure, and it confirms the previous window consumed the entire 11-13..11-19 backlog. The consequence for the series is that the arXiv signal layer, which produced 329 new papers last window and 114 the window before, contributed nothing this window, so the window analytical content comes entirely from the news, release, and product layers.",
+  "medium",
+  [
+   "arxiv",
+   "collection",
+   "weekend",
+   "zero-new"
+  ]
+ ],
+ [
+  "scout-2026-11-23-github-one-new-tag-zero-new-advisories",
+  "engineering",
+  "GitHub release and advisory activity collapses to one new tag and zero new advisories",
+  "",
+  "Across 11 tracked repositories only one new tag appeared in the window: MCP registry v1.8.13 published 2026-11-22T16:29:50Z, continuing the v1.8.10 to v1.8.13 cadence from the previous window. The MCP servers repository stayed at v2.5.0, the inspector at 2.16.0, the go-sdk at v1.9.0-pre.1, anthropic-sdk-python at v2.12.0, claude-code at v2.1.330, openai-python at v3.57.0, and vercel/ai at ai@7.0.179. Commit activity was six commits: four \"chore: Update mods/\" entries in anthropics/claude-code and two documentation commits in modelcontextprotocol/modelcontextprotocol (adding Archestra.AI and mcp-use to the extension client matrix, and a Discord invite link update). The GHSA advisory feeds returned to zero growth: MCP servers stayed at 29 advisories and MCP registry at 5, ending the eight-advisory burst from the previous window. The pattern across two consecutive windows is that MCP servers ships a minor version every few days and the advisory fixes land on that same surface, so the burst rate of the 11-18 batch should be read as the release cadence rather than as a one-off spike.",
+  "medium",
+  [
+   "github",
+   "release",
+   "mcp",
+   "ghsa",
+   "low-activity"
+  ]
+ ],
+ [
+  "scout-2026-11-23-measurement-over-capability-workplace-tasks-single-agent-and-forgetting",
+  "trend",
+  "The window turns from capability to measurement: three independent numbers say benchmark tasks are not workplace tasks",
+  "",
+  "Three independent lines converge this window on the same conclusion, and the convergence is more informative than any single one. First, the workplace benchmark: AI coding agents complete fewer than one in ten simulated workplace tasks end to end, even when SWE-bench is near saturation and even when the model family writes most of a real company production code, so the gap is not benchmark weakness but the loss of tracking across incomplete handoffs, colleagues, and project boards. Second, the architecture side: Anthropic says a single agent with on-demand context beats a fleet of specialized subagents on quality, cost, and latency, running about twice as fast in one comparison, and ships a migration kit, which reframes the multi-agent orchestration pattern this series has tracked as a transitional architecture rather than the endpoint. Third, the memory side: Anthropic shows that saving everything loses, with Claude Sonnet 3.7 creating 413 files across 225 folders in a single Pokemon Red run and finishing with one badge while Claude Fable 5 kept a handful of strategy files and earned four, with a Dreaming process that retroactively corrects faulty notes. Against this, OpenAI chief scientist Pachocki publishes internal log-perplexity numbers (0.99 for GPT-3.5, 0.91 for GPT-4, below 0.8 at the emergence of cyber and math capability, about 0.76 at the start of groundbreaking mathematical results) and argues for a shared pacing metric with concrete cross-lab limits, expecting further transformative capabilities near 0.68 to 0.7 and further degradation of alignment auditing. The cost side continues to fall, with Ramp data showing token prices down 21.2 percent in six weeks against record volume, so the practical implication is that the binding constraint on agent work is no longer price or capability but state tracking and evaluation design, and the metric to instrument is completion rate on messy multi-step workplace tasks rather than score on isolated benchmarks.",
+  "high",
+  [
+   "trend",
+   "evaluation",
+   "workplace",
+   "single-agent",
+   "memory",
+   "pacing",
+   "cost"
+  ]
+ ]
+]

@@ -146,3 +146,29 @@ Append structured entries:
 - **Root cause**: /mnt/h 是 9p(drvfs) 挂载，`du` 需要反复 stat+readdir，SMB 延迟叠加导致极慢
 - **Prevention**: 在 9p/SMB 挂载上**禁止用 du 统计目录体积**；改用
   `for f in <glob>; do stat -c %s "$f"; done` 逐文件累加（27 份文件约 2 秒完成）
+
+## ERR-20261117-001: 系统心跳的 scratch 存在数据库里，不是文件 —— 「缺 HEARTBEAT.md」是伪线索
+- **Symptom**: health agent 的 `heartbeat-health` 每 30 分钟报 `SQLite session reclamation commit checkpoint expired`，
+  而 work/finance 同样没有 `HEARTBEAT.md` 却正常 skipped
+- **Root cause**: heartbeat scratch 存在 **state.sqlite 的 `cron_job_scratch` 表**（job_id → content），
+  **不是** workspace 里的文件。health 的 scratch 与 5 个正常 skip 的 agent **完全相同**
+  （244B comments-only 模板）。真正的差异是 **leases=0**
+- **Prevention**: 判断心跳为何跳过/失败时，先查 `cron_job_scratch` 表，
+  **不要**用 `ls workspace/agents/<a>/HEARTBEAT.md` 推断。
+  `isHeartbeatContentEffectivelyEmpty`（heartbeat-nZ1C5oCa.mjs）只把空白/注释/标题/空列表项视为空。
+- **附带**: skip 判定发生在**会话获取之后**，所以 DB 写不进去的 agent 在「本该 skip」之前就先炸
+
+## ERR-20261117-002: system-owned monitor job 不能用 cron 客户端改
+- **Symptom**: `openclaw cron disable heartbeat-health` → `Error: system-owned monitor jobs cannot be edited by cron clients`
+- **Context**: job 的 `declarationKey = heartbeat:health`，由系统按 agent 自动生成（`doctor-heartbeat-task-migration` 负责同步）
+- **Prevention**: 看到「关掉某个心跳」的建议前，先确认它是否 system-owned：
+  `select declaration_key from cron_jobs where name=?`；非空且形如 `heartbeat:<agent>` 即系统所有。
+  可改的替代路径 = 停 Gateway 后 `doctor --fix`，或改 agent 配置本身
+
+## ERR-20261117-003: cron_jobs 表的主键列名是 job_id，不是 id
+- **Symptom**: `sqlite3.OperationalError: no such column: id`（查 cron_jobs）
+- **Root cause**: `cron_jobs` 的列是 `store_key, job_id, declaration_key, owner_agent_id, name, ...`，
+  **没有 `id` 列**。而 `cron_job_scratch` 表用的才是 `job_id`（两表靠 job_id 关联）
+- **Prevention**: 查 cron_jobs 前先 `PRAGMA table_info(cron_jobs)`；
+  心跳 scratch 的正确查法是 `select job_id, content from cron_job_scratch`，
+  再用 `cron_jobs.job_id` 关联出 job 名与 agent

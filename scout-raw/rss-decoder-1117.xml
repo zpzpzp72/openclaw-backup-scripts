@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>The Decoder</title>
+	<atom:link href="https://the-decoder.com/feed/" rel="self" type="application/rss+xml" />
+	<link>https://the-decoder.com/</link>
+	<description>AI, Menschen, Wirtschaft</description>
+	<lastBuildDate>Mon, 16 Nov 2026 16:58:01 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=7.0.8</generator>
+	<item>
+		<title>Alibaba&#039;s Qwen4-Max takes on Opus 5.5, GPT-6, and Kimi K3.1 Pro at much lower prices</title>
+		<link>https://the-decoder.com/alibabas-qwen4-max-takes-on-opus-5-5-gpt-6-and-kimi-k3-1-pro-at-much-lower-prices/</link>
+					<comments>https://the-decoder.com/alibabas-qwen4-max-takes-on-opus-5-5-gpt-6-and-kimi-k3-1-pro-at-much-lower-prices/#respond</comments>
+		
+		<dc:creator><![CDATA[Jonathan Kemper]]></dc:creator>
+		<pubDate>Mon, 16 Nov 2026 16:56:04 +0000</pubDate>
+				<category><![CDATA[AI in practice]]></category>
+		<category><![CDATA[Artificial Intelligence]]></category>
+		<category><![CDATA[Alibaba]]></category>
+		<category><![CDATA[Qwen]]></category>
+		<guid isPermaLink="false">https://the-decoder.com/?p=42918</guid>
+
+					<description><![CDATA[<p><img width="2048" height="1152" src="https://the-decoder.com/wp-content/uploads/2026/07/qwen_logo-1.png" class="attachment-full size-full wp-post-image" alt="" style="height: auto; margin-bottom: 10px;" decoding="async" fetchpriority="high" /></p>
+<p>        Alibaba launches Qwen4-Max, a new flagship model with 2.4 trillion parameters that activates only 71 billion per token. A hybrid architecture sharply cuts costs on long contexts. Qwen4-Max lands just behind Kimi K3.1 Pro on the Artificial Analysis Intelligence Index, and Alibaba plans to release smaller Qwen4 models as open source.</p>
+<p>The article <a href="https://the-decoder.com/alibabas-qwen4-max-takes-on-opus-5-5-gpt-6-and-kimi-k3-1-pro-at-much-lower-prices/">Alibaba&#039;s Qwen4-Max takes on Opus 5.5, GPT-6, and Kimi K3.1 Pro at much lower prices</a> appeared first on <a href="https://the-decoder.com">The Decoder</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>https://the-decoder.com/alibabas-qwen4-max-takes-on-opus-5-5-gpt-6-and-kimi-k3-1-pro-at-much-lower-prices/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		<enclosure url="http://the-decoder.com/wp-content/uploads/2026/11/Qwen_AI_for_science_wordpress_small_480p.mp4" length="5948715" type="video/mp4" />
+
+			</item>
+		<item>
+		<title>Claude now builds interactive websites inside canvas graphics, reviving the Flash era with real HTML</title>
+		<link>https://the-decoder.com/claude-now-builds-interactive-websites-inside-canvas-graphics-reviving-the-flash-era-with-real-html/</link>
+					<comments>https://the-decoder.com/claude-now-builds-interactive-websites-inside-canvas-graphics-reviving-the-flash-era-with-real-html/#respond</comments>
+		
+		<dc:creator><![CDATA[Jonathan Kemper]]></dc:creator>
+		<pubDate>Mon, 16 Nov 2026 16:10:22 +0000</pubDate>
+				<category><![CDATA[AI in practice]]></category>
+		<category><![CDATA[Artificial Intelligence]]></category>
+		<category><![CDATA[Short News]]></category>
+		<category><![CDATA[AI and coding]]></category>
+		<category><![CDATA[Anthropic]]></category>
+		<category><![CDATA[Claude]]></category>
+		<guid isPermaLink="false">https://the-decoder.com/?p=42916</guid>
+
+					<description><![CDATA[<p><img width="2560" height="1429" src="https://the-decoder.com/wp-content/uploads/2026/11/claude_gemini_pro-scaled.png" class="attachment-full size-full wp-post-image" alt="" style="height: auto; margin-bottom: 10px;" decoding="async" /></p>
+<p>        Claude can now embed text, buttons, and other web elements into complex graphics and 3D effects.</p>
+<p>The article <a href="https://the-decoder.com/claude-now-builds-interactive-websites-inside-canvas-graphics-reviving-the-flash-era-with-real-html/">Claude now builds interactive websites inside canvas graphics, reviving the Flash era with real HTML</a> appeared first on <a href="https://the-decoder.com">The Decoder</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>https://the-decoder.com/claude-now-builds-interactive-websites-inside-canvas-graphics-reviving-the-flash-era-with-real-html/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		<enclosure url="http://the-decoder.de/wp-content/uploads/2026/11/Felix_Rieseberg_wordpress_small_480p.mp4" length="6933925" type="video/mp4" />
+
+			</item>
+		<item>
+		<title>Anthropic says the key to agent memory is knowing what to forget, not how much to store</title>
+		<link>https://the-decoder.com/anthropic-says-the-key-to-agent-memory-is-knowing-what-to-forget-not-how-much-to-store/</link>
+					<comments>https://the-decoder.com/anthropic-says-the-key-to-agent-memory-is-knowing-what-to-forget-not-how-much-to-store/#respond</comments>
+		
+		<dc:creator><![CDATA[Jonathan Kemper]]></dc:creator>
+		<pubDate>Mon, 16 Nov 2026 15:25:48 +0000</pubDate>
+				<category><![CDATA[AI research]]></category>
+		<category><![CDATA[Artificial Intelligence]]></category>
+		<category><![CDATA[Anthropic]]></category>
+		<category><![CDATA[Claude]]></category>
+		<guid isPermaLink="false">https://the-decoder.com/?p=42905</guid>
+
+					<description><![CDATA[<p><img width="1376" height="768" src="https://the-decoder.com/wp-content/uploads/2026/10/anthropic_claude-2.png" class="attachment-full size-full wp-post-image" alt="" style="height: auto; margin-bottom: 10px;" decoding="async" /></p>
+<p>        Anthropic studied how Claude retains knowledge across sessions. Selective notes beat exhaustive archives by a wide margin. In a Pokémon Red test, the newer Claude Fable 5 got four times as far as the older Sonnet 3.7 by keeping just a handful of strategy files instead of more than 400. A "Dreaming" process retroactively corrects faulty memories.</p>
+<p>The article <a href="https://the-decoder.com/anthropic-says-the-key-to-agent-memory-is-knowing-what-to-forget-not-how-much-to-store/">Anthropic says the key to agent memory is knowing what to forget, not how much to store</a> appeared first on <a href="https://the-decoder.com">The Decoder</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>https://the-decoder.com/anthropic-says-the-key-to-agent-memory-is-knowing-what-to-forget-not-how-much-to-store/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Anthropic&#039;s Claude Fable 5.2 doesn&#039;t generate images, it paints them</title>
+		<link>https://the-decoder.com/anthropics-claude-fable-5-2-doesnt-generate-images-it-paints-them/</link>
+					<comments>https://the-decoder.com/anthropics-claude-fable-5-2-doesnt-generate-images-it-paints-them/#respond</comments>
+		
+		<dc:creator><![CDATA[Manuel Uth]]></dc:creator>
+		<pubDate>Sun, 15 Nov 2026 15:42:03 +0000</pubDate>
+				<category><![CDATA[AI in practice]]></category>
+		<category><![CDATA[Artificial Intelligence]]></category>
+		<category><![CDATA[Anthropic]]></category>
+		<category><![CDATA[Claude]]></category>
+		<category><![CDATA[Fable 5.2]]></category>
+		<guid isPermaLink="false">https://the-decoder.com/?p=42896</guid>
+
+					<description><![CDATA[<p><img width="1376" height="768" src="https://the-decoder.com/wp-content/uploads/2026/11/claude_fable_5.2_painting.png" class="attachment-full size-full wp-post-image" alt="" style="height: auto; margin-bottom: 10px;" decoding="async" /></p>
+<p>        Anthropic's Claude Fable 5.2 doesn't generate images the way other AI models do. Instead of computing pixels, the language model writes Python code that places hundreds of thousands of simulated brushstrokes on a virtual canvas, complete with bristle texture and paint application. A single photorealistic parking garage scene took roughly 700,000 strokes, according to Anthropic employee Jake Eaton.</p>
+<p>The article <a href="https://the-decoder.com/anthropics-claude-fable-5-2-doesnt-generate-images-it-paints-them/">Anthropic&#039;s Claude Fable 5.2 doesn&#039;t generate images, it paints them</a> appeared first on <a href="https://the-decoder.com">The Decoder</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>https://the-decoder.com/anthropics-claude-fable-5-2-doesnt-generate-images-it-paints-them/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		<enclosure url="http://the-decoder.com/wp-content/uploads/2026/11/graczyk_demo.mp4" length="1924532" type="video/mp4" />
+<enclosure url="http://the-decoder.com/wp-content/uploads/2026/11/aris_zhu_fable52_painting.mp4" length="30013202" type="video/mp4" />
+
+			</item>
+		<item>
+		<title>Firm linked to Jensen Huang&#039;s ex-lover reportedly brokered nearly $12 billion in Nvidia chip orders for China</title>
+		<link>https://the-decoder.com/firm-linked-to-jensen-huangs-ex-lover-reportedly-brokered-nearly-12-billion-in-nvidia-chip-orders-for-china/</link>
+					<comments>https://the-decoder.com/firm-linked-to-jensen-huangs-ex-lover-reportedly-brokered-nearly-12-billion-in-nvidia-chip-orders-for-china/#respond</comments>
+		
+		<dc:creator><![CDATA[Matthias Bastian]]></dc:creator>
+		<pubDate>Sun, 15 Nov 2026 14:45:12 +0000</pubDate>
+				<category><![CDATA[AI in practice]]></category>
+		<category><![CDATA[Artificial Intelligence]]></category>
+		<category><![CDATA[Nvidia]]></category>
+		<guid isPermaLink="false">https://the-decoder.com/?p=42891</guid>
+
+					<description><![CDATA[<p><img width="1536" height="1024" src="https://the-decoder.com/wp-content/uploads/2026/11/nvidia_logo_glitch.png" class="attachment-full size-full wp-post-image" alt="" style="height: auto; margin-bottom: 10px;" decoding="async" /></p>
+<p>        Megaspeed, the firm owned by ousted Nvidia CEO Jensen Huang's former lover Alice Huang, arranged nearly $12 billion in Nvidia chip orders for Chinese companies between 2024 and 2025, according to the WSJ. Short seller Culper Research estimates Nvidia's actual China revenue share exceeds 20 percent, far above the officially reported 7 percent.</p>
+<p>The article <a href="https://the-decoder.com/firm-linked-to-jensen-huangs-ex-lover-reportedly-brokered-nearly-12-billion-in-nvidia-chip-orders-for-china/">Firm linked to Jensen Huang&#039;s ex-lover reportedly brokered nearly $12 billion in Nvidia chip orders for China</a> appeared first on <a href="https://the-decoder.com">The Decoder</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>https://the-decoder.com/firm-linked-to-jensen-huangs-ex-lover-reportedly-brokered-nearly-12-billion-in-nvidia-chip-orders-for-china/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Australia&#039;s central bank finds AI hitting young workers first, especially in software and customer service</title>
+		<link>https://the-decoder.com/australias-central-bank-finds-ai-hitting-young-workers-first-especially-in-software-and-customer-service/</link>
+					<comments>https://the-decoder.com/australias-central-bank-finds-ai-hitting-young-workers-first-especially-in-software-and-customer-service/#respond</comments>
+		
+		<dc:creator><![CDATA[Manuel Uth]]></dc:creator>
+		<pubDate>Sun, 15 Nov 2026 10:45:58 +0000</pubDate>
+				<category><![CDATA[AI and society]]></category>
+		<category><![CDATA[Artificial Intelligence]]></category>
+		<category><![CDATA[Short News]]></category>
+		<category><![CDATA[AI and work]]></category>
+		<guid isPermaLink="false">https://the-decoder.com/?p=42835</guid>
+
+					<description><![CDATA[<p><img width="1376" height="768" src="https://the-decoder.com/wp-content/uploads/2026/11/ai_impact_australian_jobs.png" class="attachment-full size-full wp-post-image" alt="" style="height: auto; margin-bottom: 10px;" decoding="async" /></p>
+<p>        Australia's central bank sees early signs that AI is hitting young entry-level workers in highly exposed jobs like software development and customer service. Since ChatGPT launched, job postings and employment among 15- to 24-year-olds in those fields have dropped more sharply than among older workers. Author Mike Major cautions against jumping to conclusions, however, noting that business cycle shifts and remote work trends could also explain the numbers.</p>
+<p>The article <a href="https://the-decoder.com/australias-central-bank-finds-ai-hitting-young-workers-first-especially-in-software-and-customer-service/">Australia&#039;s central bank finds AI hitting young workers first, especially in software and customer service</a> appeared first on <a href="https://the-decoder.com">The Decoder</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>https://the-decoder.com/australias-central-bank-finds-ai-hitting-young-workers-first-especially-in-software-and-customer-service/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Meituan releases a 1.6-trillion-parameter agent model that never touched an Nvidia GPU</title>
+		<link>https://the-decoder.com/meituan-releases-a-1-6-trillion-parameter-agent-model-that-never-touched-an-nvidia-gpu/</link>
+					<comments>https://the-decoder.com/meituan-releases-a-1-6-trillion-parameter-agent-model-that-never-touched-an-nvidia-gpu/#respond</comments>
+		
+		<dc:creator><![CDATA[Jonathan Kemper]]></dc:creator>
+		<pubDate>Sun, 15 Nov 2026 10:06:06 +0000</pubDate>
+				<category><![CDATA[AI in practice]]></category>
+		<category><![CDATA[Artificial Intelligence]]></category>
+		<category><![CDATA[Longcat]]></category>
+		<category><![CDATA[Meituan]]></category>
+		<guid isPermaLink="false">https://the-decoder.com/?p=42881</guid>
+
+					<description><![CDATA[<p><img width="1920" height="1080" src="https://the-decoder.com/wp-content/uploads/2026/11/meituan-logo-wall-chatgpt-5.6.jpg" class="attachment-full size-full wp-post-image" alt="" style="height: auto; margin-bottom: 10px;" decoding="async" /></p>
+<p>        Meituan has released the weights for LongCat-2.5, a 1.6-trillion-parameter model built for AI agents and trained entirely on Chinese hardware. On Terminal Bench, it scores 88.4 points, landing just behind Claude Opus 5. The sample deployment runs on 194 Huawei Ascend chips, and Meituan makes no mention of Nvidia GPUs.</p>
+<p>The article <a href="https://the-decoder.com/meituan-releases-a-1-6-trillion-parameter-agent-model-that-never-touched-an-nvidia-gpu/">Meituan releases a 1.6-trillion-parameter agent model that never touched an Nvidia GPU</a> appeared first on <a href="https://the-decoder.com">The Decoder</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>https://the-decoder.com/meituan-releases-a-1-6-trillion-parameter-agent-model-that-never-touched-an-nvidia-gpu/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Anthropic CEO Amodei admits &quot;there&#039;s a huge uncertainty in what&#039;s going to happen next year&quot; days before a record IPO</title>
+		<link>https://the-decoder.com/anthropic-ceo-amodei-admits-theres-a-huge-uncertainty-in-whats-going-to-happen-next-year-days-before-a-record-ipo/</link>
+					<comments>https://the-decoder.com/anthropic-ceo-amodei-admits-theres-a-huge-uncertainty-in-whats-going-to-happen-next-year-days-before-a-record-ipo/#respond</comments>
+		
+		<dc:creator><![CDATA[Matthias Bastian]]></dc:creator>
+		<pubDate>Sat, 14 Nov 2026 19:05:17 +0000</pubDate>
+				<category><![CDATA[AI and society]]></category>
+		<category><![CDATA[Artificial Intelligence]]></category>
+		<category><![CDATA[Anthropic]]></category>
+		<guid isPermaLink="false">https://the-decoder.com/?p=42873</guid>
+
+					<description><![CDATA[<p><img width="1376" height="768" src="https://the-decoder.com/wp-content/uploads/2026/11/anthropic_logos-5.png" class="attachment-full size-full wp-post-image" alt="" style="height: auto; margin-bottom: 10px;" decoding="async" /></p>
+<p>        Days before what could be the largest IPO in history, Anthropic CEO Dario Amodei called buying compute 'the deepest business dilemma' his company faces. Anthropic's commitments now total nearly $901 billion, and it's still far from clear whether future revenue will justify those costs. The planned IPO is largely meant to serve as a financial buffer against that uncertainty.</p>
+<p>The article <a href="https://the-decoder.com/anthropic-ceo-amodei-admits-theres-a-huge-uncertainty-in-whats-going-to-happen-next-year-days-before-a-record-ipo/">Anthropic CEO Amodei admits &quot;there&#039;s a huge uncertainty in what&#039;s going to happen next year&quot; days before a record IPO</a> appeared first on <a href="https://the-decoder.com">The Decoder</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>https://the-decoder.com/anthropic-ceo-amodei-admits-theres-a-huge-uncertainty-in-whats-going-to-happen-next-year-days-before-a-record-ipo/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Gemini 4 Carbon takes the MathArena crown but costs 15 times more than GPT-6.1 Sol</title>
+		<link>https://the-decoder.com/gemini-4-carbon-takes-the-matharena-crown-but-costs-15-times-more-than-gpt-6-1-sol/</link>
+					<comments>https://the-decoder.com/gemini-4-carbon-takes-the-matharena-crown-but-costs-15-times-more-than-gpt-6-1-sol/#respond</comments>
+		
+		<dc:creator><![CDATA[Matthias Bastian]]></dc:creator>
+		<pubDate>Sat, 14 Nov 2026 16:48:01 +0000</pubDate>
+				<category><![CDATA[AI in practice]]></category>
+		<category><![CDATA[Artificial Intelligence]]></category>
+		<category><![CDATA[Short News]]></category>
+		<category><![CDATA[Anthropic]]></category>
+		<category><![CDATA[OpenAI]]></category>
+		<guid isPermaLink="false">https://the-decoder.com/?p=42863</guid>
+
+					<description><![CDATA[<p><img width="1397" height="783" src="https://the-decoder.com/wp-content/uploads/2026/11/gemini-4_carbon_logo.png" class="attachment-full size-full wp-post-image" alt="" style="height: auto; margin-bottom: 10px;" decoding="async" /></p>
+<p>        For the first time in a while, no OpenAI model leads the MathArena AI math benchmark. Google's Gemini 4 Carbon and Anthropic's Fable 5.2 have knocked GPT-6.1 Sol from the top, though both cost significantly more. Gemini ignored the time limit in testing and almost never gave up on a task.</p>
+<p>The article <a href="https://the-decoder.com/gemini-4-carbon-takes-the-matharena-crown-but-costs-15-times-more-than-gpt-6-1-sol/">Gemini 4 Carbon takes the MathArena crown but costs 15 times more than GPT-6.1 Sol</a> appeared first on <a href="https://the-decoder.com">The Decoder</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>https://the-decoder.com/gemini-4-carbon-takes-the-matharena-crown-but-costs-15-times-more-than-gpt-6-1-sol/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Anthropic says outdated prompting habits are slowing down Claude Opus 5.5</title>
+		<link>https://the-decoder.com/anthropic-says-outdated-prompting-habits-are-slowing-down-claude-opus-5-5/</link>
+					<comments>https://the-decoder.com/anthropic-says-outdated-prompting-habits-are-slowing-down-claude-opus-5-5/#respond</comments>
+		
+		<dc:creator><![CDATA[Matthias Bastian]]></dc:creator>
+		<pubDate>Sat, 14 Nov 2026 16:42:56 +0000</pubDate>
+				<category><![CDATA[AI in practice]]></category>
+		<category><![CDATA[Artificial Intelligence]]></category>
+		<category><![CDATA[Anthropic]]></category>
+		<category><![CDATA[Claude]]></category>
+		<category><![CDATA[Claude Opus]]></category>
+		<guid isPermaLink="false">https://the-decoder.com/?p=42864</guid>
+
+					<description><![CDATA[<p><img width="1536" height="1024" src="https://the-decoder.com/wp-content/uploads/2026/11/anthropic_claude_logo.png" class="attachment-full size-full wp-post-image" alt="" style="height: auto; margin-bottom: 10px;" decoding="async" /></p>
+<p>        Anthropic has made Claude Opus 5.5 the default model on all paid plans and published a guide that does away with old prompting habits. The main takeaway is to drop "think hard" and start at Medium effort.</p>
+<p>The article <a href="https://the-decoder.com/anthropic-says-outdated-prompting-habits-are-slowing-down-claude-opus-5-5/">Anthropic says outdated prompting habits are slowing down Claude Opus 5.5</a> appeared first on <a href="https://the-decoder.com">The Decoder</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>https://the-decoder.com/anthropic-says-outdated-prompting-habits-are-slowing-down-claude-opus-5-5/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

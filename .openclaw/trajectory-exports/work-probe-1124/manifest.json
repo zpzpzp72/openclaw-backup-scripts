@@ -1,0 +1,53 @@
+{
+  "traceSchema": "openclaw-trajectory",
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-23T21:34:01.260Z",
+  "traceId": "cf96859b-f0de-494c-ab7b-99ddec71aef4",
+  "sessionId": "cf96859b-f0de-494c-ab7b-99ddec71aef4",
+  "sessionKey": "agent:work:main",
+  "workspaceDir": "$WORKSPACE_DIR",
+  "leafId": "e0ae0144-c5e5-4126-9668-9ca461507ae8",
+  "eventCount": 886,
+  "runtimeEventCount": 305,
+  "transcriptEventCount": 581,
+  "sourceFiles": {
+    "session": "***"
+  },
+  "supplementalFiles": [
+    "metadata.json",
+    "artifacts.json",
+    "prompts.json"
+  ],
+  "contents": [
+    {
+      "path": "metadata.json",
+      "mediaType": "application/json",
+      "bytes": 10262
+    },
+    {
+      "path": "artifacts.json",
+      "mediaType": "application/json",
+      "bytes": 16366
+    },
+    {
+      "path": "prompts.json",
+      "mediaType": "application/json",
+      "bytes": 879
+    },
+    {
+      "path": "events.jsonl",
+      "mediaType": "application/x-ndjson",
+      "bytes": 1626404
+    },
+    {
+      "path": "session-branch.json",
+      "mediaType": "application/json",
+      "bytes": 15715
+    },
+    {
+      "path": "system-prompt.txt",
+      "mediaType": "text/plain; charset=utf-8",
+      "bytes": 37
+    }
+  ]
+}
