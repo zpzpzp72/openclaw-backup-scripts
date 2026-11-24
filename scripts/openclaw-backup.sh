@@ -21,7 +21,8 @@ BACKUP_DIR="/mnt/h/AI/openclaw.zone/WSL"
 SOURCE_DIR="$HOME/.openclaw"
 LOG_FILE="$HOME/.openclaw-backup.log"
 HEARTBEAT_FILE="$HOME/.openclaw-backup.heartbeat"   # ★ ERR-20260826-001: 独立心跳，供 Windows 侧健康检查读取
-RETAIN_DAYS=30   # ⭐ 保留天数，可以改为 14/30
+RETAIN_DAYS=90   # ★ 天数兜底(ZP 2026-11-25): 仅在长期断档时兜底清理, 不再是主闸门
+MAX_BACKUPS=15   # ★ 份数主闸门(ZP 2026-11-25): 只保留最新 15 份备份归档
 FORCE_TAR_HOURS=25   # ★ ERR-20260826-001: 超过 25 小时无备份强制心跳（即使源目录无变化）
 # 获取当前时间
 NOW=$(date "+%Y%m%d-%H%M")
@@ -134,6 +135,23 @@ cleanup_old() {
     done < <(find "$BACKUP_DIR" -name "openclaw-*.tgz" -mtime +$RETAIN_DAYS 2>/dev/null)
 
     log "已移出 $removed 份超过 $RETAIN_DAYS 天的旧备份(NAS 上为移入回收站,非真删)"
+
+    # ★ 份数主闸门 (ZP 2026-11-25): 只保留最新 MAX_BACKUPS 份归档。
+    #   天数闸门只做长期断档兜底 —— 备份频率一变(补跑/双触发), 份数就会超标,
+    #   而 NAS 空间是硬约束, 所以主闸门按「份数」判定, 天数只兜底。
+    #   注意: NAS 上 rm = 移入 #recycle, 不释放空间 -> 回收站由 nas-recycle-cleanup.sh 负责。
+    local count_removed=0
+    while IFS= read -r f; do
+        [ -n "$f" ] || continue
+        rm -f "$f" && count_removed=$((count_removed+1))
+    done < <(find "$BACKUP_DIR" -maxdepth 1 -name "openclaw-*.tgz" -printf '%T@\t%p\n' 2>/dev/null | sort -rn | tail -n +$((MAX_BACKUPS + 1)) | cut -f2-)
+
+    if [ "$count_removed" -gt 0 ]; then
+        log "已移出 $count_removed 份超出 $MAX_BACKUPS 份上限的旧归档(保留最新 $MAX_BACKUPS 份,NAS 上为移入回收站,非真删)"
+    fi
+    local keep_now
+    keep_now=$(find "$BACKUP_DIR" -maxdepth 1 -name "openclaw-*.tgz" 2>/dev/null | wc -l)
+    log "当前保留归档数: $keep_now (上限 $MAX_BACKUPS)"
 
     # 检测 NAS 回收站存量(只读,不删除)
     # 回收站路径 = NAS_ROOT + /#recycle + BACKUP_DIR 相对 NAS_ROOT 的路径

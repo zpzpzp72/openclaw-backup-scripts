@@ -16,6 +16,10 @@ _Curated insights from sessions past. Updated periodically from daily notes._
 - **备份**: 热备份脚本 `~/.openclaw/workspace/scripts/openclaw-backup.sh`（不是 `~/.openclaw-backup.sh`），输出 `/mnt/h/AI/openclaw.zone/WSL/openclaw-YYYYMMDD-HHMM.tgz`
   - **心跳**: `~/.openclaw-backup.heartbeat` (last_run_epoch/last_backup_epoch/status/detail)
   - **强制 tar 兜底**: 距上次备份 >25h (FORCE_TAR_HOURS) 即使无变化也 tar 一次
+  - **保留策略 (2026-11-25 ZP 改)**: **份数主闸门 `MAX_BACKUPS=15`**（只保留最新 15 份）+ 天数兜底 `RETAIN_DAYS=90`。原为 `RETAIN_DAYS=30`（按天，日更下≈30 份）。选份数而非天数的原因：备份频率一变（补跑/双触发）份数就超标，而 NAS 空间是硬约束。改动在 `cleanup_old()` 内，已用 20 份合成档验证「保留最新 15、移出最旧 5、天数兜底 0 误伤」。
+  - **⚠️ 空间释放在两处**: NAS 上 `rm` = 移入 `#recycle/`，**不释放空间** → 主脚本删档只搬不还；真释放必须跑 `scripts/nas-recycle-cleanup.sh --execute --days N`（删回收站**内部**文件才真释放）。主脚本与回收站清理是**两条独立链路**，缺一不可。
+  - **2026-11-25 实测清理**: 回收站 12 份 / 76.2 GB（10-14 ~ 11-05）已清空，NAS 可用 192G → **269G**（98% → 97%）。生效区当时 9 份 / 57.9 GB（单份均 6.43 GB，较 8 月的 4.3 GB 明显变大）。
+  - **兜底副本**: root 分区 `/home/zhiping/openclaw-backups/` 有 7 份 / 42 GB 原生 `openclaw backup create` 归档（与 NAS 解耦），NAS 清理不影响恢复能力。<!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
   - **最近一次**: 2026-08-28 03:00 → `openclaw-20260828-0300.tgz` (4.3 GB), status=ok
 - **独立健康检查** (ERR-20260826-001 修复): `C:\Scripts\OpenClawHealthCheck.ps1`
   - Windows 任务计划程序 `OpenClawWSLHealthCheck` 每 6h 运行一次 (用户 Zhiping Wu, Interactive, Limited)

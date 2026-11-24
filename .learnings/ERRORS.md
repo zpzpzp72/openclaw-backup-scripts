@@ -1136,3 +1136,36 @@ SAVED=$(tr -d ' \t\r\n' < ~/.openclaw/.nightops-discussion-last)
 
 **元数据**：状态 ✅ 已归档；关联：本次 WSL 失联调查（11-24）
 
+## ERR-20261125-001 code-mode 里原生工具是**全局函数**，不是 `tools.` 下的属性
+
+**现象**：
+- 在 `exec` 的 code-mode 单元里写 `await tools.exec({...})` → `ReferenceError: tools is not defined`，整个单元失败。
+- 写成 `await tools.apply_patch({...})` → 同样 `tools is not defined`。
+- 更早一次：`exec` 单元漏传 `title` 参数 → `Validation failed for tool "exec": title: must have required properties title`。
+
+**根因**：code-mode 单元里，原生工具名（`exec` / `apply_patch` / `edit` / `write` / `progress_card` / `process`）已经是**顶层全局函数**，直接调用即可；`tools.` 这种命名空间写法只适用于 MCP 工具（`MCP.<server>.<tool>`）。另外 `exec` 的 `title` 是**必填**。
+
+**正确写法**：
+```js
+const r = await exec({ command: "...", timeoutSeconds: 45 });   // 不写 tools.
+const p = await apply_patch({ input: "*** Begin Patch\n..." });  // 不写 tools.
+```
+
+**元数据**：状态 ✅ 已归档；关联：备份保留策略改造（11-25）
+
+## ERR-20261125-002 apply_patch 的 patch 文本会被 JS 模板字符串吃掉 `\t` / `\n`
+
+**现象**：往脚本里加 `find -printf '%T@\t%p\n'` 这类带 `\t` `\n` 转义的行时，`apply_patch` 报 `Invalid patch hunk at line 21: Expected update hunk to start with a @@ context marker`——因为 JS 模板字符串把 `\t` `\n` 解释成了**真实制表符和换行**，把一行 patch 劈成了两行。
+
+**处置**：模板字符串里改用 `\\t` `\\n`（双写反斜杠），让 patch 文本里保留字面量 `\t` `\n`。同理 `\\` 续行符也要双写。
+
+**元数据**：状态 ✅ 已归档；关联：备份保留策略改造（11-25）
+
+## ERR-20261125-003 验证「份数上限」闸门时，别用跨月造档 —— 天数闸门会先误伤
+
+**现象**：造 20 份假档测「只留最新 15 份」，第一次结果只剩 **5 份**，一度以为份数闸门写错（应该剩 15）。实际是**天数兜底闸门（`-mtime +90`）先删了 15 份** —— 造的假档日期跨了 8 个月，被判为超期。
+
+**教训**：两个闸门串联时，测试必须**只让被测闸门生效**。隔离做法：① 假档日期全设在「最近 N 天内」（压住天数闸门）；② 或用 `awk` 把 `cleanup_old()` 函数体单独抽出来，在隔离环境里 source 后调用。
+
+**元数据**：状态 ✅ 已归档；关联：备份保留策略改造（11-25）
+
