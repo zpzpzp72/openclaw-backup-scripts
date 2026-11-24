@@ -1122,3 +1122,17 @@ SAVED=$(tr -d ' \t\r\n' < ~/.openclaw/.nightops-discussion-last)
   ① 反复尝试 kill 一个已结束的进程(本轮做了 4 次,全部 No session found)
   ② 在报告里把「已结束」误写成「僵留未清」
 - 与 ERR-20261030-003 是同一现象的延续,本次补上了「多次核实 + 两种方法交叉验证」的完整判据。
+
+## ERR-20261124-002 code-mode exec 里塞 bash heredoc + 反引号会触发 JS SyntaxError 且窗口卡死
+
+**现象**：
+- 在 `exec` 的 code-mode 单元里写 `const r = await exec({ command: <template literal 内含 cat > /tmp/x.py <<EOF ... EOF> })`，当 heredoc 内容含**反引号、`${}` 或中文标点**时，整个 code-mode 单元直接 `SyntaxError at openclaw-code-mode:user.js:12:2: Unexpected token`，**所有工具都没被派发**（no tools were dispatched）。
+- 同一批单元若把 journal 全文回灌进 template literal，还会触发 `model idle timeout (120s)`。
+
+**处置**：
+1. **heredoc 内容不要放进 JS template literal**。用 `write` 工具把脚本写到 `/tmp/x.py`，再 `exec` 跑它；或用 `lines = [...].join(chr(10))` 的普通字符串数组构造（不含反引号）。
+2. 大输出**不要**回灌进 code-mode 单元；改成写文件后只取需要的字段（`grep | cut -c1-200`）。
+3. `exec` 里直接写 `python3 - <<PY ... PY` 且内容含中文/引号 → 同样炸。**正确做法是先 `write` 再 `exec`**（本次调查全程遵守后未再复发）。
+
+**元数据**：状态 ✅ 已归档；关联：本次 WSL 失联调查（11-24）
+

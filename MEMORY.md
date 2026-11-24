@@ -280,6 +280,7 @@ M3.1-Flash 1/4/0.1 ✅ 与 CN 价一致；M3 记 0.5/2 ❌ 官方 2.1/8.4（≤5
 | P1 | **D 盘 100% 满（2026-11-01 实测，根因已定位未删）** — `D:\FileHistory` 占 351.72 GB：`fhsvc` 每小时备份 `C:\Users\Zhiping Wu`，而 `Config1.xml` 的 `RetentionPolicyType=DISABLED` **永不清理旧版本** → 单调累积；`Documents\Wechat_WZP` 源仅 6.41 GB 却备份出 213.22 GB（33 倍膨胀，2026-08 单月 8.4 万副本）；`Data\$OF` 旧格式区另有 65.96 GB。另有 `BKP X1 20240619` 146.55 GB（静态）、`wzp` 18.9 GB。**清理前必须先改保留策略 + 停 `fhsvc`，且不能手删 Data 下的文件（会损坏 `Catalog*.edb` 索引）** | 2026-11-01 | 🟡 根因已定位、方案已列，**待 ZP 拍板执行**（助手未删任何文件） | <!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
 | P2 | **APNetwork + WinDivert 稳定性** — 已确认 NDIS dump 仅观察到 1 次（2026-08-18 14:26），"每月数十次崩溃"无证据；WinDivert64.sys 时间戳 2022-09-20（很久没更新）；主要风险是三方共存而非高频崩溃 | 2026-08-26 | 🟢 切 NAT 后未复发，保留"未来 NDIS 更新时可能再触发"的观察 |
 | P0 | **public 仓库入库前无凭据扫描闸门** — `zpzpzp72/openclaw-backup-scripts` 是 **public**；`c9353413` 把 `.backups/`（含 `appSecret`/API key 明文 + 434MB sqlite）误收进去，靠 filter-branch 改写历史才清除 | 2026-10-30 | 🟡 已清除 + 加 .gitignore；**仍需 pre-push 扫描 skill**（NightOps v28 议题4 列为最高优先级） |
+| P0 | **WSL 失联 5 天根因 = `StartWSL2` 任务缺省 72h `ExecutionTimeLimit`** — 该 keeper 任务 (`wsl.exe -d Ubuntu --exec /bin/sleep infinity`) 2026-11-14 20:06:24 启动后跑满 72h 于 **11-17 20:06:24** 被 Task Scheduler 终止（`lastResult=267014`=0x41306=`SCHED_S_TASK_TERMINATED`），15 秒后 20:06:39 发行版收到 poweroff 请求走**有序关机**（非 OOM/崩溃）。该任务**只有 LogonTrigger**，期间无新交互式登录 → WSL 再未被拉起，**停了 5 天 1.5 小时**（11-17 20:06 → 11-22 21:38）。已修：XML 注入 `<ExecutionTimeLimit>PT0S</ExecutionTimeLimit>`（备份 `C:\Temp\StartWSL2.xml.bak-20261124`）+ 重新注册并拉起 keeper（PT0S 已回读验证）。**⚠️ 仍只有 LogonTrigger**：会话不断则 keeper 死后无自愈 | 2026-11-24 | 🟡 已修主因，自愈兜底待补 | <!-- project: github.com/zpzpzp72/openclaw-backup-scripts --> |
 | P1 | **备份 tar 未排除 `workspace/.git`(200M) 与 `workspace/.backups`(434M)** → 每晚白背 634MB | 2026-10-30 | ✅ 已加 exclude（文件保留本地，仅不进归档） |
 | (已合并) | ~~Coder Codex/Arcee/Kimi 三模型全败~~ — 2026-08-08 报告已过期 20 天，未重测；如需查证需单独跑 Coder probe | 2026-08-08 | ⏸️ 暂搁置 |
 
@@ -372,7 +373,7 @@ M3.1-Flash 1/4/0.1 ✅ 与 CN 价一致；M3 记 0.5/2 ❌ 官方 2.1/8.4（≤5
 
 ---
 
-_Last updated: 2026-11-02 06:44 CST (M2 试败收口——File History 程序化路径穷尽、恢复只剩 GUI；冻结期 9GB 去向＝VSS 影子副本 9.53GB 待授权删除；此前 10-31：REA 四路引擎配齐)
+_Last updated: 2026-11-24 17:05 CST (新增：WSL 失联 5 天根因＝StartWSL2 任务 72h ExecutionTimeLimit，已修 PT0S；健康检查飞书告警自 10-19 起因 appSecret 改 SecretRef 而全哑（44 次失败），已修 SecretRef 解析并实测 token code=0)_
 
 ## 审计日志 (Audit Trail)
 
