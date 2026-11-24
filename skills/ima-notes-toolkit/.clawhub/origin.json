@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "registry": "https://clawhub.ai",
+  "slug": "ima-notes-toolkit",
+  "ownerHandle": "ruiyongwang",
+  "installedAt": 1795537478313,
+  "artifact": {
+    "kind": "archive",
+    "sha256": "e900686990e88aea1af2787262a9fbd87fbf4371001204e198a1ab319123ffe5",
+    "integrity": "sha256-6QBoaZDoiuoa8nhyYqn72H+/Q3EAEgThmKGrMZEj/+U="
+  },
+  "skillFile": {
+    "path": "SKILL.md",
+    "sha256": "88c343d8dd3909ed56afb5dd970e7c994d342041a7b467581ef51f9ce6d8067d"
+  },
+  "fileTreeSha256": "sha256:0dd93d1cedff18480d412e3a5167366b9729bae7f9f78b74baee678d8cb16220",
+  "installedVersion": "1.0.0"
+}

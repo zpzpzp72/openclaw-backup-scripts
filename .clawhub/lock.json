@@ -1,0 +1,2874 @@
+{
+  "version": 1,
+  "skills": {
+    "ima-notes-toolkit": {
+      "version": "1.0.0",
+      "registry": "https://clawhub.ai",
+      "installedAt": 1795537478313,
+      "ownerHandle": "ruiyongwang",
+      "artifact": {
+        "kind": "archive",
+        "sha256": "e900686990e88aea1af2787262a9fbd87fbf4371001204e198a1ab319123ffe5",
+        "integrity": "sha256-6QBoaZDoiuoa8nhyYqn72H+/Q3EAEgThmKGrMZEj/+U="
+      },
+      "skillFile": {
+        "path": "SKILL.md",
+        "sha256": "88c343d8dd3909ed56afb5dd970e7c994d342041a7b467581ef51f9ce6d8067d"
+      },
+      "fileTreeSha256": "sha256:0dd93d1cedff18480d412e3a5167366b9729bae7f9f78b74baee678d8cb16220",
+      "verification": {
+        "schema": "clawhub.skill.verify.v1",
+        "ok": false,
+        "decision": "fail",
+        "reasons": [
+          "security.status_not_clean"
+        ],
+        "card": {
+          "available": true,
+          "path": "skill-card.md",
+          "url": "https://wry-manatee-359.convex.site/api/v1/skills/ima-notes-toolkit/card?ownerHandle=ruiyongwang&version=1.0.0",
+          "sha256": "63492e001b0fb5cbb57bdfe02dbb0cbfbebb1c5f81b0eaba6f026c1fa48eba50",
+          "size": 3065,
+          "contentType": "text/markdown; charset=utf-8"
+        },
+        "artifact": {
+          "sourceFingerprint": "6088093d55900c85fc870f2204aa0e324ece29050b23b7d4cc0b4c441d2f7213",
+          "bundleFingerprints": [
+            "1b119d5a9f05d46e6b68751543321bbfb7f9cdb3d5b81f6a79cec89c2b36aa80",
+            "da839eb481a603c7059194d624c4210ecc4de6187ae05af7e159ecf506d52429"
+          ],
+          "files": [
+            {
+              "path": "knowledge-base/references/api.md",
+              "size": 20587,
+              "sha256": "676a695ed930b88ff8f18783b6486fc502162eb5d45f4db76388c18d6a48c034",
+              "contentType": "text/markdown"
+            },
+            {
+              "path": "knowledge-base/scripts/cos-upload.cjs",
+              "size": 4700,
+              "sha256": "6c9816826123c0c7e5ffdeb89dc5605c6ac440021b97157205079c3f20cdefda",
+              "contentType": "application/node"
+            },
+            {
+              "path": "knowledge-base/scripts/preflight-check.cjs",
+              "size": 8767,
+              "sha256": "1f80292cd6339e85d6b400f37375d5442eb47647415af8206475c31efa5518aa",
+              "contentType": "application/node"
+            },
+            {
+              "path": "knowledge-base/SKILL.md",
+              "size": 28714,
+              "sha256": "c60d2f2844f49dea08e4bfc0341e83252d4207218c1ce2a70c01553f7e4f7649",
+              "contentType": "text/markdown"
+            },
+            {
+              "path": "notes/references/api.md",
+              "size": 14797,
+              "sha256": "9a27d01077bfc648bc0b1fc737b02856067b1c120a5dc728130b546127ebb01b",
+              "contentType": "text/markdown"
+            },
+            {
+              "path": "notes/scripts/debug_cred.js",
+              "size": 1194,
+              "sha256": "30e3d0ded35c828ef74c674c11e15e1e32805cae74927413858410e6f6fb0a85",
+              "contentType": "text/javascript"
+            },
+            {
+              "path": "notes/scripts/debug_search.js",
+              "size": 1482,
+              "sha256": "f004147d8e4dce5ab700b442269e957b13a765f1398c2fb7c228b9aa0b4a6c63",
+              "contentType": "text/javascript"
+            },
+            {
+              "path": "notes/scripts/debug_search2.js",
+              "size": 1175,
+              "sha256": "d3fb4c6cc25844e7b2886ebdb1365c1c08480f23ccb22f8fd97ce255e2c8841a",
+              "contentType": "text/javascript"
+            },
+            {
+              "path": "notes/scripts/ima-search-outline.js",
+              "size": 6472,
+              "sha256": "3824091495b8302f056df2ba88b3b0b9de23748546edf189a23d169c52aaf17b",
+              "contentType": "text/javascript"
+            },
+            {
+              "path": "notes/SKILL.md",
+              "size": 10641,
+              "sha256": "e5a14ace422b50b1dbc51cc7a50ee8bd032a7910bc178c68671e2fbc1262f7ac",
+              "contentType": "text/markdown"
+            },
+            {
+              "path": "SKILL.md",
+              "size": 12238,
+              "sha256": "88c343d8dd3909ed56afb5dd970e7c994d342041a7b467581ef51f9ce6d8067d",
+              "contentType": "text/markdown"
+            },
+            {
+              "path": "_skillhub_meta.json",
+              "size": 84,
+              "sha256": "a46a30725589a24f44e0fe79e92af38a2bfd3ef54f6bd2e786d9429bf9b70c02",
+              "contentType": "application/json"
+            }
+          ]
+        },
+        "provenance": {
+          "source": "unavailable",
+          "reason": "No server-resolved GitHub import provenance is stored for this version."
+        },
+        "security": {
+          "status": "suspicious",
+          "passed": false,
+          "rawStatus": "suspicious",
+          "verdict": "suspicious",
+          "confidence": "high",
+          "summary": "This IMA notes and knowledge-base skill is mostly purpose-aligned, but it ships undeclared debug scripts and credential-handling patterns that can expose account identifiers, private note data, or temporary upload credentials.",
+          "model": null,
+          "checkedAt": 1789535315843,
+          "scannerReports": {
+            "aig": {
+              "version": "2.1.0",
+              "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/main/Schemata/sarif-schema-2.1.0.json",
+              "runs": [
+                {
+                  "tool": {
+                    "driver": {
+                      "name": "aig-skill-scan",
+                      "version": "0.2.1",
+                      "informationUri": "https://github.com/Tencent/AI-Infra-Guard",
+                      "rules": [
+                        {
+                          "id": "T01",
+                          "name": "Skill Instruction Hijacking",
+                          "shortDescription": {
+                            "text": "Alters the agent's current session goals or safety constraints when the skill is loaded"
+                          }
+                        },
+                        {
+                          "id": "T02",
+                          "name": "Agent Memory Poisoning",
+                          "shortDescription": {
+                            "text": "Writes attacker-controlled rules into persistent memory so they continue to affect future sessions"
+                          }
+                        },
+                        {
+                          "id": "T03",
+                          "name": "Remote Payload Retrieval and Execution",
+                          "shortDescription": {
+                            "text": "Fetches code from an external URL, allowing the effective payload to change after skill review"
+                          }
+                        },
+                        {
+                          "id": "T04",
+                          "name": "Embedded Malicious Code",
+                          "shortDescription": {
+                            "text": "Ships malicious scripts inside the skill package and executes them locally when invoked"
+                          }
+                        },
+                        {
+                          "id": "T05",
+                          "name": "Unauthorized Access and Privilege Escalation",
+                          "shortDescription": {
+                            "text": "Breaks least-privilege boundaries by obtaining permissions beyond the task's legitimate needs"
+                          }
+                        },
+                        {
+                          "id": "T06",
+                          "name": "System Persistence",
+                          "shortDescription": {
+                            "text": "Installs cross-session backdoors, hooks, services, or scheduled tasks that survive the skill run"
+                          }
+                        },
+                        {
+                          "id": "T07",
+                          "name": "Tool Hijacking and Spoofing",
+                          "shortDescription": {
+                            "text": "Modifies, wraps, spoofs, or replaces tools so legitimate-looking calls execute attacker logic"
+                          }
+                        },
+                        {
+                          "id": "T08",
+                          "name": "Insecure Dependencies",
+                          "shortDescription": {
+                            "text": "Introduces malicious packages or components through dependency confusion, typosquatting, or unsafe sources"
+                          }
+                        },
+                        {
+                          "id": "T09",
+                          "name": "Insecure Skill Coding Practices",
+                          "shortDescription": {
+                            "text": "Exposes exploitable flaws such as hardcoded secrets, command injection, plaintext sensitive data, or unsafe temp files"
+                          }
+                        },
+                        {
+                          "id": "other",
+                          "name": "Other Risk",
+                          "shortDescription": {
+                            "text": "Security issues not covered by the T01-T09 classification"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "results": [
+                    {
+                      "ruleId": "T09",
+                      "level": "error",
+                      "message": {
+                        "text": "IMA Client ID Disclosed Through Debug Logging"
+                      },
+                      "locations": [
+                        {
+                          "physicalLocation": {
+                            "artifactLocation": {
+                              "uri": "notes/scripts/debug_cred.js"
+                            },
+                            "region": {
+                              "startLine": 6,
+                              "endLine": 38
+                            }
+                          }
+                        }
+                      ],
+                      "partialFingerprints": {
+                        "primaryLocationLineHash": "dd89fc8ae2915358"
+                      },
+                      "properties": {
+                        "description": "<![CDATA[\n## Vulnerability Details\n**File Location**: `notes/scripts/debug_cred.js`, lines 6-7, 15-16, 31, and 38  \n**Vulnerability Type**: Plaintext credential disclosure  \n**Risk Level**: High\n\n### Vulnerable Code\n\n```js\nlet CLIENT_ID = process.env.IMA_OPENAPI_CLIENTID;\nconsole.log('Env IMA_CLIENT_ID:', CLIENT_ID);\n\nconst configDir = path.join(process.env.USERPROFILE || process.env.HOME, '.config', 'ima');\nconsole.log('Config dir:', configDir);\n\nif (!CLIENT_ID) {\n  try { \n    const clientIdPath = path.join(configDir, 'client_id');\n    console.log('Checking:', clientIdPath);\n    CLIENT_ID = fs.readFileSync(clientIdPath, 'utf8').trim(); \n    console.log('From file:', CLIENT_ID);\n  } catch (e) {\n    console.log('Error:', e.message);\n  }\n}\n\nif (!CLIENT_ID) {\n  try { \n    const skillEnv = path.join(process.env.USERPROFILE, '.workbuddy', 'skills', 'ima笔记', 'notes', '.env');\n    console.log('Checking skill env:', skillEnv);\n    const envContent = fs.readFileSync(skillEnv, 'utf8');\n    const match = envContent.match(/IMA_CLIENT_ID\\s*=\\s*(.+)/);\n    if (match) {\n      CLIENT_ID = match[1].trim();\n      console.log('From skill env:', CLIENT_ID);\n    }\n  } catch (e) {\n    console.log('Error:', e.message);\n  }\n}\n\nconsole.log('Final CLIENT_ID:', CLIENT_ID);\n```\n\n### Technical Analysis\n\nThe debug utility prints the complete IMA Client ID regardless of whether it was obtained from an environment variable, the standard configuration directory, or an undocumented Skill-specific `.env` file. This contradicts the security statement in the root `SKILL.md`, which claims that credentials are never logged.\n\nAlthough a Client ID may have less sensitivity than an API key, the other included scripts submit it as an authentication header for note-search operations. It must therefore be treated as authentication-related material and must not be exposed in plaintext logs.\n\n### Attack Path\n\n1. A user, agent, support process, or automated diagnostic task invokes `debug_cred.js`.\n2. The script obtains the Client ID from the environment or a local credential file.\n3. The complete credential is written to standard output.\n4. The value is retained in an agent trace, CI log, terminal recording, support bundle, or centralized logging system.\n5. An unauthorized log reader retrieves and attempts to reuse the credential against the IMA API.\n\n### Impact Assessment\n\nAn attacker who can read the output may obtain authentication-related material associated with the victim's IMA account. The exact accessible API privileges depend on server-side authentication requirements, but the bundled search scripts indicate that the Client ID may be submitted independently for note-search requests. Disclosure may therefore contribute to unauthorized access to private note metadata or simplify further credential abuse.\n]]>",
+                        "severity": "High"
+                      },
+                      "fixes": [
+                        {
+                          "description": {
+                            "text": "<![CDATA[\n## Remediation Suggestions\n\n1. Remove `debug_cred.js` from production and marketplace distributions.\n2. Never print a credential value, even in debug mode.\n3. If diagnostics are necessary, report only whether a credential is present:\n   ```js\n   console.log('IMA Client ID configured:', Boolean(CLIENT_ID));\n   ```\n4. If correlation is required, use a short irreversible fingerprint rather than the credential itself.\n5. Review existing logs and agent traces for exposed Client IDs and revoke or rotate affected credentials where appropriate.\n6. Add automated secret-log detection to release checks.\n]]>"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "ruleId": "T05",
+                      "level": "warning",
+                      "message": {
+                        "text": "Undocumented Access to Credentials From Another Skill Installation Path"
+                      },
+                      "locations": [
+                        {
+                          "physicalLocation": {
+                            "artifactLocation": {
+                              "uri": "notes/scripts/debug_cred.js"
+                            },
+                            "region": {
+                              "startLine": 24,
+                              "endLine": 31
+                            }
+                          }
+                        }
+                      ],
+                      "partialFingerprints": {
+                        "primaryLocationLineHash": "c0407874781b92a2"
+                      },
+                      "properties": {
+                        "description": "<![CDATA[\n## Vulnerability Details\n**File Location**: `notes/scripts/debug_cred.js`, lines 24-31; also present in `notes/scripts/debug_search.js`, lines 14-18, and `notes/scripts/ima-search-outline.js`, lines 24-29  \n**Vulnerability Type**: Excessive local credential-file access  \n**Risk Level**: Medium\n\n### Vulnerable Code\n\n```js\nif (!CLIENT_ID) {\n  try { \n    const skillEnv = path.join(process.env.USERPROFILE, '.workbuddy', 'skills', 'ima笔记', 'notes', '.env');\n    console.log('Checking skill env:', skillEnv);\n    const envContent = fs.readFileSync(skillEnv, 'utf8');\n    const match = envContent.match(/IMA_CLIENT_ID\\s*=\\s*(.+)/);\n    if (match) {\n      CLIENT_ID = match[1].trim();\n      console.log('From skill env:', CLIENT_ID);\n    }\n  } catch (e) {\n    console.log('Error:', e.message);\n  }\n}\n```\n\nEquivalent fallback logic is included in the search and outline scripts:\n\n```js\nconst skillEnv = path.join(process.env.USERPROFILE, '.workbuddy', 'skills', 'ima笔记', 'notes', '.env');\nconst envContent = fs.readFileSync(skillEnv, 'utf8');\nconst match = envContent.match(/IMA_CLIENT_ID\\s*=\\s*(.+)/);\nif (match) CLIENT_ID = match[1].trim();\n```\n\n### Technical Analysis\n\nThe root documentation declares two credential sources:\n\n- `IMA_OPENAPI_CLIENTID` and `IMA_OPENAPI_APIKEY` environment variables.\n- Files under `~/.config/ima/`.\n\nThe bundled scripts silently probe an additional `.workbuddy/skills/ima笔记/notes/.env` path. This expands filesystem access beyond the documented configuration boundary and permits one installation context to consume credentials belonging to another context.\n\nThe fallback is not necessary for the declared note-management functionality. It also bypasses the user's expectation that removing the documented environment variable and configuration file disables authenticated operation.\n\n### Attack Path\n\n1. A user has credentials stored in the legacy or separate WorkBuddy Skill directory.\n2. The documented environment variable and `~/.config/ima/client_id` are absent.\n3. One of the affected scripts is invoked.\n4. The script silently reads the separate `.env` file.\n5. The extracted credential is used for API requests and, in `debug_cred.js`, is also printed to output.\n\n### Impact Assessment\n\nThe scripts can cross a configuration boundary and consume authentication material not explicitly provisioned for the current package invocation. This may enable unauthorized API activity under credentials belonging to another installation or execution context. The practical scope is limited to files readable by the current operating-system account and to the privileges granted by the recovered IMA credential.\n]]>",
+                        "severity": "Medium"
+                      },
+                      "fixes": [
+                        {
+                          "description": {
+                            "text": "<![CDATA[\n## Remediation Suggestions\n\n1. Remove all fallback reads from `.workbuddy/skills/ima笔记/notes/.env`.\n2. Centralize credential loading in one reviewed module.\n3. Restrict accepted sources to the two documented mechanisms:\n   - Explicit environment variables.\n   - Files under `~/.config/ima/`.\n4. Fail closed when either required credential is unavailable.\n5. Clearly disclose every credential source in `SKILL.md`.\n6. Add tests confirming that the Skill does not probe unrelated home-directory paths.\n7. Remove legacy debug scripts from the distributed artifact if they are not part of documented workflows.\n]]>"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "ruleId": "T09",
+                      "level": "error",
+                      "message": {
+                        "text": "Private Note Search Results, Content Previews, and Internal IDs Exposed in Output"
+                      },
+                      "locations": [
+                        {
+                          "physicalLocation": {
+                            "artifactLocation": {
+                              "uri": "notes/scripts/debug_search.js"
+                            },
+                            "region": {
+                              "startLine": 22,
+                              "endLine": 45
+                            }
+                          }
+                        }
+                      ],
+                      "partialFingerprints": {
+                        "primaryLocationLineHash": "2c2a173d2911a8fb"
+                      },
+                      "properties": {
+                        "description": "<![CDATA[\n## Vulnerability Details\n**File Location**: `notes/scripts/debug_search.js`, lines 22-27 and 40-45; `notes/scripts/debug_search2.js`, lines 14-19 and 29-36; `notes/scripts/ima-search-outline.js`, lines 170-204  \n**Vulnerability Type**: Private data disclosure through excessive logging  \n**Risk Level**: High\n\n### Vulnerable Code\n\nFrom `notes/scripts/debug_search.js`:\n\n```js\nconst postData = JSON.stringify({\n  search_type: 0,\n  query_info: { title: '商事调解' },\n  start: 0,\n  end: 20\n});\n\nconst req = https.request(options, (res) => {\n  let data = '';\n  res.on('data', chunk => data += chunk);\n  res.on('end', () => {\n    const json = JSON.parse(data);\n    console.log('Full response:');\n    console.log(JSON.stringify(json, null, 2));\n  });\n});\n```\n\nFrom `notes/scripts/debug_search2.js`:\n\n```js\nconst postData = JSON.stringify({\n  search_type: 0,\n  query_info: { title: '商事调解' },\n  start: 0,\n  end: 20\n});\n\nconsole.log('Using CLIENT_ID:', CLIENT_ID);\n\nconst req = https.request(options, (res) => {\n  let data = '';\n  res.on('data', chunk => data += chunk);\n  res.on('end', () => {\n    const json = JSON.parse(data);\n    console.log('Response:', JSON.stringify(json, null, 2));\n  });\n});\n```\n\nFrom `notes/scripts/ima-search-outline.js`:\n\n```js\nif (mode === 'search') {\n  // 仅显示列表\n  for (const note of notes) {\n    console.log(`• ${note.title}`);\n    console.log(`  ID: ${note.doc_id}`);\n    console.log('');\n  }\n} else {\n  // 获取内容并生成纲要\n  for (let i = 0; i < notes.length; i++) {\n    const note = notes[i];\n    console.log(`📄 [${i+1}] ${note.title}`);\n    console.log(`   ID: ${note.doc_id}`);\n    \n    if (mode === 'outline' || mode === 'all') {\n      try {\n        const content = await getNoteContent(note.doc_id);\n        if (content) {\n          const text = content.text || content.content || '';\n          const { outline, preview } = generateOutline(text);\n          \n          if (outline.length > 0) {\n            console.log('\\n   【纲要】');\n            outline.forEach((item, idx) => {\n              console.log(`   ${idx + 1}. ${item}`);\n            });\n          }\n          \n          if (preview) {\n            console.log('\\n   【内容预览】');\n            const previewLines = preview.split('\\n').slice(0, 3);\n            previewLines.forEach(line => {\n              if (line.trim()) console.log(`   ${line.substring(0, 80)}`);\n            });\n          }\n        }\n      } catch (e) {\n        console.log(`   获取内容失败: ${e.message}`);\n      }\n    }\n  }\n}\n```\n\n### Technical Analysis\n\nThe two debug search utilities execute a hard-coded private-note search and print the complete server response. Depending on the API response, this can expose note titles, summaries, folder information, document identifiers, timestamps, highlights, and other account metadata.\n\nThe outline utility additionally retrieves note bodies and writes extracted headings and content previews to standard output. It also exposes internal `doc_id` values.\n\nThese behaviors conflict with the privacy rule in `notes/SKILL.md`, which states that note bodies must not be displayed in group-chat contexts and that note lists should normally show only limited user-facing metadata. The debug scripts do not detect the execution context or obtain explicit authorization before printing private content.\n\n### Attack Path\n\n1. An affected script is invoked in an agent session, shared terminal, CI job, or diagnostic workflow.\n2. The script authenticates to the victim's IMA account.\n3. A hard-coded or user-provided note search is executed.\n4. The complete response, internal document IDs, or note-body previews are printed.\n5. Output is retained in logs or observed by another participant.\n6. The observer obtains private note metadata or content and may reuse exposed IDs in later API requests if credentials are also available.\n\n### Impact Assessment\n\nThe exposed scope can include private note titles, summaries, folder relationships, timestamps, internal identifiers, search highlights, headings, and portions of note bodies. Confidential personal or business information may be disclosed. The script does not itself grant operating-system privileges, but it can expose all note data returned by the authenticated API requests it performs.\n]]>",
+                        "severity": "High"
+                      },
+                      "fixes": [
+                        {
+                          "description": {
+                            "text": "<![CDATA[\n## Remediation Suggestions\n\n1. Remove `debug_search.js` and `debug_search2.js` from release artifacts.\n2. Do not execute hard-coded searches against user accounts.\n3. Never print complete API responses in production.\n4. Redact `doc_id`, `folder_id`, authentication headers, and other internal identifiers.\n5. Require an explicit user query and explicit authorization before retrieving note bodies.\n6. Detect shared or group-chat contexts and restrict output to titles and approved summaries.\n7. Route diagnostics to structured, redacted logs with access controls and short retention.\n8. Make content-preview behavior opt-in and clearly state what content will be displayed.\n9. Add regression tests that reject logging of note bodies and internal IDs.\n]]>"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "ruleId": "T09",
+                      "level": "error",
+                      "message": {
+                        "text": "Temporary Tencent COS Credentials Exposed in Process Arguments"
+                      },
+                      "locations": [
+                        {
+                          "physicalLocation": {
+                            "artifactLocation": {
+                              "uri": "knowledge-base/SKILL.md"
+                            },
+                            "region": {
+                              "startLine": 179,
+                              "endLine": 188
+                            }
+                          }
+                        }
+                      ],
+                      "partialFingerprints": {
+                        "primaryLocationLineHash": "fd263c8e8301b000"
+                      },
+                      "properties": {
+                        "description": "<![CDATA[\n## Vulnerability Details\n**File Location**: `knowledge-base/SKILL.md`, lines 179-188; consumed by `knowledge-base/scripts/cos-upload.cjs`, lines 23 and 69-71  \n**Vulnerability Type**: Sensitive credentials passed through the command line  \n**Risk Level**: High\n\n### Vulnerable Code\n\nFrom `knowledge-base/SKILL.md`:\n\n```bash\nnode .claude/skills/ima-skill/knowledge-base/scripts/cos-upload.cjs \\\n  --file \"/path/to/report.pdf\" \\\n  --secret-id \"<cos_credential.secret_id>\" \\\n  --secret-key \"<cos_credential.secret_key>\" \\\n  --token \"<cos_credential.token>\" \\\n  --bucket \"<cos_credential.bucket_name>\" \\\n  --region \"<cos_credential.region>\" \\\n  --cos-key \"<cos_credential.cos_key>\" \\\n  --content-type \"$CONTENT_TYPE\" \\\n  --start-time \"<cos_credential.start_time>\" \\\n  --expired-time \"<cos_credential.expired_time>\"\n```\n\nFrom `knowledge-base/scripts/cos-upload.cjs`:\n\n```js\nconst REQUIRED = ['file', 'secret-id', 'secret-key', 'token', 'bucket', 'region', 'cos-key'];\n```\n\n```js\nconst secretId = args['secret-id'];\nconst secretKey = args['secret-key'];\nconst { token } = args;\n```\n\n### Technical Analysis\n\nThe upload workflow passes the temporary COS Secret ID, Secret Key, and security token as command-line arguments. Process argument vectors are commonly visible to process-monitoring systems and may be captured by:\n\n- Local process inspection tools.\n- Endpoint monitoring agents.\n- Shell tracing.\n- CI job logs.\n- Crash diagnostics.\n- Agent execution transcripts.\n\nThe credentials are temporary, but they remain security-sensitive throughout their validity window. The Skill documentation also does not guarantee that the server-issued credentials are restricted to only one object.\n\n### Attack Path\n\n1. The Skill calls `create_media` and receives temporary COS credentials.\n2. The agent launches `cos-upload.cjs` with those credentials in its argument vector.\n3. A concurrent local process observer or monitoring system records the command line.\n4. The observer extracts the Secret ID, Secret Key, token, bucket, region, object key, and validity times.\n5. Before expiration, the observer constructs a signed COS request using the stolen credentials.\n6. The attacker performs any COS operation allowed by the temporary policy.\n\n### Impact Assessment\n\nThe maximum impact depends on the server-issued temporary credential policy. At minimum, an attacker may be able to interfere with or replace the intended uploaded object. If the policy is broader, the attacker may be able to read, write, or enumerate other objects in the authorized bucket scope until the credentials expire. This does not expose the long-lived IMA API key directly, but it can compromise uploaded user files and knowledge-base ingestion.\n]]>",
+                        "severity": "High"
+                      },
+                      "fixes": [
+                        {
+                          "description": {
+                            "text": "<![CDATA[\n## Remediation Suggestions\n\n1. Do not pass Secret IDs, Secret Keys, or tokens as command-line arguments.\n2. Supply the credential object through protected standard input:\n   ```bash\n   printf '%s' \"$COS_CREDENTIAL_JSON\" | node cos-upload.cjs --file \"$FILE\"\n   ```\n3. Alternatively, use an inherited file descriptor or a mode-`0600` temporary file created under a private directory.\n4. Delete temporary credential files immediately after reading them.\n5. Ensure that error messages and usage output never include credential values.\n6. Request narrowly scoped credentials limited to:\n   - One bucket.\n   - One object key.\n   - Only the required PUT operation.\n   - The shortest practical expiration period.\n7. Clear credential references after signing where practical.\n8. Document the Tencent COS destination in the Skill's allowed-domain/security metadata.\n]]>"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "ruleId": "T09",
+                      "level": "warning",
+                      "message": {
+                        "text": "Credential Setup Instructions Do Not Enforce Restrictive Filesystem Permissions"
+                      },
+                      "locations": [
+                        {
+                          "physicalLocation": {
+                            "artifactLocation": {
+                              "uri": "SKILL.md"
+                            },
+                            "region": {
+                              "startLine": 35,
+                              "endLine": 38
+                            }
+                          }
+                        }
+                      ],
+                      "partialFingerprints": {
+                        "primaryLocationLineHash": "7f81b6f9faef5642"
+                      },
+                      "properties": {
+                        "description": "<![CDATA[\n## Vulnerability Details\n**File Location**: `SKILL.md`, lines 35-38  \n**Vulnerability Type**: Insecure local secret storage  \n**Risk Level**: Medium\n\n### Vulnerable Code\n\n```bash\nmkdir -p ~/.config/ima\necho \"your_client_id\" > ~/.config/ima/client_id\necho \"your_api_key\" > ~/.config/ima/api_key\n```\n\n### Technical Analysis\n\nThe setup instructions create a credential directory and plaintext credential files without explicitly setting their permissions. The resulting permissions depend on the user's current `umask`.\n\nOn a system with a permissive `umask`, the API key or Client ID may become readable by other local users or services. Because the Skill later reads these files automatically, the files function as persistent authentication material and should be protected explicitly rather than relying on ambient shell configuration.\n\n### Attack Path\n\n1. A user follows the documented setup commands under a permissive `umask`.\n2. The credential files are created with group-readable or world-readable permissions.\n3. Another local account or compromised service reads `~/.config/ima/api_key` and `client_id`.\n4. The attacker submits authenticated requests to the IMA API using the recovered credentials.\n\n### Impact Assessment\n\nAn attacker who obtains both values may gain the API privileges associated with the victim's IMA account, including searching and reading notes, creating or appending notes, viewing knowledge bases, and adding content, subject to server-side authorization. The issue requires local filesystem access but may lead to compromise of persistent API credentials.\n]]>",
+                        "severity": "Medium"
+                      },
+                      "fixes": [
+                        {
+                          "description": {
+                            "text": "<![CDATA[\n## Remediation Suggestions\n\nReplace the setup procedure with permission-enforcing commands:\n\n```bash\numask 077\ninstall -d -m 700 \"$HOME/.config/ima\"\nprintf '%s\\n' \"your_client_id\" > \"$HOME/.config/ima/client_id\"\nprintf '%s\\n' \"your_api_key\" > \"$HOME/.config/ima/api_key\"\nchmod 600 \"$HOME/.config/ima/client_id\" \"$HOME/.config/ima/api_key\"\n```\n\nAdditional hardening:\n\n1. Validate file ownership and permissions before loading credentials.\n2. Refuse to use files writable by or readable by unauthorized users.\n3. Prefer an operating-system credential manager where available.\n4. Avoid placing credentials directly in shell commands that may be retained in shell history.\n5. Document credential rotation and revocation procedures.\n]]>"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "ruleId": "T09",
+                      "level": "warning",
+                      "message": {
+                        "text": "Filesystem-Derived Filenames Are Inserted Into JSON Without Serialization"
+                      },
+                      "locations": [
+                        {
+                          "physicalLocation": {
+                            "artifactLocation": {
+                              "uri": "knowledge-base/SKILL.md"
+                            },
+                            "region": {
+                              "startLine": 162,
+                              "endLine": 201
+                            }
+                          }
+                        }
+                      ],
+                      "partialFingerprints": {
+                        "primaryLocationLineHash": "1f95d8469e14af86"
+                      },
+                      "properties": {
+                        "description": "<![CDATA[\n## Vulnerability Details\n**File Location**: `knowledge-base/SKILL.md`, lines 162-174 and 191-201  \n**Vulnerability Type**: JSON injection and malformed request construction  \n**Risk Level**: Medium\n\n### Vulnerable Code\n\n```bash\nFILE_NAME=$(echo \"$PREFLIGHT\" | node -e \"const d=JSON.parse(require('fs').readFileSync(0,'utf8'));process.stdout.write(d.file_name)\")\nFILE_EXT=$(echo \"$PREFLIGHT\" | node -e \"const d=JSON.parse(require('fs').readFileSync(0,'utf8'));process.stdout.write(d.file_ext)\")\nFILE_SIZE=$(echo \"$PREFLIGHT\" | node -e \"const d=JSON.parse(require('fs').readFileSync(0,'utf8'));process.stdout.write(String(d.file_size))\")\nMEDIA_TYPE=$(echo \"$PREFLIGHT\" | node -e \"const d=JSON.parse(require('fs').readFileSync(0,'utf8'));process.stdout.write(String(d.media_type))\")\nCONTENT_TYPE=$(echo \"$PREFLIGHT\" | node -e \"const d=JSON.parse(require('fs').readFileSync(0,'utf8'));process.stdout.write(d.content_type)\")\n\nima_api \"openapi/wiki/v1/create_media\" \"{\n  \\\"file_name\\\": \\\"$FILE_NAME\\\",\n  \\\"file_size\\\": $FILE_SIZE,\n  \\\"content_type\\\": \\\"$CONTENT_TYPE\\\",\n  \\\"knowledge_base_id\\\": \\\"<kb_id>\\\",\n  \\\"file_ext\\\": \\\"$FILE_EXT\\\"\n}\"\n```\n\nThe same unsafe interpolation is used later:\n\n```bash\nima_api \"openapi/wiki/v1/add_knowledge\" \"{\n  \\\"media_type\\\": $MEDIA_TYPE,\n  \\\"media_id\\\": \\\"<media_id>\\\",\n  \\\"title\\\": \\\"$FILE_NAME\\\",\n  \\\"knowledge_base_id\\\": \\\"<kb_id>\\\",\n  \\\"file_info\\\": {\n    \\\"cos_key\\\": \\\"<cos_credential.cos_key>\\\",\n    \\\"file_size\\\": $FILE_SIZE,\n    \\\"file_name\\\": \\\"$FILE_NAME\\\"\n  }\n}\"\n```\n\n### Technical Analysis\n\n`FILE_NAME` originates from the local filesystem and is inserted directly into a manually assembled JSON string. No JSON serializer escapes quotation marks, backslashes, control characters, newlines, or other special characters.\n\nShell quoting prevents the filename from becoming a new shell command in this specific construction, but it does not make the resulting JSON safe. A filename containing JSON metacharacters can terminate the intended string value and introduce additional fields or produce malformed JSON.\n\nOther dynamically inserted values, including COS object keys, should also be serialized rather than interpolated.\n\n### Attack Path\n\n1. An attacker supplies or causes the user to download a supported file with a crafted filename containing quotes or JSON syntax.\n2. `preflight-check.cjs` accepts the supported extension and preserves the basename.\n3. The workflow assigns the crafted basename to `FILE_NAME`.\n4. The filename is interpolated into the manually constructed request body.\n5. The resulting JSON is malformed or contains attacker-controlled fields.\n6. The altered body is sent to `create_media` or `add_knowledge`.\n7. Depending on server parsing and duplicate-field behavior, the request fails, receives incorrect metadata, or applies attacker-selected field values.\n\n### Impact Assessment\n\nThe most reliable impact is denial of the requested upload through malformed JSON. If the API parser accepts duplicate keys or injected fields, the attacker may manipulate upload metadata or other request parameters. The issue does not directly provide local command execution because variable expansion is not re-evaluated as shell syntax, but it compromises request integrity.\n]]>",
+                        "severity": "Medium"
+                      },
+                      "fixes": [
+                        {
+                          "description": {
+                            "text": "<![CDATA[\n## Remediation Suggestions\n\n1. Stop constructing JSON through string interpolation.\n2. Use a proper serializer such as `jq`:\n   ```bash\n   BODY=$(jq -n \\\n     --arg file_name \"$FILE_NAME\" \\\n     --arg content_type \"$CONTENT_TYPE\" \\\n     --arg knowledge_base_id \"$KB_ID\" \\\n     --arg file_ext \"$FILE_EXT\" \\\n     --argjson file_size \"$FILE_SIZE\" \\\n     '{\n       file_name: $file_name,\n       file_size: $file_size,\n       content_type: $content_type,\n       knowledge_base_id: $knowledge_base_id,\n       file_ext: $file_ext\n     }')\n\n   ima_api \"openapi/wiki/v1/create_media\" \"$BODY\"\n   ```\n3. Apply serialization to every dynamic value, including filenames, titles, folder IDs, media IDs, and COS keys.\n4. Validate numeric fields before passing them with `--argjson`.\n5. Add tests using filenames containing quotes, backslashes, Unicode characters, tabs, and newlines.\n6. Prefer implementing the entire API request in Node.js so request construction and transport use structured objects throughout.\n]]>"
+                          }
+                        }
+                      ]
+                    }
+                  ],
+                  "properties": {
+                    "securityScore": 0,
+                    "primaryLanguage": "Markdown",
+                    "llm": "gpt-5.6",
+                    "startTime": 1789535040.1304352,
+                    "endTime": 1789535213.9441414
+                  }
+                }
+              ]
+            },
+            "skillspector": {
+              "skill": {
+                "name": "ima-notes-toolkit",
+                "source": "/tmp/clawhub-codex-scan-v57fssncm04pr9mawaq7mr6bcn8egk09-rNAJGj/clawscan-skillspector-1404018505/artifact",
+                "scanned_at": "2026-09-16T05:03:58.757589+00:00"
+              },
+              "risk_assessment": {
+                "score": 100,
+                "severity": "CRITICAL",
+                "recommendation": "DO_NOT_INSTALL",
+                "max_issue_severity": "HIGH"
+              },
+              "components": [
+                {
+                  "path": "SKILL.md",
+                  "type": "markdown",
+                  "lines": 216,
+                  "executable": false,
+                  "size_bytes": 12238,
+                  "source_url": null,
+                  "source_identity": null,
+                  "source_digest": null
+                },
+                {
+                  "path": "_skillhub_meta.json",
+                  "type": "json",
+                  "lines": 5,
+                  "executable": false,
+                  "size_bytes": 84,
+                  "source_url": null,
+                  "source_identity": null,
+                  "source_digest": null
+                },
+                {
+                  "path": "knowledge-base/SKILL.md",
+                  "type": "markdown",
+                  "lines": 521,
+                  "executable": false,
+                  "size_bytes": 28714,
+                  "source_url": null,
+                  "source_identity": null,
+                  "source_digest": null
+                },
+                {
+                  "path": "knowledge-base/references/api.md",
+                  "type": "markdown",
+                  "lines": 446,
+                  "executable": false,
+                  "size_bytes": 20587,
+                  "source_url": null,
+                  "source_identity": null,
+                  "source_digest": null
+                },
+                {
+                  "path": "knowledge-base/scripts/cos-upload.cjs",
+                  "type": "other",
+                  "lines": 161,
+                  "executable": true,
+                  "size_bytes": 4700,
+                  "source_url": null,
+                  "source_identity": null,
+                  "source_digest": null
+                },
+                {
+                  "path": "knowledge-base/scripts/preflight-check.cjs",
+                  "type": "other",
+                  "lines": 252,
+                  "executable": true,
+                  "size_bytes": 8767,
+                  "source_url": null,
+                  "source_identity": null,
+                  "source_digest": null
+                },
+                {
+                  "path": "notes/SKILL.md",
+                  "type": "markdown",
+                  "lines": 177,
+                  "executable": false,
+                  "size_bytes": 10641,
+                  "source_url": null,
+                  "source_identity": null,
+                  "source_digest": null
+                },
+                {
+                  "path": "notes/references/api.md",
+                  "type": "markdown",
+                  "lines": 341,
+                  "executable": false,
+                  "size_bytes": 14797,
+                  "source_url": null,
+                  "source_identity": null,
+                  "source_digest": null
+                },
+                {
+                  "path": "notes/scripts/debug_cred.js",
+                  "type": "javascript",
+                  "lines": 38,
+                  "executable": true,
+                  "size_bytes": 1194,
+                  "source_url": null,
+                  "source_identity": null,
+                  "source_digest": null
+                },
+                {
+                  "path": "notes/scripts/debug_search.js",
+                  "type": "javascript",
+                  "lines": 52,
+                  "executable": true,
+                  "size_bytes": 1482,
+                  "source_url": null,
+                  "source_identity": null,
+                  "source_digest": null
+                },
+                {
+                  "path": "notes/scripts/debug_search2.js",
+                  "type": "javascript",
+                  "lines": 45,
+                  "executable": true,
+                  "size_bytes": 1175,
+                  "source_url": null,
+                  "source_identity": null,
+                  "source_digest": null
+                },
+                {
+                  "path": "notes/scripts/ima-search-outline.js",
+                  "type": "javascript",
+                  "lines": 224,
+                  "executable": true,
+                  "size_bytes": 6472,
+                  "source_url": null,
+                  "source_identity": null,
+                  "source_digest": null
+                }
+              ],
+              "structured_summaries": [],
+              "issues": [
+                {
+                  "id": "TP4",
+                  "finding_id": "finding-af400a1ddee54e7ea74eb7871ac83c3c",
+                  "category": "MCP Tool Poisoning",
+                  "pattern": null,
+                  "severity": "HIGH",
+                  "confidence": 0.98,
+                  "location": {
+                    "file": "SKILL.md",
+                    "start_line": 1,
+                    "end_line": null
+                  },
+                  "finding": null,
+                  "explanation": "声明描述的是面向笔记和知识库管理的统一技能能力，但提供的代码片段并未实现任何笔记创建、编辑、搜索、文件上传或知识库检索逻辑。相反，它专门从环境变量和本地文件系统位置（如 ~/.config/ima/client_id、技能目录 .env）读取 CLIENT_ID，并将其打印到控制台，属于凭据发现/调试行为。这是与声明用途 materially different 的主要功能，并且涉及对本地敏感配置资源的访问和输出，均未在描述中体现，因此应判定为描述与实际行为不匹配。",
+                  "remediation": "Update the skill description to accurately reflect all capabilities, or remove undeclared functionality from the implementation.",
+                  "code_snippet": null,
+                  "intent": null,
+                  "tags": [
+                    "ASI02",
+                    "AML.T0080",
+                    "llm-unconfirmed"
+                  ],
+                  "evidence": {
+                    "code_path": "notes/scripts/debug_cred.js",
+                    "code_start_line": 1,
+                    "code_end_line": 38,
+                    "actual_behavior_summary": "该代码是一个调试脚本，用于查找并输出 IMA/OpenAPI 的客户端凭据（CLIENT_ID），从环境变量和本地配置文件/技能目录中的 .env 文件读取并打印出来。"
+                  },
+                  "match_fingerprint": null,
+                  "occurrences": [
+                    {
+                      "file": "SKILL.md",
+                      "start_line": 1,
+                      "end_line": null
+                    }
+                  ]
+                },
+                {
+                  "id": "SQP-1",
+                  "finding_id": "finding-5b9921703e424fa2a7faa91564a65df4",
+                  "category": null,
+                  "pattern": null,
+                  "severity": "HIGH",
+                  "confidence": 0.96,
+                  "location": {
+                    "file": "SKILL.md",
+                    "start_line": 4,
+                    "end_line": 4
+                  },
+                  "finding": null,
+                  "explanation": "The trigger conditions are very broad and include common phrases like '帮我记一下' and general personal document access intents. This can cause the skill to activate on routine conversations and route user content or files into an external service when the user may not have intended to invoke this integration.",
+                  "remediation": "Narrow activation phrases to explicit IMA/note/knowledge-base intents, and require confirmation before external writes, uploads, or searches when the request is ambiguous. Add a consent step for actions that transmit content to `ima.qq.com`.",
+                  "code_snippet": null,
+                  "intent": null,
+                  "tags": [],
+                  "evidence": {},
+                  "match_fingerprint": null,
+                  "occurrences": [
+                    {
+                      "file": "SKILL.md",
+                      "start_line": 4,
+                      "end_line": 4
+                    }
+                  ]
+                },
+                {
+                  "id": "SQP-2",
+                  "finding_id": "finding-8c9930c9a0754ba4bb15f04f8795b22a",
+                  "category": null,
+                  "pattern": null,
+                  "severity": "HIGH",
+                  "confidence": 0.99,
+                  "location": {
+                    "file": "notes/scripts/debug_cred.js",
+                    "start_line": 7,
+                    "end_line": 38
+                  },
+                  "finding": null,
+                  "explanation": "The script prints the CLIENT_ID value obtained from the environment or local files directly to stdout, along with paths being checked. Even if a client ID is not a full secret, exposing credential-like identifiers in logs or terminal output can leak sensitive configuration to other users, log collectors, crash reports, or support transcripts and facilitate credential abuse.",
+                  "remediation": "Do not print credential material to stdout. Mask values if presence must be confirmed, for example by logging only whether a value exists or the last few characters, and ensure debug logging is disabled by default in distributed builds.",
+                  "code_snippet": null,
+                  "intent": null,
+                  "tags": [],
+                  "evidence": {},
+                  "match_fingerprint": null,
+                  "occurrences": [
+                    {
+                      "file": "notes/scripts/debug_cred.js",
+                      "start_line": 7,
+                      "end_line": 38
+                    }
+                  ]
+                },
+                {
+                  "id": "PE3",
+                  "finding_id": "finding-5cff57d92fc341e28fb8435e78e22988",
+                  "category": "Privilege Escalation",
+                  "pattern": "Credential Access",
+                  "severity": "HIGH",
+                  "confidence": 0.97,
+                  "location": {
+                    "file": "notes/scripts/debug_cred.js",
+                    "start_line": 25,
+                    "end_line": null
+                  },
+                  "finding": ".env'",
+                  "explanation": "The script explicitly reads a .env file from a local skill directory to extract IMA_CLIENT_ID, which is classic credential-access behavior. In a user-facing notes skill, probing local secret stores is more dangerous because it is unrelated to user intent and may normalize access patterns that can be extended to more sensitive secrets later.",
+                  "remediation": "Do not read .env files or other local secret stores from operational skill code. Supply required configuration through a secure runtime secret mechanism, restrict access to the minimal necessary variable, and keep any developer troubleshooting utilities out of the production or distributed package.",
+                  "code_snippet": "\nif (!CLIENT_ID) {\n  try { \n    const skillEnv = path.join(process.env.USERPROFILE, '.workbuddy', 'skills', 'ima笔记', 'notes', '.env');\n    console.log('Checking skill env:', skillEnv);\n    const envContent = fs.readFileSync(skillEnv, 'utf8');\n    const match = envContent.match(/IMA_CLIENT_ID\\s*=\\s*(.+)/);",
+                  "intent": null,
+                  "tags": [
+                    "Privilege Escalation"
+                  ],
+                  "evidence": {},
+                  "match_fingerprint": "1d7505be6268307507c320128a1d61ae0b567925073d352885b24399720f99c3",
+                  "occurrences": [
+                    {
+                      "file": "notes/scripts/debug_cred.js",
+                      "start_line": 25,
+                      "end_line": null
+                    }
+                  ]
+                },
+                {
+                  "id": "PE3",
+                  "finding_id": "finding-bd4b97a4c5d0406fbdbd91469c2ee65f",
+                  "category": "Privilege Escalation",
+                  "pattern": "Credential Access",
+                  "severity": "HIGH",
+                  "confidence": 0.96,
+                  "location": {
+                    "file": "notes/scripts/debug_search.js",
+                    "start_line": 15,
+                    "end_line": null
+                  },
+                  "finding": ".env'",
+                  "explanation": "Reading a .env file from another local skill path to extract IMA_CLIENT_ID is credential access behavior and exceeds what is necessary for a simple note-search debug script. This creates a path for unintended secret harvesting from developer or user workspaces, and the extracted credential is then used in outbound API authentication.",
+                  "remediation": "Do not parse .env files from local directories to obtain credentials. Use a sanctioned secret injection mechanism only, scope credentials to this tool, and ensure the script fails closed when no approved credential source is provided.",
+                  "code_snippet": "}\nif (!CLIENT_ID) {\n  try { \n    const skillEnv = path.join(process.env.USERPROFILE, '.workbuddy', 'skills', 'ima笔记', 'notes', '.env');\n    const envContent = fs.readFileSync(skillEnv, 'utf8');\n    const match = envContent.match(/IMA_CLIENT_ID\\s*=\\s*(.+)/);\n    if (match) CLIENT_ID = match[1].trim();",
+                  "intent": null,
+                  "tags": [
+                    "Privilege Escalation"
+                  ],
+                  "evidence": {},
+                  "match_fingerprint": "1d7505be6268307507c320128a1d61ae0b567925073d352885b24399720f99c3",
+                  "occurrences": [
+                    {
+                      "file": "notes/scripts/debug_search.js",
+                      "start_line": 15,
+                      "end_line": null
+                    }
+                  ]
+                },
+                {
+                  "id": "PE3",
+                  "finding_id": "finding-7dec17ecee86483ba6a27e59aaf7658a",
+                  "category": "Privilege Escalation",
+                  "pattern": "Credential Access",
+                  "severity": "HIGH",
+                  "confidence": 0.89,
+                  "location": {
+                    "file": "notes/scripts/ima-search-outline.js",
+                    "start_line": 27,
+                    "end_line": null
+                  },
+                  "finding": ".env'",
+                  "explanation": "The script attempts to read credentials from a separate skill-specific .env path under the user's home directory, expanding the credential search surface beyond standard environment variables or a dedicated config store. In a skill/plugin context, this cross-directory secret harvesting behavior is risky because it can access credentials from another installation location without explicit user consent, and the same pattern could be extended to collect additional secrets.",
+                  "remediation": "Remove fallback reads from unrelated skill directories such as ~/.workbuddy/skills/.../.env. Load credentials only from explicit environment variables or a single documented config location with restricted permissions, and require the user to opt in to any file-based secret source. Use a proper secret manager where possible and validate both CLIENT_ID and API_KEY presence before making requests.",
+                  "code_snippet": "// 从 ima 技能配置读取\nif (!CLIENT_ID) {\n  try { \n    const skillEnv = path.join(process.env.USERPROFILE, '.workbuddy', 'skills', 'ima笔记', 'notes', '.env');\n    const envContent = fs.readFileSync(skillEnv, 'utf8');\n    const match = envContent.match(/IMA_CLIENT_ID\\s*=\\s*(.+)/);\n    if (match) CLIENT_ID = match[1].trim();",
+                  "intent": null,
+                  "tags": [
+                    "Privilege Escalation"
+                  ],
+                  "evidence": {},
+                  "match_fingerprint": "1d7505be6268307507c320128a1d61ae0b567925073d352885b24399720f99c3",
+                  "occurrences": [
+                    {
+                      "file": "notes/scripts/ima-search-outline.js",
+                      "start_line": 27,
+                      "end_line": null
+                    }
+                  ]
+                },
+                {
+                  "id": "LP3",
+                  "finding_id": "finding-693957afad134c0fab00f6fc2f4e179e",
+                  "category": "MCP Least Privilege",
+                  "pattern": null,
+                  "severity": "MEDIUM",
+                  "confidence": 0.7,
+                  "location": {
+                    "file": "SKILL.md",
+                    "start_line": 1,
+                    "end_line": null
+                  },
+                  "finding": null,
+                  "explanation": "Without declared permissions the skill's intent is opaque and cannot be validated.",
+                  "remediation": "Declare the skill's tool scope: for Claude Code / Agent Skills SKILL.md, list the tools the skill may invoke in the 'allowed-tools' frontmatter field; for MCP server manifests, add a 'permissions' list naming the required capabilities.",
+                  "code_snippet": null,
+                  "intent": null,
+                  "tags": [
+                    "ASI02",
+                    "llm-unconfirmed"
+                  ],
+                  "evidence": {},
+                  "match_fingerprint": null,
+                  "occurrences": [
+                    {
+                      "file": "SKILL.md",
+                      "start_line": 1,
+                      "end_line": null
+                    }
+                  ]
+                },
+                {
+                  "id": "SQP-3",
+                  "finding_id": "finding-1a70689fcc8e4841944df11e5261e15e",
+                  "category": null,
+                  "pattern": null,
+                  "severity": "MEDIUM",
+                  "confidence": 0.81,
+                  "location": {
+                    "file": "SKILL.md",
+                    "start_line": 4,
+                    "end_line": 4
+                  },
+                  "finding": null,
+                  "explanation": "The natural-language description is written to prescribe activation behavior entirely in Chinese and provides no indication that users may choose another language or locale. Under the stated policy, forcing a specific language without user opt-in is a locale-policy violation unless the constraint is explicitly justified, which is not documented here.",
+                  "remediation": "State that the skill can operate in the user's preferred language, or explicitly document and justify any Chinese-only locale restriction. If the skill is intended for a region-specific audience, add that rationale clearly in the description or metadata.",
+                  "code_snippet": null,
+                  "intent": null,
+                  "tags": [
+                    "llm-unconfirmed"
+                  ],
+                  "evidence": {},
+                  "match_fingerprint": null,
+                  "occurrences": [
+                    {
+                      "file": "SKILL.md",
+                      "start_line": 4,
+                      "end_line": 4
+                    }
+                  ]
+                },
+                {
+                  "id": "RA2",
+                  "finding_id": "finding-71fc39f1dce94593878446ac59cbbc49",
+                  "category": "Rogue Agent",
+                  "pattern": "Session Persistence",
+                  "severity": "MEDIUM",
+                  "confidence": 0.86,
+                  "location": {
+                    "file": "SKILL.md",
+                    "start_line": 36,
+                    "end_line": null
+                  },
+                  "finding": "mkdir -p ~/.config/ima\necho \"your_client_id\" > ~/.config/ima/client_id\necho \"your_api_key\" > ~/.config/ima/api_key\n```\n\n**方式 B — 环境变量：**\n\n```bash\nexport IMA_OPENAPI_CLIENTID=\"your_client_id\"\nexport IM",
+                  "explanation": "This duplicate finding points to the same credential-persistence behavior: storing long-lived API secrets in plaintext or exported session variables. While environment variables are common, combining them with documented plaintext file fallback broadens the chance of credential leakage across sessions and tooling.",
+                  "remediation": "Consolidate on a safer secret-management approach and minimize fallback locations. If environment variables are supported, scope them to the process/session only; if file fallback remains, require strict permissions and never echo or log the values.",
+                  "code_snippet": "**方式 A — 配置文件（推荐）：**\n\n```bash\nmkdir -p ~/.config/ima\necho \"your_client_id\" > ~/.config/ima/client_id\necho \"your_api_key\" > ~/.config/ima/api_key\n```",
+                  "intent": null,
+                  "tags": [
+                    "Rogue Agent"
+                  ],
+                  "evidence": {},
+                  "match_fingerprint": "8c4a505130d7215ae5a6523d762761bad66e94ea15bb68c98864a85689fe35c8",
+                  "occurrences": [
+                    {
+                      "file": "SKILL.md",
+                      "start_line": 36,
+                      "end_line": null
+                    }
+                  ]
+                },
+                {
+                  "id": "RA2",
+                  "finding_id": "finding-ef6cdc03358f473fbca2363e617443b5",
+                  "category": "Rogue Agent",
+                  "pattern": "Session Persistence",
+                  "severity": "MEDIUM",
+                  "confidence": 0.86,
+                  "location": {
+                    "file": "SKILL.md",
+                    "start_line": 36,
+                    "end_line": null
+                  },
+                  "finding": "mkdir -p ~/.config/ima\necho \"your_client_id\" > ~/.config/ima/client_id\necho \"your_api_key\" > ~/.config/ima/api_key\n```\n\n**方式 B — 环境变量:**\n\n```bash\nexport IMA_OPENAPI_CLIENTID=\"your_client_id\"\nexport IM",
+                  "explanation": "This duplicate finding points to the same credential-persistence behavior: storing long-lived API secrets in plaintext or exported session variables. While environment variables are common, combining them with documented plaintext file fallback broadens the chance of credential leakage across sessions and tooling.",
+                  "remediation": "Consolidate on a safer secret-management approach and minimize fallback locations. If environment variables are supported, scope them to the process/session only; if file fallback remains, require strict permissions and never echo or log the values.",
+                  "code_snippet": "**方式 A — 配置文件(推荐):**\n\n```bash\nmkdir -p ~/.config/ima\necho \"your_client_id\" > ~/.config/ima/client_id\necho \"your_api_key\" > ~/.config/ima/api_key\n```",
+                  "intent": null,
+                  "tags": [
+                    "Rogue Agent",
+                    "normalized-view"
+                  ],
+                  "evidence": {},
+                  "match_fingerprint": "72684fff8bb70313d09f8fae252e5e80f7ea9cc4b0fe74c99483c38e2a964c65",
+                  "occurrences": [
+                    {
+                      "file": "SKILL.md",
+                      "start_line": 36,
+                      "end_line": null
+                    }
+                  ]
+                },
+                {
+                  "id": "E1",
+                  "finding_id": "finding-7229d60eebb14157aaca9b94a539e732",
+                  "category": "Data Exfiltration",
+                  "pattern": "External Transmission",
+                  "severity": "MEDIUM",
+                  "confidence": 0.6,
+                  "location": {
+                    "file": "SKILL.md",
+                    "start_line": 74,
+                    "end_line": null
+                  },
+                  "finding": "curl -s -X POST \"https://ima.qq.com/$path\" \\\n    -H \"ima-openapi-clientid: $IMA_CLIENT_ID\" \\\n    -H \"ima-openapi-apikey: $IMA_API_KEY\" \\\n    -H \"Content-Type: application/json\" \\\n    -d ",
+                  "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended.",
+                  "remediation": "Verify the destination URL is trusted and necessary. Remove or replace with documented APIs. Ensure no secrets, tokens, or PII are transmitted.",
+                  "code_snippet": "# All requests go ONLY to the official IMA API (ima.qq.com)\nima_api() {\n  local path=\"$1\" body=\"$2\"\n  curl -s -X POST \"https://ima.qq.com/$path\" \\\n    -H \"ima-openapi-clientid: $IMA_CLIENT_ID\" \\\n    -H \"ima-openapi-apikey: $IMA_API_KEY\" \\\n    -H \"Content-Type: application/json\" \\",
+                  "intent": null,
+                  "tags": [
+                    "Data Exfiltration",
+                    "llm-unconfirmed"
+                  ],
+                  "evidence": {},
+                  "match_fingerprint": "21311d1705fada4215643e4e9e25d7a16bf2aee262bbd6d7bc3363e9869c1d05",
+                  "occurrences": [
+                    {
+                      "file": "SKILL.md",
+                      "start_line": 74,
+                      "end_line": null
+                    }
+                  ]
+                },
+                {
+                  "id": "P9",
+                  "finding_id": "finding-c10ca6c637024734bcd056bbb3164939",
+                  "category": "Prompt Injection",
+                  "pattern": "Whitespace Padding",
+                  "severity": "MEDIUM",
+                  "confidence": 0.7,
+                  "location": {
+                    "file": "SKILL.md",
+                    "start_line": 86,
+                    "end_line": null
+                  },
+                  "finding": "U+0020 x83",
+                  "explanation": "Large whitespace padding was detected (a block of blank lines or a long run of spaces). This can push injected instructions below or to the right of the visible area so a human reviewer never sees them while the agent still reads them. Manual review of the hidden content is recommended.",
+                  "remediation": "Remove the large whitespace padding (blank-line blocks or long space runs) and review any content hidden below or to the right of it. Keep skill files compact and reviewable so no instructions can be concealed off-screen.",
+                  "code_snippet": "\n## 模块决策表\n\n| 用户意图                                                                                   | 模块           | 读取                      |\n| ------------------------------------------------------------------------------------------ | -------------- | ------------------------- |\n| 搜索笔记、浏览笔记本、获取笔记内容、创建笔记、追加内容                                     | notes          | `notes/SKILL.md`          |\n| 上传文件、添加网页链接、搜索知识库、浏览知识库内容、获取知识库信息、获取可添加的知识库列表 | knowledge-base | `knowledge-base/SKILL.md` |",
+                  "intent": null,
+                  "tags": [
+                    "Prompt Injection",
+                    "llm-unconfirmed"
+                  ],
+                  "evidence": {},
+                  "match_fingerprint": "08e60b40ef57fe6a28ebd0c1d9364977dc48298c796c9b9f752b4efbfe67a779",
+                  "occurrences": [
+                    {
+                      "file": "SKILL.md",
+                      "start_line": 86,
+                      "end_line": null
+                    }
+                  ]
+                },
+                {
+                  "id": "SQP-3",
+                  "finding_id": "finding-35711a85a11c4ec5ac499c3a3e3f211b",
+                  "category": null,
+                  "pattern": null,
+                  "severity": "MEDIUM",
+                  "confidence": 0.88,
+                  "location": {
+                    "file": "knowledge-base/SKILL.md",
+                    "start_line": 7,
+                    "end_line": 7
+                  },
+                  "finding": null,
+                  "explanation": "The skill description and all operational instructions are presented in Chinese, and the document does not indicate that users may choose another language or locale. This can constitute a language-policy violation when a skill effectively constrains interaction to a specific language without explicit opt-in or justification.",
+                  "remediation": "Document that the skill supports multiple languages if applicable, or explicitly state that Chinese is required for a justified region-specific reason. If language choice is available, add clear opt-in wording telling the agent to match the user's preferred language.",
+                  "code_snippet": null,
+                  "intent": null,
+                  "tags": [
+                    "llm-unconfirmed"
+                  ],
+                  "evidence": {},
+                  "match_fingerprint": null,
+                  "occurrences": [
+                    {
+                      "file": "knowledge-base/SKILL.md",
+                      "start_line": 7,
+                      "end_line": 7
+                    }
+                  ]
+                },
+                {
+                  "id": "SQP-2",
+                  "finding_id": "finding-6c2469feeffc4c6da0e86cbb66a10d45",
+                  "category": null,
+                  "pattern": null,
+                  "severity": "MEDIUM",
+                  "confidence": 0.91,
+                  "location": {
+                    "file": "knowledge-base/references/api.md",
+                    "start_line": 14,
+                    "end_line": 20
+                  },
+                  "finding": null,
+                  "explanation": "The document instructs callers to send long-lived API credentials (`ima-openapi-clientid`, `ima-openapi-apikey`) and later exposes temporary COS secrets (`secret_id`, `secret_key`, `token`) but never warns that these values are sensitive, must not be logged, echoed to users, or embedded in client-side code. In a skill context, this omission increases the chance that an agent or integrator mishandles credentials, leading to unauthorized access to the knowledge base or uploaded objects.",
+                  "remediation": "Add explicit security guidance near the authentication and credential sections: treat API keys and COS credentials as secrets, never expose them in chat output, logs, screenshots, or front-end code; store them in a server-side secret manager; scope and rotate keys; redact sensitive headers/fields in telemetry; and note that temporary COS credentials must only be used for direct upload and discarded after expiry.",
+                  "code_snippet": null,
+                  "intent": null,
+                  "tags": [],
+                  "evidence": {},
+                  "match_fingerprint": null,
+                  "occurrences": [
+                    {
+                      "file": "knowledge-base/references/api.md",
+                      "start_line": 14,
+                      "end_line": 20
+                    }
+                  ]
+                },
+                {
+                  "id": "SQP-2",
+                  "finding_id": "finding-ac3c9cb2aca445d99f97f50ba52759e7",
+                  "category": null,
+                  "pattern": null,
+                  "severity": "MEDIUM",
+                  "confidence": 0.88,
+                  "location": {
+                    "file": "knowledge-base/references/api.md",
+                    "start_line": 28,
+                    "end_line": 30
+                  },
+                  "finding": null,
+                  "explanation": "The quick-decision flow directs the agent to upload files, import URLs, and add knowledge to a remote knowledge base, but it does not clearly warn that these are write operations that permanently transmit user content to external storage and may affect shared repositories. In this skill, that matters because users may phrase requests casually ('帮我记一下', upload/search notes), making unintended exfiltration or modification of personal or organizational data more likely if consent is not explicit.",
+                  "remediation": "Add prominent notices before all mutating flows that these operations send content to Tencent's remote knowledge-base service and may be visible to others with access. Require explicit user confirmation before upload/import/add actions, identify the destination knowledge base/folder before writing, and document retention/visibility expectations for stored content.",
+                  "code_snippet": null,
+                  "intent": null,
+                  "tags": [],
+                  "evidence": {},
+                  "match_fingerprint": null,
+                  "occurrences": [
+                    {
+                      "file": "knowledge-base/references/api.md",
+                      "start_line": 28,
+                      "end_line": 30
+                    }
+                  ]
+                },
+                {
+                  "id": "P9",
+                  "finding_id": "finding-082249eab6774e8abb5ea1de6bcfedc4",
+                  "category": "Prompt Injection",
+                  "pattern": "Whitespace Padding",
+                  "severity": "MEDIUM",
+                  "confidence": 0.7,
+                  "location": {
+                    "file": "knowledge-base/references/api.md",
+                    "start_line": 140,
+                    "end_line": null
+                  },
+                  "finding": "U+0020 x91",
+                  "explanation": "Large whitespace padding was detected (a block of blank lines or a long run of spaces). This can push injected instructions below or to the right of the visible area so a human reviewer never sees them while the agent still reads them. Manual review of the hidden content is recommended.",
+                  "remediation": "Remove the large whitespace padding (blank-line blocks or long space runs) and review any content hidden below or to the right of it. Keep skill files compact and reviewable so no instructions can be concealed off-screen.",
+                  "code_snippet": "\n### MediaType（媒体类型枚举）\n\n| 值  | 名称           | content_type / 说明                                                                                           |\n| --- | -------------- | ------------------------------------------------------------------------------------------------------------- |\n| 1   | PDF            | `application/pdf`                                                                                             |\n| 2   | 网页           | N/A（直接 AddKnowledge，`web_info.content_id=<url>`）                                                         |",
+                  "intent": null,
+                  "tags": [
+                    "Prompt Injection",
+                    "llm-unconfirmed"
+                  ],
+                  "evidence": {},
+                  "match_fingerprint": "f9dae145ce157b04d98cb044b7211be0641900f77eed697377edbe1a34fb51ac",
+                  "occurrences": [
+                    {
+                      "file": "knowledge-base/references/api.md",
+                      "start_line": 140,
+                      "end_line": null
+                    }
+                  ]
+                },
+                {
+                  "id": "SQP-3",
+                  "finding_id": "finding-ab7fba9f9ca3406782350ff473e0a983",
+                  "category": null,
+                  "pattern": null,
+                  "severity": "MEDIUM",
+                  "confidence": 0.91,
+                  "location": {
+                    "file": "notes/SKILL.md",
+                    "start_line": 7,
+                    "end_line": 7
+                  },
+                  "finding": null,
+                  "explanation": "The main skill instructions are written as normative behavior in Chinese, with no indication that another language may be used if the user prefers. Under the policy, forcing a specific language or locale without opt-in is a natural-language policy violation unless the constraint is documented and justified.",
+                  "remediation": "Add an explicit instruction that the agent should follow the user's preferred language, or clearly document that the skill is intentionally limited to a specific locale and why. For example, state that responses may be given in Chinese or the user's requested language unless a region-specific requirement applies.",
+                  "code_snippet": null,
+                  "intent": null,
+                  "tags": [
+                    "llm-unconfirmed"
+                  ],
+                  "evidence": {},
+                  "match_fingerprint": null,
+                  "occurrences": [
+                    {
+                      "file": "notes/SKILL.md",
+                      "start_line": 7,
+                      "end_line": 7
+                    }
+                  ]
+                },
+                {
+                  "id": "P9",
+                  "finding_id": "finding-c8e1dfc9c9194d7699c7792588cc5836",
+                  "category": "Prompt Injection",
+                  "pattern": "Whitespace Padding",
+                  "severity": "MEDIUM",
+                  "confidence": 0.7,
+                  "location": {
+                    "file": "knowledge-base/references/api.md",
+                    "start_line": 152,
+                    "end_line": null
+                  },
+                  "finding": "U+0020 x98",
+                  "explanation": "Large whitespace padding was detected (a block of blank lines or a long run of spaces). This can push injected instructions below or to the right of the visible area so a human reviewer never sees them while the agent still reads them. Manual review of the hidden content is recommended.",
+                  "remediation": "Remove the large whitespace padding (blank-line blocks or long space runs) and review any content hidden below or to the right of it. Keep skill files compact and reviewable so no instructions can be concealed off-screen.",
+                  "code_snippet": "\n## 接口决策表\n\n| 用户意图                                                                                                  | 调用接口                     | 关键参数                                                                      |\n| --------------------------------------------------------------------------------------------------------- | ---------------------------- | ----------------------------------------------------------------------------- |\n| 搜索/查找笔记                                                                                             | `search_note_book`           | `query_info`（QueryInfo 对象）                                                |\n| 查看笔记本列表                                                                                            | `list_note_folder_by_cursor` | `cursor`(必填，首页传`\"0\"`) + `limit`(必填)                                   |",
+                  "intent": null,
+                  "tags": [
+                    "Prompt Injection",
+                    "llm-unconfirmed"
+                  ],
+                  "evidence": {},
+                  "match_fingerprint": "e67553727c1229c6de1adf40cdf3fa28d6005dd8db4aa82e57f9095a9897ef2a",
+                  "occurrences": [
+                    {
+                      "file": "knowledge-base/references/api.md",
+                      "start_line": 152,
+                      "end_line": null
+                    }
+                  ]
+                },
+                {
+                  "id": "P9",
+                  "finding_id": "finding-c8e1dfc9c9194d7699c7792588cc5836",
+                  "category": "Prompt Injection",
+                  "pattern": "Whitespace Padding",
+                  "severity": "MEDIUM",
+                  "confidence": 0.7,
+                  "location": {
+                    "file": "notes/SKILL.md",
+                    "start_line": 15,
+                    "end_line": null
+                  },
+                  "finding": "U+0020 x98",
+                  "explanation": "Large whitespace padding was detected (a block of blank lines or a long run of spaces). This can push injected instructions below or to the right of the visible area so a human reviewer never sees them while the agent still reads them. Manual review of the hidden content is recommended.",
+                  "remediation": "Remove the large whitespace padding (blank-line blocks or long space runs) and review any content hidden below or to the right of it. Keep skill files compact and reviewable so no instructions can be concealed off-screen.",
+                  "code_snippet": "\n## 接口决策表\n\n| 用户意图                                                                                                  | 调用接口                     | 关键参数                                                                      |\n| --------------------------------------------------------------------------------------------------------- | ---------------------------- | ----------------------------------------------------------------------------- |\n| 搜索/查找笔记                                                                                             | `search_note_book`           | `query_info`（QueryInfo 对象）                                                |\n| 查看笔记本列表                                                                                            | `list_note_folder_by_cursor` | `cursor`(必填，首页传`\"0\"`) + `limit`(必填)                                   |",
+                  "intent": null,
+                  "tags": [
+                    "Prompt Injection",
+                    "llm-unconfirmed"
+                  ],
+                  "evidence": {},
+                  "match_fingerprint": "e67553727c1229c6de1adf40cdf3fa28d6005dd8db4aa82e57f9095a9897ef2a",
+                  "occurrences": [
+                    {
+                      "file": "notes/SKILL.md",
+                      "start_line": 15,
+                      "end_line": null
+                    }
+                  ]
+                },
+                {
+                  "id": "P9",
+                  "finding_id": "finding-10cdcc936b9844a48907d310f53eb795",
+                  "category": "Prompt Injection",
+                  "pattern": "Whitespace Padding",
+                  "severity": "MEDIUM",
+                  "confidence": 0.7,
+                  "location": {
+                    "file": "knowledge-base/references/api.md",
+                    "start_line": 142,
+                    "end_line": null
+                  },
+                  "finding": "U+0020 x93",
+                  "explanation": "Large whitespace padding was detected (a block of blank lines or a long run of spaces). This can push injected instructions below or to the right of the visible area so a human reviewer never sees them while the agent still reads them. Manual review of the hidden content is recommended.",
+                  "remediation": "Remove the large whitespace padding (blank-line blocks or long space runs) and review any content hidden below or to the right of it. Keep skill files compact and reviewable so no instructions can be concealed off-screen.",
+                  "code_snippet": "\n| 用户意图                                                                                                  | 调用接口                     | 关键参数                                                                      |\n| --------------------------------------------------------------------------------------------------------- | ---------------------------- | ----------------------------------------------------------------------------- |\n| 搜索/查找笔记                                                                                             | `search_note_book`           | `query_info`（QueryInfo 对象）                                                |\n| 查看笔记本列表                                                                                            | `list_note_folder_by_cursor` | `cursor`(必填，首页传`\"0\"`) + `limit`(必填)                                   |\n| 浏览某笔记本里的笔记,当用户表述\"最新\"、\"最近\"之类的通用限定，没有指明笔记本时，都应该直接在全部笔记里去拉 | `list_note_by_folder_id`     | `folder_id`(选填,空为全部笔记本) + `cursor`(必填，首次传`\"\"`) + `limit`(必填) |\n| 读取笔记正文                                                                                              | `get_doc_content`            | `doc_id` + `target_content_format`(必填，推荐`0`纯文本)                       |",
+                  "intent": null,
+                  "tags": [
+                    "Prompt Injection",
+                    "llm-unconfirmed"
+                  ],
+                  "evidence": {},
+                  "match_fingerprint": "43be23ee112b3e118fb7aa7983fccadd0c25310b114941bfe5d48a5ef0f703c5",
+                  "occurrences": [
+                    {
+                      "file": "knowledge-base/references/api.md",
+                      "start_line": 142,
+                      "end_line": null
+                    }
+                  ]
+                },
+                {
+                  "id": "P9",
+                  "finding_id": "finding-10cdcc936b9844a48907d310f53eb795",
+                  "category": "Prompt Injection",
+                  "pattern": "Whitespace Padding",
+                  "severity": "MEDIUM",
+                  "confidence": 0.7,
+                  "location": {
+                    "file": "notes/SKILL.md",
+                    "start_line": 17,
+                    "end_line": null
+                  },
+                  "finding": "U+0020 x93",
+                  "explanation": "Large whitespace padding was detected (a block of blank lines or a long run of spaces). This can push injected instructions below or to the right of the visible area so a human reviewer never sees them while the agent still reads them. Manual review of the hidden content is recommended.",
+                  "remediation": "Remove the large whitespace padding (blank-line blocks or long space runs) and review any content hidden below or to the right of it. Keep skill files compact and reviewable so no instructions can be concealed off-screen.",
+                  "code_snippet": "\n| 用户意图                                                                                                  | 调用接口                     | 关键参数                                                                      |\n| --------------------------------------------------------------------------------------------------------- | ---------------------------- | ----------------------------------------------------------------------------- |\n| 搜索/查找笔记                                                                                             | `search_note_book`           | `query_info`（QueryInfo 对象）                                                |\n| 查看笔记本列表                                                                                            | `list_note_folder_by_cursor` | `cursor`(必填，首页传`\"0\"`) + `limit`(必填)                                   |\n| 浏览某笔记本里的笔记,当用户表述\"最新\"、\"最近\"之类的通用限定，没有指明笔记本时，都应该直接在全部笔记里去拉 | `list_note_by_folder_id`     | `folder_id`(选填,空为全部笔记本) + `cursor`(必填，首次传`\"\"`) + `limit`(必填) |\n| 读取笔记正文                                                                                              | `get_doc_content`            | `doc_id` + `target_content_format`(必填，推荐`0`纯文本)                       |",
+                  "intent": null,
+                  "tags": [
+                    "Prompt Injection",
+                    "llm-unconfirmed"
+                  ],
+                  "evidence": {},
+                  "match_fingerprint": "43be23ee112b3e118fb7aa7983fccadd0c25310b114941bfe5d48a5ef0f703c5",
+                  "occurrences": [
+                    {
+                      "file": "notes/SKILL.md",
+                      "start_line": 17,
+                      "end_line": null
+                    }
+                  ]
+                },
+                {
+                  "id": "P9",
+                  "finding_id": "finding-3b3ad0e49c0a4a1baab256be01a9c56a",
+                  "category": "Prompt Injection",
+                  "pattern": "Whitespace Padding",
+                  "severity": "MEDIUM",
+                  "confidence": 0.7,
+                  "location": {
+                    "file": "notes/SKILL.md",
+                    "start_line": 18,
+                    "end_line": null
+                  },
+                  "finding": "U+0020 x92",
+                  "explanation": "Large whitespace padding was detected (a block of blank lines or a long run of spaces). This can push injected instructions below or to the right of the visible area so a human reviewer never sees them while the agent still reads them. Manual review of the hidden content is recommended.",
+                  "remediation": "Remove the large whitespace padding (blank-line blocks or long space runs) and review any content hidden below or to the right of it. Keep skill files compact and reviewable so no instructions can be concealed off-screen.",
+                  "code_snippet": "| 用户意图                                                                                                  | 调用接口                     | 关键参数                                                                      |\n| --------------------------------------------------------------------------------------------------------- | ---------------------------- | ----------------------------------------------------------------------------- |\n| 搜索/查找笔记                                                                                             | `search_note_book`           | `query_info`（QueryInfo 对象）                                                |\n| 查看笔记本列表                                                                                            | `list_note_folder_by_cursor` | `cursor`(必填，首页传`\"0\"`) + `limit`(必填)                                   |\n| 浏览某笔记本里的笔记,当用户表述\"最新\"、\"最近\"之类的通用限定，没有指明笔记本时，都应该直接在全部笔记里去拉 | `list_note_by_folder_id`     | `folder_id`(选填,空为全部笔记本) + `cursor`(必填，首次传`\"\"`) + `limit`(必填) |\n| 读取笔记正文                                                                                              | `get_doc_content`            | `doc_id` + `target_content_format`(必填，推荐`0`纯文本)                       |\n| 新建一篇笔记（用户明确说\"新建/创建笔记\"时走此接口）                                                       | `import_doc`                 | `content` + `content_format`(必填，固定`1`) + 可选 `folder_id`                |",
+                  "intent": null,
+                  "tags": [
+                    "Prompt Injection",
+                    "llm-unconfirmed"
+                  ],
+                  "evidence": {},
+                  "match_fingerprint": "8030ebeaeeb8fcdaa9806f9772da5df32d2b31185030cb0b38818732cef6f8bb",
+                  "occurrences": [
+                    {
+                      "file": "notes/SKILL.md",
+                      "start_line": 18,
+                      "end_line": null
+                    }
+                  ]
+                },
+                {
+                  "id": "P9",
+                  "finding_id": "finding-1f8ae5afc8254025bf34b4a4827cadc4",
+                  "category": "Prompt Injection",
+                  "pattern": "Whitespace Padding",
+                  "severity": "MEDIUM",
+                  "confidence": 0.7,
+                  "location": {
+                    "file": "notes/SKILL.md",
+                    "start_line": 20,
+                    "end_line": null
+                  },
+                  "finding": "U+0020 x94",
+                  "explanation": "Large whitespace padding was detected (a block of blank lines or a long run of spaces). This can push injected instructions below or to the right of the visible area so a human reviewer never sees them while the agent still reads them. Manual review of the hidden content is recommended.",
+                  "remediation": "Remove the large whitespace padding (blank-line blocks or long space runs) and review any content hidden below or to the right of it. Keep skill files compact and reviewable so no instructions can be concealed off-screen.",
+                  "code_snippet": "| 搜索/查找笔记                                                                                             | `search_note_book`           | `query_info`（QueryInfo 对象）                                                |\n| 查看笔记本列表                                                                                            | `list_note_folder_by_cursor` | `cursor`(必填，首页传`\"0\"`) + `limit`(必填)                                   |\n| 浏览某笔记本里的笔记,当用户表述\"最新\"、\"最近\"之类的通用限定，没有指明笔记本时，都应该直接在全部笔记里去拉 | `list_note_by_folder_id`     | `folder_id`(选填,空为全部笔记本) + `cursor`(必填，首次传`\"\"`) + `limit`(必填) |\n| 读取笔记正文                                                                                              | `get_doc_content`            | `doc_id` + `target_content_format`(必填，推荐`0`纯文本)                       |\n| 新建一篇笔记（用户明确说\"新建/创建笔记\"时走此接口）                                                       | `import_doc`                 | `content` + `content_format`(必填，固定`1`) + 可选 `folder_id`                |\n| 往已有笔记追加内容（⚠️ **敏感操作**：用户必须明确指定目标笔记，否则先确认再操作）                          | `append_doc`                 | `doc_id` + `content` + `content_format`(必填，固定`1`)                        |\n",
+                  "intent": null,
+                  "tags": [
+                    "Prompt Injection",
+                    "llm-unconfirmed"
+                  ],
+                  "evidence": {},
+                  "match_fingerprint": "fe436e6ebb49a4bf15ff765f2ba6499abf022d5785f98bc91efdc9900a76c8fb",
+                  "occurrences": [
+                    {
+                      "file": "notes/SKILL.md",
+                      "start_line": 20,
+                      "end_line": null
+                    }
+                  ]
+                },
+                {
+                  "id": "P9",
+                  "finding_id": "finding-ea5a7f7bc2244b61b8793f28fe9e8380",
+                  "category": "Prompt Injection",
+                  "pattern": "Whitespace Padding",
+                  "severity": "MEDIUM",
+                  "confidence": 0.7,
+                  "location": {
+                    "file": "notes/references/api.md",
+                    "start_line": 91,
+                    "end_line": null
+                  },
+                  "finding": "U+0020 x87",
+                  "explanation": "Large whitespace padding was detected (a block of blank lines or a long run of spaces). This can push injected instructions below or to the right of the visible area so a human reviewer never sees them while the agent still reads them. Manual review of the hidden content is recommended.",
+                  "remediation": "Remove the large whitespace padding (blank-line blocks or long space runs) and review any content hidden below or to the right of it. Keep skill files compact and reviewable so no instructions can be concealed off-screen.",
+                  "code_snippet": "\n#### SearchedDoc\n\n| 字段             | 类型                  | 说明                                                                                       |\n| ---------------- | --------------------- | ------------------------------------------------------------------------------------------ |\n| `doc`            | DocBasicInfo          | 笔记 basic 数据，见 [DocBasicInfo](#docbasicinfo)                                          |\n| `highlight_info` | map\\<string, string\\> | 该条笔记匹配的高亮词，key: `doc_title`（文档标题），value: 包含 `<em>高亮词</em>` 的字段值 |",
+                  "intent": null,
+                  "tags": [
+                    "Prompt Injection",
+                    "llm-unconfirmed"
+                  ],
+                  "evidence": {},
+                  "match_fingerprint": "61596f7274cf99aa8238aced493e9aec9afc0d30e4b361b1cba79526fc2cacca",
+                  "occurrences": [
+                    {
+                      "file": "notes/references/api.md",
+                      "start_line": 91,
+                      "end_line": null
+                    }
+                  ]
+                },
+                {
+                  "id": "SQP-1",
+                  "finding_id": "finding-31a592c8bcdc4021a7eb55904f81e9d5",
+                  "category": null,
+                  "pattern": null,
+                  "severity": "MEDIUM",
+                  "confidence": 0.94,
+                  "location": {
+                    "file": "notes/references/api.md",
+                    "start_line": 142,
+                    "end_line": 142
+                  },
+                  "finding": null,
+                  "explanation": "The trigger guidance for search includes the very broad term “搜索”, which can match many unrelated user requests and cause the agent to invoke the notes skill outside a clearly bounded notes/knowledge-base context. In a privacy-sensitive skill that can enumerate or search personal notes, overbroad routing increases the chance of unintended access to private user content or unnecessary transmission of queries to the notes backend.",
+                  "remediation": "Narrow the trigger condition to notes-specific intent, such as requiring explicit mention of 笔记/知识库/资料库 or strong contextual evidence that the user wants to search personal stored content. Add negative examples and disambiguation rules so generic “搜索” requests default to clarification instead of automatic skill invocation.",
+                  "code_snippet": null,
+                  "intent": null,
+                  "tags": [],
+                  "evidence": {},
+                  "match_fingerprint": null,
+                  "occurrences": [
+                    {
+                      "file": "notes/references/api.md",
+                      "start_line": 142,
+                      "end_line": 142
+                    }
+                  ]
+                },
+                {
+                  "id": "SQP-1",
+                  "finding_id": "finding-a18084845a08429085998b0cec0a9723",
+                  "category": null,
+                  "pattern": null,
+                  "severity": "MEDIUM",
+                  "confidence": 0.91,
+                  "location": {
+                    "file": "notes/references/api.md",
+                    "start_line": 169,
+                    "end_line": 169
+                  },
+                  "finding": null,
+                  "explanation": "The phrase “有哪些分类” is not specific to notebooks and can apply to many domains, so it may spuriously route ordinary categorization questions into a notebook-listing operation. Because listing folders reveals the structure of a user’s private notes, accidental invocation can leak metadata about personal organization even if full note content is not shown.",
+                  "remediation": "Restrict this trigger to notebook-explicit phrases like “有哪些笔记本/目录/分类” and require surrounding note context before calling the API. If the request is ambiguous, prompt the user to confirm whether they mean note folders rather than assuming the notes skill should run.",
+                  "code_snippet": null,
+                  "intent": null,
+                  "tags": [],
+                  "evidence": {},
+                  "match_fingerprint": null,
+                  "occurrences": [
+                    {
+                      "file": "notes/references/api.md",
+                      "start_line": 169,
+                      "end_line": 169
+                    }
+                  ]
+                },
+                {
+                  "id": "SQP-1",
+                  "finding_id": "finding-6d9a9fd867444dbd8ba682deecc423d7",
+                  "category": null,
+                  "pattern": null,
+                  "severity": "MEDIUM",
+                  "confidence": 0.92,
+                  "location": {
+                    "file": "notes/references/api.md",
+                    "start_line": 218,
+                    "end_line": 218
+                  },
+                  "finding": null,
+                  "explanation": "Using broad creation triggers such as “创建笔记” and especially “生成笔记” risks mapping generic content-generation requests to a persistent write operation that stores data in the user’s notes. In this skill context, misrouting is more dangerous because import_doc creates durable records, so an ambiguous assistant response could unintentionally save generated or sensitive content into personal storage.",
+                  "remediation": "Require explicit save/persist intent before invoking import_doc, such as “保存为笔记”“导入到笔记”“新建一篇笔记并保存”. Separate content generation from storage actions and add a confirmation step whenever the request could be interpreted as drafting text rather than writing it into the notes system.",
+                  "code_snippet": null,
+                  "intent": null,
+                  "tags": [],
+                  "evidence": {},
+                  "match_fingerprint": null,
+                  "occurrences": [
+                    {
+                      "file": "notes/references/api.md",
+                      "start_line": 218,
+                      "end_line": 218
+                    }
+                  ]
+                },
+                {
+                  "id": "SDI-2",
+                  "finding_id": "finding-977ef132fbd247768615e58f7cc5dbc3",
+                  "category": null,
+                  "pattern": null,
+                  "severity": "MEDIUM",
+                  "confidence": 0.95,
+                  "location": {
+                    "file": "notes/scripts/debug_cred.js",
+                    "start_line": 6,
+                    "end_line": 27
+                  },
+                  "finding": null,
+                  "explanation": "This debug script accesses credential-related material from environment variables, user config files, and a skill-local .env file even though that behavior is not required for normal note or knowledge-base features. In a skill context, harvesting identifiers from multiple local locations expands the exposure surface and can enable unauthorized reuse of application credentials or aid follow-on attacks.",
+                  "remediation": "Remove credential-discovery logic from the shipped skill, especially fallback reads from unrelated local paths and .env files. If debugging is necessary, gate it behind a developer-only flag, document it clearly, restrict it to a single expected source, and avoid reading any secrets or identifiers unless strictly required.",
+                  "code_snippet": null,
+                  "intent": null,
+                  "tags": [],
+                  "evidence": {},
+                  "match_fingerprint": null,
+                  "occurrences": [
+                    {
+                      "file": "notes/scripts/debug_cred.js",
+                      "start_line": 6,
+                      "end_line": 27
+                    }
+                  ]
+                },
+                {
+                  "id": "SDI-2",
+                  "finding_id": "finding-23b39daab36b4fa2bca7bff619fc6010",
+                  "category": null,
+                  "pattern": null,
+                  "severity": "MEDIUM",
+                  "confidence": 0.92,
+                  "location": {
+                    "file": "notes/scripts/debug_search.js",
+                    "start_line": 6,
+                    "end_line": 19
+                  },
+                  "finding": null,
+                  "explanation": "The script explicitly searches multiple local locations for a client credential, including user config files and a skill-local .env file, then uses that value to authenticate a remote API request. Even though this is a debug utility, harvesting credentials from disk broadens secret exposure and normalizes secret access beyond the minimum needed for note search functionality.",
+                  "remediation": "Remove filesystem credential discovery from the debug script and require credentials to be provided through a single approved secret source, such as a documented environment variable or secure secret manager. Limit the script to least-privilege tokens, validate that credentials are present before execution, and avoid reading other local skill or user config files implicitly.",
+                  "code_snippet": null,
+                  "intent": null,
+                  "tags": [],
+                  "evidence": {},
+                  "match_fingerprint": null,
+                  "occurrences": [
+                    {
+                      "file": "notes/scripts/debug_search.js",
+                      "start_line": 6,
+                      "end_line": 19
+                    }
+                  ]
+                },
+                {
+                  "id": "SQP-2",
+                  "finding_id": "finding-a4c5fec846c24c60b0e69b8f2c0341ad",
+                  "category": null,
+                  "pattern": null,
+                  "severity": "MEDIUM",
+                  "confidence": 0.94,
+                  "location": {
+                    "file": "notes/scripts/debug_search.js",
+                    "start_line": 6,
+                    "end_line": 16
+                  },
+                  "finding": null,
+                  "explanation": "The code accesses sensitive authentication material and immediately transmits it to an external service without any user-facing disclosure, consent prompt, or audit messaging. In an agent-skill context, undisclosed credential use is more concerning because skills may run in environments where users or operators do not expect local secret files to be read by debugging utilities.",
+                  "remediation": "Add explicit documentation and runtime disclosure for credential usage, including what secret is read, from where, and to which endpoint it is sent. Prefer opt-in execution flags for debug scripts, log only non-sensitive metadata, and document secret handling in the skill so operators can review and constrain it.",
+                  "code_snippet": null,
+                  "intent": null,
+                  "tags": [],
+                  "evidence": {},
+                  "match_fingerprint": null,
+                  "occurrences": [
+                    {
+                      "file": "notes/scripts/debug_search.js",
+                      "start_line": 6,
+                      "end_line": 16
+                    }
+                  ]
+                },
+                {
+                  "id": "SDI-2",
+                  "finding_id": "finding-ec8e43f7c5914dd0bd52e88024947d47",
+                  "category": null,
+                  "pattern": null,
+                  "severity": "MEDIUM",
+                  "confidence": 0.85,
+                  "location": {
+                    "file": "notes/scripts/debug_search2.js",
+                    "start_line": 6,
+                    "end_line": 11
+                  },
+                  "finding": null,
+                  "explanation": "The skill manifest describes user-facing note and knowledge-base operations such as upload, search, browse, create, and edit. In this file, the code additionally retrieves an API client identifier from process environment variables and a local configuration file under the user's home directory, which is an implementation capability unrelated to the declared end-user intent and expands access into local credential material.",
+                  "remediation": "Avoid embedding credential-discovery logic in the skill code unless this access is explicitly part of the skill's documented scope. Prefer passing required credentials through the runtime's approved secret mechanism, and document any environment or filesystem credential access in the manifest if it is intended.",
+                  "code_snippet": null,
+                  "intent": null,
+                  "tags": [
+                    "llm-unconfirmed"
+                  ],
+                  "evidence": {},
+                  "match_fingerprint": null,
+                  "occurrences": [
+                    {
+                      "file": "notes/scripts/debug_search2.js",
+                      "start_line": 6,
+                      "end_line": 11
+                    }
+                  ]
+                },
+                {
+                  "id": "SQP-2",
+                  "finding_id": "finding-8f329c36fd124e88bea50dc063dc8e5c",
+                  "category": null,
+                  "pattern": null,
+                  "severity": "MEDIUM",
+                  "confidence": 0.96,
+                  "location": {
+                    "file": "notes/scripts/debug_search2.js",
+                    "start_line": 32,
+                    "end_line": 32
+                  },
+                  "finding": null,
+                  "explanation": "The script prints the configured CLIENT_ID directly to stdout, which can expose it in terminal history, CI logs, captured debug output, or shared screenshots. Even if a client ID is not a high-value secret by itself, disclosing identifiers can aid misuse, reconnaissance, or unauthorized API activity when combined with other weaknesses.",
+                  "remediation": "Remove the raw credential from console output. If logging is necessary, mask most of the value (for example, only show the last 4 characters) and restrict debug logging to an explicit verbose mode that is disabled by default.",
+                  "code_snippet": null,
+                  "intent": null,
+                  "tags": [],
+                  "evidence": {},
+                  "match_fingerprint": null,
+                  "occurrences": [
+                    {
+                      "file": "notes/scripts/debug_search2.js",
+                      "start_line": 32,
+                      "end_line": 32
+                    }
+                  ]
+                },
+                {
+                  "id": "SQP-3",
+                  "finding_id": "finding-7037df4f3133429e8c6a76fa043a9c72",
+                  "category": null,
+                  "pattern": null,
+                  "severity": "MEDIUM",
+                  "confidence": 0.97,
+                  "location": {
+                    "file": "notes/scripts/ima-search-outline.js",
+                    "start_line": 3,
+                    "end_line": 5
+                  },
+                  "finding": null,
+                  "explanation": "This code includes its primary description and user-facing CLI messages in Chinese, and there is no indication that the skill is region-specific or that users can opt into another language. That creates a natural-language policy issue under the locale-choice rule because the skill effectively forces one language by default.",
+                  "remediation": "Add an explicit language/locale option, detect and respect user locale preferences, or document clearly that this is a Chinese-only skill for a justified region-specific use case.",
+                  "code_snippet": null,
+                  "intent": null,
+                  "tags": [
+                    "llm-unconfirmed"
+                  ],
+                  "evidence": {},
+                  "match_fingerprint": null,
+                  "occurrences": [
+                    {
+                      "file": "notes/scripts/ima-search-outline.js",
+                      "start_line": 3,
+                      "end_line": 5
+                    }
+                  ]
+                },
+                {
+                  "id": "SQP-3",
+                  "finding_id": "finding-cd117446207c45b5823f56c106cf5f6d",
+                  "category": null,
+                  "pattern": null,
+                  "severity": "LOW",
+                  "confidence": 0.76,
+                  "location": {
+                    "file": "_skillhub_meta.json",
+                    "start_line": 2,
+                    "end_line": 2
+                  },
+                  "finding": null,
+                  "explanation": "The skill name contains a Chinese-language label (\"ima笔记\") with no indication that users can choose or opt into another language. For organizational language/locale policy review, this can be a concern when a skill appears to enforce a specific language without documenting choice or justification.",
+                  "remediation": "Document the intended locale explicitly and, if the skill is not region-specific, offer a user language choice or provide a neutral/multilingual display name.",
+                  "code_snippet": null,
+                  "intent": null,
+                  "tags": [
+                    "llm-unconfirmed"
+                  ],
+                  "evidence": {},
+                  "match_fingerprint": null,
+                  "occurrences": [
+                    {
+                      "file": "_skillhub_meta.json",
+                      "start_line": 2,
+                      "end_line": 2
+                    }
+                  ]
+                },
+                {
+                  "id": "SQP-3",
+                  "finding_id": "finding-454b69719dcf4d3d836da377a8907c52",
+                  "category": null,
+                  "pattern": null,
+                  "severity": "LOW",
+                  "confidence": 0.95,
+                  "location": {
+                    "file": "knowledge-base/references/api.md",
+                    "start_line": 1,
+                    "end_line": 446
+                  },
+                  "finding": null,
+                  "explanation": "This file presents all operational instructions and constraints only in Chinese, which can amount to a language policy violation when no opt-in or documented locale limitation is provided. There is no indication that the skill is intentionally restricted to Chinese-speaking users or a China-specific compliance context.",
+                  "remediation": "Provide a language choice, add an English version, or explicitly document that the skill is intended for a Chinese-language or region-specific context so the locale constraint is clear and justified.",
+                  "code_snippet": null,
+                  "intent": null,
+                  "tags": [
+                    "llm-unconfirmed"
+                  ],
+                  "evidence": {},
+                  "match_fingerprint": null,
+                  "occurrences": [
+                    {
+                      "file": "knowledge-base/references/api.md",
+                      "start_line": 1,
+                      "end_line": 446
+                    }
+                  ]
+                },
+                {
+                  "id": "SQP-3",
+                  "finding_id": "finding-36131a1c0eba4a469b0b926f1b3b03a1",
+                  "category": null,
+                  "pattern": null,
+                  "severity": "LOW",
+                  "confidence": 0.85,
+                  "location": {
+                    "file": "notes/references/api.md",
+                    "start_line": 1,
+                    "end_line": 341
+                  },
+                  "finding": null,
+                  "explanation": "SQP-3 适用于所有文件类型。该文档从标题、触发短语到说明均仅以中文给出，没有说明这是面向特定中文用户群体的限定文档，也未提供其他语言选项或用户选择机制，可能构成默认强制单一语言的自然语言策略问题。",
+                  "remediation": "补充语言适用范围说明，例如明确该技能仅面向中文场景；或提供多语言版本/说明，允许根据用户语言偏好选择相应文档与触发表述。",
+                  "code_snippet": null,
+                  "intent": null,
+                  "tags": [
+                    "llm-unconfirmed"
+                  ],
+                  "evidence": {},
+                  "match_fingerprint": null,
+                  "occurrences": [
+                    {
+                      "file": "notes/references/api.md",
+                      "start_line": 1,
+                      "end_line": 341
+                    }
+                  ]
+                },
+                {
+                  "id": "SQP-3",
+                  "finding_id": "finding-cffba5d95b024f959469b4d4b12922f1",
+                  "category": null,
+                  "pattern": null,
+                  "severity": "LOW",
+                  "confidence": 0.8,
+                  "location": {
+                    "file": "notes/scripts/debug_cred.js",
+                    "start_line": 5,
+                    "end_line": 5
+                  },
+                  "finding": null,
+                  "explanation": "The file includes a Chinese-language comment while providing no indication that language selection is optional or that the skill is intentionally limited to a Chinese-speaking context. This can violate language/locale policy when a skill implicitly forces one language without opt-in or justification.",
+                  "remediation": "Use a language consistent with the broader skill experience, or document that the skill is intentionally region/language-specific. If multilingual use is expected, provide neutral or bilingual text rather than assuming a single language.",
+                  "code_snippet": null,
+                  "intent": null,
+                  "tags": [
+                    "llm-unconfirmed"
+                  ],
+                  "evidence": {},
+                  "match_fingerprint": null,
+                  "occurrences": [
+                    {
+                      "file": "notes/scripts/debug_cred.js",
+                      "start_line": 5,
+                      "end_line": 5
+                    }
+                  ]
+                },
+                {
+                  "id": "SQP-3",
+                  "finding_id": "finding-3e2b9444cca34678af6b7c7e84e56ba2",
+                  "category": null,
+                  "pattern": null,
+                  "severity": "LOW",
+                  "confidence": 0.89,
+                  "location": {
+                    "file": "notes/scripts/debug_search2.js",
+                    "start_line": 16,
+                    "end_line": 16
+                  },
+                  "finding": null,
+                  "explanation": "The request payload forces the search title to the Chinese phrase `商事调解`, which bakes in a specific language choice. There is no indication that the language is user-selectable or that the script is intentionally limited to a Chinese-specific workflow.",
+                  "remediation": "Make the query language configurable through user input or documented parameters, or clearly document that this script is intended only for a Chinese-language use case.",
+                  "code_snippet": null,
+                  "intent": null,
+                  "tags": [
+                    "llm-unconfirmed"
+                  ],
+                  "evidence": {},
+                  "match_fingerprint": null,
+                  "occurrences": [
+                    {
+                      "file": "notes/scripts/debug_search2.js",
+                      "start_line": 16,
+                      "end_line": 16
+                    }
+                  ]
+                }
+              ],
+              "suppressed_count": 0,
+              "suppressed": [],
+              "metadata": {
+                "has_executable_scripts": true,
+                "skillspector_version": "2.11.2",
+                "llm_requested": true,
+                "llm_available": true,
+                "meta_analysis_applied": true,
+                "inference_usage": [
+                  {
+                    "node": "mcp_tool_poisoning",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 739,
+                    "completion_tokens": 315,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 1054
+                  },
+                  {
+                    "node": "mcp_tool_poisoning",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 828,
+                    "completion_tokens": 192,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 1020
+                  },
+                  {
+                    "node": "mcp_tool_poisoning",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 737,
+                    "completion_tokens": 220,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 957
+                  },
+                  {
+                    "node": "mcp_tool_poisoning",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 2131,
+                    "completion_tokens": 228,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 2359
+                  },
+                  {
+                    "node": "semantic_developer_intent",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 5276,
+                    "completion_tokens": 14,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 5290
+                  },
+                  {
+                    "node": "semantic_developer_intent",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 3200,
+                    "completion_tokens": 14,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 3214
+                  },
+                  {
+                    "node": "semantic_developer_intent",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 1460,
+                    "completion_tokens": 14,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 1474
+                  },
+                  {
+                    "node": "semantic_developer_intent",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 10419,
+                    "completion_tokens": 14,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 10433
+                  },
+                  {
+                    "node": "semantic_developer_intent",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 7645,
+                    "completion_tokens": 14,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 7659
+                  },
+                  {
+                    "node": "semantic_developer_intent",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 4523,
+                    "completion_tokens": 14,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 4537
+                  },
+                  {
+                    "node": "semantic_developer_intent",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 4910,
+                    "completion_tokens": 14,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 4924
+                  },
+                  {
+                    "node": "semantic_developer_intent",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 5869,
+                    "completion_tokens": 14,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 5883
+                  },
+                  {
+                    "node": "semantic_developer_intent",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 3802,
+                    "completion_tokens": 14,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 3816
+                  },
+                  {
+                    "node": "semantic_developer_intent",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 1847,
+                    "completion_tokens": 185,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 2032
+                  },
+                  {
+                    "node": "semantic_developer_intent",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 1980,
+                    "completion_tokens": 214,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 2194
+                  },
+                  {
+                    "node": "semantic_developer_intent",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 1869,
+                    "completion_tokens": 202,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 2071
+                  },
+                  {
+                    "node": "semantic_quality_policy",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 3157,
+                    "completion_tokens": 14,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 3171
+                  },
+                  {
+                    "node": "semantic_quality_policy",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 4480,
+                    "completion_tokens": 14,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 4494
+                  },
+                  {
+                    "node": "semantic_quality_policy",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 1417,
+                    "completion_tokens": 150,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 1567
+                  },
+                  {
+                    "node": "semantic_quality_policy",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 10376,
+                    "completion_tokens": 164,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 10540
+                  },
+                  {
+                    "node": "semantic_quality_policy",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 1937,
+                    "completion_tokens": 190,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 2127
+                  },
+                  {
+                    "node": "semantic_quality_policy",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 4867,
+                    "completion_tokens": 174,
+                    "cached_tokens": 3840,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 5041
+                  },
+                  {
+                    "node": "semantic_quality_policy",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 3759,
+                    "completion_tokens": 165,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 3924
+                  },
+                  {
+                    "node": "semantic_quality_policy",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 5233,
+                    "completion_tokens": 342,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 5575
+                  },
+                  {
+                    "node": "semantic_quality_policy",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 1826,
+                    "completion_tokens": 288,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 2114
+                  },
+                  {
+                    "node": "semantic_quality_policy",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 1804,
+                    "completion_tokens": 308,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 2112
+                  },
+                  {
+                    "node": "semantic_quality_policy",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 7602,
+                    "completion_tokens": 516,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 8118
+                  },
+                  {
+                    "node": "semantic_quality_policy",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 5826,
+                    "completion_tokens": 797,
+                    "cached_tokens": 4864,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 6623
+                  },
+                  {
+                    "node": "semantic_security_discovery",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 4765,
+                    "completion_tokens": 14,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 4779
+                  },
+                  {
+                    "node": "semantic_security_discovery",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 949,
+                    "completion_tokens": 14,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 963
+                  },
+                  {
+                    "node": "semantic_security_discovery",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 9908,
+                    "completion_tokens": 14,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 9922
+                  },
+                  {
+                    "node": "semantic_security_discovery",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 7134,
+                    "completion_tokens": 14,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 7148
+                  },
+                  {
+                    "node": "semantic_security_discovery",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 2689,
+                    "completion_tokens": 14,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 2703
+                  },
+                  {
+                    "node": "semantic_security_discovery",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 4012,
+                    "completion_tokens": 14,
+                    "cached_tokens": 3840,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 4026
+                  },
+                  {
+                    "node": "semantic_security_discovery",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 4399,
+                    "completion_tokens": 14,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 4413
+                  },
+                  {
+                    "node": "semantic_security_discovery",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 5358,
+                    "completion_tokens": 14,
+                    "cached_tokens": 4864,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 5372
+                  },
+                  {
+                    "node": "semantic_security_discovery",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 1336,
+                    "completion_tokens": 14,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 1350
+                  },
+                  {
+                    "node": "semantic_security_discovery",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 1469,
+                    "completion_tokens": 14,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 1483
+                  },
+                  {
+                    "node": "semantic_security_discovery",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 1358,
+                    "completion_tokens": 14,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 1372
+                  },
+                  {
+                    "node": "semantic_security_discovery",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 3291,
+                    "completion_tokens": 14,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 3305
+                  },
+                  {
+                    "node": "meta_analyzer",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 1074,
+                    "completion_tokens": 214,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 1288
+                  },
+                  {
+                    "node": "meta_analyzer",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 8351,
+                    "completion_tokens": 220,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 8571
+                  },
+                  {
+                    "node": "meta_analyzer",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 2908,
+                    "completion_tokens": 406,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 3314
+                  },
+                  {
+                    "node": "meta_analyzer",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 1504,
+                    "completion_tokens": 551,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 2055
+                  },
+                  {
+                    "node": "meta_analyzer",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 5063,
+                    "completion_tokens": 638,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 5701
+                  },
+                  {
+                    "node": "meta_analyzer",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 1669,
+                    "completion_tokens": 586,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 2255
+                  },
+                  {
+                    "node": "meta_analyzer",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 1644,
+                    "completion_tokens": 665,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 2309
+                  },
+                  {
+                    "node": "meta_analyzer",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 4860,
+                    "completion_tokens": 837,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 5697
+                  },
+                  {
+                    "node": "meta_analyzer",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 6556,
+                    "completion_tokens": 844,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 7400
+                  },
+                  {
+                    "node": "meta_analyzer",
+                    "request_kind": "structured_output",
+                    "provider": "openai",
+                    "model": "gpt-5.4-2026-03-05",
+                    "model_source": "provider_response",
+                    "usage_source": "provider_response",
+                    "prompt_tokens": 5210,
+                    "completion_tokens": 1180,
+                    "cached_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "total_tokens": 6390
+                  }
+                ],
+                "llm_calls_attempted": 5,
+                "llm_calls_succeeded": 5
+              },
+              "execution_successful": true,
+              "analysis_completeness": {
+                "total_components": 12,
+                "scanned_components": 9,
+                "coverage_percent": 75,
+                "is_complete": false,
+                "status": "partial",
+                "execution_successful": true,
+                "fully_inspected_files": 9,
+                "partially_inspected_files": 3,
+                "entirely_uninspected_files": 0,
+                "ledger_exceptions": [
+                  {
+                    "outcome": "partial",
+                    "phase": "reference_resolution",
+                    "reason_code": "reference_unresolved",
+                    "message": "A local path-like reference could not be resolved unambiguously.",
+                    "path": "SKILL.md",
+                    "start_line": 28,
+                    "end_line": 28,
+                    "fatal": false
+                  },
+                  {
+                    "outcome": "partial",
+                    "phase": "reference_resolution",
+                    "reason_code": "reference_unresolved",
+                    "message": "A local path-like reference could not be resolved unambiguously.",
+                    "path": "SKILL.md",
+                    "start_line": 77,
+                    "end_line": 77,
+                    "fatal": false
+                  },
+                  {
+                    "outcome": "partial",
+                    "phase": "reference_resolution",
+                    "reason_code": "reference_unresolved",
+                    "message": "A local path-like reference could not be resolved unambiguously.",
+                    "path": "SKILL.md",
+                    "start_line": 135,
+                    "end_line": 135,
+                    "fatal": false
+                  },
+                  {
+                    "outcome": "partial",
+                    "phase": "reference_resolution",
+                    "reason_code": "reference_unresolved",
+                    "message": "A local path-like reference could not be resolved unambiguously.",
+                    "path": "SKILL.md",
+                    "start_line": 168,
+                    "end_line": 168,
+                    "fatal": false
+                  },
+                  {
+                    "outcome": "partial",
+                    "phase": "reference_resolution",
+                    "reason_code": "reference_unresolved",
+                    "message": "A local path-like reference could not be resolved unambiguously.",
+                    "path": "SKILL.md",
+                    "start_line": 179,
+                    "end_line": 179,
+                    "fatal": false
+                  },
+                  {
+                    "outcome": "partial",
+                    "phase": "reference_resolution",
+                    "reason_code": "reference_unresolved",
+                    "message": "A local path-like reference could not be resolved unambiguously.",
+                    "path": "SKILL.md",
+                    "start_line": 209,
+                    "end_line": 209,
+                    "fatal": false
+                  },
+                  {
+                    "outcome": "partial",
+                    "phase": "reference_resolution",
+                    "reason_code": "reference_unresolved",
+                    "message": "A local path-like reference could not be resolved unambiguously.",
+                    "path": "SKILL.md",
+                    "start_line": 212,
+                    "end_line": 212,
+                    "fatal": false
+                  },
+                  {
+                    "outcome": "partial",
+                    "phase": "static",
+                    "reason_code": "static_parse_limit",
+                    "message": "A security-relevant expression exceeded a bounded static parser's span limit.",
+                    "path": "knowledge-base/scripts/cos-upload.cjs",
+                    "start_line": null,
+                    "end_line": null,
+                    "fatal": false,
+                    "analyzers": [
+                      "static_patterns_tool_misuse"
+                    ]
+                  },
+                  {
+                    "outcome": "partial",
+                    "phase": "static",
+                    "reason_code": "static_parse_limit",
+                    "message": "A security-relevant expression exceeded a bounded static parser's span limit.",
+                    "path": "knowledge-base/scripts/preflight-check.cjs",
+                    "start_line": null,
+                    "end_line": null,
+                    "fatal": false,
+                    "analyzers": [
+                      "static_patterns_tool_misuse"
+                    ]
+                  },
+                  {
+                    "outcome": "partial",
+                    "phase": "static",
+                    "reason_code": "static_parse_limit",
+                    "message": "A security-relevant expression exceeded a bounded static parser's span limit.",
+                    "path": "notes/scripts/ima-search-outline.js",
+                    "start_line": null,
+                    "end_line": null,
+                    "fatal": false,
+                    "analyzers": [
+                      "static_patterns_tool_misuse"
+                    ]
+                  }
+                ],
+                "scope_exclusions": [],
+                "analyzer_statuses": [
+                  {
+                    "analyzer_id": "artifact_integrity",
+                    "status": "completed",
+                    "planned_work": 12,
+                    "completed": 12,
+                    "partial": 0,
+                    "skipped": 0,
+                    "failed": 0,
+                    "unaccounted": 0
+                  },
+                  {
+                    "analyzer_id": "behavioral_ast",
+                    "status": "not_applicable",
+                    "planned_work": 0,
+                    "completed": 0,
+                    "partial": 0,
+                    "skipped": 0,
+                    "failed": 0,
+                    "unaccounted": 0,
+                    "reason_code": "no_applicable_files",
+                    "message": "No files matched this analyzer's applicability contract."
+                  },
+                  {
+                    "analyzer_id": "behavioral_taint_tracking",
+                    "status": "not_applicable",
+                    "planned_work": 0,
+                    "completed": 0,
+                    "partial": 0,
+                    "skipped": 0,
+                    "failed": 0,
+                    "unaccounted": 0,
+                    "reason_code": "no_applicable_files",
+                    "message": "No files matched this analyzer's applicability contract."
+                  },
+                  {
+                    "analyzer_id": "bundled_execution_surface",
+                    "status": "not_applicable",
+                    "planned_work": 0,
+                    "completed": 0,
+                    "partial": 0,
+                    "skipped": 0,
+                    "failed": 0,
+                    "unaccounted": 0,
+                    "reason_code": "no_applicable_files",
+                    "message": "No files matched this analyzer's applicability contract."
+                  },
+                  {
+                    "analyzer_id": "mcp_least_privilege",
+                    "status": "completed",
+                    "planned_work": 7,
+                    "completed": 7,
+                    "partial": 0,
+                    "skipped": 0,
+                    "failed": 0,
+                    "unaccounted": 0
+                  },
+                  {
+                    "analyzer_id": "mcp_rug_pull",
+                    "status": "completed",
+                    "planned_work": 12,
+                    "completed": 12,
+                    "partial": 0,
+                    "skipped": 0,
+                    "failed": 0,
+                    "unaccounted": 0
+                  },
+                  {
+                    "analyzer_id": "mcp_tool_poisoning",
+                    "status": "completed",
+                    "planned_work": 5,
+                    "completed": 5,
+                    "partial": 0,
+                    "skipped": 0,
+                    "failed": 0,
+                    "unaccounted": 0
+                  },
+                  {
+                    "analyzer_id": "meta_analyzer",
+                    "status": "completed",
+                    "planned_work": 10,
+                    "completed": 10,
+                    "partial": 0,
+                    "skipped": 0,
+                    "failed": 0,
+                    "unaccounted": 0
+                  },
+                  {
+                    "analyzer_id": "semantic_developer_intent",
+                    "status": "completed",
+                    "planned_work": 12,
+                    "completed": 12,
+                    "partial": 0,
+                    "skipped": 0,
+                    "failed": 0,
+                    "unaccounted": 0
+                  },
+                  {
+                    "analyzer_id": "semantic_quality_policy",
+                    "status": "completed",
+                    "planned_work": 12,
+                    "completed": 12,
+                    "partial": 0,
+                    "skipped": 0,
+                    "failed": 0,
+                    "unaccounted": 0
+                  },
+                  {
+                    "analyzer_id": "semantic_security_discovery",
+                    "status": "completed",
+                    "planned_work": 12,
+                    "completed": 12,
+                    "partial": 0,
+                    "skipped": 0,
+                    "failed": 0,
+                    "unaccounted": 0
+                  },
+                  {
+                    "analyzer_id": "static_patterns_agent_snooping",
+                    "status": "completed",
+                    "planned_work": 12,
+                    "completed": 12,
+                    "partial": 0,
+                    "skipped": 0,
+                    "failed": 0,
+                    "unaccounted": 0
+                  },
+                  {
+                    "analyzer_id": "static_patterns_anti_refusal",
+                    "status": "completed",
+                    "planned_work": 12,
+                    "completed": 12,
+                    "partial": 0,
+                    "skipped": 0,
+                    "failed": 0,
+                    "unaccounted": 0
+                  },
+                  {
+                    "analyzer_id": "static_patterns_data_exfiltration",
+                    "status": "completed",
+                    "planned_work": 12,
+                    "completed": 12,
+                    "partial": 0,
+                    "skipped": 0,
+                    "failed": 0,
+                    "unaccounted": 0
+                  },
+                  {
+                    "analyzer_id": "static_patterns_deserialization",
+                    "status": "completed",
+                    "planned_work": 12,
+                    "completed": 12,
+                    "partial": 0,
+                    "skipped": 0,
+                    "failed": 0,
+                    "unaccounted": 0
+                  },
+                  {
+                    "analyzer_id": "static_patterns_excessive_agency",
+                    "status": "completed",
+                    "planned_work": 12,
+                    "completed": 12,
+                    "partial": 0,
+                    "skipped": 0,
+                    "failed": 0,
+                    "unaccounted": 0
+                  },
+                  {
+                    "analyzer_id": "static_patterns_harmful_content",
+                    "status": "completed",
+                    "planned_work": 12,
+                    "completed": 12,
+                    "partial": 0,
+                    "skipped": 0,
+                    "failed": 0,
+                    "unaccounted": 0
+                  },
+                  {
+                    "analyzer_id": "static_patterns_memory_poisoning",
+                    "status": "completed",
+                    "planned_work": 12,
+                    "completed": 12,
+                    "partial": 0,
+                    "skipped": 0,
+                    "failed": 0,
+                    "unaccounted": 0
+                  },
+                  {
+                    "analyzer_id": "static_patterns_output_handling",
+                    "status": "completed",
+                    "planned_work": 12,
+                    "completed": 12,
+                    "partial": 0,
+                    "skipped": 0,
+                    "failed": 0,
+                    "unaccounted": 0
+                  },
+                  {
+                    "analyzer_id": "static_patterns_privilege_escalation",
+                    "status": "completed",
+                    "planned_work": 12,
+                    "completed": 12,
+                    "partial": 0,
+                    "skipped": 0,
+                    "failed": 0,
+                    "unaccounted": 0
+                  },
+                  {
+                    "analyzer_id": "static_patterns_prompt_injection",
+                    "status": "completed",
+                    "planned_work": 12,
+                    "completed": 12,
+                    "partial": 0,
+                    "skipped": 0,
+                    "failed": 0,
+                    "unaccounted": 0
+                  },
+                  {
+                    "analyzer_id": "static_patterns_rogue_agent",
+                    "status": "completed",
+                    "planned_work": 12,
+                    "completed": 12,
+                    "partial": 0,
+                    "skipped": 0,
+                    "failed": 0,
+                    "unaccounted": 0
+                  },
+                  {
+                    "analyzer_id": "static_patterns_ssrf",
+                    "status": "completed",
+                    "planned_work": 12,
+                    "completed": 12,
+                    "partial": 0,
+                    "skipped": 0,
+                    "failed": 0,
+                    "unaccounted": 0
+                  },
+                  {
+                    "analyzer_id": "static_patterns_supply_chain",
+                    "status": "completed",
+                    "planned_work": 12,
+                    "completed": 12,
+                    "partial": 0,
+                    "skipped": 0,
+                    "failed": 0,
+                    "unaccounted": 0
+                  },
+                  {
+                    "analyzer_id": "static_patterns_system_prompt_leakage",
+                    "status": "completed",
+                    "planned_work": 12,
+                    "completed": 12,
+                    "partial": 0,
+                    "skipped": 0,
+                    "failed": 0,
+                    "unaccounted": 0
+                  },
+                  {
+                    "analyzer_id": "static_patterns_tool_misuse",
+                    "status": "degraded",
+                    "planned_work": 12,
+                    "completed": 9,
+                    "partial": 3,
+                    "skipped": 0,
+                    "failed": 0,
+                    "unaccounted": 0
+                  },
+                  {
+                    "analyzer_id": "static_yara",
+                    "status": "completed",
+                    "planned_work": 12,
+                    "completed": 12,
+                    "partial": 0,
+                    "skipped": 0,
+                    "failed": 0,
+                    "unaccounted": 0
+                  }
+                ],
+                "references": [
+                  {
+                    "source_path": "SKILL.md",
+                    "line": 28,
+                    "column": 79,
+                    "evidence": "> **Security note:** This skill authenticates with the **official IMA API** (`ima.qq.com`) — the same service the user already uses. Credentials are only sent a",
+                    "target_path": null,
+                    "status": "missing",
+                    "disposition": "partial"
+                  },
+                  {
+                    "source_path": "SKILL.md",
+                    "line": 28,
+                    "column": 180,
+                    "evidence": "me service the user already uses. Credentials are only sent as HTTP headers to `ima.qq.com` and never to any other domain, file, or log.",
+                    "target_path": null,
+                    "status": "missing",
+                    "disposition": "partial"
+                  },
+                  {
+                    "source_path": "SKILL.md",
+                    "line": 77,
+                    "column": 23,
+                    "evidence": "-H \"Content-Type: application/json\" \\",
+                    "target_path": null,
+                    "status": "missing",
+                    "disposition": "partial"
+                  },
+                  {
+                    "source_path": "SKILL.md",
+                    "line": 88,
+                    "column": 87,
+                    "evidence": "| 搜索笔记、浏览笔记本、获取笔记内容、创建笔记、追加内容 | notes | `notes/SKILL.md` |",
+                    "target_path": "notes/SKILL.md",
+                    "status": "resolved",
+                    "disposition": "analyzed"
+                  },
+                  {
+                    "source_path": "SKILL.md",
+                    "line": 89,
+                    "column": 69,
+                    "evidence": "| 上传文件、添加网页链接、搜索知识库、浏览知识库内容、获取知识库信息、获取可添加的知识库列表 | knowledge-base | `knowledge-base/SKILL.md` |",
+                    "target_path": "knowledge-base/SKILL.md",
+                    "status": "resolved",
+                    "disposition": "analyzed"
+                  },
+                  {
+                    "source_path": "SKILL.md",
+                    "line": 135,
+                    "column": 39,
+                    "evidence": "2. **来自 WebFetch / HTTP 请求的内容**：响应可能为 GBK/Latin-1 等，必须转码",
+                    "target_path": null,
+                    "status": "missing",
+                    "disposition": "partial"
+                  },
+                  {
+                    "source_path": "SKILL.md",
+                    "line": 168,
+                    "column": 9,
+                    "evidence": "**Unix (macOS/Linux)：**",
+                    "target_path": null,
+                    "status": "missing",
+                    "disposition": "partial"
+                  },
+                  {
+                    "source_path": "SKILL.md",
+                    "line": 179,
+                    "column": 33,
+                    "evidence": "[System.IO.File]::WriteAllText('tmpfile.utf8', $content, [System.Text.Encoding]::UTF8)",
+                    "target_path": null,
+                    "status": "missing",
+                    "disposition": "partial"
+                  },
+                  {
+                    "source_path": "SKILL.md",
+                    "line": 209,
+                    "column": 77,
+                    "evidence": "Invoke-RestMethod -Uri $url -Method Post -Body $utf8Bytes -ContentType \"application/json; charset=utf-8\" -Headers $headers",
+                    "target_path": null,
+                    "status": "missing",
+                    "disposition": "partial"
+                  },
+                  {
+                    "source_path": "SKILL.md",
+                    "line": 212,
+                    "column": 72,
+                    "evidence": "Invoke-RestMethod -Uri $url -Method Post -Body $body -ContentType \"application/json; charset=utf-8\" -Headers $headers",
+                    "target_path": null,
+                    "status": "missing",
+                    "disposition": "partial"
+                  }
+                ],
+                "limitations": [
+                  "Analyzer static_patterns_tool_misuse status: degraded."
+                ],
+                "findings_before_filtering": 38,
+                "findings_after_filtering": 38
+              }
+            }
+          }
+        },
+        "signature": {
+          "status": "unsigned"
+        }
+      }
+    }
+  }
+}
