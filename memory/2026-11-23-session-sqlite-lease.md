@@ -200,3 +200,43 @@ scout: lease opened_at = 2026-11-23 08:00:01
 
 > **自愈不是「修好了」，而是「恰好被用了一次」。**
 > 对真正休眠的 agent（如 11-23 的 orchestrator，6 天无人触碰），自愈**永不发生**。
+
+---
+
+## 修正（2026-11-24 10:40）：免停机路径对休眠 agent 不可行
+
+v38/v39 曾提出「让缺失 lease 的 agent 被 gateway 打开一次」作为免停机修复。
+**该方案对真正休眠的 agent 不成立**，实测：
+
+```
+$ openclaw sessions archive --agent work --dry-run 'agent:work:recovered:9880f4fe-...'
+  archive ...: SQLite session reclamation commit checkpoint expired
+```
+
+archive 是写路径（走 running gateway），同样需要 lease；而 lease 只在写成功后才产生
+→ **鸡生蛋死锁**。
+
+### 自愈的前提条件（此前遗漏）
+
+> **只有「该 agent 有一个会成功跑的任务」时，自愈才可能发生。**
+> scout 2026-11-23 08:00 能自愈，正是因为它**自己的 cron 那天跑成功了**
+> （写成功 → lease 顺带产生）。
+> 而 work 的 4 个 session 最新只到 11-23 04:42，其 cron 每次都失败 → 永远自愈不了。
+
+### 修正后的方案表
+
+| 方案 | 适用 | 是否需停机 |
+|------|------|:---:|
+| 等该 agent 自己的任务成功跑一次 | agent 有活跃任务 | 否（但休眠则永不发生） |
+| 停机 `openclaw doctor --fix` + 重启 | 通用 | **是** |
+| 从 `agents.entries` 移除该 agent | 确认无依赖后 | 否（需重启生效） |
+| 接受现状 | 错误率低时可接受 | 否 |
+
+### 判据补充
+
+「差集非空」要进一步区分：
+
+| 情形 | 判断 | 处置 |
+|------|------|------|
+| 该 agent 有活跃 cron 且曾成功过 | 可能在下次成功跑时自愈 | 观察即可 |
+| 该 agent 长期无成功运行记录 | **惰性自锁，不会自愈** | 需人工介入 |
