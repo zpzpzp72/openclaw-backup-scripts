@@ -201,6 +201,58 @@ scout: lease opened_at = 2026-11-23 08:00:01
 > **自愈不是「修好了」，而是「恰好被用了一次」。**
 > 对真正休眠的 agent（如 11-23 的 orchestrator，6 天无人触碰），自愈**永不发生**。
 
+#### ⚠️ 修正（2026-11-24 23:40）：以上「自愈条件」表述不完整
+
+实测反例：`work` 的 `memory-weekly-audit` 一直 **status=ok**（11-23 04:00 成功跑过），
+但 work 的 lease 仍为 **0**，故障持续（heartbeat-work err 累积到 46）。
+
+差别在 **sessionTarget**：
+
+| 任务 | sessionTarget | 访问的 DB | 结果 |
+|------|--------------|-----------|------|
+| `memory-weekly-audit` | **isolated** | 每次新建会话，**不碰** `agent:work:main` 的 DB | ✅ ok，但不产生 lease |
+| `heartbeat-work` | **main** | 续用 `agent:work:main` → 该 DB 被死锁锁住 | 🔴 每小时失败一次 |
+
+**自愈的三个必要条件（缺一不可）**：
+
+| # | 条件 | scout | work |
+|:--:|------|:---:|:---:|
+| 1 | 该 agent 有成功跑过的任务 | ✅ | ✅ |
+| 2 | **该任务访问的是被锁死的那个 DB** | ✅ | ❌（audit 是 isolated） |
+| 3 | 该任务以 RW 方式打开 | ✅ | ❌ |
+
+→ **isolated 任务的成功不产生 lease**，因为它绕开了那个 DB。
+**lease 是「gateway 以 RW 方式打开某个特定 DB」的副产物 —— 打开路径才是关键，不是「任务成功与否」。**
+
+#### 修复动作必须与故障判据同精度
+
+昨夜两个尝试都落在错误粒度上（空转）：
+- `sessions list --agent work`（只读）→ 不产生 lease
+- `sessions archive --agent work`（**写**）→ **同样触发死锁**
+  （因为它要打开的正是那个被锁死的 DB）
+
+> **在死锁的 DB 上，任何「打开它」的动作都会撞上同一把锁。**
+> 修复动作必须【绕过那个 DB】，而不是【打开那个 DB】：
+> ① 停机 + `openclaw doctor --fix`（官方路径，处理 DB 层）
+> ② 从 `agents.entries` 移除该 agent（让维护循环不再遍历它）
+
+#### 判据的最终形态
+
+```sql
+-- 差集要排除 isolated-only 的 agent（假阳性）
+-- 故障对象 = 有【会被续用】的 session、且其 current_session_id 对应的 DB 无现役 lease 的 agent
+```
+
+### 判据命中记录（连续 5 次精确命中）
+
+| 时点 | 差集（预测失败） | 实际失败 |
+|------|---------------|---------|
+| 11-17 23:23 | {finance, orchestrator} | 同 ✅ |
+| 11-18 05:31 | {scout, work} | 同 ✅ |
+| 11-18 23:20 | {orchestrator, work} | 同 ✅ |
+| 11-19 23:20 | {orchestrator, work} | 同 ✅ |
+| 11-19 23:40 | {work} | 同 ✅ |
+
 ---
 
 ## 修正（2026-11-24 10:40）：免停机路径对休眠 agent 不可行
