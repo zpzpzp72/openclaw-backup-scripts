@@ -1094,3 +1094,31 @@ SAVED=$(tr -d ' \t\r\n' < ~/.openclaw/.nightops-discussion-last)
 - 读 `dist/*.mjs` 源码里的**超时常量并两两比对**，比翻日志快得多——本案两个 5 秒一比即中。
 
 <!-- project: path:/home/zhiping/.openclaw/workspace/agents/life -->
+
+## ERR-20261124-001 runtime 上下文的「Active exec sessions」会持续显示已结束的 session
+
+**现象**:连续 4 个轮次,runtime 上下文都列出同一对 session 为「running」:
+```
+- delta-cedar running pid=78822
+- good-ridge running pid=78836
+```
+**权威核实(两种独立方法,结果一致)**:
+```
+方法1 process list(实时查询):
+  实时 session 总数 6,running 数 = 0
+  delta-cedar → status=failed  (runtimeMs=156524)
+  good-ridge → status=completed (runtimeMs=100225)
+
+方法2 /proc 存在性(4 次):
+  /proc/78822 不存在
+  /proc/78836 不存在
+  全 ps 扫描:无匹配进程
+```
+→ runtime 上下文是**注入的静态快照**,不随 session 结束而刷新。
+
+**教训**:
+- **runtime 上下文不可作为「进程是否活着」的判据**,必须用 `process list` 或 `/proc` 实测。
+- 误信它会导致两种浪费:
+  ① 反复尝试 kill 一个已结束的进程(本轮做了 4 次,全部 No session found)
+  ② 在报告里把「已结束」误写成「僵留未清」
+- 与 ERR-20261030-003 是同一现象的延续,本次补上了「多次核实 + 两种方法交叉验证」的完整判据。
