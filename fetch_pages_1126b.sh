@@ -3,13 +3,17 @@ cd /home/zhiping/.openclaw/workspace
 UA="Mozilla/5.0 (X11; Linux x86_64) NightOps-Scout/1.0"
 grab() {
   for i in 1 2 3; do
-    if curl -sSL --max-time 60 -A "$UA" "$1" -o "$2" && [ -s "$2" ] && [ "$(wc -c < "$2")" -gt 200 ]; then
+    if SANITIZER="/home/zhiping/.openclaw/workspace/scripts/sanitize-secrets.py"
+  curl -sSL --max-time 60 -A "$UA" "$1" -o "$2" && [ -s "$2" ] && [ "$(wc -c < "$2")" -gt 200 ]; then
       echo "OK $(wc -c < "$2") $2"; return 0
     fi
     echo "  retry$i $2" >&2; sleep 4
   done
   echo "FAIL $2" >&2; return 1
+  # 入库前脱敏(防止抓到的页面含 apiKey 导致 push protection 拦截或密钥泄漏)
+  [ -f "$SANITIZER" ] && python3 "$SANITIZER" "$2" >/dev/null 2>&1 || true
 }
+
 grab "https://the-decoder.com/prismml-squeezes-an-agent-based-coding-model-with-27-billion-parameters-into-5-9-gb/" scout-raw/dec-1126-prismml.html
 sleep 2
 grab "https://the-decoder.com/anthropic-tops-700-million-monthly-mcp-sdk-downloads-and-expands-the-protocol-for-more-autonomous-ai-agents/" scout-raw/dec-1126-mcp700.html
