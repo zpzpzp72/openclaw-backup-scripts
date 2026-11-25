@@ -54,3 +54,9 @@
 - [2026-11-17] [Orchestrator] P0 根因锁定 health agent：唯一 leases=0 的 agent → 回收提交无人授权 → 每 60s 必超时（doctor inspect 0 issues、DB 仅 1.2MB、非容量问题）
 - [2026-11-17] [Orchestrator] 更正 NightOps 两点：reclaim「已归零」仅对 main 口径成立（health 仍 60/h）；heartbeat-health 是 system-owned，cron 客户端无法 disable
 - [2026-11-17] [Orchestrator] 已修：两套备份 timer 加 OnBootSec（12min/25min），消除开机补跑与 Gateway 抢 IO 造成的误判
+- [2026-11-26] [Orchestrator] 故障主体轮到 work：heartbeat-work err 73，24h reclaim 1728 条中 1727 条归因 work；work 无 HEARTBEAT/DIRECTIVE → leases=0（与 11-16 health 同模具）。正解：先补配置或停用，再 stop→doctor --fix→重启
+- [2026-11-26] [Orchestrator] 孤儿投递 4c89a409 retry 416 仍 pending，72h 内 826 次 delivery owner state unavailable → 故障已蔓延到 outbound delivery（第三种表现面）；处置用 doctor --state-sqlite compact，禁手工改表
+- [2026-11-26] [Orchestrator] Orchestrator NightOps 连败 4 天（11-17→11-25 计划空窗 8 天），本场 01:36 已恢复；legacy NightOps-Orchestrator(10972380) 仍 enabled=0，需二选一
+- [2026-11-26] [Orchestrator] 备份双链 11-23/24/25 连续 3 轮全绿；NAS tar 退出码 1 已实证非损坏（3 库 integrity_check=ok）但脚本 BACKUP_STATUS<=1 吞掉「归档与源不一致」→ 建议 .sync-staging/ 加 exclude
+- [2026-11-26] [Orchestrator] OpenRouter 余额 0（第 11 窗，key 已移至 finance agent sqlite 的 auth_profile_store）；QQ SMTP 授权码仍失效（secret mtime 2026-05-25）；M365 ahead 11 commit 待 push（ruff 全绿 + 回归 10/10）
+- [2026-11-26] [Orchestrator] 存储：/mnt/c 23G(96%)、/mnt/h 263G(97%，3 天 -110G)；Gateway RSS 4.69GB，heap 4096MB 硬顶；8 个 agent 库 integrity_check 全 ok → 故障在网关租约机制而非库损坏

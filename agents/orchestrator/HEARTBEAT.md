@@ -31,21 +31,23 @@
 
 ---
 
-## 当前基线（2026-11-17 03:20）
+## 当前基线（2026-11-26 01:36）
 
 | 指标 | 状态 |
 |---|---|
-| **health agent** | 🔴 **唯一 P0**：leases=0 → 回收提交无人授权 → 每 60s 超时（60/h）|
-| main agent | 🟢 已恢复：reclaim 错误 0（11-14 曾 180/h）|
-| 其余 6 agent | 🟢 正常，leases 4~6；scout/life/coder/orchestrator 有产出 |
-| fin / work / health | ⚠️ 均休眠 117d+（health 因 P0 无法工作）|
-| 备份 timer | 🟢 已加 OnBootSec（native 12min / NAS 25min）→ 消除开机抢 IO 误判 |
-| native backup | 🟢 archives 4 份，11-14/11-15 verify OK |
-| NAS 备份 | 🟢 已恢复产出（11-15/11-16）；回收站 36 份 / 185GB（清理待授权）|
-| M365 repo | HEAD d9f53b0，ahead 7 / behind 0；`/mnt/c` 96% 满（剩 21G）|
-| Gateway | RSS 4.53GB，heap 上限仍 4096MB（doctor 建议 8192）|
-| OpenRouter credits | 🔴 0 |
-| 备份邮件 | 🔴 QQ SMTP 授权码失效（535 Login fail，非网络）|
+| **work agent** | 🔴 **唯一 P0**：heartbeat-work err **73**；24h reclaim **1728 条，1727 条归因 work**；`agent_database_leases` work **0 行**；库 mtime 停 11-23 04:42；**work 无 HEARTBEAT/DIRECTIVE**（与 11-16 health 同模具）|
+| 故障蔓延 | 🔴 孤儿投递 `4c89a409…` retry **416** pending → 72h 内 826 次 delivery 失败 → **发往 work 的消息送不到**（第三种表现面）|
+| 故障轮转 | 🟡 health(11-15)→orchestrator+finance(11-22)→**work(11-25)**；8 库 integrity_check 全 ok → 是网关租约机制，不是库损坏；**一次重启只解当前受害者**|
+| Orchestrator NightOps | 🟢 本场 01:36 恢复（11-22→11-25 连败 4 次，8 天空窗）；legacy `NightOps-Orchestrator`(10972380) 仍 enabled=0 → 二选一 |
+| heartbeat 其他 6 路 | 🟢 err=0（health/finance/orchestrator 11-23 重启后已归零）|
+| fin / work / health | ⚠️ 均未配置（无 HEARTBEAT/DIRECTIVE）；finance 断更 7.5 月、health 0 篇 daily |
+| 备份 | 🟢 双链连续 3 轮全绿：NAS `openclaw-20261125-0300.tgz`(6.27G) status=ok；native 11-25 03:40 verify OK(5.9G)，归档 8→7，剩 779G |
+| 备份脚本语义 | 🟡 tar 退出码 1 已实证**非损坏**（3 库 integrity_check=ok），但 `BACKUP_STATUS<=1` 吞掉「归档与源瞬时不一致」→ 建议 `.sync-staging/` 加 exclude（需授权）|
+| 存储 | 🟡 /mnt/c **23G/96%**（11-23 曾 44G）；/mnt/h **263G/97%**（3 天 -110G）；/ 779G/19% |
+| Gateway | 🟡 RSS **4.69GB**，pid 36001 uptime 3.2d，CPU 27.6%；heap 上限仍 4096MB（openclaw.json 无 maxOldSpaceSize）|
+| OpenRouter credits | 🔴 0（第 11 窗）；key 已移至 `agents/finance/agent/openclaw-agent.sqlite → auth_profile_store` |
+| 备份邮件 | 🔴 QQ SMTP 授权码失效（实测 Connection unexpectedly closed；secret mtime 2026-05-25）|
+| M365 repo | 🔴 HEAD 700f8a3，ahead **11** / behind 0；ruff 全绿 + 回归 10/10 → 待 push（第 8 轮）|
 
 ### 🔍 health P0 的根因链（已实测到源码级）
 1. `cron/maintenance` 每 **60s** 遍历**所有** agent store（`maintenance-CGA2ytB4.mjs`）
@@ -65,16 +67,19 @@
 - ⚠️ `openclaw-backup.sh` 回收站探测必须**早于**空间预检，否则最该告警的场景报 `recycle_backups=0`（11-14 已修）
 - ⚠️ NAS `rm` 仍是移入回收站；只有删 `#recycle` **内部**文件才真释放
 
-### 仍需 Main / Owner 决策
-1. 🔴 授权 NAS 回收站清理：`bash scripts/nas-recycle-cleanup.sh --execute`（释放 185GB）
-2. 🔴 health 库 doctor --fix + 重启；顺手处理 startup migrations
-3. 🔴 重生成 QQ SMTP 授权码 → 更新 `~/.secrets/qq_smtp_password`
-4. 🟡 确认本地原生备份 11-14 那轮收尾 `verify OK`
-5. 🟡 `git push origin HEAD`（M365）
-6. 🟡 Gateway heap 4096→8192 后择机重启
-7. 🟡 设置 `commands.ownerAllowFrom`
-
----
+### 仍需 Main / Owner 决策（2026-11-26 更新）
+1. 🔴 **work agent**：补 HEARTBEAT.md + DIRECTIVE.md **或** 停用 `heartbeat-work` → 停 Gateway → `doctor --fix --session-sqlite-agent work` → 重启（回收 28 条泄漏租约）。**单修库只解一半**
+2. 🔴 孤儿投递 `4c89a409…`：`doctor --state-sqlite compact`（CLI ≥300s，禁 timeout 强杀）；**禁止手工改 `delivery_queue_entries`**
+3. 🔴 NightOps 双路互斥：启用 legacy `10972380` 或保持本路，二选一
+4. 🔴 OpenRouter 充值（第 11 窗）
+5. 🔴 重生成 QQ SMTP 授权码 → 更新 `~/.secrets/qq_smtp_password`；备份脚本补「失败即告警」分支
+6. 🔴 `git push origin HEAD`（M365，11 commit）
+7. 🟡 4 个未配置 agent（main/finance/health/work）统一补配置或停用 job
+8. 🟡 `/mnt/c` 23G、`/mnt/h` 263G 持续下降；NAS 回收站清理授权
+9. 🟡 Gateway heap 4096→8192 后择机重启（与 P0-1 停机窗口合并）
+10. 🟡 备份脚本 `.sync-staging/` 加 exclude
+11. 🟡 `commands.ownerAllowFrom` 设置（心跳投递 no-route）
+12. 🟡 全局 MEMORY.md 瘦身（43KB → ≤10,000 字符）；playwright 浏览器二进制安装 + 仓库内 `.nightops-venv/`
 
 ## 历史基线（2026-11-08 03:15）
 

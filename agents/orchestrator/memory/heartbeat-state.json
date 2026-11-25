@@ -11,24 +11,24 @@
     "cron_registry_diagnosis": 1793992694,
     "native_backup_bypass": 1793992694,
     "native_backup_automation": 1793994610,
-    "cron_jobs": 1794856898,
-    "agent_activity": 1794856898,
-    "proxy": 1793997183,
-    "repos": 1794856898,
-    "nightops": 1793997183,
+    "cron_jobs": 1795628277,
+    "agent_activity": 1795628277,
+    "proxy": 1795628277,
+    "repos": 1795628277,
+    "nightops": 1795628277,
     "agent_to_agent": 1793997183,
-    "session_db_health": 1794856898,
-    "backup": 1794856898,
-    "nas_recycle": 1794856898,
-    "mail_smtp": 1794856898,
-    "timers": 1794856898
+    "session_db_health": 1795628277,
+    "backup": 1795628277,
+    "nas_recycle": 1795628277,
+    "mail_smtp": 1795628277,
+    "timers": 1795628277
   },
   "currentStatus": {
     "proxy_25017": "FIXED (hardcoded 127.0.0.1 -> 172.18.160.1)",
     "news_digest": "RECOVERED 01:11 20123 bytes feishu sent",
     "ollama_provider": "FIXED -> http://172.18.160.1:11434/v1",
     "fallbacks": "['ollama/qwen3:4b-instruct','ollama/qwen3.6:27b','longcat/LongCat-2.0'] - local ollama is ONLY working fallback",
-    "openrouter": "402 credits exhausted",
+    "openrouter": "credits 0 (11th window); key in finance agent sqlite auth_profile_store",
     "m365_repo": "UNFROZEN commit e5f498e",
     "life": "last report 09-08 (46d)",
     "health": "memory empty",
@@ -45,7 +45,15 @@
     "commands_owner": "commands.ownerAllowFrom NOT configured -> nobody can /update, restart gateway, change config, approve commands",
     "native_backup": "AUTOMATED 11-07: openclaw-native-backup.service+timer (03:40 daily, Persistent), first run Result=success, verify OK 276008 entries, keep 7, next 11-08 03:40. Coexists with NAS openclaw-backup.timer (03:00). Output MUST be outside ~/.openclaw. Long tasks must run under systemd - nohup gets killed when exec session ends.",
     "nas_backup": "2 nights blocked (11-06, 11-07), last good 20261105, hours_since_last_backup=47. SMB rm only moves to #recycle.",
-    "provider_status": "MiniMax 200 OK all window, no 429. Cloud fallbacks still down (openrouter 402 / siliconflow invalid key / litellm model-dependent / longcat no key)."
+    "provider_status": "MiniMax 200 OK all window, no 429. Cloud fallbacks still down (openrouter 402 / siliconflow invalid key / litellm model-dependent / longcat no key).",
+    "work_p0": "heartbeat-work err 73; 24h reclaim 1728 (1727 work); leases work=0; work unconfigured (no HEARTBEAT/DIRECTIVE); fix: provision-or-disable THEN stop->doctor --fix->restart",
+    "orphan_delivery": "4c89a409 retry 416 pending; fix doctor --state-sqlite compact; do not edit delivery_queue_entries",
+    "orchestrator_nightops": "RECOVERED 2026-11-26 01:36; legacy NightOps-Orchestrator(10972380) enabled=0 -> pick one",
+    "mail_smtp": "QQ auth code invalid (secret mtime 2026-05-25)",
+    "m365_commit": "ahead 11 (700f8a3); ruff green, 10/10 regression; push pending owner",
+    "backup": "NAS 11-25 status=ok; native 11-25 verify OK; 3 consecutive green rounds",
+    "storage": "/mnt/c 23G 96%; /mnt/h 263G 97%; / 779G 19%",
+    "gateway": "RSS 4.69GB pid 36001 uptime 3.2d; heap 4096MB cap"
   },
   "nightops": {
     "checkedAt": "2026-11-07T04:05:00+08:00",
@@ -152,5 +160,6 @@
     "status": "🟢 已恢复",
     "proof": "sessions_list(agentId=main) 成功；sessions_send 被 accepted/queued；main DB mtime 03:44:29 印证落盘",
     "note": "11-08 时 main DB 故障曾完全阻断该通道，现已随 main 恢复而恢复"
-  }
+  },
+  "lastRun": "2026-11-26T01:36:00+08:00"
 }

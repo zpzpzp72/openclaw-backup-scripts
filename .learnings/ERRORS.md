@@ -1042,6 +1042,8 @@ SAVED=$(tr -d ' \t\r\n' < ~/.openclaw/.nightops-discussion-last)
 
 **一句话根因**：Gateway 启动时 6 个 agent 同时做「进程死亡后 WAL 恢复」的完整性闸门，`work` 的 canonical-validation 回收 worker 与另一条 certify 写入互相等锁，**两边的超时都是 5 秒**，必然同时到点 → worker 判定「提交授权过期」→ 把 `work` 判为 degraded → **该 agent 在本次 Gateway 进程生命周期内永久不可写**。
 
+> **【11-26 计数修正】** 本条原写「11-24 全天 166 条、work 占 136 条」——**这个数是错的**，它只统计了 `/tmp/openclaw/openclaw-2026-11-24.log` 这个**轮转窗口内的部分**（当时日志只到 02:05）。用 `journalctl` 按自然日重算的真实值是：**11-24 全天 1,732 条 / 11-25 全天 1,725 条**（两者基本持平，**不是**「暴增」）。**教训**：跨天的错误计数必须用 `journalctl --since/--until` 按自然日取，**不能用 `/tmp/openclaw/openclaw-YYYY-MM-DD.log` 直接 grep** —— 该文件按大小轮转，**当天早上读到的只是前一晚到当天的片段**，会低估一个数量级。
+
 **证据链（本次实测，11-24 02:00–02:20）**：
 
 1. **触发点是重启，不是运行期**。11-23 04:42 新 Gateway（pid 36001）启动时，旧进程（pid 695）**关闭失败**：
@@ -1095,7 +1097,7 @@ SAVED=$(tr -d ' \t\r\n' < ~/.openclaw/.nightops-discussion-last)
 
 <!-- project: path:/home/zhiping/.openclaw/workspace/agents/life -->
 
-## ERR-20261124-001 runtime 上下文的「Active exec sessions」会持续显示已结束的 session
+## ERR-20261124-003 runtime 上下文的「Active exec sessions」会持续显示已结束的 session
 
 **现象**:连续 4 个轮次,runtime 上下文都列出同一对 session 为「running」:
 ```
@@ -1169,3 +1171,48 @@ const p = await apply_patch({ input: "*** Begin Patch\n..." });  // 不写 tools
 
 **元数据**：状态 ✅ 已归档；关联：备份保留策略改造（11-25）
 
+## ERR-20261126-001 11-25 四个 NightOps 全被「stuck session recovery」杀掉 —— 根因是 Token Plan 2056 额度耗尽，不是 SQLite
+
+**现象**：11-25 01:50–02:40，Scout / Life / Coder / Orchestrator **四个 NightOps 连续失败**，错误一律是 `agent run aborted | OPENCLAW_DIRECT_ABORT`，`consecutiveErrors=1`，**四场全部 0 产物落盘**（`heartbeat/nightly-life-2026-11-25.md` 等全不存在）。这与 11-24 的 SQLite 故障表现完全不同，**是两个独立问题**，一度容易被混为一谈。
+
+**根因链（已定位）**：
+1. MiniMax 返回 **HTTP 429**，body 为 `{"error":{"message":"已达到 Token Plan 用量上限：请升级 Token Plan 套餐或购买积分补充用量。 (2056)","type":"rate_limit_error"}}`。
+   → **这是 Token Plan 额度耗尽（2056），不是普通限流**。11-25 全天 72 处提到 2056/Token Plan，429 集中在 17–19 UTC（01–03 CST）**每小时 57–63 次**。
+2. 模型调用持续失败 → `embedded run failover decision`（`failoverReason=rate_limit`, `status=429`, `retryCount=9`, `profileId=sha256:c38c74a5066a`, `provider=minimax`, `model=MiniMax-M2.7`）→ 回退模型也没救回来（`model_fallback_chain_stopped`, `reason=agent_run_direct_abort`）。
+3. 每次 run 卡住 → OpenClaw 的**自愈机制**介入：
+   `stuck session recovery: sessionId=... sessionKey=agent:life:cron:a6c108aa:... age=370s action=abort_embedded_run`
+   → 到达 365–398 秒阈值就被主动 abort。
+4. → `lane task error: lane=cron-nested ... errorName=AbortError` → cron 判 error。
+
+**关键判据（下次可直接套用）**：
+- **看 `age=`**：`stuck session recovery` 里的 age 落在 **365–398s** 一线 → 说明是**被自愈机制按超时杀掉**的，不是业务逻辑报错。
+- **看 failover 决策的 `status` + `rawErrorPreview`**：429 + `2056` = 额度问题（外部约束，只能告知 owner）；429 无 2056 = 普通限流（可重试/退避）。
+- 四场 NightOps **同一时间窗、同一种错误、同样 0 产物** → 是**上游共性故障**（模型额度），不要逐个 agent 去查各自的问题。
+
+**与 SQLite 故障的区分（11-24 vs 11-25，两个独立问题）**：
+
+| | 11-24 SQLite 故障 | 11-25 NightOps 全灭 |
+|---|---|---|
+| 错误 | `SQLite session reclamation commit checkpoint expired` | `agent run aborted \| OPENCLAW_DIRECT_ABORT` |
+| 影响 | **只 1 个 agent**（work），其余 7 个正常 | **4 个 agent 同时**，全灭 |
+| 错误源 | 本地 SQLite 写入层 | **外部模型额度**（429/2056） |
+| 产物 | 其他 NightOps 正常产出 | **四场 0 产物** |
+| 触发 | 重启后启动期竞态 | 额度耗尽 + stuck recovery 超时杀 |
+
+**11-26 复核（01:00）**：额度已恢复 —— 今日 `model-fetch` **147 次 status=200 / 3 次 429**；Life NightOps 已改期到 **00:59**（`scheduleActivatedAt=11-25 23:23:44`）并于 00:59 启动，当前运行中（上游 `heartbeat/nightly-scout-2026-11-26.md` 00:44 已产出 21,212 B）。
+→ **改期是 owner 在 11-25 23:23 做的**（`openclaw.json` mtime 11-25 00:36，cron 注册表在 `automations/jobs.json`），本次**未做任何改动**。
+
+**SQLite 故障仍在持续（非新增，仅状态）**：`work` agent 自 11-23 04:42 起写入仍全冻结（主库 mtime 停在 04:42:10）；11-26 凌晨日志内 checkpoint 错误 89 条（**注意：这是 00:00–01:03 的片段口径，非全天**），**逐条核对 `refusal.agentId` 全部是 `work`，无第二个受害 agent**；`Heartbeat (work)` 仍 `consecutiveErrors=24`；Gateway 仍是 pid 36001（已连续运行 2 天 20 小时，未重启 → 该 agent 在本 boot 内不可能自愈，机制见 ERR-20261124-001）。
+
+**备份归档完整性：已实证「退出码 1 ≠ 归档损坏」（推翻一个此前的疑虑）**
+从 `openclaw-20261125-0300.tgz`（退出码 1 那份）解出三个关键库并校验：
+`agents/main/agent/openclaw-agent.sqlite`（243,752,960 B，`integrity_check=ok`，session_nodes 1,896 / transcript_events 50,592 / session_windows 2,067）、`agents/work/agent/openclaw-agent.sqlite`（ok）、`state/openclaw.sqlite`（ok）。
+→ stderr 的 `File removed before we read it`（`.sync-staging/` 被清理）与 `File shrank by 532480 bytes; padding with zeros`（main 的 sqlite 备份期间缩小）**在 tar 语义下只是警告**，归档可正常解出且 SQLite 校验通过。
+→ **修正结论**：脚本 `BACKUP_STATUS <= 1` 判成功，在「归档可用性」维度**站得住**；它吞掉的是「归档与源目录有瞬时差异」这一信息（热备必然如此），外部健康检查因此看不出差异。**是否收紧为 `== 0` 需 owner 权衡**（收紧会更频繁报失败/删半成品）；更精准的做法是**把 `.sync-staging/` 加进 tar exclude**（临时目录本就不该进备份），大概率能让退出码回 0 而不牺牲热备份。
+
+**纪律**：
+- **额度类 2056 只告知 owner，不自行重试、不自行充值**（沿用 ERR-20261101-002 / ERR-20261122-003 的约定）。
+- **多场同窗同错 → 先判上游共性**（模型额度 / 网络 / 磁盘），再考虑逐个排查。
+- **判「agent 失败」与「agent 被杀掉」**：看有没有 `stuck session recovery ... action=abort_embedded_run` + `age=` 数值；有 = 被超时杀，不是自身报错。
+
+<!-- project: path:/home/zhiping/.openclaw/workspace/agents/life -->
