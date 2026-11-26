@@ -1267,3 +1267,52 @@ Use OpenClaw commands for live state, or inspect a private backup copy outside O
 
 ---
 
+
+## ERR-20261127-002 — Code Mode 嵌套引号:JS → shell → python 三层转义反复炸
+
+**时间**: 2026-11-27 05:30–06:45 CST
+**组件**: OpenClaw Code Mode (exec/write/process 工具调用)
+
+### 现象
+
+本轮连续 5 次因引号/转义失败而中断,其中 2 次被 error-detected 显式捕获:
+
+| # | 报错 | 触发写法 |
+|---|---|---|
+| 1 | `SyntaxError: Unterminated string constant` (openclaw-code-mode:user.js:1:33) | JS 字符串里嵌反斜杠转义引号,再嵌 shell 的 `python3 -c`,再嵌 python 的 dict key |
+| 2 | `SyntaxError: unterminated string literal` (Python) | `python3 - <<EOF` heredoc 里写三引号字符串,而内容含双引号 |
+| 3 | `ReferenceError: tools is not defined` | 用了 `tools.process(...)`;但本环境里工具是**裸全局函数**(`process`/`exec`/`read`/`write`),没有 `tools.` 属性层 |
+| 4 | `code mode module access is disabled ... Do not retry the same source with require() or an import` | 写了 `await (await import("openclaw")).default` |
+| 5 | `SyntaxError at openclaw-code-mode:user.js:84:50: Unexpected token` | 在 JS 数组元素里用 `\'` 反斜杠转义单引号 —— 即本条自己刚写的规范所禁止的写法 |
+
+### 根因
+
+**三层转义**: JavaScript 字符串 → shell 命令 → python 源码 → python 字符串。
+每层都有自己的引号语义,四层叠加后必然出错。
+
+第 5 次最讽刺:我刚刚把「统一用一种引号风格」写进规范,下一条代码就违反了它 ——
+说明**只写文档不立即改行为,下次照样犯**。
+
+第 3、4 条是**工具 API 误用**,与引号无关:
+- 工具以裸全局函数暴露(`process(...)`、`exec(...)`),**没有** `tools.` 前缀这一层
+- guest JavaScript **禁止** `require()` / `import()` / `module` 访问
+
+### 可靠做法(已固化到 TOOLS.md)
+
+1. **不写内联脚本**。超过 3 行的 python/bash 一律用 `write` 工具落盘,再用 `exec` 跑文件。
+   `write` 的 content 是**纯字符串**,不经过 shell,零转义问题。
+2. **JS 里构造脚本内容**,用 `[...].join(chr(10))` 数组字面量:
+   JS 字符串一律用**双引号**,内部 python 一律用**单引号**,两边都不需要转义。
+3. **工具调用是裸全局**:`await process({...})`、`await exec({...})`、`await read({...})`。
+   不要写 `tools.process`。
+4. **禁止 `import()` / `require()`**。需要新能力时用 `catalog.search(query)`。
+5. **要追加 Markdown 到文件**,直接用 shell heredoc 写片段再拼接,
+   不要用 python 三引号字符串去构造含引号的文本。
+
+### 判据
+
+本轮 5 次失败**没有一次是系统故障**,全是我的写法问题。
+但它们都发生在「写自动化脚本」这类看起来简单的步骤上,属高频复发点,故单独立条。
+
+---
+
