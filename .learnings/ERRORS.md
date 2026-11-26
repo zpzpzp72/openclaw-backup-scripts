@@ -1316,3 +1316,90 @@ Use OpenClaw commands for live state, or inspect a private backup copy outside O
 
 ---
 
+
+## ERR-20261127-003 — runtime context 的 exec session 列表是陈旧快照
+
+**时间**: 2026-11-27 05:43–07:30 CST
+**组件**: OpenClaw runtime context 注入(`Active exec sessions:` 段)
+
+### 现象
+
+runtime context 在每轮开头注入:
+
+```
+Active exec sessions:
+- tide-canyon running pid=164150 cwd=/home/zhiping/.openclaw/workspace
+```
+
+但该 session 实际早已结束:
+- `ps -p 164150` → 进程不存在
+- `/proc/164150` → 目录不存在(连续 9 次确认)
+- `process({action:'list'})` → 显示 `status: failed`,remove 后不再出现
+- `process({action:'remove', sessionId:'tide-canyon'})` → 返回 completed
+
+**runtime context 仍连续 9 轮报它 running。**
+
+### 根因
+
+runtime context 是**每轮开始时的快照**,不是实时查询。
+会话结束后它不会被回写,于是长期挂着一条已经不存在的记录。
+
+### 代价
+
+我因为反复相信它,多花 4 轮去「杀进程 / 查 /proc / 清理」,
+每次都用同三种方式重复验证同一件事 —— 这本身又是一次 v42 讲的反模式:
+**没有新证据却重复同一个检查。**
+
+### 正确做法
+
+1. 看到 runtime context 报某 session running 时,**先信 `process list`**,不信 context
+2. `process list` 是实时源;context 是快照
+3. 已结束的 session 用 `process({action:'remove', sessionId})` 注销
+4. 若 context 与 `process list` 冲突,**一次确认后按 `process list` 走**,不要反复复核
+
+### 与既有教训的关系
+
+v42:「取不到数据 ≠ 数据表明没问题」
+v43:「现象消失 ≠ 根因消除」
+本条:「快照 ≠ 实时状态」
+
+三者同源:**任何「观测」都要先问它是什么时候取的、还新鲜吗。**
+
+---
+
+## ERR-20261127-004 — `pkill -f <pattern>` 会匹配到自己的命令行
+
+**时间**: 2026-11-27 07:35 CST
+**组件**: exec 工具 / shell
+
+### 现象
+
+执行
+
+```bash
+pkill -f 'openclaw doctor --json' 2>/dev/null; sleep 1
+```
+
+的结果是:**exec 返回空输出**(看起来像命令失败),
+但被杀的其实是执行这条命令的 bash 自己 ——
+因为 `pkill -f` 匹配的是**完整命令行字符串**,而我的命令行里就含 `openclaw doctor --json` 这段字面量。
+
+本轮已踩 2 次(前一次 `pkill -f 'openclaw doctor'` 同样结果)。
+
+### 修法:用括号技巧让模式不自匹配
+
+```bash
+# 模式写成 openclaw[ ]doctor —— 正则能匹配 'openclaw doctor',
+# 但我的命令行里只有带括号的字面量,不会被自己匹配
+for p in $(pgrep -f 'openclaw[ ]doctor'); do kill "$p" 2>/dev/null; done
+```
+
+或者更稳:先 `pgrep` 拿到 pid,人工核对,再按 pid kill。
+
+### 附带判据
+
+**exec 返回空输出 ≠ 命令失败。** 本例里命令其实是成功的,
+只是执行者自己被杀了。空输出要查"是不是把自己杀了",
+而不是直接归因给命令本身。
+
+---
