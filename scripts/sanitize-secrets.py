@@ -15,7 +15,7 @@ PATTERNS = [
     # 高置信度硬密钥(必须脱敏)
     (re.compile(rb'(?<![A-Za-z0-9_-])((?:sk|rk|ghp|gho|glpat|sk-proj|xox[baprs]|AKIA|AIza)[.][A-Za-z0-9_.-]{20,})'), b'<REDACTED-SECRET>'),
     # Mapbox 公共 token(pk. 前缀,设计上可公开,但 push protection 仍会拦)
-    (re.compile(rb'(?<![A-Za-z0-9_-])(pk\.eyJ[A-Za-z0-9_.-]{20,})'), b'pk.eyJ[REDACTED]'),
+    (re.compile(rb'(?<![A-Za-z0-9_-])(pk\.eyJ[A-Za-z0-9_-]{20,}(?:\.[A-Za-z0-9_-]+)*)'), b'pk.eyJ[REDACTED]'),
     # 通用 apiKey/token 字段
     (re.compile(rb'"(?:apiKey|api_key|accessToken|access_token|secret|clientSecret)"\s*:\s*"([A-Za-z0-9_.-]{20,})"'), b'"apiKey": "<REDACTED>"'),
 ]

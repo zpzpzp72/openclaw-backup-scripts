@@ -2,17 +2,26 @@
 """push 前密钥扫描闸门。退出码: 0 通过 / 1 命中需处理。"""
 import re, subprocess, sys, pathlib
 
-REPO = sys.argv[1] if len(sys.argv) > 1 else 'origin/feature/hot-backup'
+# 支持两种调用:
+#   1) 无参/REPO 形态: 扫 git diff REPO..HEAD 的待推文件
+#   2) --file <path>...  : 直接扫指定文件(供自测使用)
+files_mode = '--file' in sys.argv
+if files_mode:
+    names = sys.argv[sys.argv.index('--file') + 1:]
+    REPO = None
+else:
+    REPO = sys.argv[1] if len(sys.argv) > 1 else 'origin/feature/hot-backup'
 EXT = ('.html', '.xml', '.json', '.md', '.txt', '.py', '.sh', '.csv')
 
 HARD = re.compile(rb'(?<![A-Za-z0-9_-])((?:sk|rk|ghp|gho|glpat|sk-proj|xox[baprs]|AKIA|AIza)[.][A-Za-z0-9_.-]{20,})')
 PK   = re.compile(rb'(?<![A-Za-z0-9_-])(pk\.eyJ[A-Za-z0-9_.-]{20,})')
 
-try:
-    names = subprocess.run(['git','diff','--name-only',f'{REPO}..HEAD'],capture_output=True,text=True,timeout=120).stdout.split()
-except Exception as e:
-    print(f'  (无法获取待推列表: {e})')
-    sys.exit(0)
+if not files_mode:
+    try:
+        names = subprocess.run(['git','diff','--name-only',f'{REPO}..HEAD'],capture_output=True,text=True,timeout=120).stdout.split()
+    except Exception as e:
+        print(f'  (无法获取待推列表: {e})')
+        sys.exit(0)
 
 hard, pk = [], []
 for name in names:
