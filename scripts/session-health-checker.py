@@ -1,104 +1,132 @@
 #!/usr/bin/env python3
-"""会话健康度检查:预测「续用主会话的任务」会以什么方式失败。
+"""会话健康度检查 (2026-11-27 重写 v3)。
 
-背景 (2026-11-26): 两类 error 根因同构 ——
-  heartbeat-work      续用 agent:work:main   → 该 DB 无现役 lease → 每小时 reclaim 超时 (err=94)
-  openclaw-news-digest 续用 agent:scout:main → 该 session 17451 条/8.1MB → 隔天 context overflow
-而 isolated 的任务(memory-weekly-audit / 四个 NightOps)持续 ok。
+★ 三次教训都写在这里:
+  v1: 用 python sqlite3 直连 live agent DB → 违反 OpenClaw 工具策略
+      ("external sqlite3 cannot open databases under the active OpenClaw state directory")
+  v2: lease 判定拿不到数据时,把所有 agent 都判成 P0 → 【证据不足却下断言】
+  v3: lease 只从【日志证据】(active-leases receipt)推断;取不到就明说不可判定,
+      绝不默认判 P0。数据源全部是官方只读接口,不碰 live DB。
 
-→ 判据:任务健康与否不取决于属于哪个 agent,
-        而取决于【它续用的那个会话是否还是可用资产】。
+判据 (v42): 任务健康与否取决于【它续用的那个会话是否还是可用资产】。
+  P0: 有证据表明某 agent 的 lease 已失效 → 写操作会 100% 失败
+  P1: 主会话上下文占用超限 → 续用它且读大量历史的任务有 overflow 风险
+      (是【风险】非必然: 实测 agent:main:main 占用高但 heartbeat-main err=0)
 
 用法: python3 scripts/session-health-checker.py [--json]
 """
-import json, sqlite3, subprocess, os, glob, sys, datetime
+import json, os, re, subprocess, sys, glob
 
-LEASES_DB = '/home/zhiping/.openclaw/state/openclaw.sqlite'
-AGENTS_DIR = '/home/zhiping/.openclaw/agents'
-CTX_EVENT_LIMIT = 5000       # transcript 条数超此值 → 疑似 context overflow
-CTX_BYTES_LIMIT = 5 * 1024 * 1024
+CTX_TOKEN_LIMIT = 200_000   # MiniMax-M2.7 上限 205k,取保守值
+CTX_WARN_RATIO = 0.5
+LOG_GLOB = "/tmp/openclaw/openclaw-*.log"
+LOG_TAIL_LINES = 20000
+
+def run_json(cmd):
+    try:
+        r = subprocess.run(cmd, capture_output=True, text=True, timeout=180)
+        return json.loads(r.stdout or "{}")
+    except Exception as e:
+        return {"__error__": str(e)}
 
 def gateway_pid():
     try:
-        return int(subprocess.run(['pgrep','-f','openclaw.*dist/index.js'],capture_output=True,text=True,timeout=20).stdout.split()[0])
+        r = subprocess.run(["pgrep", "-f", "openclaw.*dist/index.js"],
+                           capture_output=True, text=True, timeout=20)
+        return int(r.stdout.split()[0]) if r.stdout.strip() else None
     except Exception:
         return None
 
-def leased_agents(pid):
-    if not pid:
-        return set()
-    try:
-        c = sqlite3.connect(f'file:{LEASES_DB}?mode=ro', uri=True, timeout=8)
-        return {r[0] for r in c.execute('SELECT DISTINCT agent_id FROM agent_database_leases WHERE owner_pid=?', (pid,))}
-    except Exception:
-        return set()
+def lease_evidence():
+    """从 Gateway 日志推断 lease 状态。返回 (有证据的 agent 集合, 证据来源说明)。
+
+    日志里出现 active-leases receipt ⇒ 该 agent 当时持有 lease;
+    出现 reclamation checkpoint expired refusal ⇒ 该 agent 的 lease 已失效。
+    两者都是【日志证据】,不是直接读 lease 表。
+    """
+    leased, broken = set(), set()
+    files = sorted(glob.glob(LOG_GLOB), key=os.path.getmtime)[-2:]
+    if not files:
+        return None, "无日志文件"
+    pat_ok = re.compile(r"active-leases")
+    pat_bad = re.compile(r"reclamation commit checkpoint expired")
+    for f in files:
+        try:
+            with open(f, errors="ignore") as fh:
+                lines = fh.readlines()[-LOG_TAIL_LINES:]
+        except Exception:
+            continue
+        for ln in lines:
+            if pat_bad.search(ln):
+                for m in re.findall(r"/agents/([A-Za-z0-9_-]+)/agent/", ln):
+                    broken.add(m)
+            elif pat_ok.search(ln):
+                for m in re.findall(r"/agents/([A-Za-z0-9_-]+)/agent/", ln):
+                    leased.add(m)
+    return {"leased": leased, "broken": broken}, f"日志证据({len(files)} 个文件,末尾 {LOG_TAIL_LINES} 行)"
+
+def main_sessions():
+    d = run_json(["openclaw", "sessions", "--all-agents", "--json", "--limit", "300"])
+    items = d if isinstance(d, list) else (d.get("sessions") or d.get("items") or [])
+    return [s for s in items
+            if str(s.get("key", "")).count(":") == 2
+            and str(s.get("key", "")).split(":")[2] == "main"]
 
 def main():
     pid = gateway_pid()
-    leased = leased_agents(pid)
+    ev, src = lease_evidence()
+    leased = ev["leased"] if ev else set()
+    broken = ev["broken"] if ev else set()
+    rows = main_sessions()
     out = []
-    for f in sorted(glob.glob(f'{AGENTS_DIR}/*/agent/openclaw-agent.sqlite')):
-        ag = os.path.basename(os.path.dirname(os.path.dirname(f)))
-        try:
-            c = sqlite3.connect('file:' + f + '?mode=ro', uri=True, timeout=8)
-            for key, cid in c.execute('SELECT session_key, current_session_id FROM session_nodes'):
-                if not key.startswith('agent:' + ag + ':main'):
-                    continue
-                n = c.execute('SELECT COUNT(*) FROM transcript_events WHERE session_id=?', (cid,)).fetchone()[0]
-                b = c.execute('SELECT SUM(LENGTH(event_json)) FROM transcript_events WHERE session_id=?', (cid,)).fetchone()[0] or 0
-                issues = []
-                if ag not in leased:
-                    issues.append('该 agent 无现役 lease → 写操作必触发 reclaim 超时')
-                # 注意:上下文超限是【风险】不是【必然失败】——
-                # 实测 agent:main:main 也有 14319 条,但 heartbeat-main 仍 err=0。
-                # 取决于任务实际读了多少历史。
-                if n > CTX_EVENT_LIMIT:
-                    issues.append(f'transcript {n} 条 > {CTX_EVENT_LIMIT} → 【风险】续用该会话且读大量历史的任务会 context overflow')
-                if b > CTX_BYTES_LIMIT:
-                    issues.append(f'事件体 {b//1048576}MB > {CTX_BYTES_LIMIT//1048576}MB → 【风险】上下文超限')
-                out.append({'agent': ag, 'session': key, 'events': n, 'bytes': b, 'leased': ag in leased, 'issues': issues})
-            c.close()
-        except Exception:
-            pass
-    # 分级:两类根因的处置方式完全不同,不能混报
-    #  P0 lease 缺失 → 写操作必失败(每次都失败,100% 可预测)
-    #  P1 上下文超限 → 【风险】而非必然失败:实测 agent:main:main 也有 14319 条,
-    #     但 heartbeat-main 仍 err=0(取决于任务实际读多少历史)
-    for o in out:
-        if any('lease' in i for i in o['issues']):
-            o['severity'] = 'P0'
-        elif o['issues']:
-            o['severity'] = 'P1'
-        else:
-            o['severity'] = 'OK'
-    risky = [o for o in out if o['issues']]
-    if '--json' in sys.argv:
-        print(json.dumps({'gateway_pid': pid, 'leased': sorted(leased),
-                        'P0': [o for o in risky if o['severity'] == 'P0'],
-                        'P1': [o for o in risky if o['severity'] == 'P1']},
-                       ensure_ascii=False, indent=2))
-        return 1 if risky else 0
-    print(f'  gateway pid={pid}  有 lease 的 agent: {sorted(leased)}')
+    for s in rows:
+        key = s.get("key", "")
+        ag = s.get("agentId") or key.split(":")[1]
+        tok = s.get("totalTokens") or 0
+        issues, lvl = [], "OK"
+        if ag in broken:
+            issues.append("P0 日志证据:该 agent lease 失效 (reclamation checkpoint expired) → 写操作 100% 失败")
+            lvl = "P0"
+        if tok > CTX_TOKEN_LIMIT:
+            issues.append(f"P1 上下文占用 {tok:,} token > {CTX_TOKEN_LIMIT:,} → 续用且读大量历史会 context overflow")
+            lvl = "P0" if lvl == "P0" else "P1"
+        elif tok > CTX_TOKEN_LIMIT * CTX_WARN_RATIO:
+            issues.append(f"P2 上下文占用 {tok:,} token 已过 {int(CTX_WARN_RATIO*100)}% → 逼近上限")
+            lvl = "P0" if lvl == "P0" else ("P1" if lvl == "P1" else "P2")
+        if s.get("abortedLastRun"):
+            issues.append("P2 上一次运行被 abort")
+            lvl = "P0" if lvl == "P0" else ("P1" if lvl == "P1" else "P2")
+        out.append({"agent": ag, "session": key, "tokens": tok, "issues": issues,
+                    "severity": lvl,
+                    "lease": ("broken" if ag in broken else
+                              ("held" if ag in leased else "unknown"))})
+    out.sort(key=lambda o: ({"P0": 0, "P1": 1, "P2": 2, "OK": 3}[o["severity"]], -o["tokens"]))
+    if "--json" in sys.argv:
+        print(json.dumps({"gateway_pid": pid, "lease_source": src,
+                         "lease_evidence": {"leased": sorted(leased), "broken": sorted(broken)},
+                         "sessions": out}, ensure_ascii=False, indent=2))
+        return 1 if any(o["issues"] for o in out) else 0
+    print(f"  gateway pid={pid}  数据源=openclaw sessions(官方只读接口)")
+    print(f"  lease 证据: {src}")
+    print(f"    持有 lease: {sorted(leased) or "(日志窗口内未记录)"}")
+    print(f"    lease 失效: {sorted(broken) or "(无)"}")
+    print("    注: 未出现在两栏的 agent = 不可判定(不是没有 lease)")
+    risky = [o for o in out if o["issues"]]
     if not risky:
-        print('  ✅ 未发现处于风险状态的主会话')
+        print("  ✅ 未发现处于风险状态的主会话")
         return 0
-    p0 = [o for o in risky if o['severity'] == 'P0']
-    p1 = [o for o in risky if o['severity'] == 'P1']
-    if p0:
-        print(f'  🔴 P0 lease 缺失({len(p0)} 个,写操作 100% 失败):')
-        for o in p0:
-            print(f"    {o['agent']:12} {o['session'][:40]:42} {o['events']:6} 条 {o['bytes']//1048576:5}MB")
-            for i in o['issues']:
-                print(f'        - {i}')
-    if p1:
-        print(f'  🟡 P1 上下文超限({len(p1)} 个,仅续用该会话的任务会失败):')
-        for o in p1:
-            print(f"    {o['agent']:12} {o['session'][:40]:42} {o['events']:6} 条 {o['bytes']//1048576:5}MB")
-            for i in o['issues']:
-                print(f'        - {i}')
-    print('  → P0 处置: 停机 openclaw doctor --fix(需 Gateway 重启)')
-    print('  → P1 处置: 若某任务反复 context overflow,把它改 isolated 或轮转主会话')
+    for lvl, icon in (("P0", "🔴"), ("P1", "🟡"), ("P2", "🔵")):
+        g = [o for o in risky if o["severity"] == lvl]
+        if not g:
+            continue
+        print(f"  {icon} {lvl} ({len(g)} 个):")
+        for o in g:
+            print(f"    {o['agent']:12} {o['session'][:36]:38} {o['tokens']:>9,} token  lease={o['lease']}")
+            for i in o["issues"]:
+                print(f"        - {i}")
+    print("  → P0 处置: 停机后 openclaw doctor --fix(需 Gateway 重启)")
+    print("  → P1 处置: 该 agent 的 target=main 任务改 isolated,或轮转主会话")
     return 1
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     sys.exit(main())

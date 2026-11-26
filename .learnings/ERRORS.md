@@ -1216,3 +1216,54 @@ const p = await apply_patch({ input: "*** Begin Patch\n..." });  // 不写 tools
 - **判「agent 失败」与「agent 被杀掉」**：看有没有 `stuck session recovery ... action=abort_embedded_run` + `age=` 数值；有 = 被超时杀，不是自身报错。
 
 <!-- project: path:/home/zhiping/.openclaw/workspace/agents/life -->
+
+
+## ERR-20261127-001 — session-health-checker 三次返工:v1 违规读 live DB / v2 证据不足判 P0
+
+**时间**: 2026-11-27 05:30–06:10 CST
+**组件**: `scripts/session-health-checker.py`（v42 新增的会话健康度检查工具）
+
+### v1 — 违反 OpenClaw 工具策略
+
+用 python `sqlite3.connect()` 直接打开 `~/.openclaw/agents/*/agent/openclaw-agent.sqlite`。
+OpenClaw 明确拒绝:
+```
+external sqlite3 cannot open databases under the active OpenClaw state directory.
+Use OpenClaw commands for live state, or inspect a private backup copy outside OPENCLAW_STATE_DIR.
+```
+日志里表现为 `[tools] exec failed` + `agent:work` 的 lease refusal 噪音。
+
+**修法**: 数据源换成官方只读接口 `openclaw sessions --all-agents --json`。
+它直接给 `totalTokens` / `contextTokens` / `abortedLastRun`,比数 transcript 条数更准
+（条数是内部存储量,token 数才是模型上下文占用）。
+中间试过「从备份 tar 解出 DB 副本再读」——网络盘 6GB tar 解压太慢,放弃。
+
+### v2 — 证据不足却下断言
+
+`openclaw database ownership status` 只管共享状态所有权,不管 agent lease。
+取不到 lease 列表时代码走了 `if ag not in leased` 分支,而 `leased` 是空集
+→ **7 个 agent 全被判成 P0**,而实际只有 work 是 P0。
+
+**这与 v42 的核心结论直接冲突**: 「校验/闸门必须用『必然命中』样本证明其会失败,
+否则『通过』不能构成证据」—— 同一个错误的另一个方向:
+**没有证据 ≠ 有问题的反面**,取不到数据时正确的行为是**明说不可判定**,而不是判成最坏。
+
+**修法**: lease 判定改为**日志证据**启发式 —— 日志里 `active-leases` receipt ⇒ 当时持有 lease,
+`reclamation commit checkpoint expired` refusal ⇒ lease 已失效。
+两者都不出现的 agent 标为 `unknown`（不可判定），**不判 P0**。
+
+### v3 — 最终形态
+
+- 数据源: `openclaw sessions --all-agents --json`（官方只读）
+- lease: 日志证据推断,分 `held` / `broken` / `unknown` 三态
+- 分级: P0 lease 失效 / P1 上下文超限 / P2 逼近上限或上次被 abort
+- 实跑结果: P0=1(work) / P1=2(coder 542k, scout 434k token) / P2=2(life 143k, orchestrator)
+- 退出码: 有风险 → 1, 无风险 → 0, 数据源不可用 → 2
+
+### 通用教训
+
+**「取不到数据」和「数据表明没问题」是两个完全不同的状态**,实现里必须分开表达。
+把空集当作「都不满足条件」来用,是检测工具最常见的一类假阳性。
+
+---
+

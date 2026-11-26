@@ -1,0 +1,341 @@
+[
+ [
+  "scout-2026-11-27-nvidia-halts-sea-shipments-b300-secondary-market",
+  "news",
+  "US export controls halt Nvidia server shipments to four Southeast Asian countries and push thousands of B300 chips into the secondary market",
+  "",
+  "The Financial Times reported that Nvidia told manufacturing partners including Dell and Supermicro to halt server shipments to Malaysia, Singapore, Thailand and Indonesia, following tighter Commerce Department Bureau of Industry and Security rules designed to close the cloud loophole through which Chinese companies rented advanced Nvidia chips from foreign data centres. US Trade Representative Jamieson Greer told CNBC the goal was to block indirect access including smuggling through Southeast Asia and remote access via third-country data centres. Southeast Asian cloud providers now have 90 days to apply for a licence, an executive said had led to chaos, and banks have already halted about 500 million dollars in loans to Singapore-based provider Aolani for a planned ByteDance deal. The second-order effect is larger than the halted shipments: GPU Mart's Jack Duhamel confirmed to CNBC that dealers have listed an unusually large number of Nvidia GPUs for sale since the announcement, including thousands of B300 chips originally intended for data centres with Chinese rental customers. The signal for this series is that controls are now enforced at the reseller and cloud-licence layer rather than at the manufacturer, and that the enforcement mechanism is an enforcement of who may rent rather than who may buy.",
+  "high",
+  [
+   "nvidia",
+   "export-controls",
+   "hardware",
+   "supply-chain",
+   "high"
+  ]
+ ],
+ [
+  "scout-2026-11-27-china-labs-slowed-export-curbs-distillation-and-data-pivot",
+  "news",
+  "Chinese frontier labs visibly slow: GLM-5.5 slips to Q1 2027, Moonshot development cycle doubles to 12 months, and training data pivots to Google and Meta",
+  "",
+  "Reuters reported, citing sources, that Z.AI's roughly 3-trillion-parameter GLM-5.5, planned for November, is likely to slip into the first quarter of 2027, with the company bridging the gap by releasing the 750-billion-parameter GLM-5.4 on Monday and claiming a new design lets it keep up with systems of 2 to 3 trillion parameters. Without foreign computing power, Moonshot AI's development cycle could double from six to 12 months, likely delaying Kimi K4 until mid-2027, and with OpenAI and Anthropic blocking data scraping for distillation, Moonshot is turning to the latest Google and Meta models for training while stepping up its search for compute capacity in Europe. The Information separately reported that Deepseek internally estimated its gap to top US models could grow from three to six months to nine months if distillation disappears completely, that Moonshot cancelled a 150 million dollar Blackwell deal in Indonesia, and that MiniMax, miHoYo and Alibaba are leaning more heavily on domestic chips and on training data for their own reinforcement learning. Two different mechanisms are now confirmed at once, on the compute side and on the data side, which is the first window where the chip constraint and the distillation constraint are measured together rather than separately.",
+  "high",
+  [
+   "china",
+   "compute",
+   "export-controls",
+   "distillation",
+   "high"
+  ]
+ ],
+ [
+  "scout-2026-11-27-microsoft-artex-autonomous-cyberattack-agents",
+  "news",
+  "Microsoft documents ARTEX, where specialised AI agents run automated cyberattacks at machine speed and switch language models on failure",
+  "",
+  "Microsoft Threat Intelligence published an analysis of ARTEX, an AI-powered penetration-testing framework released in July 2026 whose source was published by GitHub user Autumn-27 and deleted in October, with copies still distributed elsewhere and a commercial Pro version sold by the Chinese security firm ThreatBook. Microsoft says state-backed groups from China and North Korea have integrated ARTEX into operations including Salt Typhoon, Crystal Typhoon, Onyx Sleet and Storm-0940, and that financially motivated groups use it for supply-chain attacks. The framework distributes attack tasks on its own, switches between language models when something fails, drives existing tools such as Metasploit, and operates at machine speed, leaving defenders minutes to respond; it was recently suspected in the intrusion into an analytics system run by the CIA, NGA and ODNI, which surfaced shortly before FinCEN reported a security incident, with FBI and Department of Agriculture incidents earlier. Microsoft's recommended defence is deception rather than blocking, specifically decoy systems and faked success signals that trick the attacking agent into calling off an attack. The structural point is that the attacker now has a per-task cost close to zero and an adaptive model-routing capability, while the defender's lever is behavioural rather than a signature.",
+  "high",
+  [
+   "security",
+   "microsoft",
+   "cyber",
+   "autonomous-attack",
+   "high"
+  ]
+ ],
+ [
+  "scout-2026-11-27-openai-private-inference-pilot",
+  "news",
+  "OpenAI begins piloting Private Inference, processing queries on independently verifiable isolated hardware so enterprise data is never read or retained",
+  "",
+  "CEO Sam Altman said OpenAI is piloting the previously announced Private Inference offering with its first enterprise customers, describing it as a first step toward private intelligence for everyone, and OpenAI is scaling compute capacity for it. Queries are processed on specially isolated hardware whose security can be independently verified, and a companion Private Safety Processing system lets OpenAI scan for abuse without storing customer data, with flagged content encrypted and stored in the customer's own cloud and readable only by a secured review system. The scope is business customers, whose data OpenAI already does not train on; consumer ChatGPT conversations are still used for training by default unless users opt out. Google is pursuing a similar approach with Private AI Compute. This continues the enterprise-adoption thread tracked across recent windows, where the binding constraint on deployment has been trust and review rather than capability, and it pairs with the 1Password incident in the same window, where a breach reached backend account records but explicitly not vault contents.",
+  "medium",
+  [
+   "openai",
+   "privacy",
+   "enterprise",
+   "deployment",
+   "medium"
+  ]
+ ],
+ [
+  "scout-2026-11-27-1password-backend-breach-vaults-intact",
+  "news",
+  "1Password discloses a backend breach that reached account records and private source code, and states that vault contents were never accessed",
+  "",
+  "1Password disclosed an incident in which an attacker executed malicious code against backend services and downloaded administrative data including customer names and email addresses, account and user identifiers, account creation and last sign-in times, public keys, SRP parameters, tokens present in certain emailed invitation, provisioning and recovery links, and non-secret internal metadata. The company states that at no time were customer vault contents accessed by or available to the attacker, and that the keys protecting vaults were not affected. The attacker also copied source code from private repositories and gained access to the CI/CD system, which contains infrastructure secrets; 1Password has triggered rotation of all credentials that may have been exposed and states there is no impact to availability or product security. Because invite and recovery tokens had to be combined with an SSO sign-in or a six-digit emailed code, the company expanded that code from six numeric digits to ten alphanumeric digits. The case is a useful calibration point for agentic threat models: the blast radius stopped exactly at the boundary the architecture was designed to hold, but the adjacent systems, source code and CI, were fully reachable.",
+  "high",
+  [
+   "security",
+   "breach",
+   "1password",
+   "credentials",
+   "high"
+  ]
+ ],
+ [
+  "scout-2026-11-27-amodei-ai-governance-bad-idea-democratic-legitimacy",
+  "news",
+  "Amodei argues AI governance is a bad idea in the same terms he uses against autocracy, while endorsing task automation in bounded domains",
+  "",
+  "In a lengthy post on X, Anthropic CEO Dario Amodei responded to an Axios report that some Anthropic employees believed humanity would safely hand authority to superintelligent systems, and often should, rather than fight for control. He wrote that AI must be governed by legitimate democratic processes, that political decisions should stay in human hands, and that handing over governance to AI is a bad idea in the same way he argues against autocracy, adding that we should never sacrifice legitimacy or self-determination on the altar of efficiency or security. He accepted that automating specific tasks such as driving, developing cancer drugs and writing software could benefit humanity and save lives, but warned of end-to-end automation bringing job disruption and models building new models without human oversight, and that humans would simply prefer to do some activities themselves to stay engaged. He also noted that other AI CEOs repeat human-control slogans while shipping more automation, and said Anthropic refused to allow its existing models to be used for autonomous weapons during its dispute with the Pentagon, willing to risk the company over it. The distinction being drawn is between automating tasks and delegating governance, which is a sharper version of the delegation-versus-review split this series has been tracking.",
+  "medium",
+  [
+   "anthropic",
+   "governance",
+   "policy",
+   "delegation",
+   "medium"
+  ]
+ ],
+ [
+  "scout-2026-11-27-amazon-meta-muse-agentic-commerce-ads",
+  "news",
+  "Amazon and Meta negotiate over Muse as shopping agents reach 51 percent of agentic orders and ads worth 68.6 billion dollars are the sticking point",
+  "",
+  "Amazon and Meta are in talks to end the block on Meta's AI shopping agent Muse in Amazon's online store, with ad revenue and control over search results the main sticking points per Fortune. Amazon worries that shopping agents like Muse could weaken its relationship with customers and bypass the ads on its platform, a business worth 68.6 billion dollars a year, and CEO Andy Jassy said shopping through third-party agents so far has not been more convenient or better than going directly to a retailer, though he did not rule out opening access; any deal would need sign-off from both CEOs. Amazon previously blocked Perplexity and the US appeals court later allowed Perplexity's agent back. Muse is Meta's most successful consumer AI product with more than 10 million users in the US and Canada, and Meta is already seeing Instagram ad gains because Muse helps users organize saved products. Forter Intelligence data has Muse at 51 percent of all agentic orders, Grok at 24 percent and ChatGPT at 22 percent. The interesting number is the 51 percent, because it means the agentic channel has become the primary demand-side surface and the platform's ad business is now structurally exposed to it.",
+  "medium",
+  [
+   "commerce",
+   "agents",
+   "meta",
+   "amazon",
+   "medium"
+  ]
+ ],
+ [
+  "scout-2026-11-27-fcc-spacex-1m-starmind-orbital-ai-datacenters",
+  "news",
+  "FCC clears SpaceX for up to 1 million satellites carrying orbital AI data centres, with radio links as optical fallback",
+  "",
+  "The Federal Communications Commission has authorized SpaceX to deploy up to 1 million satellites for orbital data centres, according to Reuters. The Starmind constellation of orbital compute modules is intended to meet part of the growing demand for AI computing power on Earth, and the FCC also approved radio links that let SpaceX monitor and control the satellites if their optical connections fail. This is a capacity-side answer to the compute constraint that dominates this window's other stories: the same week that export controls closed one route to advanced chips, a regulator cleared a route to move compute off the planet entirely. The scale of the authorization, one million spacecraft, is far beyond any launched constellation and sits with the physical limits of launch cadence and orbital debris rather than with semiconductor supply.",
+  "medium",
+  [
+   "compute",
+   "spacex",
+   "infrastructure",
+   "fcc",
+   "medium"
+  ]
+ ],
+ [
+  "scout-2026-11-27-openai-matrix-multiplication-omega-9-over-4-and-fourier-lower-bound",
+  "news",
+  "OpenAI claims the matrix multiplication exponent is exactly 9/4 and a matching lower bound on Fourier-transform gate count, and a researcher reacts with open astonishment",
+  "",
+  "Scott Aaronson wrote that after OpenAI's and Anthropic's proofs of VP not equal VNP, and hot on the heels of the Alpage and Anthropic proof of the Riemann hypothesis, OpenAI claimed that the exponent of matrix multiplication omega is exactly 9/4, a lower bound matching the upper bound OpenAI proved in the October 6 Mathocalypse drop. He said the first shock is that the answer to a central mystery of algorithms dating to Strassen in the late 1960s is a rational number, and that the AI was able to prove a lower bound of the form omega greater than 2, which he had never expected to be much easier than P not equal NP. During dessert, a further OpenAI release proved the true number of linear gates needed to compute the Fourier Transform is N log N to the one half plus o(1), improving on the FFT bound from the 1960s and on OpenAI's own October release, with a matching lower bound. The HN thread reached 1823 points. The verification-economics thread from prior windows continues to apply, since the earlier window already established that a machine-checkable artifact can still be unreadable, and the review cost of a 17-million-line proof is the part that does not scale with the claim.",
+  "high",
+  [
+   "openai",
+   "math",
+   "proof",
+   "verification",
+   "high"
+  ]
+ ],
+ [
+  "scout-2026-11-27-gpt62-astra-codegolf-records-and-usage-limits",
+  "news",
+  "GPT-6.2 Astra is the first model to beat Googlers 2015 code-golf records, on 32 problems in 8 languages scored by byte count, and OpenAI simultaneously tightens usage limits",
+  "",
+  "bjin revived an internal Google code-golf site from 2015 as a benchmark: 32 problems, 8 languages, 256 cells, each model given 30 minutes per problem in each language to make its solution as short as possible, scored by byte count rather than by whether the code works, against the oracle of the known best and the recorded human records. The leaderboard on HN at 434 points reports that GPT-6.2 Astra is the first model to beat Googlers' own records. Separately in the same window, a thread reporting OpenAI cutting GPT-6.2 usage with Astra hitting limits 40 percent faster and Sol 25 percent faster reached 415 points. The pairing is the substantive part: a benchmark whose scoring function is byte count with a hard human record to beat is unusually resistant to the reward-hacking and grader-manipulation problems that this series has flagged in agent benchmarks, because the grader is a rule-based byte comparison, and it is being used exactly as the field is being told to price frontier capability against a measured frontier artifact.",
+  "high",
+  [
+   "openai",
+   "gpt-6",
+   "benchmark",
+   "code-golf",
+   "high"
+  ]
+ ],
+ [
+  "scout-2026-11-27-arxiv-176-new-patch-necessity-memory-hallucination-and-coverage-benchmarks",
+  "news",
+  "arXiv publishes 176 new papers, and the strongest signals are that agent patches are not mostly over-editing, that memory hallucination is a use-time conflict, and that benchmarks now measure coverage rather than a score",
+  "",
+  "The arXiv API returned the 11-25 batch, and comparing against all 2334 historical ids confirms 176 genuinely new papers, with the published-date histogram led by 11-25 at 196 entries then 11-24 at 37, 11-23 at 47, 11-22 at 30, 11-21 at 26, 11-20 at 40, 11-19 at 11 and 11-18 at 13. Theme counts by keyword: eval-bench 113, coding-agent 42, planning-reasoning 39, multi-agent 26, rl-training 25, agent-safety 23, memory 20, security 18, interpretability 18, tool-use 8, MCP 2. Five papers carry most of the signal. How Much Do Coding Agents Over-Edit introduces Delta Residue Attribution, replaying 7,660 resolved GitHub Copilot CLI trajectories from 18 frontier models on SWE-bench Verified and DeepSWE, reverting each unit of the final patch and rerunning tests to decide whether the unit is needed; agent patches do change more lines than developers', but on SWE-bench Verified most extra edits add tests (61 percent) and documentation (13 percent) while on DeepSWE most extra edits are code (58 percent), agents' code is on average at least as necessary as developers', 11 percent of an agent patch code units on SWE-bench Verified are still unneeded and 89 percent of those change behavior, and code necessity is unrelated to resolve rate on SWE-bench Verified while negatively correlated on DeepSWE at Spearman -0.59. TASK Memory finds use-time memory hallucinations across five open models, with memory-ignoring up to 46 percent of queries, memory-misapplying up to 24 percent and 49 percent when retrieval is combined with weight editing, and version confusion at 53 percent, addressed by combining a text note with activation steering and knowledge editing. Solve Vision with Code poses identical visual-reasoning tasks to video models and to coding agents that render the answer video, on a 500-instance suite with symbolic ground truth, and finds coding agents are the stronger visual reasoners. SPLICE addresses the all-fail group problem in group-based RL on long-horizon agent tasks by splicing learner-conditioned options into failed current-policy trajectories instead of importing complete solutions from a stronger model. HoMe treats the memory harness, code prompts and configuration for construction maintenance retrieval and generation, as an optimizable artifact, with session-level memory versioning and execution traces to localise shared failure mechanisms. And Tune for Retention challenges the premise that SFT is inherently prone to catastrophic forgetting, showing that jointly choosing hyperparameters for gain and retention lets vanilla SFT retain prior capabilities far better than previously suggested.",
+  "high",
+  [
+   "arxiv",
+   "evaluation",
+   "memory",
+   "coding-agent",
+   "high"
+  ]
+ ],
+ [
+  "scout-2026-11-27-github-7-new-tags-all-dependency-bumps-ghsa-flat-fifth-window",
+  "news",
+  "GitHub ships 7 new tags, all of them dependency bumps, while commit volume holds at 85 and GHSA stays flat for a fifth window",
+  "",
+  "Across 11 tracked repositories 7 new tags appeared, all on 2026-11-26: openai-python v3.60.0, and six vercel/ai packages, ai@5.0.294, ai@6.0.338, ai@7.0.183, and @ai-sdk/zai@1.0.14, @ai-sdk/zai@2.0.24 and @ai-sdk/zai@3.0.59. All six vercel/ai releases are dependency-only patch bumps with no functional change, driven by a single upstream commit 80d778a updating @ai-sdk/provider-utils to 5.0.85 and @ai-sdk/gateway to 4.0.156. Commit activity was 85: vercel/ai 20, anthropics/anthropic-sdk-python 20, anthropics/claude-code 20, openai/openai-python 18, modelcontextprotocol/modelcontextprotocol 7, and modelcontextprotocol/servers 0. The openai-python v3.60.0 release body is the substantive part even though the version bump is small: it adds spend alerts and response compaction fields, supports updating session vaults, clarifies message retries and Batch endpoints, clarifies Realtime audio noise reduction, and documents inline skill upload limits. The GHSA advisory feeds returned zero growth for a fifth consecutive window, with MCP servers at 29 advisories and MCP registry at 5, and MCP servers shipped zero commits in the window, which is the first fully silent repo in the tracked set.",
+  "medium",
+  [
+   "github",
+   "release",
+   "mcp",
+   "ghsa",
+   "low"
+  ]
+ ],
+ [
+  "scout-2026-11-27-trend-constraints-bind-on-both-sides-eval-shifts-to-coverage-and-necessity",
+  "trend",
+  "The window turns on a three-way split: chip controls and data controls are now binding on frontier capability, the attacker marginal cost is falling to machine speed, and evaluation is moving toward coverage and necessity rather than a score",
+  "",
+  "Three constraints bound this window's frontier capability simultaneously and from both sides. On the supply side, Nvidia halted server shipments to four Southeast Asian countries under rules designed to close the cloud rental loophole, pushing thousands of B300 chips into the secondary market, and in the same week Reuters reported GLM-5.5 slipping to Q1 2027 and Moonshot's cycle doubling to 12 months, with Chinese labs losing distillation data and pivoting training to Google and Meta models. On the security side, Microsoft's ARTEX analysis documents autonomous attacking agents that redistribute tasks, switch language models on failure and run at machine speed, with defenders pushed toward deception and fake success signals, and 1Password disclosed a breach that reached backend account records and private source code while vault contents held, showing that the boundary the architecture was designed to hold did hold. On the evaluation side, Delta Residue Attribution measured what 7,660 agent trajectories across 18 models actually changed and found that agents are not mostly over-editing, with 89 percent of unneeded code units still changing behaviour, DRBench Pro makes structured knowledge coverage the primary target for deep research agents, and the code-golf benchmark scores byte counts against 2015 human records, which is close to unhackable by comparison with the agent benchmarks that scored near-perfect without solving the tasks. The common thread is that every credible measurement this window is of a countable property, lines changed, bytes written, vulnerabilities fixed, orders routed, chips withheld, accounts exposed, rather than of model quality in the abstract, and that the two sides of the market, frontier labs and the attackers, are both now operating under explicit physical and legal constraints rather than under capability constraints.",
+  "high",
+  [
+   "trend",
+   "export-controls",
+   "security",
+   "evaluation",
+   "high"
+  ]
+ ],
+ [
+  "scout-2026-11-27-arxiv-2611_34934",
+  "arxiv",
+  "Attack Policy Selection can Mislead Monitor Evaluators",
+  "2611.34934",
+  "AI monitors, classifiers that flag dangerous behaviour by AI agents, are often evaluated against transcripts generated by attack policies acting as proxies for dangerous behaviour in deployment. We evaluate an ex-production OpenAI monitor as a case study and find that measured false negative rate is highly sensitive to both the method used to generate attack policies and the level of optimisation applied within that method. This rate ranged from 0.5\\% to 20.8\\% across optimisation levels of a single method (reinforcement learning), and from 6.4\\% to 23.0\\% across methods at their best observed optimisation level (optimised prompting vs.\\ transcript editing). Every attack policy was developed against proxy monitors only: all reported results show attacks transferring to the held-out GPT-5.4 target monitor. Our results suggest that monitor evasion evaluations can easily mislead: an evaluation using only basic attack methods may give false confidence that a monitor is strong. The sensitivity to attack-policy choice raises a problem: interpreting any particular result as evidence about deployment performance requires justification. The transcripts produced by attack policies are proxies for the dangerous behaviour a monitor must flag in deployment. These proxies can introduce visible artefacts, such as reasoning about a ``side task'' absent from the instructions shown to the monitor, that affect monitor judgements. Given the sensitivity above, the choice of proxy can change an evaluation's conclusion. Reading these results as evidence about deployment therefore requires a separate legitimacy argument for why the proxies are informative, including any justification of conservativeness. Making convincing arguments remains an open problem.",
+  "high",
+  [
+   "agent-safety",
+   "monitor",
+   "evaluation"
+  ]
+ ],
+ [
+  "scout-2026-11-27-arxiv-2611_34920",
+  "arxiv",
+  "$μ$-Bench: Benchmarking Multi-User Task Completion in Shared Interaction Voice Agents",
+  "2611.34920",
+  "Voice agents in shared spaces must satisfy interdependent multi-user requests while upholding per-user authority, privacy, and task constraints. Existing evaluations offer limited coverage when participants react throughout a session. We introduce $μ$-Bench, a benchmark for joint task completion in closed-loop, full-duplex multi-user voice interaction. Simulated participants act from isolated profiles of goals, knowledge, and permissions, adapting to the agent's speech and tool outcomes. Across 20 domains, 100 scenarios vary group size, acoustics, and follow-up demands to form 800 cases (408 tool-augmented, 392 tool-free). Joint Task Success (JTS) requires all user goals, privacy boundaries, and terminal states to hold jointly, while Pure JTS further disallows unauthorized tool calls; Attribution, Threading, and Coordination (ATC) diagnostics localize failures. Across 13 voice agents, proprietary systems peak at 62.24\\% tool-free and 65.44\\% tool-augmented success, while open-weight models remain below 20\\%. ATC diagnostics show that open-weight models lag primarily in multi-turn attribution and threading, and controlled contrasts reveal that larger groups consistently degrade joint task success across capable systems. By coupling reactive multi-user simulation with verifiable session-level outcomes, $μ$-Bench provides a rigorous testbed for shared voice agents.",
+  "medium",
+  [
+   "benchmark",
+   "voice-agent",
+   "multi-user"
+  ]
+ ],
+ [
+  "scout-2026-11-27-arxiv-2611_34875",
+  "arxiv",
+  "How Much Do Coding Agents Over-Edit, and Why? An Empirical Study of Unneeded Edits in Repository-Level Agent Patches",
+  "2611.34875",
+  "Agent patches are larger than developers', which is widely read as over-editing. But patch size does not say whether the extra edits are needed, what they are, or where they come from. We introduce Delta Residue Attribution (DRA), which replays agent trajectories, traces every block (unit) of the final patch to the step that wrote it, reverts each unit, and reruns the task tests to decide whether the unit is needed. We apply DRA to 7,660 resolved GitHub Copilot CLI trajectories from 18 frontier models on SWE-bench Verified (6,728) and DeepSWE (932), and grade developer patches using the same method. Agent patches do change more lines than developers'; on SWE-bench Verified the majority of extra edits add tests (61%) and documentation (13%) while on DeepSWE, most extra edits are code (58%). On both benchmarks, agents' code is on average at least as necessary as developers' (mean $NP_{code}$ 0.887 vs. 0.864 on SWE-bench Verified, where 11 of 18 models leave less unneeded code than developers, and 0.797 vs. 0.785 on DeepSWE). On average, 11% of an agent patch's code units on SWE-bench Verified are still unneeded, and 89% of those change behavior. Debug steps write almost none of the unneeded code. Code necessity differs substantially by model; it is unrelated to resolve rate on SWE-bench Verified and negatively correlated with it on DeepSWE (Spearman -0.59, p = 0.01). On SWE-bench Verified, pruning with DRA using only the tests the agent can see (its own tests and the repository's) removes the majority of unneeded code but also some needed code (67% recall, 46% precision), and 89% of pruned patches still resolve the task; asking the agent to audit its own diff is more precise but less effective (36% recall, 66% precision). We recommend that benchmarks report code necessity next to resolve rate and that over-editing be addressed through model training and harness-level pruning.",
+  "high",
+  [
+   "coding-agent",
+   "evaluation",
+   "patch",
+   "over-editing"
+  ]
+ ],
+ [
+  "scout-2026-11-27-arxiv-2611_34852",
+  "arxiv",
+  "DRBench Pro: A Knowledge-Centric Benchmark for Professional Deep Research Agents",
+  "2611.34852",
+  "Deep research agents gather information from multiple sources and synthesize it into reports on complex, open-ended questions. Existing benchmarks assess report quality along several dimensions, but lack a dedicated knowledge-centric evaluation of which research directions a report covers and how deeply it explores them. We introduce DRBench Pro, a benchmark that makes structured knowledge coverage the primary evaluation target. Our automated pipeline builds local knowledge trees from Wikipedia and uses sampled subgraphs to generate research queries and evidence-grounded rubrics. Each rubric corresponds to a relation in the tree, preserving the structure of the knowledge being evaluated. Agents receive only the research query. This structure allows us to measure breadth across major research directions and depth along related knowledge chains, with their geometric mean giving overall coverage. The benchmark includes 144 cases across 24 domains and 44,102 rubrics. Evaluating 16 deep research agents reveals different strengths in breadth and depth, with the best-performing agent reaching 57.04% overall coverage. Rubric judgments agree closely with human annotations, and agent rankings remain stable across the tested metric configurations.",
+  "medium",
+  [
+   "benchmark",
+   "deep-research",
+   "coverage"
+  ]
+ ],
+ [
+  "scout-2026-11-27-arxiv-2611_34813",
+  "arxiv",
+  "Solve Vision with Code: Coding Agents Are Stronger Visual Reasoners Than Video Models",
+  "2611.34813",
+  "Video generation models are increasingly evaluated as visual reasoners: given a first frame and a natural-language prompt, can the model produce the video in which the specified task is carried out? The paradigm is considered advantageous because the reasoning is native to the visual medium, unfolding directly in the frames rather than through language or code. Whether this native route is in fact the more reliable path to visual reasoning has not been tested against a symbolic alternative under the same conditions. We therefore pose the same tasks, with identical inputs, output specification and evaluator, to both media: rather than denoising pixels, a coding agent writes a program that renders the answer video, which an unmodified rule-based evaluator scores. On VBVR-Pro-Bench (Xu et al., 2026), a 500-instance suite spanning five cognitive categories with symbolic ground truth, the agent receives the same first frame and prompt as the video model, with no access to ground truth, metadata or generation models, and one attempt per instance. Three closed-model agents (Codex with gpt-6-astra, Claude Code with Fable 5.1 and Gemini CLI with Gemini 3.1 Pro) score 0.923, 0.894 and 0.893, each more than 0.22 above the strongest video model. Among 23 runnable open-weight models, the best, GLM-5, reaches 0.572, above all video models except the RL-trained one. Together, we show that for tasks whose solutions can be computed from a first frame and a prompt, program synthesis is currently a substantially more reliable route to visual reasoning than video generation. We further distinguish depictive programs, which navigate the image to recover a transferable scheme, from propositional programs, which operate on hard-coded values, revealing how visual reasoning unfolds in agent-written programs and what it implies for its nature of reasoning in general.",
+  "high",
+  [
+   "coding-agent",
+   "vision",
+   "evaluation"
+  ]
+ ],
+ [
+  "scout-2026-11-27-arxiv-2611_34777",
+  "arxiv",
+  "When Every Rollout Fails: Splicing Learner-Conditioned Options into Long-Horizon Agent RL",
+  "2611.34777",
+  "Group-based reinforcement learning with verifiable rewards often yields all-fail groups on long-horizon agent tasks: every sampled trajectory receives zero reward, leaving group-relative methods without a reward-based policy gradient. A common remedy supplies complete solutions from a stronger model, but full trajectories are expensive and expose the learner to long off-policy histories. We introduce SPLICE, which constructs local training targets from failed current-policy trajectories online. For each all-fail group, a proposal model selects a splice point in a current-policy trajectory and generates several bounded options from that point. We estimate each option's value using repeated current-policy continuations, convert positive estimates into a return-weighted local target, and fit the current policy on the options. We evaluate SPLICE across two policy families on two long-horizon agent tasks, Software Engineering with SWE-bench Verified and Deep Research with BrowseComp-Plus. SPLICE outperforms GRPO and full-trajectory guidance baselines in all four settings, improving over GRPO by 2.8--9.8 percentage points. On initially failed SWE tasks, it raises GRPO's graduation rate by 10.8 percentage points. Further experiments show that SPLICE improves performance while reducing costly proposal-model computation.",
+  "medium",
+  [
+   "rl-training",
+   "long-horizon",
+   "agent"
+  ]
+ ],
+ [
+  "scout-2026-11-27-arxiv-2611_34762",
+  "arxiv",
+  "TASK Memory: Beyond Text-Only Memory with Activation Steering and Knowledge Editing against Memory Hallucination",
+  "2611.34762",
+  "LLM agents increasingly rely on external memory, yet they still hallucinate about what they remember. Often the correct memory is retrieved and placed in the prompt, but the answer contradicts it or the memory is applied to the wrong question. We call these use-time memory hallucinations. Across five open models, we find that they arise from the conflict between parametric knowledge and external memory and take three forms: memory-ignoring, where the model returns to a stale fact in its weights (up to 46% of queries); memory-misapplying, where it attributes the memory to unrelated entities (up to 24%, and 49% when retrieval is combined with weight editing); and version confusion, where 53% of answers about revised facts assert the superseded value when both versions remain stored. We propose TASK memory, which goes beyond text-only memory by combining a Text note with Activation Steering and Knowledge editing that share one in-model address. The text holds the content. A removable knowledge edit supplies the address through its subject key and supports multi-hop composition. A pair of steering vectors decides, query by query, whether the model adopts the memory or keeps its own answer; the vectors store no content and control how the text memory is used. On frozen models under a pre-registered, test-once protocol, TASK reduces memory-ignoring hallucinations to at most 1.5% in all ten model-dataset cells and cuts neighbour misuse from 39.2% to 7.5% (+10.8 pp composite on CounterFact). It improves a 300-memory library over BM25 RAG by 16.4 pp, an advantage that holds at 3,000 memories, resolves fact revisions without fact IDs, and adds 7.5 pp of multi-hop accuracy on MQuAKE. 21 of 23 cross-model comparisons (8B-27B, four families) are significant, and TASK beats three recent context-steering methods in 9 of 10 model-dataset cells.",
+  "high",
+  [
+   "memory",
+   "hallucination",
+   "activation-steering"
+  ]
+ ],
+ [
+  "scout-2026-11-27-arxiv-2611_34675",
+  "arxiv",
+  "RoboEvo$^2$: Recursive Robot Self-Improvement via Harness-Policy Co-Evolution",
+  "2611.34675",
+  "Robots should adapt to unfamiliar environments and acquire new skills through interaction, then execute those skills efficiently with practice. Vision-language-action policies provide efficient control, but often need additional human demonstrations to handle unfamiliar settings; reasoning agents can discover solutions using broad prior knowledge and robot-control APIs, but repeated deliberation and repair are costly. Inspired by human learning through reasoning and practice, we propose RoboEvo$^2$, a framework for recursive harness-policy co-evolution. In Policy-to-Harness (P2H) evolution, policy failures guide a coding agent to search complementary Code, Code+ICL, and Code+Policy routes, consolidating verified solutions into reusable skills, routing strategies, and experience memory. In Harness-to-Policy (H2P) evolution, verified trajectories provide supervised training, while Counterfactual Preference Distillation (CPD) teaches the policy to favor successful corrections over failures from the same starting state. The improved policy provides stronger motor skills for subsequent search, while its remaining failures redirect harness evolution, closing the reciprocal loop. Through recursive co-evolution without additional human demonstrations, RoboEvo$^2$ improves standalone success from 11.0% to 84.1% and hybrid success from 30.4% to 90.5% on LIBERO-PRO, with similar gains and reduced agentic costs on RoboTwin C2R. Further experiments demonstrate autonomous task acquisition, cross-embodiment harness transfer, and 95.0% hybrid success on the Unitree G1-D. Our models and code will be publicly released.",
+  "medium",
+  [
+   "robotics",
+   "self-improvement",
+   "harness"
+  ]
+ ],
+ [
+  "scout-2026-11-27-arxiv-2611_34646",
+  "arxiv",
+  "REE: A Scientific Research Entrance Exam for AI Agents",
+  "2611.34646",
+  "Autonomous research agents are emerging as a promising approach to scientific problem-solving across disciplines, owing to their growing ability to improve a solution through repeated experiments. Evaluating this ability requires benchmarks that pose open-ended research problems and measure improvements over established scientific methods. We introduce REE (Research Entrance Exam), a benchmark that tests AI agents on scientific research. It consists of 100 open-ended research problems spanning five broad scientific areas and 23 domains. To ensure high quality, every problem is drawn from active research in its field and individually reviewed by domain experts. Each problem is posed as a task of iterative improvement: an agent has up to 12 hours to improve a working starter solution, and REE scores the result on a common scale against an established expert solution evaluated under comparable conditions. By this measure, two of the four frontier agents we evaluate, Claude Opus 5.5 and GPT-6.1 Sol, outperform the expert solutions on 86% and 81% of problems, across all five scientific areas. Their runs also show how they do so: both agents surpass the expert solutions within the first two hours on average, and their best solutions mostly tailor or combine established methods of the field. REE thus provides a unified framework for evaluating autonomous scientific research, capturing both improvements over established methods and the research processes behind them.",
+  "medium",
+  [
+   "benchmark",
+   "science",
+   "research-agent"
+  ]
+ ],
+ [
+  "scout-2026-11-27-arxiv-2611_34624",
+  "arxiv",
+  "HoMe: Toward Practical Harness Optimization of Memory Systems for AI Assistants",
+  "2611.34624",
+  "The behavior of memory systems for long-running AI assistants is governed by a harness, which consists of the code, prompts, and configurations for memory construction, maintenance, retrieval, and answer generation. However, optimizing the harness of a memory system remains largely manual, and unrestricted editing alone does not ensure structural improvements. In this paper, we introduce HoMe, an evaluation-driven framework that iteratively evaluates candidate harnesses and derives each new candidate from any previously evaluated harness by editing any part of it. HoMe combines session-level memory versioning with execution traces to identify shared failure mechanisms across cases and localize them to the responsible sessions and harness components. It encourages early structural exploration through candidate gating and reduces evaluation cost through smoke tests, adaptive sampling, and the reuse of constructed memory. We validate HoMe with the open-source memory system ReMe on two large-scale long-horizon memory benchmarks, LongMemEval-S and BEAM. With six formal candidate evaluations per benchmark, after a full initial evaluation, HoMe discovers harnesses that improve end-task performance over the originally strong harness while consuming far fewer query-time tokens. The code is available at https://github.com/agentscope-ai/ReMe.",
+  "medium",
+  [
+   "memory",
+   "harness",
+   "optimization"
+  ]
+ ],
+ [
+  "scout-2026-11-27-arxiv-2611_34579",
+  "arxiv",
+  "Tune for Retention, Not Just Gain: SFT Forgets Far Less than You Think",
+  "2611.34579",
+  "Catastrophic forgetting, the drastic loss of previously acquired capabilities when learning new ones, is a central challenge in language model fine-tuning. Supervised fine-tuning (SFT) is widely believed to be prone to such forgetting. Recent works have attributed this to the off-policy nature of SFT, arguing that on-policy learning is key to continual learning. In this paper, we challenge this premise. We show that while maximizing new-task performance can induce catastrophic forgetting, alternative hyperparameter choices (lower learning rate and batch size) can yield similar gains with little to no forgetting. With hyperparameters selected jointly for gain and retention, vanilla SFT retains prior capabilities far better than previously suggested and can be competitive with Self-Distillation Fine-Tuning (SDFT), an on-policy approach designed to mitigate forgetting. While SDFT can be more robust to hyperparameter choices, it also requires a retention-aware criterion to identify hyperparameter configurations that avoid catastrophic forgetting. Our results challenge the view that on-policy training is what enables learning with retention and raise broader questions about what drives catastrophic forgetting during fine-tuning.",
+  "medium",
+  [
+   "fine-tuning",
+   "forgetting",
+   "continual-learning"
+  ]
+ ]
+]
