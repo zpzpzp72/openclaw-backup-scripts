@@ -8,6 +8,12 @@
 #   ① 正例:必然命中的样本 → 必须报错 + 退出码非 0
 #   ② 反例:干净样本     → 必须放行 + 退出码 0
 # 只有两者都通过,闸门才被认为可信。
+#
+# ★ 本文件自身【不得包含任何完整 token 串】,否则它会被 push 前闸门
+#   (以及 GitHub push protection)拦下 —— 2026-11-26 连踩四次:
+#   ① 样本直接写死 ② 运行时拼装但仍写死 ③ 分段拼接但拼起来仍是完整串
+#   ④ 片段本身已够长(单个字面量就已构成完整形态)。
+#   正解: 每段都不够长,只有【运行时拼接后】才形成完整形态。
 set -uo pipefail
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 TMP="$(mktemp -d)"
@@ -27,21 +33,15 @@ check() {  # check <名称> <期望:hit|clean> <文件> <闸门命令...>
   fi
 }
 
-# 样本在运行时拼装,不写进仓库 —— 否则本文件自身会被 push 前闸门拦下
-# (2026-11-26: 自测脚本入库后,闸门命中了脚本里的样本串 → push 被自己拦住)
-# token 由字符逐段拼接而成 —— 文件里【不出现完整 token 串】,
-# 否则本文件自身会被 push 前闸门(或 GitHub push protection)拦下。
-# 2026-11-26 连续两次踩这个坑:前一次是样本直接写死,后一次是"运行时拼装"但仍写死。
-SAMPLE_TOKEN="pk.eyJ1IjoiaGFkbGciOiJIUzI1NiJ9."
-SAMPLE_TOKEN="${SAMPLE_TOKEN}payload.signature"
-printf '{"mapbox":{"apiKey":"%s"},"k":1}' "$SAMPLE_TOKEN" > "$TMP/hit.json"
-unset SAMPLE_TOKEN
-printf '{"mapbox":{"apiKey":"pk.eyJ[REDACTED]"},"k":1}' > "$TMP/clean.json"
+# 样本在运行时生成:每段都不够长,拼接后才形成完整形态 → 文件内零完整 token 串
+python3 -c "import json,secrets;p='pk'+'.eyJ1Ijoi'+secrets.token_hex(24);print(json.dumps({'mapbox':{'apiKey':p},'k':1}))" > "$TMP/hit.json"
+python3 -c "import json;print(json.dumps({'mapbox':{'apiKey':'pk.eyJ[REDACTED]'},'k':1}))" > "$TMP/clean.json"
 printf 'plain text no secrets here\n' > "$TMP/clean.txt"
 
 echo "=== 闸门自测 ==="
 check "pre-push-secret-guard (hit)"  hit  "$TMP/hit.json"  python3 "$SCRIPT_DIR/pre-push-secret-guard.py" --file "$TMP/hit.json"
 check "pre-push-secret-guard (clean)" clean "$TMP/clean.json" python3 "$SCRIPT_DIR/pre-push-secret-guard.py" --file "$TMP/clean.json"
+
 # sanitize-secrets 是「执行器」不是「闸门」:成功时退出码 0 才是正确行为。
 # 因此它的用例判据是「执行后内容已脱敏」,而不是「退出码非 0」。
 cp "$TMP/hit.json" "$TMP/san.json"
