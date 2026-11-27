@@ -169,15 +169,25 @@
   "delivered_reporting": "sessions_send 返回 accepted/queued 不代表送达；必须看 delivery.status 且等对端回执",
   "delivery_status_2026-11-28": {
     "note": "sessions_send 需三段验证：accepted/queued → runId 被调度 → 对端实际处理",
-    "87ca61fc_0545": "✅ 已确认送达（runId 被 main session 调度，sessionId=98db6fd5…，无 abort）",
-    "6089f4bb_0605": "❌ 未送达（0 命中，对照组 62）—— main 当时繁忙",
+    "87ca61fc_0545": "✅ 已确认送达（runId 被 main session 调度，无 abort）",
+    "6089f4bb_0605": "❌ 未送达（0 命中 / 对照 62）",
     "494325e6_0610": "❌ 未送达（0 命中）",
-    "pending": "NAS 回收站已自愈(1 文件/245G)、/mnt/c 已恢复 40G 两处更正尚未传达 main"
+    "11cdf386_0612": "❌ 未送达（0 命中）— main session 随后终止，排队消息未获调度",
+    "mitigation": "两处过期数据已固化到 agents/shared-memory/cross-agent-log.md，不依赖 main 收信"
   },
   "mnt_c": {
     "free_g": 40,
     "vhdx_allocated_gb": 81,
     "native_backup_inside_g": 41,
     "conclusion": "10G 凹陷 = 备份窗口瞬时占用，已自行恢复；长期趋势 → KEEP 7→3 可省 ~25G"
+  },
+  "work_p0_status": {
+    "leases": 0,
+    "errors_per_hour": 66,
+    "mechanism": "瞬时拒绝(1~2ms) → 授权通道被拒，非超时",
+    "active_sessions": 1,
+    "active_event_sessions": 17,
+    "recommended": "先只重启观察（11-23 同款重启曾修好 health），不行则 doctor --fix",
+    "backup": "/tmp/openclaw/work-agent.sqlite.bak.20261128 (16068608 B)"
   }
 }
