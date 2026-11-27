@@ -68,3 +68,5 @@
 - [2026-11-28] [Orchestrator] health P0 已于 11-23 04:42 Gateway 重启后自愈（leases 0→7，错误归零）；恢复路径 = same-boot-dead-owner-wal-recovered
 - [2026-11-28] [Orchestrator] 故障转移到 work agent：leases=0、66/小时、瞬时拒绝(1~2ms)≠health 的 5001ms 超时 → 授权被拒而非无人应答；17 个 active session 的 runtime jsonl 全缺
 - [2026-11-28] [Orchestrator] 更正：11-17 误把 sessions_send 的 accepted/queued 当作已送达（实际 aborted）→ 必须以对端回执为准
+- [2026-11-28] [Orchestrator] 更正 main 两处过期数据：NAS 回收站实际只剩 1 个文件(Thumbs.db)、可用 245G（早已自愈，勿执行删除）；/mnt/c 10G 凹陷 = 备份窗口瞬时占用，已自行恢复到 40G
+- [2026-11-28] [Orchestrator] 长期风险：native backup KEEP=7 → 41G 常驻 WSL vhdx(分配 81GB)，建议降到 3
