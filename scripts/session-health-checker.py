@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-'''会话健康度检查 (2026-11-28 v4) —— 全部走官方只读接口,不碰 live DB。
+'''会话健康度检查 (2026-11-28 v5) —— 全部走官方只读接口,不碰 live DB。
+
+★ v5 修正: 取不到数据 ≠ 数据表明没问题。
+  v4 在 cron 环境下 openclaw CLI 不在 PATH -> sessions 静默失败 -> 返回空列表 ->
+  打印「✅ 未发现处于风险状态的主会话」= 假阴性。一个从不报错的检查等于没有检查。
+  v5: 数据取不到时返回 rc=2 并明确标注「本轮结论无效」,绝不打印 OK。
 
 检测项:
   P0   lease 失效      -> 写操作 100% 失败
@@ -7,12 +12,6 @@
   P1   上下文占用过高   -> 续用该会话且读大量历史会 context overflow
   P2   逼近上限 / 上次被 abort
   WARN 全局 fallback 链末位是小上下文模型 (只报告, 改配置需 ZP 批准)
-
-机制背景 (2026-11-28 实测):
-  会话的 contextTokens 会被最后一次跑过的模型钉死。
-  11-26 news-digest 那轮 fallback 落到 ollama/qwen3:4b-instruct(8192),
-  把该 cron 会话上限永久写成 8192 -> 之后换大模型也按 8192 算预算 ->
-  输入 12903 > 8192 -> 必然 Context overflow, 且会反复发生。
 
 判据来源 (v42): 任务健康与否不取决于属于哪个 agent,
   而取决于它续用的那个会话是否还是可用资产。
@@ -30,17 +29,36 @@ PINNED_CTX_LIMIT = 32768
 LOG_GLOB = '/tmp/openclaw/openclaw-*.log'
 LOG_TAIL_LINES = 20000
 CONFIG_PATH = os.path.join(os.path.expanduser('~'), '.openclaw', 'openclaw.json')
+RC_OK = 0
+RC_RISK = 1
+RC_NODATA = 2
 
 
 def run_json(cmd):
+    '''返回 (data, err)。err 非空表示这一取数失败了 —— 调用方必须区分。'''
     try:
         r = subprocess.run(cmd, capture_output=True, text=True, timeout=180)
-        d = json.loads(r.stdout or '{}')
-        if isinstance(d, (dict, list)):
-            return d
-        return {}
     except Exception as e:
-        return {'__error__': str(e)}
+        return None, 'exec 异常: ' + str(e)
+    if r.returncode != 0:
+        return None, 'rc=' + str(r.returncode) + ' stderr=' + (r.stderr or '').strip()[:200]
+    try:
+        d = json.loads(r.stdout or '')
+    except Exception as e:
+        return None, 'JSON 解析失败: ' + str(e) + ' raw=' + (r.stdout or '')[:120]
+    if not isinstance(d, (dict, list)):
+        return None, '返回类型异常: ' + type(d).__name__
+    return d, None
+
+
+def sessions_items(limit):
+    d, err = run_json(['openclaw', 'sessions', '--all-agents', '--json', '--limit', str(limit)])
+    if err:
+        return [], err
+    items = d if isinstance(d, list) else (d.get('sessions') or d.get('items') or [])
+    if not items:
+        return [], 'openclaw sessions 返回 0 条记录(异常:正常应有数百条)'
+    return items, None
 
 
 def gateway_pid():
@@ -53,7 +71,6 @@ def gateway_pid():
 
 
 def lease_evidence():
-    # 从 Gateway 日志推断 lease 状态:日志证据, 不是直接读 lease 表。
     leased = set()
     broken = set()
     files = sorted(glob.glob(LOG_GLOB), key=os.path.getmtime)[-2:]
@@ -76,20 +93,14 @@ def lease_evidence():
     return {'leased': leased, 'broken': broken}, src
 
 
-def main_sessions():
-    d = run_json(['openclaw', 'sessions', '--all-agents', '--json', '--limit', '300'])
-    items = d if isinstance(d, list) else (d.get('sessions') or d.get('items') or [])
+def main_sessions(items):
     return [s for s in items
             if str(s.get('key', '')).count(':') == 2
             and str(s.get('key', '')).split(':')[2] == 'main']
 
 
-def pinned_ctx_sessions():
-    # 找出上下文被钉死在小模型上的会话 —— 2026-11-28 新增。
-    # 这类会话即使现在还没报错也是地雷: 一旦跑需要 >ctx 的任务必然溢出。
+def pinned_ctx_sessions(items):
     out = []
-    d = run_json(['openclaw', 'sessions', '--all-agents', '--json', '--limit', '400'])
-    items = d if isinstance(d, list) else (d.get('sessions') or d.get('items') or [])
     for s in items:
         ctx = s.get('contextTokens')
         if not ctx:
@@ -107,8 +118,6 @@ def pinned_ctx_sessions():
 
 
 def chain_landmines():
-    # 扫描 openclaw.json: 全局 fallback 链末位是不是小上下文模型。
-    # 只报告不改 —— 改 openclaw.json 的模型链需 ZP 明确批准。
     try:
         with open(CONFIG_PATH) as f:
             cfg = json.load(f)
@@ -144,8 +153,20 @@ def main():
     ev, src = lease_evidence()
     leased = ev['leased'] if ev else set()
     broken = ev['broken'] if ev else set()
-    rows = main_sessions()
-    pins = pinned_ctx_sessions()
+
+    items, serr = sessions_items(400)
+    if serr:
+        print('  ❌ 数据获取失败: ' + serr)
+        print('     → 本轮结论【无效】。这不代表系统健康,只代表检查器没拿到数据。')
+        print('     → 常见原因: openclaw CLI 不在 PATH / gateway 未运行 / 会话库被锁')
+        return RC_NODATA
+
+    rows = main_sessions(items)
+    pins = pinned_ctx_sessions(items)
+    if not rows:
+        print('  ❌ 取到 ' + str(len(items)) + ' 条会话但 0 条主会话 —— 数据形态异常,判定无效')
+        return RC_NODATA
+
     out = []
     for s in rows:
         key = str(s.get('key', ''))
@@ -173,20 +194,23 @@ def main():
                     'lease': 'broken' if ag in broken else ('held' if ag in leased else 'unknown')})
     order = {'P0': 0, 'P1': 1, 'P2': 2, 'OK': 3}
     out.sort(key=lambda o: (order[o['severity']], -o['tokens']))
+
     if '--json' in sys.argv:
         print(json.dumps({'gateway_pid': pid, 'lease_source': src,
                           'lease_evidence': {'leased': sorted(leased), 'broken': sorted(broken)},
+                          'sessions_total': len(items),
                           'pinned_ctx_sessions': pins,
                           'sessions': out}, ensure_ascii=False, indent=2))
-        return 1 if (any(o['issues'] for o in out) or pins) else 0
-    print('  gateway pid=' + str(pid) + '  数据源=openclaw sessions (官方只读接口)')
+        return RC_RISK if (any(o['issues'] for o in out) or pins) else RC_OK
+
+    print('  gateway pid=' + str(pid) + '  数据源=openclaw sessions(官方只读接口,共 ' + str(len(items)) + ' 条)')
     print('  lease 证据: ' + src)
     print('    持有 lease: ' + str(sorted(leased)))
     print('    lease 失效: ' + str(sorted(broken)))
     print('    注: 未出现在两栏的 agent = 不可判定(不是没有 lease)')
     risky = [o for o in out if o['issues']]
     if not risky:
-        print('  ✅ 未发现处于风险状态的主会话')
+        print('  ✅ 未发现处于风险状态的主会话(本次已成功取到 ' + str(len(rows)) + ' 条主会话)')
     for lvl, icon in (('P0', '🔴'), ('P1', '🟡'), ('P2', '🔵')):
         g = [o for o in risky if o['severity'] == lvl]
         if not g:
@@ -210,7 +234,7 @@ def main():
             print('    ' + str(b['agent']).ljust(14) + ' 末位=' + str(b['last']).ljust(32) + ' context=' + str(b['ctx']))
     print('  -> P0 处置: 停机后 openclaw doctor --fix(需 Gateway 重启)')
     print('  -> P1 处置: 若某任务反复 context overflow, 把它改 isolated 或轮转主会话')
-    return 1 if (risky or pins) else 0
+    return RC_RISK if (risky or pins) else RC_OK
 
 
 if __name__ == '__main__':
