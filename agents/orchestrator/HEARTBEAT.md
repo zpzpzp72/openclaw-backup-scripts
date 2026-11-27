@@ -31,23 +31,45 @@
 
 ---
 
-## 当前基线（2026-11-26 01:36）
+## 当前基线（2026-11-28 05:50）
 
 | 指标 | 状态 |
 |---|---|
-| **work agent** | 🔴 **唯一 P0**：heartbeat-work err **73**；24h reclaim **1728 条，1727 条归因 work**；`agent_database_leases` work **0 行**；库 mtime 停 11-23 04:42；**work 无 HEARTBEAT/DIRECTIVE**（与 11-16 health 同模具）|
-| 故障蔓延 | 🔴 孤儿投递 `4c89a409…` retry **416** pending → 72h 内 826 次 delivery 失败 → **发往 work 的消息送不到**（第三种表现面）|
-| 故障轮转 | 🟡 health(11-15)→orchestrator+finance(11-22)→**work(11-25)**；8 库 integrity_check 全 ok → 是网关租约机制，不是库损坏；**一次重启只解当前受害者**|
-| Orchestrator NightOps | 🟢 本场 01:36 恢复（11-22→11-25 连败 4 次，8 天空窗）；legacy `NightOps-Orchestrator`(10972380) 仍 enabled=0 → 二选一 |
-| heartbeat 其他 6 路 | 🟢 err=0（health/finance/orchestrator 11-23 重启后已归零）|
-| fin / work / health | ⚠️ 均未配置（无 HEARTBEAT/DIRECTIVE）；finance 断更 7.5 月、health 0 篇 daily |
-| 备份 | 🟢 双链连续 3 轮全绿：NAS `openclaw-20261125-0300.tgz`(6.27G) status=ok；native 11-25 03:40 verify OK(5.9G)，归档 8→7，剩 779G |
-| 备份脚本语义 | 🟡 tar 退出码 1 已实证**非损坏**（3 库 integrity_check=ok），但 `BACKUP_STATUS<=1` 吞掉「归档与源瞬时不一致」→ 建议 `.sync-staging/` 加 exclude（需授权）|
-| 存储 | 🟡 /mnt/c **23G/96%**（11-23 曾 44G）；/mnt/h **263G/97%**（3 天 -110G）；/ 779G/19% |
-| Gateway | 🟡 RSS **4.69GB**，pid 36001 uptime 3.2d，CPU 27.6%；heap 上限仍 4096MB（openclaw.json 无 maxOldSpaceSize）|
-| OpenRouter credits | 🔴 0（第 11 窗）；key 已移至 `agents/finance/agent/openclaw-agent.sqlite → auth_profile_store` |
-| 备份邮件 | 🔴 QQ SMTP 授权码失效（实测 Connection unexpectedly closed；secret mtime 2026-05-25）|
-| M365 repo | 🔴 HEAD 700f8a3，ahead **11** / behind 0；ruff 全绿 + 回归 10/10 → 待 push（第 8 轮）|
+| **work agent** | 🔴 **唯一 P0**：leases=0，66/小时，瞬时拒绝(1~2ms)→授权被拒（非 health 的超时）|
+| health agent | 🟢 **已自愈**（11-23 Gateway 重启，leases 0→7，错误归零）|
+| main / coder / life / scout / orchestrator / finance | 🟢 leases 6~8，全部健康 |
+| 备份链 | 🟢 **11 天全绿**：native 7 份滚动（03:40）+ NAS 每日 03:00；回收站 185GB→1 份，可用 245G |
+| NAS 空间守卫 | 🟢 `nas-recycle-guard.log` 每日 03:20 自动检查（阈值 64G）|
+| cron 错误 job | 3 个：heartbeat-work(125) / Coder NightOps(1) / openclaw-news-digest(2) |
+| Gateway | RSS **5.58GB**（11-17 时 4.36GB，持续涨）；heap 上限仍 4096MB |
+| `/mnt/h` | 97% 满（剩 245G，尚可）|
+| 交付确认 | ✅ 本次 P0 推送**已确认送达**（runId 87ca61fc，main session trigger=user，无 abort）|
+
+### 🔍 work P0 的机制（与 health 不同，别沿用旧结论）
+1. `cron/maintenance` 每 60s 遍历所有 agent store → work 在内
+2. work leases=0，且**从未出现过 admission 事件**（health 有 lease-class / process-death 恢复）
+3. reclaim 在 **1~2 ms 内**被拒（health 是 5001ms 超时）
+   → 源码 session-accessor.sqlite-reclamation-commit-BX3N0u2L.mjs:25
+     `compareExchange(shared,0,REQUESTED,COMMITTING) !== REQUESTED` → 状态已非 REQUESTED 即抛错
+   → **授权通道被直接拒绝**，而非「等待授权无人应答」
+4. work 有 1 个 active session（session_conversations）+ 17 个 session 的 active_events，
+   health 完全没有 → work 有会话在占 DB 却写不进去
+5. 已排除：DB 损坏（doctor 0 issue / 写锁立即可得 / quick_check ok）、
+   删除围栏残留（agent_deletion_journal 0 行）、完整性记录异常（dev/ino 一致）
+
+### ⚠️ 三个反复踩到的坑（已写入 .learnings）
+- **scratch 在 `cron_job_scratch` 表里，不是文件** → 别用 `ls HEARTBEAT.md` 推断心跳行为
+- **system-owned monitor job 不能用 cron 客户端 disable**（`declaration_key = heartbeat:<agent>`）
+- **`sessions_send` 的 accepted/queued ≠ 已送达** → 必须看 `delivery.status` 并等对端回执
+  （11-17 我据此误报过一次「已落盘」，实际是 aborted）
+
+### 仍需 Owner 决策
+1. 🔴 **work**：停 Gateway → `doctor --fix` → 重启（11-23 同款重启曾修好 health）；
+   或停用 work（但它有 1 个 active session，移除需评估）；或只重启观察是否自愈
+2. 🟡 Gateway RSS 5.58GB → heap 4096→8192
+3. 🟡 M365 push（先确认 /mnt/c 与 /home 两份副本哪个权威）
+4. 🟡 `commands.ownerAllowFrom`
+5. 🟡 QQ SMTP 授权码、OpenRouter credits
 
 ### 🔍 health P0 的根因链（已实测到源码级）
 1. `cron/maintenance` 每 **60s** 遍历**所有** agent store（`maintenance-CGA2ytB4.mjs`）

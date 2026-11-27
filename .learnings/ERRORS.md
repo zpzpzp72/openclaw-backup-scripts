@@ -1403,3 +1403,80 @@ for p in $(pgrep -f 'openclaw[ ]doctor'); do kill "$p" 2>/dev/null; done
 而不是直接归因给命令本身。
 
 ---
+
+## ERR-20261127-005 — 三连击:fallback 末位小上下文模型 / 会话 contextTokens 被钉死 / 诊断自身烧配额 <!-- project: github.com/zpzpzp72/openclaw-backup-scripts -->
+
+**时间**: 2026-11-27 05:30 → 2026-11-28 06:00 CST
+**组件**: cron 模型链 / session 上下文 / MiniMax Token Plan 配额
+
+### 现象
+
+11-27 08:00 `openclaw-news-digest` → `Context overflow: prompt too large`
+11-28 01:16 `Coder NightOps` → `agent run aborted | OPENCLAW_DIRECT_ABORT`
+
+### 机制一:会话的 contextTokens 会被「最后一次跑过的模型」钉死
+
+```
+agent:scout:cron:fe5fa0ce-...(news-digest)  ctx=8192  model=qwen3:4b-instruct  provider=ollama
+```
+
+11-26 那轮 fallback 落到 `ollama/qwen3:4b-instruct`(上下文 8192),
+**该 cron 会话的上下文上限被永久写成 8192**。之后即便把模型换回大的,
+旧会话仍按 8192 算预算 → 输入 12903 > 8192 → 必然 overflow。
+
+**修法是删会话,不是改模型**:
+`openclaw sessions delete --agent scout --yes <key>` → 新会话按新模型重建 `ctx=204800`。
+
+全量扫还发现 3 条 11-05 的孤儿会话同样被钉在 8192(对应 cron job 已不存在),一并清除。
+
+### 机制二:fallback 链末位是小上下文模型 = 定时炸弹
+
+- 8/8 agent 的全局 fallback 末位 = `ollama/qwen3:4b-instruct`(8192)
+- 4 个 NightOps 的 job 级 fallback 末位 = `ollama/qwen3.6:27b`(MEMORY 已记「只吐 reasoning」)
+
+任何一个 job 只要落到末位 → 必然 context overflow → **并且污染该会话的 ctx**(回到机制一)。
+兜底链末位放一个 8k 模型,不是兜底,是定时炸弹。
+
+### 机制三:我自己的诊断烧掉了被诊断对象的配额
+
+```
+11-27 05:00-10:00 窗口:690 次 model-fetch / 68 次 429
+  其中 210 次 MiniMax-M3 = agent:main:main = 我自己(runtime model=minimax/MiniMax-M3)
+  → 08:00 news-digest 撞上被我自己烧光的配额
+  → 429 → stall(age=403s) → abort_embedded_run → OPENCLAW_DIRECT_ABORT
+```
+
+**讽刺点**:我为了排查 news-digest 而跑的探针,正是 news-digest 失败的原因之一。
+
+### 附:换 litellm 前缀不解决配额问题(v43 写过,我又犯了)
+
+`litellm/MiniMax-M2.7` / `MiniMax-M3` 的上游仍是 `api.minimaxi.com` → 同一把 key、同一 Token Plan 池。
+真正独立的池(11-28 05:50 实测):
+
+| 模型 | 上游 | 实测 |
+|---|---|---|
+| `litellm/deepseek-flash` | api.deepseek.com | 🟢 200 / 243ms |
+| `litellm/LongCat-2.0` | api.longcat.chat | 🟢 200 / 1630ms |
+| `litellm/Step-3.5-Flash` | siliconflow | 🔴 403 Model disabled |
+| `litellm/Kimi-K2.7` | siliconflow | 🔴 402 余额不足 |
+| `litellm/GLM-5.3-Flash` | siliconflow | 🔴 402 billing |
+| `litellm/MiniMax-*` | api.minimaxi.com | 🟡 200 但**同池** |
+
+### 处置(全部为 cron job 级覆盖,**未改 openclaw.json**)
+
+provider 凭据/模型链改动需 ZP 明确批准,故只用 `openclaw cron edit --model/--fallbacks`:
+
+- `openclaw-news-digest`: model=litellm/deepseek-flash
+- 4 个 NightOps: model=minimax/MiniMax-M2.7,fallbacks 前两位 = litellm/deepseek-flash + litellm/LongCat-2.0
+- 全部移除 job 级 ollama 兜底
+
+备份: `/tmp/cron_backup_20261127-0612/cron_list.json`
+
+### 三条新结论
+
+1. **「模型可用」和「模型在故障时刻可用」是两回事。** 凌晨 05:50 验证通过,08:00 照样 429。
+   provider 健康检查是瞬时快照,不能当排期依据 —— 必须问「在那个窗口内,它还剩多少配额」。
+2. **fallback 链每一项都要单独验证「上下文够大」和「配额池独立」。**
+3. **诊断活动本身会消耗被诊断对象的资源。** 排查前先问:我的探针会不会影响被排查的东西?
+
+---
