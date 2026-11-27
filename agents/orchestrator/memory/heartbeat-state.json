@@ -100,15 +100,9 @@
     "main": 177
   },
   "nas_recycle": {
-    "checkedAt": "2026-11-08T03:13:00+08:00",
-    "status": "🔴 回收站 27 份 / 123GB；NAS 可用仅 4G → NAS 备份连跳 3 天",
-    "verified_facts": [
-      "✅ 删 #recycle 内部文件 → 空间立即真释放（字节级 delta 53,223,424）",
-      "❌ 删 #recycle 外部文件 → 只移入 #recycle，不释放",
-      "❌ ':' 前缀不能绕过回收站（实测同名文件仍落在 #recycle）"
-    ],
-    "tool": "scripts/nas-recycle-cleanup.sh（默认预演，需 --execute；已验证预演不删任何文件）",
-    "awaiting": "Owner 授权执行"
+    "actual": "1 文件 (Thumbs.db)",
+    "free_g": 245,
+    "status": "🟢 早已自愈，勿执行删除（main 的 27份/123GB 报告已过期）"
   },
   "mail_smtp": {
     "checkedAt": "2026-11-08T03:11:00+08:00",
@@ -172,5 +166,18 @@
     "nas_free_g": 245,
     "nas_guard": "nas-recycle-guard.log 每日 03:20 自动检查（阈值 64G）"
   },
-  "delivered_reporting": "sessions_send 返回 accepted/queued 不代表送达；必须看 delivery.status 且等对端回执"
+  "delivered_reporting": "sessions_send 返回 accepted/queued 不代表送达；必须看 delivery.status 且等对端回执",
+  "delivery_status_2026-11-28": {
+    "note": "sessions_send 需三段验证：accepted/queued → runId 被调度 → 对端实际处理",
+    "87ca61fc_0545": "✅ 已确认送达（runId 被 main session 调度，sessionId=98db6fd5…，无 abort）",
+    "6089f4bb_0605": "❌ 未送达（0 命中，对照组 62）—— main 当时繁忙",
+    "494325e6_0610": "❌ 未送达（0 命中）",
+    "pending": "NAS 回收站已自愈(1 文件/245G)、/mnt/c 已恢复 40G 两处更正尚未传达 main"
+  },
+  "mnt_c": {
+    "free_g": 40,
+    "vhdx_allocated_gb": 81,
+    "native_backup_inside_g": 41,
+    "conclusion": "10G 凹陷 = 备份窗口瞬时占用，已自行恢复；长期趋势 → KEEP 7→3 可省 ~25G"
+  }
 }

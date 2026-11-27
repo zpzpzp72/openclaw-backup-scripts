@@ -123,7 +123,7 @@ OpenClaw 侧表现为 `models list` 里该模型 `Auth=no` + `authProfiles.state
 
 ### 排期含义
 
-- MEMORY 原有「NightOps 错峰至 00:30-03:00 避开 MiniMax burst 耗尽窗口 02:00-05:00」**成立且有据**：5h 窗口从首次使用起算，若 20:00 起重度用，**00:00 窗口重置**；02:00-05:00 段是窗口刚重置后的高可用期，但也可能撞上 00:00-05:00 之间的下一次重置点。**实操建议：把重活放在窗口刚重置之后**（用 `mmx quota` 确认余量 > 50% 再开工）。
+- ⚠️ **2026-11-28 修正**：5h 窗口是【**对齐整点**】的（00:00-05:00 / 05:00-10:00 / 10:00-15:00 / 15:00-20:00 / 20:00-00:00），**不是「首次使用起算」**。证据：11-27 05:31 → 05:00→10:00 余 65%；11-27 05:50 → 05:00→10:00 余 61%；11-28 05:42 → 05:00→10:00 余 79%。若是「首次使用起算」，11-27 00:30 那波密集使用（429 从 01:38 起）应把窗口锚在 00:00 附近，但 05:31 看到的是**全新**的 05:00→10:00 窗口且余 65%。⚠️ 置信度**高**但非 100%：整点对齐是唯一能同时解释三次观察的模型，但「每天恰好 05:00 首次使用」这一巧合未被排除（视频池 24h 窗口也恰好 00:00→00:00）。  - **推论**：NightOps 排在 00:30-03:00 时，四个任务全部落在**同一个 00:00-05:00 窗口**内 → 是自相争抢（实测 11-27 01:38 起 429 连续全量）。  - **实操**：重活要分散到**不同窗口**，不是错开几十分钟。窗口内余量随用量线性下降，只有跨窗口才是真正的新配额。  - 判据：不要只看「现在通不通」，要看「**在那个窗口内还剩多少配额**」（`mmx quota` 的 `current_interval_remaining_percent`）。
 - 官方 15:00-17:30 工作日高峰有**动态限流**（Plus 约支持 3-4 个 agent 并发），与配额耗尽是两回事，别混判。
 
 **附：本地 cost 字段与官方 CN 价不一致**（`openclaw.json` `models.providers.minimax.models[].cost`，只影响 OpenClaw 自身成本统计，不影响服务端真实扣费）：
@@ -379,7 +379,47 @@ M3.1-Flash 1/4/0.1 ✅ 与 CN 价一致；M3 记 0.5/2 ❌ 官方 2.1/8.4（≤5
 
 _Last updated: 2026-11-24 17:05 CST (新增：WSL 失联 5 天根因＝StartWSL2 任务 72h ExecutionTimeLimit，已修 PT0S；健康检查飞书告警自 10-19 起因 appSecret 改 SecretRef 而全哑（44 次失败），已修 SecretRef 解析并实测 token code=0)_
 
+## 配额池与 fallback 链（2026-11-28 实测固化）
+
+### 独立配额池清单（经 LiteLLM 代理实测，2026-11-28 05:50）
+
+| 模型 | 上游 | 池 | 实测 |
+|---|---|---|---|
+| `litellm/deepseek-flash` | api.deepseek.com | **独立** | 200 / 243ms / ctx 1000k |
+| `litellm/LongCat-2.0` | api.longcat.chat | **独立** | 200 / 1630ms / ctx 1024k |
+| `litellm/Step-3.5-Flash` | api.siliconflow.cn | 独立 | 🔴 403 Model disabled |
+| `litellm/Kimi-K2.7` | api.siliconflow.cn | 独立 | 🔴 402 余额不足 |
+| `litellm/GLM-5.3-Flash` | api.siliconflow.cn | 独立 | 🔴 402 billing |
+| `litellm/MiniMax-*` | api.minimaxi.com | **与 minimax/ 直连同池** | 200 但配额共享 |
+
+→ **换 litellm 前缀不解决 MiniMax 配额问题**（同一把 key、同一 Token Plan 池）。要避配额必须换上游。
+
+### ★ 会话的 contextTokens 会被「最后一次跑过的模型」钉死
+
+- 现象：11-26 news-digest 那轮 fallback 落到 `ollama/qwen3:4b-instruct`(ctx 8192)，该 cron 会话的 ctx 被**永久写成 8192**；之后即便把模型换回大的，旧会话仍按 8192 算预算 → 输入 12903 > 8192 → 必然 `Context overflow`，且反复发生。
+- **修法是删会话，不是改模型**：`openclaw sessions delete --agent <id> --yes <key>` → 新会话按新模型重建 ctx（实测 8192 → 204800）。
+- **推论：fallback 链末位放小上下文模型不是兜底，是定时炸弹** —— 它不仅让本轮失败，还永久污染该会话后续所有轮次。
+- 检测：`scripts/session-health-checker.py` 的 `pinned_ctx_sessions()`（ctx<=32768 即报警）。
+
+### 诊断活动本身会消耗被诊断对象的资源
+
+- 11-27 05:31-06:59，`agent:main:main`（即助手自己，runtime model=minimax/MiniMax-M3）单独跑了 **210 次 MiniMax-M3**（其中 41 次 429），把 08:00 news-digest 的配额池提前烧光 → news-digest 429 → stall → abort。
+- **当排查者与被排查对象共享同一配额池时，排查行为本身就是扰动源。**
+
+### cron 环境陷阱
+
+- `openclaw` CLI 在 `/usr/local/bin/openclaw`，**cron 默认 PATH 是 `/usr/bin:/bin`**，不含它 → 定时脚本里调 `openclaw` 会静默 rc=127。
+- 已在 `scripts/session-health-check.sh` 显式 `export PATH=/usr/local/bin:/usr/bin:/bin:...`。
+- 配套判据：检查器必须区分「取到数据且无风险(0)」「取到数据有风险(1)」「取不到数据(2)」，**绝不能把空数据报成 OK**（见 ERR-20261127-007）。
+
+### 每日只读体检
+
+- crontab `0 7 * * *` → `scripts/session-health-check.sh` → 日志 `logs/session-health.log`（保留 30 天），**不消耗模型 token**。
+- 覆盖三类「不报错直到爆」的故障：会话 ctx 被钉死 / fallback 链末位小上下文 / agent lease 失效。
+
+---
 ## 审计日志 (Audit Trail)
+- **2026-11-28 06:20** — 修正 MEMORY「5h 窗口从首次使用起算」→ 实际**对齐整点**（三次实测 05:00→10:00）；固化独立配额池清单（deepseek-flash / LongCat-2.0 才真独立）、**会话 ctx 会被最后一次模型钉死**（修法=删会话非改模型）、**诊断自身消耗被诊断对象的配额**（我自己烧掉 210 次调用）、cron PATH 陷阱（openclaw 在 /usr/local/bin）；新增每日只读体检 crontab 07:00（rc=0/1/2 三态，杜绝假阴性）；`.learnings/ERRORS.md` 补 ERR-20261127-001~007。
 
 - **2026-08-28 13:50** — 全面校验 MEMORY.md，修正：
   - Gateway pid/RSS 写死值（实际 pid 623, RSS 1.29 GiB）
