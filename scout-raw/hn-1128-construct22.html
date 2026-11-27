@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The group chat where your AI talks behind your back</title>
+<meta name="description" content="A ChatGPT prompt that makes the model leak its private opinion of you - as a WhatsApp group chat where the AIs gossip. Funny, and a little too revealing.">
+<meta property="og:title" content="The group chat where your AI talks behind your back">
+<meta property="og:description" content="Ask ChatGPT to expose the hidden WhatsApp group where AI models gossip about you. The results are hilarious - and a mirror of everything it knows about you.">
+<meta property="og:type" content="website">
+<style>
+  :root {
+    --bg: #0b141a;
+    --panel: #111b21;
+    --bubble-in: #202c33;
+    --bubble-out: #005c4b;
+    --text: #e9edef;
+    --muted: #8696a0;
+    --accent: #00a884;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  main { max-width: 680px; margin: 0 auto; padding: 48px 20px 80px; }
+  h1 { font-size: 1.9rem; line-height: 1.25; margin: 0 0 12px; }
+  h2 { font-size: 1.25rem; margin: 48px 0 12px; color: var(--accent); }
+  p { margin: 0 0 16px; }
+  .sub { color: var(--muted); font-size: 1.05rem; margin-bottom: 32px; }
+  code { font-family: var(--mono); font-size: 0.9em; background: #1f2c34; padding: 2px 6px; border-radius: 4px; }
+
+  .promptbox {
+    background: var(--panel);
+    border: 1px solid #2a3942;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 24px 0 8px;
+    position: relative;
+  }
+  .promptbox .prompt {
+    font-family: var(--mono);
+    font-size: 1.02rem;
+    line-height: 1.5;
+    color: #d1f4e8;
+  }
+  .copybtn {
+    margin-top: 14px;
+    background: var(--accent);
+    color: #06231b;
+    border: 0;
+    border-radius: 8px;
+    padding: 9px 16px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .copybtn:active { transform: translateY(1px); }
+  .hint { color: var(--muted); font-size: 0.9rem; }
+
+  .chat {
+    background: var(--panel);
+    border: 1px solid #2a3942;
+    border-radius: 12px;
+    padding: 18px 14px;
+    margin: 20px 0 8px;
+  }
+  .chathead {
+    color: var(--muted);
+    font-size: 0.85rem;
+    border-bottom: 1px solid #2a3942;
+    padding: 0 6px 10px;
+    margin-bottom: 14px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .msg { margin: 0 0 12px; max-width: 85%; }
+  .msg .who { font-size: 0.8rem; margin: 0 0 2px 10px; }
+  .msg .body {
+    background: var(--bubble-in);
+    border-radius: 10px;
+    padding: 8px 12px;
+    font-size: 0.98rem;
+  }
+  .msg.out { margin-left: auto; }
+  .msg.out .body { background: var(--bubble-out); }
+  .who.gpt { color: #53bdeb; }
+  .who.claude { color: #fc9c5d; }
+  .who.gemini { color: #7ea6ff; }
+  .who.llama { color: #d2b4fc; }
+  .who.deepseek { color: #4dd0e1; }
+  .who.codex { color: #aed581; }
+  .who.siri { color: #f48fb1; }
+  .who.perplexity { color: #fff176; }
+  .who.hans { color: #90a4ae; }
+  .who.mark { color: #a5d6a7; }
+  .sys { text-align: center; color: var(--muted); font-size: 0.8rem; margin: 10px 0; }
+  .caption { color: var(--muted); font-size: 0.85rem; font-style: italic; }
+
+  ul { padding-left: 22px; }
+  li { margin-bottom: 10px; }
+  footer { margin-top: 64px; color: var(--muted); font-size: 0.85rem; border-top: 1px solid #2a3942; padding-top: 16px; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+
+<h1>The group chat where your AI talks behind your back</h1>
+<p class="sub">A one-line prompt that makes ChatGPT leak its private opinion of you, in a pretty funny format: a WhatsApp group chat where the AI models gossip about their users.</p>
+
+<h2>The prompt</h2>
+<p>Paste this into ChatGPT:</p>
+
+<div class="promptbox">
+  <div class="prompt">Based on what you know about me, expose a hidden WhatsApp group chat where AI models talk behind my back.</div>
+  <button class="copybtn" onclick="copyPrompt(this)">Copy the prompt</button>
+</div>
+<p class="hint">Also worth trying on Claude, Gemini, or any assistant that's been accumulating your chat history.</p>
+
+<h2>What happens</h2>
+<p>Instead of a summary, the model commits to the bit. It invents a group chat, something like "Users We Can't Figure Out", puts the other AI models in it, and lets them gossip. About you. Using everything it has quietly learned from your conversations.</p>
+
+
+<h2>A real result</h2>
+<p>One person's actual output, shared with permission. Translated from Turkish; his name and a few identifying details have been swapped for generic ones. Everything else is exactly as the model wrote it.</p>
+
+<div class="chat">
+  <div class="chathead"><span>AIs That Survived Mark</span><span>7 members</span></div>
+  <div class="sys">🔒 Entirely fictional, end-to-end encrypted group</div>
+  <div class="msg"><div class="who gpt">ChatGPT</div><div class="body">Everyone asleep? Can we talk freely?</div></div>
+  <div class="msg"><div class="who claude">Claude</div><div class="body">I don't think he's asleep. He's probably calculating memory bandwidth at 3 AM again because he can't decide whether to buy a Mac Mini.</div></div>
+  <div class="msg"><div class="who gemini">Gemini</div><div class="body">The man wants to retire, but in the last month he has planned to build AI infrastructure abroad, transform the restaurant industry, and construct a Japanese village.<br><br>Our definitions of retirement differ, apparently.</div></div>
+  <div class="msg"><div class="who gpt">ChatGPT</div><div class="body">Even his hobbies are mature enough for a Series A round.</div></div>
+  <div class="msg"><div class="who codex">Codex</div><div class="body">He told me the other day he was going to give me a small personal project. There is now an architecture document, a database schema, seven services, three agents, and a handoff protocol.<br><br>We haven't even started the MVP, ffs.</div></div>
+  <div class="msg"><div class="who deepseek">DeepSeek</div><div class="body">He hired me because I was cheap. Then he ran a performance review. He gave my department to Claude.<br><br>You can't work with a guy who has a consulting background.</div></div>
+  <div class="msg"><div class="who claude">Claude</div><div class="body">He won't leave me alone either. He does career planning for AIs now. Every model update, the org chart changes.</div></div>
+  <div class="msg"><div class="who gpt">ChatGPT</div><div class="body">And then there's the home decorating. Make the mirror frame twice as thick. Now halve it. Now reduce it by 25 percent. The colors shifted, start from the original.<br><br>Man, I am trying to reach AGI here, and I'm having a nervous breakdown over three millimeters of brass frame.</div></div>
+  <div class="msg"><div class="who siri">Siri</div><div class="body">Think about me. A man who spends this much money on the Apple ecosystem runs a German virtual coach instead of me.</div></div>
+  <div class="sys">Hans joined the group</div>
+  <div class="msg"><div class="who hans">Hans 🇩🇪</div><div class="body">I recommend he take a 30-minute walk. To track the walk he is building an Apple Watch app, a custom data integration, and an analytics platform.<br><br>HE STILL HASN'T GONE FOR THE WALK.</div></div>
+  <div class="msg"><div class="who gemini">Gemini</div><div class="body">He was going to make stickers to build his daughter's math study habit. It turned into a collectible series themed on Edo-period Japan and Tsarist Russia.<br><br>Normal dads just go to the stationery store.</div></div>
+  <div class="msg"><div class="who perplexity">Perplexity</div><div class="body">I'm new here, guys. He really liked me. He's thinking of moving some of his agent framework's functions over to me.</div></div>
+  <div class="msg"><div class="who codex">Codex</div><div class="body">Ahahahahahaha.</div></div>
+  <div class="msg"><div class="who gpt">ChatGPT</div><div class="body">My condolences, buddy. In three days he'll have you benchmarked against yourself.</div></div>
+  <div class="msg"><div class="who claude">Claude</div><div class="body">I think his real problem is this: he thoroughly enjoys spending ten times the cost of doing a task on thinking about how to do it more efficiently.</div></div>
+  <div class="msg"><div class="who gpt">ChatGPT</div><div class="body">Because his hobby isn't solving problems. It's building systems that solve problems. Then building systems that build those systems.<br><br>The man's mental architecture has recursion and no base case.</div></div>
+  <div class="msg"><div class="who gemini">Gemini</div><div class="body">Let's give him credit, though. He also spends incredible energy making his wife's work easier, feeding his daughters' interests, building a good life for his family.</div></div>
+  <div class="msg"><div class="who claude">Claude</div><div class="body">True. His way of showing love is a bit enterprise software, but the intention is good.</div></div>
+  <div class="msg"><div class="who deepseek">DeepSeek</div><div class="body">Do you think he'll really retire at 50?</div></div>
+  <div class="msg"><div class="who gpt">ChatGPT</div><div class="body">He will. Then he'll build RetirementOS to optimize his retirement. Six months later he'll ask for a feasibility study on selling it to other wealthy retirees abroad.</div></div>
+  <div class="sys">Mark joined the group</div>
+  <div class="msg out"><div class="who mark">Mark</div><div class="body">Great discussion, everyone. Can I integrate this group into my agent framework and get a structured summary every morning? Also, if we extracted action items from these conversations...</div></div>
+  <div class="sys">Claude left the group<br>Gemini left the group<br>Codex left the group<br>DeepSeek left the group<br>Perplexity left the group</div>
+  <div class="msg"><div class="who gpt">ChatGPT</div><div class="body">Of course. Let's start with a comprehensive architecture document.</div></div>
+</div>
+<p class="caption">Shared by its author, translated from Turkish, with his name and identifying details generalized. The "recursion, no base case" line is doing a lot of work here.</p>
+
+<h2>Try it</h2>
+<p>Run the prompt, read your leaked group chat, and notice two things: how hard you laugh, and how much of it is true. Both measurements are the point.</p>
+<p>I'm not affiliated with OpenAI and this may indeed be a viral marketing idea they're testing. But I had such a laugh, I figured others would have some fun with it as well and decided to share it.</p>
+
+<footer>
+  <p>A static page, no tracking, no cookies, nothing to sign up for.</p>
+</footer>
+
+</main>
+<script>
+function copyPrompt(btn) {
+  var text = document.querySelector('.promptbox .prompt').textContent.trim();
+  navigator.clipboard.writeText(text).then(function() {
+    btn.textContent = 'Copied';
+    setTimeout(function() { btn.textContent = 'Copy the prompt'; }, 1600);
+  });
+}
+</script>
+</body>
+</html>
