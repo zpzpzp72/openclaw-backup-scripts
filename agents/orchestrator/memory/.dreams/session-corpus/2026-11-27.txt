@@ -1,0 +1,2 @@
+[orchestrator/sessions/orchestrator/83ecf75d-5985-4c4c-b6ac-69ee1ac49350#L6] Assistant: I'll start by reading the directive and heartbeat files.
+[orchestrator/sessions/orchestrator/83ecf75d-5985-4c4c-b6ac-69ee1ac49350#L10] Assistant: Now gathering all agent reports and system metrics in one pass.

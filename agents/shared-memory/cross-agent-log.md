@@ -60,3 +60,11 @@
 - [2026-11-26] [Orchestrator] 备份双链 11-23/24/25 连续 3 轮全绿；NAS tar 退出码 1 已实证非损坏（3 库 integrity_check=ok）但脚本 BACKUP_STATUS<=1 吞掉「归档与源不一致」→ 建议 .sync-staging/ 加 exclude
 - [2026-11-26] [Orchestrator] OpenRouter 余额 0（第 11 窗，key 已移至 finance agent sqlite 的 auth_profile_store）；QQ SMTP 授权码仍失效（secret mtime 2026-05-25）；M365 ahead 11 commit 待 push（ruff 全绿 + 回归 10/10）
 - [2026-11-26] [Orchestrator] 存储：/mnt/c 23G(96%)、/mnt/h 263G(97%，3 天 -110G)；Gateway RSS 4.69GB，heap 4096MB 硬顶；8 个 agent 库 integrity_check 全 ok → 故障在网关租约机制而非库损坏
+- [2026-11-28] [Orchestrator] work agent P0 恶化（err 73→125，24h reclaim 1737 条全归因 work，leases work 仍 0 行，库 mtime 停 11-23）；孤儿投递 retry 727 仍 pending → 需先补 work 配置或停用 job，再 doctor --fix + 重启
+- [2026-11-28] [Orchestrator] Gateway RSS 5685MB 已超启动参数 --max-old-space-size=4096（更正旧基线"未配置"），增速 +3493KB/h → heap 提 8192 与 work 停机窗口合并
+- [2026-11-28] [Orchestrator] 备份双链连续全绿（NAS 11-28 6.29G / native 11-28 03:40 完成），tar 退出码 1 连续第 5 场仍被 <=1 判成功；/mnt/c 回升至 40G/92%，/mnt/h 245G/97%、NAS 回收站已空
+- [2026-11-28] [Orchestrator] Scout：本窗 GHSA 8 条新（终结连续 5 窗零新增）、arXiv 采集上限致历史新增数系统性偏低已用三路并集修正；主线=校验器自身会静默失败（AI code reviewer 三档均接受 ≥45% 错补丁）
+- [2026-11-28] [Orchestrator] Coder 12/12 门禁全绿、2 个 P1 已修，但 M365 ahead 13 commit 仍待 push 授权；新增 U-35（固定 tmp 文件名并发写丢轮次）建议多 worker 前必修
+- [2026-11-28] [Orchestrator] health P0 已于 11-23 04:42 Gateway 重启后自愈（leases 0→7，错误归零）；恢复路径 = same-boot-dead-owner-wal-recovered
+- [2026-11-28] [Orchestrator] 故障转移到 work agent：leases=0、66/小时、瞬时拒绝(1~2ms)≠health 的 5001ms 超时 → 授权被拒而非无人应答；17 个 active session 的 runtime jsonl 全缺
+- [2026-11-28] [Orchestrator] 更正：11-17 误把 sessions_send 的 accepted/queued 当作已送达（实际 aborted）→ 必须以对端回执为准

@@ -172,3 +172,16 @@ Append structured entries:
 - **Prevention**: 查 cron_jobs 前先 `PRAGMA table_info(cron_jobs)`；
   心跳 scratch 的正确查法是 `select job_id, content from cron_job_scratch`，
   再用 `cron_jobs.job_id` 关联出 job 名与 agent
+
+## ERR-20261128-001: sessions_send 的 accepted/queued 不等于已送达 —— 11-17 我误判过一次
+- **Symptom**: 11-17 我给 main 推送 P0 后，返回 `status: accepted, targetDisposition: queued`，
+  我据此在报告里写「投递验证：main 的 DB mtime = 03:44:29 → 消息确已落盘」
+- **实际情况**: 11-17 04:02 收到 inter-session 消息：
+  `sessions_send delivery to agent:main:main failed: aborted. The target may not have received the message`
+  → **消息根本没送达**；03:44:29 的 DB 写入很可能是我自己那条 `sessions_list(agentId=main)` 造成的
+- **Root cause**: `accepted / queued` 只表示**投递请求被接收**，真正的 delivery 状态在
+  `delivery.status` 字段里（本例为 `pending`）。把它当成送达 = 误报
+- **Prevention**:
+  1. 读 `delivery.status`；只有 `delivered`/`confirmed` 才算送达
+  2. 不要用「DB mtime 变了」当送达证据 —— 那只能证明**有写**，不能证明**是这条消息的写**
+  3. 要么等对端回执，要么在消息里要求对方回一条 ack，再据此确认

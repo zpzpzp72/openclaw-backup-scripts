@@ -11,15 +11,15 @@
     "cron_registry_diagnosis": 1793992694,
     "native_backup_bypass": 1793992694,
     "native_backup_automation": 1793994610,
-    "cron_jobs": 1795628277,
-    "agent_activity": 1795628277,
+    "cron_jobs": 1795815746,
+    "agent_activity": 1795815746,
     "proxy": 1795628277,
-    "repos": 1795628277,
+    "repos": 1795815746,
     "nightops": 1795628277,
     "agent_to_agent": 1793997183,
-    "session_db_health": 1795628277,
-    "backup": 1795628277,
-    "nas_recycle": 1795628277,
+    "session_db_health": 1795815746,
+    "backup": 1795815746,
+    "nas_recycle": 1795815746,
     "mail_smtp": 1795628277,
     "timers": 1795628277
   },
@@ -122,18 +122,19 @@
     "per_agent_nightops": "Scout/Life/Coder/Orchestrator 全 ok（legacy 4 路已 disable 有效）"
   },
   "session_db_health": {
-    "checkedAt": "2026-11-17T03:20:00+08:00",
-    "main": "🟢 已恢复：main reclaim 错误 0（11-14 曾 180/h）",
-    "health": "🔴 唯一故障：leases=0 → 回收提交无人授权 → 每 60s 超时；doctor inspect 0 issues；DB 1.2MB；非容量问题",
-    "root_cause": "health 从未被真正使用（sessions 仅 10-16 .deleted）→ 从未取得租约 → withSqliteReclamationAuthorization 无人 authorize()",
-    "proven_executable_fix": "停 Gateway → openclaw doctor --fix → 重启（compact 需停机：holder 795 alive）",
-    "backup": "/tmp/openclaw/health-agent.sqlite.bak.20261117 (1253376 B)",
-    "rejected_hypotheses": [
-      "DB 损坏/过大 → 0 issues, quick_check ok, 1.2MB, 写锁立即可得",
-      "缺 models.json → 已补(5031B)，leases 仍 0，未解决",
-      "无关同步写入者可代授权 → helper 实测 1.00/min→1.14/min 无改善",
-      "缺 HEARTBEAT.md → work/finance 同样缺却正常 skipped（scratch 存于 cron_job_scratch 表，非文件）"
-    ]
+    "checkedAt": "2026-11-28T05:47:00+08:00",
+    "health": "🟢 已自愈（11-23 04:42 Gateway 重启后 leases 0→7，错误归零；路径 same-boot-dead-owner-wal-recovered）",
+    "work": "🔴 leases=0，66/小时，瞬时拒绝(1~2ms)≠health 的 5001ms 超时 → 授权被拒而非无人应答",
+    "others": "🟢 main/coder/life/scout/orchestrator/finance leases 6~8",
+    "work_key_diffs": [
+      "admission 事件一次都没有",
+      "session_conversations 1 行",
+      "17 个 active session",
+      "DB 15.3MB",
+      "doctor 0 issue / 写锁立即可得"
+    ],
+    "repair_blocked": "compact / import / fix 均需停 Gateway（holder 36001 alive）",
+    "backup": "/tmp/openclaw/work-agent.sqlite.bak.20261128 (16068608 B)"
   },
   "stale_scratch_corrections": [
     "Scout/Life 非 ~24d 无产出（11-07/11-08 均正常）",
@@ -161,5 +162,15 @@
     "proof": "sessions_list(agentId=main) 成功；sessions_send 被 accepted/queued；main DB mtime 03:44:29 印证落盘",
     "note": "11-08 时 main DB 故障曾完全阻断该通道，现已随 main 恢复而恢复"
   },
-  "lastRun": "2026-11-26T01:36:00+08:00"
+  "lastRun": "2026-11-26T01:36:00+08:00",
+  "backup_chain": {
+    "status": "🟢 11 天全绿",
+    "native_archives": 7,
+    "native_schedule": "每日 03:40",
+    "nas_schedule": "每日 03:00",
+    "nas_recycle": "36份/185GB → 1 份",
+    "nas_free_g": 245,
+    "nas_guard": "nas-recycle-guard.log 每日 03:20 自动检查（阈值 64G）"
+  },
+  "delivered_reporting": "sessions_send 返回 accepted/queued 不代表送达；必须看 delivery.status 且等对端回执"
 }
