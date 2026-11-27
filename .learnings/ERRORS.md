@@ -1480,3 +1480,53 @@ provider 凭据/模型链改动需 ZP 明确批准,故只用 `openclaw cron edit
 3. **诊断活动本身会消耗被诊断对象的资源。** 排查前先问:我的探针会不会影响被排查的东西?
 
 ---
+
+## ERR-20261127-006 — 三种工具 ID 空间混用 / 跨会话读取被拒
+
+**时间**: 2026-11-28 05:40–05:50 CST
+**组件**: process / sessions_history / exec 工具
+
+### 现象(本轮 3 条 error-detected 全是这一类)
+
+```
+1. [process] No session found for cm_485f4e66-0c5c-4854-948c-845b69847703
+2. [sessions_history] User is not a participant of this turn.
+3. [exec] Error: User is not a participant of this turn.
+```
+
+### 根因一:三套 ID 空间被我混用
+
+| ID 形态 | 属于 | 该用哪个工具 |
+|---|---|---|
+| `cm_<hex>` | **bridge runId** | `wait({runId})` |
+| `nova-forest` / `tide-canyon` 等形容词-名词 | **exec sessionId** | `process({action:'poll', sessionId})` |
+| `agent:xxx:main` | 会话 key | `sessions_history({sessionKey})` |
+
+我把 bridge 的 `cm_...` runId 塞进了 `process({action:'poll', sessionId})` → 「No session found」。
+
+**判据**:`process` 的 `sessionId` 只认**本进程 exec 启动的**会话(形容词-名词形态);
+`cm_` 开头的是 bridge 层 runId,必须走 `wait` 工具。
+
+### 根因二:跨会话读取需要「参与者」身份
+
+`sessions_history({sessionKey:'agent:orchestrator:main', user:'orchestrator'})`
+→ `User is not a participant of this turn.`
+
+**我为什么想读**:想确认 Orchestrator 是否已写过 v44,避免抢写同一个纪要文件。
+
+**正确做法**:不需要读它的会话。
+- 判断文件是否已被写入 → **直接 grep 文件本身**(`grep -c '^## NightOps 记忆体系讨论 v4' memory/2026-04-15.md`)
+- 需要看它发了什么 → **等它通过 sessions_send 送达**(跨会话消息会主动路由过来)
+- `sessions_send` 只回 `accepted/queued` → **不等于对端已读**(ZP 的 Orchestrator 已在 11-17 误判过一次,已记教训)
+
+### 通用教训
+
+**「想知道别处发生了什么」有三条路,按代价排序:**
+
+1. 直接读**产物**(文件/状态)—— 零权限成本,最可靠
+2. 等对方**主动送达** —— 适合协作消息
+3. 读对方**会话历史** —— 需要参与者身份,且最脆弱
+
+我下意识跳到了第 3 条,两次都被拒。第 1 条本可以直接解决。
+
+---

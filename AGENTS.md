@@ -76,6 +76,30 @@ Humans in group chats don't respond to every message - neither should you. Quali
 
 On platforms that support reactions (Discord, Slack), use emoji reactions naturally: to acknowledge without interrupting flow, when something's funny or interesting, or for a simple yes/no. One reaction per message max.
 
+## 三种 ID 空间与对应工具（2026-11-28）
+
+| ID 形态 | 属于 | 用哪个工具 |
+|---|---|---|
+| `cm_<hex>` | bridge runId | `wait({runId})` |
+| 形容词-名词（`nova-forest`） | exec sessionId | `process({action:'poll', sessionId})` |
+| `agent:xxx:main` | 会话 key | `sessions_history({sessionKey})`（需参与者身份） |
+
+**`process` 的 sessionId 只认本进程 exec 启动的会话**；`cm_` 开头的是 bridge 层 runId，塞进 `process` 会得到「No session found」。
+
+## 想知道别处发生了什么：按代价排序的三条路
+
+1. **直接读产物**（文件 / 状态 / 命令输出）—— 零权限成本，最可靠
+2. **等对方主动送达**（跨会话消息会路由过来）
+3. **读对方会话历史** —— 需参与者身份，最脆弱，易被拒
+
+反过来用（先读会话历史，再去查文件）会白撞权限墙。
+
+## 投递语义
+
+`sessions_send` 返回 `accepted` / `queued` —— **queued ≠ delivered**。
+必须以对端回执为准，不能把 accepted/queued 当送达（ZP 已在 11-17 误判过一次）。
+
+---
 ## Tools
 
 ### Local notes
