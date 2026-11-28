@@ -34,6 +34,18 @@ RC_RISK = 1
 RC_NODATA = 2
 
 
+
+def load_config():
+    try:
+        with open(CONFIG_PATH) as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
+
+CFG = load_config()
+
+
 def run_json(cmd):
     '''返回 (data, err)。err 非空表示这一取数失败了 —— 调用方必须区分。'''
     try:
@@ -118,11 +130,9 @@ def pinned_ctx_sessions(items):
 
 
 def chain_landmines():
-    try:
-        with open(CONFIG_PATH) as f:
-            cfg = json.load(f)
-    except Exception as e:
-        return [], str(e)
+    cfg = CFG
+    if not cfg:
+        return [], "openclaw.json 读取失败"
     ctxmap = {}
     providers = (cfg.get('models', {}) or {}).get('providers') or {}
     for pn, pv in providers.items():
@@ -146,6 +156,69 @@ def chain_landmines():
         if lim is not None and lim <= PINNED_CTX_LIMIT:
             bad.append({'agent': nm, 'last': last, 'ctx': lim})
     return bad, 'ok'
+
+
+
+def job_chain_landmines():
+    """扫描 cron job 级模型链 —— v45 议题4 第 1 项。
+
+    背景 (2026-11-28):
+    1. 429 事故当天没有任何自动检查发现 job 级链有问题。
+    2. heartbeat-* 类任务 payload.kind=heartbeat,CLI 拒绝 per-job 模型覆盖
+       (invalid cron.update params: payload.kind="agentTurn" requires message),
+       所以这类任务只能继承 agent 全局链 —— 只能靠检测发现问题。
+
+    检测两件事:
+      a. job 级链末位是不是小上下文模型(会钉死会话 ctx)
+      b. job 级链里有没有独立配额池模型(否则 MiniMax 429 时无退路)
+    """
+    d, err = run_json(["openclaw", "cron", "list", "--json"])
+    if err:
+        return [], err
+    jobs = d if isinstance(d, list) else (d.get("jobs") or d.get("items") or [])
+    ctxmap = {}
+    providers = (CFG.get("models", {}) or {}).get("providers") or {}
+    for pn, pv in providers.items():
+        for m in (pv.get("models") or []):
+            lim = m.get("contextWindow") or m.get("limit") or m.get("contextLength")
+            if lim:
+                ctxmap[pn + "/" + str(m.get("id"))] = int(lim)
+    out = []
+    for j in jobs:
+        p = j.get("payload") or {}
+        fb = p.get("fallbacks") or []
+        prim = p.get("model")
+        if not fb and not prim:
+            # heartbeat 类: CLI 拒绝 per-job 模型覆盖,只能继承 agent 全局链
+            if str(p.get('kind')) != 'heartbeat':
+                continue
+            aid = j.get('agentId')
+            ga = None
+            for v in ((CFG.get('agents') or {}).get('entries') or {}).values():
+                if str(v.get('name')) == str(aid):
+                    ga = v.get('model') or {}
+                    break
+            gp = ga.get('primary') if ga else None
+            gfb = (ga.get('fallbacks') or []) if ga else []
+            gchain = ([gp] if gp else []) + list(gfb)
+            gsmall = [c for c in gchain if ctxmap.get(c) is not None and ctxmap[c] <= PINNED_CTX_LIMIT]
+            gind = [c for c in gchain if 'deepseek-flash' in c or 'LongCat' in c]
+            out.append({'job': str(j.get('name')), 'id': str(j.get('id')),
+                        'kind': 'heartbeat', 'primary': gp,
+                        'fallbacks': list(gfb), 'small': gsmall,
+                        'has_independent': bool(gind),
+                        'inherited': True,
+                        'status': j.get('status')})
+            continue
+        chain = ([prim] if prim else []) + list(fb)
+        small = [c for c in chain if ctxmap.get(c) is not None and ctxmap[c] <= PINNED_CTX_LIMIT]
+        ind = [c for c in chain if "deepseek-flash" in c or "LongCat" in c]
+        out.append({"job": str(j.get("name")), "id": str(j.get("id")),
+                    "kind": str(p.get("kind")), "primary": prim,
+                    "fallbacks": list(fb), "small": small,
+                    "has_independent": bool(ind),
+                    "status": j.get("status")})
+    return out, None
 
 
 def main():
@@ -227,6 +300,26 @@ def main():
             print('    ' + str(x['agent']).ljust(12) + ' ctx=' + str(x['ctx']).rjust(7) + '  model=' + str(x['provider']) + '/' + str(x['model']))
             print('        ' + x['key'][:76])
         print('  -> 处置: 删除重建这些会话 (openclaw sessions delete), 让它们按当前模型链重新建立上限')
+    jobs, jerr = job_chain_landmines()
+    if jerr:
+        print("  ⚠️ job 级链检测不可用: " + jerr)
+    else:
+        risky_jobs = [x for x in jobs if x["small"] or not x["has_independent"]]
+        if risky_jobs:
+            print(f"  ⚠️ job 级模型链隐患({len(risky_jobs)}/{len(jobs)} 个 job):")
+            for x in risky_jobs:
+                tags = []
+                inh = ' (继承全局链)' if x.get('inherited') else ''
+                if x["small"]:
+                    tags.append("含小上下文模型" + str(x["small"]))
+                if not x["has_independent"]:
+                    tags.append("无独立配额池兜底(MiniMax 429 时无退路)")
+                print(f"    {x['job'][:28]:30} kind={x['kind']:10}{inh} {' | '.join(tags)}")
+            print("  → 小上下文项: 改 job 级链(需 cron edit;heartbeat 类不支持,只能靠全局链)")
+            print("  → 无独立池项: 给该 job 加 litellm/deepseek-flash 或 litellm/LongCat-2.0 兜底")
+        else:
+            print(f"  ✅ job 级模型链检查通过({len(jobs)} 个 job)")
+
     bad, _src = chain_landmines()
     if bad:
         print('  ⚠️ 全局 fallback 链末位是小上下文模型(' + str(len(bad)) + ' 条, 改 openclaw.json 需 ZP 批准):')
